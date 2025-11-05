@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matías Gaglio – Traductor Analítico</title>
+  <meta name="description" content="Transformo datos en estrategia y estética que convierten." />
+  
+  <link rel="stylesheet" href="style.css" />
+  
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    /* --- Estilos para la sección About (Punto 2) --- */
+    .about-content {
+        max-width: 720px; /* Mantiene la legibilidad */
+        margin: 0 auto;
+        text-align: center;
+    }
+    .about-content p {
+        font-size: 1.1rem;
+        color: var(--color-texto-sec);
+        margin-bottom: 1.5rem;
+    }
+    .stack-list {
+        font-family: var(--font-titulos);
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--color-acento);
+        margin-bottom: 2rem;
+    }
+
+    /* --- Estilos para el Carousel (Punto 2 y 6) --- */
+    .carousel-wrapper {
+        position: relative;
+    }
+    .carousel {
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 0.5rem 0.5rem 1.5rem 0.5rem; /* Espacio para sombra y scrollbar */
+        
+        /* Estilos de Scrollbar */
+        -webkit-overflow-scrolling: touch;
+        scrollbar-color: var(--color-acento) var(--color-superficie);
+    }
+    .carousel::-webkit-scrollbar {
+        height: 8px;
+    }
+    .carousel::-webkit-scrollbar-track {
+        background: var(--color-superficie);
+        border-radius: 4px;
+    }
+    .carousel::-webkit-scrollbar-thumb {
+        background: var(--color-acento);
+        border-radius: 4px;
+    }
+    
+    .carousel-item {
+        scroll-snap-align: start;
+        flex: 0 0 32%; /* Muestra ~3 items en desktop */
+        min-width: 300px;
+        background-color: var(--color-superficie);
+        border-radius: 8px;
+        border: 1px solid var(--color-superficie);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .carousel-item:hover {
+        /* Reusa el mismo efecto de .caso-card:hover */
+        transform: scale(1.03); 
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+        border-color: rgba(var(--color-acento-rgb), 0.3);
+    }
+    .carousel-item a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+    .carousel-item img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-bottom: 2px solid var(--color-fondo);
+    }
+    .carousel-item-label {
+        padding: 1rem 1.25rem;
+        font-family: var(--font-titulos);
+        font-weight: 600;
+        color: var(--color-texto);
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    /* Controles del Carousel */
+    .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background-color: rgba(30, 30, 30, 0.8); /* --color-superficie con alfa */
+        backdrop-filter: blur(5px);
+        border: 1px solid var(--color-texto-sec);
+        color: var(--color-acento);
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        font-size: 1.8rem;
+        font-family: var(--font-principal);
+        line-height: 44px;
+        text-align: center;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .carousel-arrow:hover {
+        background-color: var(--color-superficie);
+        transform: translateY(-50%) scale(1.1);
+    }
+    .carousel-prev { left: -22px; }
+    .carousel-next { right: -22px; }
+
+    /* Responsive del Carousel */
+    @media (max-width: 768px) {
+        .carousel-item {
+            flex-basis: 80%; /* Muestra 1 y un poco del siguiente */
+            min-width: 0;
+        }
+        /* Oculta flechas en móvil, se usa swipe */
+        .carousel-arrow { 
+            display: none; 
+        }
+    }
+
+    /* ================================================= */
+    /* CSS AÑADIDO: Nuevo Layout de Tarjetas (Título Full) */
+    /* ================================================= */
+    .caso-card {
+        display: block; /* Ya no es un grid */
+        padding: 2.5rem 3rem; /* Ajuste de padding */
+    }
+    .caso-card h3 {
+        font-size: 2.1rem; /* Un poco más grande */
+        margin-bottom: 1.5rem; /* Espacio después del título */
+        margin-top: 0; /* Reseteo */
+    }
+    .caso-card-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 3rem;
+        align-items: start; /* Mejor que 'center' para este layout */
+    }
+    .caso-card.reverse .caso-card-grid {
+        direction: rtl; 
+    }
+    .caso-card.reverse .caso-card-grid > * {
+        direction: ltr; 
+    }
+    @media (max-width: 768px) {
+        .caso-card-grid,
+        .caso-card.reverse .caso-card-grid {
+            grid-template-columns: 1fr; /* Apila las columnas */
+            direction: ltr; /* Resetea la dirección */
+        }
+        .caso-card .caso-visual {
+            grid-row: 1; /* Pone la imagen siempre arriba (debajo del título) */
+        }
+    }
+    /* ================================================= */
+    /* FIN CSS AÑADIDO                                   */
+    /* ================================================= */
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Matías Gaglio.</a> <nav>
+        <ul>
+          <li><a href="index.html" class="accent">Home</a></li> <li><a href="ecommerce.html">Ecommerce</a></li>
+          <li><a href="creatives.html">Creatives</a></li>
+          <li><a href="consultora.html">Consultora de Opinión</a></li>
+          <li><a href="otros.html">Otros proyectos</a></li>
+          <li><a href="sobre-mi.html">Sobre Mi</a></li>
+          <li><a href="#" aria-label="Cambiar idioma a Inglés">ES | EN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    
+    <section id="hero" class="hero">
+      <div class="container">
+        <h1 class="hero-titulo" data-aos="fade-up" data-aos-delay="200">
+            Traductor Analítico
+        </h1>
+        <p class="hero-subtitulo" data-aos="fade-up" data-aos-delay="400">
+            Conecto <strong class="accent">estrategia de datos</strong> y <strong class="accent">creatividad visual</strong> 
+            para optimizar y convertir.
+        </p>
+
+        <a href="#cases" class="cta-button" data-aos="fade-up" data-aos-delay="600">Ver mi trabajo</a>
+        <a href="#about" class="cta-button secondary" data-aos="fade-up" data-aos-delay="650" style="margin-left: 1rem;">Sobre mí</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-content">
+        <h2 data-aos="fade-up">Sobre Mí</h2>
+        
+        <p data-aos="fade-up" data-aos-delay="100">
+          Soy Matías Gaglio, un profesional orientado a los datos, especializado en <strong class="accent">Business Intelligence, SEO, PPC, GEO</strong> y optimización de <strong class="accent">Marketing Performance</strong>. Ayudo a las marcas a alcanzar crecimiento, conversión y rentabilidad medible, mediante estrategias basadas en evidencia y análisis, no en suposiciones.
+        </p>
+
+        <div class="stack-list" data-aos="fade-up" data-aos-delay="150">
+          Mi enfoque: Analizar • Traducir • Impactar
+        </div>
+
+        <p data-aos="fade-up" data-aos-delay="200">
+          Analizo mercados, métricas y el rendimiento de las campañas, traduzco datos complejos en decisiones de marketing accionables y creo estrategias que generan <strong class="accent">impacto real y optimización sostenida</strong>.
+        </p>
+        
+        <p data-aos="fade-up" data-aos-delay="250">
+          Creo en un marketing que <strong class="accent">mide, se adapta y escala</strong>. Cada número cuenta una historia, y mi trabajo es transformar esa historia en resultados.
+        </p>
+        
+        <a href="sobre-mi.html" class="cta-button secondary" data-aos="fade-up" data-aos-delay="300">
+          Perfil completo + CV
+        </a>
+      </div>
+    </section>
+    
+    <section id="cases" class="casos-estudio" style="padding-top: 6rem;">
+      <div class="container">
+        <h2 data-aos="fade-up">Casos de Estudio (Ecommerce)</h2>
+        
+        <a href="caso-1.html" class="caso-card-link" data-aos="fade-up" data-aos-delay="200">
+            <article class="caso-card">
+                <span class="caso-categoria">Listing Management & Data</span>
+                <h3>Optimización de Tasa de Conversión en Amazon Ads (Marca A)</h3>
+                
+                <div class="caso-card-grid">
+                    <div class="caso-contenido">
+                        <p>Desde mi incorporación, el portfolio mostró una mejora sostenida en la eficiencia de inversión publicitaria. El ROAS promedio pasó de 4.1 a 6.26 (t30), con más de $580 K en ventas sobre $97 K de inversión, y un crecimiento visible en clicks y conversiones. La optimización de campañas, la reestructuración de pujas y la segmentación basada en datos permitieron escalar el rendimiento manteniendo la rentabilidad.</p>
+                        <ul class="caso-metricas">
+                            <li><span class="accent">+35%</span> Aumento en Ventas</li>
+                            <li><span class="accent">+15%</span> Tasa de Conversión</li>
+                            <li><span class="accent">+50%</span> ROAS</li>
+                        </ul>
+                    </div>
+                    <div class="caso-visual">
+                        <img src="Caso1_plot.jpeg" alt="Gráfico de aumento de ventas" loading="lazy">
+                    </div>
+                </div>
+            </article>
+        </a> 
+        
+        <a href="caso-2.html" class="caso-card-link" data-aos="fade-up" data-aos-delay="300">
+            <article class="caso-card reverse">
+                <span class="caso-categoria">Manejo de Bussiness Intelligence y Profits</span>
+                <h3>Evolución de Ingresos y Rentabilidad (Q3–Q4 2025)</h3>
+                
+                <div class="caso-card-grid">
+                    <div class="caso-contenido">
+                        <p>Seguimiento mensual del portfolio con foco en crecimiento sostenido y rentabilidad neta. Desde julio, las ventas aumentaron más de 220%, alcanzando $312.480 en octubre, con una mejora progresiva del margen neto y reducción del costo publicitario sobre ventas.</p>
+                        <ul class="caso-metricas">
+                            <li><span class="accent">+50%</span> Retención de Audiencia</li>
+                            <li><span class="accent">+20%</span> CTR en Anuncios</li>
+                        </ul>
+                    </div>
+                    <div class="caso-visual">
+                         <img src="caso2.jpeg" alt="Gráfico de rentabilidad" loading="lazy">
+                    </div>
+                </div>
+            </article>
+        </a> 
+        
+        <a href="caso-3.html" class="caso-card-link" data-aos="fade-up" data-aos-delay="400">
+            <article class="caso-card">
+                <span class="caso-categoria">Gestión de gastos</span>
+                <h3>Análisis contable de productos</h3>
+                
+                <div class="caso-card-grid">
+                    <div class="caso-contenido">
+                        <p>Optimización de campañas y listados de fall mats y raised toilet seats mediante segmentación refinada, mejoras visuales y control de bids. Pese a la baja estacional, mantuve un ROI del 24,6 %, ACOS en 6,6 % y 83 % de tráfico orgánico, sosteniendo la rentabilidad con menor gasto y tráfico más calificado.</p>
+                        <ul class="caso-metricas">
+                            <li><span class="accent">+20%</span> ROI</li>
+                            <li><span class="accent">-33%</span> Ad Spend</li>
+                        </ul>
+                    </div>
+                    <div class="caso-visual">
+                         <img src="caso3-antes-despues.png" alt="Antes y después de galería de producto" loading="lazy">
+                    </div>
+                </div>
+            </article>
+        </a> 
+      </div>
+
+      <div class="container" style="text-align:center; padding-top: 3rem;">
+        <a href="ecommerce.html" class="cta-button" data-aos="fade-up">Ver todo el trabajo Ecommerce</a>
+      </div>
+    </section>
+    <section id="carousel-section" class="creatives">
+      <div class="container">
+        <h2 data-aos="fade-up">Creativos (Video & Imagen)</h2>
+        
+        <div class="carousel-wrapper" data-aos="fade-up" data-aos-delay="100">
+            
+            <button class="carousel-arrow carousel-prev" aria-label="Slide anterior">&#8249;</button>
+            <button class="carousel-arrow carousel-next" aria-label="Siguiente slide">&#8250;</button>
+
+            <div class="carousel" aria-label="Creative highlights">
+                
+                <article class="carousel-item">
+                    <a href="creatives.html#video1">
+                        <img src="thumb-video-1.jpg" alt="Miniatura de video de producto" loading="lazy">
+                        <div class="carousel-item-label">Video promocional para Amazon</div>
+                    </a>
+                </article>
+                
+                <article class="carousel-item">
+                    <a href="creatives.html#video2">
+                        <img src="tapologo.jpg" alt="Miniatura de motion graphics" loading="lazy">
+                        <div class="carousel-item-label">Logo minimalista</div>
+                    </a>
+                </article>
+                
+                <article class="carousel-item">
+                    <a href="creatives.html#imagen1">
+                        <img src="infografia producto_.png" alt="Miniatura de infografía" loading="lazy">
+                        <div class="carousel-item-label">Infografía de Producto</div>
+                    </a>
+                </article>
+                
+                <article class="carousel-item">
+                    <a href="creatives.html#video3">
+                        <img src="Amazon.jpg" alt="Miniatura de video UGC" loading="lazy">
+                        <div class="carousel-item-label">Gráfica de producto para Amazon</div>
+                    </a>
+                </article>
+                
+                <article class="carousel-item">
+                    <a href="creatives.html#imagen2">
+                        <img src="EBC1.jpg" alt="Miniatura de A+ Content" loading="lazy">
+                        <div class="carousel-item-label">Diseño A+ Content</div>
+                    </a>
+                </article>
+
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top: 2.5rem;">
+          <a href="creatives.html" class="cta-button secondary" data-aos="fade-up" data-aos-delay="150">Ver más Creativos</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <div class="container">
+        <h2 data-aos="fade-up">Hablemos.</h2>
+        <p data-aos="fade-up" data-aos-delay="100">
+            Estoy disponible para proyectos freelance y colaboraciones.
+        </p>
+        
+        <a href="mailto:matias.gaglio@ejemplo.com" class="cta-button" data-aos="fade-up" data-aos-delay="200">
+            Enviar un Email
+        </a>
+        
+        <a href="https://linkedin.com/in/tu-usuario" class="link-social" data-aos="fade-up" data-aos-delay="300" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Matias Gaglio. Creado con HTML/CSS y alojado en Render.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+        duration: 800, // Duración de la animación en ms
+        once: true,    // La animación ocurre solo una vez por elemento
+        offset: 50,    // Se dispara 50px antes de que el elemento llegue
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousel = document.querySelector('.carousel');
+      const prevBtn = document.querySelector('.carousel-prev');
+      const nextBtn = document.querySelector('.carousel-next');
+
+      if (carousel && prevBtn && nextBtn) {
+        
+        // Función para calcular cuánto scrollear
+        const scrollStep = () => {
+          // Scrollea el ancho de un item + el gap
+          const firstItem = carousel.querySelector('.carousel-item');
+          if (firstItem) {
+            const itemWidth = firstItem.offsetWidth;
+            const style = window.getComputedStyle(carousel);
+            const gap = parseFloat(style.gap) || 24; // 24px = 1.5rem
+            return itemWidth + gap;
+          }
+          return carousel.clientWidth * 0.8; // Fallback
+        };
+
+        // Evento Click Siguiente
+        nextBtn.addEventListener('click', () => {
+          carousel.scrollBy({ left: scrollStep(), behavior: 'smooth' });
+        });
+
+        // Evento Click Anterior
+        prevBtn.addEventListener('click', () => {
+          carousel.scrollBy({ left: -scrollStep(), behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

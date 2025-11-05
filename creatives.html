@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Creatives – Matías Gaglio</title>
+  <meta name="description" content="Portfolio visual: íconos, logos, videos y flyers de Matías Gaglio." />
+  
+  <link rel="stylesheet" href="style.css" />
+  
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    /* --- Controles de Galería (Chips) --- */
+    .gallery-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin: 1rem 0 3rem;
+    }
+    .filter-chip {
+      border: 1px solid var(--color-acento);
+      background: transparent;
+      color: var(--color-acento);
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      font-family: var(--font-titulos);
+      transition: background-color 0.2s ease;
+    }
+    .filter-chip.is-active,
+    .filter-chip:hover { 
+      background: rgba(var(--color-acento-rgb), 0.12); 
+    }
+
+    /* --- Grid Visual --- */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem; /* Un poco más de gap que en el brief para que respire */
+    }
+    /* Responsive del Grid */
+    @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .grid { grid-template-columns: 1fr; } }
+
+    /* --- Items del Grid --- */
+    .grid-item { 
+      cursor: zoom-in; 
+      text-decoration: none;
+    }
+    .grid-item figcaption {
+      color: var(--color-texto-sec);
+      font-size: 0.95rem;
+      margin-top: 0.75rem;
+      font-family: var(--font-principal);
+    }
+    .ratio-box {
+      position: relative;
+      width: 100%;
+      /* Técnica de padding-bottom para aspect ratio */
+      padding-bottom: calc(100% / (var(--ratio, 4/3))); /* Default 4:3 */
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--color-superficie);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      border: 1px solid var(--color-superficie);
+    }
+    .ratio-box .thumb {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* Efecto Hover (reusa el de .caso-card) */
+    .grid-item:hover .ratio-box {
+      transform: scale(1.03);
+      box-shadow: 0 10px 30px -12px rgba(0,0,0,.5);
+      border-color: rgba(var(--color-acento-rgb), .3);
+    }
+
+    /* --- Lightbox / Modal --- */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.85); /* Más oscuro */
+      backdrop-filter: blur(8px);
+      display: grid;
+      place-items: center;
+      z-index: 9999;
+      transition: opacity .25s ease;
+      opacity: 0;
+      pointer-events: none;
+      padding: 1rem;
+    }
+    .lightbox[aria-hidden="false"] { 
+      opacity: 1; 
+      pointer-events: auto; 
+    }
+    .lightbox-content {
+      position: relative;
+      max-width: min(1200px, 92vw);
+      max-height: 90vh;
+      width: 100%;
+    }
+    .lightbox-content img, 
+    .lightbox-content .video-embed {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    /* Contenedor responsive 16:9 para video */
+    .video-embed {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    /* Botón de Cierre */
+    .lightbox-close {
+      position: absolute;
+      top: -44px; /* Un poco más de espacio */
+      right: 0;
+      background: var(--color-superficie);
+      color: var(--color-texto);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 999px;
+      width: 38px;
+      height: 38px;
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 38px;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .lightbox-close:hover {
+      transform: scale(1.1);
+      background-color: var(--color-acento);
+      color: var(--color-fondo);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Matías Gaglio.</a> <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li> <li><a href="ecommerce.html">Ecommerce</a></li>
+          <li><a class="accent" href="creatives.html">Creatives</a></li> <li><a href="consultora.html">Consultora de Opinión</a></li>
+          <li><a href="otros.html">Otros proyectos</a></li>
+          <li><a href="sobre-mi.html">Sobre Mi</a></li>
+          <li><a href="#" aria-label="Cambiar idioma a Inglés">ES | EN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="hero">
+      <div class="container">
+        <h1 class="hero-titulo" data-aos="fade-up">Creatives</h1>
+        <p class="hero-subtitulo" data-aos="fade-up" data-aos-delay="100">
+          Portfolio visual — íconos, logos, videos y flyers.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top: 2rem;">
+      <div class="container" data-aos="fade-up" data-aos-delay="200">
+        <div class="gallery-controls">
+          <button class="filter-chip is-active" data-filter="all" aria-label="Mostrar todos">Todos</button>
+          <button class="filter-chip" data-filter="icons" aria-label="Filtrar por Íconos">Íconos</button>
+          <button class="filter-chip" data-filter="logos" aria-label="Filtrar por Logos">Logos</button>
+          <button class="filter-chip" data-filter="videos" aria-label="Filtrar por Videos">Videos</button>
+          <button class="filter-chip" data-filter="flyers" aria-label="Filtrar por Flyers">Flyers</button>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top: 0;">
+      <div class="container">
+        <div class="grid">
+          
+          <figure class="grid-item cat-icons" data-aos="fade-up" 
+                  data-full-src="creatives/icons/set-ico-01-full.png"
+                  aria-label="Ver Set de Íconos 01">
+            <div class="ratio-box" style="--ratio: 4/3;">
+              <img class="thumb" src="creatives/icons/set-ico-01-thumb.png" alt="Miniatura Set de íconos 01" loading="lazy" />
+            </div>
+            <figcaption>Set de Íconos · 01</figcaption>
+          </figure>
+
+          <figure class="grid-item cat-logos" data-aos="fade-up" data-aos-delay="50"
+                  data-full-src="creatives/logos/logo-xyz-full.jpg"
+                  aria-label="Ver Logo XYZ">
+            <div class="ratio-box" style="--ratio: 4/3;">
+              <img class="thumb" src="creatives/logos/logo-xyz-thumb.jpg" alt="Miniatura Logo XYZ" loading="lazy" />
+            </div>
+            <figcaption>Logo · XYZ</figcaption>
+          </figure>
+
+          <figure class="grid-item cat-videos" data-aos="fade-up" data-aos-delay="100"
+                  data-video-id="dQw4w9WgXcQ"
+                  aria-label="Ver Video Campaña 01">
+            <div class="ratio-box" style="--ratio: 16/9;">
+              <img class="thumb" src="creatives/videos/vid-camp-01-thumb.jpg" alt="Miniatura Video campaña 01" loading="lazy" />
+            </div>
+            <figcaption>Video · Campaña 01</figcaption>
+          </figure>
+
+          <figure class="grid-item cat-flyers" data-aos="fade-up" data-aos-delay="150"
+                  data-full-src="creatives/flyers/flyer-abc-full.jpg"
+                  aria-label="Ver Flyer ABC">
+            <div class="ratio-box" style="--ratio: 3/4;"> <img class="thumb" src="creatives/flyers/flyer-abc-thumb.jpg" alt="Miniatura Flyer ABC" loading="lazy" />
+            </div>
+            <figcaption>Flyer · ABC</figcaption>
+          </figure>
+
+          <figure class="grid-item cat-videos" data-aos="fade-up"
+                  data-video-id="u31qwQUeGuM"
+                  aria-label="Ver Video Demo Producto">
+            <div class="ratio-box" style="--ratio: 16/9;">
+              <img class="thumb" src="creatives/videos/vid-demo-02-thumb.jpg" alt="Miniatura Video demo 02" loading="lazy" />
+            </div>
+            <figcaption>Video · Demo Producto</figcaption>
+          </figure>
+          
+          <figure class="grid-item cat-icons" data-aos="fade-up" data-aos-delay="50"
+                  data-full-src="creatives/icons/set-ico-02-full.png"
+                  aria-label="Ver Set de Íconos 02">
+            <div class="ratio-box" style="--ratio: 4/3;">
+              <img class="thumb" src="creatives/icons/set-ico-02-thumb.png" alt="Miniatura Set de íconos 02" loading="lazy" />
+            </div>
+            <figcaption>Set de Íconos · 02</figcaption>
+          </figure>
+
+          <figure class="grid-item cat-flyers" data-aos="fade-up" data-aos-delay="100"
+                  data-full-src="creatives/flyers/flyer-def-full.jpg"
+                  aria-label="Ver Flyer DEF">
+            <div class="ratio-box" style="--ratio: 1/1;"> <img class="thumb" src="creatives/flyers/flyer-def-thumb.jpg" alt="Miniatura Flyer DEF" loading="lazy" />
+            </div>
+            <figcaption>Flyer · DEF</figcaption>
+          </figure>
+
+          <figure class="grid-item cat-logos" data-aos="fade-up" data-aos-delay="150"
+                  data-full-src="creatives/logos/logo-qrs-full.jpg"
+                  aria-label="Ver Logo QRS">
+            <div class="ratio-box" style="--ratio: 4/3;">
+              <img class="thumb" src="creatives/logos/logo-qrs-thumb.jpg" alt="Miniatura Logo QRS" loading="lazy" />
+            </div>
+            <figcaption>Logo · QRS</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <div class="container">
+        <h2 data-aos="fade-up">¿Querés ver un caso completo?</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Escribime para adaptar estas piezas a tu marca o proyecto.</p>
+        <a href="mailto:matiasignaciogaglio@gmail.com" class="cta-button" data-aos="fade-up" data-aos-delay="150">Contactar</a>
+        <a href="https://www.linkedin.com/in/matiasignaciogaglio" class="link-social" data-aos="fade-up" data-aos-delay="180" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Matías Gaglio. Portfolio personal.</p>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox-content" id="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">×</button>
+      </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  
+  <script>
+    AOS.init({ duration: 800, once: true, offset: 50 });
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // --- Lógica de Filtrado ---
+      const chips = document.querySelectorAll('.filter-chip');
+      const items = document.querySelectorAll('.grid-item');
+      const grid = document.querySelector('.grid');
+      let lastFocusedItem = null; // Para accesibilidad del lightbox
+
+      if (chips.length > 0 && items.length > 0) {
+        chips.forEach(chip => {
+          chip.addEventListener('click', () => {
+            chips.forEach(c => c.classList.remove('is-active'));
+            chip.classList.add('is-active');
+            const filter = chip.dataset.filter;
+            
+            items.forEach(item => {
+              // Animación de fade out antes de ocultar
+              if (filter === 'all' || item.classList.contains('cat-' + filter)) {
+                item.style.display = '';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+          });
+        });
+      }
+
+      // --- Lógica de Lightbox ---
+      const lb = document.getElementById('lightbox');
+      const lbContent = document.getElementById('lightbox-content');
+      const closeBtn = document.getElementById('lightbox-close');
+
+      if (lb && lbContent && closeBtn) {
+        
+        function openLightbox(html, triggerElement) {
+          // Limpiar contenido anterior
+          const oldContent = lbContent.querySelector('img, .video-embed');
+          if (oldContent) {
+            oldContent.remove();
+          }
+          
+          lbContent.insertAdjacentHTML('beforeend', html);
+          lb.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          closeBtn.focus(); // Accesibilidad: Mover foco al botón de cerrar
+          lastFocusedItem = triggerElement; // Guardar qué item abrió el modal
+        }
+
+        function closeLightbox() {
+          lb.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+
+          // Detener videos de YouTube al cerrar
+          const iframe = lbContent.querySelector('iframe');
+          if (iframe) {
+            iframe.src = iframe.src.replace("&autoplay=1", "");
+            iframe.remove();
+          }
+          
+          // Devolver el foco al item que abrió el modal
+          if (lastFocusedItem) {
+            lastFocusedItem.focus();
+            lastFocusedItem = null;
+          }
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+        
+        // Cerrar al hacer clic en el fondo oscuro
+        lb.addEventListener('click', e => {
+          if (e.target === lb) {
+            closeLightbox();
+          }
+        });
+        
+        // Cerrar con tecla Escape
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape' && lb.getAttribute('aria-hidden') === 'false') {
+            closeLightbox();
+          }
+        });
+
+        // Asignar evento click a cada item del grid
+        items.forEach(item => {
+          item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const videoId = item.dataset.videoId;
+            const fullSrc = item.dataset.fullSrc;
+            const altText = item.querySelector('img.thumb').alt.replace('Miniatura ', '');
+
+            if (videoId) {
+              const videoHtml = `
+                <div class="video-embed">
+                  <iframe 
+                    src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
+                    title="Video: ${altText}" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                </div>`;
+              openLightbox(videoHtml, item);
+            } else if (fullSrc) {
+              const imgHtml = `<img src="${fullSrc}" alt="${altText}" />`;
+              openLightbox(imgHtml, item);
+            }
+          });
+        });
+      }
+
+    });
+  </script>
+
+</body>
+</html>

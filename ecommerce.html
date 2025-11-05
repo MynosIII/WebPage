@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ecommerce & Performance – Matías Gaglio</title>
+  <meta name="description" content="Casos de estudio, testimonios y metodología de Ecommerce, SEO, PPC y Business Intelligence." />
+  
+  <link rel="stylesheet" href="style.css" />
+  
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    /* --- 1. Hero de Página --- */
+    .page-hero {
+        padding-top: 10rem;
+        padding-bottom: 6rem;
+        background-color: var(--color-superficie);
+    }
+    .page-hero h1 {
+        font-size: 3.5rem;
+        text-align: left;
+        background: linear-gradient(90deg, #FFFFFF, var(--color-acento));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .page-hero p {
+        font-size: 1.25rem;
+        color: var(--color-texto-sec);
+        max-width: 600px;
+        text-align: left;
+    }
+
+    /* --- 2. Grid de Metodología (3 Columnas) --- */
+    .method-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    .method-card {
+        background-color: var(--color-superficie);
+        padding: 2rem;
+        border-radius: 10px;
+        border: 1px solid var(--color-superficie);
+    }
+    .method-card h3 {
+        color: var(--color-acento);
+        font-size: 1.5rem;
+        text-align: left; /* Asegura alineación */
+    }
+    .method-card p {
+        color: var(--color-texto-sec);
+        font-size: 0.95rem;
+    }
+    
+    /* --- 3. CSS para el layout de .caso-card (del style.css) --- */
+    /* Asegura que las tarjetas se vean bien aquí también */
+    .caso-card {
+        display: block;
+        padding: 2.5rem 3rem;
+    }
+    .caso-card h3 {
+        font-size: 2.1rem;
+        margin-bottom: 1.5rem;
+        margin-top: 0;
+    }
+    .caso-card-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 3rem;
+        align-items: start;
+    }
+    .caso-card.reverse .caso-card-grid {
+        direction: rtl; 
+    }
+    .caso-card.reverse .caso-card-grid > * {
+        direction: ltr; 
+    }
+    
+    /* --- 4. NUEVA SECCIÓN: Testimonios / Reviews --- */
+    .testimonios-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 columnas para legibilidad */
+        gap: 2rem;
+    }
+    .testimonio-card {
+        background-color: var(--color-superficie);
+        padding: 2.5rem;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+    .testimonio-card:hover {
+        border-color: rgba(var(--color-acento-rgb), 0.3);
+    }
+    .testimonio-card blockquote {
+        font-size: 1.1rem;
+        font-style: italic;
+        color: var(--color-texto);
+        border-left: 4px solid var(--color-acento);
+        padding-left: 1.5rem;
+        margin: 0 0 1.5rem 0;
+    }
+    .testimonio-card cite {
+        font-style: normal;
+        font-weight: 700;
+        color: var(--color-texto-sec);
+    }
+    .testimonio-card cite span {
+        display: block;
+        color: var(--color-acento);
+        font-size: 0.9rem;
+    }
+    
+    /* --- 5. Responsive --- */
+    @media (max-width: 992px) {
+        .method-grid {
+            grid-template-columns: 1fr;
+        }
+        .testimonios-grid {
+            grid-template-columns: 1fr; /* Apila testimonios */
+        }
+    }
+    @media (max-width: 768px) {
+        .page-hero h1 { font-size: 2.5rem; }
+        .page-hero p { font-size: 1.1rem; }
+        
+        .caso-card { padding: 2rem; }
+        .caso-card h3 { font-size: 1.8rem; }
+        .caso-card-grid,
+        .caso-card.reverse .caso-card-grid {
+            grid-template-columns: 1fr;
+            direction: ltr;
+        }
+        .caso-card .caso-visual {
+            grid-row: 1;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Matías Gaglio.</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ecommerce.html" class="accent">Ecommerce</a></li> <li><a href="creatives.html">Creatives</a></li>
+          <li><a href="consultora.html">Consultora</a></li> <li><a href="otros.html">Proyectos</a></li> <li><a href="sobre-mi.html">Sobre Mí</a></li> <li><a href="#" aria-label="Cambiar idioma a Inglés">ES | EN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-aos="fade-up">Ecommerce & Performance</h1>
+        <p data-aos="fade-up" data-aos-delay="100">
+          Cómo traduzco datos de mercado, listings y campañas en conversión y rentabilidad medible.
+        </p>
+      </div>
+    </section>
+
+    <section id="metodo">
+      <div class="container">
+        <h2 data-aos="fade-up" style="text-align: left; margin-bottom: 3rem;">Mi Método: Análisis, Estrategia, Impacto</h2>
+        
+        <div class="method-grid">
+          
+          <article class="method-card" data-aos="fade-up" data-aos-delay="100">
+            <h3>1. Análisis & Diagnóstico</h3>
+            <p>Auditoría completa de listings, análisis de competencia (BI) y performance de campañas (SEO, PPC, GEO). Identifico fugas de conversión y oportunidades de posicionamiento basadas en datos.</p>
+          </article>
+          
+          <article class="method-card" data-aos="fade-up" data-aos-delay="200">
+            <h3>2. Estrategia & Optimización</h3>
+            <p>Desarrollo de una estrategia de Tasa de Conversión (CRO). Optimizo el contenido (A+, Infografías), estructuro campañas de Ads y defino modelos de rentabilidad para cada producto.</p>
+          </article>
+
+          <article class="method-card" data-aos="fade-up" data-aos-delay="300">
+            <h3>3. Ejecución & Escalado</h3>
+            <p>Gestión activa, A/B testing y monitoreo de performance. Ajusto pujas y segmentos para optimizar el ACOS/ROAS, asegurando un escalado rentable y sostenible.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    
+    <section id="cases" class="casos-estudio" style="background-color: var(--color-superficie); padding-top: 6rem;">
+      <div class="container">
+        <h2 data-aos="fade-up">Casos de Estudio</h2>
+        
+          <a href="caso-1.html" class="caso-card-link" data-aos="fade-up" data-aos-delay="200">
+            <article class="caso-card">
+              <span class="caso-categoria">Listing Management & Data</span>
+              <h3>Optimización de Tasa de Conversión en Amazon Ads (Marca A)</h3>
+              <div class="caso-card-grid">
+                <div class="caso-contenido">
+                  <p>La empresa venía sufriendo de un cierto estancamiento promocional. Mientras los competidores continuaban innovando en técnicas para la venta de tuercas en Amazon, esta compañía seguía vendiendo con listings desactualizados. Las imágenes resultaban poco informativas y los indexables estaban poco adaptados al A9. Todos sus bullets sufrían de Keyword Stuffing sin "phrases". Por otro lado, todos sus Ads corrían en auto o SD, sin funnel alguno. Los términos solo se biddeaban y ya. Al momento de auditar los ads, hubo una reestructuración total: de sólo campañas de Auto a campañas con Exact-Phrase-Broad + Auto para harvesting. De este modo, se pudo hacer despegar el ACOS, las ventas y los clicks. Todo a la vez, en unos pocos meses.</p>
+                  <p>Por otro lado, se actualizaron los listings. Mediante una serie de A/B tests y decisiones basadas en datos algorítmicos, se desarrolló una fórmula o estructura de Bullet Points y Titles que aumentaron tanto tráfico como conversiones.</p>
+                  <p>Del mismo modo, se desarrolló un algoritmo en Blender para acelerar los procesos de creación de renders de tuercas. Con el tiempo ahorrado, se pudieron desarrollar gráficos más complejos y A+ que, en conjunto, mejoraron la conversión global cerca de un 120%.</p>
+                  <ul class="caso-metricas">
+                    <li><span class="accent">+100%</span> Aumento en Ventas</li>
+                    <li><span class="accent">+150%</span> Tasa de Conversión</li>
+                    <li><span class="accent">+50%</span> ROAS</li>
+                  </ul>
+                </div>
+                <div class="caso-visual">
+                  <img src="Caso1_plot.jpeg" alt="Gráfico de aumento de ventas" loading="lazy">
+                  <img src="Caso1_render1.png" alt="Render optimizado de producto" loading="lazy">
+                  <img src="Caso1_conversions.png" alt="Diseño A+ optimizado" loading="lazy">
+                  <img src="Caso1_Sales.png" alt="Dashboard de métricas y resultados" loading="lazy">
+                </div>
+              </div>
+            </article>
+          </a>
+
+        
+        <a href="caso-2.html" class="caso-card-link" data-aos="fade-up" data-aos-delay="300">
+            <article class="caso-card reverse">
+                <span class="caso-categoria">Manejo de Bussiness Intelligence y Profits</span>
+                <h3>Evolución de Ingresos y Rentabilidad (Q3–Q4 2025)</h3>
+                <div class="caso-card-grid">
+                    <div class="caso-contenido">
+                        <p>Seguimiento mensual del portfolio con foco en crecimiento sostenido y rentabilidad neta. A partir de un mejor manejo de Ads y de una mejora en la comunicación del producto se pudo bajar el Return Rate. Con ello, aumentó el organic ranking, lo que hizo desaparecer el constante problema de LTSF que afectaba la rentabilidad del producto.</p>
+                        <p>Por otro lado, hay más </p> 
+                        <ul class="caso-metricas">
+                            <li><span class="accent">+50%</span> Retención de Audiencia</li>
+                            <li><span class="accent">+20%</span> CTR en Anuncios</li>
+                        </ul>
+                    </div>
+                    <div class="caso-visual">
+                         <img src="caso2.jpeg" alt="Gráfico de rentabilidad" loading="lazy">
+                    </div>
+                </div>
+            </article>
+        </a> 
+        
+        <a href="caso-3.html" class="caso-card-link" data-aos="fade-up" data-aos-delay="400">
+            <article class="caso-card">
+                <span class="caso-categoria">Diseño de Imagen & Conversión</span>
+                <h3>Galería de Producto (Marca Z)</h3>
+                <div class="caso-card-grid">
+                    <div class="caso-contenido">
+                        <p>Rediseño completo de la galería de imágenes, traduciendo características técnicas (Datos) en infografías (Impacto).</p>
+                        <ul class="caso-metricas">
+                            <li><span class="accent">-30%</span> Tasa de Rebote en la página</li>
+                            <li><span class="accent">+12%</span> Tasa de Conversión</li>
+                        </ul>
+                    </div>
+                    <div class="caso-visual">
+                         <img src="caso3-antes-despues.jpg" alt="Antes y después de galería de producto" loading="lazy">
+                    </div>
+                </div>
+            </article>
+        </a>
+        
+        </div>
+    </section>
+
+    <section id="testimonios">
+      <div class="container">
+        <h2 data-aos="fade-up" style="text-align: left; margin-bottom: 3rem;">Lo que dicen mis clientes</h2>
+        
+        <div class="testimonios-grid">
+          
+          <article class="testimonio-card" data-aos="fade-up" data-aos-delay="100">
+            <blockquote>
+              "No entendíamos por qué caían las ventas. Matías analizó los datos, reestructuró las campañas y nuestro ROAS subió de 4.1 a 6.26 en 30 días. Su enfoque analítico es impecable."
+            </blockquote>
+            <cite>
+              <span>Gerente de Marketing, Marca A</span>
+              (Cliente de Performance Ads)
+            </cite>
+          </article>
+          
+          <article class="testimonio-card" data-aos="fade-up" data-aos-delay="200">
+            <blockquote>
+              "El rediseño de nuestras infografías y contenido A+ tuvo un impacto directo en la tasa de conversión. Matías entiende cómo usar el diseño para comunicar valor y vender."
+            </blockquote>
+            <cite>
+              <span>Fundador, Marca Z</span>
+              (Cliente de CRO y Diseño)
+            </cite>
+          </article>
+          
+          </div>
+      </div>
+    </section>
+    <section id="contacto" class="contacto" style="background-color: var(--color-superficie);">
+      <div class="container">
+        <h2 data-aos="fade-up">¿Trabajamos juntos?</h2>
+        <p data-aos="fade-up" data-aos-delay="100">
+            Estoy disponible para proyectos freelance y colaboraciones.
+        </p>
+        
+        <a href="mailto:matiasignaciogaglio@gmail.com" class="cta-button" data-aos="fade-up" data-aos-delay="200">
+            Enviar un Email
+        </a>
+        
+        <a href="https://www.linkedin.com/in/matiasignaciogaglio" class="link-social" data-aos="fade-up" data-aos-delay="300" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Matias Gaglio. Creado con HTML/CSS y alojado en Render.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 50,
+    });
+  </script>
+
+</body>
+</html>

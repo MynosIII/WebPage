@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre Mí – Matías Gaglio</title>
+  <meta name="description" content="Perfil profesional, enfoque y líneas de trabajo de Matías Gaglio. Especialista en Data, BI, SEO y Marketing Performance." />
+  
+  <link rel="stylesheet" href="style.css" />
+  
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    /* --- 1. Hero (Sobre Mí) --- */
+    .about-hero {
+        padding: 10rem 0 6rem 0;
+        background-color: var(--color-superficie);
+        border-bottom: 1px solid var(--color-fondo);
+    }
+    .about-hero .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        gap: 3rem;
+    }
+    .about-hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(90deg, #FFFFFF, var(--color-acento));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .about-hero p {
+        font-size: 1.25rem;
+        color: var(--color-texto-sec);
+        max-width: 500px;
+    }
+    .about-hero-img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 8px;
+        border: 2px solid var(--color-superficie);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        justify-self: end;
+    }
+
+    /* --- 2. Cuerpo Principal (Biografía y Sidebar) --- */
+    .about-layout {
+        display: grid;
+        grid-template-columns: 2.5fr 1fr; 
+        gap: 4rem;
+        padding: 6rem 0 6rem 0; /* Espacio arriba y abajo */
+    }
+    .about-main-content {
+        line-height: 1.7; 
+        font-size: 1.1rem;
+        color: var(--color-texto-sec); 
+    }
+    .about-main-content p {
+        margin-bottom: 1.5rem;
+        color: var(--color-texto-sec);
+    }
+    .about-main-content > h2 {
+        font-size: 2.5rem;
+        color: #FFFFFF;
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+
+    /* --- 3. Sidebar --- */
+    .sidebar {
+        background-color: var(--color-superficie);
+        padding: 2rem;
+        border-radius: 10px;
+        border: 1px solid rgba(var(--color-acento-rgb), 0.2);
+        /* CAMBIO: Eliminado 'position: sticky' para arreglar el layout.
+          La barra ahora es más corta y no necesita ser pegajosa.
+        */
+        height: fit-content; /* Se ajusta al contenido */
+    }
+    .sidebar h3 {
+        color: var(--color-acento);
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 1rem;
+    }
+    .sidebar-item {
+        margin-bottom: 1.5rem;
+    }
+    .sidebar-item strong {
+        display: block;
+        color: var(--color-texto);
+        font-size: 1.05rem;
+        margin-bottom: 0.35rem;
+    }
+    .sidebar-item span {
+        color: var(--color-texto-sec);
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    .sidebar .cta-button {
+        display: block;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    /* Elimina el margen del último item para alinear botones */
+    .sidebar .sidebar-item:last-of-type {
+        margin-bottom: 2rem;
+    }
+
+    /* --- 4. NUEVA SECCIÓN: Stack Tecnológico --- */
+    .stack-section {
+        padding: 0 0 6rem 0;
+        background-color: var(--color-fondo); /* Fondo negro base */
+    }
+    .stack-section h2 {
+        text-align: left;
+        margin-bottom: 3rem;
+    }
+    /* Reusamos .expertise-grid para el layout */
+    .stack-card {
+        /* Reusa .expertise-card pero con menos padding */
+        background-color: var(--color-superficie);
+        padding: 2rem;
+        border-radius: 10px;
+        border: 1px solid var(--color-superficie);
+    }
+    .stack-card h3 {
+        color: var(--color-acento);
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .stack-card ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    .stack-card li {
+        color: var(--color-texto-sec);
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+        font-family: var(--font-principal);
+    }
+
+
+    /* --- 5. Bloque "Qué hago hoy" --- */
+    .expertise-section {
+        padding: 6rem 0;
+        background-color: var(--color-superficie); /* Fondo gris para variar */
+    }
+    .expertise-section h2 {
+        text-align: left;
+        margin-bottom: 3rem;
+    }
+    .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    .expertise-card {
+        background-color: var(--color-fondo); /* Tarjetas negras sobre fondo gris */
+        padding: 2rem;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .expertise-card:hover {
+        transform: scale(1.03); 
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+        border-color: rgba(var(--color-acento-rgb), 0.3);
+    }
+    .expertise-card h3 {
+        color: var(--color-acento);
+        font-size: 1.5rem;
+    }
+    .expertise-card ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    .expertise-card li {
+        color: var(--color-texto-sec);
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+    .expertise-card li::before {
+        content: '✓';
+        color: var(--color-acento);
+        position: absolute;
+        left: 0;
+    }
+
+    /* --- 6. Sección "Líneas que exploro" --- */
+    .research-section {
+        background-color: var(--color-fondo); /* Fondo negro */
+        padding: 6rem 0;
+    }
+    .research-section h2 {
+        text-align: left;
+        margin-bottom: 3rem;
+    }
+    .research-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    .research-block {
+        background-color: var(--color-superficie); /* Tarjetas grises */
+        padding: 2.5rem;
+        border-radius: 10px;
+    }
+    .research-block h3 {
+        font-size: 1.75rem;
+    }
+    .research-block p {
+        color: var(--color-texto-sec);
+        font-size: 1.1rem;
+    }
+
+    /* --- 7. Sección "Formación" --- */
+    .formacion-section {
+        padding: 6rem 0;
+        background-color: var(--color-superficie); /* Fondo gris */
+    }
+    .formacion-section h2 {
+        text-align: left;
+        margin-bottom: 3rem;
+    }
+    .formacion-card {
+        background-color: var(--color-fondo); /* Tarjetas negras */
+        padding: 2rem;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        text-align: center; 
+    }
+    .formacion-card:hover {
+        transform: scale(1.03); 
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+        border-color: rgba(var(--color-acento-rgb), 0.3);
+    }
+    .formacion-logo-wrapper {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+    .formacion-logo-wrapper img {
+        max-height: 100%;
+        max-width: 150px;
+        object-fit: contain;
+    }
+    .formacion-card h3 {
+        color: var(--color-acento);
+        font-size: 1.5rem;
+    }
+    .formacion-card ul {
+        list-style: none;
+        padding-left: 0;
+        text-align: left;
+    }
+    .formacion-card li {
+        color: var(--color-texto-sec);
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+    .formacion-card li::before {
+        content: '✓'; 
+        color: var(--color-acento);
+        position: absolute;
+        left: 0;
+    }
+
+    /* --- 8. Responsive --- */
+    @media (max-width: 992px) {
+        .about-layout {
+            grid-template-columns: 1fr; /* Apila texto y sidebar */
+        }
+        .sidebar {
+            position: relative;
+            top: 0;
+            margin-top: 4rem; 
+        }
+        .expertise-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .about-hero .container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        .about-hero-img {
+            justify-self: center;
+            order: -1;
+            margin-bottom: 2rem;
+        }
+        .about-hero h1 { font-size: 2.5rem; }
+        .about-hero p { font-size: 1.1rem; }
+
+        .research-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Matías Gaglio.</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="/ecommerce.html">Ecommerce</a></li>
+          <li><a href="/creatives.html">Creatives</a></li>
+          <li><a href="/consultora.html">Consultora de Opinión</a></li>
+          <li><a href="/otros.html">Otros proyectos</a></li>
+          <li><a href="#" aria-label="Cambiar idioma a Inglés">ES | EN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    
+    <section class="about-hero">
+      <div class="container">
+        <div class="about-hero-text">
+          <h1 data-aos="fade-up">Sobre mí</h1>
+          <p data-aos="fade-up" data-aos-delay="150">
+            Perfil profesional, enfoque y líneas de trabajo.
+          </p>
+        </div>
+        <img src="matias-gaglio-retrato.jpg" alt="Retrato profesional de Matías Gaglio" class="about-hero-img" loading="lazy" data-aos="fade-up" data-aos-delay="200">
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="about-layout">
+        
+        <article class="about-main-content" data-aos="fade-up" data-aos-delay="100">
+          
+          <h2>¿Quién Soy?</h2>
+
+          <p>
+            Soy Matías Gaglio, un profesional de datos con formación en análisis y comunicación. Trabajo como Listing Manager, con más de tres años de experiencia en la industria del e-commerce. He gestionado portfolios de hasta 25 millones de dólares anuales y más de 4.000 productos en los mercados de Estados Unidos y Argentina, acompañando a distintas marcas en su crecimiento y ayudándolas a optimizar su rentabilidad y presencia digital mediante estrategias basadas en información y métricas reales.
+          </p>
+          <p>
+            Mi trabajo se centra en el análisis de datos aplicado al rendimiento comercial. Desarrollé experiencia en Business Intelligence, publicidad digital y optimización de listings, combinando métricas de conversión, posicionamiento y tráfico para tomar decisiones medibles y sostenibles. Creo en los datos como una herramienta para comprender el comportamiento humano y en la capacidad de la analítica para anticipar tendencias, detectar oportunidades y guiar el crecimiento.
+          </p>
+          <p>
+            Me interesa el punto donde la comunicación, la ciencia de datos y la percepción se encuentran. En ese cruce construyo mi trabajo diario, uniendo lo técnico con lo humano, lo medible con lo significativo y lo analítico con lo visual.
+          </p>
+          </article>
+        
+        <aside class="sidebar" data-aos="fade-up" data-aos-delay="200">
+          
+          <div class="sidebar-item">
+            <strong>Rol actual:</strong>
+            <span>Listing Manager / Data–Marketing</span>
+          </div>
+
+          <div class="sidebar-item">
+            <strong>Experiencia:</strong>
+            <span>+3 años</span>
+          </div>
+
+          <div class="sidebar-item">
+            <strong>Portfolios gestionados:</strong>
+            <span>25M USD anuales</span>
+          </div>
+
+          <div class="sidebar-item">
+            <strong>Productos:</strong>
+            <span>+4.000</span>
+          </div>
+          
+          <a href="/cv-matias-gaglio.pdf" class="cta-button" target="_blank" rel="noopener">📄 Descargar CV</a>
+          <a href="#contacto" class="cta-button secondary">📬 Contactar</a>
+        </aside>
+
+      </div>
+    </div> <section class="stack-section">
+      <div class="container">
+        <h2 data-aos="fade-up">Stack Tecnológico</h2>
+        
+        <div class="expertise-grid">
+          
+          <article class="stack-card" data-aos="fade-up" data-aos-delay="100">
+            <h3>Data & Programming</h3>
+            <ul>
+              <li>Excel (Avanzado)</li>
+              <li>SQL</li>
+              <li>Python</li>
+              <li>Rstudio</li>
+              <li>PowerBI</li>
+              <li>Helium 10</li>
+              <li>JungleScout</li>
+              <li>HTML</li>
+              <li>JavaScript</li>
+              <li>Google Console</li>
+              <li>Shluex</li>
+            </ul>
+          </article>
+          
+          <article class="stack-card" data-aos="fade-up" data-aos-delay="200">
+            <h3>Marketing & E-com</h3>
+            <ul>
+              <li>Amazon Seller Central</li>
+              <li>Google Ads</li>
+              <li>Meta Ads</li>
+              <li>Semrush</li>
+              <li>GA4</li>
+              <li>Klaviyo</li>
+              <li>Shopify</li>
+              <li>Ahrefs</li>
+              <li>Keeppa</li>
+              <li>StackLine</li>
+              <li>Xnurtra</li>
+              <li>Repricer</li>
+            </ul>
+          </article>
+
+          <article class="stack-card" data-aos="fade-up" data-aos-delay="300">
+            <h3>Creative</h3>
+            <ul>
+              <li>Premiere Pro</li>
+              <li>After Effects</li>
+              <li>Photoshop</li>
+              <li>Illustrator</li>
+              <li>Blender</li>
+              <li>Cinema 4D</li>
+              <li>Audacity</li>
+              <li>FL Studio</li>
+              <li>Nuke</li>
+              <li>Reaper</li>
+              <li>Audition</li>
+              <li>PowerPoint</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="expertise-section">
+      <div class="container">
+        <h2 data-aos="fade-up">Qué hago hoy</h2>
+        
+        <div class="expertise-grid">
+          
+          <article class="expertise-card" data-aos="fade-up" data-aos-delay="100">
+            <h3>Ecommerce & Listings</h3>
+            <ul>
+              <li>Optimización de listings y contenido</li>
+              <li>Estrategias de pricing y posicionamiento</li>
+              <li>Análisis de conversión y rentabilidad</li>
+            </ul>
+          </article>
+          
+          <article class="expertise-card" data-aos="fade-up" data-aos-delay="200">
+            <h3>Data & Business Intelligence</h3>
+            <ul>
+              <li>Modelos de rentabilidad y performance</li>
+              <li>Dashboards e interpretación de métricas</li>
+              <li>Integración de datos para decisiones</li>
+            </ul>
+          </article>
+
+          <article class="expertise-card" data-aos="fade-up" data-aos-delay="300">
+            <h3>Digital Marketing & Ads</h3>
+            <ul>
+              <li>Gestión de campañas SEO / PPC / GEO</li>
+              <li>Optimización de Ads basadas en datos</li>
+              <li>Escalamiento y crecimiento sostenible</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section">
+      <div class="container">
+        <h2 data-aos="fade-up">Líneas que estoy explorando</h2>
+        
+        <div class="research-grid">
+          
+          <article class="research-block" data-aos="fade-up" data-aos-delay="100">
+            <h3>Impacto visual y patrones algorítmicos</h3>
+            <p>
+              Me interesa cómo las imágenes y los formatos digitales influyen en la atención, y cómo los algoritmos interpretan la forma, el color y la composición.
+            </p>
+          </article>
+          
+          <article class="research-block" data-aos="fade-up" data-aos-delay="200">
+            <h3>Comunicación, datos y percepción</h3>
+            <p>
+              Investigo la relación entre el lenguaje visual, los datos y la forma en que las personas procesan la información en entornos digitales.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="formacion-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Formación y Certificaciones</h2>
+            
+            <div class="expertise-grid">
+                
+                <article class="formacion-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="formacion-logo-wrapper">
+                        <img src="logo-uba.jpg" alt="Logo UBA" loading="lazy">
+                    </div>
+                    <h3>Formación Académica</h3>
+                    <ul>
+                        <li>Cs. de la Comunicación (UBA)</li>
+                        <li>Agente de Propaganda Médica (U. Favaloro)</li>
+                    </ul>
+                </article>
+                
+                <article class="formacion-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="formacion-logo-wrapper">
+                        <img src="logo-udemy.png" alt="Logo Udemy" loading="lazy">
+                    </div>
+                    <h3>Certificaciones de Data</h3>
+                    <ul>
+                        <li>Data Analytics (Udemy)</li>
+                        <li>SQL, Python, R, PowerBI (Autodacta)</li>
+                    </ul>
+                </article>
+
+                <article class="formacion-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="formacion-logo-wrapper">
+                        <img src="logo-google.png" alt="Logo Google Ads" loading="lazy">
+                    </div>
+                    <h3>Certificaciones de Marketing</h3>
+                    <ul>
+                        <li>Google Ads (Google)</li>
+                        <li>Creative (Adobe Suite)</li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <div class="container">
+        <h2 data-aos="fade-up">¿Trabajamos juntos?</h2>
+        <p data-aos="fade-up" data-aos-delay="100">
+          Estoy disponible para proyectos, consultorías o colaboraciones.
+        </p>
+        
+        <a href="mailto:matias.gaglio@ejemplo.com" class="cta-button" data-aos="fade-up" data-aos-delay="200">
+            Enviar un Email
+        </a>
+        
+        <a href="https://linkedin.com/in/tu-usuario" class="link-social" data-aos="fade-up" data-aos-delay="300" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Matías Gaglio · Portfolio personal · Desarrollado con HTML/CSS · Render</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 50,
+    });
+  </script>
+
+</body>
+</html>
