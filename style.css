@@ -8,18 +8,15 @@
 /* ======================== */
 :root {
     --color-fondo: #121212;
+    --color-fondo-rgb: 18, 18, 18; /* RGB para fondos transparentes */
     --color-superficie: #1E1E1E;
     --color-texto: #E0E0E0;
     --color-texto-sec: #A0A0A0;
-    --color-acento: #00E0FF;       /* Cian eléctrico */
-    --color-acento-rgb: 0, 224, 255; /* Versión RGB para sombras transparentes */
+    --color-acento: #00E0FF;        /* Cian eléctrico */
+    --color-acento-rgb: 0, 224, 255; /* Versión RGB para sombras */
 
     --font-principal: 'Inter', sans-serif;
     --font-titulos: 'Poppins', sans-serif;
-}
-
-.navbar a.accent {
-  color: #00E0FF;
 }
 
 /* Reseteo básico */
@@ -38,7 +35,7 @@ body {
     color: var(--color-texto);
     font-family: var(--font-principal);
     line-height: 1.6;
-    overflow-x: hidden; /* Previene scroll horizontal por animaciones */
+    overflow-x: hidden; /* Previene scroll horizontal */
 }
 
 .container {
@@ -70,14 +67,14 @@ img {
     display: block;
 }
 
-/* ======================== */
-/* 2. COMPONENTES           */
-/* ======================== */
-
 .accent {
     color: var(--color-acento);
     font-weight: 700;
 }
+
+/* ======================== */
+/* 2. COMPONENTES           */
+/* ======================== */
 
 .cta-button {
     display: inline-block;
@@ -105,26 +102,31 @@ img {
     background-color: rgba(var(--color-acento-rgb), 0.1);
 }
 
-/* ======================== */
-/* 3. LAYOUT & SECCIONES    */
-/* ======================== */
+/* ================================================= */
+/* 3. LAYOUT & SECCIONES (DESKTOP)                   */
+/* ================================================= */
 
-/* --- Barra de Navegación --- */
+/* --- Barra de Navegación (REESCRITA) --- */
 .navbar {
-    background-color: rgba(18, 18, 18, 0.8); /* Fondo semi-transparente */
-    backdrop-filter: blur(10px); /* Efecto "glass" */
-    border-bottom: 1px solid var(--color-superficie);
-    padding: 1.5rem 0;
+    padding: 1rem 0; /* Más delgada */
+    min-height: 70px;
+    display: flex;
+    align-items: center;
     position: fixed;
-    width: 100%;
     top: 0;
-    z-index: 100;
+    left: 0;
+    right: 0;
+    background-color: rgba(var(--color-fondo-rgb), 0.85); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    border-bottom: 1px solid var(--color-superficie);
 }
 
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .nav-logo {
@@ -141,7 +143,7 @@ img {
 }
 
 .navbar nav li {
-    margin-left: 1.5rem; /* <-- Reducido de 2rem */
+    margin-left: 1.5rem;
 }
 
 .navbar nav a {
@@ -155,14 +157,38 @@ img {
     color: var(--color-acento);
 }
 
+.navbar a.accent {
+    color: var(--color-acento);
+}
+
+/* --- Botón Hamburguesa (Oculto en Desktop) --- */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001; /* Encima del menú */
+    position: relative;
+}
+
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: var(--color-texto);
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
 /* --- Hero (Portada) --- */
 .hero {
-    min-height: 90vh; /* Usamos min-height para asegurar que cubre la pantalla */
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding-top: 5rem; /* Espacio para el navbar fijo */
+    padding-top: 70px; /* Espacio para el navbar fijo (70px de min-height) */
 }
 
 .hero-titulo {
@@ -180,9 +206,7 @@ img {
     margin: 0 auto 2.5rem auto;
 }
 
-/* ==================================================================== */
-/* 4. CASOS DE ESTUDIO (Layout Título Full-Width) - SECCIÓN MODIFICADA  */
-/* ==================================================================== */
+/* --- Casos de Estudio --- */
 .casos-estudio .seccion-descripcion {
     text-align: center;
     font-size: 1.1rem;
@@ -193,19 +217,17 @@ img {
 .caso-card-link {
     text-decoration: none;
     color: inherit;
-    display: block; /* Asegura que ocupe todo el espacio */
+    display: block;
 }
 
 .caso-card {
-    display: block; /* Ya no es un grid principal */
+    display: block;
     background-color: var(--color-superficie);
-    padding: 2.5rem 3rem; /* Ajuste de padding */
+    padding: 2.5rem 3rem;
     border-radius: 10px;
     margin-bottom: 3rem;
-    border: 1px solid transparent; /* Borde sutil */
-    
-    /* Transición para el hover */
-    transition: transform 0.3s ease-out, 
+    border: 1px solid transparent;
+    transition: transform 0.3s ease-out,
                 box-shadow 0.3s ease-out,
                 border-color 0.3s ease-out;
 }
@@ -216,7 +238,6 @@ img {
     border-color: rgba(var(--color-acento-rgb), 0.3);
 }
 
-/* Título y Categoría (Ancho Completo) */
 .caso-categoria {
     display: inline-block;
     font-family: var(--font-titulos);
@@ -228,13 +249,12 @@ img {
 }
 
 .caso-card h3 {
-    font-size: 2.1rem; /* Un poco más grande */
-    margin-bottom: 1.5rem; /* Espacio después del título */
-    margin-top: 0; /* Reseteo */
-    text-align: left; /* Asegura que no herede text-align: center */
+    font-size: 2.1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+    text-align: left;
 }
 
-/* Grid de Contenido (2 Columnas) */
 .caso-card-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -261,21 +281,16 @@ img {
     border-radius: 5px;
 }
 
-/* Layout invertido */
 .caso-card.reverse .caso-card-grid {
-    direction: rtl; 
+    direction: rtl;
 }
 .caso-card.reverse .caso-card-grid > * {
-    direction: ltr; 
+    direction: ltr;
 }
-/* ======================== */
-/* FIN SECCIÓN MODIFICADA   */
-/* ======================== */
-
 
 /* --- Habilidades --- */
 .habilidades {
-    background-color: var(--color-superficie); /* Fondo de sección */
+    background-color: var(--color-superficie);
 }
 
 .habilidades-grid {
@@ -337,75 +352,99 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* ======================== */
-/* 4. ANIMACIONES DE CARGA  */
-/* ======================== */
+/* ================================================= */
+/* 4. ANIMACIONES (AOS)                              */
+/* ================================================= */
 
-/* Definición de la animación */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Aplicación a los elementos del Hero */
-.hero > * {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
-}
-
-/* Efecto escalonado (Stagger) para el Hero */
-.hero-titulo { animation-delay: 0.2s; }
-.hero-subtitulo { animation-delay: 0.4s; }
-.hero .cta-button { animation-delay: 0.6s; }
-
-/* Aplicación a las Cards */
-.caso-card {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
-}
-
-/* Efecto escalonado (Stagger) para las Cards 
-   Usamos nth-child(3), (4), (5) porque h2 y p son los primeros 2 hijos */
-.casos-estudio .container > .caso-card-link:nth-child(3) .caso-card {
-    animation-delay: 0.2s;
-}
-.casos-estudio .container > .caso-card-link:nth-child(4) .caso-card {
-    animation-delay: 0.4s;
-}
-.casos-estudio .container > .caso-card-link:nth-child(5) .caso-card {
-    animation-delay: 0.6s;
-}
+/* Ya no se necesita CSS para @keyframes. 
+   La librería AOS (AOS.init()) se encarga de esto 
+   usando los atributos 'data-aos' en el HTML.
+*/
 
 
-/* ======================== */
-/* 5. RESPONSIVE (CELULAR)  */
-/* ======================== */
+/* ================================================= */
+/* 5. RESPONSIVE (MÓVIL Y TABLET)                    */
+/* ================================================= */
+
+/* --- Breakpoint Principal: Tablet y Móvil (Vertical) --- */
 @media (max-width: 768px) {
     h1 { font-size: 3rem; }
     h2 { font-size: 2rem; }
 
-    .navbar .container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .navbar nav li {
-        margin-left: 1rem;
-    }
-
+    /* Mueve el hero hacia abajo para que no quede tapado por la navbar fija */
     .hero {
+        padding-top: 100px; /* Más espacio para navbar */
         min-height: 70vh;
-        padding-top: 10rem; /* Más espacio por el navbar más alto */
     }
     .hero-titulo { font-size: 2.5rem; }
     .hero-subtitulo { font-size: 1.1rem; }
+    
+    /* --- Estilos del Menú Hamburguesa --- */
+    
+    .nav-toggle {
+        display: block; /* Muestra el botón */
+    }
+    
+    /* Oculta la navegación de desktop */
+    .navbar nav {
+        display: none;
+    }
 
-    /* CAMBIO: Responsive para el nuevo layout de card */
+    /* Estilos del menú desplegable */
+    .nav-menu {
+        display: block; /* Asegura que sea visible cuando se active */
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        max-width: 350px;
+        height: 100vh;
+        background-color: var(--color-superficie);
+        z-index: 1000;
+        transform: translateX(100%); /* Oculto por defecto */
+        transition: transform 0.3s ease-in-out;
+        padding-top: 6rem;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+    }
+    
+    .nav-menu ul {
+        flex-direction: column; /* Apila los links */
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .nav-menu ul li {
+        margin-left: 0; /* Resetea el margen */
+    }
+    
+    .nav-menu ul li a {
+        font-size: 1.25rem;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+    }
+    
+    /* --- Estilos del Menú Abierto --- */
+    
+    .navbar.nav-open .nav-menu {
+        transform: translateX(0); /* Muestra el menú */
+    }
+    
+    /* Transforma la hamburguesa en una 'X' */
+    .navbar.nav-open .nav-toggle .hamburger-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: var(--color-acento);
+    }
+    .navbar.nav-open .nav-toggle .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .navbar.nav-open .nav-toggle .hamburger-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--color-acento);
+    }
+
+    /* --- Responsive de Contenido --- */
+
     .caso-card,
     .caso-card.reverse {
         padding: 2rem;
@@ -424,119 +463,39 @@ footer p {
     .caso-card h3 {
         font-size: 1.8rem; /* Ajuste para móvil */
     }
-    /* FIN CAMBIO Responsive */
-
 
     .habilidades-grid {
         grid-template-columns: 1fr; /* Apila las columnas */
     }
-
-/* ================================================= */
-/* CSS AÑADIDO: Navbar más chica y Menú Hamburguesa */
-/* ================================================= */
-
-/* 1. Hace la navbar más chica (menos padding vertical) */
-.navbar {
-    padding: 1rem 0; /* Reduce el padding (puedes ajustarlo) */
-    min-height: 70px; /* Fija una altura mínima */
-    display: flex;
-    align-items: center;
-    position: fixed; /* Mantiene la navbar fija en el top */
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(var(--color-fondo-rgb), 0.85); /* Fondo semi-transparente */
-    backdrop-filter: blur(10px);
-    z-index: 999;
 }
 
-/* 2. Ajusta el contenedor de la navbar para alinear logo y botón */
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
 
-/* 3. Estilos del botón hamburguesa */
-.nav-toggle {
-    display: none; /* Oculto en desktop por defecto */
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001; /* Siempre encima del menú */
-    position: relative;
-}
-.hamburger-line {
-    display: block;
-    width: 24px;
-    height: 3px;
-    background-color: var(--color-texto);
-    margin: 5px 0;
-    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
-}
-
-/* 4. Estilos del menú desplegable (móvil) */
-@media (max-width: 768px) {
-    /* Mueve el hero hacia abajo para que no quede tapado por la navbar fija */
+/* --- Breakpoint Específico: Móvil (Horizontal) --- */
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    
+    /* Achica el Hero para que quepa en la pantalla corta */
     .hero {
-        padding-top: 100px; /* Ajusta según la altura de tu navbar */
+        min-height: 100vh; /* Ocupa la altura de la pantalla */
+        padding-top: 80px;
     }
-
-    .nav-toggle {
-        display: block; /* Muestra el botón en móvil */
+    .hero-titulo {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+    .hero-subtitulo {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
     
+    /* Ajusta el menú desplegable para pantallas cortas */
     .nav-menu {
-        position: fixed; /* Ocupa la pantalla */
-        top: 0;
-        right: 0;
-        width: 80%; /* Ancho del menú desplegable */
-        max-width: 350px;
-        height: 100vh;
-        background-color: var(--color-superficie); /* Color de fondo del menú */
-        z-index: 1000;
-        transform: translateX(100%); /* Oculto fuera de la pantalla */
-        transition: transform 0.3s ease-in-out;
-        padding-top: 6rem; /* Espacio para los links */
-        box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+        padding-top: 3.5rem; /* Menos padding superior */
+        overflow-y: auto; /* Permite scroll si hay muchos links */
     }
-    
     .nav-menu ul {
-        flex-direction: column; /* Apila los links */
-        align-items: center; /* Centra los links */
-        gap: 1.5rem;
-        width: 100%;
+        gap: 1rem; /* Menos espacio entre links */
     }
-    
     .nav-menu ul li a {
-        font-size: 1.25rem;
-        font-weight: 600;
-        padding: 0.5rem 1rem;
+        font-size: 1.1rem; /* Links más pequeños */
     }
-    
-    /* --- 5. Estilos del Menú Abierto --- */
-    
-    .navbar.nav-open .nav-menu {
-        transform: translateX(0); /* Muestra el menú */
-    }
-    
-    /* Transforma la hamburguesa en una 'X' */
-    .navbar.nav-open .nav-toggle .hamburger-line:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-        background-color: var(--color-acento);
-    }
-    .navbar.nav-open .nav-toggle .hamburger-line:nth-child(2) {
-        opacity: 0;
-    }
-    .navbar.nav-open .nav-toggle .hamburger-line:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-        background-color: var(--color-acento);
-    }
-}
-/* ================================================= */
-/* FIN CSS AÑADIDO                                   */
-/* ================================================= */
-
 }
