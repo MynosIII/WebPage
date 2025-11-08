@@ -430,4 +430,113 @@ footer p {
     .habilidades-grid {
         grid-template-columns: 1fr; /* Apila las columnas */
     }
+
+/* ================================================= */
+/* CSS AÑADIDO: Navbar más chica y Menú Hamburguesa */
+/* ================================================= */
+
+/* 1. Hace la navbar más chica (menos padding vertical) */
+.navbar {
+    padding: 1rem 0; /* Reduce el padding (puedes ajustarlo) */
+    min-height: 70px; /* Fija una altura mínima */
+    display: flex;
+    align-items: center;
+    position: fixed; /* Mantiene la navbar fija en el top */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(var(--color-fondo-rgb), 0.85); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+
+/* 2. Ajusta el contenedor de la navbar para alinear logo y botón */
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* 3. Estilos del botón hamburguesa */
+.nav-toggle {
+    display: none; /* Oculto en desktop por defecto */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001; /* Siempre encima del menú */
+    position: relative;
+}
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: var(--color-texto);
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* 4. Estilos del menú desplegable (móvil) */
+@media (max-width: 768px) {
+    /* Mueve el hero hacia abajo para que no quede tapado por la navbar fija */
+    .hero {
+        padding-top: 100px; /* Ajusta según la altura de tu navbar */
+    }
+
+    .nav-toggle {
+        display: block; /* Muestra el botón en móvil */
+    }
+    
+    .nav-menu {
+        position: fixed; /* Ocupa la pantalla */
+        top: 0;
+        right: 0;
+        width: 80%; /* Ancho del menú desplegable */
+        max-width: 350px;
+        height: 100vh;
+        background-color: var(--color-superficie); /* Color de fondo del menú */
+        z-index: 1000;
+        transform: translateX(100%); /* Oculto fuera de la pantalla */
+        transition: transform 0.3s ease-in-out;
+        padding-top: 6rem; /* Espacio para los links */
+        box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+    }
+    
+    .nav-menu ul {
+        flex-direction: column; /* Apila los links */
+        align-items: center; /* Centra los links */
+        gap: 1.5rem;
+        width: 100%;
+    }
+    
+    .nav-menu ul li a {
+        font-size: 1.25rem;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+    }
+    
+    /* --- 5. Estilos del Menú Abierto --- */
+    
+    .navbar.nav-open .nav-menu {
+        transform: translateX(0); /* Muestra el menú */
+    }
+    
+    /* Transforma la hamburguesa en una 'X' */
+    .navbar.nav-open .nav-toggle .hamburger-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: var(--color-acento);
+    }
+    .navbar.nav-open .nav-toggle .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .navbar.nav-open .nav-toggle .hamburger-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--color-acento);
+    }
+}
+/* ================================================= */
+/* FIN CSS AÑADIDO                                   */
+/* ================================================= */
+
 }
