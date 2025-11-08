@@ -481,11 +481,6 @@ footer p {
         display: block; /* Muestra el botón */
     }
     
-    /* Oculta la navegación de desktop */
-    .navbar nav {
-        display: none;
-    }
-
     /* Estilos del menú desplegable */
     .nav-menu {
         display: block;
@@ -595,3 +590,4 @@ footer p {
         font-size: 1.1rem;
     }
 }
+
