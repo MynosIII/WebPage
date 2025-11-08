@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600&display=swap');
+:root {
+  --font-principal: 'Inter', sans-serif;
+  --font-titulos: 'Poppins', sans-serif;
+}
+
 
 /* ======================== */
 /* 1. VARIABLES Y GLOBALES  */
@@ -1097,4 +1101,5 @@ footer p { color: var(--color-texto-sec); font-size: 0.9rem; }
         height: calc(100vh - 70px);
     }
 }
+
 
