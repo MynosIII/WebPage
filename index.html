@@ -410,6 +410,20 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          // Alterna la clase en el <header> (navbar)
+          document.querySelector('.navbar').classList.toggle('nav-open');
+          
+          // Alterna atributos ARIA para accesibilidad
+          const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', !isExpanded);
+          navToggle.setAttribute('aria-label', isExpanded ? 'Abrir menú' : 'Cerrar menú');
+        });
+      }
       const carousel = document.querySelector('.carousel');
       const prevBtn = document.querySelector('.carousel-prev');
       const nextBtn = document.querySelector('.carousel-next');
@@ -445,6 +459,7 @@
 </body>
 
 </html>
+
 
 
 
