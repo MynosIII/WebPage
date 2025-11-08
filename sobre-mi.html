@@ -9,325 +9,28 @@
   <link rel="stylesheet" href="style.css" />
   
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-  <style>
-    /* --- 1. Hero (Sobre Mí) --- */
-    .about-hero {
-        padding: 10rem 0 6rem 0;
-        background-color: var(--color-superficie);
-        border-bottom: 1px solid var(--color-fondo);
-    }
-    .navbar .container {
-      max-width: 100%;
-      /* Opcional: ajusta el padding si lo quieres más cerca */
-      /* padding-left: 1rem; */
-      /* padding-right: 1rem; */
-        }
-    .about-hero .container {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        align-items: center;
-        gap: 3rem;
-    }
-    .about-hero h1 {
-        font-size: 3.5rem;
-        margin-bottom: 0.5rem;
-        background: linear-gradient(90deg, #FFFFFF, var(--color-acento));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .about-hero p {
-        font-size: 1.25rem;
-        color: var(--color-texto-sec);
-        max-width: 500px;
-    }
-    .about-hero-img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-        border-radius: 8px;
-        border: 2px solid var(--color-superficie);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        justify-self: end;
-    }
-
-    /* --- 2. Cuerpo Principal (Biografía y Sidebar) --- */
-    .about-layout {
-        display: grid;
-        grid-template-columns: 2.5fr 1fr; 
-        gap: 4rem;
-        padding: 6rem 0 6rem 0; /* Espacio arriba y abajo */
-    }
-    .about-main-content {
-        line-height: 1.7; 
-        font-size: 1.1rem;
-        color: var(--color-texto-sec); 
-    }
-    .about-main-content p {
-        margin-bottom: 1.5rem;
-        color: var(--color-texto-sec);
-    }
-    .about-main-content > h2 {
-        font-size: 2.5rem;
-        color: #FFFFFF;
-        margin-bottom: 1.5rem;
-        text-align: left;
-    }
-
-    /* --- 3. Sidebar --- */
-    .sidebar {
-        background-color: var(--color-superficie);
-        padding: 2rem;
-        border-radius: 10px;
-        border: 1px solid rgba(var(--color-acento-rgb), 0.2);
-        /* CAMBIO: Eliminado 'position: sticky' para arreglar el layout.
-          La barra ahora es más corta y no necesita ser pegajosa.
-        */
-        height: fit-content; /* Se ajusta al contenido */
-    }
-    .sidebar h3 {
-        color: var(--color-acento);
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 1rem;
-    }
-    .sidebar-item {
-        margin-bottom: 1.5rem;
-    }
-    .sidebar-item strong {
-        display: block;
-        color: var(--color-texto);
-        font-size: 1.05rem;
-        margin-bottom: 0.35rem;
-    }
-    .sidebar-item span {
-        color: var(--color-texto-sec);
-        font-size: 0.95rem;
-        line-height: 1.4;
-    }
-    .sidebar .cta-button {
-        display: block;
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-    /* Elimina el margen del último item para alinear botones */
-    .sidebar .sidebar-item:last-of-type {
-        margin-bottom: 2rem;
-    }
-
-    /* --- 4. NUEVA SECCIÓN: Stack Tecnológico --- */
-    .stack-section {
-        padding: 0 0 6rem 0;
-        background-color: var(--color-fondo); /* Fondo negro base */
-    }
-    .stack-section h2 {
-        text-align: left;
-        margin-bottom: 3rem;
-    }
-    /* Reusamos .expertise-grid para el layout */
-    .stack-card {
-        /* Reusa .expertise-card pero con menos padding */
-        background-color: var(--color-superficie);
-        padding: 2rem;
-        border-radius: 10px;
-        border: 1px solid var(--color-superficie);
-    }
-    .stack-card h3 {
-        color: var(--color-acento);
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    .stack-card ul {
-        list-style: none;
-        padding-left: 0;
-    }
-    .stack-card li {
-        color: var(--color-texto-sec);
-        margin-bottom: 0.75rem;
-        font-size: 1rem;
-        font-family: var(--font-principal);
-    }
-
-
-    /* --- 5. Bloque "Qué hago hoy" --- */
-    .expertise-section {
-        padding: 6rem 0;
-        background-color: var(--color-superficie); /* Fondo gris para variar */
-    }
-    .expertise-section h2 {
-        text-align: left;
-        margin-bottom: 3rem;
-    }
-    .expertise-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-    .expertise-card {
-        background-color: var(--color-fondo); /* Tarjetas negras sobre fondo gris */
-        padding: 2rem;
-        border-radius: 10px;
-        border: 1px solid transparent;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-    .expertise-card:hover {
-        transform: scale(1.03); 
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
-        border-color: rgba(var(--color-acento-rgb), 0.3);
-    }
-    .expertise-card h3 {
-        color: var(--color-acento);
-        font-size: 1.5rem;
-    }
-    .expertise-card ul {
-        list-style: none;
-        padding-left: 0;
-    }
-    .expertise-card li {
-        color: var(--color-texto-sec);
-        margin-bottom: 0.5rem;
-        position: relative;
-        padding-left: 1.5rem;
-    }
-    .expertise-card li::before {
-        content: '✓';
-        color: var(--color-acento);
-        position: absolute;
-        left: 0;
-    }
-
-    /* --- 6. Sección "Líneas que exploro" --- */
-    .research-section {
-        background-color: var(--color-fondo); /* Fondo negro */
-        padding: 6rem 0;
-    }
-    .research-section h2 {
-        text-align: left;
-        margin-bottom: 3rem;
-    }
-    .research-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-    }
-    .research-block {
-        background-color: var(--color-superficie); /* Tarjetas grises */
-        padding: 2.5rem;
-        border-radius: 10px;
-    }
-    .research-block h3 {
-        font-size: 1.75rem;
-    }
-    .research-block p {
-        color: var(--color-texto-sec);
-        font-size: 1.1rem;
-    }
-
-    /* --- 7. Sección "Formación" --- */
-    .formacion-section {
-        padding: 6rem 0;
-        background-color: var(--color-superficie); /* Fondo gris */
-    }
-    .formacion-section h2 {
-        text-align: left;
-        margin-bottom: 3rem;
-    }
-    .formacion-card {
-        background-color: var(--color-fondo); /* Tarjetas negras */
-        padding: 2rem;
-        border-radius: 10px;
-        border: 1px solid transparent;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-        text-align: center; 
-    }
-    .formacion-card:hover {
-        transform: scale(1.03); 
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
-        border-color: rgba(var(--color-acento-rgb), 0.3);
-    }
-    .formacion-logo-wrapper {
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-    }
-    .formacion-logo-wrapper img {
-        max-height: 100%;
-        max-width: 150px;
-        object-fit: contain;
-    }
-    .formacion-card h3 {
-        color: var(--color-acento);
-        font-size: 1.5rem;
-    }
-    .formacion-card ul {
-        list-style: none;
-        padding-left: 0;
-        text-align: left;
-    }
-    .formacion-card li {
-        color: var(--color-texto-sec);
-        margin-bottom: 0.5rem;
-        position: relative;
-        padding-left: 1.5rem;
-    }
-    .formacion-card li::before {
-        content: '✓'; 
-        color: var(--color-acento);
-        position: absolute;
-        left: 0;
-    }
-
-    /* --- 8. Responsive --- */
-    @media (max-width: 992px) {
-        .about-layout {
-            grid-template-columns: 1fr; /* Apila texto y sidebar */
-        }
-        .sidebar {
-            position: relative;
-            top: 0;
-            margin-top: 4rem; 
-        }
-        .expertise-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .about-hero .container {
-            grid-template-columns: 1fr;
-            text-align: center;
-        }
-        .about-hero-img {
-            justify-self: center;
-            order: -1;
-            margin-bottom: 2rem;
-        }
-        .about-hero h1 { font-size: 2.5rem; }
-        .about-hero p { font-size: 1.1rem; }
-
-        .research-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-  </style>
 </head>
 <body>
 
   <header class="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">Matías Gaglio.</a>
-      <nav>
+      <a href="index.html" class="nav-logo">Matías Gaglio.</a> 
+      
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <nav class="nav-menu">
         <ul>
-          <li><a href="index.html" class="accent">Home</a></li> <li><a href="ecommerce.html">Ecommerce</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ecommerce.html">Ecommerce</a></li>
           <li><a href="creatives.html">Creatives</a></li>
           <li><a href="consultora.html">Consultora de Opinión</a></li>
           <li><a href="otros.html">Otros proyectos</a></li>
           <li><a href="SEO.html">ChatMatias</a></li>
-          <li><a href="sobre-mi.html">Sobre Mi</a></li>
-          <li><a href="#" aria-label="Cambiar idioma a Inglés">ES | EN</a></li>
+          <li><a href="sobre-mi.html" class="accent">Sobre Mi</a></li> <li><a href="#" aria-label="Cambiar idioma a Inglés">ES | EN</a></li>
         </ul>
       </nav>
     </div>
@@ -392,69 +95,75 @@
         </aside>
 
       </div>
-    </div> <section class="stack-section">
+    </div> 
+    
+    <section class="stack-section">
       <div class="container">
         <h2 data-aos="fade-up">Stack Tecnológico</h2>
         
-        <div class="expertise-grid">
-          
-          <article class="stack-card" data-aos="fade-up" data-aos-delay="100">
-            <h3>Data & Programming</h3>
-            <ul>
-              <li>Excel (Avanzado)</li>
-              <li>SQL</li>
-              <li>Python</li>
-              <li>Rstudio</li>
-              <li>PowerBI</li>
-              <li>Helium 10</li>
-              <li>JungleScout</li>
-              <li>HTML</li>
-              <li>JavaScript</li>
-              <li>Google Console</li>
-              <li>Shluex</li>
-            </ul>
-          </article>
-          
-          <article class="stack-card" data-aos="fade-up" data-aos-delay="200">
-            <h3>Marketing & E-com</h3>
-            <ul>
-              <li>Amazon Seller Central</li>
-              <li>Google Ads</li>
-              <li>Meta Ads</li>
-              <li>Semrush</li>
-              <li>GA4</li>
-              <li>Klaviyo</li>
-              <li>Shopify</li>
-              <li>Ahrefs</li>
-              <li>Keeppa</li>
-              <li>StackLine</li>
-              <li>Xnurtra</li>
-              <li>Repricer</li>
-            </ul>
-          </article>
+        <div class="carousel-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <button class="carousel-arrow carousel-prev" aria-label="Slide anterior">&#8249;</button>
+            <button class="carousel-arrow carousel-next" aria-label="Siguiente slide">&#8250;</button>
 
-          <article class="stack-card" data-aos="fade-up" data-aos-delay="300">
-            <h3>Creative</h3>
-            <ul>
-              <li>Premiere Pro</li>
-              <li>After Effects</li>
-              <li>Photoshop</li>
-              <li>Illustrator</li>
-              <li>Blender</li>
-              <li>Cinema 4D</li>
-              <li>Audacity</li>
-              <li>FL Studio</li>
-              <li>Nuke</li>
-              <li>Reaper</li>
-              <li>Audition</li>
-              <li>PowerPoint</li>
-            </ul>
-          </article>
+            <div class="carousel" aria-label="Stack Tecnológico">
+                
+                <article class="stack-card carousel-item">
+                    <h3>Data & Programming</h3>
+                    <ul>
+                      <li>Excel (Avanzado)</li>
+                      <li>SQL</li>
+                      <li>Python</li>
+                      <li>Rstudio</li>
+                      <li>PowerBI</li>
+                      <li>Helium 10</li>
+                      <li>JungleScout</li>
+                      <li>HTML</li>
+                      <li>JavaScript</li>
+                      <li>Google Console</li>
+                      <li>Shluex</li>
+                    </ul>
+                </article>
+                
+                <article class="stack-card carousel-item">
+                    <h3>Marketing & E-com</h3>
+                    <ul>
+                      <li>Amazon Seller Central</li>
+                      <li>Google Ads</li>
+                      <li>Meta Ads</li>
+                      <li>Semrush</li>
+                      <li>GA4</li>
+                      <li>Klaviyo</li>
+                      <li>Shopify</li>
+                      <li>Ahrefs</li>
+                      <li>Keeppa</li>
+                      <li>StackLine</li>
+                      <li>Xnurtra</li>
+                      <li>Repricer</li>
+                    </ul>
+                </article>
 
+                <article class="stack-card carousel-item">
+                    <h3>Creative</h3>
+                    <ul>
+                      <li>Premiere Pro</li>
+                      <li>After Effects</li>
+                      <li>Photoshop</li>
+                      <li>Illustrator</li>
+                      <li>Blender</li>
+                      <li>Cinema 4D</li>
+                      <li>Audacity</li>
+                      <li>FL Studio</li>
+                      <li>Nuke</li>
+                      <li>Reaper</li>
+                      <li>Audition</li>
+                      <li>PowerPoint</li>
+                    </ul>
+                </article>
+
+            </div>
         </div>
       </div>
     </section>
-
     <section class="expertise-section">
       <div class="container">
         <h2 data-aos="fade-up">Qué hago hoy</h2>
@@ -570,7 +279,7 @@
             Enviar un Email
         </a>
         
-        <a href="https://linkedin.com/in/tu-usuario" class="link-social" data-aos="fade-up" data-aos-delay="300" target="_blank" rel="noopener noreferrer">
+        <a href="httpsis://linkedin.com/in/matiasignaciogaglio" class="link-social" data-aos="fade-up" data-aos-delay="300" target="_blank" rel="noopener noreferrer">
             LinkedIn
         </a>
       </div>
@@ -585,14 +294,121 @@
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 50,
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Inicializa las animaciones AOS
+      AOS.init({
+          duration: 800,
+          once: true,
+          offset: 50,
+      });
+
+      // 2. CÓDIGO DEL MENÚ HAMBURGUESA
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          document.querySelector('.navbar').classList.toggle('nav-open');
+          const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', !isExpanded);
+          navToggle.setAttribute('aria-label', isExpanded ? 'Abrir menú' : 'Cerrar menú');
+        });
+      }
+
+      // 3. CÓDIGO DEL CARRUSEL (¡Ahora controla el de Stack!)
+      const carousel = document.querySelector('.carousel');
+      const prevBtn = document.querySelector('.carousel-prev');
+      const nextBtn = document.querySelector('.carousel-next');
+      if (carousel && prevBtn && nextBtn) {
+        const scrollStep = () => {
+          const firstItem = carousel.querySelector('.carousel-item, .testimonio-card, .stack-card'); // Funciona para todos
+          if (firstItem) {
+            const itemWidth = firstItem.offsetWidth;
+            const style = window.getComputedStyle(carousel);
+            const gap = parseFloat(style.gap) || 24;
+            return itemWidth + gap;
+          }
+          return carousel.clientWidth * 0.8;
+        };
+        nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollStep(), behavior: 'smooth' }));
+        prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollStep(), behavior: 'smooth' }));
+      }
+
+      // 4. LÓGICA DE FILTRADO (para creatives.html)
+      const chips = document.querySelectorAll('.filter-chip');
+      const items = document.querySelectorAll('.grid-item');
+      if (chips.length > 0 && items.length > 0) {
+        chips.forEach(chip => {
+          chip.addEventListener('click', () => {
+            chips.forEach(c => c.classList.remove('is-active'));
+            chip.classList.add('is-active');
+            const filter = chip.dataset.filter;
+            items.forEach(item => {
+              item.style.display = (filter === 'all' || item.classList.contains('cat-' + filter)) ? '' : 'none';
+            });
+          });
+        });
+      }
+
+      // 5. LÓGICA DE LIGHTBOX (para creatives.html)
+      const lb = document.getElementById('lightbox');
+      const lbContent = document.getElementById('lightbox-content');
+      const closeBtn = document.getElementById('lightbox-close');
+      let lastFocusedItem = null;
+      if (lb && lbContent && closeBtn) {
+        function openLightbox(html, triggerElement) {
+          const oldContent = lbContent.querySelector('img, .video-embed');
+          if (oldContent) oldContent.remove();
+          lbContent.insertAdjacentHTML('beforeend', html);
+          lb.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          closeBtn.focus();
+          lastFocusedItem = triggerElement;
+        }
+        function closeLightbox() {
+          lb.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          const iframe = lbContent.querySelector('iframe');
+          if (iframe) {
+            iframe.src = iframe.src.replace("&autoplay=1", "");
+            iframe.remove();
+          }
+          if (lastFocusedItem) {
+            lastFocusedItem.focus();
+            lastFocusedItem = null;
+          }
+        }
+        closeBtn.addEventListener('click', closeLightbox);
+        lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape' && lb.getAttribute('aria-hidden') === 'false') closeLightbox();
+        });
+        items.forEach(item => {
+          item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const videoId = item.dataset.videoId;
+            const fullSrc = item.dataset.fullSrc;
+            const altText = item.querySelector('img.thumb').alt.replace('Miniatura ', '');
+            if (videoId) {
+              const videoHtml = `<div class="video-embed"><iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" title="Video: ${altText}" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`;
+              openLightbox(videoHtml, item);
+            } else if (fullSrc) {
+              const imgHtml = `<img src="${fullSrc}" alt="${altText}" />`;
+              openLightbox(imgHtml, item);
+            }
+          });
+        });
+      }
+      
+      // 6. LÓGICA DEL CHAT (para SEO.html)
+      const chatForm = document.getElementById('chat-form');
+      if (chatForm) {
+          // Si estamos en la página del chat, aquí iría toda la lógica del chat.
+          // (Se omite aquí porque el script es unificado, pero la lógica está a salvo)
+      }
+      
     });
   </script>
 
 </body>
-
 </html>
-
