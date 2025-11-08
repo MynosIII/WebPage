@@ -9,166 +9,24 @@
   <link rel="stylesheet" href="style.css" />
   
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-  <style>
-    /* --- Controles de Galería (Chips) --- */
-    .gallery-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: center;
-      margin: 1rem 0 3rem;
-    }
-    .filter-chip {
-      border: 1px solid var(--color-acento);
-      background: transparent;
-      color: var(--color-acento);
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      cursor: pointer;
-      font-weight: 700;
-      font-family: var(--font-titulos);
-      transition: background-color 0.2s ease;
-    }
-    .navbar .container {
-      max-width: 100%;
-      /* Opcional: ajusta el padding si lo quieres más cerca */
-      /* padding-left: 1rem; */
-      /* padding-right: 1rem; */
-        }
-    
-    .filter-chip.is-active,
-    .filter-chip:hover { 
-      background: rgba(var(--color-acento-rgb), 0.12); 
-    }
-
-    /* --- Grid Visual --- */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem; /* Un poco más de gap que en el brief para que respire */
-    }
-    /* Responsive del Grid */
-    @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 520px) { .grid { grid-template-columns: 1fr; } }
-
-    /* --- Items del Grid --- */
-    .grid-item { 
-      cursor: zoom-in; 
-      text-decoration: none;
-    }
-    .grid-item figcaption {
-      color: var(--color-texto-sec);
-      font-size: 0.95rem;
-      margin-top: 0.75rem;
-      font-family: var(--font-principal);
-    }
-    .ratio-box {
-      position: relative;
-      width: 100%;
-      /* Técnica de padding-bottom para aspect ratio */
-      padding-bottom: calc(100% / (var(--ratio, 4/3))); /* Default 4:3 */
-      overflow: hidden;
-      border-radius: 8px;
-      background: var(--color-superficie);
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-      border: 1px solid var(--color-superficie);
-    }
-    .ratio-box .thumb {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    /* Efecto Hover (reusa el de .caso-card) */
-    .grid-item:hover .ratio-box {
-      transform: scale(1.03);
-      box-shadow: 0 10px 30px -12px rgba(0,0,0,.5);
-      border-color: rgba(var(--color-acento-rgb), .3);
-    }
-
-    /* --- Lightbox / Modal --- */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.85); /* Más oscuro */
-      backdrop-filter: blur(8px);
-      display: grid;
-      place-items: center;
-      z-index: 9999;
-      transition: opacity .25s ease;
-      opacity: 0;
-      pointer-events: none;
-      padding: 1rem;
-    }
-    .lightbox[aria-hidden="false"] { 
-      opacity: 1; 
-      pointer-events: auto; 
-    }
-    .lightbox-content {
-      position: relative;
-      max-width: min(1200px, 92vw);
-      max-height: 90vh;
-      width: 100%;
-    }
-    .lightbox-content img, 
-    .lightbox-content .video-embed {
-      width: 100%;
-      height: auto;
-      display: block;
-      max-height: 90vh;
-      object-fit: contain;
-      border-radius: 10px;
-    }
-    /* Contenedor responsive 16:9 para video */
-    .video-embed {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 */
-      height: 0;
-      overflow: hidden;
-    }
-    .video-embed iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    /* Botón de Cierre */
-    .lightbox-close {
-      position: absolute;
-      top: -44px; /* Un poco más de espacio */
-      right: 0;
-      background: var(--color-superficie);
-      color: var(--color-texto);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 999px;
-      width: 38px;
-      height: 38px;
-      cursor: pointer;
-      font-size: 24px;
-      line-height: 38px;
-      transition: transform 0.2s ease, background-color 0.2s ease;
-    }
-    .lightbox-close:hover {
-      transform: scale(1.1);
-      background-color: var(--color-acento);
-      color: var(--color-fondo);
-    }
-  </style>
 </head>
 <body>
 
   <header class="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">Matías Gaglio.</a> <nav>
+      <a href="index.html" class="nav-logo">Matías Gaglio.</a> 
+      
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <nav class="nav-menu">
         <ul>
-          <li><a href="index.html" class="accent">Home</a></li> <li><a href="ecommerce.html">Ecommerce</a></li>
-          <li><a href="creatives.html">Creatives</a></li>
-          <li><a href="consultora.html">Consultora de Opinión</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ecommerce.html">Ecommerce</a></li>
+          <li><a href="creatives.html" class="accent">Creatives</a></li> <li><a href="consultora.html">Consultora de Opinión</a></li>
           <li><a href="otros.html">Otros proyectos</a></li>
           <li><a href="SEO.html">ChatMatias</a></li>
           <li><a href="sobre-mi.html">Sobre Mi</a></li>
@@ -177,6 +35,7 @@
       </nav>
     </div>
   </header>
+
   <main>
     <section class="hero" id="hero">
       <div class="container">
@@ -300,18 +159,53 @@
   </div>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  
   <script>
-    AOS.init({ duration: 800, once: true, offset: 50 });
-
     document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Inicializa las animaciones AOS
+      AOS.init({
+          duration: 800,
+          once: true,
+          offset: 50,
+      });
 
-      // --- Lógica de Filtrado ---
+      // 2. CÓDIGO DEL MENÚ HAMBURGUESA
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          document.querySelector('.navbar').classList.toggle('nav-open');
+          const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', !isExpanded);
+          navToggle.setAttribute('aria-label', isExpanded ? 'Abrir menú' : 'Cerrar menú');
+        });
+      }
+
+      // 3. CÓDIGO DEL CARRUSEL (para otras páginas)
+      const carousel = document.querySelector('.carousel');
+      const prevBtn = document.querySelector('.carousel-prev');
+      const nextBtn = document.querySelector('.carousel-next');
+
+      if (carousel && prevBtn && nextBtn) {
+        const scrollStep = () => {
+          const firstItem = carousel.querySelector('.carousel-item, .testimonio-card'); // Funciona para ambos
+          if (firstItem) {
+            const itemWidth = firstItem.offsetWidth;
+            const style = window.getComputedStyle(carousel);
+            const gap = parseFloat(style.gap) || 24;
+            return itemWidth + gap;
+          }
+          return carousel.clientWidth * 0.8;
+        };
+        nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollStep(), behavior: 'smooth' }));
+        prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollStep(), behavior: 'smooth' }));
+      }
+
+      // 4. LÓGICA DE FILTRADO (de esta página)
       const chips = document.querySelectorAll('.filter-chip');
       const items = document.querySelectorAll('.grid-item');
-      const grid = document.querySelector('.grid');
-      let lastFocusedItem = null; // Para accesibilidad del lightbox
-
+      
       if (chips.length > 0 && items.length > 0) {
         chips.forEach(chip => {
           chip.addEventListener('click', () => {
@@ -320,7 +214,6 @@
             const filter = chip.dataset.filter;
             
             items.forEach(item => {
-              // Animación de fade out antes de ocultar
               if (filter === 'all' || item.classList.contains('cat-' + filter)) {
                 item.style.display = '';
               } else {
@@ -331,39 +224,34 @@
         });
       }
 
-      // --- Lógica de Lightbox ---
+      // 5. LÓGICA DE LIGHTBOX (de esta página)
       const lb = document.getElementById('lightbox');
       const lbContent = document.getElementById('lightbox-content');
       const closeBtn = document.getElementById('lightbox-close');
+      let lastFocusedItem = null; // Para accesibilidad
 
       if (lb && lbContent && closeBtn) {
         
         function openLightbox(html, triggerElement) {
-          // Limpiar contenido anterior
           const oldContent = lbContent.querySelector('img, .video-embed');
           if (oldContent) {
             oldContent.remove();
           }
-          
           lbContent.insertAdjacentHTML('beforeend', html);
           lb.setAttribute('aria-hidden', 'false');
           document.body.style.overflow = 'hidden';
-          closeBtn.focus(); // Accesibilidad: Mover foco al botón de cerrar
-          lastFocusedItem = triggerElement; // Guardar qué item abrió el modal
+          closeBtn.focus();
+          lastFocusedItem = triggerElement;
         }
 
         function closeLightbox() {
           lb.setAttribute('aria-hidden', 'true');
           document.body.style.overflow = '';
-
-          // Detener videos de YouTube al cerrar
           const iframe = lbContent.querySelector('iframe');
           if (iframe) {
             iframe.src = iframe.src.replace("&autoplay=1", "");
             iframe.remove();
           }
-          
-          // Devolver el foco al item que abrió el modal
           if (lastFocusedItem) {
             lastFocusedItem.focus();
             lastFocusedItem = null;
@@ -371,22 +259,15 @@
         }
 
         closeBtn.addEventListener('click', closeLightbox);
-        
-        // Cerrar al hacer clic en el fondo oscuro
         lb.addEventListener('click', e => {
-          if (e.target === lb) {
-            closeLightbox();
-          }
+          if (e.target === lb) closeLightbox();
         });
-        
-        // Cerrar con tecla Escape
         document.addEventListener('keydown', e => {
           if (e.key === 'Escape' && lb.getAttribute('aria-hidden') === 'false') {
             closeLightbox();
           }
         });
 
-        // Asignar evento click a cada item del grid
         items.forEach(item => {
           item.addEventListener('click', (e) => {
             e.preventDefault();
@@ -413,11 +294,9 @@
           });
         });
       }
-
+      
     });
   </script>
 
 </body>
-
 </html>
-
