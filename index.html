@@ -9,204 +9,34 @@
   <link rel="stylesheet" href="style.css" />
   
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-  <style>
-    /* --- Estilos para la sección About (Punto 2) --- */
-    .about-content {
-        max-width: 720px; /* Mantiene la legibilidad */
-        margin: 0 auto;
-        text-align: center;
-    }
-    .about-content p {
-        font-size: 1.1rem;
-        color: var(--color-texto-sec);
-        margin-bottom: 1.5rem;
-    }
-
-    .navbar .container {
-      max-width: 100%;
-      /* Opcional: ajusta el padding si lo quieres más cerca */
-      /* padding-left: 1rem; */
-      /* padding-right: 1rem; */
-        }
-    
-    .stack-list {
-        font-family: var(--font-titulos);
-        font-weight: 600;
-        font-size: 1rem;
-        color: var(--color-acento);
-        margin-bottom: 2rem;
-    }
-
-    /* --- Estilos para el Carousel (Punto 2 y 6) --- */
-    .carousel-wrapper {
-        position: relative;
-    }
-    .carousel {
-        display: flex;
-        gap: 1.5rem;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding: 0.5rem 0.5rem 1.5rem 0.5rem; /* Espacio para sombra y scrollbar */
-        
-        /* Estilos de Scrollbar */
-        -webkit-overflow-scrolling: touch;
-        scrollbar-color: var(--color-acento) var(--color-superficie);
-    }
-    .carousel::-webkit-scrollbar {
-        height: 8px;
-    }
-    .carousel::-webkit-scrollbar-track {
-        background: var(--color-superficie);
-        border-radius: 4px;
-    }
-    .carousel::-webkit-scrollbar-thumb {
-        background: var(--color-acento);
-        border-radius: 4px;
-    }
-    
-    .carousel-item {
-        scroll-snap-align: start;
-        flex: 0 0 32%; /* Muestra ~3 items en desktop */
-        min-width: 300px;
-        background-color: var(--color-superficie);
-        border-radius: 8px;
-        border: 1px solid var(--color-superficie);
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-    .carousel-item:hover {
-        /* Reusa el mismo efecto de .caso-card:hover */
-        transform: scale(1.03); 
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
-        border-color: rgba(var(--color-acento-rgb), 0.3);
-    }
-    .carousel-item a {
-        text-decoration: none;
-        color: inherit;
-        display: block;
-    }
-    .carousel-item img {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        border-bottom: 2px solid var(--color-fondo);
-    }
-    .carousel-item-label {
-        padding: 1rem 1.25rem;
-        font-family: var(--font-titulos);
-        font-weight: 600;
-        color: var(--color-texto);
-        text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    
-    /* Controles del Carousel */
-    .carousel-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        background-color: rgba(30, 30, 30, 0.8); /* --color-superficie con alfa */
-        backdrop-filter: blur(5px);
-        border: 1px solid var(--color-texto-sec);
-        color: var(--color-acento);
-        border-radius: 50%;
-        width: 44px;
-        height: 44px;
-        cursor: pointer;
-        font-size: 1.8rem;
-        font-family: var(--font-principal);
-        line-height: 44px;
-        text-align: center;
-        transition: background-color 0.2s ease, transform 0.2s ease;
-    }
-    .carousel-arrow:hover {
-        background-color: var(--color-superficie);
-        transform: translateY(-50%) scale(1.1);
-    }
-    .carousel-prev { left: -22px; }
-    .carousel-next { right: -22px; }
-
-    /* Responsive del Carousel */
-    @media (max-width: 768px) {
-        .carousel-item {
-            flex-basis: 80%; /* Muestra 1 y un poco del siguiente */
-            min-width: 0;
-        }
-        /* Oculta flechas en móvil, se usa swipe */
-        .carousel-arrow { 
-            display: none; 
-        }
-    }
-
-    /* ================================================= */
-    /* CSS AÑADIDO: Nuevo Layout de Tarjetas (Título Full) */
-    /* ================================================= */
-    .caso-card {
-        display: block; /* Ya no es un grid */
-        padding: 2.5rem 3rem; /* Ajuste de padding */
-    }
-    .caso-card h3 {
-        font-size: 2.1rem; /* Un poco más grande */
-        margin-bottom: 1.5rem; /* Espacio después del título */
-        margin-top: 0; /* Reseteo */
-    }
-    .caso-card-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem 3rem;
-        align-items: start; /* Mejor que 'center' para este layout */
-    }
-    .caso-card.reverse .caso-card-grid {
-        direction: rtl; 
-    }
-    .caso-card.reverse .caso-card-grid > * {
-        direction: ltr; 
-    }
-    @media (max-width: 768px) {
-        .caso-card-grid,
-        .caso-card.reverse .caso-card-grid {
-            grid-template-columns: 1fr; /* Apila las columnas */
-            direction: ltr; /* Resetea la dirección */
-        }
-        .caso-card .caso-visual {
-            grid-row: 1; /* Pone la imagen siempre arriba (debajo del título) */
-        }
-    }
-    /* ================================================= */
-    /* FIN CSS AÑADIDO                                   */
-    /* ================================================= */
-  </style>
 </head>
 <body>
 
   <header class="navbar">
-  <div class="container">
-    <a href="index.html" class="nav-logo">Matías Gaglio.</a> 
-    
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
+    <div class="container">
+      <a href="index.html" class="nav-logo">Matías Gaglio.</a> 
+      
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
 
-    <nav class="nav-menu">
-      <ul>
-        <li><a href="index.html" class="accent">Home</a></li>
-        <li><a href="ecommerce.html">Ecommerce</a></li>
-        <li><a href="creatives.html">Creatives</a></li>
-        <li><a href="consultora.html">Consultora de Opinión</a></li>
-        <li><a href="otros.html">Otros proyectos</a></li>
-        <li><a href="SEO.html">ChatMatias</a></li>
-        <li><a href="sobre-mi.html">Sobre Mi</a></li>
-        <li><a href="#" aria-label="Cambiar idioma a Inglés">ES | EN</a></li>
-      </ul>
-    </nav>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html" class="accent">Home</a></li>
+          <li><a href="ecommerce.html">Ecommerce</a></li>
+          <li><a href="creatives.html">Creatives</a></li>
+          <li><a href="consultora.html">Consultora de Opinión</a></li>
+          <li><a href="otros.html">Otros proyectos</a></li>
+          <li><a href="SEO.html">ChatMatias</a></li>
+          <li><a href="sobre-mi.html">Sobre Mi</a></li>
+          <li><a href="#" aria-label="Cambiar idioma a Inglés">ES | EN</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
+
   <main>
     
     <section id="hero" class="hero">
@@ -320,6 +150,7 @@
         <a href="ecommerce.html" class="cta-button" data-aos="fade-up">Ver todo el trabajo Ecommerce</a>
       </div>
     </section>
+    
     <section id="carousel-section" class="creatives">
       <div class="container">
         <h2 data-aos="fade-up">Creativos (Video & Imagen)</h2>
@@ -401,65 +232,57 @@
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    AOS.init({
-        duration: 800, // Duración de la animación en ms
-        once: true,    // La animación ocurre solo una vez por elemento
-        offset: 50,    // Se dispara 50px antes de que el elemento llegue
-    });
-  </script>
-
-  <script>
     document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Inicializa las animaciones AOS
+      AOS.init({
+          duration: 800,
+          once: true,
+          offset: 50,
+      });
+
+      // 2. CÓDIGO DEL MENÚ HAMBURGUESA
       const navToggle = document.querySelector('.nav-toggle');
       const navMenu = document.querySelector('.nav-menu');
       
       if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
-          // Alterna la clase en el <header> (navbar)
           document.querySelector('.navbar').classList.toggle('nav-open');
-          
-          // Alterna atributos ARIA para accesibilidad
           const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
           navToggle.setAttribute('aria-expanded', !isExpanded);
           navToggle.setAttribute('aria-label', isExpanded ? 'Abrir menú' : 'Cerrar menú');
         });
       }
+
+      // 3. CÓDIGO DEL CARRUSEL
       const carousel = document.querySelector('.carousel');
       const prevBtn = document.querySelector('.carousel-prev');
       const nextBtn = document.querySelector('.carousel-next');
 
       if (carousel && prevBtn && nextBtn) {
         
-        // Función para calcular cuánto scrollear
         const scrollStep = () => {
-          // Scrollea el ancho de un item + el gap
           const firstItem = carousel.querySelector('.carousel-item');
           if (firstItem) {
             const itemWidth = firstItem.offsetWidth;
             const style = window.getComputedStyle(carousel);
-            const gap = parseFloat(style.gap) || 24; // 24px = 1.5rem
+            const gap = parseFloat(style.gap) || 24; // 1.5rem
             return itemWidth + gap;
           }
           return carousel.clientWidth * 0.8; // Fallback
         };
 
-        // Evento Click Siguiente
         nextBtn.addEventListener('click', () => {
           carousel.scrollBy({ left: scrollStep(), behavior: 'smooth' });
         });
 
-        // Evento Click Anterior
         prevBtn.addEventListener('click', () => {
           carousel.scrollBy({ left: -scrollStep(), behavior: 'smooth' });
         });
       }
+      
     });
   </script>
 
 </body>
-
 </html>
-
-
-
-
