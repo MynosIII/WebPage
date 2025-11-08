@@ -106,9 +106,9 @@ img {
 /* 3. LAYOUT & SECCIONES (DESKTOP)                   */
 /* ================================================= */
 
-/* --- Barra de Navegación (REESCRITA) --- */
+/* --- Barra de Navegación --- */
 .navbar {
-    padding: 1rem 0; /* Más delgada */
+    padding: 1rem 0;
     min-height: 70px;
     display: flex;
     align-items: center;
@@ -116,7 +116,7 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(var(--color-fondo-rgb), 0.85); /* Fondo semi-transparente */
+    background-color: rgba(var(--color-fondo-rgb), 0.85);
     backdrop-filter: blur(10px);
     z-index: 999;
     border-bottom: 1px solid var(--color-superficie);
@@ -127,6 +127,7 @@ img {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 100%; /* Asegura que ocupe todo el ancho */
 }
 
 .nav-logo {
@@ -204,6 +205,25 @@ img {
     color: var(--color-texto-sec);
     max-width: 700px;
     margin: 0 auto 2.5rem auto;
+}
+
+/* --- Sección About --- */
+.about-content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+.about-content p {
+    font-size: 1.1rem;
+    color: var(--color-texto-sec);
+    margin-bottom: 1.5rem;
+}
+.stack-list {
+    font-family: var(--font-titulos);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-acento);
+    margin-bottom: 2rem;
 }
 
 /* --- Casos de Estudio --- */
@@ -288,17 +308,107 @@ img {
     direction: ltr;
 }
 
-/* --- Habilidades --- */
+/* --- Carousel (Creatives) --- */
+.carousel-wrapper {
+    position: relative;
+}
+.carousel {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0.5rem 0.5rem 1.5rem 0.5rem; /* Espacio para sombra y scrollbar */
+    
+    /* Estilos de Scrollbar */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-color: var(--color-acento) var(--color-superficie);
+}
+.carousel::-webkit-scrollbar {
+    height: 8px;
+}
+.carousel::-webkit-scrollbar-track {
+    background: var(--color-superficie);
+    border-radius: 4px;
+}
+.carousel::-webkit-scrollbar-thumb {
+    background: var(--color-acento);
+    border-radius: 4px;
+}
+
+.carousel-item {
+    scroll-snap-align: start;
+    flex: 0 0 32%; /* Muestra ~3 items en desktop */
+    min-width: 300px;
+    background-color: var(--color-superficie);
+    border-radius: 8px;
+    border: 1px solid var(--color-superficie);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.carousel-item:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+    border-color: rgba(var(--color-acento-rgb), 0.3);
+}
+.carousel-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.carousel-item img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 2px solid var(--color-fondo);
+}
+.carousel-item-label {
+    padding: 1rem 1.25rem;
+    font-family: var(--font-titulos);
+    font-weight: 600;
+    color: var(--color-texto);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Controles del Carousel */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(30, 30, 30, 0.8); /* --color-superficie con alfa */
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--color-texto-sec);
+    color: var(--color-acento);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-family: var(--font-principal);
+    line-height: 44px;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.carousel-arrow:hover {
+    background-color: var(--color-superficie);
+    transform: translateY(-50%) scale(1.1);
+}
+.carousel-prev { left: -22px; }
+.carousel-next { right: -22px; }
+
+
+/* --- Habilidades (Asumiendo que existen en otra página) --- */
 .habilidades {
     background-color: var(--color-superficie);
 }
-
 .habilidades-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
 }
-
 .habilidad-columna h3 {
     color: var(--color-acento);
     font-size: 1.5rem;
@@ -306,11 +416,9 @@ img {
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
 }
-
 .habilidad-columna ul {
     list-style: none;
 }
-
 .habilidad-columna li {
     font-size: 1.1rem;
     margin-bottom: 0.75rem;
@@ -353,17 +461,7 @@ footer p {
 }
 
 /* ================================================= */
-/* 4. ANIMACIONES (AOS)                              */
-/* ================================================= */
-
-/* Ya no se necesita CSS para @keyframes. 
-   La librería AOS (AOS.init()) se encarga de esto 
-   usando los atributos 'data-aos' en el HTML.
-*/
-
-
-/* ================================================= */
-/* 5. RESPONSIVE (MÓVIL Y TABLET)                    */
+/* 4. RESPONSIVE (MÓVIL Y TABLET)                    */
 /* ================================================= */
 
 /* --- Breakpoint Principal: Tablet y Móvil (Vertical) --- */
@@ -371,16 +469,14 @@ footer p {
     h1 { font-size: 3rem; }
     h2 { font-size: 2rem; }
 
-    /* Mueve el hero hacia abajo para que no quede tapado por la navbar fija */
     .hero {
-        padding-top: 100px; /* Más espacio para navbar */
+        padding-top: 100px;
         min-height: 70vh;
     }
     .hero-titulo { font-size: 2.5rem; }
     .hero-subtitulo { font-size: 1.1rem; }
     
     /* --- Estilos del Menú Hamburguesa --- */
-    
     .nav-toggle {
         display: block; /* Muestra el botón */
     }
@@ -392,7 +488,7 @@ footer p {
 
     /* Estilos del menú desplegable */
     .nav-menu {
-        display: block; /* Asegura que sea visible cuando se active */
+        display: block;
         position: fixed;
         top: 0;
         right: 0;
@@ -408,16 +504,14 @@ footer p {
     }
     
     .nav-menu ul {
-        flex-direction: column; /* Apila los links */
+        flex-direction: column;
         align-items: center;
         gap: 1.5rem;
         width: 100%;
     }
-
     .nav-menu ul li {
-        margin-left: 0; /* Resetea el margen */
+        margin-left: 0;
     }
-    
     .nav-menu ul li a {
         font-size: 1.25rem;
         font-weight: 600;
@@ -425,12 +519,9 @@ footer p {
     }
     
     /* --- Estilos del Menú Abierto --- */
-    
     .navbar.nav-open .nav-menu {
         transform: translateX(0); /* Muestra el menú */
     }
-    
-    /* Transforma la hamburguesa en una 'X' */
     .navbar.nav-open .nav-toggle .hamburger-line:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
         background-color: var(--color-acento);
@@ -444,7 +535,6 @@ footer p {
     }
 
     /* --- Responsive de Contenido --- */
-
     .caso-card,
     .caso-card.reverse {
         padding: 2rem;
@@ -452,20 +542,28 @@ footer p {
 
     .caso-card-grid,
     .caso-card.reverse .caso-card-grid {
-        grid-template-columns: 1fr; /* Apila las columnas */
-        direction: ltr; /* Resetea la dirección */
+        grid-template-columns: 1fr;
+        direction: ltr;
     }
 
     .caso-card .caso-visual {
         grid-row: 1; /* Pone la imagen siempre arriba (debajo del título) */
     }
-
     .caso-card h3 {
-        font-size: 1.8rem; /* Ajuste para móvil */
+        font-size: 1.8rem;
     }
 
     .habilidades-grid {
-        grid-template-columns: 1fr; /* Apila las columnas */
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Carousel Responsive --- */
+    .carousel-item {
+        flex-basis: 80%; /* Muestra 1 y un poco del siguiente */
+        min-width: 0;
+    }
+    .carousel-arrow { 
+        display: none; /* Oculta flechas en móvil, se usa swipe */
     }
 }
 
@@ -473,9 +571,8 @@ footer p {
 /* --- Breakpoint Específico: Móvil (Horizontal) --- */
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
     
-    /* Achica el Hero para que quepa en la pantalla corta */
     .hero {
-        min-height: 100vh; /* Ocupa la altura de la pantalla */
+        min-height: 100vh;
         padding-top: 80px;
     }
     .hero-titulo {
@@ -487,15 +584,14 @@ footer p {
         margin-bottom: 1.5rem;
     }
     
-    /* Ajusta el menú desplegable para pantallas cortas */
     .nav-menu {
-        padding-top: 3.5rem; /* Menos padding superior */
+        padding-top: 3.5rem;
         overflow-y: auto; /* Permite scroll si hay muchos links */
     }
     .nav-menu ul {
-        gap: 1rem; /* Menos espacio entre links */
+        gap: 1rem;
     }
     .nav-menu ul li a {
-        font-size: 1.1rem; /* Links más pequeños */
+        font-size: 1.1rem;
     }
 }
