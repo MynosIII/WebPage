@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Amazon promotions and aged inventory strategy</title>
+  <desc id="desc">Graphic explaining a combined 10 percent coupon and 15 percent price discount strategy to improve aged inventory sell-through while preserving perceived value.</desc>
+  <rect width="1600" height="900" fill="#f7f8fb"/>
+  <rect x="95" y="75" width="1410" height="750" rx="36" fill="#ffffff" stroke="#d8dde8" stroke-width="3"/>
+  <text x="145" y="158" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="800" fill="#172033">Promotions + Inventory Strategy</text>
+  <text x="145" y="211" font-family="Inter, Arial, sans-serif" font-size="26" fill="#596579">Using Amazon deal visibility to accelerate sell-through without blindly discounting everything</text>
+  <g transform="translate(170 300)">
+    <rect width="360" height="360" rx="32" fill="#fff4e7"/>
+    <text x="35" y="70" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800" fill="#172033">10% Coupon</text>
+    <text x="35" y="125" font-family="Inter, Arial, sans-serif" font-size="24" fill="#596579">Red badge visibility</text>
+    <text x="35" y="165" font-family="Inter, Arial, sans-serif" font-size="24" fill="#596579">Stronger shopper signal</text>
+    <circle cx="180" cy="245" r="70" fill="#ff7a1a"/>
+    <text x="128" y="262" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="900" fill="#ffffff">10%</text>
+  </g>
+  <text x="585" y="498" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800" fill="#596579">+</text>
+  <g transform="translate(670 300)">
+    <rect width="360" height="360" rx="32" fill="#eef4ff"/>
+    <text x="35" y="70" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800" fill="#172033">15% Discount</text>
+    <text x="35" y="125" font-family="Inter, Arial, sans-serif" font-size="24" fill="#596579">Strike-through pricing</text>
+    <text x="35" y="165" font-family="Inter, Arial, sans-serif" font-size="24" fill="#596579">Offer clarity on listing</text>
+    <rect x="95" y="210" width="170" height="90" rx="18" fill="#223b8f"/>
+    <text x="127" y="268" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="900" fill="#ffffff">15%</text>
+  </g>
+  <text x="1085" y="498" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800" fill="#596579">=</text>
+  <g transform="translate(1170 300)">
+    <rect width="260" height="360" rx="32" fill="#f2f9f4"/>
+    <text x="35" y="70" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800" fill="#172033">Sell-through</text>
+    <text x="35" y="125" font-family="Inter, Arial, sans-serif" font-size="24" fill="#596579">Aged inventory</text>
+    <text x="35" y="165" font-family="Inter, Arial, sans-serif" font-size="24" fill="#596579">Discontinued SKUs</text>
+    <path d="M55 260 L115 315 L215 210" fill="none" stroke="#16834a" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="170" y="735" font-family="Inter, Arial, sans-serif" font-size="26" fill="#596579">Built for Amazon account management: pricing, catalog, content, and advertising working as one system.</text>
+</svg>
