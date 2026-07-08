@@ -49,6 +49,11 @@
     .amazon-buy { background:#ffa41c; }
     .delivery-note { color:var(--color-texto-sec); font-size:.75rem; line-height:1.35; margin-top:.65rem; }
     .ebc-stack { display:grid; gap:1rem; margin-top:1.25rem; }
+    .ebc-panel { position:relative; overflow:hidden; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; }
+    .ebc-panel img { border:0; border-radius:0; }
+    .ebc-copy-card { position:absolute; top:0; right:0; width:min(32%, 240px); height:100%; padding:1rem; background:rgba(255,255,255,.92); color:#111; display:flex; flex-direction:column; justify-content:center; }
+    .ebc-copy-card h4 { margin:0 0 .45rem; color:#000; font-size:1rem; line-height:1.15; text-align:left; }
+    .ebc-copy-card p { margin:0; color:#111; font-size:.78rem; line-height:1.35; }
     .comparison-shell { width:min(1120px, calc(100vw - 3rem)); margin:2rem 0 0 50%; transform:translateX(-50%); overflow:hidden; }
     img-comparison-slider { width:100%; --divider-color: var(--color-acento); --default-handle-color: var(--color-acento); --divider-width: 3px; outline:none; }
     img-comparison-slider [slot="first"], img-comparison-slider [slot="second"] { width:100%; }
@@ -56,7 +61,7 @@
     .old-mockup { filter:saturate(.78); }
     .text-compare { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:1.5rem; }
     .text-compare article { background:var(--color-superficie); border-radius:8px; padding:1.25rem; border:1px solid rgba(255,255,255,.08); }
-    @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } }
+    @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } .ebc-copy-card { position:static; width:auto; height:auto; } }
   </style>
 </head>
 <body>
@@ -146,7 +151,7 @@
         <p>For this category, effective A+ content should not be treated as decoration. It should work as a technical sales page inside Amazon. The modules should help the customer understand the product family, compare specifications, confirm compatibility, and see why the product is reliable for its intended use.</p>
         <p>The ideal A+ structure for this project includes a product identity module, a fitment and compatibility module, a specification breakdown, and a durability or testing module. Together, these sections create a more complete customer journey than bullets alone can provide.</p>
         <div class="wire-diagram"><span>Hero</span><i>-&gt;</i><span>Specs</span><i>-&gt;</i><span>Fitment</span><i>-&gt;</i><span>Durability</span><i>-&gt;</i><span>Brand trust</span></div>
-      </div><div class="ebc-stack"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New A+ hero module"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New A+ specification module"></div></div>
+      </div><div class="ebc-stack"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New A+ brand module"><img src="Revolution/EBC/New EBC/8fae7bda-deda-4ab8-b719-ba1de54ad308.__CR0,0,2021,1250_PT0_SX970_V1___.jpg" alt="New A+ fitment module"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New A+ repeated brand module"><div class="ebc-panel"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New A+ salt spray module"><div class="ebc-copy-card"><h4>One Piece &amp; 72 Hours Strict Salt Spray Test</h4><p>Engineered with a superior one-piece construction, our lug nuts outperform and outlast OEM designs. They undergo a rigorous 72-hour salt spray test, guaranteeing exceptional rust and corrosion resistance.</p></div></div></div></div>
     </article></div></section>
 
     <section id="kpi-validation"><div class="container"><article class="caso-card" data-aos="fade-up">
@@ -193,7 +198,7 @@
       <p class="amazon-brand">Visit the store</p>
       <h3 class="amazon-title">24pcs 14x1.5 Lug Nuts Spline Wheel Nut Set Replacement</h3>
       <div class="rating-row"><span class="stars">4.0/5</span><span>Sample rating</span></div>
-      <ul class="amazon-bullets"><li>Fits many wheels and vehicles. Check size before ordering.</li><li>Durable metal lug nuts with black finish.</li><li>Spline style lug nut set for replacement and maintenance.</li><li>Professional installation recommended.</li></ul>
+      <ul class="amazon-bullets"><li>EXACT FACTORY SPECIFICATIONS: Includes 4 Pcs 1.50 Inch Thick, Forged 6061 T6 Aluminum, 8 on 200mm wheel bolt pattern, 142mm ID, M14x1.5 thread, black finish.</li><li>PRECISION FITMENT: Spacer is specifically designed to fit vehicles with 8 on 200mm bolt pattern. This item fits Ford 2005+ F-350 Super Duty and Ram 2019+ 3500.</li><li>UPGRADED PERFORMANCE: Widen vehicle base for a more aggressive stance while improving handling and stability.</li><li>EASY INSTALLATION: Designed for a quick, hassle-free setup, made to fit precisely onto the vehicle hub.</li><li>PREMIUM MATERIALS: Machined from forged 6061 T6 aluminum on CNC lathes and milling machines, then anodized black for corrosion resistance.</li></ul>
     </div>
     <aside class="buy-box" aria-label="Visual-only Amazon action panel">
       <span class="price">$39.99</span>
@@ -203,12 +208,13 @@
       <select id="qty-old" aria-label="Old mockup quantity"><option>1</option></select>
       <button class="amazon-action amazon-cart" type="button">Add to Cart</button>
       <button class="amazon-action amazon-buy" type="button">Buy Now</button>
-      <p class="delivery-note"><strong>Listing role:</strong> Original product-data presentation with weaker hierarchy.</p>
     </aside>
   </div>
   <div class="ebc-stack">
     <img src="Revolution/EBC/Old EBC/DetailHead__53K648L.jpg" alt="Old style EBC module">
-    <img src="Revolution/EBC/Old EBC/RetroSpec__53##48L.jpg" alt="Old style EBC detail module">
+    <img src="Revolution/EBC/Old EBC/RetroCons__53##48L.jpg" alt="Old style EBC construction module">
+    <img src="Revolution/EBC/Old EBC/RetroKsps__53##48L.jpg" alt="Old style EBC key specs module">
+    <img src="Revolution/EBC/Old EBC/RetroSpec__53##48L.jpg" alt="Old style EBC specification module">
   </div>
 </div></div><div slot="second">
 <div class="amazon-mockup">
@@ -228,7 +234,7 @@
       <p class="amazon-brand">Visit the store</p>
       <h3 class="amazon-title">M14x1.5 Spline Lug Nuts, 24-Pack Black Cone Seat Wheel Nuts for Aftermarket Wheels</h3>
       <div class="rating-row"><span class="stars">4.0/5</span><span>Sample rating</span></div>
-      <ul class="amazon-bullets"><li>Exact configuration: 24-piece M14x1.5 spline lug nut set with cone seat profile and black finish.</li><li>Designed for aftermarket wheels that require narrow spline-drive access; verify thread size and seat type before purchase.</li><li>Structured fitment language reduces uncertainty around vehicle compatibility and wrong-part returns.</li><li>Corrosion-resistant finish and hardened construction support durability, trust, and repeatable catalog messaging.</li></ul>
+      <ul class="amazon-bullets"><li>Lug Nuts for Ford and Lincoln Vehicles: fitment messaging is grouped by model family so shoppers can confirm compatibility faster.</li><li>Fitment for Ford models includes Bronco Sport, EcoSport, Escape, Fusion, and Ranger year ranges from the product content system.</li><li>Fitment for Lincoln models includes 2020+ Lincoln Corsair applications.</li><li>A precision-engineered lug nut set: complete set of 20 lug nuts, designed for OEM wheels, replacing factory parts CV6Z-1012-C and 611-303.</li><li>One-piece construction with a 72-hour strict salt spray test supports rust resistance, corrosion resistance, and all-weather trust.</li></ul>
     </div>
     <aside class="buy-box" aria-label="Visual-only Amazon action panel">
       <span class="price">$39.99</span>
@@ -238,12 +244,13 @@
       <select id="qty-new" aria-label="New mockup quantity"><option>1</option></select>
       <button class="amazon-action amazon-cart" type="button">Add to Cart</button>
       <button class="amazon-action amazon-buy" type="button">Buy Now</button>
-      <p class="delivery-note"><strong>Listing role:</strong> Optimized SEO, fitment confidence, visual hierarchy, and conversion flow.</p>
     </aside>
   </div>
   <div class="ebc-stack">
-    <img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New style EBC module">
-    <img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New style EBC detail module">
+    <img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New style EBC brand module">
+    <img src="Revolution/EBC/New EBC/8fae7bda-deda-4ab8-b719-ba1de54ad308.__CR0,0,2021,1250_PT0_SX970_V1___.jpg" alt="New style EBC fitment module">
+    <img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New style EBC repeated brand module">
+    <div class="ebc-panel"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New style EBC salt spray module"><div class="ebc-copy-card"><h4>One Piece &amp; 72 Hours Strict Salt Spray Test</h4><p>Engineered with a superior one-piece construction, our lug nuts outperform and outlast OEM designs. They undergo a rigorous 72-hour salt spray test, guaranteeing exceptional rust and corrosion resistance.</p></div></div>
   </div>
 </div></div></img-comparison-slider></div></article></div></section>
   </main>
