@@ -7,8 +7,6 @@
   <meta name="description" content="Amazon listing optimization case study: image system, SEO structure, EBC, KPIs, and a full before-after Amazon mockup." />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css" />
-  <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     .listing-case section { padding-top: 5rem; padding-bottom: 5rem; }
@@ -51,7 +49,7 @@
     .amazon-buy { background:#ffa41c; }
     .delivery-note { color:var(--color-texto-sec); font-size:.75rem; line-height:1.35; margin-top:.65rem; }
     .ebc-stack { display:grid; gap:1rem; margin-top:0; }
-    .comparison-shell [slot="second"] .ebc-stack { margin-top:18px; }
+    .comparison-layer.new .ebc-stack { margin-top:18px; }
     .ebc-module { width:100%; min-height:120px; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; overflow:hidden; }
     .ebc-module img { display:block; width:100%; height:auto; object-fit:cover; border:0; border-radius:0; }
     .ebc-panel { position:relative; overflow:hidden; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; }
@@ -68,17 +66,21 @@
     .ebc-inline h4 { margin:0 0 .55rem; color:var(--color-texto); font-size:1rem; line-height:1.2; text-align:left; }
     .ebc-inline p { margin:0; color:rgba(255,255,255,.76); font-size:.78rem; line-height:1.35; }
     .comparison-shell { width:min(1120px, calc(100vw - 3rem)); margin:2rem 0 0 50%; transform:translateX(-50%); overflow:hidden; isolation:isolate; }
-    img-comparison-slider { display:block; width:100%; --divider-color: transparent; --default-handle-color: transparent; --divider-width: 0; --default-handle-opacity:0; outline:none; }
-    img-comparison-slider [slot="first"], img-comparison-slider [slot="second"] { width:100%; max-width:none; }
-    .comparison-side { width:min(1120px, calc(100vw - 3rem)); max-width:none; }
-    .comparison-handle { width:34px; height:100%; min-height:100%; cursor:ew-resize; position:relative; display:flex; align-items:center; justify-content:center; touch-action:none; }
-    .comparison-handle::before { content:""; position:absolute; inset:0 auto; width:4px; border-radius:999px; background:var(--color-acento); box-shadow:0 0 0 1px rgba(0,0,0,.35), 0 0 18px rgba(var(--color-acento-rgb), .45); }
+    .comparison-labels { display:flex; justify-content:space-between; gap:1rem; margin-bottom:.75rem; color:var(--color-acento); font-weight:900; text-transform:uppercase; font-size:.78rem; letter-spacing:.08em; }
+    .comparison-frame { --split:50%; position:relative; width:100%; overflow:hidden; border-radius:8px; }
+    .comparison-layer { width:100%; max-width:none; }
+    .comparison-layer.old { position:relative; z-index:1; }
+    .comparison-layer.new { position:absolute; inset:0; z-index:2; clip-path:inset(0 0 0 var(--split)); }
+    .comparison-layer.new .amazon-mockup { min-height:100%; }
+    .comparison-handle { position:absolute; z-index:5; top:0; bottom:0; left:var(--split); width:34px; transform:translateX(-50%); cursor:ew-resize; display:flex; align-items:center; justify-content:center; touch-action:none; }
+    .comparison-handle::before { content:""; position:absolute; top:0; bottom:0; left:50%; width:4px; transform:translateX(-50%); border-radius:999px; background:var(--color-acento); box-shadow:0 0 0 1px rgba(0,0,0,.45), 0 0 18px rgba(var(--color-acento-rgb), .55); }
     .comparison-handle span { position:sticky; top:50%; width:42px; height:42px; border-radius:999px; background:var(--color-acento); border:3px solid #091012; box-shadow:0 12px 28px rgba(0,0,0,.45); }
     .comparison-handle span::before, .comparison-handle span::after { content:""; position:absolute; top:50%; width:7px; height:7px; border-top:2px solid #061010; border-left:2px solid #061010; }
     .comparison-handle span::before { left:10px; transform:translateY(-50%) rotate(-45deg); }
     .comparison-handle span::after { right:10px; transform:translateY(-50%) rotate(135deg); }
     .slot-label { display:inline-block; margin-bottom: .75rem; color: var(--color-acento); font-weight:900; text-transform:uppercase; font-size:.78rem; letter-spacing:.08em; }
-    .old-mockup { filter:saturate(.78); }
+    .comparison-frame .slot-label { display:none; }
+    .old-mockup { filter:none; }
     .text-compare { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:1.5rem; }
     .text-compare article { background:var(--color-superficie); border-radius:8px; padding:1.25rem; border:1px solid rgba(255,255,255,.08); }
     @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare, .ebc-inline { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-top { min-height:0; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } .ebc-copy-card { position:static; width:auto; height:auto; } }
@@ -199,7 +201,7 @@
 
     <section id="skills-demonstrated"><div class="container"><article class="caso-card reverse" data-aos="fade-up"><span class="caso-categoria">Skills demonstrated</span><h2>Skills demonstrated in this project</h2><p>This project demonstrates a combination of Amazon marketplace knowledge, SEO strategy, conversion thinking, creative direction, and technical automation. It required understanding the customer journey, the competitive landscape, the limitations of Amazon content, and the operational challenge of scaling high-quality listing assets across a catalog.</p><p>The work included Amazon title optimization, bullet-point restructuring, A+ / EBC planning, visual system design, competitive listing analysis, KPI interpretation, product-data structuring, and automation-assisted image production. The result was a more professional listing experience supported by measurable improvements in traffic, conversion, and sales.</p></article></div></section>
 
-    <section id="final-before-after-slider"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Before / After</span><h2>Final comparison: the listing experience before and after</h2><p>The final section of the page shows the clearest visual proof of the transformation: a slider comparing the previous Amazon-style listing experience with the refreshed version.</p><p>The comparison makes the improvement visible across the complete listing flow: image gallery, title, bullets, buy box, and A+ / EBC content.</p><div class="comparison-shell"><img-comparison-slider value="88" handle tabindex="0"><div slot="handle" class="comparison-handle" aria-hidden="true"><span></span></div><div slot="first" class="comparison-side">
+    <section id="final-before-after-slider"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Before / After</span><h2>Final comparison: the listing experience before and after</h2><p>The final section of the page shows the clearest visual proof of the transformation: a slider comparing the previous Amazon-style listing experience with the refreshed version.</p><p>The comparison makes the improvement visible across the complete listing flow: image gallery, title, bullets, buy box, and A+ / EBC content.</p><div class="comparison-shell"><div class="comparison-labels" aria-hidden="true"><span>Old Style</span><span>New Style</span></div><div class="comparison-frame" data-comparison-frame style="--split:50%;"><div class="comparison-layer old">
 <div class="amazon-mockup old-mockup">
   <span class="slot-label">Old Style</span>
   <div class="amazon-top">
@@ -235,7 +237,7 @@
     <div class="ebc-module"><img src="Revolution/EBC/Old EBC/RetroKsps__53%23%2348L.jpg" alt="Old style EBC key specs module"></div>
     <div class="ebc-module"><img src="Revolution/EBC/Old EBC/RetroSpec__53%23%2348L.jpg" alt="Old style EBC specification module"></div>
   </div>
-</div></div><div slot="second" class="comparison-side">
+</div></div><div class="comparison-layer new">
 <div class="amazon-mockup">
   <span class="slot-label">New Style</span>
   <div class="amazon-top">
@@ -272,7 +274,7 @@
     <div class="ebc-inline"><img src="Revolution/EBC/New EBC/b4a11566-8905-43c2-a612-ee09aabcf8a9.__CR2,0,1076,1076_PT0_SX300_V1___.jpg" alt="Green lug nut specifications"><div><h4>A Precision-Engineered Lug Nut Set</h4><p>As a US-owned business, we deliver precision-engineered quality you can trust. Your order arrives with a complete set of 20 lug nuts. Designed for OEM wheels. Replaces factory parts CV6Z-1012-C and 611-303.</p></div></div>
     <div class="ebc-panel"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New style EBC salt spray module"><div class="ebc-copy-card"><h4>One Piece &amp; 72 Hours Strict Salt Spray Test</h4><p>Engineered with a superior one-piece construction, our lug nuts outperform and outlast OEM designs. They undergo a rigorous 72-hour salt spray test, guaranteeing exceptional rust and corrosion resistance. This ensures a durable, all-weather finish for enhanced safety and peace of mind.</p></div></div>
   </div>
-</div></div></img-comparison-slider></div></article></div></section>
+</div></div><div class="comparison-handle" data-comparison-handle role="separator" aria-label="Drag to compare old and new listing" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"><span></span></div></div></div></article></div></section>
   </main>
 
   <footer><div class="container"><p>&copy; 2026 Matias Gaglio. Portfolio personal.</p></div></footer>
@@ -297,6 +299,41 @@
         gallery.querySelectorAll('.amazon-thumbs img').forEach((img) => img.classList.remove('is-active'));
         thumb.classList.add('is-active');
       };
+      document.querySelectorAll('[data-comparison-frame]').forEach((frame) => {
+        const handle = frame.querySelector('[data-comparison-handle]');
+        const layers = frame.querySelectorAll('.comparison-layer');
+        const setSplit = (clientX) => {
+          const rect = frame.getBoundingClientRect();
+          const percent = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+          frame.style.setProperty('--split', `${percent}%`);
+          handle?.setAttribute('aria-valuenow', Math.round(percent));
+        };
+        const syncHeight = () => {
+          const maxHeight = Math.max(...Array.from(layers, (layer) => layer.scrollHeight));
+          frame.style.minHeight = `${maxHeight}px`;
+        };
+        syncHeight();
+        frame.querySelectorAll('img').forEach((img) => img.addEventListener('load', syncHeight, { once: true }));
+        window.addEventListener('resize', syncHeight);
+        handle?.addEventListener('pointerdown', (event) => {
+          event.preventDefault();
+          handle.setPointerCapture?.(event.pointerId);
+          setSplit(event.clientX);
+        });
+        handle?.addEventListener('pointermove', (event) => {
+          if (!handle.hasPointerCapture?.(event.pointerId)) return;
+          setSplit(event.clientX);
+        });
+        handle?.addEventListener('keydown', (event) => {
+          if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+          event.preventDefault();
+          const current = parseFloat(handle.getAttribute('aria-valuenow') || '50');
+          const next = event.key === 'Home' ? 0 : event.key === 'End' ? 100 : current + (event.key === 'ArrowLeft' ? -5 : 5);
+          const percent = Math.max(0, Math.min(100, next));
+          frame.style.setProperty('--split', `${percent}%`);
+          handle.setAttribute('aria-valuenow', Math.round(percent));
+        });
+      });
       document.addEventListener('pointerdown', (event) => {
         const thumb = event.target.closest?.('.amazon-thumbs img');
         if (!thumb) return;
