@@ -29,7 +29,7 @@
     .amazon-mockup { color: var(--color-texto); overflow:hidden; min-width:0; }
     .amazon-top { display:grid; grid-template-columns: minmax(0, 48%) minmax(230px, 31%) minmax(178px, 17%); gap:1.25rem; align-items:start; min-height: 880px; }
     .amazon-gallery { display:grid; grid-template-columns: 54px minmax(0, 1fr); gap:.75rem; min-width:0; }
-    .amazon-thumbs { display:flex; flex-direction:column; gap:.5rem; }
+    .amazon-thumbs { display:flex; flex-direction:column; gap:.5rem; position:relative; z-index:3; }
     .amazon-thumbs img { aspect-ratio:1/1; object-fit:contain; padding:.2rem; cursor:pointer; }
     .amazon-thumbs img.is-active { border-color: var(--color-acento); box-shadow:0 0 0 2px rgba(var(--color-acento-rgb), .22); }
     .amazon-main-image { aspect-ratio:1/1; object-fit:contain !important; padding: .5rem; }
@@ -62,6 +62,10 @@
     .ebc-indexable h4 { margin:.2rem 0 .6rem; color:#111; font-size:1rem; line-height:1.2; text-align:left; }
     .ebc-indexable h5 { margin:.85rem 0 .35rem; color:#111; font-size:.86rem; line-height:1.2; text-transform:uppercase; letter-spacing:.02em; }
     .ebc-indexable p { margin:.25rem 0; color:#222; font-size:.78rem; line-height:1.35; }
+    .ebc-inline { display:grid; grid-template-columns: minmax(120px, 220px) minmax(0, 1fr); gap:1.25rem; align-items:center; background:#fff; color:#111; border-radius:6px; padding:1rem 1.1rem; border:1px solid rgba(255,255,255,.08); }
+    .ebc-inline img { width:100%; height:auto; border-radius:0; border:0; background:#fff; }
+    .ebc-inline h4 { margin:0 0 .55rem; color:#111; font-size:1rem; line-height:1.2; text-align:left; }
+    .ebc-inline p { margin:0; color:#222; font-size:.78rem; line-height:1.35; }
     .comparison-shell { width:min(1120px, calc(100vw - 3rem)); margin:2rem 0 0 50%; transform:translateX(-50%); overflow:hidden; }
     img-comparison-slider { width:100%; --divider-color: var(--color-acento); --default-handle-color: var(--color-acento); --divider-width: 3px; outline:none; }
     img-comparison-slider [slot="first"], img-comparison-slider [slot="second"] { width:100%; }
@@ -69,7 +73,7 @@
     .old-mockup { filter:saturate(.78); }
     .text-compare { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:1.5rem; }
     .text-compare article { background:var(--color-superficie); border-radius:8px; padding:1.25rem; border:1px solid rgba(255,255,255,.08); }
-    @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-top { min-height:0; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } .ebc-copy-card { position:static; width:auto; height:auto; } }
+    @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare, .ebc-inline { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-top { min-height:0; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } .ebc-copy-card { position:static; width:auto; height:auto; } }
   </style>
 </head>
 <body>
@@ -159,7 +163,7 @@
         <p>For this category, effective A+ content should not be treated as decoration. It should work as a technical sales page inside Amazon. The modules should help the customer understand the product family, compare specifications, confirm compatibility, and see why the product is reliable for its intended use.</p>
         <p>The ideal A+ structure for this project includes a product identity module, a fitment and compatibility module, a specification breakdown, and a durability or testing module. Together, these sections create a more complete customer journey than bullets alone can provide.</p>
         <div class="wire-diagram"><span>Hero</span><i>-&gt;</i><span>Specs</span><i>-&gt;</i><span>Fitment</span><i>-&gt;</i><span>Durability</span><i>-&gt;</i><span>Brand trust</span></div>
-      </div><div class="ebc-stack"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New A+ brand module"><img src="Revolution/EBC/New EBC/8fae7bda-deda-4ab8-b719-ba1de54ad308.__CR0,0,2021,1250_PT0_SX970_V1___.jpg" alt="New A+ fitment module"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New A+ repeated brand module"><div class="ebc-panel"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New A+ salt spray module"><div class="ebc-copy-card"><h4>One Piece &amp; 72 Hours Strict Salt Spray Test</h4><p>Engineered with a superior one-piece construction, our lug nuts outperform and outlast OEM designs. They undergo a rigorous 72-hour salt spray test, guaranteeing exceptional rust and corrosion resistance.</p></div></div></div></div>
+      </div><div class="ebc-stack"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New A+ brand module"><img src="Revolution/EBC/New EBC/8fae7bda-deda-4ab8-b719-ba1de54ad308.__CR0,0,2021,1250_PT0_SX970_V1___.jpg" alt="New A+ fitment module"><div class="ebc-inline"><img src="Revolution/EBC/New EBC/b4a11566-8905-43c2-a612-ee09aabcf8a9.__CR2,0,1076,1076_PT0_SX300_V1___.jpg" alt="Green lug nut specifications"><div><h4>A Precision-Engineered Lug Nut Set</h4><p>As a US-owned business, we deliver precision-engineered quality you can trust. Your order arrives with a complete set of 20 lug nuts. Designed for OEM wheels. Replaces factory parts CV6Z-1012-C and 611-303.</p></div></div><div class="ebc-panel"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New A+ salt spray module"><div class="ebc-copy-card"><h4>One Piece &amp; 72 Hours Strict Salt Spray Test</h4><p>Engineered with a superior one-piece construction, our lug nuts outperform and outlast OEM designs. They undergo a rigorous 72-hour salt spray test, guaranteeing exceptional rust and corrosion resistance.</p></div></div></div></div>
     </article></div></section>
 
     <section id="kpi-validation"><div class="container"><article class="caso-card" data-aos="fade-up">
@@ -258,8 +262,7 @@
     <div class="ebc-module"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New style EBC brand module"></div>
     <div class="ebc-module"><img src="Revolution/EBC/New EBC/8fae7bda-deda-4ab8-b719-ba1de54ad308.__CR0,0,2021,1250_PT0_SX970_V1___.jpg" alt="New style EBC fitment module"></div>
     <div class="ebc-indexable"><h4>Lug Nuts for Ford and Lincoln Vehicles</h4><h5>Fitment for the following Ford models</h5><p>2021+ Ford Bronco Sport: 2021 Ford Bronco Sport, 2022 Ford Bronco Sport, 2023 Ford Bronco Sport, 2024 Ford Bronco Sport, 2025 Ford Bronco Sport</p><p>2018-2022 Ford EcoSport: 2018 Ford EcoSport, 2019 Ford EcoSport, 2020 Ford EcoSport, 2021 Ford EcoSport, 2022 Ford EcoSport</p><p>2021+ Ford Escape: 2021 Ford Escape, 2022 Ford Escape, 2023 Ford Escape, 2024 Ford Escape, 2025 Ford Escape</p><p>2006-2020 Ford Fusion: 2006 Ford Fusion, 2007 Ford Fusion, 2008 Ford Fusion, 2009 Ford Fusion, 2010 Ford Fusion, 2011 Ford Fusion, 2012 Ford Fusion, 2013 Ford Fusion, 2014 Ford Fusion, 2015 Ford Fusion, 2016 Ford Fusion, 2017 Ford Fusion, 2018 Ford Fusion, 2019 Ford Fusion, 2020 Ford Fusion</p><p>2021+ Ford Ranger: 2021 Ford Ranger, 2022 Ford Ranger, 2023 Ford Ranger, 2024 Ford Ranger, 2025 Ford Ranger</p><h5>Fitment for the following Lincoln models</h5><p>2020+ Lincoln Corsair: 2020 Lincoln Corsair, 2021 Lincoln Corsair, 2022 Lincoln Corsair, 2023 Lincoln Corsair, 2024 Lincoln Corsair, 2025 Lincoln Corsair</p></div>
-    <div class="ebc-indexable"><h4>A Precision-Engineered Lug Nut Set</h4><p>As a US-owned business, we deliver precision-engineered quality you can trust. Your order arrives with a complete set of 20 lug nuts. Designed for OEM wheels. Replaces factory parts CV6Z-1012-C and 611-303.</p></div>
-    <div class="ebc-module"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New style EBC repeated brand module"></div>
+    <div class="ebc-inline"><img src="Revolution/EBC/New EBC/b4a11566-8905-43c2-a612-ee09aabcf8a9.__CR2,0,1076,1076_PT0_SX300_V1___.jpg" alt="Green lug nut specifications"><div><h4>A Precision-Engineered Lug Nut Set</h4><p>As a US-owned business, we deliver precision-engineered quality you can trust. Your order arrives with a complete set of 20 lug nuts. Designed for OEM wheels. Replaces factory parts CV6Z-1012-C and 611-303.</p></div></div>
     <div class="ebc-panel"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New style EBC salt spray module"><div class="ebc-copy-card"><h4>One Piece &amp; 72 Hours Strict Salt Spray Test</h4><p>Engineered with a superior one-piece construction, our lug nuts outperform and outlast OEM designs. They undergo a rigorous 72-hour salt spray test, guaranteeing exceptional rust and corrosion resistance. This ensures a durable, all-weather finish for enhanced safety and peace of mind.</p></div></div>
   </div>
 </div></div></img-comparison-slider></div></article></div></section>
@@ -278,26 +281,35 @@
         navToggle.setAttribute('aria-expanded', !isExpanded);
         navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
       });
-      document.querySelectorAll('.amazon-gallery').forEach((gallery) => {
-        const mainImage = gallery.querySelector('.amazon-main-image');
-        gallery.querySelectorAll('.amazon-thumbs img').forEach((thumb) => {
-          const selectImage = () => {
-            if (!mainImage) return;
-            mainImage.src = thumb.currentSrc || thumb.src;
-            mainImage.alt = thumb.alt.replace('thumbnail', 'product image');
-            gallery.querySelectorAll('.amazon-thumbs img').forEach((img) => img.classList.remove('is-active'));
-            thumb.classList.add('is-active');
-          };
-          thumb.addEventListener('click', selectImage);
-          thumb.addEventListener('pointerup', selectImage);
-          thumb.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-              event.preventDefault();
-              selectImage();
-            }
-          });
-        });
-      });
+      const selectGalleryImage = (thumb) => {
+        const gallery = thumb.closest('.amazon-gallery');
+        const mainImage = gallery?.querySelector('.amazon-main-image');
+        if (!gallery || !mainImage) return;
+        mainImage.src = thumb.currentSrc || thumb.src;
+        mainImage.alt = thumb.alt.replace('thumbnail', 'product image');
+        gallery.querySelectorAll('.amazon-thumbs img').forEach((img) => img.classList.remove('is-active'));
+        thumb.classList.add('is-active');
+      };
+      document.addEventListener('pointerdown', (event) => {
+        const thumb = event.target.closest?.('.amazon-thumbs img');
+        if (!thumb) return;
+        event.stopPropagation();
+        selectGalleryImage(thumb);
+      }, true);
+      document.addEventListener('click', (event) => {
+        const thumb = event.target.closest?.('.amazon-thumbs img');
+        if (!thumb) return;
+        event.preventDefault();
+        event.stopPropagation();
+        selectGalleryImage(thumb);
+      }, true);
+      document.addEventListener('keydown', (event) => {
+        const thumb = event.target.closest?.('.amazon-thumbs img');
+        if (!thumb || (event.key !== 'Enter' && event.key !== ' ')) return;
+        event.preventDefault();
+        event.stopPropagation();
+        selectGalleryImage(thumb);
+      }, true);
       const traffic = {"Organic Traffic":[49900,57280],"Paid Search Traffic":[15434,33861],"Other Traffic":[1042747,1231898],"Total Traffic":[1108081,1323039]};
       const chartColor = '#4FD1C5';
       Chart.defaults.color = 'rgba(255,255,255,.62)';
