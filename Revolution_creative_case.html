@@ -68,11 +68,15 @@
     .ebc-inline h4 { margin:0 0 .55rem; color:var(--color-texto); font-size:1rem; line-height:1.2; text-align:left; }
     .ebc-inline p { margin:0; color:rgba(255,255,255,.76); font-size:.78rem; line-height:1.35; }
     .comparison-shell { width:min(1120px, calc(100vw - 3rem)); margin:2rem 0 0 50%; transform:translateX(-50%); overflow:hidden; isolation:isolate; }
-    img-comparison-slider { display:block; width:100%; --divider-color: var(--color-acento); --default-handle-color: var(--color-acento); --divider-width: 3px; --default-handle-opacity:0; outline:none; }
+    img-comparison-slider { display:block; width:100%; --divider-color: transparent; --default-handle-color: transparent; --divider-width: 0; --default-handle-opacity:0; outline:none; }
     img-comparison-slider [slot="first"], img-comparison-slider [slot="second"] { width:100%; max-width:none; }
     .comparison-side { width:min(1120px, calc(100vw - 3rem)); max-width:none; }
-    .comparison-handle { width:46px; height:96px; border-radius:999px; background:var(--color-acento); border:3px solid #091012; box-shadow:0 12px 28px rgba(0,0,0,.45); display:grid; place-items:center; cursor:ew-resize; }
-    .comparison-handle span { width:12px; height:40px; border-left:2px solid #061010; border-right:2px solid #061010; }
+    .comparison-handle { width:34px; height:100%; min-height:100%; cursor:ew-resize; position:relative; display:flex; align-items:center; justify-content:center; touch-action:none; }
+    .comparison-handle::before { content:""; position:absolute; inset:0 auto; width:4px; border-radius:999px; background:var(--color-acento); box-shadow:0 0 0 1px rgba(0,0,0,.35), 0 0 18px rgba(var(--color-acento-rgb), .45); }
+    .comparison-handle span { position:sticky; top:50%; width:42px; height:42px; border-radius:999px; background:var(--color-acento); border:3px solid #091012; box-shadow:0 12px 28px rgba(0,0,0,.45); }
+    .comparison-handle span::before, .comparison-handle span::after { content:""; position:absolute; top:50%; width:7px; height:7px; border-top:2px solid #061010; border-left:2px solid #061010; }
+    .comparison-handle span::before { left:10px; transform:translateY(-50%) rotate(-45deg); }
+    .comparison-handle span::after { right:10px; transform:translateY(-50%) rotate(135deg); }
     .slot-label { display:inline-block; margin-bottom: .75rem; color: var(--color-acento); font-weight:900; text-transform:uppercase; font-size:.78rem; letter-spacing:.08em; }
     .old-mockup { filter:saturate(.78); }
     .text-compare { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:1.5rem; }
@@ -195,7 +199,7 @@
 
     <section id="skills-demonstrated"><div class="container"><article class="caso-card reverse" data-aos="fade-up"><span class="caso-categoria">Skills demonstrated</span><h2>Skills demonstrated in this project</h2><p>This project demonstrates a combination of Amazon marketplace knowledge, SEO strategy, conversion thinking, creative direction, and technical automation. It required understanding the customer journey, the competitive landscape, the limitations of Amazon content, and the operational challenge of scaling high-quality listing assets across a catalog.</p><p>The work included Amazon title optimization, bullet-point restructuring, A+ / EBC planning, visual system design, competitive listing analysis, KPI interpretation, product-data structuring, and automation-assisted image production. The result was a more professional listing experience supported by measurable improvements in traffic, conversion, and sales.</p></article></div></section>
 
-    <section id="final-before-after-slider"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Before / After</span><h2>Final comparison: the listing experience before and after</h2><p>The final section of the page shows the clearest visual proof of the transformation: a slider comparing the previous Amazon-style listing experience with the refreshed version.</p><p>The comparison makes the improvement visible across the complete listing flow: image gallery, title, bullets, buy box, and A+ / EBC content.</p><div class="comparison-shell"><img-comparison-slider value="50" handle tabindex="0"><div slot="handle" class="comparison-handle" aria-hidden="true"><span></span></div><div slot="first" class="comparison-side">
+    <section id="final-before-after-slider"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Before / After</span><h2>Final comparison: the listing experience before and after</h2><p>The final section of the page shows the clearest visual proof of the transformation: a slider comparing the previous Amazon-style listing experience with the refreshed version.</p><p>The comparison makes the improvement visible across the complete listing flow: image gallery, title, bullets, buy box, and A+ / EBC content.</p><div class="comparison-shell"><img-comparison-slider value="88" handle tabindex="0"><div slot="handle" class="comparison-handle" aria-hidden="true"><span></span></div><div slot="first" class="comparison-side">
 <div class="amazon-mockup old-mockup">
   <span class="slot-label">Old Style</span>
   <div class="amazon-top">
