@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Revolution Listing Refresh Case Study | Matias Gaglio</title>
-  <meta name="description" content="Amazon listing optimization case study for Revolution: image system, SEO structure, EBC, KPIs, and a full before-after Amazon mockup." />
+  <title>Amazon Listing Refresh Case Study | Matias Gaglio</title>
+  <meta name="description" content="Amazon listing optimization case study: image system, SEO structure, EBC, KPIs, and a full before-after Amazon mockup." />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    .revolution-case section { padding-top: 5rem; padding-bottom: 5rem; }
-    .revolution-case .page-hero { padding-top: 10rem; }
+    .listing-case section { padding-top: 5rem; padding-bottom: 5rem; }
+    .listing-case .page-hero { padding-top: 10rem; }
     .eyebrow { color: var(--color-acento); text-transform: uppercase; font-size: .82rem; font-weight: 800; letter-spacing: .08em; margin-bottom: 1rem; }
     .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
     .kpi-summary article, .process-explanation article, .kpi-visual-plan article, .principle-grid article, .workflow-steps article, .amazon-mockup, .chart-card { background: var(--color-superficie); border: 1px solid rgba(var(--color-acento-rgb), .18); border-radius: 8px; padding: 1.25rem; }
@@ -26,26 +26,37 @@
     .wire-diagram { display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; margin-top:1.5rem; }
     .wire-diagram span { background: rgba(var(--color-acento-rgb), .12); border:1px solid rgba(var(--color-acento-rgb), .25); padding:.75rem 1rem; border-radius:6px; color:var(--color-texto); font-weight:800; }
     .wire-diagram i { color: var(--color-acento); font-style:normal; font-weight:900; }
-    .amazon-mockup { color: var(--color-texto); overflow:hidden; }
-    .amazon-top { display:grid; grid-template-columns: minmax(220px, .9fr) minmax(280px, 1.2fr); gap:1.5rem; align-items:start; }
-    .amazon-gallery { display:grid; grid-template-columns: 64px 1fr; gap:.75rem; }
+    .amazon-mockup { color: var(--color-texto); overflow:hidden; min-width:0; }
+    .amazon-top { display:grid; grid-template-columns: minmax(0, 48%) minmax(230px, 31%) minmax(178px, 17%); gap:1.25rem; align-items:start; }
+    .amazon-gallery { display:grid; grid-template-columns: 54px minmax(0, 1fr); gap:.75rem; min-width:0; }
     .amazon-thumbs { display:flex; flex-direction:column; gap:.5rem; }
-    .amazon-thumbs img { aspect-ratio:1/1; }
+    .amazon-thumbs img { aspect-ratio:1/1; object-fit:contain; padding:.2rem; cursor:default; }
     .amazon-main-image { aspect-ratio:1/1; object-fit:contain !important; padding: .5rem; }
-    .amazon-title { font-size:1.45rem; line-height:1.25; margin:0 0 .75rem; text-align:left; }
-    .amazon-brand { color: var(--color-acento); font-weight:800; margin-bottom:.75rem; }
-    .amazon-bullets { color: var(--color-texto-sec); padding-left:1.1rem; }
-    .amazon-bullets li { margin-bottom:.65rem; }
-    .buy-box { margin-top:1rem; padding:1rem; border-radius:6px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); }
+    .amazon-mockup .amazon-title { font-size:clamp(1rem, 1.35vw, 1.2rem); line-height:1.28; margin:0 0 .65rem; text-align:left; overflow-wrap:anywhere; }
+    .amazon-brand { color: var(--color-acento); font-weight:800; margin-bottom:.6rem; }
+    .amazon-mockup p, .amazon-mockup li, .amazon-mockup label, .amazon-mockup select, .amazon-mockup button { line-height:1.35; }
+    .amazon-bullets { color: var(--color-texto-sec); padding-left:1.1rem; line-height:1.35; }
+    .amazon-bullets li { margin-bottom:.5rem; font-size:.86rem; line-height:1.35; }
+    .rating-row { display:flex; align-items:center; gap:.5rem; color:var(--color-texto-sec); font-size:.9rem; margin-bottom:.7rem; }
+    .stars { color:#f7b731; letter-spacing:.06em; }
+    .buy-box { padding:.9rem; border-radius:8px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); font-size:.88rem; }
+    .buy-box .price { display:block; font-size:1.35rem; font-weight:900; margin:.2rem 0 .45rem; color:var(--color-texto); }
+    .buy-box .stock { color:#63d297; font-weight:800; margin:.25rem 0; }
+    .buy-box label { display:block; color:var(--color-texto-sec); font-size:.82rem; margin-top:.75rem; }
+    .buy-box select { width:100%; margin:.25rem 0 .75rem; background:#111; color:var(--color-texto); border:1px solid rgba(255,255,255,.16); border-radius:999px; padding:.45rem .65rem; }
+    .amazon-action { width:100%; border:0; border-radius:999px; padding:.75rem 1rem; margin-top:.55rem; font-weight:900; cursor:default; color:#111; }
+    .amazon-cart { background:#ffd814; }
+    .amazon-buy { background:#ffa41c; }
+    .delivery-note { color:var(--color-texto-sec); font-size:.75rem; line-height:1.35; margin-top:.65rem; }
     .ebc-stack { display:grid; gap:1rem; margin-top:1.25rem; }
-    .comparison-shell { margin-top:2rem; }
+    .comparison-shell { width:min(1120px, calc(100vw - 3rem)); margin:2rem 0 0 50%; transform:translateX(-50%); overflow:hidden; }
     img-comparison-slider { width:100%; --divider-color: var(--color-acento); --default-handle-color: var(--color-acento); --divider-width: 3px; outline:none; }
     img-comparison-slider [slot="first"], img-comparison-slider [slot="second"] { width:100%; }
     .slot-label { display:inline-block; margin-bottom: .75rem; color: var(--color-acento); font-weight:900; text-transform:uppercase; font-size:.78rem; letter-spacing:.08em; }
     .old-mockup { filter:saturate(.78); }
     .text-compare { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:1.5rem; }
     .text-compare article { background:var(--color-superficie); border-radius:8px; padding:1.25rem; border:1px solid rgba(255,255,255,.08); }
-    @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; } }
+    @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } }
   </style>
 </head>
 <body>
@@ -67,12 +78,12 @@
     </div>
   </header>
 
-  <main id="revolution-listing-refresh-case-study" class="revolution-case">
+  <main id="amazon-listing-refresh-case-study" class="listing-case">
     <section id="hero" class="page-hero">
       <div class="container">
-        <p class="eyebrow" data-aos="fade-up">Amazon Listing Optimization - Automotive Category - Revolution</p>
+        <p class="eyebrow" data-aos="fade-up">Amazon Listing Optimization - Automotive Category</p>
         <h1 data-aos="fade-up" data-aos-delay="100">Rebuilding Amazon Listings Through Visual Systems, SEO Structure, and Conversion-Focused Content</h1>
-        <p data-aos="fade-up" data-aos-delay="150">This project was a full Amazon listing refresh for Revolution's automotive catalog. The objective was not only to rewrite product content, but to rebuild the way the listings communicated technical value, visual trust, fitment confidence, and product quality.</p>
+        <p data-aos="fade-up" data-aos-delay="150">This project was a full Amazon listing refresh for an automotive catalog. The objective was not only to rewrite product content, but to rebuild the way the listings communicated technical value, visual trust, fitment confidence, and product quality.</p>
         <p data-aos="fade-up" data-aos-delay="200">The original listings had product information, but the presentation was not converting at the level expected for the traffic being generated. The images were functional, but not visually competitive. The bullets included important technical data, but the structure did not guide the shopper through a clear purchase decision. The titles contained relevant keywords, but they needed a better balance between Amazon SEO and human readability.</p>
         <p data-aos="fade-up" data-aos-delay="250">The solution was to redesign the listing system as a whole: new image direction, stronger A+ / EBC logic, rewritten titles, more structured bullets, and a scalable production process using Photoshop and coded automation to accelerate image creation across multiple SKUs.</p>
         <div class="kpi-summary" data-aos="fade-up" data-aos-delay="300">
@@ -91,7 +102,7 @@
         <p>The starting point was a conversion problem. The listings were receiving traffic, but the customer experience was not strong enough to convert that demand efficiently. In automotive parts, this is especially important because customers are not only buying a product; they are trying to avoid a wrong fit, a return, or a mechanical compatibility issue.</p>
         <p>The old listing style gave shoppers access to product data, but the visual hierarchy was weak. Technical details such as thread size, seat type, length, wheel compatibility, material, coating, and aftermarket-wheel requirements were present, but they were not always presented in the order a buyer needs them. The result was a listing that could be indexed by Amazon, but did not fully reduce customer uncertainty.</p>
         <p>The decision was to treat the listing as a conversion system. Instead of only asking "Does this listing contain the right keywords?", the project asked a more strategic question: "Does this listing make the customer feel confident enough to buy?"</p>
-      </div><div class="caso-visual"><img src="Revolution/Old Style Images/71J6-GXWXRL._AC_SL1500_.jpg" alt="Previous Revolution listing image style" loading="lazy"></div></div>
+      </div><div class="caso-visual"><img src="Revolution/Old Style Images/71J6-GXWXRL._AC_SL1500_.jpg" alt="Previous listing image style" loading="lazy"></div></div>
     </article></div></section>
 
     <section id="competitive-benchmarking"><div class="container"><article class="caso-card reverse" data-aos="fade-up">
@@ -99,7 +110,7 @@
       <h2>Competitive benchmarking: using category standards to define a stronger visual direction</h2>
       <div class="caso-card-grid"><div class="caso-contenido">
         <p>The image refresh began with a competitive review of how stronger Amazon listings in the category were presenting similar automotive products. The goal was not to copy competitors, but to understand the visual language that was already working in the market: cleaner layouts, stronger contrast, clearer specification callouts, more confident product positioning, and images that explain the product without forcing the customer to read every bullet.</p>
-        <p>This benchmarking helped define a new visual style for Revolution's listings. The new direction needed to be more pleasing to the eye, but still technically useful. In this type of category, aesthetics alone are not enough. A successful image has to look professional while also communicating fitment, dimensions, construction, finish, quantity, and use case.</p>
+        <p>This benchmarking helped define a new visual style for the listings. The new direction needed to be more pleasing to the eye, but still technically useful. In this type of category, aesthetics alone are not enough. A successful image has to look professional while also communicating fitment, dimensions, construction, finish, quantity, and use case.</p>
         <p>The final direction was built around a clearer hierarchy: first attract attention, then explain the product, then reduce fitment doubt, and finally reinforce durability and trust. This gave the listing a more premium and intentional look while still serving the practical needs of Amazon shoppers.</p>
       </div><div class="principle-grid"><article><h3>Cleaner hierarchy</h3><p>Make the first scan easier.</p></article><article><h3>Technical trust</h3><p>Specs remain visible and precise.</p></article><article><h3>Fitment confidence</h3><p>Compatibility is framed as a buying cue.</p></article><article><h3>Scalable system</h3><p>Reusable visual patterns support many SKUs.</p></article></div></div>
     </article></div></section>
@@ -113,7 +124,7 @@
       <p>This approach creates a major operational advantage. Instead of redesigning every image manually, the workflow can produce consistent image sets across many SKUs while still preserving product-specific accuracy. It reduces repetitive design work, lowers the risk of formatting inconsistencies, and makes future catalog expansion faster.</p>
       <div class="process-explanation"><article><h3>Template logic</h3><p>Photoshop defined spacing, typography, hierarchy, product placement, callout style, and export-ready composition.</p></article><article><h3>Data logic</h3><p>Thread size, quantity, finish, seat type, vehicle families, and compatibility notes became structured inputs.</p></article><article><h3>Automation logic</h3><p>Coding automated repeat production tasks across multiple SKUs without rebuilding every asset manually.</p></article><article><h3>Output logic</h3><p>Amazon-ready image sets stayed consistent while preserving product-specific accuracy.</p></article></div>
       <div class="wire-diagram"><span>Product Data</span><i>-&gt;</i><span>Photoshop Template</span><i>-&gt;</i><span>Automated Image Output</span><i>-&gt;</i><span>Amazon Listing</span></div>
-      <div class="image-row"><img src="Revolution/New Style Images/71uBmAvYSaL._AC_SL1167_.jpg" alt="Optimized Revolution listing asset"><img src="Revolution/New Style Images/71+fRFVAOVL._AC_SL1167_.jpg" alt="New Revolution visual system asset"><img src="Revolution/Old Style Images/71KxcE5q0zL._AC_SL1500_.jpg" alt="Original Revolution listing asset"></div>
+      <div class="image-row"><img src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="Optimized listing asset"><img src="Revolution/New Style Images/71uBmAvYSaL._AC_SL1167_.jpg" alt="New visual system asset"><img src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Original listing asset"></div>
     </article></div></section>
 
     <section id="content-system"><div class="container"><article class="caso-card reverse" data-aos="fade-up">
@@ -122,7 +133,7 @@
       <div class="caso-card-grid"><div class="caso-contenido">
         <p>The copy was rebuilt with the same logic as the images: structured, repeatable, and technically precise. The old bullet style contained relevant information, but the new structure made the information easier to scan and easier to trust.</p>
         <p>The rewritten bullets prioritize the details that matter most in automotive fitment. The first line establishes the exact product configuration: quantity, thread size, length, spline type, seat type, construction, and finish. The next layer addresses compatibility and use case, especially the distinction between aftermarket wheels and OE wheels. Later bullets reinforce durability, corrosion resistance, construction quality, and standards.</p>
-        <p>This was not only a copywriting improvement. It was a conversion architecture improvement. The copy was designed to answer the customer's doubts in the same order they appear during the buying process: "Is this the correct part?", "Will it fit my vehicle?", "Is it durable?", "Is it safe for my wheel type?", and "Can I trust this brand?"</p>
+        <p>This was not only a copywriting improvement. It was a conversion architecture improvement. The copy was designed to answer the customer's doubts in the same order they appear during the buying process: "Is this the correct part?", "Will it fit my vehicle?", "Is it durable?", "Is it safe for my wheel type?", and "Can I trust this product?"</p>
         <p>The title strategy followed the same principle. Keywords remained important, but the title was reorganized so that search terms, technical specifications, and recognizable vehicle families appeared in a more natural sequence. This made the listing more readable while still supporting Amazon indexing.</p>
       </div><div class="text-compare"><article><h3>Old copy logic</h3><p>Data present, but dense and less guided.</p><p>Compatibility required more shopper interpretation.</p></article><article><h3>New copy logic</h3><p>Specs, fitment, use case, and trust cues appear in decision order.</p><p>SEO terms remain, but readability improves.</p></article></div></div>
     </article></div></section>
@@ -135,7 +146,7 @@
         <p>For this category, effective A+ content should not be treated as decoration. It should work as a technical sales page inside Amazon. The modules should help the customer understand the product family, compare specifications, confirm compatibility, and see why the product is reliable for its intended use.</p>
         <p>The ideal A+ structure for this project includes a product identity module, a fitment and compatibility module, a specification breakdown, and a durability or testing module. Together, these sections create a more complete customer journey than bullets alone can provide.</p>
         <div class="wire-diagram"><span>Hero</span><i>-&gt;</i><span>Specs</span><i>-&gt;</i><span>Fitment</span><i>-&gt;</i><span>Durability</span><i>-&gt;</i><span>Brand trust</span></div>
-      </div><div class="ebc-stack"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New Revolution A+ hero module"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New Revolution A+ specification module"></div></div>
+      </div><div class="ebc-stack"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New A+ hero module"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New A+ specification module"></div></div>
     </article></div></section>
 
     <section id="kpi-validation"><div class="container"><article class="caso-card" data-aos="fade-up">
@@ -146,7 +157,7 @@
       <p>Conversion rate also improved. Average conversion rate increased from approximately 7.44% to 7.85%, a gain of around 5.5%. In a high-traffic Amazon catalog, even a modest conversion-rate increase can have meaningful revenue impact because it compounds across thousands of sessions.</p>
       <p>Retail sales followed the same direction. Average weekly retail sales increased from approximately $112.3K to $141.9K, an improvement of about 26.3%. The strongest interpretation is not that one isolated edit produced the entire change, but that the combined listing system - images, titles, bullets, A+ content, and clearer fitment communication - helped the catalog capture more value from its traffic.</p>
       <div class="chart-grid"><div class="chart-card"><h3>Total Traffic by Period</h3><canvas id="trafficTotalChart"></canvas></div><div class="chart-card"><h3>Traffic Mix</h3><canvas id="trafficMixChart"></canvas></div><div class="chart-card"><h3>Conversion Rate Over Time</h3><canvas id="conversionChart"></canvas></div><div class="chart-card"><h3>Retail Sales Over Time</h3><canvas id="retailChart"></canvas></div></div>
-      <div class="kpi-visual-plan"><article><h3>Product-Level Advertising Snapshot</h3><p>B07QPQ7ZKP: $263.95 sales, 12.63 ROAS, 25.49% conversion rate, 7.92% ACOS.</p></article><article><h3>Product-Level Advertising Snapshot</h3><p>B07QM9WD6B: $416.81 sales, 11.34 ROAS, 22.73% conversion rate, 8.82% ACOS.</p></article><article><h3>Keyword Visibility</h3><p>Baby moon hubcaps traffic split shows 87.0% share for wheel accessories parts in the sampled keyword report.</p></article><article><h3>Search Demand</h3><p>Socket-related queries such as lug nut socket and 21mm impact socket show category-specific intent patterns.</p></article></div>
+      <div class="kpi-visual-plan"><article><h3>Product-Level Advertising Snapshot</h3><p>Sample product A: $263.95 sales, 12.63 ROAS, 25.49% conversion rate, 7.92% ACOS.</p></article><article><h3>Product-Level Advertising Snapshot</h3><p>Sample product B: $416.81 sales, 11.34 ROAS, 22.73% conversion rate, 8.82% ACOS.</p></article><article><h3>Keyword Visibility</h3><p>Category keyword traffic split shows 87.0% share for wheel accessories parts in the sampled keyword report.</p></article><article><h3>Search Demand</h3><p>Socket-related queries such as lug nut socket and 21mm impact socket show category-specific intent patterns.</p></article></div>
     </article></div></section>
 
     <section id="technical-methodology"><div class="container"><article class="caso-card reverse" data-aos="fade-up">
@@ -163,27 +174,41 @@
 
     <section id="skills-demonstrated"><div class="container"><article class="caso-card reverse" data-aos="fade-up"><span class="caso-categoria">Skills demonstrated</span><h2>Skills demonstrated in this project</h2><p>This project demonstrates a combination of Amazon marketplace knowledge, SEO strategy, conversion thinking, creative direction, and technical automation. It required understanding the customer journey, the competitive landscape, the limitations of Amazon content, and the operational challenge of scaling high-quality listing assets across a catalog.</p><p>The work included Amazon title optimization, bullet-point restructuring, A+ / EBC planning, visual system design, competitive listing analysis, KPI interpretation, product-data structuring, and automation-assisted image production. The result was a more professional listing experience supported by measurable improvements in traffic, conversion, and sales.</p></article></div></section>
 
-    <section id="final-before-after-slider"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Before / After</span><h2>Final comparison: the listing experience before and after</h2><p>The final section of the page should show the clearest visual proof of the transformation: a slider comparing the previous Amazon-style listing experience with the refreshed version. This is where the full before-and-after should be shown, because the reader will already understand the strategy behind the change.</p><p>The comparison should make the improvement immediately visible: cleaner visual hierarchy, more professional image direction, clearer product information, stronger technical presentation, improved title structure, and a more conversion-oriented page experience.</p><div class="comparison-shell"><img-comparison-slider value="50" tabindex="0"><div slot="first">
+    <section id="final-before-after-slider"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Before / After</span><h2>Final comparison: the listing experience before and after</h2><p>The final section of the page should show the clearest visual proof of the transformation: a slider comparing the previous Amazon-style listing experience with the refreshed version. This is where the full before-and-after should be shown, because the reader will already understand the strategy behind the change.</p><p>The comparison should make the improvement immediately visible: cleaner visual hierarchy, more professional image direction, clearer product information, stronger technical presentation, improved title structure, and a more conversion-oriented page experience.</p><div class="comparison-shell"><img-comparison-slider value="48" tabindex="0"><div slot="first">
 <div class="amazon-mockup old-mockup">
   <span class="slot-label">Old Style</span>
   <div class="amazon-top">
     <div class="amazon-gallery">
       <div class="amazon-thumbs">
-        <img src="Revolution/Old Style Images/71KxcE5q0zL._AC_SL1500_.jpg" alt="Old Style thumbnail">
-        <img src="Revolution/Old Style Images/71J6-GXWXRL._AC_SL1500_.jpg" alt="Old Style secondary thumbnail">
+        <img src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Old style thumbnail 1">
+        <img src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Old style thumbnail 2">
+        <img src="Revolution/Old Style Images/71knjghDdyL._AC_SL1500_.jpg" alt="Old style thumbnail 3">
+        <img src="Revolution/Old Style Images/71sOafQLc-L._AC_SL1500_.jpg" alt="Old style thumbnail 4">
+        <img src="Revolution/Old Style Images/71KxcE5q0zL._AC_SL1500_.jpg" alt="Old style thumbnail 5">
+        <img src="Revolution/Old Style Images/71xnx6cL2uL._AC_SL1500_.jpg" alt="Old style thumbnail 6">
       </div>
-      <img class="amazon-main-image" src="Revolution/Old Style Images/71KxcE5q0zL._AC_SL1500_.jpg" alt="Old Style Revolution product image">
+      <img class="amazon-main-image" src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Old style product image">
     </div>
     <div>
-      <p class="amazon-brand">Revolution Automotive</p>
+      <p class="amazon-brand">Visit the store</p>
       <h3 class="amazon-title">24pcs 14x1.5 Lug Nuts Spline Wheel Nut Set Replacement</h3>
+      <div class="rating-row"><span class="stars">4.0/5</span><span>Sample rating</span></div>
       <ul class="amazon-bullets"><li>Fits many wheels and vehicles. Check size before ordering.</li><li>Durable metal lug nuts with black finish.</li><li>Spline style lug nut set for replacement and maintenance.</li><li>Professional installation recommended.</li></ul>
-      <div class="buy-box"><strong>Listing role:</strong> Original product-data presentation with weaker hierarchy.</div>
     </div>
+    <aside class="buy-box" aria-label="Visual-only Amazon action panel">
+      <span class="price">$39.99</span>
+      <p class="stock">In Stock</p>
+      <p class="delivery-note">FREE delivery available. This panel is a non-clickable listing mockup.</p>
+      <label for="qty-old">Quantity</label>
+      <select id="qty-old" aria-label="Old mockup quantity"><option>1</option></select>
+      <button class="amazon-action amazon-cart" type="button">Add to Cart</button>
+      <button class="amazon-action amazon-buy" type="button">Buy Now</button>
+      <p class="delivery-note"><strong>Listing role:</strong> Original product-data presentation with weaker hierarchy.</p>
+    </aside>
   </div>
   <div class="ebc-stack">
-    <img src="Revolution/EBC/Old EBC/DetailHead__53K648L.jpg" alt="Old Style EBC module">
-    <img src="Revolution/EBC/Old EBC/RetroSpec__53##48L.jpg" alt="Old Style EBC detail module">
+    <img src="Revolution/EBC/Old EBC/DetailHead__53K648L.jpg" alt="Old style EBC module">
+    <img src="Revolution/EBC/Old EBC/RetroSpec__53##48L.jpg" alt="Old style EBC detail module">
   </div>
 </div></div><div slot="second">
 <div class="amazon-mockup">
@@ -191,21 +216,34 @@
   <div class="amazon-top">
     <div class="amazon-gallery">
       <div class="amazon-thumbs">
-        <img src="Revolution/New Style Images/71uBmAvYSaL._AC_SL1167_.jpg" alt="New Style thumbnail">
-        <img src="Revolution/New Style Images/71+fRFVAOVL._AC_SL1167_.jpg" alt="New Style secondary thumbnail">
+        <img src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="New style thumbnail 1">
+        <img src="Revolution/New Style Images/71uBmAvYSaL._AC_SL1167_.jpg" alt="New style thumbnail 2">
+        <img src="Revolution/New Style Images/71+fRFVAOVL._AC_SL1167_.jpg" alt="New style thumbnail 3">
+        <img src="Revolution/New Style Images/712hJcE7rJL._AC_SL1167_.jpg" alt="New style thumbnail 4">
+        <img src="Revolution/New Style Images/71J9SmUgGWL._AC_SL1167_.jpg" alt="New style thumbnail 5">
       </div>
-      <img class="amazon-main-image" src="Revolution/New Style Images/71uBmAvYSaL._AC_SL1167_.jpg" alt="New Style Revolution product image">
+      <img class="amazon-main-image" src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="New style product image">
     </div>
     <div>
-      <p class="amazon-brand">Revolution Automotive</p>
-      <h3 class="amazon-title">Revolution M14x1.5 Spline Lug Nuts, 24-Pack Black Cone Seat Wheel Nuts for Aftermarket Wheels</h3>
+      <p class="amazon-brand">Visit the store</p>
+      <h3 class="amazon-title">M14x1.5 Spline Lug Nuts, 24-Pack Black Cone Seat Wheel Nuts for Aftermarket Wheels</h3>
+      <div class="rating-row"><span class="stars">4.0/5</span><span>Sample rating</span></div>
       <ul class="amazon-bullets"><li>Exact configuration: 24-piece M14x1.5 spline lug nut set with cone seat profile and black finish.</li><li>Designed for aftermarket wheels that require narrow spline-drive access; verify thread size and seat type before purchase.</li><li>Structured fitment language reduces uncertainty around vehicle compatibility and wrong-part returns.</li><li>Corrosion-resistant finish and hardened construction support durability, trust, and repeatable catalog messaging.</li></ul>
-      <div class="buy-box"><strong>Listing role:</strong> Optimized SEO, fitment confidence, visual hierarchy, and conversion flow.</div>
     </div>
+    <aside class="buy-box" aria-label="Visual-only Amazon action panel">
+      <span class="price">$39.99</span>
+      <p class="stock">In Stock</p>
+      <p class="delivery-note">FREE delivery available. This panel is a non-clickable listing mockup.</p>
+      <label for="qty-new">Quantity</label>
+      <select id="qty-new" aria-label="New mockup quantity"><option>1</option></select>
+      <button class="amazon-action amazon-cart" type="button">Add to Cart</button>
+      <button class="amazon-action amazon-buy" type="button">Buy Now</button>
+      <p class="delivery-note"><strong>Listing role:</strong> Optimized SEO, fitment confidence, visual hierarchy, and conversion flow.</p>
+    </aside>
   </div>
   <div class="ebc-stack">
-    <img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New Style EBC module">
-    <img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New Style EBC detail module">
+    <img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New style EBC module">
+    <img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New style EBC detail module">
   </div>
 </div></div></img-comparison-slider></div></article></div></section>
   </main>
