@@ -14,6 +14,13 @@
     .eyebrow { color: var(--color-acento); text-transform: uppercase; font-size: .82rem; font-weight: 800; letter-spacing: .08em; margin-bottom: 1rem; }
     .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
     .kpi-summary article, .process-explanation article, .kpi-visual-plan article, .principle-grid article, .workflow-steps article, .amazon-mockup, .chart-card { background: var(--color-superficie); border: 1px solid rgba(var(--color-acento-rgb), .18); border-radius: 8px; padding: 1.25rem; }
+    .principle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-content:start; }
+    .principle-grid article { min-width:0; }
+    .principle-grid h3, .workflow-steps h3, .kpi-visual-plan h3 { margin:0 0 .75rem; font-size:clamp(1rem, 1.2vw, 1.25rem); line-height:1.18; text-align:left; overflow-wrap:normal; word-break:normal; hyphens:none; }
+    .principle-grid p, .workflow-steps p, .kpi-visual-plan p { margin:0; font-size:.9rem; line-height:1.45; color:var(--color-texto-sec); }
+    .workflow-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .workflow-steps article { min-height:156px; display:flex; flex-direction:column; justify-content:space-between; }
+    .workflow-steps h3 { white-space:nowrap; }
     .kpi-number { display:block; color: var(--color-acento); font-size: 2rem; font-weight: 900; line-height: 1; }
     .kpi-label { color: var(--color-texto-sec); font-weight: 700; font-size: .9rem; }
     .chart-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
@@ -49,9 +56,10 @@
     .amazon-buy { background:#ffa41c; }
     .delivery-note { color:var(--color-texto-sec); font-size:.75rem; line-height:1.35; margin-top:.65rem; }
     .ebc-stack { display:grid; gap:1rem; margin-top:0; }
+    .ebc-stack > img { display:block; width:100%; height:auto; object-fit:contain; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; }
     .ebc-module { width:100%; min-height:0; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; overflow:visible; }
     .ebc-module img { display:block; width:100%; height:auto; object-fit:contain; border:0; border-radius:0; }
-    .ebc-panel { position:relative; overflow:hidden; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; }
+    .ebc-panel { position:relative; overflow:hidden; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#070707; }
     .ebc-panel img { display:block; width:100%; height:auto; object-fit:cover; border:0; border-radius:0; }
     .ebc-copy-card { position:absolute; top:0; right:0; width:min(34%, 260px); height:100%; padding:1rem; background:rgba(7,7,7,.92); color:var(--color-texto); display:flex; flex-direction:column; justify-content:center; border-left:1px solid rgba(255,255,255,.16); }
     .ebc-copy-card h4 { margin:0 0 .45rem; color:var(--color-texto); font-size:1rem; line-height:1.15; text-align:left; }
@@ -64,16 +72,16 @@
     .ebc-inline img { width:100%; height:auto; border-radius:4px; border:0; background:#fff; }
     .ebc-inline h4 { margin:0 0 .55rem; color:var(--color-texto); font-size:1rem; line-height:1.2; text-align:left; }
     .ebc-inline p { margin:0; color:rgba(255,255,255,.76); font-size:.78rem; line-height:1.35; }
-    .comparison-shell { width:min(1120px, calc(100vw - 3rem)); margin:2rem 0 0 50%; transform:translateX(-50%); overflow:hidden; isolation:isolate; }
-    .comparison-labels { display:flex; justify-content:space-between; gap:1rem; margin-bottom:.75rem; color:var(--color-acento); font-weight:900; text-transform:uppercase; font-size:.78rem; letter-spacing:.08em; }
-    .comparison-frame { --split:50%; --split-negative:-50%; --frame-width:1120px; position:relative; width:100%; overflow:hidden; border-radius:8px; display:grid; grid-template-columns: var(--split) minmax(0, 1fr); align-items:start; }
+    .comparison-shell { width:min(1120px, calc(100vw - 3rem)); margin:3.25rem 0 0 50%; transform:translateX(-50%); overflow:hidden; isolation:isolate; }
+    .comparison-labels { grid-column:1 / -1; display:flex; justify-content:space-between; gap:1rem; padding:1rem 1.25rem .75rem; color:var(--color-acento); font-weight:900; text-transform:uppercase; font-size:.78rem; letter-spacing:.08em; background:var(--color-superficie); }
+    .comparison-frame { --split:50%; --split-negative:-50%; --frame-width:1120px; position:relative; width:100%; overflow:hidden; border-radius:8px; display:grid; grid-template-columns: var(--split) minmax(0, 1fr); align-items:start; border:1px solid rgba(var(--color-acento-rgb), .28); background:var(--color-superficie); }
     .comparison-pane { min-width:0; overflow:hidden; }
     .comparison-pane.old { position:relative; z-index:1; }
     .comparison-pane.new { position:relative; z-index:2; }
     .comparison-layer { width:var(--frame-width); max-width:none; }
     .comparison-pane.new .comparison-layer { transform:translateX(var(--split-negative)); }
     .comparison-pane.new .ebc-stack { margin-top:18px; }
-    .comparison-handle { position:absolute; z-index:5; top:0; bottom:0; left:var(--split); width:46px; transform:translateX(-50%); cursor:ew-resize; display:flex; align-items:center; justify-content:center; touch-action:none; }
+    .comparison-handle { position:absolute; z-index:5; top:3.15rem; bottom:0; left:var(--split); width:46px; transform:translateX(-50%); cursor:ew-resize; display:flex; align-items:center; justify-content:center; touch-action:none; }
     .comparison-handle::before { content:""; position:absolute; top:0; bottom:0; left:50%; width:4px; transform:translateX(-50%); border-radius:999px; background:var(--color-acento); box-shadow:0 0 0 1px rgba(0,0,0,.45), 0 0 18px rgba(var(--color-acento-rgb), .55); }
     .comparison-handle span { position:sticky; top:50%; width:44px; height:44px; border-radius:999px; background:var(--color-acento); border:3px solid #091012; box-shadow:0 12px 28px rgba(0,0,0,.45); }
     .comparison-handle span::before, .comparison-handle span::after { content:""; position:absolute; top:50%; width:7px; height:7px; border-top:2px solid #061010; border-left:2px solid #061010; }
@@ -84,7 +92,7 @@
     .old-mockup { filter:none; }
     .text-compare { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:1.5rem; }
     .text-compare article { background:var(--color-superficie); border-radius:8px; padding:1.25rem; border:1px solid rgba(255,255,255,.08); }
-    @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare, .ebc-inline { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-top { min-height:0; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } .ebc-copy-card { position:static; width:auto; height:auto; } }
+    @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare, .ebc-inline { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-top { min-height:0; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } .ebc-copy-card { position:static; width:auto; height:auto; } .workflow-steps h3 { white-space:normal; } }
   </style>
 </head>
 <body>
@@ -185,7 +193,7 @@
       <p>Conversion rate also improved. Average conversion rate increased from approximately 7.44% to 7.85%, a gain of around 5.5%. In a high-traffic Amazon catalog, even a modest conversion-rate increase can have meaningful revenue impact because it compounds across thousands of sessions.</p>
       <p>Retail sales followed the same direction. Average weekly retail sales increased from approximately $112.3K to $141.9K, an improvement of about 26.3%. The strongest interpretation is not that one isolated edit produced the entire change, but that the combined listing system - images, titles, bullets, A+ content, and clearer fitment communication - helped the catalog capture more value from its traffic.</p>
       <div class="chart-grid"><div class="chart-card"><h3>Total Traffic by Period</h3><canvas id="trafficTotalChart"></canvas></div><div class="chart-card"><h3>Traffic Mix</h3><canvas id="trafficMixChart"></canvas></div><div class="chart-card"><h3>Conversion Rate Over Time</h3><canvas id="conversionChart"></canvas></div><div class="chart-card"><h3>Retail Sales Over Time</h3><canvas id="retailChart"></canvas></div></div>
-      <div class="kpi-visual-plan"><article><h3>Product-Level Advertising Snapshot</h3><p>Sample product A: $263.95 sales, 12.63 ROAS, 25.49% conversion rate, 7.92% ACOS.</p></article><article><h3>Product-Level Advertising Snapshot</h3><p>Sample product B: $416.81 sales, 11.34 ROAS, 22.73% conversion rate, 8.82% ACOS.</p></article><article><h3>Keyword Visibility</h3><p>Category keyword traffic split shows 87.0% share for wheel accessories parts in the sampled keyword report.</p></article><article><h3>Search Demand</h3><p>Socket-related queries such as lug nut socket and 21mm impact socket show category-specific intent patterns.</p></article></div>
+      <div class="kpi-visual-plan"><article><h3>Advertising Snapshot A</h3><p>Sample product A: $263.95 sales, 12.63 ROAS, 25.49% conversion rate, 7.92% ACOS.</p></article><article><h3>Advertising Snapshot B</h3><p>Sample product B: $416.81 sales, 11.34 ROAS, 22.73% conversion rate, 8.82% ACOS.</p></article><article><h3>Keyword Visibility</h3><p>Category keyword traffic split shows 87.0% share for wheel accessories parts in the sampled keyword report.</p></article><article><h3>Search Demand</h3><p>Socket-related queries such as lug nut socket and 21mm impact socket show category-specific intent patterns.</p></article></div>
     </article></div></section>
 
     <section id="technical-methodology"><div class="container"><article class="caso-card reverse" data-aos="fade-up">
@@ -202,7 +210,7 @@
 
     <section id="skills-demonstrated"><div class="container"><article class="caso-card reverse" data-aos="fade-up"><span class="caso-categoria">Skills demonstrated</span><h2>Skills demonstrated in this project</h2><p>This project demonstrates a combination of Amazon marketplace knowledge, SEO strategy, conversion thinking, creative direction, and technical automation. It required understanding the customer journey, the competitive landscape, the limitations of Amazon content, and the operational challenge of scaling high-quality listing assets across a catalog.</p><p>The work included Amazon title optimization, bullet-point restructuring, A+ / EBC planning, visual system design, competitive listing analysis, KPI interpretation, product-data structuring, and automation-assisted image production. The result was a more professional listing experience supported by measurable improvements in traffic, conversion, and sales.</p></article></div></section>
 
-    <section id="final-before-after-slider"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Before / After</span><h2>Final comparison: the listing experience before and after</h2><p>The final section of the page shows the clearest visual proof of the transformation: a slider comparing the previous Amazon-style listing experience with the refreshed version.</p><p>The comparison makes the improvement visible across the complete listing flow: image gallery, title, bullets, buy box, and A+ / EBC content.</p><div class="comparison-shell"><div class="comparison-labels" aria-hidden="true"><span>Old Style</span><span>New Style</span></div><div class="comparison-frame" data-comparison-frame style="--split:50%; --split-negative:-50%;"><div class="comparison-pane old"><div class="comparison-layer">
+    <section id="final-before-after-slider"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Before / After</span><h2>Final comparison: the listing experience before and after</h2><p>The final section of the page shows the clearest visual proof of the transformation: a slider comparing the previous Amazon-style listing experience with the refreshed version.</p><p>The comparison makes the improvement visible across the complete listing flow: image gallery, title, bullets, buy box, and A+ / EBC content.</p><div class="comparison-shell"><div class="comparison-frame" data-comparison-frame style="--split:50%; --split-negative:-50%;"><div class="comparison-labels" aria-hidden="true"><span>Old Style</span><span>New Style</span></div><div class="comparison-pane old"><div class="comparison-layer">
 <div class="amazon-mockup old-mockup">
   <span class="slot-label">Old Style</span>
   <div class="amazon-top">
