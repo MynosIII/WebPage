@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -27,10 +27,11 @@
     .wire-diagram span { background: rgba(var(--color-acento-rgb), .12); border:1px solid rgba(var(--color-acento-rgb), .25); padding:.75rem 1rem; border-radius:6px; color:var(--color-texto); font-weight:800; }
     .wire-diagram i { color: var(--color-acento); font-style:normal; font-weight:900; }
     .amazon-mockup { color: var(--color-texto); overflow:hidden; min-width:0; }
-    .amazon-top { display:grid; grid-template-columns: minmax(0, 48%) minmax(230px, 31%) minmax(178px, 17%); gap:1.25rem; align-items:start; }
+    .amazon-top { display:grid; grid-template-columns: minmax(0, 48%) minmax(230px, 31%) minmax(178px, 17%); gap:1.25rem; align-items:start; min-height: 880px; }
     .amazon-gallery { display:grid; grid-template-columns: 54px minmax(0, 1fr); gap:.75rem; min-width:0; }
     .amazon-thumbs { display:flex; flex-direction:column; gap:.5rem; }
-    .amazon-thumbs img { aspect-ratio:1/1; object-fit:contain; padding:.2rem; cursor:default; }
+    .amazon-thumbs img { aspect-ratio:1/1; object-fit:contain; padding:.2rem; cursor:pointer; }
+    .amazon-thumbs img.is-active { border-color: var(--color-acento); box-shadow:0 0 0 2px rgba(var(--color-acento-rgb), .22); }
     .amazon-main-image { aspect-ratio:1/1; object-fit:contain !important; padding: .5rem; }
     .amazon-mockup .amazon-title { font-size:clamp(1rem, 1.35vw, 1.2rem); line-height:1.28; margin:0 0 .65rem; text-align:left; overflow-wrap:anywhere; }
     .amazon-brand { color: var(--color-acento); font-weight:800; margin-bottom:.6rem; }
@@ -48,12 +49,19 @@
     .amazon-cart { background:#ffd814; }
     .amazon-buy { background:#ffa41c; }
     .delivery-note { color:var(--color-texto-sec); font-size:.75rem; line-height:1.35; margin-top:.65rem; }
-    .ebc-stack { display:grid; gap:1rem; margin-top:1.25rem; }
+    .ebc-stack { display:grid; gap:1rem; margin-top:0; }
+    .comparison-shell [slot="second"] .ebc-stack { margin-top:18px; }
+    .ebc-module { width:100%; min-height:120px; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; overflow:hidden; }
+    .ebc-module img { display:block; width:100%; height:auto; object-fit:cover; border:0; border-radius:0; }
     .ebc-panel { position:relative; overflow:hidden; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; }
-    .ebc-panel img { border:0; border-radius:0; }
+    .ebc-panel img { display:block; width:100%; height:auto; object-fit:cover; border:0; border-radius:0; }
     .ebc-copy-card { position:absolute; top:0; right:0; width:min(32%, 240px); height:100%; padding:1rem; background:rgba(255,255,255,.92); color:#111; display:flex; flex-direction:column; justify-content:center; }
     .ebc-copy-card h4 { margin:0 0 .45rem; color:#000; font-size:1rem; line-height:1.15; text-align:left; }
     .ebc-copy-card p { margin:0; color:#111; font-size:.78rem; line-height:1.35; }
+    .ebc-indexable { background:#fff; color:#111; border-radius:6px; padding:1rem 1.1rem; border:1px solid rgba(255,255,255,.08); }
+    .ebc-indexable h4 { margin:.2rem 0 .6rem; color:#111; font-size:1rem; line-height:1.2; text-align:left; }
+    .ebc-indexable h5 { margin:.85rem 0 .35rem; color:#111; font-size:.86rem; line-height:1.2; text-transform:uppercase; letter-spacing:.02em; }
+    .ebc-indexable p { margin:.25rem 0; color:#222; font-size:.78rem; line-height:1.35; }
     .comparison-shell { width:min(1120px, calc(100vw - 3rem)); margin:2rem 0 0 50%; transform:translateX(-50%); overflow:hidden; }
     img-comparison-slider { width:100%; --divider-color: var(--color-acento); --default-handle-color: var(--color-acento); --divider-width: 3px; outline:none; }
     img-comparison-slider [slot="first"], img-comparison-slider [slot="second"] { width:100%; }
@@ -61,7 +69,7 @@
     .old-mockup { filter:saturate(.78); }
     .text-compare { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:1.5rem; }
     .text-compare article { background:var(--color-superficie); border-radius:8px; padding:1.25rem; border:1px solid rgba(255,255,255,.08); }
-    @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } .ebc-copy-card { position:static; width:auto; height:auto; } }
+    @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-top { min-height:0; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } .ebc-copy-card { position:static; width:auto; height:auto; } }
   </style>
 </head>
 <body>
@@ -179,18 +187,18 @@
 
     <section id="skills-demonstrated"><div class="container"><article class="caso-card reverse" data-aos="fade-up"><span class="caso-categoria">Skills demonstrated</span><h2>Skills demonstrated in this project</h2><p>This project demonstrates a combination of Amazon marketplace knowledge, SEO strategy, conversion thinking, creative direction, and technical automation. It required understanding the customer journey, the competitive landscape, the limitations of Amazon content, and the operational challenge of scaling high-quality listing assets across a catalog.</p><p>The work included Amazon title optimization, bullet-point restructuring, A+ / EBC planning, visual system design, competitive listing analysis, KPI interpretation, product-data structuring, and automation-assisted image production. The result was a more professional listing experience supported by measurable improvements in traffic, conversion, and sales.</p></article></div></section>
 
-    <section id="final-before-after-slider"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Before / After</span><h2>Final comparison: the listing experience before and after</h2><p>The final section of the page should show the clearest visual proof of the transformation: a slider comparing the previous Amazon-style listing experience with the refreshed version. This is where the full before-and-after should be shown, because the reader will already understand the strategy behind the change.</p><p>The comparison should make the improvement immediately visible: cleaner visual hierarchy, more professional image direction, clearer product information, stronger technical presentation, improved title structure, and a more conversion-oriented page experience.</p><div class="comparison-shell"><img-comparison-slider value="48" tabindex="0"><div slot="first">
+    <section id="final-before-after-slider"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Before / After</span><h2>Final comparison: the listing experience before and after</h2><p>The final section of the page shows the clearest visual proof of the transformation: a slider comparing the previous Amazon-style listing experience with the refreshed version.</p><p>The comparison makes the improvement visible across the complete listing flow: image gallery, title, bullets, buy box, and A+ / EBC content.</p><div class="comparison-shell"><img-comparison-slider value="48" tabindex="0"><div slot="first">
 <div class="amazon-mockup old-mockup">
   <span class="slot-label">Old Style</span>
   <div class="amazon-top">
     <div class="amazon-gallery">
       <div class="amazon-thumbs">
-        <img src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Old style thumbnail 1">
-        <img src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Old style thumbnail 2">
-        <img src="Revolution/Old Style Images/71knjghDdyL._AC_SL1500_.jpg" alt="Old style thumbnail 3">
-        <img src="Revolution/Old Style Images/71sOafQLc-L._AC_SL1500_.jpg" alt="Old style thumbnail 4">
-        <img src="Revolution/Old Style Images/71KxcE5q0zL._AC_SL1500_.jpg" alt="Old style thumbnail 5">
-        <img src="Revolution/Old Style Images/71xnx6cL2uL._AC_SL1500_.jpg" alt="Old style thumbnail 6">
+        <img class="is-active" src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Old style thumbnail 1" tabindex="0">
+        <img src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Old style thumbnail 2" tabindex="0">
+        <img src="Revolution/Old Style Images/71knjghDdyL._AC_SL1500_.jpg" alt="Old style thumbnail 3" tabindex="0">
+        <img src="Revolution/Old Style Images/71sOafQLc-L._AC_SL1500_.jpg" alt="Old style thumbnail 4" tabindex="0">
+        <img src="Revolution/Old Style Images/71KxcE5q0zL._AC_SL1500_.jpg" alt="Old style thumbnail 5" tabindex="0">
+        <img src="Revolution/Old Style Images/71xnx6cL2uL._AC_SL1500_.jpg" alt="Old style thumbnail 6" tabindex="0">
       </div>
       <img class="amazon-main-image" src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Old style product image">
     </div>
@@ -198,7 +206,7 @@
       <p class="amazon-brand">Visit the store</p>
       <h3 class="amazon-title">Wheel Accessories Parts 24 Pcs M14x1.5 14x1.5 4.4&quot; Long Lug Nuts Chrome Spike Style for Truck Spline Cold forged carbon steel AFTERMARKET wheels only</h3>
       <div class="rating-row"><span class="stars">4.0/5</span><span>Sample rating</span></div>
-      <ul class="amazon-bullets"><li>❌ These Lug nuts are designed for AFTERMARKET wheels only. This lug may be the correct thread for your vehicle in many cases the lug seat is not large enough to create sufficent clamping force to safely install the OE wheel to your vehicle.</li><li>Always use AMAZON CONFIRMED FIT to validate product fitment to your vehicle. This item fits Cadillac 1999+ Escalade | Chevrolet 2002-13 Avalanche | 1991+ Blazer | 2015+ Colorado | K1500 Suburban | 1999+ Silverado 1500 | 2000+ Suburban | 1995+ Tahoe | 2009+ Traverse | Ford 2022+ Bronco | 2015+ Expedition | 2015+ F150 | GMC 2007+ Acadia | 1988-2000 C2500 | 2015+ Canyon | 1999+ Sierra 1500 | 1992+ Yukon | Jeep 2022+ Wagoneer Grand Wagoneer | RAM 2019+ 1500 | Saturn 2007-10 Outlook</li><li>24 Pcs | 4.4&quot; Long | M14x1.5 14x1.5 Thread | Truck Spline | 60 Degree Conical Seat | Spiked | Red Finish | 1 Pc Construction</li><li>Designed in the USA. Spike Lug nuts give your vehicle an edgy custom look. Our 4.40&quot; Long Truck Spline Lug Nuts are typically used on pickup truck applications, where the OE studs are long and require a longer lug nut.</li><li>Cold forged carbon steel. High quality precise threads. Built to SAE Standards.</li></ul>
+      <ul class="amazon-bullets"><li>AFTERMARKET WHEELS ONLY: These Lug nuts are designed for AFTERMARKET wheels only. This lug may be the correct thread for your vehicle; in many cases the lug seat is not large enough to create sufficent clamping force to safely install the OE wheel to your vehicle.</li><li>Always use AMAZON CONFIRMED FIT to validate product fitment to your vehicle. This item fits Cadillac 1999+ Escalade | Chevrolet 2002-13 Avalanche | 1991+ Blazer | 2015+ Colorado | K1500 Suburban | 1999+ Silverado 1500 | 2000+ Suburban | 1995+ Tahoe | 2009+ Traverse | Ford 2022+ Bronco | 2015+ Expedition | 2015+ F150 | GMC 2007+ Acadia | 1988-2000 C2500 | 2015+ Canyon | 1999+ Sierra 1500 | 1992+ Yukon | Jeep 2022+ Wagoneer Grand Wagoneer | RAM 2019+ 1500 | Saturn 2007-10 Outlook</li><li>24 Pcs | 4.4&quot; Long | M14x1.5 14x1.5 Thread | Truck Spline | 60 Degree Conical Seat | Spiked | Red Finish | 1 Pc Construction</li><li>Designed in the USA. Spike Lug nuts give your vehicle an edgy custom look. Our 4.40&quot; Long Truck Spline Lug Nuts are typically used on pickup truck applications, where the OE studs are long and require a longer lug nut.</li><li>Cold forged carbon steel. High quality precise threads. Built to SAE Standards.</li></ul>
     </div>
     <aside class="buy-box" aria-label="Visual-only Amazon action panel">
       <span class="price">$39.99</span>
@@ -211,10 +219,10 @@
     </aside>
   </div>
   <div class="ebc-stack">
-    <img src="Revolution/EBC/Old EBC/DetailHead__53K648L.jpg" alt="Old style EBC module">
-    <img src="Revolution/EBC/Old EBC/RetroCons__53##48L.jpg" alt="Old style EBC construction module">
-    <img src="Revolution/EBC/Old EBC/RetroKsps__53##48L.jpg" alt="Old style EBC key specs module">
-    <img src="Revolution/EBC/Old EBC/RetroSpec__53##48L.jpg" alt="Old style EBC specification module">
+    <div class="ebc-module"><img src="Revolution/EBC/Old EBC/DetailHead__53K648L.jpg" alt="Old style EBC module"></div>
+    <div class="ebc-module"><img src="Revolution/EBC/Old EBC/RetroCons__53%23%2348L.jpg" alt="Old style EBC construction module"></div>
+    <div class="ebc-module"><img src="Revolution/EBC/Old EBC/RetroKsps__53%23%2348L.jpg" alt="Old style EBC key specs module"></div>
+    <div class="ebc-module"><img src="Revolution/EBC/Old EBC/RetroSpec__53%23%2348L.jpg" alt="Old style EBC specification module"></div>
   </div>
 </div></div><div slot="second">
 <div class="amazon-mockup">
@@ -222,11 +230,11 @@
   <div class="amazon-top">
     <div class="amazon-gallery">
       <div class="amazon-thumbs">
-        <img src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="New style thumbnail 1">
-        <img src="Revolution/New Style Images/71uBmAvYSaL._AC_SL1167_.jpg" alt="New style thumbnail 2">
-        <img src="Revolution/New Style Images/71+fRFVAOVL._AC_SL1167_.jpg" alt="New style thumbnail 3">
-        <img src="Revolution/New Style Images/712hJcE7rJL._AC_SL1167_.jpg" alt="New style thumbnail 4">
-        <img src="Revolution/New Style Images/71J9SmUgGWL._AC_SL1167_.jpg" alt="New style thumbnail 5">
+        <img class="is-active" src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="New style thumbnail 1" tabindex="0">
+        <img src="Revolution/New Style Images/71uBmAvYSaL._AC_SL1167_.jpg" alt="New style thumbnail 2" tabindex="0">
+        <img src="Revolution/New Style Images/71+fRFVAOVL._AC_SL1167_.jpg" alt="New style thumbnail 3" tabindex="0">
+        <img src="Revolution/New Style Images/712hJcE7rJL._AC_SL1167_.jpg" alt="New style thumbnail 4" tabindex="0">
+        <img src="Revolution/New Style Images/71J9SmUgGWL._AC_SL1167_.jpg" alt="New style thumbnail 5" tabindex="0">
       </div>
       <img class="amazon-main-image" src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="New style product image">
     </div>
@@ -234,7 +242,7 @@
       <p class="amazon-brand">Visit the store</p>
       <h3 class="amazon-title">Wheel Accessories Parts 24 Pcs M14x1.5 14x1.5 Thread Spiked 4.4&quot; Long Lug Nuts Chrome Truck Spline Hex Fits Chevy Silverado GMC Sierra Ford F-150 RAM 1500</h3>
       <div class="rating-row"><span class="stars">4.0/5</span><span>Sample rating</span></div>
-      <ul class="amazon-bullets"><li>EXACT FACTORY SPECIFICATIONS: Includes 24 Pcs Spiked Style Lug Nuts with M14x1.5 14x1.5 Threads ｜ 4.4&quot; Long ｜ Truck Spline Hex ｜ 60 Degree Conical Seat ｜ True One-Piece Heat Treated Carbon Steel Construction with Black Finish</li><li>PRECISION FITMENT ENGINEERED FOR AFTERMARKET WHEELS. Compatible on vehicles with M14x1.5 14x1.5 threads as found on Cadillac 1999+ Escalade ｜ Chevrolet 2015+ Colorado 1999+ Silverado 1500 2015+ Suburban 1995+ Tahoe ｜ Ford 2022-25 Bronco 2015-24 Expedition 2015+ F-150 2023-25 Ranger ｜ GMC 2015+ Canyon 1999+ Sierra 1500 1992+ Yukon ｜ Jeep 2022-25 Grand Wagoneer 2022-25 Wagoneer ｜ Lincoln 2015+ Navigator ｜ Ram 2019+ 1500 Confirm compatibility with AMAZON CONFIRM FIT. FOR AFTERMARKET WHEELS Only</li><li>DESIGNED &amp; TESTED IN USA: Truck Spline Hex Spiked Lug Nuts are specifically designed for aftermarket wheels. One-Piece design ensures reliable clamping force and long-term durability under daily driving conditions.</li><li>RELIABLE PERFORMANCE &amp; CORROSION RESISTANCE: Premium multi-layer Black coating tested for 72-hour salt-spray corrosion protection. Ideal upgrade for your vehicle. Designed for RAINY climate and AFTERMARKET wheels. Cold Forged carbon Steel. High quality Precise M14x1.5 14x1.5 threads. Built to SAE Standards</li><li>COMPLETE 24 Pcs SET: Full lug nuts set for four wheels Black Lug Nuts with 60 Degree Conical Seat ready for direct installation. Upgrade now to your vehicles appearance and the safety you are looking for.</li></ul>
+      <ul class="amazon-bullets"><li>EXACT FACTORY SPECIFICATIONS: Includes 24 Pcs Spiked Style Lug Nuts with M14x1.5 14x1.5 Threads | 4.4&quot; Long | Truck Spline Hex | 60 Degree Conical Seat | True One-Piece Heat Treated Carbon Steel Construction with Black Finish</li><li>PRECISION FITMENT ENGINEERED FOR AFTERMARKET WHEELS. Compatible on vehicles with M14x1.5 14x1.5 threads as found on Cadillac 1999+ Escalade | Chevrolet 2015+ Colorado 1999+ Silverado 1500 2015+ Suburban 1995+ Tahoe | Ford 2022-25 Bronco 2015-24 Expedition 2015+ F-150 2023-25 Ranger | GMC 2015+ Canyon 1999+ Sierra 1500 1992+ Yukon | Jeep 2022-25 Grand Wagoneer 2022-25 Wagoneer | Lincoln 2015+ Navigator | Ram 2019+ 1500 Confirm compatibility with AMAZON CONFIRM FIT. FOR AFTERMARKET WHEELS Only</li><li>DESIGNED &amp; TESTED IN USA: Truck Spline Hex Spiked Lug Nuts are specifically designed for aftermarket wheels. One-Piece design ensures reliable clamping force and long-term durability under daily driving conditions.</li><li>RELIABLE PERFORMANCE &amp; CORROSION RESISTANCE: Premium multi-layer Black coating tested for 72-hour salt-spray corrosion protection. Ideal upgrade for your vehicle. Designed for RAINY climate and AFTERMARKET wheels. Cold Forged carbon Steel. High quality Precise M14x1.5 14x1.5 threads. Built to SAE Standards</li><li>COMPLETE 24 Pcs SET: Full lug nuts set for four wheels Black Lug Nuts with 60 Degree Conical Seat ready for direct installation. Upgrade now to your vehicles appearance and the safety you are looking for.</li></ul>
     </div>
     <aside class="buy-box" aria-label="Visual-only Amazon action panel">
       <span class="price">$39.99</span>
@@ -247,10 +255,12 @@
     </aside>
   </div>
   <div class="ebc-stack">
-    <img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New style EBC brand module">
-    <img src="Revolution/EBC/New EBC/8fae7bda-deda-4ab8-b719-ba1de54ad308.__CR0,0,2021,1250_PT0_SX970_V1___.jpg" alt="New style EBC fitment module">
-    <img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New style EBC repeated brand module">
-    <div class="ebc-panel"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New style EBC salt spray module"><div class="ebc-copy-card"><h4>One Piece &amp; 72 Hours Strict Salt Spray Test</h4><p>Engineered with a superior one-piece construction, our lug nuts outperform and outlast OEM designs. They undergo a rigorous 72-hour salt spray test, guaranteeing exceptional rust and corrosion resistance.</p></div></div>
+    <div class="ebc-module"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New style EBC brand module"></div>
+    <div class="ebc-module"><img src="Revolution/EBC/New EBC/8fae7bda-deda-4ab8-b719-ba1de54ad308.__CR0,0,2021,1250_PT0_SX970_V1___.jpg" alt="New style EBC fitment module"></div>
+    <div class="ebc-indexable"><h4>Lug Nuts for Ford and Lincoln Vehicles</h4><h5>Fitment for the following Ford models</h5><p>2021+ Ford Bronco Sport: 2021 Ford Bronco Sport, 2022 Ford Bronco Sport, 2023 Ford Bronco Sport, 2024 Ford Bronco Sport, 2025 Ford Bronco Sport</p><p>2018-2022 Ford EcoSport: 2018 Ford EcoSport, 2019 Ford EcoSport, 2020 Ford EcoSport, 2021 Ford EcoSport, 2022 Ford EcoSport</p><p>2021+ Ford Escape: 2021 Ford Escape, 2022 Ford Escape, 2023 Ford Escape, 2024 Ford Escape, 2025 Ford Escape</p><p>2006-2020 Ford Fusion: 2006 Ford Fusion, 2007 Ford Fusion, 2008 Ford Fusion, 2009 Ford Fusion, 2010 Ford Fusion, 2011 Ford Fusion, 2012 Ford Fusion, 2013 Ford Fusion, 2014 Ford Fusion, 2015 Ford Fusion, 2016 Ford Fusion, 2017 Ford Fusion, 2018 Ford Fusion, 2019 Ford Fusion, 2020 Ford Fusion</p><p>2021+ Ford Ranger: 2021 Ford Ranger, 2022 Ford Ranger, 2023 Ford Ranger, 2024 Ford Ranger, 2025 Ford Ranger</p><h5>Fitment for the following Lincoln models</h5><p>2020+ Lincoln Corsair: 2020 Lincoln Corsair, 2021 Lincoln Corsair, 2022 Lincoln Corsair, 2023 Lincoln Corsair, 2024 Lincoln Corsair, 2025 Lincoln Corsair</p></div>
+    <div class="ebc-indexable"><h4>A Precision-Engineered Lug Nut Set</h4><p>As a US-owned business, we deliver precision-engineered quality you can trust. Your order arrives with a complete set of 20 lug nuts. Designed for OEM wheels. Replaces factory parts CV6Z-1012-C and 611-303.</p></div>
+    <div class="ebc-module"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New style EBC repeated brand module"></div>
+    <div class="ebc-panel"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New style EBC salt spray module"><div class="ebc-copy-card"><h4>One Piece &amp; 72 Hours Strict Salt Spray Test</h4><p>Engineered with a superior one-piece construction, our lug nuts outperform and outlast OEM designs. They undergo a rigorous 72-hour salt spray test, guaranteeing exceptional rust and corrosion resistance. This ensures a durable, all-weather finish for enhanced safety and peace of mind.</p></div></div>
   </div>
 </div></div></img-comparison-slider></div></article></div></section>
   </main>
@@ -268,6 +278,26 @@
         navToggle.setAttribute('aria-expanded', !isExpanded);
         navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
       });
+      document.querySelectorAll('.amazon-gallery').forEach((gallery) => {
+        const mainImage = gallery.querySelector('.amazon-main-image');
+        gallery.querySelectorAll('.amazon-thumbs img').forEach((thumb) => {
+          const selectImage = () => {
+            if (!mainImage) return;
+            mainImage.src = thumb.currentSrc || thumb.src;
+            mainImage.alt = thumb.alt.replace('thumbnail', 'product image');
+            gallery.querySelectorAll('.amazon-thumbs img').forEach((img) => img.classList.remove('is-active'));
+            thumb.classList.add('is-active');
+          };
+          thumb.addEventListener('click', selectImage);
+          thumb.addEventListener('pointerup', selectImage);
+          thumb.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              selectImage();
+            }
+          });
+        });
+      });
       const traffic = {"Organic Traffic":[49900,57280],"Paid Search Traffic":[15434,33861],"Other Traffic":[1042747,1231898],"Total Traffic":[1108081,1323039]};
       const chartColor = '#4FD1C5';
       Chart.defaults.color = 'rgba(255,255,255,.62)';
@@ -280,3 +310,4 @@
   </script>
 </body>
 </html>
+
