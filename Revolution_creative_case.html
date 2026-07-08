@@ -29,6 +29,8 @@
     .chart-card h3 { font-size: 1.1rem; margin-top: 0; text-align:left; }
     .chart-card canvas { width:100%; min-height: 260px; }
     .image-row { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:1rem; margin-top:1.5rem; }
+    .image-row.single-visual { grid-template-columns:minmax(0, 1fr); }
+    .image-row.single-visual img { max-height:520px; object-fit:contain; }
     .image-row img, .amazon-gallery img, .ebc-stack img { width:100%; height:100%; object-fit:cover; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; }
     .wire-diagram { display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; margin-top:1.5rem; }
     .wire-diagram span { background: rgba(var(--color-acento-rgb), .12); border:1px solid rgba(var(--color-acento-rgb), .25); padding:.75rem 1rem; border-radius:6px; color:var(--color-texto); font-weight:800; }
@@ -169,7 +171,7 @@
       <p>This approach creates a major operational advantage. Instead of redesigning every image manually, the workflow can produce consistent image sets across many SKUs while still preserving product-specific accuracy. It reduces repetitive design work, lowers the risk of formatting inconsistencies, and makes future catalog expansion faster.</p>
       <div class="process-explanation"><article><h3>Template logic</h3><p>Photoshop defined spacing, typography, hierarchy, product placement, callout style, and export-ready composition.</p></article><article><h3>Data logic</h3><p>Thread size, quantity, finish, seat type, vehicle families, and compatibility notes became structured inputs.</p></article><article><h3>Automation logic</h3><p>Coding automated repeat production tasks across multiple SKUs without rebuilding every asset manually.</p></article><article><h3>Output logic</h3><p>Amazon-ready image sets stayed consistent while preserving product-specific accuracy.</p></article></div>
       <div class="wire-diagram"><span>Product Data</span><i>-&gt;</i><span>Photoshop Template</span><i>-&gt;</i><span>Automated Image Output</span><i>-&gt;</i><span>Amazon Listing</span></div>
-      <div class="image-row"><img src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="Optimized listing asset"><img src="Revolution/New Style Images/71uBmAvYSaL._AC_SL1167_.jpg" alt="New visual system asset"><img src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Original listing asset"></div>
+      <div class="image-row single-visual"><img src="Caso1_render1.png" alt="Automated product render generated for scalable image production"></div>
     </article></div></section>
 
     <section id="content-system"><div class="container"><article class="caso-card reverse" data-aos="fade-up">
