@@ -24,6 +24,8 @@
     .kpi-number { display:block; color: var(--color-acento); font-size: 2rem; font-weight: 900; line-height: 1; }
     .kpi-label { color: var(--color-texto-sec); font-weight: 700; font-size: .9rem; }
     .chart-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .chart-card { cursor:zoom-in; transition:border-color .2s ease, transform .2s ease; }
+    .chart-card:hover, .chart-card:focus-visible { border-color:rgba(var(--color-acento-rgb), .58); transform:translateY(-2px); outline:none; }
     .chart-card h3 { font-size: 1.1rem; margin-top: 0; text-align:left; }
     .chart-card canvas { width:100%; min-height: 260px; }
     .image-row { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:1rem; margin-top:1.5rem; }
@@ -72,7 +74,7 @@
     .ebc-inline img { width:100%; height:auto; border-radius:4px; border:0; background:#fff; }
     .ebc-inline h4 { margin:0 0 .55rem; color:var(--color-texto); font-size:1rem; line-height:1.2; text-align:left; }
     .ebc-inline p { margin:0; color:rgba(255,255,255,.76); font-size:.78rem; line-height:1.35; }
-    .comparison-shell { width:min(1120px, calc(100vw - 3rem)); margin:5.5rem 0 0 50%; transform:translateX(-50%); overflow:hidden; isolation:isolate; }
+    .comparison-shell { width:min(1120px, calc(100vw - 3rem)); margin:7rem 0 0 50%; transform:translateX(-50%); overflow:hidden; isolation:isolate; }
     .comparison-labels { grid-column:1 / -1; display:flex; justify-content:space-between; gap:1rem; padding:1rem 1.25rem .75rem; color:var(--color-acento); font-weight:900; text-transform:uppercase; font-size:.78rem; letter-spacing:.08em; background:var(--color-superficie); }
     .comparison-frame { --split:50%; --split-negative:-50%; --frame-width:1120px; position:relative; width:100%; overflow:hidden; border-radius:8px; display:grid; grid-template-columns: var(--split) minmax(0, 1fr); align-items:start; border:1px solid rgba(var(--color-acento-rgb), .28); background:var(--color-superficie); }
     .comparison-pane { min-width:0; overflow:hidden; }
@@ -92,6 +94,13 @@
     .old-mockup { filter:none; }
     .text-compare { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:1.5rem; }
     .text-compare article { background:var(--color-superficie); border-radius:8px; padding:1.25rem; border:1px solid rgba(255,255,255,.08); }
+    .chart-modal { position:fixed; inset:0; z-index:9999; display:none; place-items:center; padding:2rem; background:rgba(0,0,0,.82); backdrop-filter:blur(8px); }
+    .chart-modal.is-open { display:grid; }
+    .chart-modal-panel { position:relative; width:min(1120px, 94vw); height:min(720px, 84vh); background:var(--color-superficie); border:1px solid rgba(var(--color-acento-rgb), .35); border-radius:8px; padding:1.5rem; box-shadow:0 22px 70px rgba(0,0,0,.45); }
+    .chart-modal-panel h3 { margin:0 3rem 1rem 0; text-align:left; font-size:1.25rem; }
+    .chart-modal-panel canvas { width:100% !important; height:calc(100% - 3rem) !important; }
+    .chart-modal-close { position:absolute; top:1rem; right:1rem; width:2.25rem; height:2.25rem; border:1px solid rgba(255,255,255,.16); border-radius:999px; background:#111; color:var(--color-texto); font-size:1.35rem; line-height:1; cursor:pointer; }
+    body.chart-modal-open { overflow:hidden; }
     @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare, .ebc-inline { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-top { min-height:0; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } .ebc-copy-card { position:static; width:auto; height:auto; } .workflow-steps h3 { white-space:normal; } }
   </style>
 </head>
@@ -286,6 +295,14 @@
 </div></div></div><div class="comparison-handle" data-comparison-handle role="separator" aria-label="Drag to compare old and new listing" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"><span></span></div></div></div></article></div></section>
   </main>
 
+  <div class="chart-modal" id="chartModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="chartModalTitle">
+    <div class="chart-modal-panel">
+      <button class="chart-modal-close" type="button" aria-label="Close expanded chart">&times;</button>
+      <h3 id="chartModalTitle"></h3>
+      <canvas id="chartModalCanvas"></canvas>
+    </div>
+  </div>
+
   <footer><div class="container"><p>&copy; 2026 Matias Gaglio. Portfolio personal.</p></div></footer>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
@@ -377,10 +394,79 @@
       const chartColor = '#4FD1C5';
       Chart.defaults.color = 'rgba(255,255,255,.62)';
       Chart.defaults.borderColor = 'rgba(255,255,255,.08)';
-      new Chart(document.getElementById('trafficTotalChart'), { type:'bar', data: { labels:['Earlier period','Refreshed period'], datasets:[{ label:'Total Traffic', data: traffic['Total Traffic'], backgroundColor:['rgba(255,255,255,.22)','rgba(79,209,197,.72)'] }] }, options: { responsive:true, plugins:{legend:{display:false}} } });
-      new Chart(document.getElementById('trafficMixChart'), { type:'bar', data: { labels:['Organic','Paid Search','Other','Total'], datasets:[{ label:'Earlier', data:[traffic['Organic Traffic'][0],traffic['Paid Search Traffic'][0],traffic['Other Traffic'][0],traffic['Total Traffic'][0]], backgroundColor:'rgba(255,255,255,.22)' },{ label:'Refreshed', data:[traffic['Organic Traffic'][1],traffic['Paid Search Traffic'][1],traffic['Other Traffic'][1],traffic['Total Traffic'][1]], backgroundColor:'rgba(79,209,197,.72)' }] }, options: { responsive:true, scales:{x:{ticks:{maxRotation:0}}} } });
-      new Chart(document.getElementById('conversionChart'), { type:'line', data: { labels:["Jul 05","Jul 12","Jul 19","Jul 26","Aug 02","Aug 09","Aug 16","Aug 23","Aug 30","Sep 06","Sep 13","Sep 20","Sep 27","Oct 04","Oct 11","Oct 18","Oct 25","Nov 01","Nov 08","Nov 15","Nov 22","Nov 29","Dec 06","Dec 13","Dec 20","Dec 27","Jan 03","Jan 10","Jan 17","Jan 24","Jan 31","Feb 07","Feb 14","Feb 21","Feb 28","Mar 07","Mar 14","Mar 21","Mar 28","Apr 04","Apr 11","Apr 18","Apr 25","May 02","May 09","May 16","May 23","May 30","Jun 06","Jun 13","Jun 20","Jun 27"], datasets:[{ label:'Conversion rate %', data:[7.58,7.09,7.86,8.29,8.02,6.48,6.67,6.33,8.64,8.46,9.66,10.13,8.02,8.66,5.88,8.17,6.0,8.03,6.74,6.73,6.99,7.46,7.26,6.07,6.78,5.49,5.86,7.04,7.0,6.89,6.21,8.74,9.03,8.23,9.05,8.7,9.8,10.08,8.58,7.24,8.14,10.01,8.03,8.7,9.41,6.57,7.69,8.32,8.56,5.77,2.95,7.59], borderColor:chartColor, backgroundColor:'rgba(79,209,197,.15)', pointRadius:1.5, tension:.28, fill:true }] }, options: { responsive:true } });
-      new Chart(document.getElementById('retailChart'), { type:'line', data: { labels:["Jul 05","Jul 12","Jul 19","Jul 26","Aug 02","Aug 09","Aug 16","Aug 23","Aug 30","Sep 06","Sep 13","Sep 20","Sep 27","Oct 04","Oct 11","Oct 18","Oct 25","Nov 01","Nov 08","Nov 15","Nov 22","Nov 29","Dec 06","Dec 13","Dec 20","Dec 27","Jan 03","Jan 10","Jan 17","Jan 24","Jan 31","Feb 07","Feb 14","Feb 21","Feb 28","Mar 07","Mar 14","Mar 21","Mar 28","Apr 04","Apr 11","Apr 18","Apr 25","May 02","May 09","May 16","May 23","May 30","Jun 06","Jun 13","Jun 20","Jun 27"], datasets:[{ label:'Retail sales USD', data:[100914,106387,102720,106942,112350,103632,105049,109282,114478,107307,105089,111525,115032,123833,116577,120050,111322,109777,117515,126590,137333,119883,108127,114817,120694,93292,99754,112539,116849,109034,102464,124255,134441,142834,144430,136407,158700,145219,154521,160868,158685,152436,160172,158399,162999,162416,155734,150106,157088,141702,140612,146513], borderColor:chartColor, backgroundColor:'rgba(79,209,197,.12)', pointRadius:1.5, tension:.25, fill:true }] }, options: { responsive:true } });
+      const weeklyLabels = ["Jul 05","Jul 12","Jul 19","Jul 26","Aug 02","Aug 09","Aug 16","Aug 23","Aug 30","Sep 06","Sep 13","Sep 20","Sep 27","Oct 04","Oct 11","Oct 18","Oct 25","Nov 01","Nov 08","Nov 15","Nov 22","Nov 29","Dec 06","Dec 13","Dec 20","Dec 27","Jan 03","Jan 10","Jan 17","Jan 24","Jan 31","Feb 07","Feb 14","Feb 21","Feb 28","Mar 07","Mar 14","Mar 21","Mar 28","Apr 04","Apr 11","Apr 18","Apr 25","May 02","May 09","May 16","May 23","May 30","Jun 06","Jun 13","Jun 20","Jun 27"];
+      const chartConfigs = {
+        trafficTotalChart: { type:'bar', data: { labels:['Earlier period','Refreshed period'], datasets:[{ label:'Total Traffic', data: traffic['Total Traffic'], backgroundColor:['rgba(255,255,255,.22)','rgba(79,209,197,.72)'] }] }, options: { responsive:true, plugins:{legend:{display:false}}, animation:{duration:1100, easing:'easeOutQuart'} } },
+        trafficMixChart: { type:'bar', data: { labels:['Organic','Paid Search','Other','Total'], datasets:[{ label:'Earlier', data:[traffic['Organic Traffic'][0],traffic['Paid Search Traffic'][0],traffic['Other Traffic'][0],traffic['Total Traffic'][0]], backgroundColor:'rgba(255,255,255,.22)' },{ label:'Refreshed', data:[traffic['Organic Traffic'][1],traffic['Paid Search Traffic'][1],traffic['Other Traffic'][1],traffic['Total Traffic'][1]], backgroundColor:'rgba(79,209,197,.72)' }] }, options: { responsive:true, scales:{x:{ticks:{maxRotation:0}}}, animation:{duration:1100, easing:'easeOutQuart'} } },
+        conversionChart: { type:'line', data: { labels:weeklyLabels, datasets:[{ label:'Conversion rate %', data:[7.58,7.09,7.86,8.29,8.02,6.48,6.67,6.33,8.64,8.46,9.66,10.13,8.02,8.66,5.88,8.17,6.0,8.03,6.74,6.73,6.99,7.46,7.26,6.07,6.78,5.49,5.86,7.04,7.0,6.89,6.21,8.74,9.03,8.23,9.05,8.7,9.8,10.08,8.58,7.24,8.14,10.01,8.03,8.7,9.41,6.57,7.69,8.32,8.56,5.77,2.95,7.59], borderColor:chartColor, backgroundColor:'rgba(79,209,197,.15)', pointRadius:1.5, tension:.28, fill:true }] }, options: { responsive:true, animation:{duration:1200, easing:'easeOutQuart'} } },
+        retailChart: { type:'line', data: { labels:weeklyLabels, datasets:[{ label:'Retail sales USD', data:[100914,106387,102720,106942,112350,103632,105049,109282,114478,107307,105089,111525,115032,123833,116577,120050,111322,109777,117515,126590,137333,119883,108127,114817,120694,93292,99754,112539,116849,109034,102464,124255,134441,142834,144430,136407,158700,145219,154521,160868,158685,152436,160172,158399,162999,162416,155734,150106,157088,141702,140612,146513], borderColor:chartColor, backgroundColor:'rgba(79,209,197,.12)', pointRadius:1.5, tension:.25, fill:true }] }, options: { responsive:true, animation:{duration:1200, easing:'easeOutQuart'} } }
+      };
+      const chartInstances = {};
+      const cloneChartConfig = (config) => JSON.parse(JSON.stringify(config));
+      const createChart = (canvas) => {
+        if (!canvas || chartInstances[canvas.id]) return;
+        chartInstances[canvas.id] = new Chart(canvas, cloneChartConfig(chartConfigs[canvas.id]));
+      };
+      const chartCards = document.querySelectorAll('.chart-card');
+      chartCards.forEach((card) => {
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `Open ${card.querySelector('h3')?.textContent || 'chart'} full screen`);
+      });
+      if ('IntersectionObserver' in window) {
+        const chartObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            createChart(entry.target.querySelector('canvas'));
+            observer.unobserve(entry.target);
+          });
+        }, { threshold:.35 });
+        chartCards.forEach((card) => chartObserver.observe(card));
+      } else {
+        document.querySelectorAll('.chart-card canvas').forEach(createChart);
+      }
+      const chartModal = document.getElementById('chartModal');
+      const chartModalTitle = document.getElementById('chartModalTitle');
+      const chartModalCanvas = document.getElementById('chartModalCanvas');
+      const chartModalClose = chartModal?.querySelector('.chart-modal-close');
+      let expandedChart = null;
+      const closeChartModal = () => {
+        chartModal?.classList.remove('is-open');
+        chartModal?.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('chart-modal-open');
+        expandedChart?.destroy();
+        expandedChart = null;
+      };
+      const openChartModal = (card) => {
+        const canvas = card.querySelector('canvas');
+        const config = chartConfigs[canvas?.id];
+        if (!canvas || !config || !chartModal || !chartModalCanvas) return;
+        createChart(canvas);
+        expandedChart?.destroy();
+        chartModalTitle.textContent = card.querySelector('h3')?.textContent || '';
+        const modalConfig = cloneChartConfig(config);
+        modalConfig.options = { ...modalConfig.options, maintainAspectRatio:false, animation:{duration:900, easing:'easeOutQuart'} };
+        chartModal.classList.add('is-open');
+        chartModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('chart-modal-open');
+        expandedChart = new Chart(chartModalCanvas, modalConfig);
+        chartModalClose?.focus();
+      };
+      chartCards.forEach((card) => {
+        card.addEventListener('click', () => openChartModal(card));
+        card.addEventListener('keydown', (event) => {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+          openChartModal(card);
+        });
+      });
+      chartModalClose?.addEventListener('click', closeChartModal);
+      chartModal?.addEventListener('click', (event) => {
+        if (event.target === chartModal) closeChartModal();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && chartModal?.classList.contains('is-open')) closeChartModal();
+      });
     });
   </script>
 </body>
