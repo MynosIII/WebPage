@@ -97,6 +97,15 @@
             <figcaption>Flyer · ABC</figcaption>
           </figure>
 
+
+          <a class="grid-item cat-flyers case-link" data-aos="fade-up" data-aos-delay="175"
+             href="Revolution_creative_case.html"
+             aria-label="Ver caso Revolution Listing Refresh">
+            <div class="ratio-box" style="--ratio: 4/3;">
+              <img class="thumb" src="Revolution/New Style Images/71uBmAvYSaL._AC_SL1167_.jpg" alt="Miniatura caso Revolution Listing Refresh" loading="lazy" />
+            </div>
+            <figcaption>Revolution Listing Refresh - Listing visuals, SEO copy and conversion system</figcaption>
+          </a>
           <figure class="grid-item cat-videos" data-aos="fade-up"
                   data-video-id="u31qwQUeGuM"
                   aria-label="Ver Video Demo Producto">
@@ -270,6 +279,9 @@
 
         items.forEach(item => {
           item.addEventListener('click', (e) => {
+            if (item.matches('a[href]') && !item.dataset.videoId && !item.dataset.fullSrc) {
+              return;
+            }
             e.preventDefault();
             const videoId = item.dataset.videoId;
             const fullSrc = item.dataset.fullSrc;
