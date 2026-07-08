@@ -313,7 +313,7 @@
         };
 
         nextBtn.addEventListener('click', () => {
-          carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
+          carousel.scrollBy({ left: scrollStep(), behavior: 'smooth' });
         });
 
         prevBtn.addEventListener('click', () => {
