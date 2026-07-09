@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Matías Gaglio – Traductor Analítico</title>
-  <meta name="description" content="Transformo datos en estrategia y estética que convierten." />
+  <title>Matías Gaglio – Performance Marketing & BI</title>
+  <meta name="description" content="Portfolio de Matías Gaglio: performance marketing, business intelligence, SEO y creatividad visual para ecommerce." />
   
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=ux-homepage-2" />
   
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -22,9 +22,9 @@
         <span class="hamburger-line"></span>
       </button>
 
-      <nav class="nav-menu">
+      <nav class="nav-menu" aria-label="Navegación principal">
         <ul>
-          <li><a href="index.html" class="accent">Home</a></li>
+          <li><a href="index.html" class="accent" aria-current="page">Home</a></li>
           <li><a href="ecommerce.html">Ecommerce</a></li>
           <li><a href="creatives.html">Creatives</a></li>
           <li><a href="consultora.html">Consultora de Opinión</a></li>
@@ -41,16 +41,33 @@
     
     <section id="hero" class="hero">
       <div class="container">
+        <p class="hero-kicker" data-aos="fade-up">Performance Marketing + BI + Creatividad Visual</p>
         <h1 class="hero-titulo" data-aos="fade-up" data-aos-delay="200">
-            Traductor Analítico
+            Matías Gaglio
         </h1>
         <p class="hero-subtitulo" data-aos="fade-up" data-aos-delay="400">
-            Conecto <strong class="accent">estrategia de datos</strong> y <strong class="accent">creatividad visual</strong> 
-            para optimizar y convertir.
+            Transformo datos de ecommerce, Amazon Ads y contenido visual en decisiones claras para crecer con rentabilidad.
         </p>
 
-        <a href="#cases" class="cta-button" data-aos="fade-up" data-aos-delay="600">Ver mi trabajo</a>
-        <a href="#about" class="cta-button secondary" data-aos="fade-up" data-aos-delay="650" style="margin-left: 1rem;">Sobre mí</a>
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="600">
+          <a href="#cases" class="cta-button">Ver casos de estudio</a>
+          <a href="mailto:matiasignaciogaglio@gmail.com" class="cta-button secondary">Contactar</a>
+        </div>
+
+        <dl class="hero-proof" aria-label="Resultados destacados" data-aos="fade-up" data-aos-delay="700">
+          <div>
+            <dt>ROAS</dt>
+            <dd>4.1 a 6.26</dd>
+          </div>
+          <div>
+            <dt>Ventas auditadas</dt>
+            <dd>+580K USD</dd>
+          </div>
+          <div>
+            <dt>Especialidades</dt>
+            <dd>Ads, BI, SEO, Creatives</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
@@ -273,6 +290,14 @@
           const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
           navToggle.setAttribute('aria-expanded', !isExpanded);
           navToggle.setAttribute('aria-label', isExpanded ? 'Abrir menú' : 'Cerrar menú');
+        });
+
+        navMenu.addEventListener('click', (event) => {
+          if (event.target.matches('a')) {
+            document.querySelector('.navbar').classList.remove('nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'Abrir menú');
+          }
         });
       }
 
