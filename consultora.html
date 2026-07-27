@@ -3,117 +3,365 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Consultora de Opinión – Matías Gaglio</title>
-  <meta name="description" content="Investigación de opinión, análisis de datos sociales y traducción de evidencia en decisiones comunicacionales." />
+  <title>Pulso de la opinión pública – Matías Gaglio</title>
+  <meta name="description" content="Datos, tendencias e informes sobre la imagen de Javier Milei y el clima de opinión pública en Argentina." />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
   <header class="navbar">
     <div class="container">
       <a href="index.html" class="nav-logo">Matías Gaglio.</a>
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
       </button>
-      <nav class="nav-menu">
+      <nav class="nav-menu" aria-label="Navegación principal">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ecommerce.html">Ecommerce</a></li>
-          <li><a href="Articles.html">Articles</a></li>
+          <li><a href="index.html">Home</a></li><li><a href="ecommerce.html">Ecommerce</a></li>
           <li><a href="creatives.html">Creatives</a></li>
-          <li><a href="consultora.html" class="accent">Consultora de Opinión</a></li>
-          <li><a href="otros.html">Otros proyectos</a></li>
-          <li><a href="SEO.html">ChatMatias</a></li>
+          <li><a href="consultora.html" class="accent" aria-current="page">Consultora de Opinión</a></li>
+          <li><a href="otros.html">Otros proyectos</a></li><li><a href="SEO.html">ChatMatias</a></li>
           <li><a href="sobre-mi.html">Sobre Mi</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <h1 data-aos="fade-up">Consultora de Opinión</h1>
-        <p data-aos="fade-up" data-aos-delay="100">Investigación social aplicada, análisis de datos y estrategia comunicacional para entender audiencias, climas de opinión y narrativas públicas.</p>
+  <main class="opinion-page">
+    <section class="opinion-hero">
+      <div class="container opinion-hero-grid">
+        <div>
+          <span class="repository-eyebrow">Observatorio · Argentina</span>
+          <h1>Pulso de la<br><em>opinión pública</em></h1>
+          <p>Una lectura visual de encuestas nacionales, evolución de imagen y climas políticos. Datos de múltiples consultoras, contrastados con informes académicos propios.</p>
+        </div>
+        <aside class="hero-signal" aria-label="Última medición destacada">
+          <span>Octubre 2025 · Zuban Córdoba</span>
+          <strong>63,2%</strong>
+          <p>imagen negativa de Javier Milei</p>
+          <div class="signal-delta">+3,6 pp vs. septiembre</div>
+        </aside>
       </div>
     </section>
 
-    <section id="metodo">
+    <section class="opinion-intro">
       <div class="container">
-        <h2 data-aos="fade-up" style="text-align:left; margin-bottom:3rem;">Qué problema resuelve</h2>
-        <div class="method-grid">
-          <article class="method-card" data-aos="fade-up" data-aos-delay="100">
-            <h3>1. Diagnóstico de percepción</h3>
-            <p>Construcción de encuestas, lectura de datos demográficos y segmentación de públicos para detectar qué piensa una audiencia, dónde cambia su opinión y qué variables explican mejor ese cambio.</p>
+        <div class="metric-strip">
+          <div><strong>84</strong><span>encuestas censadas</span></div>
+          <div><strong>20+</strong><span>fuentes consultadas</span></div>
+          <div><strong>2024–2026</strong><span>ventana de análisis</span></div>
+          <div><strong>19</strong><span>informes propios</span></div>
+        </div>
+        <div class="analysis-lead">
+          <span class="section-number">01</span>
+          <div>
+            <span class="repository-kicker">Serie multipoll</span>
+            <h2>La imagen de Milei, encuesta por encuesta</h2>
+            <p>El promedio mensual combina mediciones de Circuitos, Fixer, Pulso Research, Zuban Córdoba, AtlasIntel, CB, Opina Argentina, UdeSA y otras firmas. La curva resume la señal común sin esconder la dispersión entre consultoras.</p>
+          </div>
+        </div>
+        <article class="chart-card chart-card-wide">
+          <div class="chart-head">
+            <div>
+              <h3>Imagen positiva y negativa</h3>
+              <p>Promedio mensual de encuestas nacionales · enero 2024–enero 2025</p>
+            </div>
+            <div class="chart-legend"><span><i class="legend-positive"></i>Positiva</span><span><i class="legend-negative"></i>Negativa</span></div>
+          </div>
+          <div id="milei-trend" class="svg-chart" role="img" aria-label="Evolución mensual de imagen positiva y negativa de Javier Milei"></div>
+          <div class="chart-note"><span>● Meses con 3 o más encuestas</span><span>○ Meses de baja muestra: lectura orientativa</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="model-section">
+      <div class="container">
+        <div class="analysis-lead">
+          <span class="section-number">02</span>
+          <div>
+            <span class="repository-kicker">Matemáticamente analizado</span>
+            <h2>Completar huecos sin inventar certezas</h2>
+            <p>Muchas encuestas publican solamente “positiva” y “negativa”; otras separan cada respuesta en cinco niveles. El modelo redistribuye los totales faltantes usando la estructura observada en mediciones cercanas y conserva el porcentaje de cada encuesta. Es una imputación descriptiva: ayuda a comparar formatos, pero no reemplaza el dato original.</p>
+          </div>
+        </div>
+        <div class="model-grid">
+          <article class="chart-card">
+            <div class="chart-head">
+              <div><h3>Composición modelada</h3><p>Promedios mensuales · suma de cinco niveles</p></div>
+            </div>
+            <div id="model-bars" class="svg-chart model-chart" role="img" aria-label="Composición mensual modelada de la imagen de Javier Milei"></div>
+            <div class="model-legend">
+              <span><i style="background:#ff5d73"></i>Muy negativa</span><span><i style="background:#ff9a68"></i>Negativa</span>
+              <span><i style="background:#7c8493"></i>Neutra</span><span><i style="background:#63d8c6"></i>Positiva</span>
+              <span><i style="background:#00e0ff"></i>Muy positiva</span>
+            </div>
           </article>
-          <article class="method-card" data-aos="fade-up" data-aos-delay="200">
-            <h3>2. Traducción comunicacional</h3>
-            <p>Transformación de resultados cuantitativos y cualitativos en hipótesis de comunicación: mensajes, riesgos, tensiones simbólicas, posicionamiento y oportunidades narrativas.</p>
-          </article>
-          <article class="method-card" data-aos="fade-up" data-aos-delay="300">
-            <h3>3. Decisión basada en evidencia</h3>
-            <p>Reportes claros para campañas, instituciones, marcas o proyectos culturales que necesitan decidir sin depender solo de intuición, moda o lectura superficial de redes.</p>
-          </article>
+          <aside class="method-card-dark">
+            <span class="method-tag">Cómo leerlo</span>
+            <ol>
+              <li><strong>Normalización.</strong> Cada encuesta se lleva a una base comparable de 100%.</li>
+              <li><strong>Imputación.</strong> Si faltan categorías, se distribuyen según proporciones próximas observadas.</li>
+              <li><strong>Agregación.</strong> Los resultados se promedian por mes para reducir ruido entre firmas.</li>
+              <li><strong>Suavizado.</strong> La línea conecta promedios con una curva; no agrega nuevas observaciones.</li>
+            </ol>
+            <a href="https://docs.google.com/spreadsheets/d/1Vr5ntS4jwYIgoQSNPM67TRYDD13Ie4T0h2OfsH0kwG4/edit#gid=578620144" target="_blank" rel="noopener noreferrer">Explorar “Matemáticamente analizado” ↗</a>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section class="casos-estudio" style="background-color: var(--color-superficie);">
+    <section class="figures-section">
       <div class="container">
-        <h2 data-aos="fade-up">Servicios posibles</h2>
-        <article class="caso-card" data-aos="fade-up" data-aos-delay="100">
-          <span class="caso-categoria">Opinión pública & comunicación</span>
-          <h3>Investigación para decisiones estratégicas</h3>
-          <div class="caso-card-grid">
-            <div class="caso-contenido">
-              <p>El enfoque combina metodología de investigación social, análisis estadístico y sensibilidad comunicacional. La idea no es producir datos decorativos, sino construir una lectura accionable: qué está pasando, por qué está pasando y qué decisión conviene tomar.</p>
-              <ul class="caso-metricas">
-                <li><span class="accent">SAOLS</span> Encuestas online autoadministradas</li>
-                <li><span class="accent">Segmentación</span> Edad, género, región, educación e ingresos</li>
-                <li><span class="accent">Output</span> Reporte ejecutivo + hipótesis de acción</li>
-              </ul>
+        <div class="analysis-lead compact">
+          <span class="section-number">03</span>
+          <div><span class="repository-kicker">Figuras políticas</span><h2>El desgaste no es solamente presidencial</h2></div>
+        </div>
+        <div class="figures-grid">
+          <article class="chart-card">
+            <div class="chart-head"><div><h3>Balance de imagen</h3><p>Octubre de 2025 · porcentaje de imagen</p></div></div>
+            <div id="figures-chart" class="figure-bars" role="img" aria-label="Comparación de imagen positiva y negativa de Javier Milei, Donald Trump y Karina Milei"></div>
+          </article>
+          <aside class="insight-panel">
+            <span class="insight-label">Hallazgo</span>
+            <strong>−45,5 pp</strong>
+            <h3>balance neto de Karina Milei</h3>
+            <p>Su imagen negativa alcanza 70,4% y supera a la del Presidente. Javier Milei registra un balance de −27,2 puntos; Donald Trump, −26,0.</p>
+            <a href="documento.html?file=informe_academico_ddd_octubre_2025.pdf">Leer el informe de octubre →</a>
+          </aside>
+        </div>
+        <div class="mini-trend">
+          <div><span>Sept. 2025</span><strong>59,6%</strong><small>negativa de Milei</small></div>
+          <span class="mini-arrow">→</span>
+          <div><span>Oct. 2025</span><strong>63,2%</strong><small>negativa de Milei</small></div>
+          <p>En un mes, el indicador subió <b>3,6 puntos</b>. En paralelo, la imagen negativa de Karina pasó de 68,2% a 70,4%.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="media-archive-section">
+      <div class="container">
+        <div class="analysis-lead">
+          <span class="section-number">04</span>
+          <div>
+            <span class="repository-kicker">Trayectoria mediática</span>
+            <h2>De panelista económico a figura omnipresente</h2>
+            <p>“Imports Milei Medios” reconstruye las apariciones públicas de Javier Milei antes y después de su salto a la política. La base permite seguir no solamente cuánto apareció, sino también dónde, con quién y bajo qué formato.</p>
+          </div>
+        </div>
+
+        <div class="media-overview">
+          <article class="media-volume-card">
+            <div class="media-volume-head">
+              <div><span class="repository-kicker">Volumen por año</span><h3>1.698 registros consolidados</h3></div>
+              <span>2016—jun. 2024</span>
             </div>
-            <div class="caso-contenido">
-              <p>Puede aplicarse a campañas políticas, investigaciones académicas, comunicación institucional, análisis de marca, validación de productos culturales o lectura de comunidades digitales.</p>
+            <div class="media-year-chart" role="img" aria-label="Cantidad de apariciones públicas de Javier Milei registradas por año">
+              <div style="--value:17"><i></i><strong>17</strong><span>2016</span></div>
+              <div style="--value:114"><i></i><strong>114</strong><span>2017</span></div>
+              <div style="--value:419"><i></i><strong>419</strong><span>2018</span></div>
+              <div style="--value:205"><i></i><strong>205</strong><span>2019</span></div>
+              <div style="--value:108"><i></i><strong>108</strong><span>2020</span></div>
+              <div style="--value:293"><i></i><strong>293</strong><span>2021</span></div>
+              <div style="--value:217"><i></i><strong>217</strong><span>2022</span></div>
+              <div style="--value:229"><i></i><strong>229</strong><span>2023</span></div>
+              <div style="--value:96"><i></i><strong>96</strong><span>2024*</span></div>
             </div>
+            <p class="media-chart-note">* 2024 contiene registros hasta el 4 de junio. Los conteos reflejan el archivo relevado, no la totalidad del universo mediático.</p>
+          </article>
+
+          <aside class="media-sources-card">
+            <span class="repository-kicker">Fuentes principales</span>
+            <div class="source-total"><strong>1.158</strong><span>MileiPresidente</span></div>
+            <div class="source-total"><strong>499</strong><span>El Peluca Milei</span></div>
+            <div class="source-total"><strong>41</strong><span>Otras fuentes</span></div>
+            <div class="media-outlets">
+              <small>Medios identificados con más registros</small>
+              <span>TN <b>84</b></span><span>A24 <b>73</b></span><span>Crónica <b>68</b></span><span>LN+ <b>59</b></span>
+            </div>
+          </aside>
+        </div>
+
+        <article class="pipeline-card">
+          <div class="pipeline-intro">
+            <span class="repository-kicker">Cómo se construyó</span>
+            <h3>De la API a una cronología investigable</h3>
+            <p>El punto de partida fue la importación masiva de videos desde canales de YouTube mediante su API. Esos resultados se combinaron con búsquedas y registros adicionales para cubrir apariciones que no estaban alojadas en los canales principales.</p>
+          </div>
+          <ol class="pipeline-steps">
+            <li><span>01</span><div><strong>Importar</strong><p>Consulta de canales y recuperación de títulos, enlaces y videos publicados.</p></div></li>
+            <li><span>02</span><div><strong>Extraer</strong><p>Lectura y normalización de fechas presentes en títulos o metadatos.</p></div></li>
+            <li><span>03</span><div><strong>Enriquecer</strong><p>Asignación manual o semiautomática de entrevistador, programa, medio y lugar.</p></div></li>
+            <li><span>04</span><div><strong>Consolidar</strong><p>Unificación de fuentes, orden cronológico y control de registros repetidos.</p></div></li>
+          </ol>
+          <div class="pipeline-result">
+            <span>Salida</span>
+            <p><b>Fecha</b> · Título · Enlace · Archivo · Entrevistador · Programa · Medio · Lugar</p>
+            <a href="https://docs.google.com/spreadsheets/d/1thpJIbAeSXxrTHh87NvpGvuHKLPYLPdOMo9IpTsgJW8/edit" target="_blank" rel="noopener noreferrer">Abrir “Imports Milei Medios” ↗</a>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="contacto" class="contacto">
+    <section class="mileichad-section">
       <div class="container">
-        <h2 data-aos="fade-up">¿Querés medir una audiencia?</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Podemos convertir una pregunta amplia en un instrumento medible y una decisión concreta.</p>
-        <a href="mailto:matiasignaciogaglio@gmail.com" class="cta-button" data-aos="fade-up" data-aos-delay="200">Enviar un Email</a>
-        <a href="https://www.linkedin.com/in/matiasignaciogaglio" class="link-social" data-aos="fade-up" data-aos-delay="300" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div class="analysis-lead">
+          <span class="section-number">05</span>
+          <div>
+            <span class="repository-kicker">Investigación destacada</span>
+            <h2>El meme de<br><span>Milei Chad</span></h2>
+          </div>
+        </div>
+        <div class="mileichad-layout">
+          <div class="mileichad-statement">
+            <p>Cómo el humor configura la percepción política en la era de las imágenes generadas por inteligencia artificial.</p>
+            <a href="https://docs.google.com/document/d/18ge-UVDug13aJR3AbrIDxXbPkyduAlHyFjMdrehyCTk/edit" target="_blank" rel="noopener noreferrer">Leer la investigación completa ↗</a>
+          </div>
+          <div class="mileichad-summary">
+            <p>La investigación estudia al meme “Milei Chad” como un dispositivo de estetización política: una transformación de Javier Milei en un ícono hipermasculino, antisistema y aspiracional.</p>
+            <p>Desde la semiótica, los estudios visuales y la teoría de la afectividad, analiza cómo el humor, la inteligencia artificial y la circulación algorítmica pueden naturalizar valores políticos bajo el velo de la risa.</p>
+            <div class="research-tags">
+              <span>Semiótica</span><span>Memes</span><span>IA generativa</span>
+              <span>Masculinidad</span><span>Afectividad</span><span>Política digital</span>
+            </div>
+          </div>
+        </div>
+        <div class="mileichad-thesis">
+          <span>Tesis central</span>
+          <blockquote>La imagen no solamente representa a un candidato: produce identificación, moviliza afectos y convierte una posición ideológica en una experiencia visual fácil de circular.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="ads-connection-section">
+      <div class="container">
+        <div class="analysis-lead">
+          <span class="section-number">06</span>
+          <div>
+            <span class="repository-kicker">El hilo que conecta todo</span>
+            <h2>De entender una audiencia<br>a construir una campaña</h2>
+            <p>La investigación social y el trabajo en Ads comparten una disciplina: observar cómo las personas interpretan mensajes, detectar qué códigos activan una respuesta y medir qué ocurre después de la exposición.</p>
+          </div>
+        </div>
+        <div class="connection-flow">
+          <article><span>01</span><strong>Escuchar</strong><p>Encuestas, búsquedas y comportamiento permiten reconocer necesidades, tensiones y segmentos.</p></article>
+          <article><span>02</span><strong>Interpretar</strong><p>El análisis cultural explica qué símbolos, palabras e imágenes tienen sentido para cada audiencia.</p></article>
+          <article><span>03</span><strong>Crear</strong><p>Ese aprendizaje se convierte en una propuesta, un ángulo creativo y una pieza capaz de detener la atención.</p></article>
+          <article><span>04</span><strong>Distribuir</strong><p>La pauta lleva cada mensaje al público adecuado según contexto, canal e intención.</p></article>
+          <article><span>05</span><strong>Medir</strong><p>CTR, conversión, ventas y estudios de opinión muestran qué funcionó y qué debe cambiar.</p></article>
+        </div>
+        <div class="ads-bridge">
+          <div>
+            <span class="repository-kicker">La diferencia importa</span>
+            <p>Una campaña política disputa representación y poder; una campaña comercial busca producir una acción de negocio. No son equivalentes, pero ambas requieren comprender circulación, persuasión, segmentación y respuesta.</p>
+          </div>
+          <div class="ads-bridge-result">
+            <small>Aplicación profesional</small>
+            <strong>Research → Creative → Media → Growth</strong>
+            <p>El dato no queda en un informe: se transforma en decisiones de comunicación y optimización.</p>
+            <a href="ecommerce.html">Ver trabajo en Ecommerce & Ads →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources-section">
+      <div class="container">
+        <div class="analysis-lead compact">
+          <span class="section-number">07</span>
+          <div><span class="repository-kicker">Evidencia abierta</span><h2>Datos e informes</h2><p>Accedé a la base multipoll completa o abrí cualquiera de los documentos en el visor.</p></div>
+        </div>
+        <a class="drive-feature" href="https://docs.google.com/spreadsheets/d/1Vr5ntS4jwYIgoQSNPM67TRYDD13Ie4T0h2OfsH0kwG4/edit" target="_blank" rel="noopener noreferrer">
+          <span class="drive-mark">G</span><span><small>Google Sheets · Base de trabajo</small><strong>Encuestas de Opinion Milei</strong><em>84 encuestas, múltiples fuentes, series generales y modeladas</em></span><b>Explorar datos ↗</b>
+        </a>
+        <a class="drive-feature media-drive-feature" href="https://docs.google.com/spreadsheets/d/1thpJIbAeSXxrTHh87NvpGvuHKLPYLPdOMo9IpTsgJW8/edit" target="_blank" rel="noopener noreferrer">
+          <span class="drive-mark">M</span><span><small>Google Sheets · Archivo audiovisual</small><strong>Imports Milei Medios</strong><em>1.698 apariciones públicas, canales de origen y metadatos normalizados</em></span><b>Explorar archivo ↗</b>
+        </a>
+        <div class="report-toolbar">
+          <h3>Informes académicos</h3>
+          <label><span class="sr-only">Buscar informes</span><input id="document-search" type="search" placeholder="Buscar informe…" /></label>
+        </div>
+        <div class="report-grid" id="report-grid"></div>
+        <p class="repository-empty" id="repository-empty" hidden>No se encontraron informes.</p>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Matías Gaglio. Portfolio personal.</p>
-    </div>
-  </footer>
+  <footer><div class="container"><p>&copy; 2026 Matías Gaglio. Análisis de opinión pública.</p></div></footer>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      AOS.init({ duration: 800, once: true, offset: 50 });
-      const navToggle = document.querySelector('.nav-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-          document.querySelector('.navbar').classList.toggle('nav-open');
-          const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-          navToggle.setAttribute('aria-expanded', !isExpanded);
-          navToggle.setAttribute('aria-label', isExpanded ? 'Abrir menú' : 'Cerrar menú');
-        });
+    const trend = [
+      {m:'Ene 24',p:47.4,n:45.3,c:4},{m:'Feb',p:44.7,n:49.9,c:4},{m:'Mar',p:45.9,n:48.7,c:4},
+      {m:'Abr',p:48.9,n:48.8,c:5},{m:'May',p:47.9,n:46.5,c:13},{m:'Jun',p:47.7,n:48.6,c:13},
+      {m:'Jul',p:46.5,n:48.2,c:7},{m:'Ago',p:45.9,n:45.9,c:10},{m:'Sep',p:45.1,n:49.1,c:8},
+      {m:'Oct',p:46.2,n:42.2,c:1},{m:'Nov',p:50.1,n:39.2,c:3},{m:'Dic',p:49.7,n:41.0,c:1},{m:'Ene 25',p:49.7,n:41.9,c:3}
+    ];
+    const modeled = [
+      {m:'Ene',v:[32.6,9.5,8.9,20,24.2]},{m:'Mar',v:[34.8,10.3,9.5,18.8,23]},
+      {m:'May',v:[33.1,10.7,9.6,20.6,23.3]},{m:'Jul',v:[32.4,12.3,10.5,15.8,26]},
+      {m:'Sep',v:[34.6,11.2,11.8,17.9,21.9]},{m:'Nov',v:[22.8,11,10.1,25.1,28.7]},
+      {m:'Ene 25',v:[20.5,11.3,11.6,26.1,27.8]}
+    ];
+    const reports = [
+      ['Cristina Fernández de Kirchner, justicia y polarización','informe_academico_cfk_justicia_junio_2025.pdf','Jun 2025'],
+      ['Argentina ante un escenario internacional turbulento','informe_academico_ddd_abril_2025.pdf','Abr 2025'],
+      ['Reelección, desgaste y renovación política','informe_academico_ddd_abril_2026.pdf','Abr 2026'],
+      ['Dos años de gestión libertaria y percepciones sobre vacunación','informe_academico_ddd_diciembre.pdf','Dic 2025'],
+      ['Multimillonarios, poder económico y política','informe_academico_ddd_febrero_2025.pdf','Feb 2025'],
+      ['Economía doméstica, ingresos y malestar social','informe_academico_ddd_julio_2025.pdf','Jul 2025'],
+      ['Ahorro, dólares y participación electoral','informe_academico_ddd_junio_2025.pdf','Jun 2025'],
+      ['Violencia de género, justicia y respuesta estatal','informe_academico_ddd_junio_2026.pdf','Jun 2026'],
+      ['Gobierno, periodismo y libertad de prensa','informe_academico_ddd_mayo_2025.pdf','May 2025'],
+      ['Aprobación de gobierno y demanda de cambio','informe_academico_ddd_mayo_2026.pdf','May 2026'],
+      ['Sin dólares no hay paraíso','informe_academico_ddd_octubre_2025.pdf','Oct 2025'],
+      ['Percepciones sobre la violencia contra las mujeres','informe_academico_encuesta_ni_una_menos.pdf','Jun 2026'],
+      ['Percepciones sobre la violencia contra las mujeres','informe_academico_encuesta_ni_una_menos (1).pdf','Jun 2026'],
+      ['Juventudes, política y representación','informe_academico_juventudes_unvm_2025.pdf','2025'],
+      ['Lo peor ya pasó','informe_academico_lo_peor_ya_paso_septiembre_2025.pdf','Sep 2025'],
+      ['Medios de comunicación y noticias en Argentina','informe_academico_medios_noticias_argentina.pdf','Nov 2025'],
+      ['Medios de comunicación y noticias en Argentina','informe_academico_medios_noticias_argentina (1).pdf','Nov 2025'],
+      ['Un año de polarización total','informe_academico_un_ano_de_polarizacion_2024.pdf','Dic 2024'],
+      ['Ciencia, inteligencia artificial y política','informe_academico_vdd_agosto_2025.pdf','Ago 2025']
+    ];
+
+    function smoothPath(points) {
+      if (points.length < 2) return '';
+      let d = `M ${points[0][0]} ${points[0][1]}`;
+      for (let i=0; i<points.length-1; i++) {
+        const p0=points[Math.max(0,i-1)], p1=points[i], p2=points[i+1], p3=points[Math.min(points.length-1,i+2)];
+        d += ` C ${p1[0]+(p2[0]-p0[0])/6} ${p1[1]+(p2[1]-p0[1])/6}, ${p2[0]-(p3[0]-p1[0])/6} ${p2[1]-(p3[1]-p1[1])/6}, ${p2[0]} ${p2[1]}`;
       }
-    });
+      return d;
+    }
+    function renderTrend() {
+      const W=1000,H=390,L=58,R=24,T=24,B=55,min=35,max=55;
+      const x=i=>L+i*(W-L-R)/(trend.length-1), y=v=>T+(max-v)*(H-T-B)/(max-min);
+      const pp=trend.map((d,i)=>[x(i),y(d.p)]), nn=trend.map((d,i)=>[x(i),y(d.n)]);
+      let s=`<svg viewBox="0 0 ${W} ${H}" aria-hidden="true">`;
+      [35,40,45,50,55].forEach(v=>s+=`<line class="gridline" x1="${L}" y1="${y(v)}" x2="${W-R}" y2="${y(v)}"/><text class="axis-label" x="${L-12}" y="${y(v)+4}" text-anchor="end">${v}%</text>`);
+      s+=`<path class="trend-line positive" d="${smoothPath(pp)}"/><path class="trend-line negative" d="${smoothPath(nn)}"/>`;
+      trend.forEach((d,i)=>{const low=d.c<3, cls=low?'point low':'point';s+=`<circle class="${cls} positive" cx="${x(i)}" cy="${y(d.p)}" r="5"/><circle class="${cls} negative" cx="${x(i)}" cy="${y(d.n)}" r="5"/><text class="x-label" x="${x(i)}" y="${H-19}" text-anchor="middle">${d.m}</text>`;});
+      s+=`<text class="end-label positive-text" x="${W-R}" y="${y(trend.at(-1).p)-12}" text-anchor="end">${trend.at(-1).p}% positiva</text><text class="end-label negative-text" x="${W-R}" y="${y(trend.at(-1).n)+22}" text-anchor="end">${trend.at(-1).n}% negativa</text></svg>`;
+      document.querySelector('#milei-trend').innerHTML=s;
+    }
+    function renderModel() {
+      const colors=['#ff5d73','#ff9a68','#7c8493','#63d8c6','#00e0ff'];
+      let html='<div class="stack-list">';
+      modeled.forEach(d=>{const total=d.v.reduce((a,b)=>a+b,0);html+=`<div class="stack-row"><span>${d.m}</span><div class="stack-bar">`;d.v.forEach((v,i)=>html+=`<i style="width:${v/total*100}%;background:${colors[i]}" title="${v}%"></i>`);html+='</div></div>';});
+      document.querySelector('#model-bars').innerHTML=html+'</div>';
+    }
+    function renderFigures() {
+      const data=[['Javier Milei',36,63.2],['Donald Trump',34.3,60.3],['Karina Milei',24.9,70.4]];
+      document.querySelector('#figures-chart').innerHTML=data.map(d=>`<div class="figure-row"><strong>${d[0]}</strong><div><span class="figure-pos" style="width:${d[1]}%">${d[1]}%</span><span class="figure-neg" style="width:${d[2]}%">${d[2]}%</span></div><small>Balance ${(d[1]-d[2]).toFixed(1).replace('.',',')} pp</small></div>`).join('');
+    }
+    function renderReports(query='') {
+      const q=query.toLocaleLowerCase('es');
+      const filtered=reports.filter(r=>r[0].toLocaleLowerCase('es').includes(q));
+      document.querySelector('#report-grid').innerHTML=filtered.map((r,i)=>`<a href="documento.html?file=${encodeURIComponent(r[1])}"><span>${String(i+1).padStart(2,'0')}</span><div><strong>${r[0]}</strong><small>${r[2]} · PDF</small></div><b>↗</b></a>`).join('');
+      document.querySelector('#repository-empty').hidden=filtered.length>0;
+    }
+    renderTrend(); renderModel(); renderFigures(); renderReports();
+    document.querySelector('#document-search').addEventListener('input',e=>renderReports(e.target.value.trim()));
+    const toggle=document.querySelector('.nav-toggle'), navbar=document.querySelector('.navbar');
+    toggle.addEventListener('click',()=>{const open=navbar.classList.toggle('nav-open');toggle.setAttribute('aria-expanded',String(open));});
   </script>
 </body>
 </html>
