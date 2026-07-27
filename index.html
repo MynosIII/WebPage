@@ -22,10 +22,11 @@
         <span class="hamburger-line"></span>
       </button>
 
-      <nav class="nav-menu">
+      <nav class="nav-menu" aria-label="Navegación principal">
         <ul>
-          <li><a href="index.html" class="accent">Home</a></li>
+          <li><a href="index.html" class="accent" aria-current="page">Home</a></li>
           <li><a href="ecommerce.html">Ecommerce</a></li>
+          <li><a href="Articles.html">Articles</a></li>
           <li><a href="creatives.html">Creatives</a></li>
           <li><a href="consultora.html">Consultora de Opinión</a></li>
           <li><a href="otros.html">Otros proyectos</a></li>
@@ -273,6 +274,14 @@
           const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
           navToggle.setAttribute('aria-expanded', !isExpanded);
           navToggle.setAttribute('aria-label', isExpanded ? 'Abrir menú' : 'Cerrar menú');
+        });
+
+        navMenu.addEventListener('click', (event) => {
+          if (event.target.matches('a')) {
+            document.querySelector('.navbar').classList.remove('nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'Abrir menú');
+          }
         });
       }
 

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Articles | Matias Gaglio</title>
+  <meta name="description" content="Articles and technical case studies by Matias Gaglio on Amazon PPC, marketplace analytics, business intelligence, and ecommerce growth." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    .articles-intro { background-color:var(--color-superficie); }
+    .articles-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-top:3rem; }
+    .article-card { background:var(--color-fondo); border:1px solid rgba(var(--color-acento-rgb), .18); border-radius:8px; overflow:hidden; text-decoration:none; color:inherit; transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+    .article-card:hover { transform:translateY(-4px); border-color:rgba(var(--color-acento-rgb), .5); box-shadow:0 18px 42px -30px rgba(var(--color-acento-rgb), .55); }
+    .article-card img { width:100%; aspect-ratio:16 / 9; object-fit:cover; background:#fff; }
+    .article-card-body { padding:1.4rem; }
+    .article-card h3 { font-size:1.5rem; margin:.3rem 0 .8rem; text-align:left; }
+    .article-card p { color:var(--color-texto-sec); margin:0; }
+    .article-meta { color:var(--color-acento); font-family:var(--font-titulos); font-size:.82rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Matias Gaglio.</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ecommerce.html">Ecommerce</a></li>
+          <li><a href="Articles.html" class="accent">Articles</a></li>
+          <li><a href="creatives.html">Creatives</a></li>
+          <li><a href="consultora.html">Consultora de Opinion</a></li>
+          <li><a href="otros.html">Otros proyectos</a></li>
+          <li><a href="SEO.html">ChatMatias</a></li>
+          <li><a href="sobre-mi.html">Sobre Mi</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-aos="fade-up">Articles</h1>
+        <p data-aos="fade-up" data-aos-delay="100">A repository of technical notes, applied case studies, and operating frameworks around Amazon PPC, ecommerce analytics, and marketplace growth.</p>
+      </div>
+    </section>
+
+    <section class="articles-intro">
+      <div class="container">
+        <h2 data-aos="fade-up">Case Library</h2>
+        <div class="articles-grid">
+          <a class="article-card" href="Cases/DayParting-Case.html" data-aos="fade-up" data-aos-delay="100">
+            <img src="Cases/dayparting-dashboard.jpg" alt="Amazon US DayParting dashboard preview" loading="lazy">
+            <div class="article-card-body">
+              <span class="article-meta">Amazon PPC / Dayparting</span>
+              <h3>DayParting Case</h3>
+              <p>How hourly PPC data can reveal budget leakage, protect high-conversion windows, and turn bid scheduling into a capital-allocation system.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><p>&copy; 2026 Matias Gaglio. Portfolio personal.</p></div></footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration:800, once:true, offset:50 });
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (navToggle && navMenu) navToggle.addEventListener('click', () => {
+      document.querySelector('.navbar').classList.toggle('nav-open');
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
+    });
+  </script>
+</body>
+</html>

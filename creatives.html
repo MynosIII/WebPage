@@ -26,6 +26,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="ecommerce.html">Ecommerce</a></li>
+          <li><a href="Articles.html">Articles</a></li>
           <li><a href="creatives.html" class="accent">Creatives</a></li> <li><a href="consultora.html">Consultora de Opinión</a></li>
           <li><a href="otros.html">Otros proyectos</a></li>
           <li><a href="SEO.html">ChatMatias</a></li>
@@ -97,6 +98,15 @@
             <figcaption>Flyer · ABC</figcaption>
           </figure>
 
+
+          <a class="grid-item cat-flyers case-link" data-aos="fade-up" data-aos-delay="175"
+             href="Revolution_creative_case.html"
+             aria-label="Ver caso de optimizacion de listing Amazon">
+            <div class="ratio-box" style="--ratio: 4/3;">
+              <img class="thumb" src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="Miniatura caso de optimizacion de listing Amazon" loading="lazy" />
+            </div>
+            <figcaption>Amazon Listing Refresh - Visual system, SEO copy and conversion flow</figcaption>
+          </a>
           <figure class="grid-item cat-videos" data-aos="fade-up"
                   data-video-id="u31qwQUeGuM"
                   aria-label="Ver Video Demo Producto">
@@ -270,6 +280,9 @@
 
         items.forEach(item => {
           item.addEventListener('click', (e) => {
+            if (item.matches('a[href]') && !item.dataset.videoId && !item.dataset.fullSrc) {
+              return;
+            }
             e.preventDefault();
             const videoId = item.dataset.videoId;
             const fullSrc = item.dataset.fullSrc;
