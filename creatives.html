@@ -146,6 +146,35 @@
       </div>
     </section>
 
+    <section id="3d-modeling" class="modeling-lab" aria-labelledby="modeling-lab-title">
+      <div class="container">
+        <div class="modeling-lab-heading" data-aos="fade-up">
+          <div><span class="modeling-lab-kicker">Interactive experiment · 01</span><h2 id="modeling-lab-title">3D Modeling Lab</h2></div>
+          <p>Swipe the collection, tap the animated box to reveal each object, then drag to inspect it from every angle.</p>
+        </div>
+        <div class="modeling-lab-shell" data-aos="fade-up" data-aos-delay="100">
+          <div class="modeling-lab-stage" id="modeling-lab-stage" tabindex="0">
+            <canvas id="modeling-lab-canvas" aria-label="Interactive 3D model carousel"></canvas>
+            <div class="modeling-stage-status" id="modeling-stage-status" role="status" aria-live="polite"><i></i><span>Loading 3D lab…</span></div>
+            <button class="modeling-open-button" id="modeling-open-button" type="button"><span>Click to open</span><small>then drag to explore</small></button>
+            <span class="modeling-drag-hint" id="modeling-drag-hint">Drag to rotate · pinch to zoom</span>
+          </div>
+          <div class="modeling-lab-panel">
+            <div class="modeling-model-count"><span id="modeling-current-index">01</span> / 05</div>
+            <div class="modeling-model-copy"><span id="modeling-category">Product visualization</span><h3 id="modeling-title">Variety of Pills</h3><p id="modeling-description">A compact product study rebuilt for real-time presentation.</p></div>
+            <div class="modeling-carousel-controls" aria-label="3D model carousel controls"><button id="modeling-prev" type="button" aria-label="Previous model">←</button><div class="modeling-progress"><i id="modeling-progress-bar"></i></div><button id="modeling-next" type="button" aria-label="Next model">→</button></div>
+            <div class="modeling-model-list" id="modeling-model-list" role="tablist" aria-label="Choose a 3D model"></div>
+          </div>
+        </div>
+        <aside class="modeling-notes" data-aos="fade-up" data-aos-delay="150" aria-live="polite">
+          <div class="modeling-notes-label"><span>Lab notes</span><small id="modeling-note-number">01 — 05</small></div>
+          <p id="modeling-notes-text">Converted from USDZ into an optimized GLB workflow, preserving the material hierarchy for browser rendering.</p>
+          <div class="modeling-notes-tech" id="modeling-notes-tech"><span>USDZ → GLB</span><span>Blender</span><span>Three.js</span></div>
+        </aside>
+        <p class="modeling-lab-statement" data-aos="fade-up">I work with <strong>Blender</strong> and I’m experimenting with <strong>AI integrations and code-driven workflows</strong> for producing 3D objects at scale—from format conversion and procedural modeling to browser-ready animation.</p>
+      </div>
+    </section>
+
     <section id="contacto" class="contacto">
       <div class="container">
         <h2 data-aos="fade-up">¿Querés ver un caso completo?</h2>
@@ -168,7 +197,9 @@
       </div>
   </div>
 
+  <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.166.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.166.1/examples/jsm/"}}</script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script type="module" src="creatives-3d.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       
