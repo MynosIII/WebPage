@@ -1306,18 +1306,25 @@ img {
 .animation-case-page .navbar .container { display: flex; justify-content: space-between; align-items: center; }
 .animation-back { color: var(--color-texto-sec); font-size: .8rem; text-decoration: none; }
 .animation-back:hover { color: var(--color-acento); }
-.animation-case-hero { min-height: 88vh; padding: 9rem 0 5rem; background: radial-gradient(circle at 80% 15%, rgba(var(--color-acento-rgb),.11), transparent 30%); }
-.animation-case-grid { display: grid; grid-template-columns: minmax(300px,.72fr) minmax(0,1.28fr); gap: clamp(3rem,8vw,8rem); align-items: center; }
+.animation-case-hero { min-height: 0; padding: 9rem 0 7rem; background: radial-gradient(circle at 50% 12%, rgba(var(--color-acento-rgb),.11), transparent 34%); }
+.animation-case-grid { display: flex; flex-direction: column; align-items: center; gap: clamp(2.5rem,5vw,4.5rem); }
 .animation-case-label,.animation-section-number { color: var(--color-acento); font: 700 .72rem var(--font-titulos); letter-spacing: .13em; text-transform: uppercase; }
-.animation-case-copy h1 { margin: 1rem 0 1.5rem; color: #fff; font-size: clamp(3.5rem,7vw,7rem); line-height: .88; letter-spacing: -.065em; }
-.animation-case-lead { max-width: 620px; color: #abb1b8; font-size: clamp(1rem,1.5vw,1.2rem); line-height: 1.75; }
-.animation-skill-list { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 2rem; }
+.animation-case-copy { width: 100%; max-width: 1080px; margin-inline: auto; text-align: center; }
+.animation-case-copy h1 { width: 100%; margin: 1rem auto 1.5rem; color: #fff; text-align: center; font-size: clamp(4rem,9vw,8.5rem); line-height: .88; letter-spacing: -.065em; }
+.animation-case-lead { max-width: 900px; margin-inline: auto; color: #abb1b8; font-size: clamp(1rem,1.5vw,1.2rem); line-height: 1.75; }
+.animation-skill-list { display: flex; flex-wrap: wrap; justify-content: center; gap: .55rem; margin-top: 2rem; }
 .animation-skill-list span { padding: .45rem .65rem; border: 1px solid rgba(255,255,255,.16); color: #c9ced3; font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; }
-.animation-case-player { position: relative; border: 1px solid rgba(255,255,255,.15); background: #050607; box-shadow: 0 30px 80px rgba(0,0,0,.4); }
-.animation-case-player video { display: block; width: 100%; max-height: 72vh; aspect-ratio: 16/10; object-fit: contain; background: #000; }
-.animation-case-player small { display: block; padding: .85rem 1rem; color: #68717a; font: .65rem monospace; letter-spacing: .06em; text-transform: uppercase; }
+.animation-case-player { position: relative; flex: 0 0 auto; width: min(1240px,calc(100vw - 3rem)); overflow: hidden; border: 1px solid rgba(255,255,255,.15); background: #050607; box-shadow: 0 30px 80px rgba(0,0,0,.4); }
+.animation-case-player video { display: block; width: 100%; aspect-ratio: 16/9; object-fit: contain; background: #000; }
+.animation-case-player small { display: block; padding: .85rem 1rem; color: #7e8790; font: .65rem monospace; letter-spacing: .06em; text-align: center; text-transform: uppercase; }
 .animation-breakdown { padding: 7rem 0; border-top: 1px solid rgba(255,255,255,.1); background: #14171a; }
-.animation-breakdown h2 { max-width: 900px; margin: 1rem 0 4rem; color: #fff; text-align: left; font-size: clamp(2.5rem,5vw,5.5rem); line-height: .95; letter-spacing: -.05em; }
+.animation-breakdown .animation-section-number { display: block; text-align: center; }
+.animation-breakdown h2 { max-width: 1050px; margin: 1rem auto 4rem; color: #fff; text-align: center; font-size: clamp(2.8rem,6vw,6rem); line-height: .95; letter-spacing: -.05em; }
+.animation-case-page .case-software-heading { display: block; text-align: center; }
+.animation-case-page .case-software-heading > span { display: block; margin-bottom: 1rem; }
+.animation-case-page .case-software-heading h2 { max-width: 1000px; margin-inline: auto; text-align: center; }
+.animation-case-page .case-software-grid { justify-content: center; }
+.animation-case-page .case-end-actions { align-items: center; text-align: center; }
 .animation-notes { display: grid; grid-template-columns: repeat(2,1fr); border-top: 1px solid rgba(255,255,255,.13); }
 .animation-notes article { padding: 2rem; border-right: 1px solid rgba(255,255,255,.13); border-bottom: 1px solid rgba(255,255,255,.13); }
 .animation-notes article:nth-child(even) { border-right: 0; }
@@ -1325,7 +1332,7 @@ img {
 .animation-notes b { color: var(--color-acento); font: .7rem monospace; }
 .animation-notes h3 { margin: 1.4rem 0 .75rem; color: #fff; font-size: 1.4rem; }
 .animation-notes p { color: #8e969e; font-size: .9rem; line-height: 1.65; }
-@media(max-width:850px){.animation-case-grid{grid-template-columns:1fr}.animation-case-hero{padding-top:7rem}.animation-notes{grid-template-columns:1fr}.animation-notes article,.animation-notes article:nth-child(even),.animation-notes article:nth-last-child(-n+2){border-right:0;border-bottom:1px solid rgba(255,255,255,.13)}.animation-notes article:last-child{border-bottom:0}}
+@media(max-width:850px){.animation-case-hero{padding:7rem 0 5rem}.animation-case-copy h1{font-size:clamp(3.4rem,15vw,5.5rem)}.animation-case-player{width:100%}.animation-notes{grid-template-columns:1fr}.animation-notes article,.animation-notes article:nth-child(even),.animation-notes article:nth-last-child(-n+2){border-right:0;border-bottom:1px solid rgba(255,255,255,.13)}.animation-notes article:last-child{border-bottom:0}}
 
 /* --- UNIMAC case study --- */
 .unimac-case-page { background: #0d0b0a; }
