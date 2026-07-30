@@ -54,6 +54,7 @@
           <button class="filter-chip" data-filter="icons" aria-label="Filtrar por Íconos">Íconos</button>
           <button class="filter-chip" data-filter="logos" aria-label="Filtrar por Logos">Logos</button>
           <button class="filter-chip" data-filter="videos" aria-label="Filtrar por Videos">Videos</button>
+          <button class="filter-chip" data-filter="models-3d" aria-label="Filtrar por Modelos 3D">Modelos 3D</button>
           <button class="filter-chip" data-filter="flyers" aria-label="Filtrar por Flyers">Flyers</button>
         </div>
       </div>
@@ -61,6 +62,78 @@
 
     <section style="padding-top: 0;">
       <div class="container">
+        <section class="video-showcase" id="video-editing" aria-labelledby="video-editing-title" data-gallery-category="videos">
+          <div class="video-showcase-heading" data-aos="fade-up">
+            <div>
+              <span class="video-showcase-kicker">Video editing · Selected work</span>
+              <h2 id="video-editing-title">Edición que capta la atención</h2>
+            </div>
+            <p>Una selección de piezas breves creadas para comunicar rápido, mantener el ritmo y hacer que cada producto o idea se sienta memorable.</p>
+          </div>
+
+          <div class="video-carousel-shell">
+            <button class="video-carousel-button video-carousel-prev" type="button" aria-label="Ver videos anteriores">←</button>
+            <div class="video-showcase-grid" id="video-showcase-carousel">
+            <article class="video-project" data-aos="fade-up">
+              <div class="video-project-media">
+                <video controls playsinline preload="metadata" aria-label="Reproducir edición de video: ritmo y narrativa visual">
+                  <source src="creatives/videos/editing-reel/social-edit-01.mp4" type="video/mp4" />
+                  Tu navegador no puede reproducir este video.
+                </video>
+              </div>
+              <div class="video-project-copy">
+                <span>01 · Social edit · 10s</span>
+                <h3>Ritmo y narrativa visual</h3>
+                <p>Edición de formato breve construida para sostener la atención con cortes precisos, progresión clara y un cierre de alto impacto.</p>
+              </div>
+            </article>
+
+            <article class="video-project" data-aos="fade-up" data-aos-delay="50">
+              <div class="video-project-media">
+                <video controls playsinline preload="metadata" aria-label="Reproducir edición de video: montaje ágil para redes">
+                  <source src="creatives/videos/editing-reel/social-edit-02.mp4" type="video/mp4" />
+                  Tu navegador no puede reproducir este video.
+                </video>
+              </div>
+              <div class="video-project-copy">
+                <span>02 · Micro content · 5s</span>
+                <h3>Montaje ágil para redes</h3>
+                <p>Una pieza compacta que condensa el mensaje en pocos segundos, combinando timing, continuidad y una lectura visual inmediata.</p>
+              </div>
+            </article>
+
+            <article class="video-project" data-aos="fade-up" data-aos-delay="100">
+              <div class="video-project-media">
+                <video controls playsinline preload="metadata" aria-label="Reproducir edición de video: impacto desde el primer cuadro">
+                  <source src="creatives/videos/editing-reel/social-edit-03.mp4" type="video/mp4" />
+                  Tu navegador no puede reproducir este video.
+                </video>
+              </div>
+              <div class="video-project-copy">
+                <span>03 · Motion cut · 4s</span>
+                <h3>Impacto desde el primer cuadro</h3>
+                <p>Microedición enfocada en un gancho visual instantáneo: encuadre, movimiento y transición al servicio de una idea directa.</p>
+              </div>
+            </article>
+
+            <article class="video-project" data-aos="fade-up" data-aos-delay="150">
+              <div class="video-project-media">
+                <video controls playsinline preload="metadata" aria-label="Reproducir edición de video: pieza promocional dinámica">
+                  <source src="creatives/videos/editing-reel/social-edit-04.mp4" type="video/mp4" />
+                  Tu navegador no puede reproducir este video.
+                </video>
+              </div>
+              <div class="video-project-copy">
+                <span>04 · Promo edit · 10s</span>
+                <h3>Pieza promocional dinámica</h3>
+                <p>Montaje publicitario breve con energía sostenida y jerarquía visual, pensado para presentar una propuesta de forma clara y atractiva.</p>
+              </div>
+            </article>
+            </div>
+            <button class="video-carousel-button video-carousel-next" type="button" aria-label="Ver videos siguientes">→</button>
+          </div>
+        </section>
+
         <div class="grid">
           
           <figure class="grid-item cat-icons" data-aos="fade-up" 
@@ -146,7 +219,7 @@
       </div>
     </section>
 
-    <section id="3d-modeling" class="modeling-lab" aria-labelledby="modeling-lab-title">
+    <section id="3d-modeling" class="modeling-lab" aria-labelledby="modeling-lab-title" data-gallery-category="models-3d">
       <div class="container">
         <div class="modeling-lab-heading" data-aos="fade-up">
           <div><span class="modeling-lab-kicker">Interactive experiment · 01</span><h2 id="modeling-lab-title">3D Modeling Lab</h2></div>
@@ -246,6 +319,8 @@
       // 4. LÓGICA DE FILTRADO (de esta página)
       const chips = document.querySelectorAll('.filter-chip');
       const items = document.querySelectorAll('.grid-item');
+      const videoShowcase = document.querySelector('[data-gallery-category="videos"]');
+      const modelingShowcase = document.querySelector('[data-gallery-category="models-3d"]');
       
       if (chips.length > 0 && items.length > 0) {
         chips.forEach(chip => {
@@ -253,7 +328,14 @@
             chips.forEach(c => c.classList.remove('is-active'));
             chip.classList.add('is-active');
             const filter = chip.dataset.filter;
-            
+
+            if (videoShowcase) {
+              videoShowcase.hidden = !['all', 'videos'].includes(filter);
+            }
+            if (modelingShowcase) {
+              modelingShowcase.hidden = !['all', 'models-3d'].includes(filter);
+            }
+
             items.forEach(item => {
               if (filter === 'all' || item.classList.contains('cat-' + filter)) {
                 item.style.display = '';
@@ -263,6 +345,20 @@
             });
           });
         });
+      }
+
+      // Carrusel de trabajos de edición de video
+      const videoCarousel = document.getElementById('video-showcase-carousel');
+      const videoPrev = document.querySelector('.video-carousel-prev');
+      const videoNext = document.querySelector('.video-carousel-next');
+
+      if (videoCarousel && videoPrev && videoNext) {
+        const videoScrollStep = () => {
+          const card = videoCarousel.querySelector('.video-project');
+          return card ? card.getBoundingClientRect().width + 1 : videoCarousel.clientWidth;
+        };
+        videoPrev.addEventListener('click', () => videoCarousel.scrollBy({ left: -videoScrollStep(), behavior: 'smooth' }));
+        videoNext.addEventListener('click', () => videoCarousel.scrollBy({ left: videoScrollStep(), behavior: 'smooth' }));
       }
 
       // 5. LÓGICA DE LIGHTBOX (de esta página)
