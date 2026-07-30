@@ -38,7 +38,7 @@
   </header>
 
   <main>
-    <section class="hero" id="hero">
+    <section class="hero creatives-hero" id="hero">
       <div class="container">
         <h1 class="hero-titulo" data-aos="fade-up">Creatives</h1>
         <p class="hero-subtitulo" data-aos="fade-up" data-aos-delay="100">
@@ -47,7 +47,7 @@
       </div>
     </section>
 
-    <section style="padding-top: 2rem;">
+    <section class="gallery-filter-bar">
       <div class="container" data-aos="fade-up" data-aos-delay="200">
         <div class="gallery-controls">
           <button class="filter-chip is-active" data-filter="all" aria-label="Mostrar todos">Todos</button>
@@ -60,7 +60,7 @@
       </div>
     </section>
 
-    <section style="padding-top: 0;">
+    <section class="portfolio-gallery-section">
       <div class="container">
         <section class="video-showcase" id="video-editing" aria-labelledby="video-editing-title" data-gallery-category="videos">
           <div class="video-showcase-heading" data-aos="fade-up">
@@ -73,64 +73,136 @@
 
           <div class="video-carousel-shell">
             <button class="video-carousel-button video-carousel-prev" type="button" aria-label="Ver videos anteriores">←</button>
-            <div class="video-showcase-grid" id="video-showcase-carousel">
-            <article class="video-project" data-aos="fade-up">
+            <div class="video-showcase-grid" id="video-showcase-carousel" aria-live="polite">
+            <a class="video-project is-active" href="animation-01.html" aria-label="Ver caso Animation 01: Ritmo y narrativa visual">
               <div class="video-project-media">
-                <video controls playsinline preload="metadata" aria-label="Reproducir edición de video: ritmo y narrativa visual">
+                <video muted playsinline preload="auto" aria-hidden="true">
                   <source src="creatives/videos/editing-reel/social-edit-01.mp4" type="video/mp4" />
                   Tu navegador no puede reproducir este video.
                 </video>
+                <span class="video-project-index">01 / 04</span>
+                <span class="video-project-open">View project ↗</span>
               </div>
               <div class="video-project-copy">
-                <span>01 · Social edit · 10s</span>
+                <span>Animation 01 · Social edit · 10s</span>
                 <h3>Ritmo y narrativa visual</h3>
                 <p>Edición de formato breve construida para sostener la atención con cortes precisos, progresión clara y un cierre de alto impacto.</p>
               </div>
-            </article>
+            </a>
 
-            <article class="video-project" data-aos="fade-up" data-aos-delay="50">
+            <a class="video-project" href="animation-02.html" aria-label="Ver caso Animation 02: Montaje ágil para redes">
               <div class="video-project-media">
-                <video controls playsinline preload="metadata" aria-label="Reproducir edición de video: montaje ágil para redes">
+                <video muted playsinline preload="auto" aria-hidden="true">
                   <source src="creatives/videos/editing-reel/social-edit-02.mp4" type="video/mp4" />
                   Tu navegador no puede reproducir este video.
                 </video>
+                <span class="video-project-index">02 / 04</span>
+                <span class="video-project-open">View project ↗</span>
               </div>
               <div class="video-project-copy">
-                <span>02 · Micro content · 5s</span>
+                <span>Animation 02 · Micro content · 5s</span>
                 <h3>Montaje ágil para redes</h3>
                 <p>Una pieza compacta que condensa el mensaje en pocos segundos, combinando timing, continuidad y una lectura visual inmediata.</p>
               </div>
-            </article>
+            </a>
 
-            <article class="video-project" data-aos="fade-up" data-aos-delay="100">
+            <a class="video-project" href="animation-03.html" aria-label="Ver caso Animation 03: Impacto desde el primer cuadro">
               <div class="video-project-media">
-                <video controls playsinline preload="metadata" aria-label="Reproducir edición de video: impacto desde el primer cuadro">
+                <video muted playsinline preload="auto" aria-hidden="true">
                   <source src="creatives/videos/editing-reel/social-edit-03.mp4" type="video/mp4" />
                   Tu navegador no puede reproducir este video.
                 </video>
+                <span class="video-project-index">03 / 04</span>
+                <span class="video-project-open">View project ↗</span>
               </div>
               <div class="video-project-copy">
-                <span>03 · Motion cut · 4s</span>
+                <span>Animation 03 · Motion cut · 4s</span>
                 <h3>Impacto desde el primer cuadro</h3>
                 <p>Microedición enfocada en un gancho visual instantáneo: encuadre, movimiento y transición al servicio de una idea directa.</p>
               </div>
-            </article>
+            </a>
 
-            <article class="video-project" data-aos="fade-up" data-aos-delay="150">
+            <a class="video-project" href="animation-04.html" aria-label="Ver caso Animation 04: Pieza promocional dinámica">
               <div class="video-project-media">
-                <video controls playsinline preload="metadata" aria-label="Reproducir edición de video: pieza promocional dinámica">
+                <video muted playsinline preload="auto" aria-hidden="true">
                   <source src="creatives/videos/editing-reel/social-edit-04.mp4" type="video/mp4" />
                   Tu navegador no puede reproducir este video.
                 </video>
+                <span class="video-project-index">04 / 04</span>
+                <span class="video-project-open">View project ↗</span>
               </div>
               <div class="video-project-copy">
-                <span>04 · Promo edit · 10s</span>
+                <span>Animation 04 · Promo edit · 10s</span>
                 <h3>Pieza promocional dinámica</h3>
                 <p>Montaje publicitario breve con energía sostenida y jerarquía visual, pensado para presentar una propuesta de forma clara y atractiva.</p>
               </div>
-            </article>
+            </a>
             </div>
             <button class="video-carousel-button video-carousel-next" type="button" aria-label="Ver videos siguientes">→</button>
+          </div>
+        </section>
+
+        <section class="flyer-showcase" id="unimac-heater-campaign" aria-labelledby="unimac-campaign-title" data-gallery-category="flyers">
+          <div class="flyer-showcase-heading" data-aos="fade-up">
+            <div>
+              <span class="flyer-showcase-kicker">Flyer system · Product campaign</span>
+              <h2 id="unimac-campaign-title">UniMac Industrial Heater</h2>
+            </div>
+            <div class="flyer-showcase-intro">
+              <p>Una campaña modular que transforma atributos técnicos en una historia visual clara: potencia, resistencia, usos reales y especificaciones.</p>
+              <span>11 piezas · Dirección visual + diseño publicitario</span>
+            </div>
+          </div>
+
+          <div class="flyer-carousel-shell">
+            <button class="flyer-carousel-button flyer-carousel-prev" type="button" aria-label="Ver piezas anteriores">←</button>
+            <div class="flyer-carousel" id="unimac-flyer-carousel">
+              <figure class="flyer-panel flyer-panel-product">
+                <img src="creatives/flyers/unimac-heater/01-main-product.png" alt="Imagen principal del calefactor industrial UniMac" loading="lazy" />
+                <figcaption><span>01</span><strong>Hero product</strong></figcaption>
+              </figure>
+              <figure class="flyer-panel">
+                <img src="creatives/flyers/unimac-heater/02-industrial-heater.png" alt="Presentación del calefactor industrial UniMac" loading="lazy" />
+                <figcaption><span>02</span><strong>Product introduction</strong></figcaption>
+              </figure>
+              <figure class="flyer-panel">
+                <img src="creatives/flyers/unimac-heater/03-steel-strength.png" alt="Pieza sobre la resistencia de acero del calefactor" loading="lazy" />
+                <figcaption><span>03</span><strong>Steel strength</strong></figcaption>
+              </figure>
+              <figure class="flyer-panel">
+                <img src="creatives/flyers/unimac-heater/04-space-saving-design.png" alt="Pieza sobre el diseño compacto del calefactor" loading="lazy" />
+                <figcaption><span>04</span><strong>Compact design</strong></figcaption>
+              </figure>
+              <figure class="flyer-panel">
+                <img src="creatives/flyers/unimac-heater/05-heats-room.png" alt="Pieza publicitaria sobre calefacción de ambientes" loading="lazy" />
+                <figcaption><span>05</span><strong>Room heating</strong></figcaption>
+              </figure>
+              <figure class="flyer-panel">
+                <img src="creatives/flyers/unimac-heater/06-faster-drying.png" alt="Pieza publicitaria sobre secado rápido" loading="lazy" />
+                <figcaption><span>06</span><strong>Faster drying</strong></figcaption>
+              </figure>
+              <figure class="flyer-panel">
+                <img src="creatives/flyers/unimac-heater/07-twin-dial-control.png" alt="Detalle de los controles dobles del calefactor" loading="lazy" />
+                <figcaption><span>07</span><strong>Twin dial control</strong></figcaption>
+              </figure>
+              <figure class="flyer-panel">
+                <img src="creatives/flyers/unimac-heater/08-applications.png" alt="Aplicaciones del calefactor en distintos espacios" loading="lazy" />
+                <figcaption><span>08</span><strong>Use cases</strong></figcaption>
+              </figure>
+              <figure class="flyer-panel">
+                <img src="creatives/flyers/unimac-heater/09-tilting-design.png" alt="Demostración del diseño inclinable del calefactor" loading="lazy" />
+                <figcaption><span>09</span><strong>Tilting design</strong></figcaption>
+              </figure>
+              <figure class="flyer-panel">
+                <img src="creatives/flyers/unimac-heater/10-dimensions-specs.png" alt="Dimensiones y especificaciones del calefactor UniMac" loading="lazy" />
+                <figcaption><span>10</span><strong>Technical specs</strong></figcaption>
+              </figure>
+              <figure class="flyer-panel">
+                <img src="creatives/flyers/unimac-heater/11-product-line.png" alt="Presentación de la línea de calefactores UniMac" loading="lazy" />
+                <figcaption><span>11</span><strong>Product line</strong></figcaption>
+              </figure>
+            </div>
+            <button class="flyer-carousel-button flyer-carousel-next" type="button" aria-label="Ver piezas siguientes">→</button>
           </div>
         </section>
 
@@ -319,8 +391,8 @@
       // 4. LÓGICA DE FILTRADO (de esta página)
       const chips = document.querySelectorAll('.filter-chip');
       const items = document.querySelectorAll('.grid-item');
-      const videoShowcase = document.querySelector('[data-gallery-category="videos"]');
-      const modelingShowcase = document.querySelector('[data-gallery-category="models-3d"]');
+      const categoryShowcases = document.querySelectorAll('[data-gallery-category]');
+      const portfolioGallery = document.querySelector('.portfolio-gallery-section');
       
       if (chips.length > 0 && items.length > 0) {
         chips.forEach(chip => {
@@ -329,11 +401,11 @@
             chip.classList.add('is-active');
             const filter = chip.dataset.filter;
 
-            if (videoShowcase) {
-              videoShowcase.hidden = !['all', 'videos'].includes(filter);
-            }
-            if (modelingShowcase) {
-              modelingShowcase.hidden = !['all', 'models-3d'].includes(filter);
+            categoryShowcases.forEach(showcase => {
+              showcase.hidden = !['all', showcase.dataset.galleryCategory].includes(filter);
+            });
+            if (portfolioGallery) {
+              portfolioGallery.hidden = filter === 'models-3d';
             }
 
             items.forEach(item => {
@@ -353,12 +425,48 @@
       const videoNext = document.querySelector('.video-carousel-next');
 
       if (videoCarousel && videoPrev && videoNext) {
-        const videoScrollStep = () => {
-          const card = videoCarousel.querySelector('.video-project');
-          return card ? card.getBoundingClientRect().width + 1 : videoCarousel.clientWidth;
+        const slides = [...videoCarousel.querySelectorAll('.video-project')];
+        let activeVideoIndex = 0;
+
+        const showVideoSlide = (index, autoplay = true) => {
+          activeVideoIndex = (index + slides.length) % slides.length;
+          slides.forEach((slide, slideIndex) => {
+            const video = slide.querySelector('video');
+            const isActive = slideIndex === activeVideoIndex;
+            slide.classList.toggle('is-active', isActive);
+            slide.setAttribute('aria-hidden', String(!isActive));
+            if (!video) return;
+            if (isActive) {
+              video.currentTime = 0;
+              if (autoplay) video.play().catch(() => {});
+            } else {
+              video.pause();
+              video.currentTime = 0;
+            }
+          });
         };
-        videoPrev.addEventListener('click', () => videoCarousel.scrollBy({ left: -videoScrollStep(), behavior: 'smooth' }));
-        videoNext.addEventListener('click', () => videoCarousel.scrollBy({ left: videoScrollStep(), behavior: 'smooth' }));
+
+        slides.forEach((slide, index) => {
+          slide.querySelector('video')?.addEventListener('ended', () => showVideoSlide(index + 1));
+        });
+        videoPrev.addEventListener('click', () => showVideoSlide(activeVideoIndex - 1));
+        videoNext.addEventListener('click', () => showVideoSlide(activeVideoIndex + 1));
+        showVideoSlide(0);
+      }
+
+      // Carrusel del sistema de flyers UniMac
+      const flyerCarousel = document.getElementById('unimac-flyer-carousel');
+      const flyerPrev = document.querySelector('.flyer-carousel-prev');
+      const flyerNext = document.querySelector('.flyer-carousel-next');
+
+      if (flyerCarousel && flyerPrev && flyerNext) {
+        const flyerScrollStep = () => {
+          const panel = flyerCarousel.querySelector('.flyer-panel');
+          const gap = parseFloat(getComputedStyle(flyerCarousel).gap) || 16;
+          return panel ? panel.getBoundingClientRect().width + gap : flyerCarousel.clientWidth;
+        };
+        flyerPrev.addEventListener('click', () => flyerCarousel.scrollBy({ left: -flyerScrollStep(), behavior: 'smooth' }));
+        flyerNext.addEventListener('click', () => flyerCarousel.scrollBy({ left: flyerScrollStep(), behavior: 'smooth' }));
       }
 
       // 5. LÓGICA DE LIGHTBOX (de esta página)
