@@ -1032,6 +1032,15 @@ img {
     background:
         radial-gradient(circle at 88% 10%, rgba(224,35,48,.2), transparent 30%),
         linear-gradient(145deg,#1d2023,#101214 62%);
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform .5s cubic-bezier(.2,.75,.2,1), border-color .35s ease, box-shadow .5s ease;
+}
+.revolution-showcase:hover {
+    z-index: 2;
+    border-color: rgba(239,62,77,.42);
+    box-shadow: 0 30px 75px rgba(0,0,0,.34), 0 0 42px rgba(239,62,77,.08);
+    transform: scale(1.018);
 }
 .revolution-showcase[hidden] { display: none; }
 .revolution-showcase::after {
@@ -1078,14 +1087,22 @@ img {
 .revolution-visual-card img { width: 100%; aspect-ratio: 1/1; object-fit: contain; background: #fff; }
 .revolution-visual-before { left: 4%; top: 15%; transform: rotate(-5deg); }
 .revolution-visual-after { right: 4%; top: 8%; z-index: 1; transform: rotate(4deg); }
-.revolution-showcase:hover .revolution-visual-before { transform: translate(-7px,4px) rotate(-7deg); }
-.revolution-showcase:hover .revolution-visual-after { transform: translate(8px,-5px) rotate(6deg); }
+.revolution-showcase:hover .revolution-visual-before { transform: translate(-10px,6px) rotate(-7deg) scale(1.055); }
+.revolution-showcase:hover .revolution-visual-after { transform: translate(11px,-8px) rotate(6deg) scale(1.055); }
 .revolution-visual-line { position: absolute; right: 2rem; bottom: 1.5rem; color: #ef3e4d; font: .65rem monospace; letter-spacing: .09em; text-transform: uppercase; }
 
 @media(max-width:850px){
     .revolution-showcase { grid-template-columns: 1fr; }
     .revolution-showcase-visual { min-height: 480px; order: -1; }
     .revolution-showcase-copy { padding: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .revolution-showcase,
+    .revolution-visual-card,
+    .revolution-showcase-cta b { transition: none; }
+    .revolution-showcase:hover { transform: none; }
+    .revolution-showcase:hover .revolution-visual-before { transform: rotate(-5deg); }
+    .revolution-showcase:hover .revolution-visual-after { transform: rotate(4deg); }
 }
 @media(max-width:520px){
     .revolution-showcase-visual { min-height: 360px; }
