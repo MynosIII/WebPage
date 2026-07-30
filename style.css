@@ -932,7 +932,7 @@ img {
 .video-showcase-grid {
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,.12);
+    border: 0;
     background: #0a0b0c;
 }
 .video-project {
@@ -1260,13 +1260,14 @@ img {
 .animation-case-player small { display: block; padding: .85rem 1rem; color: #68717a; font: .65rem monospace; letter-spacing: .06em; text-transform: uppercase; }
 .animation-breakdown { padding: 7rem 0; border-top: 1px solid rgba(255,255,255,.1); background: #14171a; }
 .animation-breakdown h2 { max-width: 900px; margin: 1rem 0 4rem; color: #fff; text-align: left; font-size: clamp(2.5rem,5vw,5.5rem); line-height: .95; letter-spacing: -.05em; }
-.animation-notes { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid rgba(255,255,255,.13); }
-.animation-notes article { padding: 2rem; border-right: 1px solid rgba(255,255,255,.13); }
-.animation-notes article:last-child { border-right: 0; }
+.animation-notes { display: grid; grid-template-columns: repeat(2,1fr); border-top: 1px solid rgba(255,255,255,.13); }
+.animation-notes article { padding: 2rem; border-right: 1px solid rgba(255,255,255,.13); border-bottom: 1px solid rgba(255,255,255,.13); }
+.animation-notes article:nth-child(even) { border-right: 0; }
+.animation-notes article:nth-last-child(-n+2) { border-bottom: 0; }
 .animation-notes b { color: var(--color-acento); font: .7rem monospace; }
 .animation-notes h3 { margin: 1.4rem 0 .75rem; color: #fff; font-size: 1.4rem; }
 .animation-notes p { color: #8e969e; font-size: .9rem; line-height: 1.65; }
-@media(max-width:850px){.animation-case-grid{grid-template-columns:1fr}.animation-case-hero{padding-top:7rem}.animation-notes{grid-template-columns:1fr}.animation-notes article{border-right:0;border-bottom:1px solid rgba(255,255,255,.13)}}
+@media(max-width:850px){.animation-case-grid{grid-template-columns:1fr}.animation-case-hero{padding-top:7rem}.animation-notes{grid-template-columns:1fr}.animation-notes article,.animation-notes article:nth-child(even),.animation-notes article:nth-last-child(-n+2){border-right:0;border-bottom:1px solid rgba(255,255,255,.13)}.animation-notes article:last-child{border-bottom:0}}
 
 /* --- UNIMAC case study --- */
 .unimac-case-page { background: #0d0b0a; }
@@ -1813,6 +1814,52 @@ footer p { color: var(--color-texto-sec); font-size: 0.9rem; }
     .modeling-lab > .container { padding: 1.25rem; }
     .modeling-lab-heading { grid-template-columns: 1fr; }
     .modeling-lab-stage { min-height: 420px; }
+}
+
+/* Layered hover treatment for the main Creatives cards. */
+.video-showcase,
+.flyer-showcase,
+.modeling-lab > .container {
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform .5s cubic-bezier(.2,.75,.2,1), border-color .35s ease, box-shadow .5s ease;
+}
+.video-showcase:hover,
+.modeling-lab > .container:hover {
+    z-index: 2;
+    border-color: rgba(var(--color-acento-rgb),.38);
+    box-shadow: 0 30px 75px rgba(0,0,0,.3), 0 0 42px rgba(var(--color-acento-rgb),.06);
+    transform: scale(1.018);
+}
+.flyer-showcase:hover {
+    z-index: 2;
+    border-color: rgba(241,90,36,.42);
+    box-shadow: 0 30px 75px rgba(0,0,0,.32), 0 0 42px rgba(241,90,36,.07);
+    transform: scale(1.018);
+}
+.video-project video,
+.flyer-panel img,
+#modeling-lab-canvas {
+    transform: scale(1);
+    transition: transform .55s cubic-bezier(.2,.75,.2,1), filter .35s ease;
+}
+.video-showcase:hover .video-project.is-active video,
+.flyer-showcase:hover .flyer-panel img,
+.modeling-lab > .container:hover #modeling-lab-canvas { transform: scale(1.045); }
+
+@media (prefers-reduced-motion: reduce) {
+    .video-showcase,
+    .flyer-showcase,
+    .modeling-lab > .container,
+    .video-project video,
+    .flyer-panel img,
+    #modeling-lab-canvas { transition: none; }
+    .video-showcase:hover,
+    .flyer-showcase:hover,
+    .modeling-lab > .container:hover,
+    .video-showcase:hover .video-project.is-active video,
+    .flyer-showcase:hover .flyer-panel img,
+    .modeling-lab > .container:hover #modeling-lab-canvas { transform: none; }
 }
 
 /* ======================== */
