@@ -1,0 +1,546 @@
+PROFESSIONAL DESIGN RATIONALE
+UNIMAC INDUSTRIAL HEATER IMAGE SET
+
+I designed this image set as a conversion-focused product story rather than a collection of disconnected graphics. The objective was to present the UNIMAC industrial heater as powerful, durable, compact and easy to operate, while answering the buyer’s main questions in the same order they normally arise during a purchase decision.
+
+The customer is not primarily looking for decorative heating. The intended buyer is more likely to be a tradesperson, workshop owner, contractor, warehouse operator, agricultural user or anyone who needs reliable heat in a demanding working environment.
+
+The main questions this customer is likely to ask are:
+
+Will it produce enough heat?
+Can it withstand an industrial environment?
+Is it portable and easy to store?
+Can I direct the heat where I need it?
+Are the controls simple?
+Will it work in my particular space?
+What are its exact dimensions and specifications?
+
+The image sequence was structured to answer these concerns one by one.
+
+OVERALL VISUAL DIRECTION
+
+The visual identity uses black, orange and white throughout the set.
+
+Orange communicates heat, energy, power and active performance. Black reinforces the industrial and durable character of the product. White is used selectively in the more technical panels to improve clarity and make specifications feel objective, precise and trustworthy.
+
+I combined dark industrial environments, high-contrast product lighting and clean informational layouts. This balance is important because the lifestyle images create emotional relevance, while the technical images provide rational purchase reassurance.
+
+The typography is bold, condensed and highly legible. The headlines are intentionally brief because marketplace images must communicate within seconds, especially on mobile devices.
+
+The visual hierarchy follows a consistent pattern:
+
+1. Main benefit or customer concern.
+2. Supporting explanation.
+3. Product or contextual proof.
+4. Brand reinforcement.
+
+The heater remains visually dominant throughout the set. The environments support the product rather than competing with it.
+
+PANEL-BY-PANEL EXPLANATION
+
+1. MAIN PRODUCT IMAGE
+
+The first image presents the heater alone against a white background.
+
+I kept this image clean and free from distractions so the customer can immediately understand the product’s shape, construction, control position, frame and overall proportions.
+
+The three-quarter angle was selected because it reveals more information than a direct front view. The customer can see the heating grille, cylindrical steel housing, control unit, carrying structure and adjustable support frame simultaneously.
+
+For an Amazon-style listing, this is also the correct strategic approach for the main image: a clear product presentation with no unnecessary text, effects or contextual props.
+
+The purpose of this image is identification and trust. Before reading any specifications, the customer should clearly understand what is being sold.
+
+2. INDUSTRIAL ELECTRIC FAN HEATER HERO IMAGE
+
+This is the primary emotional and commercial hero graphic.
+
+It establishes the product category, industrial positioning and core performance proposition immediately.
+
+The dark textured background creates a strong industrial atmosphere, while the orange heating element becomes the main focal point. The heater is angled toward the customer, making it appear active and ready for use rather than static.
+
+The benefit statements at the bottom introduce heat settings and space or spot heating without overloading the composition.
+
+This image was designed to stop the customer from scrolling and create immediate interest.
+
+It also introduces the central visual language used throughout the rest of the image set: dark industrial surfaces, warm orange lighting, bold typography and strong product contrast.
+
+3. BUILT WITH STEEL STRENGTH
+
+This image addresses durability, which is one of the most important concerns for an industrial customer.
+
+The carrying shot demonstrates portability and physical construction. The secondary workshop image places the heater in an environment where durability matters.
+
+Instead of only stating that the heater is strong, the composition visually associates it with tools, machinery, workshops and demanding working conditions.
+
+The white background separates this panel from the darker performance images, making it feel more factual and product-focused.
+
+The customer can clearly see that the heater has a protective steel structure, a practical carrying frame and a design intended for repeated use.
+
+This panel is especially important because industrial customers often evaluate products based on expected lifespan, resistance to damage and ease of transportation.
+
+4. SPACE-SAVING DESIGN
+
+This panel communicates compactness through context.
+
+Dimensions alone can feel abstract, so I showed the heater fitting naturally onto a workshop storage shelf.
+
+The environment gives the customer an immediate reference for scale. It also answers a practical concern: the heater can be stored without occupying excessive space in a workshop, garage, warehouse or utility room.
+
+The composition leaves a relatively clean area for the headline, while the orange product remains highly visible against the darker shelving.
+
+The purpose of this image is to transform a technical product characteristic into a practical customer benefit.
+
+The feature is compact construction.
+
+The benefit is easier storage in a crowded working environment.
+
+5. HEATING AND AIRFLOW PERFORMANCE
+
+This image connects the product to a real working problem: maintaining warmth in an unfinished, cold or industrial work area.
+
+The heater is positioned close to the foreground, and its illuminated element makes the performance visible.
+
+The worker in the background provides context without becoming the main subject.
+
+The wide format allows the image to show both the product and the environment it is intended to affect. This makes the heating benefit feel more substantial than an isolated product photograph.
+
+The headline and supporting copy should focus on the heater’s verified airflow and heating performance.
+
+A technically accurate version of the message would be:
+
+POWERFUL 280 M³/H AIRFLOW
+
+Circulates warm air efficiently throughout your workspace.
+
+This wording is stronger and more credible than presenting airflow as a guaranteed room-heating volume.
+
+6. FASTER DRYING
+
+This panel translates heat output into a practical use case.
+
+Customers are often more persuaded by a visible outcome than by a technical specification.
+
+The wet or unfinished work area, worker and heater establish a simple implication: the heater can help accelerate drying and improve working conditions.
+
+The heater remains sharply illuminated while the surrounding scene is more muted. This maintains product priority and prevents the lifestyle image from becoming generic stock photography.
+
+The copy should remain careful and credible.
+
+A strong version would be:
+
+HELPS ACCELERATE DRYING
+
+Warm airflow supports faster drying in workshops and work areas.
+
+This communicates a practical advantage without making an unsupported guarantee.
+
+7. SIMPLE TWIN-DIAL CONTROL
+
+This is a functional detail image.
+
+Customers purchasing industrial equipment want to understand whether operation will be intuitive.
+
+The close-up removes uncertainty by showing the controls clearly.
+
+The twin-dial system communicates that the heater does not require a complicated setup or digital interface. One control manages operating modes, while the second controls temperature.
+
+The large product crop also increases perceived quality.
+
+Close-up imagery allows the buyer to inspect surface finishes, markings, assembly details and control labels that may not be visible in the main image.
+
+The main benefit is simplicity.
+
+The customer can immediately understand that the heater can be adjusted quickly without navigating menus or complicated settings.
+
+8. APPLICATIONS PANEL
+
+This panel expands the perceived usefulness of the heater by showing several customer environments.
+
+The applications include:
+
+Commercial or workshop spaces.
+Garage or automotive work areas.
+Greenhouse or agricultural environments.
+Livestock-related environments.
+
+The grid structure allows the customer to identify their own use case quickly.
+
+Orange borders connect each scene with the product and the broader UNIMAC visual identity.
+
+This is particularly useful for a product with several possible audiences because it prevents the listing from appearing relevant to only one type of buyer.
+
+The panel also helps customers imagine the product in their own working environment.
+
+Every application should be consistent with the manufacturer’s safety documentation, operating instructions, ventilation requirements and recommended clearances.
+
+9. TILTING DESIGN
+
+This image explains an important mechanical feature using both a hero view and smaller angle illustrations.
+
+The customer can understand that the heater is not fixed in one direction.
+
+It can be tilted to direct warm airflow toward a person, surface or specific working area.
+
+The dark workshop environment supports the industrial positioning, while the orange edge lighting separates the product from the background.
+
+The supplementary angle images provide functional evidence rather than relying entirely on the headline.
+
+A benefit-led headline would be:
+
+DIRECT HEAT WHERE IT IS NEEDED
+
+Adjustable tilt for focused heating and drying.
+
+This wording connects the mechanical feature directly to the customer’s practical needs.
+
+10. DIMENSIONS AND SPECIFICATIONS
+
+This panel is intentionally cleaner and more technical.
+
+After the lifestyle and benefit images create interest, the customer needs precise information before making a purchase decision.
+
+The heater is shown with dimension lines, weight and essential specifications.
+
+This helps customers determine whether it will fit their storage area, workspace and electrical setup.
+
+The specification grid makes comparison easy and reduces the need to search through the written product description.
+
+This is one of the most important trust-building images in the set.
+
+The technical information must be accurate, easy to scan and consistent with the written listing.
+
+11. UNIMAC PRODUCT FAMILY
+
+The final panel shifts from product conversion to brand building.
+
+It shows that the heater belongs to a broader UNIMAC range of electric and diesel heating products.
+
+This makes the brand appear established and specialized rather than dependent on a single product.
+
+It can increase customer confidence and encourage cross-shopping within the product line.
+
+The final brand statement gives the image set a strong closing point and reinforces the professional-equipment positioning.
+
+WHY THE DESIGN FITS THE CUSTOMER
+
+The imagery does not place the heater in a polished living room or decorative domestic setting.
+
+That would create a disconnect between the product’s heavy-duty appearance and the customer’s expected use.
+
+Instead, the set uses workshops, garages, construction spaces, storage areas and agricultural environments.
+
+These locations allow the intended customer to recognize their own situation immediately.
+
+The design also prioritizes practical information over decorative language.
+
+Industrial customers are generally more interested in measurable benefits such as airflow, output, dimensions, controls, construction and adjustability than abstract lifestyle promises.
+
+The image sequence reflects the customer’s natural decision process.
+
+Recognition:
+What is the product?
+
+Interest:
+How powerful is it?
+
+Trust:
+Is it durable?
+
+Relevance:
+Will it fit my environment?
+
+Understanding:
+How do I operate and position it?
+
+Validation:
+What are the exact specifications?
+
+Brand confidence:
+Is it part of a credible equipment range?
+
+This progression makes the set feel intentional and helps move the customer from initial interest toward purchase confidence.
+
+TOOLS AND PRODUCTION PROCESS
+
+The image set was created using a combination of professional product photography, Adobe Photoshop and Adobe Illustrator.
+
+PRODUCT PHOTOGRAPHY
+
+Product photography was used to capture the heater from the most informative and commercially effective angles.
+
+The photographs were planned to clearly show the product’s industrial construction, front heating grille, control panel, carrying frame and adjustable positioning system.
+
+The three-quarter product views were selected because they communicate more information than flat front-facing images.
+
+Detail photographs were also used for the control panel, structural frame and adjustment mechanism.
+
+The lighting setup was designed to preserve the heater’s metal texture, show the shape of the housing and create clear separation between the product and its background.
+
+The product was photographed sharply and consistently so it could be used across both white-background and lifestyle compositions.
+
+ADOBE PHOTOSHOP
+
+Adobe Photoshop was used for product retouching, background removal, color correction, image compositing and environmental integration.
+
+It was also used to create realistic shadows, warm reflections and the controlled orange glow around the heating element.
+
+The heating effect was intentionally enhanced to make the product’s function immediately understandable.
+
+The effect was kept realistic so the heater remained consistent with the physical product rather than appearing excessively edited.
+
+Photoshop was also used to place the heater naturally into workshops, garages, construction spaces and agricultural environments.
+
+Perspective, lighting direction, contrast, color temperature and contact shadows were adjusted so the product appeared to belong naturally within each scene.
+
+The compositing process included:
+
+Precise product masking.
+Edge cleanup.
+Reflection correction.
+Metal surface retouching.
+Perspective matching.
+Shadow creation.
+Ambient color matching.
+Warm light spill.
+Depth-of-field adjustment.
+Final contrast and sharpness correction.
+
+The objective was to make each lifestyle composition feel believable while keeping the heater visually dominant.
+
+ADOBE ILLUSTRATOR
+
+Adobe Illustrator was used to create the graphic system across the entire image set.
+
+This included:
+
+Typography.
+Icons.
+Specification tables.
+Measurement lines.
+Borders.
+Labels.
+Supporting information.
+Layout grids.
+Brand elements.
+
+Illustrator was particularly important for maintaining consistency.
+
+A shared grid, spacing system, type hierarchy and color palette were applied across every panel.
+
+This ensured the images looked like one unified campaign rather than a collection of unrelated graphics.
+
+Vector graphics were used for dimensions, controls, arrows and technical information because they remain sharp and clear at different export sizes.
+
+The Illustrator files also made it easier to update specifications, measurements and text without affecting the photographic compositions.
+
+PRODUCTION WORKFLOW
+
+The project followed a structured production process.
+
+1. PRODUCT AND CUSTOMER REVIEW
+
+I reviewed the heater’s specifications, features, construction and intended customer.
+
+The main customer concerns were identified before any graphic work began.
+
+These included power, durability, portability, storage, adjustability, ease of use and technical dimensions.
+
+2. COMPETITOR AND CATEGORY REVIEW
+
+I reviewed the visual conventions commonly used in industrial heater listings.
+
+The objective was to understand what information customers expect while identifying opportunities to create a more consistent and professional presentation.
+
+3. IMAGE SEQUENCE PLANNING
+
+Each image was assigned one primary communication objective.
+
+This prevented individual panels from becoming overloaded and ensured the full set followed a logical sales sequence.
+
+4. PHOTOGRAPHY PLANNING
+
+The required product angles and details were identified before the photography stage.
+
+This included:
+
+Main three-quarter product view.
+Alternative angle.
+Control panel close-up.
+Carrying position.
+Adjustable frame.
+Tilt mechanism.
+Side and front details.
+
+5. PRODUCT PHOTOGRAPHY
+
+The heater was photographed using controlled lighting and a clean background.
+
+The lighting was adjusted to show the product’s metal texture and structural details without creating distracting reflections.
+
+6. RETOUCHING AND EXTRACTION
+
+The product photographs were corrected and isolated in Photoshop.
+
+Dust, small marks, inconsistent reflections and unnecessary background elements were removed.
+
+The product color and contrast were standardized across all images.
+
+7. ENVIRONMENTAL COMPOSITING
+
+The heater was placed into relevant working environments.
+
+The scale, perspective, lighting and contact shadows were adjusted to make the product feel naturally integrated.
+
+8. HEAT AND LIGHT EFFECTS
+
+Warm orange light was added around the heating element and nearby surfaces.
+
+The glow was controlled carefully so it communicated heat without making the product appear unrealistic.
+
+9. GRAPHIC SYSTEM DEVELOPMENT
+
+The typography, icons, borders, measurement lines and specification tables were created in Illustrator.
+
+A consistent visual system was applied across the entire set.
+
+10. TECHNICAL VERIFICATION
+
+Measurements, power ratings, airflow figures, weight and operating features were checked for consistency.
+
+Every technical claim was reviewed before final export.
+
+11. MOBILE LEGIBILITY TESTING
+
+Each image was reduced to a typical mobile display size.
+
+Headlines, captions and specifications were adjusted to remain readable when viewed on a smartphone.
+
+12. FINAL EXPORT
+
+The images were exported in the correct marketplace format, resolution and sRGB color profile.
+
+The final files were optimized for sharpness, color consistency and online display.
+
+COMMON ERRORS IN INDUSTRIAL PRODUCT IMAGE DESIGN
+
+1. INCONSISTENT SPECIFICATIONS
+
+One of the most serious mistakes is presenting different power ratings, dimensions or technical values across separate images.
+
+For example, showing 2 kW in one panel and 3 kW in another immediately reduces trust.
+
+A single verified value must be used throughout the listing.
+
+2. MISINTERPRETING AIRFLOW
+
+Airflow measured in cubic meters per hour is not automatically the same as the volume of a room the heater can heat in one hour.
+
+A statement such as “280 m³/h airflow” is technically clearer than claiming that the heater heats 280 cubic meters per hour.
+
+3. DESIGNING ONLY FOR DESKTOP
+
+A layout can look clear on a large monitor but become unreadable on a smartphone.
+
+Marketplace graphics must be tested at mobile size.
+
+Small captions, thin fonts and overly detailed specification tables often fail on smaller screens.
+
+4. USING UNSUPPORTED APPLICATIONS
+
+Showing the heater in a greenhouse, livestock area, wet environment or enclosed space can imply that the product is approved for that use.
+
+Every environment should be consistent with the manufacturer’s safety documentation.
+
+5. EXCESSIVE GLOW EFFECTS
+
+The orange heating effect is useful because it makes warmth visible.
+
+However, too much glow can make the product appear unrealistic, unsafe or different from the item the customer receives.
+
+The effect should clarify the function without changing the product’s appearance.
+
+6. WEAK PRODUCT INTEGRATION
+
+A common mistake is placing a product cutout over a background without matching perspective, lighting, color temperature or shadows.
+
+This makes the composition look artificial.
+
+The heater must interact visually with the environment through realistic contact shadows, reflections and light spill.
+
+7. OVERLOADING EACH IMAGE
+
+Each panel should communicate one main idea.
+
+Trying to combine power, dimensions, controls, durability and applications in one image creates confusion.
+
+A focused message is easier to understand and more persuasive.
+
+8. FOCUSING ON FEATURES WITHOUT BENEFITS
+
+“Adjustable frame” is a feature.
+
+“Direct heat where it is needed” is the customer benefit.
+
+“Compact dimensions” is a feature.
+
+“Easy to store in a crowded workshop” is the benefit.
+
+Strong product graphics connect the technical characteristic to a practical outcome.
+
+9. USING GENERIC ENVIRONMENTS
+
+The background must match the intended customer.
+
+A domestic living room would weaken the industrial positioning.
+
+Workshops, garages, construction areas and warehouses make the product feel relevant to the correct audience.
+
+10. POOR TYPOGRAPHIC HIERARCHY
+
+When every line of text has the same size or weight, the customer does not know what to read first.
+
+The headline should communicate the main benefit, while supporting text provides secondary information.
+
+11. INCONSISTENT BRANDING
+
+Changing fonts, colors, spacing or graphic styles between images makes the listing appear unprofessional.
+
+A consistent visual system strengthens brand recognition and customer trust.
+
+12. UNSUPPORTED PERFORMANCE CLAIMS
+
+Claims such as “heats any room instantly” or “dries surfaces twice as fast” should not be used unless they are supported by verified testing.
+
+More credible wording improves trust and reduces compliance risk.
+
+RECOMMENDED FINAL CORRECTIONS
+
+The overall concept is strong and commercially appropriate.
+
+Before final publication, I would make the following corrections:
+
+1. Resolve any contradiction between the 2 kW and 3 kW power claims.
+2. Present 280 m³/h as an airflow specification rather than a guaranteed heating-volume claim.
+3. Increase the final export resolution and enlarge smaller supporting text.
+4. Verify that all illustrated applications are permitted by the heater’s safety documentation.
+5. Ensure the same dimensions, weight and power values appear in every panel.
+6. Test the complete set on both desktop and mobile displays.
+7. Confirm that all product photography accurately represents the final item delivered to the customer.
+
+CONCLUSION
+
+The image set was designed to present the UNIMAC industrial heater as powerful, durable, compact, practical and easy to operate.
+
+The visual strategy combines industrial photography, realistic Photoshop compositing and precise Illustrator graphics.
+
+Each panel has a defined role within the customer journey.
+
+The first images establish the product and its performance.
+
+The middle images demonstrate durability, compact storage, practical applications, simple controls and adjustable heating.
+
+The final images provide technical validation and reinforce the UNIMAC product family.
+
+The result is a cohesive, professional and conversion-focused image sequence that communicates both emotional relevance and practical product information.
+
+The design fits the intended customer because it presents the heater in realistic working environments, prioritizes useful information and answers the main questions that influence an industrial equipment purchase.
