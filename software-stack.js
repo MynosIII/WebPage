@@ -13,6 +13,11 @@
     'power-bi': ['Power BI', 'power-bi.svg'],
     'davinci-resolve': ['DaVinci Resolve', 'davinci-resolve.svg'],
     blender: ['Blender', 'blender.svg'],
+    cinema4d: ['Cinema 4D', 'cinema4d.svg'],
+    nuke: ['Nuke', 'nuke.svg'],
+    reaper: ['REAPER', 'reaper.svg'],
+    'fl-studio': ['FL Studio', 'fl-studio.svg'],
+    audacity: ['Audacity', 'audacity.svg'],
     helium10: ['Helium 10', 'helium10.svg'],
     'jungle-scout': ['Jungle Scout', 'jungle-scout.svg'],
     keepa: ['Keepa', 'keepa.svg'],
@@ -32,19 +37,25 @@
 
   const aboutRows = [
     {
-      label: 'Data',
+      label: 'Data Analytics',
+      slug: 'data',
+      direction: 'forward',
       copy: 'Excel avanzado, Google Sheets, SQL, Python, R, Power BI, Tableau, dashboards y automatizaciones internas.',
       tools: ['excel', 'google-sheets', 'sql', 'python', 'r', 'power-bi', 'tableau']
     },
     {
       label: 'Ecommerce',
+      slug: 'ecommerce',
+      direction: 'reverse',
       copy: 'Amazon Seller Central, Helium 10, Jungle Scout, Keepa, Sellerboard, Google Ads, Meta Ads, GA4, Search Console, Semrush, Hotjar y Stackline.',
       tools: ['amazon-seller-central', 'helium10', 'jungle-scout', 'keepa', 'sellerboard', 'google-ads', 'meta-ads', 'ga4', 'search-console', 'semrush', 'hotjar', 'stackline']
     },
     {
       label: 'Creative',
-      copy: 'Photoshop, Illustrator, Premiere Pro, After Effects, DaVinci Resolve y Blender.',
-      tools: ['photoshop', 'illustrator', 'premiere', 'after-effects', 'davinci-resolve', 'blender']
+      slug: 'creative',
+      direction: 'forward',
+      copy: 'Photoshop, Illustrator, Premiere Pro, After Effects, DaVinci Resolve, Blender, Cinema 4D, Nuke, REAPER, FL Studio y Audacity.',
+      tools: ['photoshop', 'illustrator', 'premiere', 'after-effects', 'davinci-resolve', 'blender', 'cinema4d', 'nuke', 'reaper', 'fl-studio', 'audacity']
     }
   ];
   const caseStacks = {
@@ -123,14 +134,14 @@
         <h2>Mi stack de software</h2>
         <p>Creatividad, análisis, ecommerce y automatización conectados en un mismo flujo de trabajo.</p>
       </div>
-      ${aboutRows.map((row, index) => `
-        <div class="software-marquee-row">
+      ${aboutRows.map(row => `
+        <div class="software-marquee-row" data-software-row="${row.slug}">
           <div class="container software-marquee-row-label">
             <h3>${row.label}</h3>
             <p>${row.copy}</p>
           </div>
           <div class="software-marquee" aria-label="Herramientas de ${row.label}">
-            <div class="software-marquee-track ${index % 2 ? 'software-marquee-forward' : 'software-marquee-reverse'}">${[...row.tools,...row.tools].map(card).join('')}</div>
+            <div class="software-marquee-track ${row.direction === 'forward' ? 'software-marquee-forward' : 'software-marquee-reverse'}">${Array.from({length: 4}, () => row.tools).flat().map(card).join('')}</div>
           </div>
         </div>`).join('')}`;
     const contact = document.getElementById('contacto');

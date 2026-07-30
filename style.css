@@ -345,7 +345,9 @@ img {
 }
 .software-marquee-row-label p { margin: 0; color: #9da3aa; font-size: .88rem; }
 .software-marquee { width: 100vw; margin-left: calc(50% - 50vw); overflow: hidden; padding: .45rem 0; }
-.software-marquee-track { display: flex; width: max-content; gap: .75rem; will-change: transform; }
+.software-marquee-track { display: flex; width: max-content; min-width: 100vw; gap: .75rem; will-change: transform; }
+[data-software-row="data"] .software-marquee { margin-left: calc(50% - 50vw); }
+[data-software-row="data"] .software-marquee-track { justify-content: flex-start; }
 .software-marquee-track .software-logo-card { min-width: max-content; background: #15191d; }
 .software-marquee-forward { animation: software-scroll-left 42s linear infinite; }
 .software-marquee-reverse { animation: software-scroll-right 46s linear infinite; }
