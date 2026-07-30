@@ -42,7 +42,7 @@
       <div class="container">
         <h1 class="hero-titulo" data-aos="fade-up">Creatives</h1>
         <p class="hero-subtitulo" data-aos="fade-up" data-aos-delay="100">
-          Portfolio visual — íconos, logos, videos y flyers.
+          Portfolio visual — íconos, videos, modelos 3D y flyers.
         </p>
       </div>
     </section>
@@ -52,7 +52,6 @@
         <div class="gallery-controls">
           <button class="filter-chip is-active" data-filter="all" aria-label="Mostrar todos">Todos</button>
           <button class="filter-chip" data-filter="icons" aria-label="Filtrar por Íconos">Íconos</button>
-          <button class="filter-chip" data-filter="logos" aria-label="Filtrar por Logos">Logos</button>
           <button class="filter-chip" data-filter="videos" aria-label="Filtrar por Videos">Videos</button>
           <button class="filter-chip" data-filter="models-3d" aria-label="Filtrar por Modelos 3D">Modelos 3D</button>
           <button class="filter-chip" data-filter="flyers" aria-label="Filtrar por Flyers">Flyers</button>
@@ -289,79 +288,6 @@
           </div>
         </a>
 
-        <div class="grid">
-          
-          <figure class="grid-item cat-icons" data-aos="fade-up" 
-                  data-full-src="creatives/icons/set-ico-01-full.png"
-                  aria-label="Ver Set de Íconos 01">
-            <div class="ratio-box" style="--ratio: 4/3;">
-              <img class="thumb" src="creatives/icons/set-ico-01-thumb.png" alt="Miniatura Set de íconos 01" loading="lazy" />
-            </div>
-            <figcaption>Set de Íconos · 01</figcaption>
-          </figure>
-
-          <figure class="grid-item cat-logos" data-aos="fade-up" data-aos-delay="50"
-                  data-full-src="creatives/logos/logo-xyz-full.jpg"
-                  aria-label="Ver Logo XYZ">
-            <div class="ratio-box" style="--ratio: 4/3;">
-              <img class="thumb" src="creatives/logos/logo-xyz-thumb.jpg" alt="Miniatura Logo XYZ" loading="lazy" />
-            </div>
-            <figcaption>Logo · XYZ</figcaption>
-          </figure>
-
-          <figure class="grid-item cat-videos" data-aos="fade-up" data-aos-delay="100"
-                  data-video-id="dQw4w9WgXcQ"
-                  aria-label="Ver Video Campaña 01">
-            <div class="ratio-box" style="--ratio: 16/9;">
-              <img class="thumb" src="creatives/videos/vid-camp-01-thumb.jpg" alt="Miniatura Video campaña 01" loading="lazy" />
-            </div>
-            <figcaption>Video · Campaña 01</figcaption>
-          </figure>
-
-          <figure class="grid-item cat-flyers" data-aos="fade-up" data-aos-delay="150"
-                  data-full-src="creatives/flyers/flyer-abc-full.jpg"
-                  aria-label="Ver Flyer ABC">
-            <div class="ratio-box" style="--ratio: 3/4;"> <img class="thumb" src="creatives/flyers/flyer-abc-thumb.jpg" alt="Miniatura Flyer ABC" loading="lazy" />
-            </div>
-            <figcaption>Flyer · ABC</figcaption>
-          </figure>
-
-          <figure class="grid-item cat-videos" data-aos="fade-up"
-                  data-video-id="u31qwQUeGuM"
-                  aria-label="Ver Video Demo Producto">
-            <div class="ratio-box" style="--ratio: 16/9;">
-              <img class="thumb" src="creatives/videos/vid-demo-02-thumb.jpg" alt="Miniatura Video demo 02" loading="lazy" />
-            </div>
-            <figcaption>Video · Demo Producto</figcaption>
-          </figure>
-          
-          <figure class="grid-item cat-icons" data-aos="fade-up" data-aos-delay="50"
-                  data-full-src="creatives/icons/set-ico-02-full.png"
-                  aria-label="Ver Set de Íconos 02">
-            <div class="ratio-box" style="--ratio: 4/3;">
-              <img class="thumb" src="creatives/icons/set-ico-02-thumb.png" alt="Miniatura Set de íconos 02" loading="lazy" />
-            </div>
-            <figcaption>Set de Íconos · 02</figcaption>
-          </figure>
-
-          <figure class="grid-item cat-flyers" data-aos="fade-up" data-aos-delay="100"
-                  data-full-src="creatives/flyers/flyer-def-full.jpg"
-                  aria-label="Ver Flyer DEF">
-            <div class="ratio-box" style="--ratio: 1/1;"> <img class="thumb" src="creatives/flyers/flyer-def-thumb.jpg" alt="Miniatura Flyer DEF" loading="lazy" />
-            </div>
-            <figcaption>Flyer · DEF</figcaption>
-          </figure>
-
-          <figure class="grid-item cat-logos" data-aos="fade-up" data-aos-delay="150"
-                  data-full-src="creatives/logos/logo-qrs-full.jpg"
-                  aria-label="Ver Logo QRS">
-            <div class="ratio-box" style="--ratio: 4/3;">
-              <img class="thumb" src="creatives/logos/logo-qrs-thumb.jpg" alt="Miniatura Logo QRS" loading="lazy" />
-            </div>
-            <figcaption>Logo · QRS</figcaption>
-          </figure>
-
-        </div>
       </div>
     </section>
 
@@ -468,7 +394,7 @@
       const categoryShowcases = document.querySelectorAll('[data-gallery-category]');
       const portfolioGallery = document.querySelector('.portfolio-gallery-section');
       
-      if (chips.length > 0 && items.length > 0) {
+      if (chips.length > 0) {
         chips.forEach(chip => {
           chip.addEventListener('click', () => {
             chips.forEach(c => c.classList.remove('is-active'));
