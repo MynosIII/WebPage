@@ -1306,7 +1306,7 @@ img {
 .icon-system-showcase {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(280px,.78fr) minmax(0,1.22fr);
+    grid-template-columns: minmax(320px,.95fr) minmax(0,1.05fr);
     min-height: 620px;
     margin-bottom: 5rem;
     overflow: hidden;
@@ -1319,9 +1319,9 @@ img {
 }
 .icon-system-showcase:hover { z-index:2; transform:scale(1.018); border-color:rgba(79,210,171,.46); box-shadow:0 30px 75px rgba(0,0,0,.34),0 0 42px rgba(79,210,171,.08); }
 .icon-system-showcase::after { content:"ICON / SYSTEM"; position:absolute; left:-.6rem; bottom:-2rem; color:rgba(255,255,255,.025); font:800 clamp(4rem,10vw,9rem) var(--font-titulos); letter-spacing:-.07em; white-space:nowrap; pointer-events:none; }
-.icon-system-showcase-copy { position:relative; z-index:2; display:flex; flex-direction:column; justify-content:center; padding:clamp(2rem,5vw,4rem); }
+.icon-system-showcase-copy { position:relative; z-index:2; min-width:0; display:flex; flex-direction:column; justify-content:center; padding:clamp(2rem,4vw,4rem); }
 .icon-system-showcase-copy>span { color:#4fd2ab; font:700 .7rem var(--font-titulos); letter-spacing:.12em; text-transform:uppercase; }
-.icon-system-showcase-copy h2 { margin:1rem 0 1.25rem; text-align:left; font-size:clamp(2.6rem,5vw,5rem); line-height:.92; letter-spacing:-.055em; }
+.icon-system-showcase-copy h2 { width:100%; margin:1rem 0 1.25rem; text-align:left; font-size:clamp(2.35rem,3.4vw,3.75rem); line-height:.94; letter-spacing:-.045em; }
 .icon-system-showcase-copy p { max-width:560px; color:#a8b2b0; line-height:1.7; }
 .icon-system-tags { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1.5rem; }
 .icon-system-tags span { padding:.35rem .55rem; border:1px solid rgba(255,255,255,.15); color:#b5bfbd; font-size:.64rem; text-transform:uppercase; letter-spacing:.06em; }
