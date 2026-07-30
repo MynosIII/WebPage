@@ -62,7 +62,7 @@
 
   const card = key => {
     const [name, file] = tools[key];
-    return `<span class="software-logo-card"><img src="${logoPath(file)}" alt="" decoding="async"><b>${name}</b></span>`;
+    return `<span class="software-logo-card"><img src="${logoPath(file)}" alt="" aria-hidden="true" data-media-type="software-logo" data-media-description="Logo de ${name}" decoding="async"><b>${name}</b></span>`;
   };
 
   const pageName = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');

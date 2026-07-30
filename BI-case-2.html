@@ -109,13 +109,13 @@
           <p>The core BI model connected retail sales, traffic source, conversion rate, product-level ad performance, and keyword behavior. The goal was to understand whether growth was coming from better demand capture, more paid acquisition, stronger listing conversion, or a combination of the three.</p>
           <p>The important read was not that one metric improved in isolation. The healthier story was that sales, traffic, conversion, and search visibility started moving in a coordinated way. That is the difference between a brand temporarily buying sessions and a brand building a stronger marketplace position.</p>
           <div class="chart-grid">
-            <div class="chart-card wide-chart"><h3>Retail Sales by Period</h3><canvas id="retailPeriodChart"></canvas></div>
-            <div class="chart-card"><h3>Traffic Mix</h3><canvas id="trafficMixChart"></canvas></div>
-            <div class="chart-card"><h3>Conversion Rate Over Time</h3><canvas id="conversionChart"></canvas></div>
-            <div class="chart-card"><h3>Retail Sales Over Time</h3><canvas id="retailChart"></canvas></div>
-            <div class="chart-card full-chart"><h3>Sales Index and Conversion Rate</h3><canvas id="salesConversionMomentumChart"></canvas><p>Sales is shown as an index while conversion uses the actual monthly conversion-rate values from the KPI data. This keeps the business scale and the customer-quality signal readable in the same view.</p></div>
-            <div class="chart-card"><h3>Growth Driver Index</h3><canvas id="growthDriverChart"></canvas><p>A simplified index of what changed: traffic expanded, paid search became more aggressive, and conversion quality improved enough to support the sales lift.</p></div>
-            <div class="chart-card"><h3>Measured KPI Shift</h3><canvas id="healthScoreChart"></canvas><p>A before/after view built from measurable levers: retail sales index, ad spend index, estimated profit index, conversion-rate index, and keyword ownership share. Ad spend scaled hard, but sales, profit, conversion, and ownership also moved.</p></div>
+            <div class="chart-card wide-chart"><h3>Retail Sales by Period</h3><canvas id="retailPeriodChart" role="img" aria-label="Bar chart comparing average weekly retail sales across the baseline, transition and growth periods."></canvas></div>
+            <div class="chart-card"><h3>Traffic Mix</h3><canvas id="trafficMixChart" role="img" aria-label="Chart comparing paid-search traffic with other traffic sources across the analyzed periods."></canvas></div>
+            <div class="chart-card"><h3>Conversion Rate Over Time</h3><canvas id="conversionChart" role="img" aria-label="Line chart showing the monthly conversion-rate trend during the automotive marketplace growth project."></canvas></div>
+            <div class="chart-card"><h3>Retail Sales Over Time</h3><canvas id="retailChart" role="img" aria-label="Line chart showing monthly ordered product sales and the sustained increase after optimization."></canvas></div>
+            <div class="chart-card full-chart"><h3>Sales Index and Conversion Rate</h3><canvas id="salesConversionMomentumChart" role="img" aria-label="Dual-series chart comparing the indexed sales trend with the actual monthly conversion rate."></canvas><p>Sales is shown as an index while conversion uses the actual monthly conversion-rate values from the KPI data. This keeps the business scale and the customer-quality signal readable in the same view.</p></div>
+            <div class="chart-card"><h3>Growth Driver Index</h3><canvas id="growthDriverChart" role="img" aria-label="Indexed comparison of traffic expansion, paid-search growth and conversion improvement as drivers of the sales lift."></canvas><p>A simplified index of what changed: traffic expanded, paid search became more aggressive, and conversion quality improved enough to support the sales lift.</p></div>
+            <div class="chart-card"><h3>Measured KPI Shift</h3><canvas id="healthScoreChart" role="img" aria-label="Before-and-after radar chart comparing retail sales, ad spend, estimated profit, conversion rate and keyword ownership."></canvas><p>A before/after view built from measurable levers: retail sales index, ad spend index, estimated profit index, conversion-rate index, and keyword ownership share. Ad spend scaled hard, but sales, profit, conversion, and ownership also moved.</p></div>
           </div>
         </article>
       </div>
@@ -150,9 +150,9 @@
           <p>The most important shift was moving from campaign-level thinking to portfolio-level thinking. Some products can absorb more traffic because they have stronger conversion, clearer search intent, and better economics. Others may generate sales but become inefficient once spend, click cost, conversion rate, order volume, and margin are considered together.</p>
           <p>The two product snapshots use the same 0-450 axis so the difference is visible without the chart quietly changing the scale. Product B was the clearer revenue lever, but Product A still mattered because its conversion strength and low ACOS made it a useful benchmark for the rest of the catalog.</p>
           <div class="chart-grid">
-            <div class="chart-card full-chart"><h3>Product Efficiency Comparison</h3><canvas id="productEfficiencyChart"></canvas><p>Side-by-side view of the operating logic: sales scale, spend, orders, and ROAS were read together before deciding where to push budget.</p></div>
-            <div class="chart-card"><h3>Product Ad Snapshot A</h3><canvas id="productAChart"></canvas></div>
-            <div class="chart-card"><h3>Product Ad Snapshot B</h3><canvas id="productBChart"></canvas></div>
+            <div class="chart-card full-chart"><h3>Product Efficiency Comparison</h3><canvas id="productEfficiencyChart" role="img" aria-label="Side-by-side chart comparing product sales scale, advertising spend, orders and return on ad spend."></canvas><p>Side-by-side view of the operating logic: sales scale, spend, orders, and ROAS were read together before deciding where to push budget.</p></div>
+            <div class="chart-card"><h3>Product Ad Snapshot A</h3><canvas id="productAChart" role="img" aria-label="Advertising performance snapshot for product A, showing the relationship between spend, sales, orders and efficiency."></canvas></div>
+            <div class="chart-card"><h3>Product Ad Snapshot B</h3><canvas id="productBChart" role="img" aria-label="Advertising performance snapshot for product B, showing the relationship between spend, sales, orders and efficiency."></canvas></div>
           </div>
         </article>
       </div>
@@ -176,8 +176,8 @@
             </div>
           </div>
           <div class="chart-grid">
-            <div class="chart-card full-chart"><h3>Conversion Rate vs Refund Rate</h3><canvas id="conversionRefundRateChart"></canvas><p>Modeled from the KPI story: conversion quality improves as refund pressure declines, which is the kind of signal that points to better product-page clarity rather than just more traffic.</p></div>
-            <div class="chart-card full-chart"><h3>Best Seller Rank Trajectory</h3><canvas id="bsrTrajectoryChart"></canvas><p>Illustrative rank path: a product moved from roughly 105 to around 20 by February, then stabilized in the 25-30 range instead of returning to the original baseline.</p></div>
+            <div class="chart-card full-chart"><h3>Conversion Rate vs Refund Rate</h3><canvas id="conversionRefundRateChart" role="img" aria-label="Modeled line chart showing conversion rate rising while refund rate declines after product-page improvements."></canvas><p>Modeled from the KPI story: conversion quality improves as refund pressure declines, which is the kind of signal that points to better product-page clarity rather than just more traffic.</p></div>
+            <div class="chart-card full-chart"><h3>Best Seller Rank Trajectory</h3><canvas id="bsrTrajectoryChart" role="img" aria-label="Illustrative best-seller-rank trajectory improving from about 105 to about 20, then stabilizing between 25 and 30."></canvas><p>Illustrative rank path: a product moved from roughly 105 to around 20 by February, then stabilized in the 25-30 range instead of returning to the original baseline.</p></div>
           </div>
         </article>
       </div>
@@ -203,10 +203,10 @@
           <p>Keyword data was not useful only for bidding. It was also a way to understand marketplace positioning. A keyword has value when customer intent is relevant, the product can satisfy that intent, and the listing converts enough of that traffic to justify continued investment.</p>
           <p>The before-and-after ownership view is intentionally simple: before the work, the category looked like a competition-owned search space. After restructuring PPC, improving listings, and reading keyword data as a portfolio signal, the brand became the stronger owner of the demand that mattered.</p>
           <div class="chart-grid">
-            <div class="chart-card"><h3>Keyword Ownership Before</h3><canvas id="keywordOwnershipBeforeChart"></canvas></div>
-            <div class="chart-card"><h3>Keyword Ownership After</h3><canvas id="keywordOwnershipChart"></canvas></div>
-            <div class="chart-card"><h3>Search Demand Signals</h3><canvas id="searchDemandChart"></canvas></div>
-            <div class="chart-card"><h3>Keyword Defense Path</h3><canvas id="keywordDefenseChart"></canvas><p>A modeled pathway showing how discovery campaigns, exact-match defense, listing relevance, and organic rank work together.</p></div>
+            <div class="chart-card"><h3>Keyword Ownership Before</h3><canvas id="keywordOwnershipBeforeChart" role="img" aria-label="Chart showing the brand's limited share of strategically owned search keywords before optimization."></canvas></div>
+            <div class="chart-card"><h3>Keyword Ownership After</h3><canvas id="keywordOwnershipChart" role="img" aria-label="Chart showing the expanded share of strategically owned search keywords after optimization."></canvas></div>
+            <div class="chart-card"><h3>Search Demand Signals</h3><canvas id="searchDemandChart" role="img" aria-label="Chart comparing search-demand signals used to prioritize keyword and advertising opportunities."></canvas></div>
+            <div class="chart-card"><h3>Keyword Defense Path</h3><canvas id="keywordDefenseChart" role="img" aria-label="Modeled pathway connecting discovery campaigns, exact-match defense, listing relevance and organic rank."></canvas><p>A modeled pathway showing how discovery campaigns, exact-match defense, listing relevance, and organic rank work together.</p></div>
           </div>
         </article>
       </div>
@@ -240,7 +240,7 @@
     <div class="chart-modal-panel">
       <button class="chart-modal-close" type="button" aria-label="Close expanded chart">&times;</button>
       <h3 id="chartModalTitle"></h3>
-      <canvas id="chartModalCanvas"></canvas>
+      <canvas id="chartModalCanvas" role="img" aria-label="Expanded view of the selected performance chart."></canvas>
     </div>
   </div>
 
