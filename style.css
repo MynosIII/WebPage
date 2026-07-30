@@ -961,6 +961,7 @@ img {
 .video-showcase[hidden] { display: none; }
 .modeling-lab[hidden] { display: none; }
 .flyer-showcase[hidden] { display: none; }
+.icon-system-showcase[hidden] { display: none; }
 .video-showcase-heading {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(260px, .7fr);
@@ -1300,6 +1301,55 @@ img {
 @media (min-width: 761px) and (max-width: 1100px) {
     .flyer-panel { flex-basis: calc((100% - 1rem) / 2); }
 }
+
+/* --- Corporate communication icon system --- */
+.icon-system-showcase {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(280px,.78fr) minmax(0,1.22fr);
+    min-height: 620px;
+    margin-bottom: 5rem;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.13);
+    background: radial-gradient(circle at 82% 18%,rgba(79,210,171,.16),transparent 30%),linear-gradient(145deg,#17201f,#0c1011 64%);
+    color: inherit;
+    text-decoration: none;
+    transform: scale(1);
+    transition: transform .5s cubic-bezier(.2,.75,.2,1),border-color .35s,box-shadow .5s;
+}
+.icon-system-showcase:hover { z-index:2; transform:scale(1.018); border-color:rgba(79,210,171,.46); box-shadow:0 30px 75px rgba(0,0,0,.34),0 0 42px rgba(79,210,171,.08); }
+.icon-system-showcase::after { content:"ICON / SYSTEM"; position:absolute; left:-.6rem; bottom:-2rem; color:rgba(255,255,255,.025); font:800 clamp(4rem,10vw,9rem) var(--font-titulos); letter-spacing:-.07em; white-space:nowrap; pointer-events:none; }
+.icon-system-showcase-copy { position:relative; z-index:2; display:flex; flex-direction:column; justify-content:center; padding:clamp(2rem,5vw,4rem); }
+.icon-system-showcase-copy>span { color:#4fd2ab; font:700 .7rem var(--font-titulos); letter-spacing:.12em; text-transform:uppercase; }
+.icon-system-showcase-copy h2 { margin:1rem 0 1.25rem; text-align:left; font-size:clamp(2.6rem,5vw,5rem); line-height:.92; letter-spacing:-.055em; }
+.icon-system-showcase-copy p { max-width:560px; color:#a8b2b0; line-height:1.7; }
+.icon-system-tags { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1.5rem; }
+.icon-system-tags span { padding:.35rem .55rem; border:1px solid rgba(255,255,255,.15); color:#b5bfbd; font-size:.64rem; text-transform:uppercase; letter-spacing:.06em; }
+.icon-system-showcase-copy>strong { margin-top:2rem; color:#fff; font:.75rem var(--font-titulos); letter-spacing:.08em; text-transform:uppercase; }
+.icon-system-showcase-copy>strong b { color:#4fd2ab; }
+.icon-system-showcase-visual { position:relative; z-index:1; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; align-content:center; padding:clamp(2rem,5vw,5rem); background:rgba(255,255,255,.045); }
+.icon-system-showcase-visual img { width:100%; aspect-ratio:1; padding:24%; object-fit:contain; background:#151b1c; transition:transform .45s,background .35s; }
+.icon-system-showcase:hover .icon-system-showcase-visual img { transform:scale(1.07); background:#192321; }
+.icon-system-showcase-visual img:nth-child(3n+2) { background:#101516; }
+
+.icon-case-page { --icon-green:#4fd2ab; background:#0b0f10; }
+.icon-case-page .navbar .container { display:flex; justify-content:space-between; align-items:center; }
+.icon-case-back { color:#9ba7a5; font-size:.78rem; text-decoration:none; }.icon-case-back:hover{color:var(--icon-green)}
+.icon-case-kicker { color:var(--icon-green); font:700 .72rem var(--font-titulos); letter-spacing:.13em; text-transform:uppercase; }
+.icon-case-hero { position:relative; min-height:92vh; display:grid; align-items:center; padding:10rem 0 7rem; overflow:hidden; background:radial-gradient(circle at 75% 34%,rgba(79,210,171,.16),transparent 34%),#0b0f10; }
+.icon-case-hero .container { position:relative; z-index:2; }
+.icon-case-hero h1 { max-width:1000px; margin:1.2rem 0 1.8rem; font-size:clamp(4rem,9vw,9rem); line-height:.84; letter-spacing:-.07em; }.icon-case-hero h1 em{color:var(--icon-green);font-style:normal;font-weight:400}
+.icon-case-hero .container>p { max-width:720px; color:#aab4b2; font-size:clamp(1rem,1.8vw,1.3rem); line-height:1.7; }
+.icon-case-stats { display:flex; gap:1px; width:min(700px,100%); margin-top:3rem; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.14); }.icon-case-stats div{flex:1;padding:1.25rem;background:#101516}.icon-case-stats b,.icon-case-stats span{display:block}.icon-case-stats b{color:#fff;font:700 2rem var(--font-titulos)}.icon-case-stats span{color:#75817f;font-size:.68rem;text-transform:uppercase;letter-spacing:.08em}
+.icon-case-orbit { position:absolute; right:-4%; top:19%; width:min(44vw,650px); aspect-ratio:1; border:1px solid rgba(79,210,171,.16); border-radius:50%; animation:icon-orbit 28s linear infinite; }.icon-case-orbit img{position:absolute;width:14%;aspect-ratio:1;object-fit:contain}.icon-case-orbit img:nth-child(1){left:43%;top:-7%}.icon-case-orbit img:nth-child(2){right:2%;top:19%}.icon-case-orbit img:nth-child(3){right:3%;bottom:18%}.icon-case-orbit img:nth-child(4){left:43%;bottom:-7%}.icon-case-orbit img:nth-child(5){left:2%;bottom:18%}.icon-case-orbit img:nth-child(6){left:2%;top:19%}@keyframes icon-orbit{to{transform:rotate(360deg)}}
+.icon-case-purpose,.icon-case-principles,.icon-case-library { padding:8rem 0; }
+.icon-case-purpose { background:#161b1c; }.icon-case-purpose-grid{display:grid;grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);gap:clamp(3rem,9vw,9rem)}.icon-case-purpose h2,.icon-case-principles h2,.icon-library-heading h2{margin:.8rem 0 0;text-align:left;font-size:clamp(3rem,6vw,6.5rem);line-height:.9;letter-spacing:-.06em}.icon-case-purpose-copy p{color:#b1bab8;font-size:1.05rem;line-height:1.8}.icon-case-purpose-copy p+p{margin-top:1.5rem}
+.icon-case-principles { background:#0f1314; }.icon-case-principles> .container>h2{max-width:900px;margin-bottom:4rem}.icon-principle-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.13);gap:1px}.icon-principle-grid article{min-height:280px;padding:2rem;background:#151a1b}.icon-principle-grid b{color:var(--icon-green);font:.7rem monospace}.icon-principle-grid h3{margin:3rem 0 .8rem;color:#fff;font-size:1.35rem}.icon-principle-grid p{color:#8f9997;font-size:.88rem;line-height:1.65}
+.icon-case-library { overflow:hidden;background:#171c1d}.icon-library-heading{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.55fr);gap:4rem;align-items:end;margin-bottom:4rem}.icon-library-heading p{color:#929d9a}.icon-library-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:1px;width:100%;background:rgba(255,255,255,.1);border-block:1px solid rgba(255,255,255,.1)}.icon-library-item{min-width:0;margin:0;padding:1rem .65rem;background:#101516;transition:background .25s,transform .25s}.icon-library-item:hover{position:relative;z-index:1;background:#1c2725;transform:scale(1.06)}.icon-library-item img{width:100%;aspect-ratio:1;object-fit:contain;padding:16%}.icon-library-item figcaption{margin-top:.65rem;text-align:center}.icon-library-item b,.icon-library-item span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.icon-library-item b{color:#d9dfdd;font-size:.62rem}.icon-library-item span{margin-top:.2rem;color:#64706d;font-size:.55rem;text-transform:uppercase;letter-spacing:.06em}
+.icon-case-page .case-contact-cta{background:var(--icon-green)}.icon-case-page .case-software-heading>span{color:var(--icon-green)}
+@media(max-width:900px){.icon-system-showcase{grid-template-columns:1fr}.icon-system-showcase-visual{order:-1;grid-template-columns:repeat(6,1fr)}.icon-case-orbit{opacity:.25;right:-25%;width:80vw}.icon-case-purpose-grid,.icon-library-heading{grid-template-columns:1fr}.icon-principle-grid{grid-template-columns:1fr 1fr}.icon-library-grid{grid-template-columns:repeat(6,1fr)}}
+@media(max-width:560px){.icon-system-showcase-visual{grid-template-columns:repeat(4,1fr);padding:1.25rem}.icon-case-hero{min-height:auto;padding:8rem 0 5rem}.icon-case-hero h1{font-size:3.8rem}.icon-case-stats{flex-direction:column}.icon-case-orbit{display:none}.icon-case-purpose,.icon-case-principles,.icon-case-library{padding:5rem 0}.icon-principle-grid{grid-template-columns:1fr}.icon-library-grid{grid-template-columns:repeat(3,1fr)}.icon-library-item{padding:.75rem .4rem}}
+@media(prefers-reduced-motion:reduce){.icon-case-orbit{animation:none}.icon-system-showcase,.icon-system-showcase-visual img,.icon-library-item{transition:none}.icon-system-showcase:hover,.icon-system-showcase:hover .icon-system-showcase-visual img,.icon-library-item:hover{transform:none}}
 
 /* --- Individual animation cases --- */
 .animation-case-page { background: #0b0d0f; }
