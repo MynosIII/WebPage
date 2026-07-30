@@ -142,6 +142,43 @@
           </div>
         </section>
 
+        <section class="video-showcase ecommerce-video-showcase" id="ecommerce-conversion-videos" aria-labelledby="ecommerce-video-title" data-gallery-category="videos">
+          <div class="video-showcase-heading" data-aos="fade-up">
+            <div>
+              <span class="video-showcase-kicker">E-commerce video · Conversion series</span>
+              <h2 id="ecommerce-video-title">Product stories built to convert.</h2>
+            </div>
+            <p>Five marketplace-ready edits that translate product specifications into visible benefits. Each piece reduces purchase uncertainty through demonstrations, benefit-led overlays and real-use context.</p>
+          </div>
+          <div class="video-carousel-shell">
+            <button class="video-carousel-button video-carousel-prev" type="button" aria-label="View previous e-commerce video">←</button>
+            <div class="video-showcase-grid" id="ecommerce-video-carousel" aria-live="polite">
+              <a class="video-project is-active" href="ecommerce-video-01.html" aria-label="View Conversion Video 01: Custom fit made visible">
+                <div class="video-project-media"><video muted playsinline preload="metadata" aria-hidden="true" data-media-title="Custom Fit rollator demonstration" data-media-description="Outdoor product video demonstrating a three-wheel rollator, adjustable handles, maneuverability and storage through benefit-led overlays and close product views." data-media-type="ecommerce-product-video"><source src="creatives/ecommerce-video/rollator-conversion-01.mp4" type="video/mp4" /></video><span class="video-project-index">01 / 05</span><span class="video-project-open">View project ↗</span></div>
+                <div class="video-project-copy"><span>Conversion video 01 · Benefit demonstration · 42s</span><h3>Custom fit, made visible.</h3><p>Adjustable handles, responsive movement and practical storage are shown in use—not left as abstract specifications. The edit turns ergonomic features into reasons to believe.</p></div>
+              </a>
+              <a class="video-project" href="ecommerce-video-02.html" aria-label="View Conversion Video 02: Lightweight proof">
+                <div class="video-project-media"><video muted playsinline preload="metadata" aria-hidden="true" data-media-title="Lightweight mobility product proof" data-media-description="Bright studio demonstration showing a mobility aid folded and carried by one person, supported by a prominent 13-pound lightweight claim." data-media-type="ecommerce-product-video"><source src="creatives/ecommerce-video/rollator-conversion-02.mp4" type="video/mp4" /></video><span class="video-project-index">02 / 05</span><span class="video-project-open">View project ↗</span></div>
+                <div class="video-project-copy"><span>Conversion video 02 · Proof point · 52s</span><h3>Lightweight becomes tangible.</h3><p>A clear 13 lb claim is immediately validated by showing the product folded and carried. Product proof, human scale and minimal composition keep the benefit unmistakable.</p></div>
+              </a>
+              <a class="video-project" href="ecommerce-video-03.html" aria-label="View Conversion Video 03: Three uses, one story">
+                <div class="video-project-media"><video muted playsinline preload="metadata" aria-hidden="true" data-media-title="Three-in-one mobility versatility demonstration" data-media-description="Studio demonstration presenting a mobility chair's seat and commode configuration with close-ups that clarify its three-in-one functionality." data-media-type="ecommerce-product-video"><source src="creatives/ecommerce-video/rollator-conversion-03.mp4" type="video/mp4" /></video><span class="video-project-index">03 / 05</span><span class="video-project-open">View project ↗</span></div>
+                <div class="video-project-copy"><span>Conversion video 03 · Feature architecture · 72s</span><h3>Three uses. One clear story.</h3><p>Close product framing and functional demonstrations break a complex three-in-one mobility product into understandable use cases without asking shoppers to read a manual.</p></div>
+              </a>
+              <a class="video-project" href="ecommerce-video-04.html" aria-label="View Conversion Video 04: Fold, store, keep moving">
+                <div class="video-project-media"><video muted playsinline preload="metadata" aria-hidden="true" data-media-title="Foldable rollator lifestyle demonstration" data-media-description="Lifestyle product video showing a rollator folding compactly and being placed into a vehicle, connecting portability to everyday travel." data-media-type="ecommerce-product-video"><source src="creatives/ecommerce-video/rollator-conversion-04.mp4" type="video/mp4" /></video><span class="video-project-index">04 / 05</span><span class="video-project-open">View project ↗</span></div>
+                <div class="video-project-copy"><span>Conversion video 04 · Lifestyle proof · 45s</span><h3>Fold. Store. Keep moving.</h3><p>The portability claim is demonstrated in the moment that matters: loading the folded product into a car. Lifestyle context turns a mechanism into an everyday advantage.</p></div>
+              </a>
+              <a class="video-project" href="ecommerce-video-05.html" aria-label="View Conversion Video 05: Comfort made clear">
+                <div class="video-project-media"><video muted playsinline preload="metadata" aria-hidden="true" data-media-title="Soft foam sleep product demonstration" data-media-description="Clean studio video presenting a soft foam sleep surface through material-focused details, human interaction and restrained benefit typography." data-media-type="ecommerce-product-video"><source src="creatives/ecommerce-video/rollator-conversion-05.mp4" type="video/mp4" /></video><span class="video-project-index">05 / 05</span><span class="video-project-open">View project ↗</span></div>
+                <div class="video-project-copy"><span>Conversion video 05 · Comfort story · 42s</span><h3>Comfort made easy to understand.</h3><p>Material cues, human interaction and clean benefit typography make softness legible before an online shopper can physically touch the product.</p></div>
+              </a>
+            </div>
+            <button class="video-carousel-button video-carousel-next" type="button" aria-label="View next e-commerce video">→</button>
+          </div>
+          <a class="ecommerce-video-case-link" href="ecommerce-video-case.html">Explore the complete conversion case <span aria-hidden="true">↗</span></a>
+        </section>
+
         <a class="revolution-showcase" href="Revolution_creative_case.html" aria-label="Open the automotive Amazon listing transformation case study" data-gallery-category="flyers">
           <div class="revolution-showcase-copy" data-aos="fade-up">
             <span>Automotive ecommerce · Before / after</span>
@@ -456,12 +493,12 @@
         });
       }
 
-      // Carrusel de trabajos de edición de video
-      const videoCarousel = document.getElementById('video-showcase-carousel');
-      const videoPrev = document.querySelector('.video-carousel-prev');
-      const videoNext = document.querySelector('.video-carousel-next');
-
-      if (videoCarousel && videoPrev && videoNext) {
+      // Carruseles de trabajos de edición de video
+      document.querySelectorAll('.video-showcase').forEach(showcase => {
+        const videoCarousel = showcase.querySelector('.video-showcase-grid');
+        const videoPrev = showcase.querySelector('.video-carousel-prev');
+        const videoNext = showcase.querySelector('.video-carousel-next');
+        if (!videoCarousel || !videoPrev || !videoNext) return;
         const slides = [...videoCarousel.querySelectorAll('.video-project')];
         let activeVideoIndex = 0;
 
@@ -489,7 +526,7 @@
         videoPrev.addEventListener('click', () => showVideoSlide(activeVideoIndex - 1));
         videoNext.addEventListener('click', () => showVideoSlide(activeVideoIndex + 1));
         showVideoSlide(0);
-      }
+      });
 
       // Carrusel del sistema de flyers UniMac
       const flyerCarousel = document.getElementById('unimac-flyer-carousel');
