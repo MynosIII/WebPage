@@ -218,6 +218,91 @@ img {
     margin: 0 auto 2.5rem auto;
 }
 
+/* Shared software-stack system */
+.case-software-stack {
+    padding: 6rem 0;
+    border-top: 1px solid rgba(255,255,255,.1);
+    background: #0d0f11;
+}
+.case-software-heading {
+    display: grid;
+    grid-template-columns: 150px minmax(0,1fr);
+    gap: 2rem;
+    align-items: end;
+    margin-bottom: 2.5rem;
+}
+.case-software-heading > span,
+.software-marquee-heading > span {
+    color: var(--color-acento);
+    font: 700 .7rem var(--font-titulos);
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+.case-software-heading h2,
+.software-marquee-heading h2 {
+    margin: 0;
+    text-align: left;
+    font-size: clamp(2.5rem,5vw,5rem);
+    line-height: .92;
+    letter-spacing: -.05em;
+}
+.case-software-grid { display: flex; flex-wrap: wrap; gap: .8rem; }
+.software-logo-card {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: .8rem;
+    min-width: 170px;
+    padding: .8rem 1rem;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 999px;
+    background: rgba(255,255,255,.035);
+    color: #e8ebed;
+}
+.software-logo-card img { width: 34px; height: 34px; object-fit: contain; }
+.software-logo-card b { font: 600 .78rem var(--font-titulos); white-space: nowrap; }
+.software-marquee-section {
+    padding: 7rem 0;
+    overflow: hidden;
+    border-block: 1px solid rgba(255,255,255,.1);
+    background: radial-gradient(circle at 50% 20%,rgba(var(--color-acento-rgb),.08),transparent 32%),#0d0f11;
+}
+.software-marquee-heading { margin-bottom: 3.5rem; }
+.software-marquee-heading h2 { margin: .75rem 0 1rem; }
+.software-marquee-heading p { max-width: 620px; color: var(--color-texto-sec); }
+.software-marquee-row + .software-marquee-row { margin-top: 2.4rem; }
+.software-marquee-row-label {
+    display: grid;
+    grid-template-columns: 150px minmax(0,760px);
+    gap: 2rem;
+    align-items: baseline;
+    margin-bottom: .8rem;
+}
+.software-marquee-row-label h3 {
+    margin: 0;
+    color: var(--color-acento);
+    font: 700 .78rem var(--font-titulos);
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+.software-marquee-row-label p { margin: 0; color: #9da3aa; font-size: .88rem; }
+.software-marquee { width: 100vw; margin-left: calc(50% - 50vw); overflow: hidden; padding: .45rem 0; }
+.software-marquee-track { display: flex; width: max-content; gap: .75rem; will-change: transform; }
+.software-marquee-track .software-logo-card { min-width: max-content; background: #15191d; }
+.software-marquee-forward { animation: software-scroll-left 42s linear infinite; }
+.software-marquee-reverse { animation: software-scroll-right 46s linear infinite; }
+.software-marquee:hover .software-marquee-track { animation-play-state: paused; }
+@keyframes software-scroll-left { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes software-scroll-right { from{transform:translateX(-50%)} to{transform:translateX(0)} }
+@media(max-width:700px){
+    .case-software-stack,.software-marquee-section{padding:4.5rem 0}
+    .case-software-heading{grid-template-columns:1fr}
+    .software-marquee-row-label{grid-template-columns:1fr;gap:.35rem}
+    .software-logo-card{min-width:145px}
+    .software-marquee-forward{animation-duration:30s}
+    .software-marquee-reverse{animation-duration:34s}
+}
+
 /* Creatives uses a compact introduction instead of the full-screen home hero. */
 .creatives-hero {
     min-height: 0;
