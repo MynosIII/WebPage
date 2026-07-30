@@ -278,6 +278,33 @@ img {
     letter-spacing: -.05em;
 }
 .case-software-grid { display: flex; flex-wrap: wrap; gap: .8rem; }
+.case-end-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,.12);
+}
+.case-end-actions p { max-width: 620px; margin: 0 0 1.35rem; color: #c9cdd1; font-size: clamp(1.15rem,2vw,1.55rem); }
+.case-contact-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: .7rem;
+    min-height: 50px;
+    padding: .9rem 1.25rem;
+    background: var(--color-acento);
+    color: #071012;
+    font: 700 .82rem var(--font-titulos);
+    letter-spacing: .06em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform .22s ease, filter .22s ease;
+}
+.case-contact-cta:hover { filter: brightness(1.08); transform: translateY(-2px); }
+.case-contact-cta:focus-visible,.case-back-link:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.case-back-link { margin-top: 1rem; color: #8f969d; font-size: .72rem; text-decoration: none; }
+.case-back-link:hover { color: #fff; text-decoration: underline; text-underline-offset: .3em; }
 .software-logo-card {
     display: inline-flex;
     align-items: center;

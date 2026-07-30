@@ -48,6 +48,10 @@
     }
   ];
   const caseStacks = {
+    'animation-01.html': ['after-effects'],
+    'animation-02.html': ['after-effects'],
+    'animation-03.html': ['after-effects'],
+    'animation-04.html': ['after-effects'],
     'unimac-case.html': ['photoshop', 'illustrator'],
     'Revolution_creative_case.html': ['photoshop', 'amazon-seller-central'],
     'BI-case-2.html': ['amazon-seller-central', 'excel', 'stackline'],
@@ -58,6 +62,22 @@
     'caso-1.html': ['amazon-seller-central'],
     'caso-2.html': ['excel'],
     'caso-3.html': ['photoshop']
+  };
+  const caseBackLinks = {
+    'animation-01.html': ['creatives.html#video-editing', 'Volver a videos', 'Back to videos'],
+    'animation-02.html': ['creatives.html#video-editing', 'Volver a videos', 'Back to videos'],
+    'animation-03.html': ['creatives.html#video-editing', 'Volver a videos', 'Back to videos'],
+    'animation-04.html': ['creatives.html#video-editing', 'Volver a videos', 'Back to videos'],
+    'unimac-case.html': ['creatives.html#unimac-heater-campaign', 'Volver a Creatives', 'Back to Creatives'],
+    'Revolution_creative_case.html': ['creatives.html', 'Volver a Creatives', 'Back to Creatives'],
+    'BI-case-2.html': ['ecommerce.html', 'Volver a Ecommerce', 'Back to Ecommerce'],
+    'DayParting-Case.html': ['../ecommerce.html', 'Volver a Ecommerce', 'Back to Ecommerce'],
+    'caso-daizzy-gear.html': ['ecommerce.html', 'Volver a Ecommerce', 'Back to Ecommerce'],
+    'caso-daizzy-gear-en.html': ['ecommerce.html', 'Volver a Ecommerce', 'Back to Ecommerce'],
+    'caso-hogar-cocina-ppc.html': ['ecommerce.html', 'Volver a Ecommerce', 'Back to Ecommerce'],
+    'caso-1.html': ['ecommerce.html', 'Volver a Ecommerce', 'Back to Ecommerce'],
+    'caso-2.html': ['ecommerce.html', 'Volver a Ecommerce', 'Back to Ecommerce'],
+    'caso-3.html': ['ecommerce.html', 'Volver a Ecommerce', 'Back to Ecommerce']
   };
 
   const card = key => {
@@ -95,8 +115,10 @@
   const selected = caseStacks[pageName];
   if (!selected?.length) return;
   const spanishCase = document.documentElement.lang.toLowerCase().startsWith('es');
+  const backLink = caseBackLinks[pageName];
+  const contactSubject = encodeURIComponent(spanishCase ? `Consulta sobre ${document.title}` : `Project inquiry — ${document.title}`);
   const section = document.createElement('section');
   section.className = 'case-software-stack';
-  section.innerHTML = `<div class="container"><div class="case-software-heading"><span>Software stack</span><h2>${spanishCase ? 'Herramientas detrás de este caso' : 'Tools behind this case'}</h2></div><div class="case-software-grid">${selected.map(card).join('')}</div></div>`;
+  section.innerHTML = `<div class="container"><div class="case-software-heading"><span>Software stack</span><h2>${spanishCase ? 'Herramientas detrás de este caso' : 'Tools behind this case'}</h2></div><div class="case-software-grid">${selected.map(card).join('')}</div><div class="case-end-actions"><p>${spanishCase ? '¿Querés trabajar conmigo en un proyecto similar?' : 'Want to work together on a similar project?'}</p><a class="case-contact-cta" href="mailto:matiasignaciogaglio@gmail.com?subject=${contactSubject}">${spanishCase ? 'Contactame' : 'Let’s work together'} <span aria-hidden="true">↗</span></a>${backLink ? `<a class="case-back-link" href="${backLink[0]}">← ${spanishCase ? backLink[1] : backLink[2]}</a>` : ''}</div></div>`;
   document.querySelector('main')?.append(section);
 })();
