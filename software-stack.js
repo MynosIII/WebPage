@@ -42,6 +42,7 @@
       slug: 'data',
       direction: 'forward',
       copy: 'Excel avanzado, Google Sheets, SQL, Python, R, Power BI, Tableau, dashboards y automatizaciones internas.',
+      copyEn: 'Advanced Excel, Google Sheets, SQL, Python, R, Power BI, Tableau, dashboards and internal automations.',
       tools: ['excel', 'google-sheets', 'sql', 'python', 'r', 'power-bi', 'tableau']
     },
     {
@@ -49,6 +50,7 @@
       slug: 'ecommerce',
       direction: 'reverse',
       copy: 'Amazon Seller Central, Helium 10, Shulex VOC AI, Jungle Scout, Keepa, Sellerboard, Google Ads, Meta Ads, GA4, Search Console, Semrush, Hotjar y Stackline.',
+      copyEn: 'Amazon Seller Central, Helium 10, Shulex VOC AI, Jungle Scout, Keepa, Sellerboard, Google Ads, Meta Ads, GA4, Search Console, Semrush, Hotjar and Stackline.',
       tools: ['amazon-seller-central', 'helium10', 'shulex', 'jungle-scout', 'keepa', 'sellerboard', 'google-ads', 'meta-ads', 'ga4', 'search-console', 'semrush', 'hotjar', 'stackline']
     },
     {
@@ -56,6 +58,7 @@
       slug: 'creative',
       direction: 'forward',
       copy: 'Photoshop, Illustrator, Premiere Pro, After Effects, DaVinci Resolve, Blender, Cinema 4D, Nuke, REAPER, FL Studio y Audacity.',
+      copyEn: 'Photoshop, Illustrator, Premiere Pro, After Effects, DaVinci Resolve, Blender, Cinema 4D, Nuke, REAPER, FL Studio and Audacity.',
       tools: ['photoshop', 'illustrator', 'premiere', 'after-effects', 'davinci-resolve', 'blender', 'cinema4d', 'nuke', 'reaper', 'fl-studio', 'audacity']
     }
   ];
@@ -130,22 +133,32 @@
   };
 
   const pageName = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
-  const isAbout = pageName.toLowerCase() === 'sobre-mi.html';
+  const localeMatch = pageName.match(/-(en|es)\.html$/i);
+  const pageLocale = localeMatch?.[1]?.toLowerCase() || '';
+  const basePageName = localeMatch ? pageName.replace(/-(en|es)(?=\.html$)/i, '') : pageName;
+  const spanishPage = document.documentElement.lang.toLowerCase().startsWith('es');
+  const localizedHref = href => {
+    if (!pageLocale || !href) return href;
+    const [path, hash] = href.split('#');
+    const localizedPath = path.replace(/\.html$/i, `-${pageLocale}.html`);
+    return `${localizedPath}${hash ? `#${hash}` : ''}`;
+  };
+  const isAbout = basePageName.toLowerCase() === 'sobre-mi.html';
 
   if (isAbout) {
     const section = document.createElement('section');
     section.className = 'software-marquee-section';
     section.innerHTML = `
       <div class="container software-marquee-heading">
-        <span>Herramientas que uso</span>
-        <h2>Mi stack de software</h2>
-        <p>Creatividad, análisis, ecommerce y automatización conectados en un mismo flujo de trabajo.</p>
+        <span>${spanishPage ? 'Herramientas que uso' : 'Tools I use'}</span>
+        <h2>${spanishPage ? 'Mi stack de software' : 'My software stack'}</h2>
+        <p>${spanishPage ? 'Creatividad, análisis, ecommerce y automatización conectados en un mismo flujo de trabajo.' : 'Creative work, analytics, ecommerce and automation connected in one workflow.'}</p>
       </div>
       ${aboutRows.map(row => `
         <div class="software-marquee-row" data-software-row="${row.slug}">
           <div class="container software-marquee-row-label">
             <h3>${row.label}</h3>
-            <p>${row.copy}</p>
+            <p>${spanishPage ? row.copy : row.copyEn}</p>
           </div>
           <div class="software-marquee" aria-label="Herramientas de ${row.label}">
             <div class="software-marquee-track ${row.direction === 'forward' ? 'software-marquee-forward' : 'software-marquee-reverse'}">${Array.from({length: 4}, () => row.tools).flat().map(card).join('')}</div>
@@ -156,10 +169,11 @@
     return;
   }
 
-  const selected = caseStacks[pageName];
+  const selected = caseStacks[pageName] || caseStacks[basePageName];
   if (!selected?.length) return;
-  const spanishCase = document.documentElement.lang.toLowerCase().startsWith('es');
-  const backLink = caseBackLinks[pageName];
+  const spanishCase = spanishPage;
+  const baseBackLink = caseBackLinks[pageName] || caseBackLinks[basePageName];
+  const backLink = baseBackLink ? [localizedHref(baseBackLink[0]), baseBackLink[1], baseBackLink[2]] : null;
   const contactSubject = encodeURIComponent(spanishCase ? `Consulta sobre ${document.title}` : `Project inquiry — ${document.title}`);
   const section = document.createElement('section');
   section.className = 'case-software-stack';
