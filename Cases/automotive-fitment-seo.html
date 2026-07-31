@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fitment SEO for Automotive Amazon Listings | Matias Gaglio</title>
+  <meta name="description" content="A detailed, evidence-led framework for structuring automotive fitment data, Amazon listing attributes, compatibility language, search architecture, and validation.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <style>
+    .fitment-page section{padding:5rem 0}.fitment-page .page-hero{padding-top:10rem;padding-bottom:4rem}.fitment-page h2,.fitment-page h3{text-align:left}.fitment-page h2{max-width:940px}.fitment-page p,.fitment-page li,.fitment-page td{color:var(--color-texto-sec)}
+    .fitment-eyebrow{color:var(--color-acento);font:800 .82rem var(--font-titulos);letter-spacing:.09em;text-transform:uppercase}.fitment-lead{max-width:880px;font-size:1.16rem;line-height:1.75}.fitment-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}.fitment-metric{padding:1.25rem;background:var(--color-superficie);border:1px solid rgba(var(--color-acento-rgb),.22);border-radius:8px}.fitment-metric small,.fitment-label{display:block;color:var(--color-acento);font-size:.72rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.fitment-metric b{display:block;margin:.25rem 0;font:800 1.65rem var(--font-titulos);color:#fff}.fitment-metric span{color:#9ca4ab;font-size:.86rem}
+    .fitment-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:1.5rem;align-items:start}.fitment-card{margin-bottom:1.5rem;padding:2rem;background:var(--color-superficie);border:1px solid rgba(255,255,255,.09);border-radius:8px}.fitment-card h2,.fitment-card h3{margin-top:.55rem}.fitment-card ul,.fitment-card ol{padding-left:1.25rem}.fitment-card li+li{margin-top:.65rem}.fitment-callout{padding:1.15rem 1.3rem;border-left:4px solid var(--color-acento);background:rgba(var(--color-acento-rgb),.08);color:var(--color-texto-sec)}
+    .fitment-photo{overflow:hidden;margin:0;background:#fff;border:1px solid rgba(255,255,255,.1);border-radius:8px}.fitment-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain}.fitment-photo figcaption{padding:1rem 1.1rem;background:var(--color-superficie);color:#8f979d;font-size:.79rem;line-height:1.55}
+    .fitment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}.fitment-node{padding:1.25rem;background:var(--color-fondo);border:1px solid rgba(255,255,255,.09);border-radius:7px}.fitment-node h3{margin:.45rem 0}.fitment-node p{margin-bottom:0}
+    .fitment-table-wrap{overflow-x:auto}.fitment-table{width:100%;border-collapse:collapse;min-width:720px}.fitment-table th,.fitment-table td{padding:.9rem;text-align:left;vertical-align:top;border-bottom:1px solid rgba(255,255,255,.08)}.fitment-table th{color:#fff;font-size:.76rem;letter-spacing:.04em;text-transform:uppercase}.fitment-table td:first-child{color:#fff;font-weight:700}.fitment-table code{color:var(--color-acento);white-space:nowrap}
+    .fitment-chart{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.6rem 0}.chart-panel{padding:1.25rem;background:var(--color-fondo);border:1px solid rgba(255,255,255,.09);border-radius:7px}.chart-panel h3{margin:0 0 1rem}.chart-row{display:grid;grid-template-columns:88px 1fr 66px;gap:.8rem;align-items:center;margin:.85rem 0}.chart-track{height:18px;overflow:hidden;background:rgba(255,255,255,.08);border-radius:9px}.chart-fill{width:var(--value);height:100%;background:linear-gradient(90deg,var(--color-acento),#52d273);border-radius:9px}.chart-row strong{text-align:right;color:#fff}.chart-note{color:#8f979d;font-size:.8rem;line-height:1.6}
+    .fitment-steps{counter-reset:fitment}.fitment-step{position:relative;padding:1.6rem 1.5rem 1.6rem 5rem;border-bottom:1px solid rgba(255,255,255,.08)}.fitment-step::before{counter-increment:fitment;content:counter(fitment,decimal-leading-zero);position:absolute;left:1.2rem;top:1.55rem;color:var(--color-acento);font:800 1.25rem var(--font-titulos)}.fitment-step h3{margin:0 0 .55rem}.fitment-step:last-child{border-bottom:0}.source-list a{color:var(--color-acento)}
+    .template-block{padding:1.15rem 1.25rem;background:#0a0e11;border:1px solid rgba(var(--color-acento-rgb),.18);border-radius:7px;color:#dbe1e5;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;line-height:1.7;overflow-wrap:anywhere}
+    @media(max-width:900px){.fitment-metrics{grid-template-columns:repeat(2,1fr)}.fitment-layout{grid-template-columns:1fr}.fitment-page .page-hero{padding-top:8rem}.fitment-card{padding:1.35rem}}
+    @media(max-width:650px){.fitment-metrics,.fitment-grid,.fitment-chart{grid-template-columns:1fr}.chart-row{grid-template-columns:75px 1fr 62px}.fitment-step{padding-left:1.3rem;padding-top:4rem}.fitment-step::before{top:1.35rem}}
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Matias Gaglio.</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      <nav class="nav-menu"><ul><li><a href="../index.html">Home</a></li><li><a href="../ecommerce.html">Ecommerce</a></li><li><a href="../Articles.html" class="accent">Articles</a></li><li><a href="../creatives.html">Creatives</a></li><li><a href="../consultora.html">Consultora de Opinion</a></li><li><a href="../otros.html">Otros proyectos</a></li><li><a href="../SEO.html">ChatMatias</a></li><li><a href="../sobre-mi.html">Sobre Mi</a></li></ul></nav>
+    </div>
+  </header>
+
+  <main class="fitment-page">
+    <section class="page-hero">
+      <div class="container">
+        <p class="fitment-eyebrow" data-aos="fade-up">Amazon SEO / Automotive Catalog / Compatibility</p>
+        <h1 data-aos="fade-up" data-aos-delay="80">Fitment SEO for Automotive Amazon Listings</h1>
+        <p class="fitment-lead" data-aos="fade-up" data-aos-delay="140">Automotive relevance is not solved by repeating a vehicle name in the title. It is built by connecting part specifications, wheel or installation geometry, vehicle application records, exceptions, Amazon product-type attributes, and shopper language into one controlled source of truth. This guide shows how I would structure that system, validate its claims, and turn approved compatibility into searchable content without converting uncertainty into a promise.</p>
+        <div class="fitment-metrics" data-aos="fade-up" data-aos-delay="210">
+          <article class="fitment-metric"><small>Observed variant CTR</small><b>2.57% vs 0.83%</b><span>Two archived compatibility-led campaigns</span></article>
+          <article class="fitment-metric"><small>Click-to-order</small><b>15.61% vs 20.00%</b><span>Derived from clicks and orders</span></article>
+          <article class="fitment-metric"><small>Observed ACoS gap</small><b>5.85 pp</b><span>21.13% versus 26.98%</span></article>
+          <article class="fitment-metric"><small>Review corpus</small><b>40 rows</b><span>Two explicit anti-tipper mentions</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container fitment-layout">
+        <div>
+          <article class="fitment-card" data-aos="fade-up">
+            <span class="fitment-eyebrow">The central idea</span>
+            <h2>Fitment is a product-data problem before it becomes a copywriting problem.</h2>
+            <p>A shopper searching for an automotive replacement part is asking several questions at once: Is this the correct component type? Does the physical interface match? Is it appropriate for the installed wheel or hardware? Does the application record include the exact year, make, model, trim, drivetrain, body style, or production split? Are there exceptions that make an otherwise plausible match unsafe?</p>
+            <p>A title can summarize an approved answer, but it cannot create one. When a listing uses broad “fits” language before the underlying records are verified, the copy can generate impressions while increasing wrong-part orders, returns, poor reviews, support contacts, and safety risk. The correct operating sequence is the reverse: establish the part specification, normalize application data, resolve exceptions, map the approved fields to Amazon, and only then express the fitment in customer language.</p>
+            <div class="fitment-callout"><strong>Fitment rule:</strong> if the evidence supports only a component specification, publish the specification. Add vehicle-level compatibility only when the application record and exception logic support it.</div>
+          </article>
+
+          <article class="fitment-card" data-aos="fade-up">
+            <span class="fitment-eyebrow">Evidence boundary</span>
+            <h2>Real adjacent compatibility evidence, not a fabricated automotive case.</h2>
+            <p>The supplied work archive does not contain a dedicated automotive fitment workbook or a verified vehicle application table. It does contain real compatibility-oriented mobility accessory work: product photography, two anti-tipper campaign rows, and a 40-row review export with installation and size-mismatch language. Those materials are useful because they show the commercial and customer consequences of treating physical variants as interchangeable.</p>
+            <p>The archived evidence is therefore presented as an adjacent operating analogue. It supports the need for precise geometry, dimension, and compatibility language; it does not prove automotive fitment, an automotive client result, or a causal lift from a listing change. Automotive requirements on this page come from official Amazon technical documentation, an SAE aftermarket-wheel standard, and manufacturer installation guidance. Any example schema is explicitly illustrative and is not a vehicle recommendation.</p>
+          </article>
+        </div>
+        <figure class="fitment-photo" data-aos="fade-up" data-aos-delay="120">
+          <img src="../assets/fitment-compatibility-photo.jpg" alt="Two real wheelchair anti-tipper assemblies with visibly different tube and wheel geometry" loading="eager" decoding="async">
+          <figcaption>Real archived product photography with no account or customer identifiers. The image shows why a shared category name does not make two interfaces equivalent: tube shape, mounting position, wheel placement, and dimensions still determine compatibility.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <article class="fitment-card" data-aos="fade-up">
+          <span class="fitment-eyebrow">Observed commercial signal</span>
+          <h2>Variant language corresponded to materially different campaign behavior.</h2>
+          <p>An archived Sponsored Products report contains separate campaigns for curved and straight anti-tipper variants over December 21, 2024 to January 19, 2025. The curved campaign recorded 7,985 impressions, 205 clicks, 32 orders, $130.18 spend, and $616.00 sales. The straight campaign recorded 7,238 impressions, 60 clicks, 12 orders, $53.12 spend, and $196.88 sales.</p>
+          <div class="fitment-chart">
+            <section class="chart-panel" aria-label="Observed click-through rate comparison">
+              <h3>Click-through rate</h3>
+              <div class="chart-row"><span>Curved</span><div class="chart-track"><div class="chart-fill" style="--value:85.57%"></div></div><strong>2.57%</strong></div>
+              <div class="chart-row"><span>Straight</span><div class="chart-track"><div class="chart-fill" style="--value:27.63%"></div></div><strong>0.83%</strong></div>
+              <p class="chart-note">Bars use a 0-3% display scale. Exact exported values: 2.5670% and 0.8290%.</p>
+            </section>
+            <section class="chart-panel" aria-label="Observed advertising cost of sales comparison">
+              <h3>Advertising cost of sales</h3>
+              <div class="chart-row"><span>Curved</span><div class="chart-track"><div class="chart-fill" style="--value:52.83%"></div></div><strong>21.13%</strong></div>
+              <div class="chart-row"><span>Straight</span><div class="chart-track"><div class="chart-fill" style="--value:67.45%"></div></div><strong>26.98%</strong></div>
+              <p class="chart-note">Bars use a 0-40% display scale. Lower ACoS is more efficient, but the chart does not establish cause.</p>
+            </section>
+          </div>
+          <p>The curved variant produced 3.13 times the attributed sales and 2.67 times the orders, while its observed CPC was 28.09% lower. Yet the straight variant converted clicks to orders at 20.00%, compared with 15.61% for curved. These calculations reveal different demand and response patterns; they do not make the campaigns an A/B test. Query mix, bids, placement, price, listing quality, targeting, and shopper demand may all differ.</p>
+          <p class="chart-note"><strong>Method:</strong> click-to-order equals orders divided by clicks. Sales ratio equals $616.00 divided by $196.88. Order ratio equals 32 divided by 12. CPC difference equals $0.64 divided by $0.89 minus one. Source: anonymized archive report; campaign names reduced to geometry labels.</p>
+        </article>
+
+        <article class="fitment-card" data-aos="fade-up">
+          <span class="fitment-eyebrow">Customer-language signal</span>
+          <h2>Compatibility errors surface as installation stories, not database fields.</h2>
+          <p>In an archived 40-row product-review sheet, two reviews explicitly mentioned anti-tippers. One described a wider-seat chair that lacked the expected mounting holes, forcing the buyer to use a universal clamp-on solution. The same review supplied tire markings to explain the configuration. Another customer described a grip cover advertised for a nominal wheel size that was still too large in practice. A separate low-rating review said the chair lacked anti-tippers even though compatible accessories appeared to exist elsewhere.</p>
+          <p>This is a small, adjacent corpus—not prevalence research. Two mentions out of 40 reviews cannot estimate the category-wide frequency of fitment failures. They do show the language customers use when structured compatibility is incomplete: mounting holes, clamp-on, advertised size, measured size, wheel marking, too large, and compatible accessory. Those phrases belong in research and support taxonomies because they reveal which fields the catalog must answer before a buyer improvises.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <article class="fitment-card" data-aos="fade-up">
+          <span class="fitment-eyebrow">Compatibility architecture</span>
+          <h2>Build the fitment record in layers so every claim can be traced.</h2>
+          <div class="fitment-table-wrap">
+            <table class="fitment-table">
+              <thead><tr><th>Layer</th><th>Fields to control</th><th>Why it matters</th><th>Evidence owner</th></tr></thead>
+              <tbody>
+                <tr><td>Part identity</td><td>Part type, manufacturer part number, material, finish, quantity, included hardware</td><td>Prevents one commercial package from being mistaken for another</td><td>Product engineering, supplier specification, or approved PIM record</td></tr>
+                <tr><td>Interface geometry</td><td>Thread diameter and pitch, stud versus bolt, seat profile, shank and overall length, hex or key access</td><td>Separates parts that look similar but do not mate correctly</td><td>Dimensioned drawing and manufacturer validation</td></tr>
+                <tr><td>Wheel context</td><td>OEM versus aftermarket wheel, recess clearance, washer requirement, wheel material, installation constraints</td><td>The vehicle alone may not determine the installed wheel interface</td><td>Wheel and hardware manufacturer guidance</td></tr>
+                <tr><td>Vehicle application</td><td>Year, make, model, trim, submodel, body, drivetrain, engine where relevant, production-date split</td><td>Transforms a physical specification into a customer-facing application claim</td><td>Approved application database with version and effective date</td></tr>
+                <tr><td>Exceptions</td><td>Excluded packages, modified vehicles, aftermarket components, regional variants, serial or build-date rules</td><td>Stops a broad match from overriding a known incompatibility</td><td>Application-data steward and technical support</td></tr>
+                <tr><td>Marketplace expression</td><td>Amazon product type, required and conditional attributes, title, bullets, search terms, compatibility notes</td><td>Makes verified data discoverable without expanding its meaning</td><td>Catalog operations and SEO, governed by the approved source</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="fitment-card" data-aos="fade-up">
+          <span class="fitment-eyebrow">Illustrative truth table</span>
+          <h2>Store a decision, its reason, and its source—not just a keyword string.</h2>
+          <p>The table below illustrates record design with symbolic values. “Vehicle A” and “Wheel Type 1” are placeholders; this is not fitment advice and should never be uploaded as application data.</p>
+          <div class="fitment-table-wrap">
+            <table class="fitment-table">
+              <thead><tr><th>Application key</th><th>Part spec key</th><th>Wheel context</th><th>Decision</th><th>Reason / next action</th></tr></thead>
+              <tbody>
+                <tr><td>Vehicle A / configuration 01</td><td>Part P / geometry G1</td><td>Validated OEM context</td><td>Approved</td><td>Application row and part drawing agree; publish controlled claim</td></tr>
+                <tr><td>Vehicle A / configuration 02</td><td>Part P / geometry G1</td><td>Aftermarket wheel unknown</td><td>Conditional</td><td>Require wheel seat and recess confirmation before purchase</td></tr>
+                <tr><td>Vehicle B / configuration 01</td><td>Part P / geometry G1</td><td>Validated context</td><td>Excluded</td><td>Interface geometry conflicts; block claim and document exclusion</td></tr>
+                <tr><td>Vehicle C / configuration 01</td><td>Part P / geometry G1</td><td>No source record</td><td>Unverified</td><td>Do not infer from a neighboring year; request authoritative data</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The application key should be stable and granular enough to prevent trim or production splits from collapsing. Each decision should include a source ID, source version, validation date, reviewer, and expiration or revalidation rule. That lineage lets catalog teams explain why a claim exists and remove it when the source changes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <article class="fitment-card fitment-steps" data-aos="fade-up">
+          <span class="fitment-eyebrow">Implementation workflow</span>
+          <h2>Move from raw specification to searchable listing in a controlled sequence.</h2>
+          <div class="fitment-step"><h3>Define the product type and retrieve current marketplace requirements.</h3><p>Amazon’s Product Type Definitions API exposes the attributes, constraints, and conditional requirements for a product type and marketplace. Requirements can change, so the working schema must be retrieved and versioned rather than copied permanently from an old template. Confirm whether the submitted SKU is a parent, child, or standalone item and validate the relationship fields separately from fitment.</p></div>
+          <div class="fitment-step"><h3>Normalize the part specification before joining it to vehicles.</h3><p>Separate diameter from pitch, seat profile from head style, shank length from overall length, and product quantity from package count. Preserve units and original source values, then create normalized comparison fields. Free-text strings such as “standard thread” or “fits most wheels” should fail validation because they cannot support a deterministic match.</p></div>
+          <div class="fitment-step"><h3>Normalize application records without erasing exceptions.</h3><p>Use consistent year, make, model, trim, drivetrain, body, and production-split vocabularies. Treat “all trims” as an explicit decision, not a blank. Never expand a verified year range across a redesign or infer one trim from another. Store exclusions at the same level of granularity as approvals so the matching process can prioritize a specific conflict over a broad rule.</p></div>
+          <div class="fitment-step"><h3>Join part, vehicle, and wheel context through governed rules.</h3><p>The match should compare required interface fields and return approved, conditional, excluded, or unverified. Conditional means the listing must ask the shopper to confirm an additional fact; it does not mean “probably fits.” A rule engine should fail closed when a required field is missing and log the exact field that prevented approval.</p></div>
+          <div class="fitment-step"><h3>Map verified fields into Amazon attributes first.</h3><p>Amazon documentation recommends using the current product-type schema to validate required and conditional attributes. Populate structured fields with the same normalized values used by the compatibility decision. Inspect listing issues and preview validation results where available. If the catalog attribute and visible copy disagree, pause publication until the source-of-truth conflict is resolved.</p></div>
+          <div class="fitment-step"><h3>Write discoverable copy within the approved claim boundary.</h3><p>Place the product type and decisive specification early, then add quantity and installation context. Add a vehicle family only if the record is approved and does not conceal important trim, production, or aftermarket-wheel exceptions. Bullets should explain how to verify the installed interface, what is included, which contexts are excluded, and where the buyer can find markings or measurements.</p></div>
+          <div class="fitment-step"><h3>QA the rendered listing and the purchase decision.</h3><p>Test the title, bullets, images, structured attributes, variation family, compatibility interface, mobile rendering, and exact customer questions. Have a second reviewer trace every fitment phrase to a source row. Submit controlled changes, read processing results, and verify the live detail page after propagation. A successful upload is not evidence that every attribute was accepted as intended.</p></div>
+          <div class="fitment-step"><h3>Measure quality after launch, not just visibility.</h3><p>Track impressions, click-through rate, sessions, conversion, returns, compatibility contacts, review language, and reasons for return by application segment. Search growth accompanied by more “does not fit” returns is not a fitment SEO win. The useful metric is qualified discoverability: more eligible shoppers reaching a listing that helps them make the correct decision.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <article class="fitment-card" data-aos="fade-up">
+          <span class="fitment-eyebrow">Content system</span>
+          <h2>Give each listing element one job.</h2>
+          <div class="fitment-grid">
+            <article class="fitment-node"><span class="fitment-label">Title</span><h3>Identify the part and decisive specification.</h3><p>Lead with part type, then the controlled interface fields and quantity. Vehicle language is secondary and only appears when fully supported.</p></article>
+            <article class="fitment-node"><span class="fitment-label">Bullets</span><h3>Help the shopper verify the interface.</h3><p>Explain where to find thread, seat, wheel, or production information; clarify included hardware; state exceptions without burying them.</p></article>
+            <article class="fitment-node"><span class="fitment-label">Images</span><h3>Show geometry and measurement landmarks.</h3><p>Use annotated diagrams or real product views to distinguish seat profile, shank, head access, package contents, and measurement points.</p></article>
+            <article class="fitment-node"><span class="fitment-label">Backend terms</span><h3>Capture synonyms without inventing compatibility.</h3><p>Map legitimate part terminology, spelling variants, and customer phrasing. Do not use unsupported vehicle names as hidden traffic acquisition.</p></article>
+          </div>
+          <p class="template-block">Illustrative title pattern:<br>[Brand] [Part Type] — [Verified Interface Specification] — [Quantity] — [Wheel / Installation Context] — [Validated Vehicle Family only when supported]</p>
+          <p>A generic structure is safer than a fabricated example because the values must come from the approved source. The same principle applies to image callouts: show the exact measurement point rather than publishing a polished number that cannot be traced to the product drawing.</p>
+        </article>
+
+        <article class="fitment-card" data-aos="fade-up">
+          <span class="fitment-eyebrow">Quality controls</span>
+          <h2>Design checks around the most expensive ways the data can be wrong.</h2>
+          <div class="fitment-table-wrap">
+            <table class="fitment-table">
+              <thead><tr><th>Risk</th><th>Automated check</th><th>Human check</th><th>Release gate</th></tr></thead>
+              <tbody>
+                <tr><td>Missing interface field</td><td>Reject blank required geometry or unit</td><td>Compare normalized value with drawing</td><td>No approved fitment while required field is blank</td></tr>
+                <tr><td>Over-broad year range</td><td>Flag gaps, redesign years, and inconsistent trims</td><td>Review source rows at both range boundaries</td><td>Every included configuration has a supported row</td></tr>
+                <tr><td>Aftermarket wheel ambiguity</td><td>Detect claims missing wheel-context rule</td><td>Review installation guidance and exclusions</td><td>Conditional language replaces universal fit claim</td></tr>
+                <tr><td>Copy exceeds data</td><td>Compare extracted vehicle and spec phrases with approved fields</td><td>Trace each phrase to source ID</td><td>Zero unsupported compatibility statements</td></tr>
+                <tr><td>Schema drift</td><td>Compare saved definition with current Amazon schema</td><td>Review new conditional requirements</td><td>Validation passes under the current marketplace definition</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="fitment-card" data-aos="fade-up">
+          <span class="fitment-eyebrow">Measurement plan</span>
+          <h2>Evaluate qualified discovery and decision quality together.</h2>
+          <p>Before changing the listing, freeze the application-table version and record a baseline by SKU, marketplace, and application segment. Then document exactly which structured attributes and copy elements changed. Monitor search impressions and click-through rate for discovery, sessions and conversion for shopping response, and wrong-fit returns, compatibility contacts, cancellations, and review themes for decision quality.</p>
+          <p>A practical rollout begins with a bounded set of verified applications rather than a category-wide expansion. Compare pre/post periods only after checking stock, price, advertising, seasonality, promotions, and major competitive changes. If the update spans different traffic mixes, report those limitations instead of converting the movement into a causal claim. The stop condition is equally important: if fitment-related returns or support contacts rise beyond the agreed guardrail, pause expansion and audit the application rows.</p>
+          <div class="fitment-callout"><strong>Definition of done:</strong> every published compatibility phrase traces to a current source; required Amazon attributes validate; exceptions remain visible; the live listing helps a buyer verify the installed context; and performance monitoring includes wrong-fit outcomes, not only traffic.</div>
+        </article>
+
+        <article class="fitment-card source-list" data-aos="fade-up">
+          <span class="fitment-eyebrow">Method and sources</span>
+          <h2>What is observed, calculated, illustrative, and externally documented.</h2>
+          <ul>
+            <li><strong>Observed archive evidence:</strong> two Sponsored Products campaign rows from December 21, 2024 to January 19, 2025; one 40-row review export; and one internal compatibility-oriented product photograph. Product, brand, account, reviewer, ASIN, and client identifiers are withheld.</li>
+            <li><strong>Derived calculations:</strong> click-to-order rate, sales and order ratios, CPC difference, and the 5.848-percentage-point ACoS gap were calculated from exported counts and values. The campaigns are not treated as an experiment.</li>
+            <li><strong>Illustrative material:</strong> “Vehicle A,” symbolic geometry keys, decision records, title pattern, QA gates, and rollout design demonstrate a method. They are not automotive application data or product recommendations.</li>
+            <li><strong>Amazon technical reference:</strong> Amazon’s <a href="https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/manage-product-listings-guide" target="_blank" rel="noopener noreferrer">Manage Product Listings guide</a> describes product-type discovery, listing creation and maintenance, structured requirements, issues, and buyable or discoverable states.</li>
+            <li><strong>Schema and validation reference:</strong> Amazon’s <a href="https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/building-listings-management-workflows-guide" target="_blank" rel="noopener noreferrer">Listings Management workflow guide</a> covers current product-type definitions, required and conditional attributes, validation, inspection, and issue handling.</li>
+            <li><strong>Parent-child reference:</strong> Amazon’s <a href="https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/retrieve-a-product-type-definition" target="_blank" rel="noopener noreferrer">Product Type Definition documentation</a> explains parentage-level schemas and child requirements.</li>
+            <li><strong>Industry context:</strong> SAE’s <a href="https://saemobilus.sae.org/standards/j2530_202412-aftermarket-wheels-passenger-cars-light-truck-performance-requirements-test-procedures" target="_blank" rel="noopener noreferrer">J2530 aftermarket wheel standard page</a> documents performance, test, certification, and marking scope for passenger-car and light-truck aftermarket wheels.</li>
+            <li><strong>Manufacturer installation context:</strong> McGard’s <a href="https://mcgard.com/wp-content/uploads/2018/02/insta_instr_072248g.pdf" target="_blank" rel="noopener noreferrer">current wheel-lock installation instructions</a> emphasize confirming the correct fastener style, thread diameter, and seating surface with the vehicle and wheel context before installation.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><p>&copy; 2026 Matias Gaglio. Portfolio personal.</p></div></footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({duration:800,once:true,offset:50});
+    const navToggle=document.querySelector('.nav-toggle');
+    const navMenu=document.querySelector('.nav-menu');
+    if(navToggle&&navMenu)navToggle.addEventListener('click',()=>{document.querySelector('.navbar').classList.toggle('nav-open');const expanded=navToggle.getAttribute('aria-expanded')==='true';navToggle.setAttribute('aria-expanded',!expanded);navToggle.setAttribute('aria-label',expanded?'Open menu':'Close menu')});
+  </script>
+  <script src="../software-stack.js" defer></script>
+  <script src="../accessibility.js" defer></script>
+</body>
+</html>
