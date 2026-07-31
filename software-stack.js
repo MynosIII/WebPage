@@ -32,7 +32,8 @@
     hotjar: ['Hotjar', 'hotjar.svg'],
     tableau: ['Tableau', 'tableau.svg'],
     r: ['R', 'r.svg'],
-    stackline: ['Stackline', 'stackline.svg']
+    stackline: ['Stackline', 'stackline.svg'],
+    shulex: ['Shulex VOC AI', 'shulex.svg']
   };
 
   const aboutRows = [
@@ -47,8 +48,8 @@
       label: 'Ecommerce',
       slug: 'ecommerce',
       direction: 'reverse',
-      copy: 'Amazon Seller Central, Helium 10, Jungle Scout, Keepa, Sellerboard, Google Ads, Meta Ads, GA4, Search Console, Semrush, Hotjar y Stackline.',
-      tools: ['amazon-seller-central', 'helium10', 'jungle-scout', 'keepa', 'sellerboard', 'google-ads', 'meta-ads', 'ga4', 'search-console', 'semrush', 'hotjar', 'stackline']
+      copy: 'Amazon Seller Central, Helium 10, Shulex VOC AI, Jungle Scout, Keepa, Sellerboard, Google Ads, Meta Ads, GA4, Search Console, Semrush, Hotjar y Stackline.',
+      tools: ['amazon-seller-central', 'helium10', 'shulex', 'jungle-scout', 'keepa', 'sellerboard', 'google-ads', 'meta-ads', 'ga4', 'search-console', 'semrush', 'hotjar', 'stackline']
     },
     {
       label: 'Creative',
@@ -71,6 +72,7 @@
     'ecommerce-video-04.html': ['premiere', 'after-effects'],
     'ecommerce-video-05.html': ['premiere', 'after-effects'],
     'voice-of-customer-conversion-brief.html': ['excel', 'amazon-seller-central', 'helium10'],
+    'shulex-voc-creative-case.html': ['shulex', 'excel', 'photoshop', 'illustrator', 'amazon-seller-central'],
     'market-share-loss-diagnosis.html': ['amazon-seller-central', 'excel', 'stackline'],
     'amazon-listing-audit-checklist.html': ['amazon-seller-central', 'helium10', 'excel'],
     'search-query-keyword-harvesting.html': ['amazon-seller-central', 'excel', 'helium10'],
@@ -101,6 +103,7 @@
     'ecommerce-video-04.html': ['creatives.html#ecommerce-conversion-videos', 'Volver a videos', 'Back to videos'],
     'ecommerce-video-05.html': ['creatives.html#ecommerce-conversion-videos', 'Volver a videos', 'Back to videos'],
     'voice-of-customer-conversion-brief.html': ['../Articles.html', 'Volver a artículos', 'Back to Articles'],
+    'shulex-voc-creative-case.html': ['creatives.html#shulex-voc-creative', 'Volver a Creatives', 'Back to Creatives'],
     'market-share-loss-diagnosis.html': ['../Articles.html', 'Volver a artículos', 'Back to Articles'],
     'amazon-listing-audit-checklist.html': ['../Articles.html', 'Volver a artículos', 'Back to Articles'],
     'search-query-keyword-harvesting.html': ['../Articles.html', 'Volver a artículos', 'Back to Articles'],

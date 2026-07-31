@@ -964,6 +964,7 @@ img {
 .modeling-lab[hidden] { display: none; }
 .flyer-showcase[hidden] { display: none; }
 .icon-system-showcase[hidden] { display: none; }
+.voc-ai-showcase[hidden] { display: none; }
 .video-showcase-heading {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(260px, .7fr);
@@ -1352,6 +1353,22 @@ img {
 @media(max-width:900px){.icon-system-showcase{grid-template-columns:1fr}.icon-system-showcase-visual{order:-1;grid-template-columns:repeat(6,1fr)}.icon-case-orbit{opacity:.25;right:-25%;width:80vw}.icon-case-purpose-grid,.icon-library-heading{grid-template-columns:1fr}.icon-principle-grid{grid-template-columns:1fr 1fr}.icon-library-grid{grid-template-columns:repeat(6,1fr)}}
 @media(max-width:560px){.icon-system-showcase-visual{grid-template-columns:repeat(4,1fr);padding:1.25rem}.icon-case-hero{min-height:auto;padding:8rem 0 5rem}.icon-case-hero h1{font-size:3.8rem}.icon-case-stats{flex-direction:column}.icon-case-orbit{display:none}.icon-case-purpose,.icon-case-principles,.icon-case-library{padding:5rem 0}.icon-principle-grid{grid-template-columns:1fr}.icon-library-grid{grid-template-columns:repeat(3,1fr)}.icon-library-item{padding:.75rem .4rem}}
 @media(prefers-reduced-motion:reduce){.icon-case-orbit{animation:none}.icon-system-showcase,.icon-system-showcase-visual img,.icon-library-item{transition:none}.icon-system-showcase:hover,.icon-system-showcase:hover .icon-system-showcase-visual img,.icon-library-item:hover{transform:none}}
+
+/* --- Shulex VOC AI: research-to-creative showcase --- */
+.voc-ai-showcase{position:relative;display:grid;grid-template-columns:minmax(320px,.92fr) minmax(0,1.08fr);min-height:590px;margin-bottom:5rem;overflow:hidden;border:1px solid rgba(19,196,201,.25);background:radial-gradient(circle at 82% 18%,rgba(19,196,201,.18),transparent 34%),linear-gradient(145deg,#132124,#091112 65%);color:inherit;text-decoration:none;transform:scale(1);transition:transform .5s cubic-bezier(.2,.75,.2,1),border-color .35s,box-shadow .5s}
+.voc-ai-showcase:hover{z-index:2;transform:scale(1.018);border-color:rgba(19,196,201,.6);box-shadow:0 30px 75px rgba(0,0,0,.36),0 0 46px rgba(19,196,201,.1)}
+.voc-ai-showcase-copy{position:relative;z-index:2;min-width:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,4vw,4rem)}
+.voc-ai-showcase-copy>span{color:#13c4c9;font:700 .7rem var(--font-titulos);letter-spacing:.12em;text-transform:uppercase}
+.voc-ai-showcase-copy h2{width:100%;margin:1rem 0 1.25rem;text-align:left;font-size:clamp(2.5rem,4vw,4.25rem);line-height:.92;letter-spacing:-.05em}
+.voc-ai-showcase-copy p{max-width:570px;color:#a9b9b8;line-height:1.7}
+.voc-ai-showcase-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.5rem}.voc-ai-showcase-tags span{padding:.35rem .55rem;border:1px solid rgba(19,196,201,.25);color:#bce4e2;font-size:.64rem;text-transform:uppercase;letter-spacing:.06em}
+.voc-ai-showcase-copy>strong{margin-top:2rem;color:#fff;font:.75rem var(--font-titulos);letter-spacing:.08em;text-transform:uppercase}.voc-ai-showcase-copy>strong b{color:#13c4c9}
+.voc-ai-showcase-visual{display:grid;grid-template-columns:1fr 1fr;gap:1px;padding:clamp(1.2rem,3vw,2.4rem);background:rgba(255,255,255,.035)}
+.voc-ai-showcase-visual img{width:100%;height:100%;min-height:0;object-fit:cover;background:#fff;transition:transform .5s cubic-bezier(.2,.75,.2,1),filter .35s}.voc-ai-showcase:hover .voc-ai-showcase-visual img{transform:scale(1.035);filter:saturate(1.06)}
+.voc-ai-card-visual{position:relative;display:grid!important;grid-template-columns:1fr 1fr;gap:1px;min-height:360px;overflow:hidden;background:#0b1517!important}.voc-ai-card-visual img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}.voc-ai-ecommerce-card:hover .voc-ai-card-visual img{transform:scale(1.045)}.voc-ai-card-visual span{position:absolute;right:1rem;bottom:1rem;padding:.65rem .8rem;background:#13c4c9;color:#061012;font:700 .68rem var(--font-titulos);letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:900px){.voc-ai-showcase{grid-template-columns:1fr}.voc-ai-showcase-visual{order:-1;min-height:460px}.voc-ai-card-visual{min-height:300px}}
+@media(max-width:560px){.voc-ai-showcase-visual{min-height:360px;padding:1rem}.voc-ai-showcase-copy h2{font-size:2.7rem}.voc-ai-card-visual{min-height:250px}}
+@media(prefers-reduced-motion:reduce){.voc-ai-showcase,.voc-ai-showcase-visual img,.voc-ai-card-visual img{transition:none}.voc-ai-showcase:hover,.voc-ai-showcase:hover .voc-ai-showcase-visual img,.voc-ai-ecommerce-card:hover .voc-ai-card-visual img{transform:none}}
 
 /* --- Ecommerce conversion video system --- */
 .ecommerce-video-showcase{background:linear-gradient(145deg,rgba(76,214,168,.11),transparent 46%),#141817;border-color:rgba(76,214,168,.24)}
