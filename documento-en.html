@@ -15,6 +15,24 @@ letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);
 </style>
 </head>
 <body class="document-page"><a class="language-switch" href="documento-es.html" hreflang="es" aria-label="Ver en español">ES</a>
+<header class="navbar">
+    <div class="container">
+      <a href="index-en.html" class="nav-logo">Matías Gaglio.</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+      </button>
+      <nav class="nav-menu" aria-label="Main navigation"><ul>
+          <li><a href="index-en.html">Home</a></li>
+          <li><a href="ecommerce-en.html">Ecommerce</a></li>
+          <li><a href="Articles-en.html">Articles</a></li>
+          <li><a href="creatives-en.html">Creatives</a></li>
+          <li><a href="consultora-en.html">Opinion Research</a></li>
+          <li><a href="otros-en.html">Other projects</a></li>
+          <li><a href="SEO-en.html">ChatMatias</a></li>
+          <li><a href="sobre-mi-en.html">About me</a></li>
+      </ul></nav>
+    </div>
+  </header>
   <header class="document-header">
     <div class="container document-header-inner">
       <a class="document-back" href="consultora-en.html"><span aria-hidden="true">←</span> Return to repository</a>
@@ -83,9 +101,10 @@ letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);
       download.hidden = true;
       pdfObject.replaceWith(Object.assign(document.createElement('p'), {
         className: 'document-error',
-        textContent: 'El enlace no corresponde a un documento del repositorio.'
+        textContent: 'This link does not point to a document in the repository.'
       }));
     }
   </script>
+  <script src="accessibility.js" defer></script>
 </body>
 </html>
