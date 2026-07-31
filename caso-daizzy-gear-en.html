@@ -8,12 +8,19 @@
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<style>
+.language-switch{position:fixed;top:14px;left:14px;z-index:10000;display:grid;place-items:center;
+min-width:42px;height:42px;padding:0 10px;border:1px solid rgba(127,127,127,.35);border-radius:999px;
+background:rgba(15,15,18,.88);color:#fff!important;font:700 12px/1 system-ui,sans-serif;
+letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(10px)}
+.language-switch:focus-visible{outline:3px solid #66a3ff;outline-offset:3px}
+</style>
 </head>
 <body>
 
   <header class="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">Matías Gaglio.</a>
+      <a href="index-en.html" class="nav-logo">Matías Gaglio.</a>
 
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span class="hamburger-line"></span>
@@ -23,15 +30,15 @@
 
       <nav class="nav-menu">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ecommerce.html" class="accent">Ecommerce</a></li>
-          <li><a href="Articles.html">Articles</a></li>
-          <li><a href="creatives.html">Creatives</a></li>
-          <li><a href="consultora.html">Consultora de Opinión</a></li>
-          <li><a href="otros.html">Otros proyectos</a></li>
-          <li><a href="SEO.html">ChatMatias</a></li>
-          <li><a href="sobre-mi.html">Sobre Mi</a></li>
-          <li><a href="caso-daizzy-gear.html" aria-label="Switch language to Spanish">ES | EN</a></li>
+          <li><a href="index-en.html">Home</a></li>
+          <li><a href="ecommerce-en.html" class="accent">Ecommerce</a></li>
+          <li><a href="Articles-en.html">Articles</a></li>
+          <li><a href="creatives-en.html">Creatives</a></li>
+          <li><a href="consultora-en.html">Consultora de Opinión</a></li>
+          <li><a href="otros-en.html">Otros proyectos</a></li>
+          <li><a href="SEO-en.html">ChatMatias</a></li>
+          <li><a href="sobre-mi-en.html">Sobre Mi</a></li>
+          <li><a class="language-switch" href="caso-daizzy-gear-es.html" hreflang="es" aria-label="Ver en español">ES</a></li>
         </ul>
       </nav>
     </div>

@@ -9,12 +9,19 @@
   <link rel="stylesheet" href="style.css" />
   
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<style>
+.language-switch{position:fixed;top:14px;left:14px;z-index:10000;display:grid;place-items:center;
+min-width:42px;height:42px;padding:0 10px;border:1px solid rgba(127,127,127,.35);border-radius:999px;
+background:rgba(15,15,18,.88);color:#fff!important;font:700 12px/1 system-ui,sans-serif;
+letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(10px)}
+.language-switch:focus-visible{outline:3px solid #66a3ff;outline-offset:3px}
+</style>
 </head>
 <body>
 
   <header class="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">Matías Gaglio.</a> 
+      <a href="index-es.html" class="nav-logo">Matías Gaglio.</a> 
       
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span class="hamburger-line"></span>
@@ -24,14 +31,14 @@
 
       <nav class="nav-menu">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ecommerce.html">Ecommerce</a></li>
-          <li><a href="Articles.html">Articles</a></li>
-          <li><a href="creatives.html" class="accent">Creatives</a></li> <li><a href="consultora.html">Consultora de Opinión</a></li>
-          <li><a href="otros.html">Otros proyectos</a></li>
-          <li><a href="SEO.html">ChatMatias</a></li>
-          <li><a href="sobre-mi.html">Sobre Mi</a></li>
-          <li><a href="#" aria-label="Cambiar idioma a Inglés">ES | EN</a></li>
+          <li><a href="index-es.html">Home</a></li>
+          <li><a href="ecommerce-es.html">Ecommerce</a></li>
+          <li><a href="Articles-es.html">Articles</a></li>
+          <li><a href="creatives-es.html" class="accent">Creatives</a></li> <li><a href="consultora-es.html">Consultora de Opinión</a></li>
+          <li><a href="otros-es.html">Otros proyectos</a></li>
+          <li><a href="SEO-es.html">ChatMatias</a></li>
+          <li><a href="sobre-mi-es.html">Sobre Mi</a></li>
+          <li><a class="language-switch" href="creatives-en.html" hreflang="en" aria-label="View in English">EN</a></li>
         </ul>
       </nav>
     </div>
@@ -74,7 +81,7 @@
           <div class="video-carousel-shell">
             <button class="video-carousel-button video-carousel-prev" type="button" aria-label="Ver videos anteriores">←</button>
             <div class="video-showcase-grid" id="video-showcase-carousel" aria-live="polite">
-            <a class="video-project is-active" href="animation-01.html" aria-label="View Animation 01: Neon orbital study">
+            <a class="video-project is-active" href="animation-01-es.html" aria-label="View Animation 01: Neon orbital study">
               <div class="video-project-media">
                 <video muted playsinline preload="auto" aria-hidden="true" data-media-title="Neon orbital study" data-media-description="After Effects shape-layer ribbons orbit in three-dimensional space with cyan, green and violet glow, controlled shadows and a seamless ten-second loop." data-media-type="motion-design">
                   <source src="creatives/videos/editing-reel/social-edit-01.mp4" type="video/mp4" />
@@ -90,7 +97,7 @@
               </div>
             </a>
 
-            <a class="video-project" href="animation-02.html" aria-label="View Animation 02: Menu Hub system flow">
+            <a class="video-project" href="animation-02-es.html" aria-label="View Animation 02: Menu Hub system flow">
               <div class="video-project-media">
                 <video muted playsinline preload="auto" aria-hidden="true" data-media-title="Menu Hub system flow" data-media-description="Interface animation connecting Proto, Client and Mail modules through cursor choreography, icon reveals and animated system links." data-media-type="interface-animation">
                   <source src="creatives/videos/editing-reel/social-edit-02.mp4" type="video/mp4" />
@@ -106,7 +113,7 @@
               </div>
             </a>
 
-            <a class="video-project" href="animation-03.html" aria-label="View Animation 03: Be You kinetic typography">
+            <a class="video-project" href="animation-03-es.html" aria-label="View Animation 03: Be You kinetic typography">
               <div class="video-project-media">
                 <video muted playsinline preload="auto" aria-hidden="true" data-media-title="Be You kinetic typography" data-media-description="Kinetic type animation changing Don't be perfect into Be You through text-layer timing, weight contrast and negative space." data-media-type="kinetic-typography">
                   <source src="creatives/videos/editing-reel/social-edit-03.mp4" type="video/mp4" />
@@ -122,7 +129,7 @@
               </div>
             </a>
 
-            <a class="video-project" href="animation-04.html" aria-label="View Animation 04: Neon vortex study">
+            <a class="video-project" href="animation-04-es.html" aria-label="View Animation 04: Neon vortex study">
               <div class="video-project-media">
                 <video muted playsinline preload="auto" aria-hidden="true" data-media-title="Neon vortex study" data-media-description="A magenta, blue and white trail draws a luminous spiral with Trim Paths, animated gradients, motion blur and an atmospheric fade." data-media-type="motion-design">
                   <source src="creatives/videos/editing-reel/social-edit-04.mp4" type="video/mp4" />
@@ -153,33 +160,33 @@
           <div class="video-carousel-shell">
             <button class="video-carousel-button video-carousel-prev" type="button" aria-label="View previous e-commerce video">←</button>
             <div class="video-showcase-grid" id="ecommerce-video-carousel" aria-live="polite">
-              <a class="video-project is-active" href="ecommerce-video-01.html" aria-label="View Conversion Video 01: Custom fit made visible">
+              <a class="video-project is-active" href="ecommerce-video-01-es.html" aria-label="View Conversion Video 01: Custom fit made visible">
                 <div class="video-project-media"><video muted playsinline preload="metadata" aria-hidden="true" data-media-title="Custom Fit rollator demonstration" data-media-description="Outdoor product video demonstrating a three-wheel rollator, adjustable handles, maneuverability and storage through benefit-led overlays and close product views." data-media-type="ecommerce-product-video"><source src="creatives/ecommerce-video/rollator-conversion-01.mp4" type="video/mp4" /></video><span class="video-project-index">01 / 05</span><span class="video-project-open">View project ↗</span></div>
                 <div class="video-project-copy"><span>Conversion video 01 · After Effects product edit · 42s</span><h3>Custom fit, made visible.</h3><p>Action-matched edits, tracked feature callouts, masked corrections and silent-viewing typography turn the rollator demonstration into a structured product story.</p></div>
               </a>
-              <a class="video-project" href="ecommerce-video-02.html" aria-label="View Conversion Video 02: Lightweight proof">
+              <a class="video-project" href="ecommerce-video-02-es.html" aria-label="View Conversion Video 02: Lightweight proof">
                 <div class="video-project-media"><video muted playsinline preload="metadata" aria-hidden="true" data-media-title="Lightweight mobility product proof" data-media-description="Bright studio demonstration showing a mobility aid folded and carried by one person, supported by a prominent 13-pound lightweight claim." data-media-type="ecommerce-product-video"><source src="creatives/ecommerce-video/rollator-conversion-02.mp4" type="video/mp4" /></video><span class="video-project-index">02 / 05</span><span class="video-project-open">View project ↗</span></div>
                 <div class="video-project-copy"><span>Conversion video 02 · After Effects product edit · 52s</span><h3>Lightweight becomes tangible.</h3><p>Teal shape-layer wipes, track mattes, reusable text pre-comps and timed digital crops organize a kitchen demonstration around practical everyday benefits.</p></div>
               </a>
-              <a class="video-project" href="ecommerce-video-03.html" aria-label="View Conversion Video 03: Three uses, one story">
+              <a class="video-project" href="ecommerce-video-03-es.html" aria-label="View Conversion Video 03: Three uses, one story">
                 <div class="video-project-media"><video muted playsinline preload="metadata" aria-hidden="true" data-media-title="Three-in-one mobility versatility demonstration" data-media-description="Studio demonstration presenting a mobility chair's seat and commode configuration with close-ups that clarify its three-in-one functionality." data-media-type="ecommerce-product-video"><source src="creatives/ecommerce-video/rollator-conversion-03.mp4" type="video/mp4" /></video><span class="video-project-index">03 / 05</span><span class="video-project-open">View project ↗</span></div>
                 <div class="video-project-copy"><span>Conversion video 03 · After Effects product explainer · 72s</span><h3>Three uses. One clear story.</h3><p>Chaptered pre-comps, modular title cards and controlled digital reframing explain the shower-commode transport chair one configuration at a time.</p></div>
               </a>
-              <a class="video-project" href="ecommerce-video-04.html" aria-label="View Conversion Video 04: Fold, store, keep moving">
+              <a class="video-project" href="ecommerce-video-04-es.html" aria-label="View Conversion Video 04: Fold, store, keep moving">
                 <div class="video-project-media"><video muted playsinline preload="metadata" aria-hidden="true" data-media-title="Foldable rollator lifestyle demonstration" data-media-description="Lifestyle product video showing a rollator folding compactly and being placed into a vehicle, connecting portability to everyday travel." data-media-type="ecommerce-product-video"><source src="creatives/ecommerce-video/rollator-conversion-04.mp4" type="video/mp4" /></video><span class="video-project-index">04 / 05</span><span class="video-project-open">View project ↗</span></div>
                 <div class="video-project-copy"><span>Conversion video 04 · After Effects lifestyle edit · 45s</span><h3>Fold. Store. Keep moving.</h3><p>Time remapping, match cuts, tracked captions and color matching compress the wheelchair’s use-to-trunk sequence into one continuous portability story.</p></div>
               </a>
-              <a class="video-project" href="ecommerce-video-05.html" aria-label="View Conversion Video 05: Fall protection made visible">
+              <a class="video-project" href="ecommerce-video-05-es.html" aria-label="View Conversion Video 05: Fall protection made visible">
                 <div class="video-project-media"><video muted playsinline preload="metadata" aria-hidden="true" data-media-title="Fall safety mat product composite" data-media-description="Product video presenting a foldable bedside fall safety mat through cutouts, material details, benefit typography and grounded light-and-shadow compositing." data-media-type="ecommerce-product-video"><source src="creatives/ecommerce-video/rollator-conversion-05.mp4" type="video/mp4" /></video><span class="video-project-index">05 / 05</span><span class="video-project-open">View project ↗</span></div>
                 <div class="video-project-copy"><span>Conversion video 05 · After Effects product composite · 42s</span><h3>Fall protection, made visible.</h3><p>Refined masks, layered contact shadows, selective color and track-matted typography give the fall-safety mat a clean, grounded product presentation.</p></div>
               </a>
             </div>
             <button class="video-carousel-button video-carousel-next" type="button" aria-label="View next e-commerce video">→</button>
           </div>
-          <a class="ecommerce-video-case-link" href="ecommerce-video-case.html">Explore the complete conversion case <span aria-hidden="true">↗</span></a>
+          <a class="ecommerce-video-case-link" href="ecommerce-video-case-es.html">Explore the complete conversion case <span aria-hidden="true">↗</span></a>
         </section>
 
-        <a class="voc-ai-showcase" id="shulex-voc-creative" href="shulex-voc-creative-case.html" aria-label="Open the Shulex VOC AI to ecommerce creative case study" data-gallery-category="voc">
+        <a class="voc-ai-showcase" id="shulex-voc-creative" href="shulex-voc-creative-case-es.html" aria-label="Open the Shulex VOC AI to ecommerce creative case study" data-gallery-category="voc">
           <div class="voc-ai-showcase-copy" data-aos="fade-up">
             <span>Shulex VOC AI · Research-to-creative workflow</span>
             <h2>Customer language became visual proof.</h2>
@@ -195,7 +202,7 @@
           </div>
         </a>
 
-        <a class="revolution-showcase" href="Revolution_creative_case.html" aria-label="Open the automotive Amazon listing transformation case study" data-gallery-category="flyers">
+        <a class="revolution-showcase" href="Revolution_creative_case-es.html" aria-label="Open the automotive Amazon listing transformation case study" data-gallery-category="flyers">
           <div class="revolution-showcase-copy" data-aos="fade-up">
             <span>Automotive ecommerce · Before / after</span>
             <h2>From product listing to conversion story.</h2>
@@ -225,7 +232,7 @@
             <div class="flyer-showcase-intro">
               <p>Una campaña modular que transforma atributos técnicos en una historia visual clara: potencia, resistencia, usos reales y especificaciones.</p>
               <span>11 piezas · Dirección visual + diseño publicitario</span>
-              <a class="flyer-case-link" href="unimac-case.html">Explore full case study <b>↗</b></a>
+              <a class="flyer-case-link" href="unimac-case-es.html">Explore full case study <b>↗</b></a>
             </div>
           </div>
 
@@ -281,7 +288,7 @@
           </div>
         </section>
 
-        <a class="icon-system-showcase" id="corporate-icon-system" href="icon-system-case.html" aria-label="Open the Corporate Communication Icon System case study" data-gallery-category="icons">
+        <a class="icon-system-showcase" id="corporate-icon-system" href="icon-system-case-es.html" aria-label="Open the Corporate Communication Icon System case study" data-gallery-category="icons">
           <div class="icon-system-showcase-copy" data-aos="fade-up">
             <span>Iconography · Visual language · 170 assets</span>
             <h2>A shared language for everyday communication.</h2>

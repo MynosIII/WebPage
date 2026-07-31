@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artículos | Matías Gaglio</title>
+  <meta name="description" content="Artículos y estudios de casos técnicos de Matías Gaglio sobre Amazon PPC, análisis de mercado, inteligencia de negocios y crecimiento del comercio electrónico." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    .articles-intro { background-color:var(--color-superficie); }
+    .articles-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-top:3rem; }
+    .article-card { background:var(--color-fondo); border:1px solid rgba(var(--color-acento-rgb), .18); border-radius:8px; overflow:hidden; text-decoration:none; color:inherit; transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+    .article-card:hover { transform:translateY(-4px); border-color:rgba(var(--color-acento-rgb), .5); box-shadow:0 18px 42px -30px rgba(var(--color-acento-rgb), .55); }
+    .article-card img { width:100%; aspect-ratio:16 / 9; object-fit:cover; background:#fff; }
+    .article-card-body { padding:1.4rem; }
+    .article-card h3 { font-size:1.5rem; margin:.3rem 0 .8rem; text-align:left; }
+    .article-card p { color:var(--color-texto-sec); margin:0; }
+    .article-meta { color:var(--color-acento); font-family:var(--font-titulos); font-size:.82rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+  </style>
+<style>
+.language-switch{position:fixed;top:14px;left:14px;z-index:10000;display:grid;place-items:center;
+min-width:42px;height:42px;padding:0 10px;border:1px solid rgba(127,127,127,.35);border-radius:999px;
+background:rgba(15,15,18,.88);color:#fff!important;font:700 12px/1 system-ui,sans-serif;
+letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(10px)}
+.language-switch:focus-visible{outline:3px solid #66a3ff;outline-offset:3px}
+</style>
+</head>
+<body><a class="language-switch" href="Articles-en.html" hreflang="en" aria-label="View in English">EN</a>
+  <header class="navbar">
+    <div class="container">
+      <a href="index-es.html" class="nav-logo">Matías Gaglio.</a>
+      <button class="nav-toggle" aria-label="abrir menú" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index-es.html">Hogar</a></li>
+          <li><a href="ecommerce-es.html">Comercio electrónico</a></li>
+          <li><a href="Articles-es.html" class="accent">Artículos</a></li>
+          <li><a href="creatives-es.html">Creativos</a></li>
+          <li><a href="consultora-es.html">Consultora de Opinión</a></li>
+          <li><a href="otros-es.html">Otros proyectos</a></li>
+          <li><a href="SEO-es.html">ChatMatias</a></li>
+          <li><a href="sobre-mi-es.html">Sobre mi</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-aos="fade-up">Artículos</h1>
+        <p data-aos="fade-up" data-aos-delay="100">Un repositorio de notas técnicas, estudios de casos aplicados y marcos operativos en torno a Amazon PPC, análisis de comercio electrónico y crecimiento del mercado.</p>
+      </div>
+    </section>
+
+    <section class="articles-intro">
+      <div class="container">
+        <h2 data-aos="fade-up">Biblioteca de casos</h2>
+        <div class="articles-grid">
+          <a class="article-card" href="Cases/DayParting-Case-es.html" data-aos="fade-up" data-aos-delay="100">
+            <img src="Cases/dayparting-dashboard.jpg" alt="Vista previa del panel Amazon US DayParting" loading="lazy">
+            <div class="article-card-body">
+              <span class="article-meta">Amazon PPC / Zona diurna</span>
+              <h3>Caso de separación del día</h3>
+              <p>Cómo los datos horarios de PPC pueden revelar fugas presupuestarias, proteger ventanas de alta conversión y convertir la programación de ofertas en un sistema de asignación de capital.</p>
+            </div>
+          </a>
+          <a class="article-card" href="Cases/search-suppression-catalog-recovery-es.html" data-aos="fade-up" data-aos-delay="140">
+            <img src="assets/catalog-recovery-product-photo.jpg" alt="Fotografía de producto de movilidad real que ilustra el trabajo de recuperación del catálogo Amazon" loading="lazy">
+            <div class="article-card-body">
+              <span class="article-meta">Operaciones Amazon / Estado del catálogo</span>
+              <h3>Supresión de búsqueda y recuperación de catálogos</h3>
+              <p>Una guía de campo respaldada por datos para separar los errores de envío, capacidad de compra, capacidad de descubrimiento, atributos, restricciones e indexación antes de validar la recuperación.</p>
+            </div>
+          </a>
+          <a class="article-card" href="Cases/automotive-fitment-seo-es.html" data-aos="fade-up" data-aos-delay="160">
+            <img src="assets/fitment-compatibility-photo.jpg" alt="Variantes de productos reales orientadas a la compatibilidad que ilustran la necesidad de datos de ajuste precisos" loading="lazy">
+            <div class="article-card-body">
+              <span class="article-meta">Amazon SEO / Catálogo de automoción</span>
+              <h3>Compatible con SEO para listados de automóviles</h3>
+              <p>Un sistema basado en evidencia para conectar especificaciones de piezas, registros de aplicaciones, excepciones, atributos Amazon e idioma de búsqueda sin exagerar la compatibilidad.</p>
+            </div>
+          </a>
+          <a class="article-card" href="Cases/search-query-keyword-harvesting-es.html" data-aos="fade-up" data-aos-delay="180">
+            <img src="Cases/search-query-keyword-harvesting.svg" alt="Vista previa del marco de rendimiento de consultas de búsqueda y recolección de palabras clave" loading="lazy">
+            <div class="article-card-body">
+              <span class="article-meta">Amazon PPC / Inteligencia de consultas</span>
+              <h3>Rendimiento de consultas de búsqueda y recolección de palabras clave</h3>
+              <p>Cómo convertir las señales de consulta del mercado y la evidencia de términos de búsqueda en decisiones controladas de palabras clave exactas, de frase, amplias y negativas.</p>
+            </div>
+          </a>
+          <a class="article-card" href="Cases/amazon-listing-audit-checklist-es.html" data-aos="fade-up" data-aos-delay="260">
+            <img src="Cases/amazon-listing-audit-checklist.svg" alt="Vista previa de la lista de verificación de auditoría de listado Amazon" loading="lazy">
+            <div class="article-card-body">
+              <span class="article-meta">Amazon SEO / Conversión / Operaciones</span>
+              <h3>Lista de verificación de auditoría de listado Amazon</h3>
+              <p>Una auditoría de dependencia para diagnosticar la preparación, relevancia, conversión, estado del catálogo y rentabilidad del comercio minorista antes de aumentar la inversión publicitaria.</p>
+            </div>
+          </a>
+          <a class="article-card" href="Cases/market-share-loss-diagnosis-es.html" data-aos="fade-up" data-aos-delay="340">
+            <img src="Cases/market-share-loss-diagnosis.svg" alt="Vista previa del marco de diagnóstico de pérdidas de cuota de mercado" loading="lazy">
+            <div class="article-card-body">
+              <span class="article-meta">Amazon BI / Diagnóstico Comercial</span>
+              <h3>Marco de diagnóstico de pérdida de participación de mercado</h3>
+              <p>Un marco causal para separar los efectos de visibilidad, porcentaje de clics, conversión, precios, inventario, competencia, publicidad y ganancias.</p>
+            </div>
+          </a>
+          <a class="article-card" href="Cases/voice-of-customer-conversion-brief-es.html" data-aos="fade-up" data-aos-delay="340">
+            <img src="Cases/voice-of-customer-conversion-brief.svg" alt="Temas de investigación de la Voz del Cliente traducidos en un resumen de conversión de comercio electrónico" loading="lazy">
+            <div class="article-card-body">
+              <span class="article-meta">Voz del Cliente / CRO / Estrategia Creativa</span>
+              <h3>Del ruido de la reseña al informe de conversión</h3>
+              <p>Un caso de investigación anónimo que muestra cómo los resultados recurrentes, las objeciones y los escenarios de uso se convierten en un plan de contenido de mercado defendible.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><p>© 2026 Matías Gaglio. Portafolio personal.</p></div></footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration:800, once:true, offset:50 });
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (navToggle && navMenu) navToggle.addEventListener('click', () => {
+      document.querySelector('.navbar').classList.toggle('nav-open');
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
+    });
+  </script>
+  <script src="accessibility.js" defer></script>
+</body>
+</html>

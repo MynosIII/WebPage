@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caso 2 – Rentabilidad & BI | Matías Gaglio</title>
+  <meta name="description" content="Caso de estudio sobre seguimiento de rentabilidad, BI y mejora de performance comercial." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<style>
+.language-switch{position:fixed;top:14px;left:14px;z-index:10000;display:grid;place-items:center;
+min-width:42px;height:42px;padding:0 10px;border:1px solid rgba(127,127,127,.35);border-radius:999px;
+background:rgba(15,15,18,.88);color:#fff!important;font:700 12px/1 system-ui,sans-serif;
+letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(10px)}
+.language-switch:focus-visible{outline:3px solid #66a3ff;outline-offset:3px}
+</style>
+</head>
+<body><a class="language-switch" href="caso-2-en.html" hreflang="en" aria-label="View in English">EN</a>
+  <header class="navbar">
+    <div class="container">
+      <a href="index-es.html" class="nav-logo">Matías Gaglio.</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index-es.html">Home</a></li>
+          <li><a href="ecommerce-es.html" class="accent">Ecommerce</a></li>
+          <li><a href="Articles-es.html">Articles</a></li>
+          <li><a href="creatives-es.html">Creatives</a></li>
+          <li><a href="consultora-es.html">Consultora de Opinión</a></li>
+          <li><a href="otros-es.html">Otros proyectos</a></li>
+          <li><a href="SEO-es.html">ChatMatias</a></li>
+          <li><a href="sobre-mi-es.html">Sobre Mi</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-aos="fade-up">Evolución de Ingresos y Rentabilidad</h1>
+        <p data-aos="fade-up" data-aos-delay="100">Seguimiento de portfolio, control de costos y lectura de performance para decidir qué escalar, qué defender y qué dejar quieto.</p>
+      </div>
+    </section>
+
+    <section class="casos-estudio">
+      <div class="container">
+        <article class="caso-card" data-aos="fade-up">
+          <span class="caso-categoria">Business Intelligence & Profitability</span>
+          <h3>El problema</h3>
+          <div class="caso-card-grid">
+            <div class="caso-contenido">
+              <p>El desafío no era únicamente vender más, sino entender si el crecimiento realmente estaba dejando margen. En ecommerce, una subida de ventas puede ocultar aumentos de ad spend, fees, devoluciones, descuentos o costos logísticos.</p>
+              <p>El trabajo consistió en pasar de una lectura de ventas aislada a una lectura de portfolio: producto por producto, margen por margen, y con una separación clara entre crecimiento sano y crecimiento artificial.</p>
+            </div>
+            <div class="caso-contenido">
+              <ul class="caso-metricas">
+                <li><span class="accent">BI</span> Lectura cruzada de ventas, ads y margen</li>
+                <li><span class="accent">Profit</span> Control de rentabilidad por producto</li>
+                <li><span class="accent">Action</span> Priorización de productos con upside real</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="caso-card reverse" data-aos="fade-up" data-aos-delay="100">
+          <span class="caso-categoria">Decisiones</span>
+          <h3>Qué hice</h3>
+          <div class="caso-card-grid">
+            <div class="caso-contenido">
+              <p>Construí una lectura mensual de performance para detectar productos donde el tráfico pago estaba empujando ventas rentables y productos donde el gasto solo maquillaba el resultado. Esto permitió separar acciones ofensivas de acciones defensivas.</p>
+              <p>El criterio fue evitar cambios por ansiedad. Cuando un producto estaba estable, no se intervenía. Cuando el dato mostraba caída de sesiones, CTR o margen, la acción se dirigía al cuello de botella específico.</p>
+            </div>
+            <div class="caso-contenido">
+              <ul class="caso-metricas">
+                <li><span class="accent">+220%</span> Crecimiento observado en ventas durante el período</li>
+                <li><span class="accent">Menos ruido</span> Decisiones por causa, no por intuición</li>
+                <li><span class="accent">Portfolio</span> Priorización según margen y oportunidad</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <div style="text-align:center; margin-top:3rem;"><a href="ecommerce-es.html#cases" class="cta-button secondary">Volver a Ecommerce</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><p>&copy; 2026 Matías Gaglio. Portfolio personal.</p></div></footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ duration: 800, once: true, offset: 50 });
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      if (navToggle && navMenu) navToggle.addEventListener('click', () => {
+        document.querySelector('.navbar').classList.toggle('nav-open');
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navToggle.setAttribute('aria-label', isExpanded ? 'Abrir menú' : 'Cerrar menú');
+      });
+    });
+  </script>
+  <script src="software-stack.js" defer></script>
+  <script src="accessibility.js" defer></script>
+</body>
+</html>

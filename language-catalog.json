@@ -1,0 +1,242 @@
+{
+  "pages": [
+    {
+      "page": "Articles.html",
+      "sourceLanguage": "en",
+      "english": "Articles-en.html",
+      "spanish": "Articles-es.html"
+    },
+    {
+      "page": "BI-case-2.html",
+      "sourceLanguage": "en",
+      "english": "BI-case-2-en.html",
+      "spanish": "BI-case-2-es.html"
+    },
+    {
+      "page": "Cases/DayParting-Case.html",
+      "sourceLanguage": "en",
+      "english": "Cases/DayParting-Case-en.html",
+      "spanish": "Cases/DayParting-Case-es.html"
+    },
+    {
+      "page": "Cases/amazon-listing-audit-checklist.html",
+      "sourceLanguage": "en",
+      "english": "Cases/amazon-listing-audit-checklist-en.html",
+      "spanish": "Cases/amazon-listing-audit-checklist-es.html"
+    },
+    {
+      "page": "Cases/automotive-fitment-seo.html",
+      "sourceLanguage": "es",
+      "english": "Cases/automotive-fitment-seo-en.html",
+      "spanish": "Cases/automotive-fitment-seo-es.html"
+    },
+    {
+      "page": "Cases/market-share-loss-diagnosis.html",
+      "sourceLanguage": "en",
+      "english": "Cases/market-share-loss-diagnosis-en.html",
+      "spanish": "Cases/market-share-loss-diagnosis-es.html"
+    },
+    {
+      "page": "Cases/search-query-keyword-harvesting.html",
+      "sourceLanguage": "en",
+      "english": "Cases/search-query-keyword-harvesting-en.html",
+      "spanish": "Cases/search-query-keyword-harvesting-es.html"
+    },
+    {
+      "page": "Cases/search-suppression-catalog-recovery.html",
+      "sourceLanguage": "es",
+      "english": "Cases/search-suppression-catalog-recovery-en.html",
+      "spanish": "Cases/search-suppression-catalog-recovery-es.html"
+    },
+    {
+      "page": "Cases/voice-of-customer-conversion-brief.html",
+      "sourceLanguage": "en",
+      "english": "Cases/voice-of-customer-conversion-brief-en.html",
+      "spanish": "Cases/voice-of-customer-conversion-brief-es.html"
+    },
+    {
+      "page": "Revolution_creative_case.html",
+      "sourceLanguage": "en",
+      "english": "Revolution_creative_case-en.html",
+      "spanish": "Revolution_creative_case-es.html"
+    },
+    {
+      "page": "SEO.html",
+      "sourceLanguage": "es",
+      "english": "SEO-en.html",
+      "spanish": "SEO-es.html"
+    },
+    {
+      "page": "amazon-content-architecture.html",
+      "sourceLanguage": "es",
+      "english": "amazon-content-architecture-en.html",
+      "spanish": "amazon-content-architecture-es.html"
+    },
+    {
+      "page": "amazon-lifecycle-operating-system.html",
+      "sourceLanguage": "es",
+      "english": "amazon-lifecycle-operating-system-en.html",
+      "spanish": "amazon-lifecycle-operating-system-es.html"
+    },
+    {
+      "page": "animation-01.html",
+      "sourceLanguage": "en",
+      "english": "animation-01-en.html",
+      "spanish": "animation-01-es.html"
+    },
+    {
+      "page": "animation-02.html",
+      "sourceLanguage": "en",
+      "english": "animation-02-en.html",
+      "spanish": "animation-02-es.html"
+    },
+    {
+      "page": "animation-03.html",
+      "sourceLanguage": "en",
+      "english": "animation-03-en.html",
+      "spanish": "animation-03-es.html"
+    },
+    {
+      "page": "animation-04.html",
+      "sourceLanguage": "en",
+      "english": "animation-04-en.html",
+      "spanish": "animation-04-es.html"
+    },
+    {
+      "page": "articulo-milei-chad.html",
+      "sourceLanguage": "es",
+      "english": "articulo-milei-chad-en.html",
+      "spanish": "articulo-milei-chad-es.html"
+    },
+    {
+      "page": "caso-1.html",
+      "sourceLanguage": "es",
+      "english": "caso-1-en.html",
+      "spanish": "caso-1-es.html"
+    },
+    {
+      "page": "caso-2.html",
+      "sourceLanguage": "es",
+      "english": "caso-2-en.html",
+      "spanish": "caso-2-es.html"
+    },
+    {
+      "page": "caso-3.html",
+      "sourceLanguage": "es",
+      "english": "caso-3-en.html",
+      "spanish": "caso-3-es.html"
+    },
+    {
+      "page": "caso-daizzy-gear.html",
+      "sourceLanguage": "en",
+      "english": "caso-daizzy-gear-en.html",
+      "spanish": "caso-daizzy-gear-es.html"
+    },
+    {
+      "page": "caso-hogar-cocina-ppc.html",
+      "sourceLanguage": "es",
+      "english": "caso-hogar-cocina-ppc-en.html",
+      "spanish": "caso-hogar-cocina-ppc-es.html"
+    },
+    {
+      "page": "consultora.html",
+      "sourceLanguage": "es",
+      "english": "consultora-en.html",
+      "spanish": "consultora-es.html"
+    },
+    {
+      "page": "creatives.html",
+      "sourceLanguage": "es",
+      "english": "creatives-en.html",
+      "spanish": "creatives-es.html"
+    },
+    {
+      "page": "documento.html",
+      "sourceLanguage": "es",
+      "english": "documento-en.html",
+      "spanish": "documento-es.html"
+    },
+    {
+      "page": "ecommerce-video-01.html",
+      "sourceLanguage": "en",
+      "english": "ecommerce-video-01-en.html",
+      "spanish": "ecommerce-video-01-es.html"
+    },
+    {
+      "page": "ecommerce-video-02.html",
+      "sourceLanguage": "en",
+      "english": "ecommerce-video-02-en.html",
+      "spanish": "ecommerce-video-02-es.html"
+    },
+    {
+      "page": "ecommerce-video-03.html",
+      "sourceLanguage": "en",
+      "english": "ecommerce-video-03-en.html",
+      "spanish": "ecommerce-video-03-es.html"
+    },
+    {
+      "page": "ecommerce-video-04.html",
+      "sourceLanguage": "en",
+      "english": "ecommerce-video-04-en.html",
+      "spanish": "ecommerce-video-04-es.html"
+    },
+    {
+      "page": "ecommerce-video-05.html",
+      "sourceLanguage": "en",
+      "english": "ecommerce-video-05-en.html",
+      "spanish": "ecommerce-video-05-es.html"
+    },
+    {
+      "page": "ecommerce-video-case.html",
+      "sourceLanguage": "en",
+      "english": "ecommerce-video-case-en.html",
+      "spanish": "ecommerce-video-case-es.html"
+    },
+    {
+      "page": "ecommerce.html",
+      "sourceLanguage": "es",
+      "english": "ecommerce-en.html",
+      "spanish": "ecommerce-es.html"
+    },
+    {
+      "page": "icon-system-case.html",
+      "sourceLanguage": "en",
+      "english": "icon-system-case-en.html",
+      "spanish": "icon-system-case-es.html"
+    },
+    {
+      "page": "index.html",
+      "sourceLanguage": "es",
+      "english": "index-en.html",
+      "spanish": "index-es.html"
+    },
+    {
+      "page": "otros.html",
+      "sourceLanguage": "es",
+      "english": "otros-en.html",
+      "spanish": "otros-es.html"
+    },
+    {
+      "page": "shulex-voc-creative-case.html",
+      "sourceLanguage": "es",
+      "english": "shulex-voc-creative-case-en.html",
+      "spanish": "shulex-voc-creative-case-es.html"
+    },
+    {
+      "page": "sobre-mi.html",
+      "sourceLanguage": "es",
+      "english": "sobre-mi-en.html",
+      "spanish": "sobre-mi-es.html"
+    },
+    {
+      "page": "unimac-case.html",
+      "sourceLanguage": "en",
+      "english": "unimac-case-en.html",
+      "spanish": "unimac-case-es.html"
+    }
+  ],
+  "excludedDevelopmentFiles": [
+    "anchor-test.html",
+    "revolution-test.html"
+  ]
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caso de separación del día | Matías Gaglio</title>
+  <meta name="description" content="Amazon PPC Estudio de caso de división diaria que muestra cómo la oferta por horas y la asignación de presupuesto mejoraron la eficiencia publicitaria." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .article-case section { padding-top:5rem; padding-bottom:5rem; }
+    .article-case .page-hero { padding-top:10rem; }
+    .article-eyebrow { color:var(--color-acento); font-family:var(--font-titulos); font-size:.85rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; margin-bottom:1rem; }
+    .article-card { background:var(--color-superficie); border:1px solid rgba(var(--color-acento-rgb), .18); border-radius:8px; padding:2rem; margin-bottom:1.5rem; }
+    .article-card h2 { text-align:left; font-size:clamp(1.7rem, 3vw, 2.35rem); }
+    .article-card h3 { text-align:left; margin-top:1.8rem; }
+    .article-card p, .article-card li, .article-card td { color:var(--color-texto-sec); }
+    .metrics-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:1rem; margin-top:2rem; }
+    .metric { background:var(--color-fondo); border:1px solid rgba(var(--color-acento-rgb), .18); border-radius:8px; padding:1.1rem; }
+    .metric span { display:block; }
+    .metric .label { color:var(--color-texto-sec); font-size:.78rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+    .metric .value { color:#fff; font-family:var(--font-titulos); font-size:1.55rem; font-weight:800; margin:.35rem 0; }
+    .metric .delta { color:var(--color-acento); font-weight:700; }
+    .media-frame { background:#fff; border:1px solid rgba(var(--color-acento-rgb), .2); border-radius:8px; padding:.8rem; margin:2rem 0; }
+    .media-frame img { width:100%; border-radius:5px; }
+    .caption { color:#4b5563; font-size:.9rem; margin:.7rem 0 0; font-style:italic; }
+    .case-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.3rem; align-items:start; }
+    .callout { border-left:4px solid var(--color-acento); background:rgba(var(--color-acento-rgb), .08); padding:1rem 1.25rem; border-radius:0 8px 8px 0; color:var(--color-texto-sec); }
+    .formula { display:block; background:var(--color-fondo); border:1px solid rgba(255,255,255,.08); border-radius:6px; padding:1rem; margin:1rem 0; overflow-x:auto; color:var(--color-texto); font-family:Consolas, Monaco, monospace; }
+    .strategy-table { width:100%; border-collapse:collapse; margin-top:1.5rem; }
+    .strategy-table th, .strategy-table td { border-bottom:1px solid rgba(255,255,255,.08); padding:.85rem; text-align:left; vertical-align:top; }
+    .strategy-table th { color:#fff; font-family:var(--font-titulos); }
+    .badge { display:inline-block; border-radius:5px; padding:.22rem .5rem; color:var(--color-fondo); font-weight:800; font-size:.78rem; white-space:nowrap; }
+    .green { background:#52d273; }
+    .red { background:#ff7777; }
+    .blue { background:var(--color-acento); }
+    .gray { background:#a0a0a0; }
+    .chart-card { background:var(--color-fondo); border:1px solid rgba(var(--color-acento-rgb), .18); border-radius:8px; padding:1.25rem; margin-top:1.5rem; }
+    .chart-wrapper { height:410px; }
+    .final-cta { text-align:center; }
+    @media (max-width:900px) {
+      .metrics-grid, .case-grid { grid-template-columns:1fr; }
+      .article-case .page-hero { padding-top:8rem; }
+      .article-card { padding:1.35rem; }
+      .strategy-table { display:block; overflow-x:auto; }
+    }
+  </style>
+<style>
+.language-switch{position:fixed;top:14px;left:14px;z-index:10000;display:grid;place-items:center;
+min-width:42px;height:42px;padding:0 10px;border:1px solid rgba(127,127,127,.35);border-radius:999px;
+background:rgba(15,15,18,.88);color:#fff!important;font:700 12px/1 system-ui,sans-serif;
+letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(10px)}
+.language-switch:focus-visible{outline:3px solid #66a3ff;outline-offset:3px}
+</style>
+</head>
+<body><a class="language-switch" href="DayParting-Case-en.html" hreflang="en" aria-label="View in English">EN</a>
+  <header class="navbar">
+    <div class="container">
+      <a href="../index-es.html" class="nav-logo">Matías Gaglio.</a>
+      <button class="nav-toggle" aria-label="abrir menú" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="../index-es.html">Hogar</a></li>
+          <li><a href="../ecommerce-es.html">Comercio electrónico</a></li>
+          <li><a href="../Articles-es.html" class="accent">Artículos</a></li>
+          <li><a href="../creatives-es.html">Creativos</a></li>
+          <li><a href="../consultora-es.html">Consultora de Opinión</a></li>
+          <li><a href="../otros-es.html">Otros proyectos</a></li>
+          <li><a href="../SEO-es.html">ChatMatias</a></li>
+          <li><a href="../sobre-mi-es.html">Sobre mi</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article-case">
+    <section class="page-hero">
+      <div class="container">
+        <p class="article-eyebrow" data-aos="fade-up">Amazon PPC / División horaria estadística</p>
+        <h1 data-aos="fade-up" data-aos-delay="100">Caso de separación del día</h1>
+        <p data-aos="fade-up" data-aos-delay="150">Cómo los datos horarios de PPC expusieron fugas presupuestarias, protegieron el tráfico de alta conversión y convirtieron la programación de ofertas en un sistema de asignación de capital publicitario.</p>
+        <div class="metrics-grid" data-aos="fade-up" data-aos-delay="220">
+          <article class="metric"><span class="label">ACoS</span><span class="value">46,8% a 36,1%</span><span class="delta">-10,7 puntos</span></article>
+          <article class="metric"><span class="label">Tasa de conversión</span><span class="value">9,4% a 11,2%</span><span class="delta">+1,8 puntos</span></article>
+          <article class="metric"><span class="label">Ventas de publicidad</span><span class="value">+18.7%</span><span class="delta">Después de la implementación</span></article>
+          <article class="metric"><span class="label">Gasto anticipado</span><span class="value">-27.4%</span><span class="delta">Presupuesto preservado</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <article class="article-card" data-aos="fade-up">
+          <span class="caso-categoria">Resumen ejecutivo</span>
+          <h2>La cuenta no era débil. El momento fue ineficiente.</h2>
+          <p>La cuenta no se vio afectada fundamentalmente por una demanda débil. Sufría de una sincronización ineficiente. Las horas rentables y no rentables se combinaban en el mismo ACoS diario, mientras que los presupuestos se consumían antes de algunas de las ventanas de conversión más sólidas.</p>
+          <p>Implementé una estructura de división de días controlada utilizando datos de rendimiento por horas, modificadores de oferta por hora del día, reasignación de presupuesto a nivel de campaña y una lógica de ritmo separada para períodos de alta y baja intención. El objetivo no era simplemente reducir el gasto. Era mejorar el valor esperado de cada dólar publicitario adicional.</p>
+          <div class="callout"><strong>Interpretación:</strong> Estos resultados provienen de una cuenta implementada. El valor de la división horaria depende del volumen de tráfico, la densidad de conversión, las restricciones presupuestarias, el retraso en la atribución y la estabilidad de los patrones horarios.</div>
+        </article>
+
+        <article class="article-card" data-aos="fade-up">
+          <span class="caso-categoria">Línea base horaria</span>
+          <h2>El problema empresarial escondido dentro de un promedio diario</h2>
+          <p>Un ACoS diario del 46,8 % no significa que cada hora se produzca un ACoS del 46,8 %. Puede ser un promedio ponderado de varios períodos eficientes y varios períodos de severa fuga presupuestaria.</p>
+          <p>El cambio analítico clave fue dejar de tratar el tiempo como una dimensión descriptiva del informe y comenzar a tratarlo como una variable predictiva. La hora del día, el día de la semana, CPC, CVR, el volumen de impresiones, la combinación de ubicaciones y el agotamiento del presupuesto se analizaron conjuntamente como componentes de un sistema de subasta cambiante.</p>
+          <div class="media-frame">
+            <img src="dayparting-hourly-heatmap.jpg" alt="Mapa de calor de rendimiento horario Amazon PPC">
+            <p class="caption">Figura 1. Matriz de desempeño por hora utilizada para identificar períodos recurrentes de alta y baja eficiencia.</p>
+          </div>
+          <p>La cuenta mostró una eficiencia de conversión más débil entre las 00:00 y las 05:00 aproximadamente y nuevamente a altas horas de la noche. Las últimas horas de la mañana y determinadas horas de la tarde mostraron una mayor densidad de conversión y relaciones entre ventas y gastos más favorables.</p>
+        </article>
+
+        <article class="article-card" data-aos="fade-up">
+          <span class="caso-categoria">Mecanismo</span>
+          <h2>Por qué la división horaria puede mejorar la eficiencia del PPC</h2>
+          <p>La división del día funciona cuando la hora del día contiene información predictiva que el sistema de ofertas de Amazon no absorbe completamente. Esto puede suceder porque cambia la intención del comprador, los presupuestos de la competencia se agotan de manera desigual, los precios de colocación fluctúan o los propios límites presupuestarios de la cuenta crean escasez durante períodos posteriores de alto valor.</p>
+          <span class="formula">Ingresos esperados por clic = P(conversión | hora, consulta, ubicación) x valor promedio del pedido</span>
+          <span class="formula">Contribución esperada por clic = Ingresos esperados por clic x Margen de contribución - CPC</span>
+          <div class="media-frame">
+            <img src="dayparting-clicks-spend-cpc.jpg" alt="Amazon PPC clics gastados y CPC por hora">
+            <p class="caption">Figura 2. CPC no se movió proporcionalmente con el volumen de clics, lo que generó períodos en los que el tráfico permaneció disponible después de que los costos de la subasta disminuyeron.</p>
+          </div>
+        </article>
+
+        <article class="article-card" data-aos="fade-up">
+          <span class="caso-categoria">Implementación</span>
+          <h2>De los informes horarios a la asignación presupuestaria</h2>
+          <p>La implementación fue diseñada como un sistema de asignación de capital, no como un simple cronograma de entrada y salida. Las campañas se segmentaron por función estratégica, intención de búsqueda y sensibilidad a los límites presupuestarios.</p>
+          <table class="strategy-table">
+            <thead><tr><th>Ventana de tiempo</th><th>Patrón observado</th><th>Cambio implementado</th><th>Justificación estratégica</th></tr></thead>
+            <tbody>
+              <tr><td>00:00-05:00</td><td>CVR bajo y ACoS elevado</td><td><span class="badge red">Reducción de oferta</span></td><td>Limitar las fugas presupuestarias preservando al mismo tiempo una continuidad mínima de la subasta.</td></tr>
+              <tr><td>06:00-09:00</td><td>Eficiencia moderada y presión de subasta creciente</td><td><span class="badge gray">estimulación básica</span></td><td>Evite sobrepujas mientras se restablecen los presupuestos de la competencia.</td></tr>
+              <tr><td>10:00-14:00</td><td>Mayor densidad de conversión recurrente</td><td><span class="badge green">Aumento de oferta y presupuesto</span></td><td>Captar la demanda calificada antes de que se agote el presupuesto.</td></tr>
+              <tr><td>15:00-18:00</td><td>CPC en declive con tráfico viable</td><td><span class="badge blue">Escalado selectivo</span></td><td>Explotar el inventario de menor costo a medida que los competidores comiencen a abandonar.</td></tr>
+              <tr><td>19:00-23:00</td><td>Rendimiento mixto por tipo de campaña</td><td><span class="badge gray">Modificadores segmentados</span></td><td>Mantenga campañas sólidas mientras suprime el tráfico de baja intención.</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="article-card" data-aos="fade-up">
+          <span class="caso-categoria">Interacción entre semana</span>
+          <h2>Los patrones horarios no fueron constantes a lo largo de la semana</h2>
+          <p>Algunos días de la semana tuvieron una demanda base más fuerte, mientras que otros exhibieron un gasto similar pero una productividad de ventas más débil. Por tanto, el programa óptimo era bidimensional: los efectos de la hora del día interactuaban con los efectos del día de la semana.</p>
+          <div class="media-frame">
+            <img src="dayparting-dashboard.jpg" alt="Amazon PPC Panel de ventas semanales y por horas">
+            <p class="caption">Figura 3. La variación del día de la semana se superpuso al ritmo horario para evitar tratar todos los horarios diarios como equivalentes.</p>
+          </div>
+          <p>En lugar de aplicar un horario universal, utilicé bandas modificadoras más amplias para patrones de días laborables de gran volumen y ajustes más conservadores para días de menor volumen.</p>
+        </article>
+
+        <article class="article-card" data-aos="fade-up">
+          <span class="caso-categoria">Resultados</span>
+          <h2>Curva de eficiencia antes y después</h2>
+          <p>El siguiente cuadro ilustra el efecto estratégico de la intervención. El gasto se redujo durante los períodos de menor rendimiento y se redistribuyó hacia horas con una respuesta de ventas esperada más sólida.</p>
+          <div class="chart-card"><div class="chart-wrapper"><canvas id="performanceChart" role="img" aria-label="Gráfico de rendimiento por hora Amazon PPC que compara la inversión en publicidad, los clics, las ventas y la eficiencia para identificar ventanas de franjas horarias rentables."></canvas></div></div>
+          <p>La reducción del ACoS no se debió a la reducción indiscriminada del tráfico. Las ventas de anuncios aumentaron porque la cuenta adquirió una mejor combinación de clics: menos clics de baja probabilidad durante las ventanas débiles y más exposición durante las horas con mayores ingresos esperados por clic.</p>
+        </article>
+
+        <article class="article-card" data-aos="fade-up">
+          <span class="caso-categoria">Conclusión</span>
+          <h2>La división diaria es una asignación dinámica de cartera</h2>
+          <p>Este caso muestra cómo se puede mejorar la gestión de Amazon PPC combinando operaciones publicitarias con razonamiento estadístico. El problema central no fue simplemente el exceso de CPC o una conversión insuficiente. Fue el desajuste entre el momento en que la cuenta gastó dinero y el momento en que ese dinero tuvo el mayor rendimiento esperado.</p>
+          <p>Por lo tanto, la mejor manera de entender la división del día no es como un truco de programación, sino como una forma de asignación dinámica de cartera. Cada hora representa una distribución esperada diferente de costo, probabilidad de conversión y demanda disponible.</p>
+          <div class="final-cta"><a href="../Articles-es.html" class="cta-button secondary">Volver a artículos</a></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><p>© 2026 Matías Gaglio. Portafolio personal.</p></div></footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration:800, once:true, offset:50 });
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (navToggle && navMenu) navToggle.addEventListener('click', () => {
+      document.querySelector('.navbar').classList.toggle('nav-open');
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
+    });
+
+    const labels = ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00'];
+    const beforeAcos = [54.8, 52.3, 46.7, 42.4, 38.6, 44.9, 41.2, 55.1];
+    const afterAcos = [46.2, 44.8, 40.9, 36.8, 31.7, 34.9, 32.5, 43.7];
+    const spendIndex = [72, 61, 83, 104, 131, 118, 109, 78];
+    const ctx = document.getElementById('performanceChart');
+    if (ctx) new Chart(ctx, {
+      type:'bar',
+      data:{ labels, datasets:[
+        { label:'Post-Implementation Spend Index', data:spendIndex, backgroundColor:'rgba(0,224,255,.58)', borderRadius:4, yAxisID:'y', order:2 },
+        { label:'Pre-Implementation ACoS', data:beforeAcos, type:'line', borderColor:'#ff7777', backgroundColor:'#ff7777', borderWidth:2.5, tension:.3, yAxisID:'y1', order:1 },
+        { label:'Post-Implementation ACoS', data:afterAcos, type:'line', borderColor:'#52d273', backgroundColor:'#52d273', borderWidth:2.5, tension:.3, yAxisID:'y1', order:1 }
+      ]},
+      options:{
+        responsive:true,
+        maintainAspectRatio:false,
+        interaction:{ mode:'index', intersect:false },
+        plugins:{ legend:{ labels:{ color:'rgba(255,255,255,.7)' } } },
+        scales:{
+          x:{ ticks:{ color:'rgba(255,255,255,.62)' }, grid:{ display:false } },
+          y:{ type:'linear', position:'left', title:{ display:true, text:'Relative Spend Index', color:'rgba(255,255,255,.7)' }, ticks:{ color:'rgba(255,255,255,.62)' }, grid:{ color:'rgba(255,255,255,.08)' } },
+          y1:{ type:'linear', position:'right', title:{ display:true, text:'ACoS (%)', color:'rgba(255,255,255,.7)' }, ticks:{ color:'rgba(255,255,255,.62)' }, grid:{ drawOnChartArea:false } }
+        }
+      }
+    });
+  </script>
+  <script src="../software-stack.js" defer></script>
+  <script src="../accessibility.js" defer></script>
+</body>
+</html>

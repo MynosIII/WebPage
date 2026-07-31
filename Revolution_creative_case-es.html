@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estudio de caso de actualización de listado Amazon | Matías Gaglio</title>
+  <meta name="description" content="Estudio de caso de optimización de listados de Amazon: sistema de imágenes, estructura de SEO, EBC, KPI y una maqueta completa de antes y después de Amazon." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .listing-case section { padding-top: 5rem; padding-bottom: 5rem; }
+    .listing-case .page-hero { padding-top: 10rem; }
+    .eyebrow { color: var(--color-acento); text-transform: uppercase; font-size: .82rem; font-weight: 800; letter-spacing: .08em; margin-bottom: 1rem; }
+    .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .kpi-summary article, .process-explanation article, .kpi-visual-plan article, .principle-grid article, .workflow-steps article, .amazon-mockup, .chart-card { background: var(--color-superficie); border: 1px solid rgba(var(--color-acento-rgb), .18); border-radius: 8px; padding: 1.25rem; }
+    .principle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-content:start; }
+    .principle-grid article { min-width:0; }
+    .principle-grid h3, .workflow-steps h3, .kpi-visual-plan h3 { margin:0 0 .75rem; font-size:clamp(1rem, 1.2vw, 1.25rem); line-height:1.18; text-align:left; overflow-wrap:normal; word-break:normal; hyphens:none; }
+    .principle-grid p, .workflow-steps p, .kpi-visual-plan p { margin:0; font-size:.9rem; line-height:1.45; color:var(--color-texto-sec); }
+    .workflow-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .workflow-steps article { min-height:156px; display:flex; flex-direction:column; justify-content:space-between; }
+    .workflow-steps h3 { white-space:nowrap; }
+    .kpi-number { display:block; color: var(--color-acento); font-size: 2rem; font-weight: 900; line-height: 1; }
+    .kpi-label { color: var(--color-texto-sec); font-weight: 700; font-size: .9rem; }
+    .chart-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .chart-card { cursor:zoom-in; transition:border-color .2s ease, transform .2s ease; }
+    .chart-card:hover, .chart-card:focus-visible { border-color:rgba(var(--color-acento-rgb), .58); transform:translateY(-2px); outline:none; }
+    .chart-card h3 { font-size: 1.1rem; margin-top: 0; text-align:left; }
+    .chart-card canvas { width:100%; min-height: 260px; }
+    .image-row { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:1rem; margin-top:1.5rem; }
+    .image-row.single-visual { grid-template-columns:minmax(0, 1fr); }
+    .image-row.single-visual img { max-height:520px; object-fit:contain; }
+    .image-row img, .amazon-gallery img, .ebc-stack img { width:100%; height:100%; object-fit:cover; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; }
+    .wire-diagram { display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; margin-top:1.5rem; }
+    .wire-diagram span { background: rgba(var(--color-acento-rgb), .12); border:1px solid rgba(var(--color-acento-rgb), .25); padding:.75rem 1rem; border-radius:6px; color:var(--color-texto); font-weight:800; }
+    .wire-diagram i { color: var(--color-acento); font-style:normal; font-weight:900; }
+    .amazon-mockup { color: var(--color-texto); overflow:hidden; min-width:0; }
+    .amazon-top { display:grid; grid-template-columns: minmax(0, 46%) minmax(250px, 34%) minmax(178px, 16%); gap:1.25rem; align-items:start; min-height: 880px; }
+    .amazon-top > div:nth-child(2) { padding-top:.15rem; }
+    .amazon-gallery { display:grid; grid-template-columns: 54px minmax(0, 1fr); gap:.75rem; min-width:0; }
+    .amazon-thumbs { display:flex; flex-direction:column; gap:.5rem; position:relative; z-index:3; }
+    .amazon-thumbs img { aspect-ratio:1/1; object-fit:contain; padding:.2rem; cursor:pointer; }
+    .amazon-thumbs img.is-active { border-color: var(--color-acento); box-shadow:0 0 0 2px rgba(var(--color-acento-rgb), .22); }
+    .amazon-main-image { aspect-ratio:1/1; object-fit:contain !important; padding: .5rem; }
+    .amazon-mockup .amazon-title { font-size:clamp(1rem, 1.35vw, 1.2rem); line-height:1.28; margin:0 0 .65rem; text-align:left; overflow-wrap:anywhere; }
+    .amazon-brand { color: var(--color-acento); font-weight:800; margin-bottom:.6rem; }
+    .amazon-mockup p, .amazon-mockup li, .amazon-mockup label, .amazon-mockup select, .amazon-mockup button { line-height:1.35; }
+    .amazon-bullets { color: var(--color-texto-sec); padding-left:1.1rem; line-height:1.35; }
+    .amazon-bullets li { margin-bottom:.5rem; font-size:.86rem; line-height:1.35; }
+    .rating-row { display:flex; align-items:center; gap:.5rem; color:var(--color-texto-sec); font-size:.9rem; margin-bottom:.7rem; }
+    .stars { color:#f7b731; letter-spacing:.06em; }
+    .buy-box { padding:.9rem; border-radius:8px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); font-size:.88rem; }
+    .buy-box .price { display:block; font-size:1.35rem; font-weight:900; margin:.2rem 0 .45rem; color:var(--color-texto); }
+    .buy-box .stock { color:#63d297; font-weight:800; margin:.25rem 0; }
+    .buy-box label { display:block; color:var(--color-texto-sec); font-size:.82rem; margin-top:.75rem; }
+    .buy-box select { width:100%; margin:.25rem 0 .75rem; background:#111; color:var(--color-texto); border:1px solid rgba(255,255,255,.16); border-radius:999px; padding:.45rem .65rem; }
+    .amazon-action { width:100%; border:0; border-radius:999px; padding:.75rem 1rem; margin-top:.55rem; font-weight:900; cursor:default; color:#111; }
+    .amazon-cart { background:#ffd814; }
+    .amazon-buy { background:#ffa41c; }
+    .delivery-note { color:var(--color-texto-sec); font-size:.75rem; line-height:1.35; margin-top:.65rem; }
+    .ebc-stack { display:grid; gap:1rem; margin-top:0; }
+    .ebc-stack > img { display:block; width:100%; height:auto; object-fit:contain; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; }
+    .ebc-module { width:100%; min-height:0; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; overflow:visible; }
+    .ebc-module img { display:block; width:100%; height:auto; object-fit:contain; border:0; border-radius:0; }
+    .ebc-panel { position:relative; overflow:hidden; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#070707; }
+    .ebc-panel img { display:block; width:100%; height:auto; object-fit:cover; border:0; border-radius:0; }
+    .ebc-copy-card { position:absolute; top:0; right:0; width:min(34%, 260px); height:100%; padding:1rem; background:rgba(7,7,7,.92); color:var(--color-texto); display:flex; flex-direction:column; justify-content:center; border-left:1px solid rgba(255,255,255,.16); }
+    .ebc-copy-card h4 { margin:0 0 .45rem; color:var(--color-texto); font-size:1rem; line-height:1.15; text-align:left; }
+    .ebc-copy-card p { margin:0; color:rgba(255,255,255,.78); font-size:.78rem; line-height:1.35; }
+    .ebc-indexable { background:#070707; color:var(--color-texto); border-radius:6px; padding:1rem 1.1rem; border:1px solid rgba(255,255,255,.08); }
+    .ebc-indexable h4 { margin:.2rem 0 .6rem; color:var(--color-texto); font-size:1rem; line-height:1.2; text-align:left; }
+    .ebc-indexable h5 { margin:.85rem 0 .35rem; color:var(--color-acento); font-size:.86rem; line-height:1.2; text-transform:uppercase; letter-spacing:.02em; }
+    .ebc-indexable p { margin:.25rem 0; color:rgba(255,255,255,.76); font-size:.78rem; line-height:1.35; }
+    .ebc-inline { display:grid; grid-template-columns: minmax(120px, 220px) minmax(0, 1fr); gap:1.25rem; align-items:center; background:#070707; color:var(--color-texto); border-radius:6px; padding:1rem 1.1rem; border:1px solid rgba(255,255,255,.08); }
+    .ebc-inline img { width:100%; height:auto; border-radius:4px; border:0; background:#fff; }
+    .ebc-inline h4 { margin:0 0 .55rem; color:var(--color-texto); font-size:1rem; line-height:1.2; text-align:left; }
+    .ebc-inline p { margin:0; color:rgba(255,255,255,.76); font-size:.78rem; line-height:1.35; }
+    .comparison-shell { width:min(1120px, calc(100vw - 3rem)); margin:7rem 0 0 50%; transform:translateX(-50%); overflow:hidden; isolation:isolate; }
+    .comparison-labels { grid-column:1 / -1; display:flex; justify-content:space-between; gap:1rem; padding:1rem 1.25rem .75rem; color:var(--color-acento); font-weight:900; text-transform:uppercase; font-size:.78rem; letter-spacing:.08em; background:var(--color-superficie); }
+    .comparison-frame { --split:50%; --split-negative:-50%; --frame-width:1120px; position:relative; width:100%; overflow:hidden; border-radius:8px; display:grid; grid-template-columns: var(--split) minmax(0, 1fr); align-items:start; border:1px solid rgba(var(--color-acento-rgb), .28); background:var(--color-superficie); }
+    .comparison-pane { min-width:0; overflow:hidden; }
+    .comparison-pane.old { position:relative; z-index:1; }
+    .comparison-pane.new { position:relative; z-index:2; }
+    .comparison-layer { width:var(--frame-width); max-width:none; }
+    .comparison-pane.new .comparison-layer { transform:translateX(var(--split-negative)); }
+    .comparison-pane.new .ebc-stack { margin-top:18px; }
+    .comparison-handle { position:absolute; z-index:5; top:3.15rem; bottom:0; left:var(--split); width:46px; transform:translateX(-50%); cursor:ew-resize; display:flex; align-items:center; justify-content:center; touch-action:none; }
+    .comparison-handle::before { content:""; position:absolute; top:0; bottom:0; left:50%; width:4px; transform:translateX(-50%); border-radius:999px; background:var(--color-acento); box-shadow:0 0 0 1px rgba(0,0,0,.45), 0 0 18px rgba(var(--color-acento-rgb), .55); }
+    .comparison-handle span { position:sticky; top:50%; width:44px; height:44px; border-radius:999px; background:var(--color-acento); border:3px solid #091012; box-shadow:0 12px 28px rgba(0,0,0,.45); }
+    .comparison-handle span::before, .comparison-handle span::after { content:""; position:absolute; top:50%; width:7px; height:7px; border-top:2px solid #061010; border-left:2px solid #061010; }
+    .comparison-handle span::before { left:10px; transform:translateY(-50%) rotate(-45deg); }
+    .comparison-handle span::after { right:10px; transform:translateY(-50%) rotate(135deg); }
+    .slot-label { display:inline-block; margin-bottom: .75rem; color: var(--color-acento); font-weight:900; text-transform:uppercase; font-size:.78rem; letter-spacing:.08em; }
+    .comparison-frame .slot-label { display:none; }
+    .old-mockup { filter:none; }
+    .text-compare { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:1.5rem; }
+    .text-compare article { background:var(--color-superficie); border-radius:8px; padding:1.25rem; border:1px solid rgba(255,255,255,.08); }
+    .chart-modal { position:fixed; inset:0; z-index:9999; display:none; place-items:center; padding:2rem; background:rgba(0,0,0,.82); backdrop-filter:blur(8px); }
+    .chart-modal.is-open { display:grid; }
+    .chart-modal-panel { position:relative; width:min(1120px, 94vw); height:min(720px, 84vh); background:var(--color-superficie); border:1px solid rgba(var(--color-acento-rgb), .35); border-radius:8px; padding:1.5rem; box-shadow:0 22px 70px rgba(0,0,0,.45); }
+    .chart-modal-panel h3 { margin:0 3rem 1rem 0; text-align:left; font-size:1.25rem; }
+    .chart-modal-panel canvas { width:100% !important; height:calc(100% - 3rem) !important; }
+    .chart-modal-close { position:absolute; top:1rem; right:1rem; width:2.25rem; height:2.25rem; border:1px solid rgba(255,255,255,.16); border-radius:999px; background:#111; color:var(--color-texto); font-size:1.35rem; line-height:1; cursor:pointer; }
+    body.chart-modal-open { overflow:hidden; }
+    @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare, .ebc-inline { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-top { min-height:0; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } .ebc-copy-card { position:static; width:auto; height:auto; } .workflow-steps h3 { white-space:normal; } }
+  </style>
+<style>
+.language-switch{position:fixed;top:14px;left:14px;z-index:10000;display:grid;place-items:center;
+min-width:42px;height:42px;padding:0 10px;border:1px solid rgba(127,127,127,.35);border-radius:999px;
+background:rgba(15,15,18,.88);color:#fff!important;font:700 12px/1 system-ui,sans-serif;
+letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(10px)}
+.language-switch:focus-visible{outline:3px solid #66a3ff;outline-offset:3px}
+</style>
+</head>
+<body><a class="language-switch" href="Revolution_creative_case-en.html" hreflang="en" aria-label="View in English">EN</a>
+  <header class="navbar">
+    <div class="container">
+      <a href="index-es.html" class="nav-logo">Matías Gaglio.</a>
+      <button class="nav-toggle" aria-label="abrir menú" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index-es.html">Hogar</a></li>
+          <li><a href="ecommerce-es.html">Comercio electrónico</a></li>
+          <li><a href="Articles-es.html">Artículos</a></li>
+          <li><a href="creatives-es.html" class="accent">Creativos</a></li>
+          <li><a href="consultora-es.html">Consultora de Opinión</a></li>
+          <li><a href="otros-es.html">Otros proyectos</a></li>
+          <li><a href="SEO-es.html">ChatMatias</a></li>
+          <li><a href="sobre-mi-es.html">Sobre mi</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="amazon-listing-refresh-case-study" class="listing-case">
+    <section id="hero" class="page-hero">
+      <div class="container">
+        <p class="eyebrow" data-aos="fade-up">Optimización de listado Amazon: categoría automotriz</p>
+        <h1 data-aos="fade-up" data-aos-delay="100">Reconstrucción de listados de Amazon mediante sistemas visuales, estructura de SEO y contenido centrado en la conversión</h1>
+        <p data-aos="fade-up" data-aos-delay="150">Este proyecto fue una actualización completa del listado Amazon para un catálogo automotriz. El objetivo no era solo reescribir el contenido del producto, sino reconstruir la forma en que los listados comunicaban valor técnico, confianza visual, confianza en el ajuste y calidad del producto.</p>
+        <p data-aos="fade-up" data-aos-delay="200">Los listados originales tenían información del producto, pero la presentación no generaba conversiones al nivel esperado para el tráfico generado. Las imágenes eran funcionales, pero no visualmente competitivas. Las viñetas incluían datos técnicos importantes, pero la estructura no guiaba al comprador a través de una decisión de compra clara. Los títulos contenían palabras clave relevantes, pero necesitaban un mejor equilibrio entre Amazon SEO y la legibilidad humana.</p>
+        <p data-aos="fade-up" data-aos-delay="250">La solución fue rediseñar el sistema de listado en su totalidad: nueva dirección de imagen, lógica A+/EBC más sólida, títulos reescritos, viñetas más estructuradas y un proceso de producción escalable utilizando Photoshop y automatización codificada para acelerar la creación de imágenes en múltiples SKU.</p>
+        <div class="kpi-summary" data-aos="fade-up" data-aos-delay="300">
+          <article><span class="kpi-number">+26.3%</span><span class="kpi-label">Ventas minoristas semanales promedio</span></article>
+          <article><span class="kpi-number">+19.4%</span><span class="kpi-label">Tráfico total</span></article>
+          <article><span class="kpi-number">+5.5%</span><span class="kpi-label">Tasa de conversión promedio</span></article>
+          <article><span class="kpi-number">+119.4%</span><span class="kpi-label">Tráfico de búsqueda pagado</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="diagnosis"><div class="container"><article class="caso-card" data-aos="fade-up">
+      <span class="caso-categoria">Diagnóstico</span>
+      <h2>El diagnóstico: existía tráfico, pero la experiencia de cotización no fue lo suficientemente persuasiva</h2>
+      <div class="caso-card-grid"><div class="caso-contenido">
+        <p>El punto de partida fue un problema de conversión. Los listados recibían tráfico, pero la experiencia del cliente no era lo suficientemente sólida como para convertir esa demanda de manera eficiente. En el caso de las piezas de automóvil, esto es especialmente importante porque los clientes no sólo compran un producto; están tratando de evitar un ajuste incorrecto, una devolución o un problema de compatibilidad mecánica.</p>
+        <p>El antiguo estilo de listado daba a los compradores acceso a los datos del producto, pero la jerarquía visual era débil. Los detalles técnicos como el tamaño de la rosca, el tipo de asiento, la longitud, la compatibilidad de las ruedas, el material, el revestimiento y los requisitos de las ruedas del mercado de accesorios estaban presentes, pero no siempre se presentaban en el orden en que los necesitaba el comprador. El resultado fue una cotización que podía indexarse ​​por Amazon, pero no reducía por completo la incertidumbre de los clientes.</p>
+        <p>La decisión fue tratar el listado como un sistema de conversión. En lugar de preguntar únicamente "¿Este listado contiene las palabras clave correctas?", el proyecto planteó una pregunta más estratégica: "¿Este listado hace que el cliente se sienta lo suficientemente seguro como para comprar?".</p>
+      </div><div class="caso-visual"><img src="Revolution/Old Style Images/71J6-GXWXRL._AC_SL1500_.jpg" alt="Estilo de imagen del listado anterior" loading="lazy"></div></div>
+    </article></div></section>
+
+    <section id="competitive-benchmarking"><div class="container"><article class="caso-card reverse" data-aos="fade-up">
+      <span class="caso-categoria">Evaluación comparativa competitiva</span>
+      <h2>Evaluación comparativa competitiva: uso de estándares de categorías para definir una dirección visual más sólida</h2>
+      <div class="caso-card-grid"><div class="caso-contenido">
+        <p>La actualización de la imagen comenzó con una revisión competitiva de qué tan fuertes presentaban los listados de Amazon en la categoría productos automotrices similares. El objetivo no era copiar a los competidores, sino comprender el lenguaje visual que ya funcionaba en el mercado: diseños más limpios, contrastes más fuertes, especificaciones más claras, posicionamiento del producto más seguro e imágenes que explican el producto sin obligar al cliente a leer cada viñeta.</p>
+        <p>Esta evaluación comparativa ayudó a definir un nuevo estilo visual para los listados. La nueva dirección tenía que ser más agradable a la vista, pero aún así técnicamente útil. En este tipo de categorías la estética por sí sola no es suficiente. Una imagen exitosa debe verse profesional y al mismo tiempo comunicar el ajuste, las dimensiones, la construcción, el acabado, la cantidad y el caso de uso.</p>
+        <p>La dirección final se construyó en torno a una jerarquía más clara: primero atraer la atención, luego explicar el producto, luego reducir las dudas sobre el ajuste y, finalmente, reforzar la durabilidad y la confianza. Esto le dio al anuncio un aspecto más premium e intencional y al mismo tiempo satisfacía las necesidades prácticas de los compradores de Amazon.</p>
+      </div><div class="principle-grid"><article><h3>Jerarquía más limpia</h3><p>Facilite el primer escaneo.</p></article><article><h3>Confianza técnica</h3><p>Las especificaciones siguen siendo visibles y precisas.</p></article><article><h3>Confianza en el ajuste</h3><p>La compatibilidad se plantea como una señal de compra.</p></article><article><h3>Sistema escalable</h3><p>Los patrones visuales reutilizables admiten muchos SKU.</p></article></div></div>
+    </article></div></section>
+
+    <section id="image-system"><div class="container"><article class="caso-card" data-aos="fade-up">
+      <span class="caso-categoria">Sistema de imagen</span>
+      <h2>El sistema de imagen: del diseño manual a la producción de imágenes escalable</h2>
+      <p>El nuevo estilo de imagen se diseñó en Photoshop como un sistema repetible y no como un activo creativo único. Esto es importante porque los catálogos Amazon a menudo contienen muchos SKU relacionados con diferencias pequeñas pero críticas: tamaño de rosca, cantidad del paquete, acabado, longitud, tipo de asiento, vehículos compatibles y familia de productos. Diseñar cada imagen manualmente desde cero sería lento, inconsistente y difícil de escalar.</p>
+      <p>Para solucionarlo, la estructura de la imagen se trató como un diseño codificado. Cada imagen puede entenderse como una plantilla hecha de componentes visuales reutilizables: foto del producto, bloque de título, leyendas de especificaciones, íconos, texto de compatibilidad, etiquetas de medidas, tratamiento de fondo y elementos de marca. Una vez definidos esos componentes, la información variable se puede insertar sistemáticamente a partir de los datos del producto.</p>
+      <p>En la práctica, esto significa que la imagen de un producto no es sólo un archivo de diseño estático. Se convierte en una salida semiautomática generada a partir de una combinación de plantillas Photoshop y atributos estructurados del producto. El código puede determinar qué texto pertenece a cada capa, qué dimensiones deben mostrarse, qué grupo de accesorios de vehículos debe mostrarse y qué formato de exportación se requiere para Amazon.</p>
+      <p>Este enfoque crea una importante ventaja operativa. En lugar de rediseñar cada imagen manualmente, el flujo de trabajo puede producir conjuntos de imágenes consistentes en muchos SKU y al mismo tiempo preservar la precisión específica del producto. Reduce el trabajo de diseño repetitivo, reduce el riesgo de inconsistencias de formato y acelera la expansión futura del catálogo.</p>
+      <div class="process-explanation"><article><h3>Lógica de plantilla</h3><p>Photoshop definió el espaciado, la tipografía, la jerarquía, la ubicación del producto, el estilo de las leyendas y la composición lista para exportar.</p></article><article><h3>Lógica de datos</h3><p>El tamaño de rosca, la cantidad, el acabado, el tipo de asiento, las familias de vehículos y las notas de compatibilidad se convirtieron en entradas estructuradas.</p></article><article><h3>Lógica de automatización</h3><p>Codificación de tareas de producción repetidas automatizadas en múltiples SKU sin reconstruir cada activo manualmente.</p></article><article><h3>Lógica de salida</h3><p>Los conjuntos de imágenes preparados para Amazon se mantuvieron consistentes y al mismo tiempo preservaron la precisión específica del producto.</p></article></div>
+      <div class="wire-diagram"><span>Datos del producto</span><i>-&gt;</i><span>Plantilla Photoshop</span><i>-&gt;</i><span>Salida de imagen automatizada</span><i>-&gt;</i><span>Listado Amazon</span></div>
+      <div class="image-row single-visual"><img src="Caso1_render1.png" alt="Renderizado automatizado de productos generado para producción de imágenes escalables"></div>
+    </article></div></section>
+
+    <section id="content-system"><div class="container"><article class="caso-card reverse" data-aos="fade-up">
+      <span class="caso-categoria">Sistema de contenido</span>
+      <h2>El sistema de contenidos: información técnica reescrita para la toma de decisiones del Amazon</h2>
+      <div class="caso-card-grid"><div class="caso-contenido">
+        <p>La copia fue reconstruida con la misma lógica que las imágenes: estructurada, repetible y técnicamente precisa. El antiguo estilo de viñeta contenía información relevante, pero la nueva estructura hizo que la información fuera más fácil de escanear y más confiable.</p>
+        <p>Las viñetas reescritas priorizan los detalles más importantes en el equipamiento automotriz. La primera línea establece la configuración exacta del producto: cantidad, tamaño de rosca, longitud, tipo de estría, tipo de asiento, construcción y acabado. La siguiente capa aborda la compatibilidad y los casos de uso, especialmente la distinción entre ruedas de posventa y ruedas de equipo original. Las balas posteriores refuerzan la durabilidad, la resistencia a la corrosión, la calidad de la construcción y los estándares.</p>
+        <p>Esto no fue sólo una mejora en la redacción. Fue una mejora de la arquitectura de conversión. La copia fue diseñada para responder las dudas del cliente en el mismo orden en que aparecen durante el proceso de compra: "¿Es esta la pieza correcta?", "¿Se adaptará a mi vehículo?", "¿Es duradera?", "¿Es segura para mi tipo de rueda?" y "¿Puedo confiar en este producto?"</p>
+        <p>La estrategia del título siguió el mismo principio. Las palabras clave siguieron siendo importantes, pero el título se reorganizó para que los términos de búsqueda, las especificaciones técnicas y las familias de vehículos reconocibles aparecieran en una secuencia más natural. Esto hizo que la lista fuera más legible y al mismo tiempo admitiera la indexación Amazon.</p>
+      </div><div class="text-compare"><article><h3>Lógica de copia antigua</h3><p>Datos presentes, pero densos y menos guiados.</p><p>La compatibilidad requirió una mayor interpretación del comprador.</p></article><article><h3>Nueva lógica de copia</h3><p>Las especificaciones, el equipamiento, el caso de uso y las señales de confianza aparecen en orden de decisión.</p><p>Los términos SEO se mantienen, pero la legibilidad mejora.</p></article></div></div>
+    </article></div></section>
+
+    <section id="aplus-ebc-system"><div class="container"><article class="caso-card" data-aos="fade-up">
+      <span class="caso-categoria">A+/EBC</span>
+      <h2>A+ / EBC: extendiendo la historia técnica más allá de las balas</h2>
+      <div class="caso-card-grid"><div class="caso-contenido">
+        <p>El contenido A+/EBC se planeó como la capa de formato largo del listado. Si bien el título y las viñetas están diseñados para un escaneo rápido, la sección A+ brinda más espacio para crear un argumento completo de marca y producto. Permite que el listado explique el producto visualmente, refuerce la calidad de la construcción y haga que la información sobre el ajuste parezca menos abrumadora.</p>
+        <p>Para esta categoría, el contenido A+ efectivo no debe tratarse como decoración. Debería funcionar como una página técnica de ventas dentro de Amazon. Los módulos deben ayudar al cliente a comprender la familia de productos, comparar especificaciones, confirmar la compatibilidad y ver por qué el producto es confiable para el uso previsto.</p>
+        <p>La estructura A+ ideal para este proyecto incluye un módulo de identidad del producto, un módulo de ajuste y compatibilidad, un desglose de las especificaciones y un módulo de prueba o durabilidad. Juntas, estas secciones crean un recorrido del cliente más completo que el que pueden proporcionar las viñetas por sí solas.</p>
+        <div class="wire-diagram"><span>Héroe</span><i>-&gt;</i><span>Especificaciones</span><i>-&gt;</i><span>Mueble</span><i>-&gt;</i><span>Durabilidad</span><i>-&gt;</i><span>Confianza en la marca</span></div>
+      </div><div class="ebc-stack"><img src="Revolution/EBC/New EBC/8fae7bda-deda-4ab8-b719-ba1de54ad308.__CR0,0,2021,1250_PT0_SX970_V1___.jpg" alt="Nuevo módulo de montaje A+"><div class="ebc-inline"><img src="Revolution/EBC/New EBC/b4a11566-8905-43c2-a612-ee09aabcf8a9.__CR2,0,1076,1076_PT0_SX300_V1___.jpg" alt="Especificaciones de las tuercas verdes"><div><h4>Un juego de tuercas de seguridad diseñado con precisión</h4><p>Como empresa de propiedad estadounidense, ofrecemos una calidad de ingeniería de precisión en la que puede confiar. Su pedido llega con un juego completo de 20 tuercas. Diseñado para ruedas OEM. Reemplaza las piezas de fábrica CV6Z-1012-C y 611-303.</p></div></div><div class="ebc-panel"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="Nuevo módulo de niebla salina A+"><div class="ebc-copy-card"><h4>Prueba estricta de pulverización de sal de una pieza y 72 horas</h4><p>Diseñadas con una construcción superior de una sola pieza, nuestras tuercas superan en rendimiento y duran más que los diseños OEM. Se someten a una rigurosa prueba de niebla salina de 72 horas, lo que garantiza una resistencia excepcional al óxido y la corrosión.</p></div></div></div></div>
+    </article></div></section>
+
+    <section id="kpi-validation"><div class="container"><article class="caso-card" data-aos="fade-up">
+      <span class="caso-categoria">Validación de KPI</span>
+      <h2>Validación KPI: medir si el nuevo sistema de listado mejoró el rendimiento</h2>
+      <p>El proyecto fue evaluado a través de datos de desempeño de la carpeta KPI. El período de comparación utilizado en los informes separa del 29 de junio de 2025 al 27 de diciembre de 2025 del 28 de diciembre de 2025 al 27 de junio de 2026. Esto hace posible comparar el período de cotización anterior con el período posterior a la implementación de mejoras de cotización más amplias.</p>
+      <p>El tráfico total aumentó de aproximadamente 1,11 millones a 1,32 millones, una ganancia de alrededor del 19,4%. El tráfico orgánico aumentó de aproximadamente 49,9 mil a 57,3 mil, mientras que el tráfico de búsqueda paga aumentó de aproximadamente 15,4 mil a 33,9 mil. Ese aumento del tráfico pago es especialmente relevante porque una lista más sólida puede respaldar una adquisición de tráfico más agresiva: la página que recibe el tráfico se vuelve más capaz de convertirlo.</p>
+      <p>La tasa de conversión también mejoró. La tasa de conversión promedio aumentó de aproximadamente el 7,44% al 7,85%, una ganancia de alrededor del 5,5%. En un catálogo Amazon de alto tráfico, incluso un aumento modesto en la tasa de conversión puede tener un impacto significativo en los ingresos porque se acumula en miles de sesiones.</p>
+      <p>Las ventas minoristas siguieron la misma dirección. Las ventas minoristas semanales promedio aumentaron de aproximadamente $112,3 mil a $141,9 mil, una mejora de alrededor del 26,3%. La interpretación más fuerte no es que una edición aislada produjo todo el cambio, sino que el sistema de listado combinado (imágenes, títulos, viñetas, contenido A+ y comunicación de ajuste más clara) ayudó al catálogo a capturar más valor de su tráfico.</p>
+      <div class="chart-grid"><div class="chart-card"><h3>Tráfico total por período</h3><canvas id="trafficTotalChart" role="img" aria-label="Gráfico que compara el tráfico total del listado Amazon antes y después del rediseño del contenido automotriz."></canvas></div><div class="chart-card"><h3>Mezcla de tráfico</h3><canvas id="trafficMixChart" role="img" aria-label="Gráfico que compara el tráfico de búsqueda paga con otro tráfico de listados durante el proyecto de optimización automotriz."></canvas></div><div class="chart-card"><h3>Tasa de conversión a lo largo del tiempo</h3><canvas id="conversionChart" role="img" aria-label="Gráfico de líneas que muestra los cambios en la tasa de conversión durante la actualización del listado de automóviles."></canvas></div><div class="chart-card"><h3>Ventas minoristas a lo largo del tiempo</h3><canvas id="retailChart" role="img" aria-label="Gráfico de líneas que muestra el crecimiento de las ventas minoristas durante y después de la actualización del listado de automóviles."></canvas></div></div>
+      <div class="kpi-visual-plan"><article><h3>Instantánea publicitaria A</h3><p>Producto de muestra A: ventas de $263,95, 12,63 ROAS, tasa de conversión del 25,49 %, ACOS del 7,92 %.</p></article><article><h3>Instantánea publicitaria B</h3><p>Producto de muestra B: ventas de $416,81, 11,34 ROAS, tasa de conversión del 22,73 %, ACOS del 8,82 %.</p></article><article><h3>Visibilidad de palabras clave</h3><p>La división del tráfico de palabras clave por categoría muestra una participación del 87,0% para piezas de accesorios de ruedas en el informe de palabras clave de muestra.</p></article><article><h3>Demanda de búsqueda</h3><p>Las consultas relacionadas con casquillos, como casquillos de tuercas y casquillos de impacto de 21 mm, muestran patrones de intención específicos de cada categoría.</p></article></div>
+    </article></div></section>
+
+    <section id="technical-methodology"><div class="container"><article class="caso-card reverse" data-aos="fade-up">
+      <span class="caso-categoria">Metodología</span><h2>Cómo se construyó el flujo de trabajo</h2>
+      <p>El flujo de trabajo combinaba dirección creativa, análisis del mercado, datos estructurados de productos y automatización. En primer lugar, el problema del listado se identificó a través de un rendimiento de conversión deficiente y una auditoría visual del contenido existente. Luego, se revisó a los competidores para comprender qué tipos de presentación visual ya estaban estableciendo las expectativas de los clientes en la categoría.</p>
+      <p>Posteriormente, se diseñó un nuevo sistema visual en Photoshop. El diseño no fue creado como una única imagen aislada, sino como un marco reutilizable. El objetivo era definir componentes repetibles que pudieran aplicarse en todo el catálogo: ubicación destacada del producto, leyendas de especificaciones, mensajes de compatibilidad, tratamientos de fondo, íconos, etiquetas y jerarquía de texto.</p>
+      <p>Luego se utilizó la codificación para respaldar la producción. En un entorno de catálogo, muchas imágenes de productos siguen la misma estructura pero requieren datos diferentes. Un flujo de trabajo codificado puede tomar información estructurada de SKU e insertarla en plantillas visuales predefinidas. Por ejemplo, el sistema puede generar diferentes versiones de imágenes para M14x1.5, M12x1.5, paquete de 24, paquete de 32, acabado negro, acabado cromado, estilo con púas, estilo estriado o diferentes aplicaciones de vehículos.</p>
+      <p>Esto convierte la creación de imágenes en un canal de contenido semiautomatizado. La estrategia creativa todavía proviene de decisiones humanas (qué enfatizar, cómo diseñar la jerarquía, cómo posicionar el producto), pero la ejecución repetitiva se puede acelerar con código. Esto es especialmente valioso para la gestión del catálogo Amazon porque la coherencia, la velocidad y la precisión son importantes a escala.</p>
+      <p>La misma lógica se aplicó al contenido escrito. Los datos del producto se tradujeron en un marco de copia estructurado: especificaciones exactas, ajuste, aclaración de ruedas no originales, calidad de construcción, resistencia a la corrosión y guía de confirmación de ajuste Amazon. Esto hizo que los listados fueran más fáciles de estandarizar sin volverlos genéricos.</p>
+      <div class="workflow-steps"><article><h3>1. Detectar</h3><p>Problema de conversión y auditoría visual.</p></article><article><h3>2. Punto de referencia</h3><p>Estándares de categoría y expectativas del comprador.</p></article><article><h3>3. Sistematizar</h3><p>Plantillas Photoshop más datos estructurados.</p></article><article><h3>4. Validar</h3><p>Tráfico, conversión y movimiento de ventas.</p></article></div>
+    </article></div></section>
+
+    <section id="strategic-impact"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Impacto estratégico</span><h2>Impacto estratégico: un sistema de listado, no un rediseño cosmético</h2><p>El resultado más importante del proyecto fue la creación de un sistema de contenido escalable Amazon. Las mejoras no se limitaron a hacer que los listados se vieran mejor. La nueva estructura hizo que los listados fueran más comprensibles, más completos técnicamente y más alineados con la forma en que los clientes evalúan los productos automotrices en Amazon.</p><p>Esto es importante porque la optimización del listado Amazon se encuentra en la intersección de SEO, la optimización de la tasa de conversión, la producción creativa y las operaciones de catálogo. Un listado puede clasificarse según los términos correctos y aun así tener un rendimiento inferior si el cliente no confía en la página del producto. Del mismo modo, un listado puede parecer visualmente pulido pero fracasar si no comunica la información técnica exacta necesaria para la compra.</p><p>El enfoque más sólido es conectar ambos lados: la relevancia de las palabras clave y la confianza del comprador. Este proyecto lo logró mejorando la estructura del título, reescribiendo los puntos relacionados con la toma de decisiones técnicas, rediseñando el estilo de la imagen según las expectativas de la categoría y creando un flujo de trabajo de producción más escalable a través de Photoshop y la automatización.</p></article></div></section>
+
+    <section id="skills-demonstrated"><div class="container"><article class="caso-card reverse" data-aos="fade-up"><span class="caso-categoria">Habilidades demostradas</span><h2>Habilidades demostradas en este proyecto.</h2><p>Este proyecto demuestra una combinación de conocimiento del mercado Amazon, estrategia SEO, pensamiento de conversión, dirección creativa y automatización técnica. Requería comprender el recorrido del cliente, el panorama competitivo, las limitaciones del contenido de Amazon y el desafío operativo de escalar los activos de listado de alta calidad en un catálogo.</p><p>El trabajo incluyó optimización de títulos de Amazon, reestructuración de viñetas, planificación A+/EBC, diseño de sistemas visuales, análisis de listados competitivos, interpretación de KPI, estructuración de datos de productos y producción de imágenes asistida por automatización. El resultado fue una experiencia de listado más profesional respaldada por mejoras mensurables en el tráfico, la conversión y las ventas.</p></article></div></section>
+
+    <section id="final-before-after-slider"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Antes / Después</span><h2>Comparación final: la experiencia de cotización antes y después</h2><p>La sección final de la página muestra la prueba visual más clara de la transformación: un control deslizante que compara la experiencia anterior de listado estilo Amazon con la versión actualizada.</p><p>La comparación hace que la mejora sea visible en todo el flujo del listado: galería de imágenes, título, viñetas, cuadro de compra y contenido A+/EBC.</p><div class="comparison-shell"><div class="comparison-frame" data-comparison-frame style="--split:50%; --split-negative:-50%;"><div class="comparison-labels" aria-hidden="true"><span>estilo antiguo</span><span>Nuevo estilo</span></div><div class="comparison-pane old"><div class="comparison-layer">
+<div class="amazon-mockup old-mockup">
+  <span class="slot-label">estilo antiguo</span>
+  <div class="amazon-top">
+    <div class="amazon-gallery">
+      <div class="amazon-thumbs">
+        <img class="is-active" src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Miniatura de estilo antiguo 1" tabindex="0">
+        <img src="Revolution/Old Style Images/71knjghDdyL._AC_SL1500_.jpg" alt="Miniatura de estilo antiguo 2" tabindex="0">
+        <img src="Revolution/Old Style Images/71sOafQLc-L._AC_SL1500_.jpg" alt="Miniatura de estilo antiguo 3" tabindex="0">
+        <img src="Revolution/Old Style Images/71KxcE5q0zL._AC_SL1500_.jpg" alt="Miniatura de estilo antiguo 4" tabindex="0">
+        <img src="Revolution/Old Style Images/71xnx6cL2uL._AC_SL1500_.jpg" alt="Miniatura de estilo antiguo 5" tabindex="0">
+      </div>
+      <img class="amazon-main-image" src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Imagen de producto de estilo antiguo.">
+    </div>
+    <div>
+      <p class="amazon-brand">visita la tienda</p>
+      <h3 class="amazon-title">Accesorios para ruedas Piezas 24 piezas M14x1.5 14x1.5 4.4" Tuercas largas Estilo de púa cromada para ruedas de camión Spline Acero al carbono forjado en frío AFTERMARKET solamente</h3>
+      <div class="rating-row"><span class="stars">4.0/5</span><span>Calificación de muestra</span></div>
+      <ul class="amazon-bullets"><li>SOLO RUEDAS DE POSVENCIÓN: Estas tuercas están diseñadas solo para ruedas de POSVENCIÓN. Esta orejeta puede ser la rosca correcta para su vehículo; En muchos casos, el asiento de la orejeta no es lo suficientemente grande como para crear una fuerza de sujeción suficiente para instalar de forma segura la rueda OE en su vehículo.</li><li>Utilice siempre AMAZON CONFIRMED FIT para validar el ajuste del producto a su vehículo. Este artículo se adapta a Cadillac Escalade 1999+ | Chevrolet 2002-13 Avalancha | 1991+ Chaqueta | 2015+ Colorado | K1500 Suburbano | 1999+ Silverado 1500 | 2000+ suburbano | 1995+ Tahoe | 2009+ Travesía | Ford 2022+ Bronco | Expedición 2015+ | 2015+ F150 | GMC 2007+ Acadia | 1988-2000 C2500 | 2015+ Cañón | 1999+Sierra 1500 | 1992+ Yukón | Jeep 2022+ Wagoneer Grand Wagoneer | RAM 2019+ 1500 | Perspectivas de Saturno 2007-10</li><li>24 piezas | 4.4" de largo | Rosca M14x1.5 14x1.5 | Spline para camión | Asiento cónico de 60 grados | Clavos | Acabado rojo | Construcción de 1 pieza</li><li>Diseñado en Estados Unidos. Las tuercas Spike Lug le dan a su vehículo un aspecto personalizado y vanguardista. Nuestras tuercas estriadas para camión de 4,40" de largo se utilizan normalmente en aplicaciones de camionetas, donde los pernos originales son largos y requieren una tuerca más larga.</li><li>Acero al carbono forjado en frío. Hilos precisos de alta calidad. Construido según los estándares SAE.</li></ul>
+    </div>
+    <aside class="buy-box" aria-label="Panel de acción Amazon solo visual">
+      <span class="price">$39.99</span>
+      <p class="stock">En stock</p>
+      <p class="delivery-note">Entrega GRATUITA disponible. Este panel es una maqueta de listado en el que no se puede hacer clic.</p>
+      <label for="qty-old">Cantidad</label>
+      <select id="qty-old" aria-label="Cantidad de maqueta antigua"><option>1</option></select>
+      <button class="amazon-action amazon-cart" type="button">añadir a la cesta</button>
+      <button class="amazon-action amazon-buy" type="button">Comprar ahora</button>
+    </aside>
+  </div>
+  <div class="ebc-stack">
+    <div class="ebc-module"><img src="Revolution/EBC/Old EBC/DetailHead__53K648L.jpg" alt="Módulo EBC de estilo antiguo"></div>
+    <div class="ebc-module"><img src="Revolution/EBC/Old EBC/RetroCons__53%23%2348L.jpg" alt="Módulo de construcción EBC de estilo antiguo."></div>
+    <div class="ebc-module"><img src="Revolution/EBC/Old EBC/RetroKsps__53%23%2348L.jpg" alt="Módulo de especificaciones clave de EBC de estilo antiguo"></div>
+    <div class="ebc-module"><img src="Revolution/EBC/Old EBC/RetroSpec__53%23%2348L.jpg" alt="Módulo de especificación EBC de estilo antiguo"></div>
+  </div>
+</div></div></div><div class="comparison-pane new"><div class="comparison-layer">
+<div class="amazon-mockup">
+  <span class="slot-label">Nuevo estilo</span>
+  <div class="amazon-top">
+    <div class="amazon-gallery">
+      <div class="amazon-thumbs">
+        <img class="is-active" src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="Miniatura de nuevo estilo 1" tabindex="0">
+        <img src="Revolution/New Style Images/71uBmAvYSaL._AC_SL1167_.jpg" alt="Miniatura de nuevo estilo 2" tabindex="0">
+        <img src="Revolution/New Style Images/71+fRFVAOVL._AC_SL1167_.jpg" alt="Miniatura de nuevo estilo 3" tabindex="0">
+        <img src="Revolution/New Style Images/712hJcE7rJL._AC_SL1167_.jpg" alt="Miniatura de nuevo estilo 4" tabindex="0">
+        <img src="Revolution/New Style Images/71J9SmUgGWL._AC_SL1167_.jpg" alt="Miniatura de nuevo estilo 5" tabindex="0">
+      </div>
+      <img class="amazon-main-image" src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="Imagen de producto de nuevo estilo.">
+    </div>
+    <div>
+      <p class="amazon-brand">visita la tienda</p>
+      <h3 class="amazon-title">Accesorios para ruedas Piezas 24 piezas M14x1.5 14x1.5 Rosca con púas 4.4" Tuercas de larga duración Cromadas para camión Spline Hex para Chevy Silverado GMC Sierra Ford F-150 RAM 1500</h3>
+      <div class="rating-row"><span class="stars">4.0/5</span><span>Calificación de muestra</span></div>
+      <ul class="amazon-bullets"><li>Especificaciones exactas de fábrica: incluye 24 tuercas estilo púas con roscas M14x1,5 14x1,5 | 4.4" de largo | Camión Spline Hex | Asiento cónico de 60 grados | Verdadera construcción de acero al carbono tratado térmicamente de una sola pieza con acabado negro</li><li>MONTAJE DE PRECISIÓN DISEÑADO PARA RUEDAS DEL MERCADO DE POSVENCIÓN. Compatible en vehículos con roscas M14x1.5 14x1.5 como las que se encuentran en Cadillac Escalade 1999+ | Chevrolet 2015+ Colorado 1999+ Silverado 1500 2015+ Suburban 1995+ Tahoe | Ford 2022-25 Bronco 2015-24 Expedición 2015+ F-150 2023-25 ​​Ranger | GMC 2015+ Cañón 1999+ Sierra 1500 1992+ Yukón | Jeep 2022-25 Grand Wagoneer 2022-25 Wagoneer | Navegador Lincoln 2015+ | Ram 2019+ 1500 Confirmar compatibilidad con AMAZON CONFIRM FIT. Sólo para ruedas de repuesto.</li><li>DISEÑADO Y PROBADO EN EE. UU.: Las tuercas hexagonales con púas para camiones están diseñadas específicamente para ruedas de posventa. El diseño de una sola pieza garantiza una fuerza de sujeción confiable y una durabilidad a largo plazo en las condiciones de conducción diarias.</li><li>RENDIMIENTO CONFIABLE Y RESISTENCIA A LA CORROSIÓN: Recubrimiento negro multicapa premium probado para protección contra la corrosión por niebla salina durante 72 horas. Actualización ideal para su vehículo. Diseñado para clima LLUVIOSO y ruedas AFTERMARKET. Acero al carbono forjado en frío. Roscas precisas M14x1,5 14x1,5 de alta calidad. Construido según los estándares SAE</li><li>JUEGO COMPLETO DE 24 PIEZAS: Juego completo de tuercas para cuatro ruedas Tuercas negras con asiento cónico de 60 grados listo para instalación directa. Actualice ahora la apariencia de su vehículo y la seguridad que busca.</li></ul>
+    </div>
+    <aside class="buy-box" aria-label="Panel de acción Amazon solo visual">
+      <span class="price">$39.99</span>
+      <p class="stock">En stock</p>
+      <p class="delivery-note">Entrega GRATUITA disponible. Este panel es una maqueta de listado en el que no se puede hacer clic.</p>
+      <label for="qty-new">Cantidad</label>
+      <select id="qty-new" aria-label="Nueva cantidad de maquetas"><option>1</option></select>
+      <button class="amazon-action amazon-cart" type="button">añadir a la cesta</button>
+      <button class="amazon-action amazon-buy" type="button">Comprar ahora</button>
+    </aside>
+  </div>
+  <div class="ebc-stack">
+    <div class="ebc-module"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="Módulo de marca EBC de nuevo estilo"></div>
+    <div class="ebc-module"><img src="Revolution/EBC/New EBC/8fae7bda-deda-4ab8-b719-ba1de54ad308.__CR0,0,2021,1250_PT0_SX970_V1___.jpg" alt="Módulo de montaje EBC de nuevo estilo"></div>
+    <div class="ebc-indexable"><h4>Tuercas para vehículos Ford y Lincoln</h4><h5>Compatible con los siguientes modelos Ford.</h5><p>Ford Bronco Sport 2021+: Ford Bronco Sport 2021, Ford Bronco Sport 2022, Ford Bronco Sport 2023, Ford Bronco Sport 2024, Ford Bronco Sport 2025</p><p>Ford EcoSport 2018-2022: Ford EcoSport 2018, Ford EcoSport 2019, Ford EcoSport 2020, Ford EcoSport 2021, Ford EcoSport 2022</p><p>Ford Escape 2021+: Ford Escape 2021, Ford Escape 2022, Ford Escape 2023, Ford Escape 2024, Ford Escape 2025</p><p>Ford Fusion 2006-2020: Ford Fusion 2006, Ford Fusion 2007, Ford Fusion 2008, Ford Fusion 2009, Ford Fusion 2010, Ford Fusion 2011, Ford Fusion 2012, Ford Fusion 2013, Ford Fusion 2014, Ford Fusion 2015, Ford Fusion 2016, Ford Fusion 2017, Ford Fusion 2018, Ford Fusión 2019, Ford Fusión 2020</p><p>Ford Ranger 2021+: Ford Ranger 2021, Ford Ranger 2022, Ford Ranger 2023, Ford Ranger 2024, Ford Ranger 2025</p><h5>Compatible con los siguientes modelos de Lincoln.</h5><p>Lincoln Corsair 2020+: Lincoln Corsair 2020, Lincoln Corsair 2021, Lincoln Corsair 2022, Lincoln Corsair 2023, Lincoln Corsair 2024, Lincoln Corsair 2025</p></div>
+    <div class="ebc-inline"><img src="Revolution/EBC/New EBC/b4a11566-8905-43c2-a612-ee09aabcf8a9.__CR2,0,1076,1076_PT0_SX300_V1___.jpg" alt="Especificaciones de las tuercas verdes"><div><h4>Un juego de tuercas de seguridad diseñado con precisión</h4><p>Como empresa de propiedad estadounidense, ofrecemos una calidad de ingeniería de precisión en la que puede confiar. Su pedido llega con un juego completo de 20 tuercas. Diseñado para ruedas OEM. Reemplaza las piezas de fábrica CV6Z-1012-C y 611-303.</p></div></div>
+    <div class="ebc-panel"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="Módulo de pulverización de sal EBC de nuevo estilo"><div class="ebc-copy-card"><h4>Prueba estricta de pulverización de sal de una pieza y 72 horas</h4><p>Diseñadas con una construcción superior de una sola pieza, nuestras tuercas superan en rendimiento y duran más que los diseños OEM. Se someten a una rigurosa prueba de niebla salina de 72 horas, lo que garantiza una resistencia excepcional al óxido y la corrosión. Esto garantiza un acabado duradero para todo clima para mayor seguridad y tranquilidad.</p></div></div>
+  </div>
+</div></div></div><div class="comparison-handle" data-comparison-handle role="separator" aria-label="Arrastre para comparar anuncios antiguos y nuevos" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"><span></span></div></div></div></article></div></section>
+  </main>
+
+  <div class="chart-modal" id="chartModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="chartModalTitle">
+    <div class="chart-modal-panel">
+      <button class="chart-modal-close" type="button" aria-label="Cerrar gráfico ampliado">&times;</button>
+      <h3 id="chartModalTitle"></h3>
+      <canvas id="chartModalCanvas" role="img" aria-label="Vista ampliada del gráfico de rendimiento del listado de automóviles seleccionado."></canvas>
+    </div>
+  </div>
+
+  <footer><div class="container"><p>© 2026 Matías Gaglio. Portafolio personal.</p></div></footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ duration: 800, once: true, offset: 50 });
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      if (navToggle && navMenu) navToggle.addEventListener('click', () => {
+        document.querySelector('.navbar').classList.toggle('nav-open');
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
+      });
+      const selectGalleryImage = (thumb) => {
+        const gallery = thumb.closest('.amazon-gallery');
+        const mainImage = gallery?.querySelector('.amazon-main-image');
+        if (!gallery || !mainImage) return;
+        mainImage.src = thumb.currentSrc || thumb.src;
+        mainImage.alt = thumb.alt.replace('thumbnail', 'product image');
+        gallery.querySelectorAll('.amazon-thumbs img').forEach((img) => img.classList.remove('is-active'));
+        thumb.classList.add('is-active');
+      };
+      document.querySelectorAll('[data-comparison-frame]').forEach((frame) => {
+        const handle = frame.querySelector('[data-comparison-handle]');
+        const layers = frame.querySelectorAll('.comparison-layer');
+        const syncFrameWidth = () => {
+          frame.style.setProperty('--frame-width', `${frame.getBoundingClientRect().width}px`);
+        };
+        const applySplit = (percent) => {
+          frame.style.setProperty('--split', `${percent}%`);
+          frame.style.setProperty('--split-negative', `${-percent}%`);
+          handle?.setAttribute('aria-valuenow', Math.round(percent));
+        };
+        const setSplit = (clientX) => {
+          const rect = frame.getBoundingClientRect();
+          const percent = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+          applySplit(percent);
+        };
+        const syncHeight = () => {
+          const maxHeight = Math.max(...Array.from(layers, (layer) => layer.scrollHeight));
+          frame.style.minHeight = `${maxHeight}px`;
+        };
+        syncFrameWidth();
+        syncHeight();
+        frame.querySelectorAll('img').forEach((img) => img.addEventListener('load', syncHeight, { once: true }));
+        window.addEventListener('resize', () => {
+          syncFrameWidth();
+          syncHeight();
+        });
+        handle?.addEventListener('pointerdown', (event) => {
+          event.preventDefault();
+          handle.setPointerCapture?.(event.pointerId);
+          setSplit(event.clientX);
+        });
+        handle?.addEventListener('pointermove', (event) => {
+          if (!handle.hasPointerCapture?.(event.pointerId)) return;
+          setSplit(event.clientX);
+        });
+        handle?.addEventListener('keydown', (event) => {
+          if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+          event.preventDefault();
+          const current = parseFloat(handle.getAttribute('aria-valuenow') || '50');
+          const next = event.key === 'Home' ? 0 : event.key === 'End' ? 100 : current + (event.key === 'ArrowLeft' ? -5 : 5);
+          const percent = Math.max(0, Math.min(100, next));
+          applySplit(percent);
+        });
+      });
+      document.addEventListener('pointerdown', (event) => {
+        const thumb = event.target.closest?.('.amazon-thumbs img');
+        if (!thumb) return;
+        event.stopPropagation();
+        selectGalleryImage(thumb);
+      }, true);
+      document.addEventListener('click', (event) => {
+        const thumb = event.target.closest?.('.amazon-thumbs img');
+        if (!thumb) return;
+        event.preventDefault();
+        event.stopPropagation();
+        selectGalleryImage(thumb);
+      }, true);
+      document.addEventListener('keydown', (event) => {
+        const thumb = event.target.closest?.('.amazon-thumbs img');
+        if (!thumb || (event.key !== 'Enter' && event.key !== ' ')) return;
+        event.preventDefault();
+        event.stopPropagation();
+        selectGalleryImage(thumb);
+      }, true);
+      const traffic = {"Organic Traffic":[49900,57280],"Paid Search Traffic":[15434,33861],"Other Traffic":[1042747,1231898],"Total Traffic":[1108081,1323039]};
+      const chartColor = '#4FD1C5';
+      Chart.defaults.color = 'rgba(255,255,255,.62)';
+      Chart.defaults.borderColor = 'rgba(255,255,255,.08)';
+      const weeklyLabels = ["Jul 05","Jul 12","Jul 19","Jul 26","Aug 02","Aug 09","Aug 16","Aug 23","Aug 30","Sep 06","Sep 13","Sep 20","Sep 27","Oct 04","Oct 11","Oct 18","Oct 25","Nov 01","Nov 08","Nov 15","Nov 22","Nov 29","Dec 06","Dec 13","Dec 20","Dec 27","Jan 03","Jan 10","Jan 17","Jan 24","Jan 31","Feb 07","Feb 14","Feb 21","Feb 28","Mar 07","Mar 14","Mar 21","Mar 28","Apr 04","Apr 11","Apr 18","Apr 25","May 02","May 09","May 16","May 23","May 30","Jun 06","Jun 13","Jun 20","Jun 27"];
+      const chartConfigs = {
+        trafficTotalChart: { type:'bar', data: { labels:['Earlier period','Refreshed period'], datasets:[{ label:'Total Traffic', data: traffic['Total Traffic'], backgroundColor:['rgba(255,255,255,.22)','rgba(79,209,197,.72)'] }] }, options: { responsive:true, plugins:{legend:{display:false}}, animation:{duration:1100, easing:'easeOutQuart'} } },
+        trafficMixChart: { type:'bar', data: { labels:['Organic','Paid Search','Other','Total'], datasets:[{ label:'Earlier', data:[traffic['Organic Traffic'][0],traffic['Paid Search Traffic'][0],traffic['Other Traffic'][0],traffic['Total Traffic'][0]], backgroundColor:'rgba(255,255,255,.22)' },{ label:'Refreshed', data:[traffic['Organic Traffic'][1],traffic['Paid Search Traffic'][1],traffic['Other Traffic'][1],traffic['Total Traffic'][1]], backgroundColor:'rgba(79,209,197,.72)' }] }, options: { responsive:true, scales:{x:{ticks:{maxRotation:0}}}, animation:{duration:1100, easing:'easeOutQuart'} } },
+        conversionChart: { type:'line', data: { labels:weeklyLabels, datasets:[{ label:'Conversion rate %', data:[7.58,7.09,7.86,8.29,8.02,6.48,6.67,6.33,8.64,8.46,9.66,10.13,8.02,8.66,5.88,8.17,6.0,8.03,6.74,6.73,6.99,7.46,7.26,6.07,6.78,5.49,5.86,7.04,7.0,6.89,6.21,8.74,9.03,8.23,9.05,8.7,9.8,10.08,8.58,7.24,8.14,10.01,8.03,8.7,9.41,6.57,7.69,8.32,8.56,5.77,2.95,7.59], borderColor:chartColor, backgroundColor:'rgba(79,209,197,.15)', pointRadius:1.5, tension:.28, fill:true }] }, options: { responsive:true, animation:{duration:1200, easing:'easeOutQuart'} } },
+        retailChart: { type:'line', data: { labels:weeklyLabels, datasets:[{ label:'Retail sales USD', data:[100914,106387,102720,106942,112350,103632,105049,109282,114478,107307,105089,111525,115032,123833,116577,120050,111322,109777,117515,126590,137333,119883,108127,114817,120694,93292,99754,112539,116849,109034,102464,124255,134441,142834,144430,136407,158700,145219,154521,160868,158685,152436,160172,158399,162999,162416,155734,150106,157088,141702,140612,146513], borderColor:chartColor, backgroundColor:'rgba(79,209,197,.12)', pointRadius:1.5, tension:.25, fill:true }] }, options: { responsive:true, animation:{duration:1200, easing:'easeOutQuart'} } }
+      };
+      const chartInstances = {};
+      const cloneChartConfig = (config) => JSON.parse(JSON.stringify(config));
+      const createChart = (canvas) => {
+        if (!canvas || chartInstances[canvas.id]) return;
+        chartInstances[canvas.id] = new Chart(canvas, cloneChartConfig(chartConfigs[canvas.id]));
+      };
+      const chartCards = document.querySelectorAll('.chart-card');
+      chartCards.forEach((card) => {
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `Open ${card.querySelector('h3')?.textContent || 'chart'} full screen`);
+      });
+      if ('IntersectionObserver' in window) {
+        const chartObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            createChart(entry.target.querySelector('canvas'));
+            observer.unobserve(entry.target);
+          });
+        }, { threshold:.35 });
+        chartCards.forEach((card) => chartObserver.observe(card));
+      } else {
+        document.querySelectorAll('.chart-card canvas').forEach(createChart);
+      }
+      const chartModal = document.getElementById('chartModal');
+      const chartModalTitle = document.getElementById('chartModalTitle');
+      const chartModalCanvas = document.getElementById('chartModalCanvas');
+      const chartModalClose = chartModal?.querySelector('.chart-modal-close');
+      let expandedChart = null;
+      const closeChartModal = () => {
+        chartModal?.classList.remove('is-open');
+        chartModal?.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('chart-modal-open');
+        expandedChart?.destroy();
+        expandedChart = null;
+      };
+      const openChartModal = (card) => {
+        const canvas = card.querySelector('canvas');
+        const config = chartConfigs[canvas?.id];
+        if (!canvas || !config || !chartModal || !chartModalCanvas) return;
+        createChart(canvas);
+        expandedChart?.destroy();
+        chartModalTitle.textContent = card.querySelector('h3')?.textContent || '';
+        const modalConfig = cloneChartConfig(config);
+        modalConfig.options = { ...modalConfig.options, maintainAspectRatio:false, animation:{duration:900, easing:'easeOutQuart'} };
+        chartModal.classList.add('is-open');
+        chartModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('chart-modal-open');
+        expandedChart = new Chart(chartModalCanvas, modalConfig);
+        chartModalClose?.focus();
+      };
+      chartCards.forEach((card) => {
+        card.addEventListener('click', () => openChartModal(card));
+        card.addEventListener('keydown', (event) => {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+          openChartModal(card);
+        });
+      });
+      chartModalClose?.addEventListener('click', closeChartModal);
+      chartModal?.addEventListener('click', (event) => {
+        if (event.target === chartModal) closeChartModal();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && chartModal?.classList.contains('is-open')) closeChartModal();
+      });
+    });
+  </script>
+  <script src="software-stack.js" defer></script>
+  <script src="accessibility.js" defer></script>
+</body>
+</html>
+

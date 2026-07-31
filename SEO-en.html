@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChatMatias - Portfolio SEO</title>
+    
+    <link rel="stylesheet" href="style.css" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<style>
+.language-switch{position:fixed;top:14px;left:14px;z-index:10000;display:grid;place-items:center;
+min-width:42px;height:42px;padding:0 10px;border:1px solid rgba(127,127,127,.35);border-radius:999px;
+background:rgba(15,15,18,.88);color:#fff!important;font:700 12px/1 system-ui,sans-serif;
+letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(10px)}
+.language-switch:focus-visible{outline:3px solid #66a3ff;outline-offset:3px}
+</style>
+</head>
+<body><a class="language-switch" href="SEO-es.html" hreflang="es" aria-label="Ver en español">ES</a>
+
+    <header class="navbar">
+      <div class="container">
+        <a href="index-en.html" class="nav-logo">Matías Gaglio.</a> 
+        
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index-en.html">Home</a></li>
+            <li><a href="ecommerce-en.html">Ecommerce</a></li>
+          <li><a href="Articles-en.html">Articles</a></li>
+            <li><a href="creatives-en.html">Creatives</a></li>
+            <li><a href="consultora-en.html">Opinion Consultant</a></li>
+            <li><a href="otros-en.html">Other projects</a></li>
+            <li><a href="SEO-en.html" class="accent">ChatMatias</a></li> <li><a href="sobre-mi-en.html">About me</a></li>
+            <li><a href="#" aria-label="Change language to English">EN | IN</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="chat-page-wrapper">
+
+        <div id="chat-container">
+            
+            <div id="chat-historial">
+                <div id="empty-state">
+                    <h1>ChatMatias</h1>
+                    <div class="suggestion-chips">
+                        <button class="suggestion-chip" data-prompt="proyectos">See projects</button>
+                        <button class="suggestion-chip" data-prompt="habilidades">See skills</button>
+                        <button class="suggestion-chip" data-prompt="blender">Projects with Blender</button>
+                        <button class="suggestion-chip" data-prompt="contacto">Contact info</button>
+                    </div>
+                    </div>
+            </div>
+            
+            <form id="chat-form">
+                <input type="text" id="chat-input" placeholder="Write your query here..." autocomplete="off">
+                <button type="submit" aria-label="Send">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+            
+            <div id="chat-footer-hint">
+                 <p>
+                   Writes "<span class="accent">aid</span>" to see all commands.
+                 </p>
+            </div>
+            
+        </div>
+
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        
+        // 1. Inicializa las animaciones AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+
+        // 2. CÓDIGO DEL MENÚ HAMBURGUESA
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        if (navToggle && navMenu) {
+          navToggle.addEventListener('click', () => {
+            document.querySelector('.navbar').classList.toggle('nav-open');
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            navToggle.setAttribute('aria-label', isExpanded ? 'Abrir menú' : 'Cerrar menú');
+          });
+        }
+
+        // 3. CÓDIGO DEL CARRUSEL (para otras páginas)
+        const carousel = document.querySelector('.carousel');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        if (carousel && prevBtn && nextBtn) {
+          const scrollStep = () => {
+            const firstItem = carousel.querySelector('.carousel-item, .testimonio-card');
+            if (firstItem) {
+              const itemWidth = firstItem.offsetWidth;
+              const style = window.getComputedStyle(carousel);
+              const gap = parseFloat(style.gap) || 24;
+              return itemWidth + gap;
+            }
+            return carousel.clientWidth * 0.8;
+          };
+          nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollStep(), behavior: 'smooth' }));
+          prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollStep(), behavior: 'smooth' }));
+        }
+
+        // 4. LÓGICA DE FILTRADO (para creatives.html)
+        const chips = document.querySelectorAll('.filter-chip');
+        const items = document.querySelectorAll('.grid-item');
+        if (chips.length > 0 && items.length > 0) {
+          chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+              chips.forEach(c => c.classList.remove('is-active'));
+              chip.classList.add('is-active');
+              const filter = chip.dataset.filter;
+              items.forEach(item => {
+                item.style.display = (filter === 'all' || item.classList.contains('cat-' + filter)) ? '' : 'none';
+              });
+            });
+          });
+        }
+
+        // 5. LÓGICA DE LIGHTBOX (para creatives.html)
+        const lb = document.getElementById('lightbox');
+        const lbContent = document.getElementById('lightbox-content');
+        const closeBtn = document.getElementById('lightbox-close');
+        let lastFocusedItem = null;
+        if (lb && lbContent && closeBtn) {
+          function openLightbox(html, triggerElement) {
+            const oldContent = lbContent.querySelector('img, .video-embed');
+            if (oldContent) oldContent.remove();
+            lbContent.insertAdjacentHTML('beforeend', html);
+            lb.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            closeBtn.focus();
+            lastFocusedItem = triggerElement;
+          }
+          function closeLightbox() {
+            lb.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            const iframe = lbContent.querySelector('iframe');
+            if (iframe) {
+              iframe.src = iframe.src.replace("&autoplay=1", "");
+              iframe.remove();
+            }
+            if (lastFocusedItem) {
+              lastFocusedItem.focus();
+              lastFocusedItem = null;
+            }
+          }
+          closeBtn.addEventListener('click', closeLightbox);
+          lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+          document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && lb.getAttribute('aria-hidden') === 'false') closeLightbox();
+          });
+          items.forEach(item => {
+            item.addEventListener('click', (e) => {
+              e.preventDefault();
+              const videoId = item.dataset.videoId;
+              const fullSrc = item.dataset.fullSrc;
+              const altText = item.querySelector('img.thumb').alt.replace('Miniatura ', '');
+              if (videoId) {
+                const videoHtml = `<div class="video-embed"><iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" title="Video: ${altText}" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`;
+                openLightbox(videoHtml, item);
+              } else if (fullSrc) {
+                const imgHtml = `<img src="${fullSrc}" alt="${altText}" />`;
+                openLightbox(imgHtml, item);
+              }
+            });
+          });
+        }
+        
+        // ===================================
+        // 6. LÓGICA DEL CHAT (de esta página)
+        // ===================================
+        const chatForm = document.getElementById('chat-form');
+        const chatInput = document.getElementById('chat-input');
+        const chatHistorial = document.getElementById('chat-historial');
+        const emptyStateDiv = document.getElementById('empty-state');
+        const suggestionChips = document.querySelectorAll('.suggestion-chip');
+
+        if (chatForm && chatInput && chatHistorial) {
+          
+            // --- DATOS DEL "ÍNDICE" ---
+            const miIndiceSEO = {
+                proyectos: [
+                    { "id": "optimizacion_roas_portfolio", "titulo": "Optimización Integral del ROAS del Portfolio", "descripcion": "Escalé la eficiencia publicitaria global...", "rol": "Amazon PPC Strategist", "tags": ["amazon ads", "ppc", "roas", "bid optimization", "campaign segmentation", "data-driven"], "tareas": ["Rediseño total de estructuras...", "Implementación de bid rules...", "Análisis de performance cruzado..."], "resultados": "+52% ROAS | +35% ventas | +18% CTR" },
+                    { "id": "growth_tracking_mensual", "titulo": "Seguimiento Mensual y Crecimiento Sostenido", "descripcion": "Diseñé un modelo de seguimiento continuo...", "rol": "Ecommerce Performance Analyst", "tags": ["tracking", "kpi", "growth", "roi", "reporting", "profitability"], "tareas": ["Desarrollo de dashboards mensuales...", "Análisis de variaciones intermensuales...", "Optimización continua de presupuesto..."], "resultados": "+220% ventas en 3 meses | +20% CTR | +50% retención" },
+                    { "id": "fall_mats_toilet_campaigns", "titulo": "Campañas Estacionales de Fall Mats y Raised Toilet Seats", "descripcion": "Reestructuré campañas con segmentación refinada...", "rol": "Performance Marketing Specialist", "tags": ["amazon ads", "toilet seats", "fall mats", "seasonality", "roi", "acos"], "tareas": ["Ajuste de bids según elasticidad...", "Optimización de títulos y bullets...", "Análisis cruzado de tráfico..."], "resultados": "+20% ROI | -33% Ad Spend | 83% tráfico orgánico" },
+                    { "id": "ab_testing_titles_bullets", "titulo": "A/B Testing de Titles y Bullets Basado en Datos", "descripcion": "Desarrollé un framework algorítmico...", "rol": "SEO Copy Strategist", "tags": ["a/b testing", "listing optimization", "conversion rate", "seo", "amazon algorithm"], "tareas": ["Diseño de estructuras de bullet points...", "Implementación de testeo controlado...", "Medición de uplift en CTR y CVR"], "resultados": "+120% conversión global | +30% tráfico orgánico" },
+                    { "id": "render_automation_blender", "titulo": "Automatización de Renders 3D en Blender", "descripcion": "Desarrollé un algoritmo interno en Blender...", "rol": "Visual Optimization Engineer", "tags": ["blender", "3d rendering", "automation", "product visuals", "efficiency"], "tareas": ["Creación de script paramétrico...", "Automatización de cámara, luz...", "Integración con pipeline de A+ Content"], "resultados": "-70% tiempo de render | +40% calidad visual percibida" },
+                    { "id": "seasonal_hurricane_campaigns", "titulo": "Campañas Localizadas por Huracán Florida 2024", "descripcion": "Ejecuté campañas PPC geolocalizadas...", "rol": "Localized Ads Planner", "tags": ["geotargeting", "amazon ppc", "seasonal marketing", "florida", "weather-triggered ads"], "tareas": ["Creación de audiencias localizadas...", "Optimización de ads según condiciones...", "Refresco visual del A+..."], "resultados": "+85% CTR | +40% ventas regionales" },
+                    { "id": "sentiment_based_images_ai", "titulo": "Imágenes Basadas en Sentimiento del Cliente (AI)", "descripcion": "Analicé miles de reseñas con Shulex AI...", "rol": "Creative Data Strategist", "tags": ["ai sentiment analysis", "ai", "creative optimization", "image testing", "conversion optimization"], "tareas": ["Análisis semántico de reseñas...", "Creación de briefs visuales...", "Implementación de variaciones visuales..."], "resultados": "+38% conversión | +26% CTR | +12% satisfacción post-compra" },
+                    { "id": "brand_visual_coherence", "titulo": "Coherencia Visual y Brand Architecture", "descripcion": "Estandaricé la línea gráfica de todos los SKUs...", "rol": "Brand Design Coordinator", "tags": ["branding", "visual identity", "design system", "color theory", "ux consistency"], "tareas": ["Revisión de más de 200 imágenes...", "Creación de plantilla unificada...", "Optimización estética para CTR..."], "resultados": "+25% CTR global | -15% rebote visual" },
+                    { "id": "keyword_algorithm_refinement", "titulo": "Refinamiento Algorítmico de Keywords", "descripcion": "Desarrollé un modelo predictivo...", "rol": "Search Data Engineer", "tags": ["helium10", "keyword research", "data modeling", "a9 optimization", "predictive analytics", "seo"], "tareas": ["Modelado estadístico de correlación...", "Clasificación semántica por clúster...", "Optimización del backend keyword..."], "resultados": "+60% visibilidad orgánica | +15% share of voice" },
+                    { "id": "funnel_segmentation_model", "titulo": "Modelo de Segmentación de Funnel y Customer Path", "descripcion": "Implementé una estructura de campañas segmentadas...", "rol": "Funnel Architect", "tags": ["customer journey", "funnel optimization", "audience segmentation", "remarketing", "amazon dsp"], "tareas": ["Diseño de campañas diferenciadas...", "Uso de remarketing dinámico...", "Medición de conversion lift..."], "resultados": "+45% conversión | +33% eficiencia de inversión" }
+                ],
+                habilidades: {
+                    "auditoria_seo": { "nombre": "Auditoría SEO Técnica", "descripcion": "Capacidad para identificar y solucionar problemas...", "tags": ["seo", "seo tecnico", "auditoria", "core web vitals", "crawling"], "herramientas_clave": ["Screaming Frog", "Sitebulb", "Google Search Console"] },
+                    "keyword_research": { "nombre": "Investigación de Palabras Clave", "descripcion": "Especialización en la identificación de términos...", "tags": ["seo", "keywords", "keyword research", "estrategia", "contenidos"], "herramientas_clave": ["Ahrefs", "Semrush", "Google Keyword Planner"] },
+                    "seo_onpage": { "nombre": "SEO On-Page y Contenidos", "descripcion": "Optimización de elementos internos...", "tags": ["seo", "on-page", "contenidos", "redaccion", "meta tags"], "herramientas_clave": ["Yoast SEO", "Rank Math", "Surfer SEO"] },
+                    "link_building": { "nombre": "Link Building (Construcción de Enlaces)", "descripcion": "Desarrollo e implementación de estrategias...", "tags": ["seo", "off-page", "link building", "backlinks", "outreach"], "herramientas_clave": ["Ahrefs", "Semrush", "Moz Link Explorer"] }
+                },
+                cv: {
+                    nombre: "Matías Gaglio",
+                    email: "matiasgaglio@gmail.com",
+                    linkedin: "https://www.linkedin.com/in/matiasgaglio/",
+                    resumen: "Especialista en Marketing Digital y Ecommerce con foco en performance, análisis de datos y optimización algorítmica."
+                }
+            };
+            
+            // --- Función para enviar consulta (usada por form y chips) ---
+            function enviarConsulta(comando) {
+                if (!comando) return;
+                if (emptyStateDiv && emptyStateDiv.style.display !== 'none') {
+                    emptyStateDiv.style.display = 'none';
+                }
+                agregarMensaje(comando, 'user');
+                const respuesta = procesarComando(comando);
+                setTimeout(() => {
+                    agregarMensaje(respuesta.html, respuesta.tipo);
+                }, 500);
+            }
+
+            // --- Event Listener del Formulario ---
+            chatForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const comando = chatInput.value.trim();
+                enviarConsulta(comando);
+                chatInput.value = '';
+            });
+
+            // --- Event Listener para Chips de Sugerencia ---
+            suggestionChips.forEach(chip => {
+                chip.addEventListener('click', () => {
+                    const comando = chip.dataset.prompt;
+                    chatInput.value = comando; // Opcional: ponerlo en el input
+                    enviarConsulta(comando);
+                });
+            });
+
+            // --- Función para agregar mensajes al DOM ---
+            function agregarMensaje(contenido, remitente) {
+                const bubble = document.createElement('div');
+                bubble.className = `message-bubble ${remitente}`;
+                let iconText = 'M';
+                if (remitente === 'user') iconText = 'Tú';
+                bubble.innerHTML = `
+                    <div class="message-icon">${iconText}</div>
+                    <div class="message-content">
+                        ${contenido}
+                    </div>
+                `;
+                chatHistorial.appendChild(bubble);
+                chatHistorial.scrollTop = chatHistorial.scrollHeight;
+            }
+
+            // --- PROCESADOR DE COMANDOS (Cerebro) ---
+            function formatProyecto(proyecto) {
+                let html = `
+                    <span class="highlight">Proyecto:</span> ${proyecto.titulo}<br>
+                    <span class="secondary">${proyecto.descripcion}</span><br>
+                    <span class="highlight">Rol:</span> ${proyecto.rol}<br>
+                    <span class="highlight">Tareas Clave:</span><ul>`;
+                proyecto.tareas.forEach(tarea => { html += `<li>${tarea}</li>`; });
+                html += `</ul><span class="highlight">Resultados:</span> ${proyecto.resultados}`;
+                return html;
+            }
+
+            function formatHabilidad(habilidad) {
+                return `
+                    <span class="highlight">Habilidad:</span> ${habilidad.nombre}<br>
+                    <span class="secondary">${habilidad.descripcion}</span><br>
+                    <span class="highlight">Herramientas Clave:</span> ${habilidad.herramientas_clave.join(', ')}`;
+            }
+
+            function buscar(termino) {
+                const terminoLimpio = termino.toLowerCase();
+                const proyectoDirecto = miIndiceSEO.proyectos.find(p => p.id.toLowerCase() === terminoLimpio);
+                if (proyectoDirecto) return { html: formatProyecto(proyectoDirecto), tipo: 'bot' };
+                const habilidadDirecta = miIndiceSEO.habilidades[terminoLimpio];
+                if (habilidadDirecta) return { html: formatHabilidad(habilidadDirecta), tipo: 'bot' };
+
+                const stopWords = ['y', 'e', 'de', 'para', 'con', 'el', 'la', 'los', 'las'];
+                const terminosBusqueda = terminoLimpio.split(' ').filter(t => t.length > 0 && !stopWords.includes(t));
+                let resultados = [];
+                
+                miIndiceSEO.proyectos.forEach(p => {
+                    let contenido = [p.titulo, p.descripcion, ...p.tags].join(' ').toLowerCase();
+                    const allTermsMatch = terminosBusqueda.every(t => contenido.includes(t));
+                    if (allTermsMatch) resultados.push({ tipo: 'Proyecto', id: p.id });
+                });
+                
+                Object.entries(miIndiceSEO.habilidades).forEach(([key, h]) => {
+                    let contenido = [h.nombre, h.descripcion, ...h.tags].join(' ').toLowerCase();
+                    const allTermsMatch = terminosBusqueda.every(t => contenido.includes(t));
+                    if (allTermsMatch) resultados.push({ tipo: 'Habilidad', id: key });
+                });
+
+                let html = '';
+                if (resultados.length === 0) {
+                    html = `No encontré nada que incluya <span class="accent">todos</span> esos términos a la vez ("<span class="accent">${terminosBusqueda.join('", "')}</span>"). Prueba con una búsqueda más simple.`;
+                    return { html, tipo: 'bot' };
+                } else {
+                    const primerResultado = resultados[0];
+                    const totalResultados = resultados.length;
+                    html = `¡Perfecto! Encontré <span class="accent">${totalResultados}</span> ${totalResultados === 1 ? 'resultado' : 'resultados'} que coinciden con "<span class="accent">${termino}</span>". El más relevante es:<br><br>`;
+                    
+                    if (primerResultado.tipo === 'Proyecto') {
+                        const proyecto = miIndiceSEO.proyectos.find(p => p.id === primerResultado.id);
+                        html += formatProyecto(proyecto);
+                    } else {
+                        const habilidad = miIndiceSEO.habilidades[primerResultado.id];
+                        html += formatHabilidad(habilidad);
+                    }
+                    if (totalResultados > 1) {
+                        html += `<br><br><span class="secondary">También encontré ${totalResultados - 1} más. Puedes ser más específico o ver la lista completa con 'proyectos' y 'habilidades'.</span>`;
+                    }
+                    return { html, tipo: 'bot' };
+                }
+            }
+
+            function procesarComando(comando) {
+                let html = '';
+                let tipo = 'bot';
+                const comandoLimpio = comando.toLowerCase().trim();
+                const args = comandoLimpio.split(' ');
+                const cmd = args[0];
+
+                switch (cmd) {
+                    case 'hola':
+                    case 'que tal':
+                        html = `
+                        ¡Hola! Soy ChatMatias, un asistente interactivo para este portfolio.<br>
+                        Puedes usar comandos simples para navegar mi experiencia:
+                        <ul>
+                            <li>"<span class="accent">proyectos</span>" - Para ver una lista de mis trabajos.</li>
+                            <li>"<span class="accent">habilidades</span>" - Para listar mis competencias clave.</li>
+                            <li>"<span class="accent">seo y keyword</span>" - Escribe términos clave para buscar.</li>
+                            <li>"<span class="accent">ayuda</span>" - Para ver todos los comandos.</li>
+                        </ul>`;
+                        break;
+                    case 'ayuda':
+                        html = `
+                        <span class="highlight">Comandos Disponibles:</span>
+                        <ul>
+                            <li><span class="accent">proyectos</span> - Lista los títulos de todos los proyectos.</li>
+                            <li><span class="accent">habilidades</span> - Lista todas las habilidades.</li>
+                            <li><span class="accent">[termino]</span> - Escribe cualquier palabra (ej: 'ppc', 'ai', 'blender') para buscar.</li>
+                            <li><span class="accent">[ID]</span> - Escribe el ID de un proyecto (ej: 'optimizacion_roas_portfolio') para ver sus detalles.</li>
+                            <li><span class="accent">whoami</span> - Muestra un breve resumen de mi perfil.</li>
+                            <li><span class="accent">contacto</span> - Muestra mi información de contacto.</li>
+                            <li><span class="accent">limpiar</span> - Limpia la pantalla.</li>
+                        </ul>`;
+                        break;
+                    case 'limpiar':
+                        chatHistorial.innerHTML = '';
+                        if (emptyStateDiv) emptyStateDiv.style.display = 'flex';
+                        return { html: 'Chat reiniciado.', tipo: 'bot' };
+                    case 'proyectos':
+                        html = '<span class="highlight">Proyectos Indexados:</span><ul>';
+                        miIndiceSEO.proyectos.forEach(p => {
+                            html += `<li>${p.titulo}</li>`;
+                        });
+                        html += '</ul><span class="secondary">Puedes escribirme un término clave (ej: <span class="accent">blender</span>) para ver los detalles.</span>';
+                        break;
+                    case 'habilidades':
+                        html = '<span class="highlight">Habilidades Indexadas:</span><ul>';
+                        Object.keys(miIndiceSEO.habilidades).forEach(key => {
+                            html += `<li>${miIndiceSEO.habilidades[key].nombre}</li>`;
+                        });
+                        html += '</ul><span class="secondary">Escribe el ID (ej: <span class="accent">keyword_research</span>) para ver el detalle.</span>';
+                        break;
+                    case 'whoami':
+                        html = `<span class="highlight">${miIndiceSEO.cv.nombre}</span><br><span class="secondary">${miIndiceSEO.cv.resumen}</span>`;
+                        break;
+                    case 'contacto':
+                        html = `
+                        <span class="highlight">Información de Contacto:</span>
+                        <ul>
+                            <li>Email: <a href="mailto:${miIndiceSEO.cv.email}" style="color: var(--color-acento);">${miIndiceSEO.cv.email}</a></li>
+                            <li>LinkedIn: <a href="${miIndiceSEO.cv.linkedin}" target="_blank" style="color: var(--color-acento);">${miIndiceSEO.cv.linkedin}</a></li>
+                        </ul>`;
+                        break;
+                    default:
+                        return buscar(comando);
+                }
+                return { html, tipo };
+            }
+        } // Fin del if (chatForm)
+
+      });
+    </script>
+
+  <script src="accessibility.js" defer></script>
+</body>
+</html>

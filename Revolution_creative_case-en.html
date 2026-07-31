@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amazon Listing Refresh Case Study | Matias Gaglio</title>
+  <meta name="description" content="Amazon listing optimization case study: image system, SEO structure, EBC, KPIs, and a full before-after Amazon mockup." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .listing-case section { padding-top: 5rem; padding-bottom: 5rem; }
+    .listing-case .page-hero { padding-top: 10rem; }
+    .eyebrow { color: var(--color-acento); text-transform: uppercase; font-size: .82rem; font-weight: 800; letter-spacing: .08em; margin-bottom: 1rem; }
+    .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .kpi-summary article, .process-explanation article, .kpi-visual-plan article, .principle-grid article, .workflow-steps article, .amazon-mockup, .chart-card { background: var(--color-superficie); border: 1px solid rgba(var(--color-acento-rgb), .18); border-radius: 8px; padding: 1.25rem; }
+    .principle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-content:start; }
+    .principle-grid article { min-width:0; }
+    .principle-grid h3, .workflow-steps h3, .kpi-visual-plan h3 { margin:0 0 .75rem; font-size:clamp(1rem, 1.2vw, 1.25rem); line-height:1.18; text-align:left; overflow-wrap:normal; word-break:normal; hyphens:none; }
+    .principle-grid p, .workflow-steps p, .kpi-visual-plan p { margin:0; font-size:.9rem; line-height:1.45; color:var(--color-texto-sec); }
+    .workflow-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .workflow-steps article { min-height:156px; display:flex; flex-direction:column; justify-content:space-between; }
+    .workflow-steps h3 { white-space:nowrap; }
+    .kpi-number { display:block; color: var(--color-acento); font-size: 2rem; font-weight: 900; line-height: 1; }
+    .kpi-label { color: var(--color-texto-sec); font-weight: 700; font-size: .9rem; }
+    .chart-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .chart-card { cursor:zoom-in; transition:border-color .2s ease, transform .2s ease; }
+    .chart-card:hover, .chart-card:focus-visible { border-color:rgba(var(--color-acento-rgb), .58); transform:translateY(-2px); outline:none; }
+    .chart-card h3 { font-size: 1.1rem; margin-top: 0; text-align:left; }
+    .chart-card canvas { width:100%; min-height: 260px; }
+    .image-row { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:1rem; margin-top:1.5rem; }
+    .image-row.single-visual { grid-template-columns:minmax(0, 1fr); }
+    .image-row.single-visual img { max-height:520px; object-fit:contain; }
+    .image-row img, .amazon-gallery img, .ebc-stack img { width:100%; height:100%; object-fit:cover; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; }
+    .wire-diagram { display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; margin-top:1.5rem; }
+    .wire-diagram span { background: rgba(var(--color-acento-rgb), .12); border:1px solid rgba(var(--color-acento-rgb), .25); padding:.75rem 1rem; border-radius:6px; color:var(--color-texto); font-weight:800; }
+    .wire-diagram i { color: var(--color-acento); font-style:normal; font-weight:900; }
+    .amazon-mockup { color: var(--color-texto); overflow:hidden; min-width:0; }
+    .amazon-top { display:grid; grid-template-columns: minmax(0, 46%) minmax(250px, 34%) minmax(178px, 16%); gap:1.25rem; align-items:start; min-height: 880px; }
+    .amazon-top > div:nth-child(2) { padding-top:.15rem; }
+    .amazon-gallery { display:grid; grid-template-columns: 54px minmax(0, 1fr); gap:.75rem; min-width:0; }
+    .amazon-thumbs { display:flex; flex-direction:column; gap:.5rem; position:relative; z-index:3; }
+    .amazon-thumbs img { aspect-ratio:1/1; object-fit:contain; padding:.2rem; cursor:pointer; }
+    .amazon-thumbs img.is-active { border-color: var(--color-acento); box-shadow:0 0 0 2px rgba(var(--color-acento-rgb), .22); }
+    .amazon-main-image { aspect-ratio:1/1; object-fit:contain !important; padding: .5rem; }
+    .amazon-mockup .amazon-title { font-size:clamp(1rem, 1.35vw, 1.2rem); line-height:1.28; margin:0 0 .65rem; text-align:left; overflow-wrap:anywhere; }
+    .amazon-brand { color: var(--color-acento); font-weight:800; margin-bottom:.6rem; }
+    .amazon-mockup p, .amazon-mockup li, .amazon-mockup label, .amazon-mockup select, .amazon-mockup button { line-height:1.35; }
+    .amazon-bullets { color: var(--color-texto-sec); padding-left:1.1rem; line-height:1.35; }
+    .amazon-bullets li { margin-bottom:.5rem; font-size:.86rem; line-height:1.35; }
+    .rating-row { display:flex; align-items:center; gap:.5rem; color:var(--color-texto-sec); font-size:.9rem; margin-bottom:.7rem; }
+    .stars { color:#f7b731; letter-spacing:.06em; }
+    .buy-box { padding:.9rem; border-radius:8px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); font-size:.88rem; }
+    .buy-box .price { display:block; font-size:1.35rem; font-weight:900; margin:.2rem 0 .45rem; color:var(--color-texto); }
+    .buy-box .stock { color:#63d297; font-weight:800; margin:.25rem 0; }
+    .buy-box label { display:block; color:var(--color-texto-sec); font-size:.82rem; margin-top:.75rem; }
+    .buy-box select { width:100%; margin:.25rem 0 .75rem; background:#111; color:var(--color-texto); border:1px solid rgba(255,255,255,.16); border-radius:999px; padding:.45rem .65rem; }
+    .amazon-action { width:100%; border:0; border-radius:999px; padding:.75rem 1rem; margin-top:.55rem; font-weight:900; cursor:default; color:#111; }
+    .amazon-cart { background:#ffd814; }
+    .amazon-buy { background:#ffa41c; }
+    .delivery-note { color:var(--color-texto-sec); font-size:.75rem; line-height:1.35; margin-top:.65rem; }
+    .ebc-stack { display:grid; gap:1rem; margin-top:0; }
+    .ebc-stack > img { display:block; width:100%; height:auto; object-fit:contain; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; }
+    .ebc-module { width:100%; min-height:0; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#fff; overflow:visible; }
+    .ebc-module img { display:block; width:100%; height:auto; object-fit:contain; border:0; border-radius:0; }
+    .ebc-panel { position:relative; overflow:hidden; border-radius:6px; border:1px solid rgba(255,255,255,.08); background:#070707; }
+    .ebc-panel img { display:block; width:100%; height:auto; object-fit:cover; border:0; border-radius:0; }
+    .ebc-copy-card { position:absolute; top:0; right:0; width:min(34%, 260px); height:100%; padding:1rem; background:rgba(7,7,7,.92); color:var(--color-texto); display:flex; flex-direction:column; justify-content:center; border-left:1px solid rgba(255,255,255,.16); }
+    .ebc-copy-card h4 { margin:0 0 .45rem; color:var(--color-texto); font-size:1rem; line-height:1.15; text-align:left; }
+    .ebc-copy-card p { margin:0; color:rgba(255,255,255,.78); font-size:.78rem; line-height:1.35; }
+    .ebc-indexable { background:#070707; color:var(--color-texto); border-radius:6px; padding:1rem 1.1rem; border:1px solid rgba(255,255,255,.08); }
+    .ebc-indexable h4 { margin:.2rem 0 .6rem; color:var(--color-texto); font-size:1rem; line-height:1.2; text-align:left; }
+    .ebc-indexable h5 { margin:.85rem 0 .35rem; color:var(--color-acento); font-size:.86rem; line-height:1.2; text-transform:uppercase; letter-spacing:.02em; }
+    .ebc-indexable p { margin:.25rem 0; color:rgba(255,255,255,.76); font-size:.78rem; line-height:1.35; }
+    .ebc-inline { display:grid; grid-template-columns: minmax(120px, 220px) minmax(0, 1fr); gap:1.25rem; align-items:center; background:#070707; color:var(--color-texto); border-radius:6px; padding:1rem 1.1rem; border:1px solid rgba(255,255,255,.08); }
+    .ebc-inline img { width:100%; height:auto; border-radius:4px; border:0; background:#fff; }
+    .ebc-inline h4 { margin:0 0 .55rem; color:var(--color-texto); font-size:1rem; line-height:1.2; text-align:left; }
+    .ebc-inline p { margin:0; color:rgba(255,255,255,.76); font-size:.78rem; line-height:1.35; }
+    .comparison-shell { width:min(1120px, calc(100vw - 3rem)); margin:7rem 0 0 50%; transform:translateX(-50%); overflow:hidden; isolation:isolate; }
+    .comparison-labels { grid-column:1 / -1; display:flex; justify-content:space-between; gap:1rem; padding:1rem 1.25rem .75rem; color:var(--color-acento); font-weight:900; text-transform:uppercase; font-size:.78rem; letter-spacing:.08em; background:var(--color-superficie); }
+    .comparison-frame { --split:50%; --split-negative:-50%; --frame-width:1120px; position:relative; width:100%; overflow:hidden; border-radius:8px; display:grid; grid-template-columns: var(--split) minmax(0, 1fr); align-items:start; border:1px solid rgba(var(--color-acento-rgb), .28); background:var(--color-superficie); }
+    .comparison-pane { min-width:0; overflow:hidden; }
+    .comparison-pane.old { position:relative; z-index:1; }
+    .comparison-pane.new { position:relative; z-index:2; }
+    .comparison-layer { width:var(--frame-width); max-width:none; }
+    .comparison-pane.new .comparison-layer { transform:translateX(var(--split-negative)); }
+    .comparison-pane.new .ebc-stack { margin-top:18px; }
+    .comparison-handle { position:absolute; z-index:5; top:3.15rem; bottom:0; left:var(--split); width:46px; transform:translateX(-50%); cursor:ew-resize; display:flex; align-items:center; justify-content:center; touch-action:none; }
+    .comparison-handle::before { content:""; position:absolute; top:0; bottom:0; left:50%; width:4px; transform:translateX(-50%); border-radius:999px; background:var(--color-acento); box-shadow:0 0 0 1px rgba(0,0,0,.45), 0 0 18px rgba(var(--color-acento-rgb), .55); }
+    .comparison-handle span { position:sticky; top:50%; width:44px; height:44px; border-radius:999px; background:var(--color-acento); border:3px solid #091012; box-shadow:0 12px 28px rgba(0,0,0,.45); }
+    .comparison-handle span::before, .comparison-handle span::after { content:""; position:absolute; top:50%; width:7px; height:7px; border-top:2px solid #061010; border-left:2px solid #061010; }
+    .comparison-handle span::before { left:10px; transform:translateY(-50%) rotate(-45deg); }
+    .comparison-handle span::after { right:10px; transform:translateY(-50%) rotate(135deg); }
+    .slot-label { display:inline-block; margin-bottom: .75rem; color: var(--color-acento); font-weight:900; text-transform:uppercase; font-size:.78rem; letter-spacing:.08em; }
+    .comparison-frame .slot-label { display:none; }
+    .old-mockup { filter:none; }
+    .text-compare { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:1.5rem; }
+    .text-compare article { background:var(--color-superficie); border-radius:8px; padding:1.25rem; border:1px solid rgba(255,255,255,.08); }
+    .chart-modal { position:fixed; inset:0; z-index:9999; display:none; place-items:center; padding:2rem; background:rgba(0,0,0,.82); backdrop-filter:blur(8px); }
+    .chart-modal.is-open { display:grid; }
+    .chart-modal-panel { position:relative; width:min(1120px, 94vw); height:min(720px, 84vh); background:var(--color-superficie); border:1px solid rgba(var(--color-acento-rgb), .35); border-radius:8px; padding:1.5rem; box-shadow:0 22px 70px rgba(0,0,0,.45); }
+    .chart-modal-panel h3 { margin:0 3rem 1rem 0; text-align:left; font-size:1.25rem; }
+    .chart-modal-panel canvas { width:100% !important; height:calc(100% - 3rem) !important; }
+    .chart-modal-close { position:absolute; top:1rem; right:1rem; width:2.25rem; height:2.25rem; border:1px solid rgba(255,255,255,.16); border-radius:999px; background:#111; color:var(--color-texto); font-size:1.35rem; line-height:1; cursor:pointer; }
+    body.chart-modal-open { overflow:hidden; }
+    @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare, .ebc-inline { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-top { min-height:0; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } .ebc-copy-card { position:static; width:auto; height:auto; } .workflow-steps h3 { white-space:normal; } }
+  </style>
+<style>
+.language-switch{position:fixed;top:14px;left:14px;z-index:10000;display:grid;place-items:center;
+min-width:42px;height:42px;padding:0 10px;border:1px solid rgba(127,127,127,.35);border-radius:999px;
+background:rgba(15,15,18,.88);color:#fff!important;font:700 12px/1 system-ui,sans-serif;
+letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(10px)}
+.language-switch:focus-visible{outline:3px solid #66a3ff;outline-offset:3px}
+</style>
+</head>
+<body><a class="language-switch" href="Revolution_creative_case-es.html" hreflang="es" aria-label="Ver en español">ES</a>
+  <header class="navbar">
+    <div class="container">
+      <a href="index-en.html" class="nav-logo">Matias Gaglio.</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index-en.html">Home</a></li>
+          <li><a href="ecommerce-en.html">Ecommerce</a></li>
+          <li><a href="Articles-en.html">Articles</a></li>
+          <li><a href="creatives-en.html" class="accent">Creatives</a></li>
+          <li><a href="consultora-en.html">Consultora de Opinion</a></li>
+          <li><a href="otros-en.html">Otros proyectos</a></li>
+          <li><a href="SEO-en.html">ChatMatias</a></li>
+          <li><a href="sobre-mi-en.html">Sobre Mi</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="amazon-listing-refresh-case-study" class="listing-case">
+    <section id="hero" class="page-hero">
+      <div class="container">
+        <p class="eyebrow" data-aos="fade-up">Amazon Listing Optimization - Automotive Category</p>
+        <h1 data-aos="fade-up" data-aos-delay="100">Rebuilding Amazon Listings Through Visual Systems, SEO Structure, and Conversion-Focused Content</h1>
+        <p data-aos="fade-up" data-aos-delay="150">This project was a full Amazon listing refresh for an automotive catalog. The objective was not only to rewrite product content, but to rebuild the way the listings communicated technical value, visual trust, fitment confidence, and product quality.</p>
+        <p data-aos="fade-up" data-aos-delay="200">The original listings had product information, but the presentation was not converting at the level expected for the traffic being generated. The images were functional, but not visually competitive. The bullets included important technical data, but the structure did not guide the shopper through a clear purchase decision. The titles contained relevant keywords, but they needed a better balance between Amazon SEO and human readability.</p>
+        <p data-aos="fade-up" data-aos-delay="250">The solution was to redesign the listing system as a whole: new image direction, stronger A+ / EBC logic, rewritten titles, more structured bullets, and a scalable production process using Photoshop and coded automation to accelerate image creation across multiple SKUs.</p>
+        <div class="kpi-summary" data-aos="fade-up" data-aos-delay="300">
+          <article><span class="kpi-number">+26.3%</span><span class="kpi-label">Average weekly retail sales</span></article>
+          <article><span class="kpi-number">+19.4%</span><span class="kpi-label">Total traffic</span></article>
+          <article><span class="kpi-number">+5.5%</span><span class="kpi-label">Average conversion rate</span></article>
+          <article><span class="kpi-number">+119.4%</span><span class="kpi-label">Paid search traffic</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="diagnosis"><div class="container"><article class="caso-card" data-aos="fade-up">
+      <span class="caso-categoria">Diagnosis</span>
+      <h2>The diagnosis: traffic existed, but the listing experience was not persuasive enough</h2>
+      <div class="caso-card-grid"><div class="caso-contenido">
+        <p>The starting point was a conversion problem. The listings were receiving traffic, but the customer experience was not strong enough to convert that demand efficiently. In automotive parts, this is especially important because customers are not only buying a product; they are trying to avoid a wrong fit, a return, or a mechanical compatibility issue.</p>
+        <p>The old listing style gave shoppers access to product data, but the visual hierarchy was weak. Technical details such as thread size, seat type, length, wheel compatibility, material, coating, and aftermarket-wheel requirements were present, but they were not always presented in the order a buyer needs them. The result was a listing that could be indexed by Amazon, but did not fully reduce customer uncertainty.</p>
+        <p>The decision was to treat the listing as a conversion system. Instead of only asking "Does this listing contain the right keywords?", the project asked a more strategic question: "Does this listing make the customer feel confident enough to buy?"</p>
+      </div><div class="caso-visual"><img src="Revolution/Old Style Images/71J6-GXWXRL._AC_SL1500_.jpg" alt="Previous listing image style" loading="lazy"></div></div>
+    </article></div></section>
+
+    <section id="competitive-benchmarking"><div class="container"><article class="caso-card reverse" data-aos="fade-up">
+      <span class="caso-categoria">Competitive benchmarking</span>
+      <h2>Competitive benchmarking: using category standards to define a stronger visual direction</h2>
+      <div class="caso-card-grid"><div class="caso-contenido">
+        <p>The image refresh began with a competitive review of how stronger Amazon listings in the category were presenting similar automotive products. The goal was not to copy competitors, but to understand the visual language that was already working in the market: cleaner layouts, stronger contrast, clearer specification callouts, more confident product positioning, and images that explain the product without forcing the customer to read every bullet.</p>
+        <p>This benchmarking helped define a new visual style for the listings. The new direction needed to be more pleasing to the eye, but still technically useful. In this type of category, aesthetics alone are not enough. A successful image has to look professional while also communicating fitment, dimensions, construction, finish, quantity, and use case.</p>
+        <p>The final direction was built around a clearer hierarchy: first attract attention, then explain the product, then reduce fitment doubt, and finally reinforce durability and trust. This gave the listing a more premium and intentional look while still serving the practical needs of Amazon shoppers.</p>
+      </div><div class="principle-grid"><article><h3>Cleaner hierarchy</h3><p>Make the first scan easier.</p></article><article><h3>Technical trust</h3><p>Specs remain visible and precise.</p></article><article><h3>Fitment confidence</h3><p>Compatibility is framed as a buying cue.</p></article><article><h3>Scalable system</h3><p>Reusable visual patterns support many SKUs.</p></article></div></div>
+    </article></div></section>
+
+    <section id="image-system"><div class="container"><article class="caso-card" data-aos="fade-up">
+      <span class="caso-categoria">Image system</span>
+      <h2>The image system: from manual design to scalable image production</h2>
+      <p>The new image style was designed in Photoshop as a repeatable system rather than as a one-off creative asset. This is important because Amazon catalogs often contain many related SKUs with small but critical differences: thread size, pack quantity, finish, length, seat type, compatible vehicles, and product family. Designing each image manually from scratch would be slow, inconsistent, and difficult to scale.</p>
+      <p>To solve that, the image structure was treated like a coded layout. Each image can be understood as a template made of reusable visual components: product photo, title block, specification callouts, icons, compatibility text, measurement labels, background treatment, and brand elements. Once those components are defined, the variable information can be inserted systematically from product data.</p>
+      <p>In practice, this means that a product image is not only a static design file. It becomes a semi-automated output generated from a combination of Photoshop templates and structured product attributes. The code can determine which text belongs in each layer, which dimensions need to be displayed, which vehicle fitment group should be shown, and which export format is required for Amazon.</p>
+      <p>This approach creates a major operational advantage. Instead of redesigning every image manually, the workflow can produce consistent image sets across many SKUs while still preserving product-specific accuracy. It reduces repetitive design work, lowers the risk of formatting inconsistencies, and makes future catalog expansion faster.</p>
+      <div class="process-explanation"><article><h3>Template logic</h3><p>Photoshop defined spacing, typography, hierarchy, product placement, callout style, and export-ready composition.</p></article><article><h3>Data logic</h3><p>Thread size, quantity, finish, seat type, vehicle families, and compatibility notes became structured inputs.</p></article><article><h3>Automation logic</h3><p>Coding automated repeat production tasks across multiple SKUs without rebuilding every asset manually.</p></article><article><h3>Output logic</h3><p>Amazon-ready image sets stayed consistent while preserving product-specific accuracy.</p></article></div>
+      <div class="wire-diagram"><span>Product Data</span><i>-&gt;</i><span>Photoshop Template</span><i>-&gt;</i><span>Automated Image Output</span><i>-&gt;</i><span>Amazon Listing</span></div>
+      <div class="image-row single-visual"><img src="Caso1_render1.png" alt="Automated product render generated for scalable image production"></div>
+    </article></div></section>
+
+    <section id="content-system"><div class="container"><article class="caso-card reverse" data-aos="fade-up">
+      <span class="caso-categoria">Content system</span>
+      <h2>The content system: technical information rewritten for Amazon decision-making</h2>
+      <div class="caso-card-grid"><div class="caso-contenido">
+        <p>The copy was rebuilt with the same logic as the images: structured, repeatable, and technically precise. The old bullet style contained relevant information, but the new structure made the information easier to scan and easier to trust.</p>
+        <p>The rewritten bullets prioritize the details that matter most in automotive fitment. The first line establishes the exact product configuration: quantity, thread size, length, spline type, seat type, construction, and finish. The next layer addresses compatibility and use case, especially the distinction between aftermarket wheels and OE wheels. Later bullets reinforce durability, corrosion resistance, construction quality, and standards.</p>
+        <p>This was not only a copywriting improvement. It was a conversion architecture improvement. The copy was designed to answer the customer's doubts in the same order they appear during the buying process: "Is this the correct part?", "Will it fit my vehicle?", "Is it durable?", "Is it safe for my wheel type?", and "Can I trust this product?"</p>
+        <p>The title strategy followed the same principle. Keywords remained important, but the title was reorganized so that search terms, technical specifications, and recognizable vehicle families appeared in a more natural sequence. This made the listing more readable while still supporting Amazon indexing.</p>
+      </div><div class="text-compare"><article><h3>Old copy logic</h3><p>Data present, but dense and less guided.</p><p>Compatibility required more shopper interpretation.</p></article><article><h3>New copy logic</h3><p>Specs, fitment, use case, and trust cues appear in decision order.</p><p>SEO terms remain, but readability improves.</p></article></div></div>
+    </article></div></section>
+
+    <section id="aplus-ebc-system"><div class="container"><article class="caso-card" data-aos="fade-up">
+      <span class="caso-categoria">A+ / EBC</span>
+      <h2>A+ / EBC: extending the technical story beyond the bullets</h2>
+      <div class="caso-card-grid"><div class="caso-contenido">
+        <p>The A+ / EBC content was planned as the long-form layer of the listing. While the title and bullets are built for fast scanning, the A+ section gives more space to create a complete brand and product argument. It allows the listing to explain the product visually, reinforce construction quality, and make fitment information feel less overwhelming.</p>
+        <p>For this category, effective A+ content should not be treated as decoration. It should work as a technical sales page inside Amazon. The modules should help the customer understand the product family, compare specifications, confirm compatibility, and see why the product is reliable for its intended use.</p>
+        <p>The ideal A+ structure for this project includes a product identity module, a fitment and compatibility module, a specification breakdown, and a durability or testing module. Together, these sections create a more complete customer journey than bullets alone can provide.</p>
+        <div class="wire-diagram"><span>Hero</span><i>-&gt;</i><span>Specs</span><i>-&gt;</i><span>Fitment</span><i>-&gt;</i><span>Durability</span><i>-&gt;</i><span>Brand trust</span></div>
+      </div><div class="ebc-stack"><img src="Revolution/EBC/New EBC/8fae7bda-deda-4ab8-b719-ba1de54ad308.__CR0,0,2021,1250_PT0_SX970_V1___.jpg" alt="New A+ fitment module"><div class="ebc-inline"><img src="Revolution/EBC/New EBC/b4a11566-8905-43c2-a612-ee09aabcf8a9.__CR2,0,1076,1076_PT0_SX300_V1___.jpg" alt="Green lug nut specifications"><div><h4>A Precision-Engineered Lug Nut Set</h4><p>As a US-owned business, we deliver precision-engineered quality you can trust. Your order arrives with a complete set of 20 lug nuts. Designed for OEM wheels. Replaces factory parts CV6Z-1012-C and 611-303.</p></div></div><div class="ebc-panel"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New A+ salt spray module"><div class="ebc-copy-card"><h4>One Piece &amp; 72 Hours Strict Salt Spray Test</h4><p>Engineered with a superior one-piece construction, our lug nuts outperform and outlast OEM designs. They undergo a rigorous 72-hour salt spray test, guaranteeing exceptional rust and corrosion resistance.</p></div></div></div></div>
+    </article></div></section>
+
+    <section id="kpi-validation"><div class="container"><article class="caso-card" data-aos="fade-up">
+      <span class="caso-categoria">KPI validation</span>
+      <h2>KPI validation: measuring whether the new listing system improved performance</h2>
+      <p>The project was evaluated through performance data from the KPI folder. The comparison period used in the reports separates Jun 29, 2025-Dec 27, 2025 from Dec 28, 2025-Jun 27, 2026. This makes it possible to compare the earlier listing period against the period after the broader listing improvements were implemented.</p>
+      <p>Total traffic increased from approximately 1.11 million to 1.32 million, a gain of about 19.4%. Organic traffic increased from approximately 49.9K to 57.3K, while paid search traffic increased from approximately 15.4K to 33.9K. That paid traffic increase is especially relevant because a stronger listing can support more aggressive traffic acquisition: the page receiving the traffic becomes more capable of converting it.</p>
+      <p>Conversion rate also improved. Average conversion rate increased from approximately 7.44% to 7.85%, a gain of around 5.5%. In a high-traffic Amazon catalog, even a modest conversion-rate increase can have meaningful revenue impact because it compounds across thousands of sessions.</p>
+      <p>Retail sales followed the same direction. Average weekly retail sales increased from approximately $112.3K to $141.9K, an improvement of about 26.3%. The strongest interpretation is not that one isolated edit produced the entire change, but that the combined listing system - images, titles, bullets, A+ content, and clearer fitment communication - helped the catalog capture more value from its traffic.</p>
+      <div class="chart-grid"><div class="chart-card"><h3>Total Traffic by Period</h3><canvas id="trafficTotalChart" role="img" aria-label="Chart comparing total Amazon listing traffic before and after the automotive content redesign."></canvas></div><div class="chart-card"><h3>Traffic Mix</h3><canvas id="trafficMixChart" role="img" aria-label="Chart comparing paid-search traffic with other listing traffic during the automotive optimization project."></canvas></div><div class="chart-card"><h3>Conversion Rate Over Time</h3><canvas id="conversionChart" role="img" aria-label="Line chart showing conversion-rate changes during the automotive listing refresh."></canvas></div><div class="chart-card"><h3>Retail Sales Over Time</h3><canvas id="retailChart" role="img" aria-label="Line chart showing retail-sales growth during and after the automotive listing refresh."></canvas></div></div>
+      <div class="kpi-visual-plan"><article><h3>Advertising Snapshot A</h3><p>Sample product A: $263.95 sales, 12.63 ROAS, 25.49% conversion rate, 7.92% ACOS.</p></article><article><h3>Advertising Snapshot B</h3><p>Sample product B: $416.81 sales, 11.34 ROAS, 22.73% conversion rate, 8.82% ACOS.</p></article><article><h3>Keyword Visibility</h3><p>Category keyword traffic split shows 87.0% share for wheel accessories parts in the sampled keyword report.</p></article><article><h3>Search Demand</h3><p>Socket-related queries such as lug nut socket and 21mm impact socket show category-specific intent patterns.</p></article></div>
+    </article></div></section>
+
+    <section id="technical-methodology"><div class="container"><article class="caso-card reverse" data-aos="fade-up">
+      <span class="caso-categoria">Methodology</span><h2>How the workflow was built</h2>
+      <p>The workflow combined creative direction, marketplace analysis, structured product data, and automation. First, the listing problem was identified through poor conversion performance and a visual audit of the existing content. Then, competitors were reviewed to understand what types of visual presentation were already setting customer expectations in the category.</p>
+      <p>After that, a new visual system was designed in Photoshop. The design was not created as a single isolated image, but as a reusable framework. The goal was to define repeatable components that could be applied across the catalog: product hero placement, specification callouts, compatibility messaging, background treatments, icons, labels, and text hierarchy.</p>
+      <p>Coding was then used to support production. In a catalog environment, many product images follow the same structure but require different data. A coded workflow can take structured SKU information and insert it into predefined visual templates. For example, the system can generate different image versions for M14x1.5, M12x1.5, 24-pack, 32-pack, black finish, chrome finish, spiked style, spline style, or different vehicle applications.</p>
+      <p>This turns image creation into a semi-automated content pipeline. The creative strategy still comes from human decisions - what to emphasize, how to design the hierarchy, how to position the product - but the repetitive execution can be accelerated with code. This is especially valuable for Amazon catalog management because consistency, speed, and accuracy matter at scale.</p>
+      <p>The same logic was applied to the written content. Product data was translated into a structured copy framework: exact specifications, fitment, aftermarket-wheel clarification, construction quality, corrosion resistance, and Amazon Confirm Fit guidance. This made the listings easier to standardize without making them generic.</p>
+      <div class="workflow-steps"><article><h3>1. Detect</h3><p>Conversion issue and visual audit.</p></article><article><h3>2. Benchmark</h3><p>Category standards and shopper expectations.</p></article><article><h3>3. Systemize</h3><p>Photoshop templates plus structured data.</p></article><article><h3>4. Validate</h3><p>Traffic, conversion, and sales movement.</p></article></div>
+    </article></div></section>
+
+    <section id="strategic-impact"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Strategic impact</span><h2>Strategic impact: a listing system, not a cosmetic redesign</h2><p>The most important result of the project was the creation of a scalable Amazon content system. The improvements were not limited to making the listings look better. The new structure made the listings more understandable, more technically complete, and more aligned with how customers evaluate automotive products on Amazon.</p><p>This matters because Amazon listing optimization sits at the intersection of SEO, conversion rate optimization, creative production, and catalog operations. A listing can rank for the right terms and still underperform if the customer does not trust the product page. Likewise, a listing can look visually polished but fail if it does not communicate the exact technical information needed to purchase.</p><p>The stronger approach is to connect both sides: keyword relevance and buyer confidence. This project did that by improving the title structure, rewriting the bullets around technical decision-making, redesigning the image style based on category expectations, and creating a more scalable production workflow through Photoshop and automation.</p></article></div></section>
+
+    <section id="skills-demonstrated"><div class="container"><article class="caso-card reverse" data-aos="fade-up"><span class="caso-categoria">Skills demonstrated</span><h2>Skills demonstrated in this project</h2><p>This project demonstrates a combination of Amazon marketplace knowledge, SEO strategy, conversion thinking, creative direction, and technical automation. It required understanding the customer journey, the competitive landscape, the limitations of Amazon content, and the operational challenge of scaling high-quality listing assets across a catalog.</p><p>The work included Amazon title optimization, bullet-point restructuring, A+ / EBC planning, visual system design, competitive listing analysis, KPI interpretation, product-data structuring, and automation-assisted image production. The result was a more professional listing experience supported by measurable improvements in traffic, conversion, and sales.</p></article></div></section>
+
+    <section id="final-before-after-slider"><div class="container"><article class="caso-card" data-aos="fade-up"><span class="caso-categoria">Before / After</span><h2>Final comparison: the listing experience before and after</h2><p>The final section of the page shows the clearest visual proof of the transformation: a slider comparing the previous Amazon-style listing experience with the refreshed version.</p><p>The comparison makes the improvement visible across the complete listing flow: image gallery, title, bullets, buy box, and A+ / EBC content.</p><div class="comparison-shell"><div class="comparison-frame" data-comparison-frame style="--split:50%; --split-negative:-50%;"><div class="comparison-labels" aria-hidden="true"><span>Old Style</span><span>New Style</span></div><div class="comparison-pane old"><div class="comparison-layer">
+<div class="amazon-mockup old-mockup">
+  <span class="slot-label">Old Style</span>
+  <div class="amazon-top">
+    <div class="amazon-gallery">
+      <div class="amazon-thumbs">
+        <img class="is-active" src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Old style thumbnail 1" tabindex="0">
+        <img src="Revolution/Old Style Images/71knjghDdyL._AC_SL1500_.jpg" alt="Old style thumbnail 2" tabindex="0">
+        <img src="Revolution/Old Style Images/71sOafQLc-L._AC_SL1500_.jpg" alt="Old style thumbnail 3" tabindex="0">
+        <img src="Revolution/Old Style Images/71KxcE5q0zL._AC_SL1500_.jpg" alt="Old style thumbnail 4" tabindex="0">
+        <img src="Revolution/Old Style Images/71xnx6cL2uL._AC_SL1500_.jpg" alt="Old style thumbnail 5" tabindex="0">
+      </div>
+      <img class="amazon-main-image" src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Old style product image">
+    </div>
+    <div>
+      <p class="amazon-brand">Visit the store</p>
+      <h3 class="amazon-title">Wheel Accessories Parts 24 Pcs M14x1.5 14x1.5 4.4&quot; Long Lug Nuts Chrome Spike Style for Truck Spline Cold forged carbon steel AFTERMARKET wheels only</h3>
+      <div class="rating-row"><span class="stars">4.0/5</span><span>Sample rating</span></div>
+      <ul class="amazon-bullets"><li>AFTERMARKET WHEELS ONLY: These Lug nuts are designed for AFTERMARKET wheels only. This lug may be the correct thread for your vehicle; in many cases the lug seat is not large enough to create sufficent clamping force to safely install the OE wheel to your vehicle.</li><li>Always use AMAZON CONFIRMED FIT to validate product fitment to your vehicle. This item fits Cadillac 1999+ Escalade | Chevrolet 2002-13 Avalanche | 1991+ Blazer | 2015+ Colorado | K1500 Suburban | 1999+ Silverado 1500 | 2000+ Suburban | 1995+ Tahoe | 2009+ Traverse | Ford 2022+ Bronco | 2015+ Expedition | 2015+ F150 | GMC 2007+ Acadia | 1988-2000 C2500 | 2015+ Canyon | 1999+ Sierra 1500 | 1992+ Yukon | Jeep 2022+ Wagoneer Grand Wagoneer | RAM 2019+ 1500 | Saturn 2007-10 Outlook</li><li>24 Pcs | 4.4&quot; Long | M14x1.5 14x1.5 Thread | Truck Spline | 60 Degree Conical Seat | Spiked | Red Finish | 1 Pc Construction</li><li>Designed in the USA. Spike Lug nuts give your vehicle an edgy custom look. Our 4.40&quot; Long Truck Spline Lug Nuts are typically used on pickup truck applications, where the OE studs are long and require a longer lug nut.</li><li>Cold forged carbon steel. High quality precise threads. Built to SAE Standards.</li></ul>
+    </div>
+    <aside class="buy-box" aria-label="Visual-only Amazon action panel">
+      <span class="price">$39.99</span>
+      <p class="stock">In Stock</p>
+      <p class="delivery-note">FREE delivery available. This panel is a non-clickable listing mockup.</p>
+      <label for="qty-old">Quantity</label>
+      <select id="qty-old" aria-label="Old mockup quantity"><option>1</option></select>
+      <button class="amazon-action amazon-cart" type="button">Add to Cart</button>
+      <button class="amazon-action amazon-buy" type="button">Buy Now</button>
+    </aside>
+  </div>
+  <div class="ebc-stack">
+    <div class="ebc-module"><img src="Revolution/EBC/Old EBC/DetailHead__53K648L.jpg" alt="Old style EBC module"></div>
+    <div class="ebc-module"><img src="Revolution/EBC/Old EBC/RetroCons__53%23%2348L.jpg" alt="Old style EBC construction module"></div>
+    <div class="ebc-module"><img src="Revolution/EBC/Old EBC/RetroKsps__53%23%2348L.jpg" alt="Old style EBC key specs module"></div>
+    <div class="ebc-module"><img src="Revolution/EBC/Old EBC/RetroSpec__53%23%2348L.jpg" alt="Old style EBC specification module"></div>
+  </div>
+</div></div></div><div class="comparison-pane new"><div class="comparison-layer">
+<div class="amazon-mockup">
+  <span class="slot-label">New Style</span>
+  <div class="amazon-top">
+    <div class="amazon-gallery">
+      <div class="amazon-thumbs">
+        <img class="is-active" src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="New style thumbnail 1" tabindex="0">
+        <img src="Revolution/New Style Images/71uBmAvYSaL._AC_SL1167_.jpg" alt="New style thumbnail 2" tabindex="0">
+        <img src="Revolution/New Style Images/71+fRFVAOVL._AC_SL1167_.jpg" alt="New style thumbnail 3" tabindex="0">
+        <img src="Revolution/New Style Images/712hJcE7rJL._AC_SL1167_.jpg" alt="New style thumbnail 4" tabindex="0">
+        <img src="Revolution/New Style Images/71J9SmUgGWL._AC_SL1167_.jpg" alt="New style thumbnail 5" tabindex="0">
+      </div>
+      <img class="amazon-main-image" src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="New style product image">
+    </div>
+    <div>
+      <p class="amazon-brand">Visit the store</p>
+      <h3 class="amazon-title">Wheel Accessories Parts 24 Pcs M14x1.5 14x1.5 Thread Spiked 4.4&quot; Long Lug Nuts Chrome Truck Spline Hex Fits Chevy Silverado GMC Sierra Ford F-150 RAM 1500</h3>
+      <div class="rating-row"><span class="stars">4.0/5</span><span>Sample rating</span></div>
+      <ul class="amazon-bullets"><li>EXACT FACTORY SPECIFICATIONS: Includes 24 Pcs Spiked Style Lug Nuts with M14x1.5 14x1.5 Threads | 4.4&quot; Long | Truck Spline Hex | 60 Degree Conical Seat | True One-Piece Heat Treated Carbon Steel Construction with Black Finish</li><li>PRECISION FITMENT ENGINEERED FOR AFTERMARKET WHEELS. Compatible on vehicles with M14x1.5 14x1.5 threads as found on Cadillac 1999+ Escalade | Chevrolet 2015+ Colorado 1999+ Silverado 1500 2015+ Suburban 1995+ Tahoe | Ford 2022-25 Bronco 2015-24 Expedition 2015+ F-150 2023-25 Ranger | GMC 2015+ Canyon 1999+ Sierra 1500 1992+ Yukon | Jeep 2022-25 Grand Wagoneer 2022-25 Wagoneer | Lincoln 2015+ Navigator | Ram 2019+ 1500 Confirm compatibility with AMAZON CONFIRM FIT. FOR AFTERMARKET WHEELS Only</li><li>DESIGNED &amp; TESTED IN USA: Truck Spline Hex Spiked Lug Nuts are specifically designed for aftermarket wheels. One-Piece design ensures reliable clamping force and long-term durability under daily driving conditions.</li><li>RELIABLE PERFORMANCE &amp; CORROSION RESISTANCE: Premium multi-layer Black coating tested for 72-hour salt-spray corrosion protection. Ideal upgrade for your vehicle. Designed for RAINY climate and AFTERMARKET wheels. Cold Forged carbon Steel. High quality Precise M14x1.5 14x1.5 threads. Built to SAE Standards</li><li>COMPLETE 24 Pcs SET: Full lug nuts set for four wheels Black Lug Nuts with 60 Degree Conical Seat ready for direct installation. Upgrade now to your vehicles appearance and the safety you are looking for.</li></ul>
+    </div>
+    <aside class="buy-box" aria-label="Visual-only Amazon action panel">
+      <span class="price">$39.99</span>
+      <p class="stock">In Stock</p>
+      <p class="delivery-note">FREE delivery available. This panel is a non-clickable listing mockup.</p>
+      <label for="qty-new">Quantity</label>
+      <select id="qty-new" aria-label="New mockup quantity"><option>1</option></select>
+      <button class="amazon-action amazon-cart" type="button">Add to Cart</button>
+      <button class="amazon-action amazon-buy" type="button">Buy Now</button>
+    </aside>
+  </div>
+  <div class="ebc-stack">
+    <div class="ebc-module"><img src="Revolution/EBC/New EBC/f82cb828-500b-4ac0-ab8c-2cec3e08305f.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="New style EBC brand module"></div>
+    <div class="ebc-module"><img src="Revolution/EBC/New EBC/8fae7bda-deda-4ab8-b719-ba1de54ad308.__CR0,0,2021,1250_PT0_SX970_V1___.jpg" alt="New style EBC fitment module"></div>
+    <div class="ebc-indexable"><h4>Lug Nuts for Ford and Lincoln Vehicles</h4><h5>Fitment for the following Ford models</h5><p>2021+ Ford Bronco Sport: 2021 Ford Bronco Sport, 2022 Ford Bronco Sport, 2023 Ford Bronco Sport, 2024 Ford Bronco Sport, 2025 Ford Bronco Sport</p><p>2018-2022 Ford EcoSport: 2018 Ford EcoSport, 2019 Ford EcoSport, 2020 Ford EcoSport, 2021 Ford EcoSport, 2022 Ford EcoSport</p><p>2021+ Ford Escape: 2021 Ford Escape, 2022 Ford Escape, 2023 Ford Escape, 2024 Ford Escape, 2025 Ford Escape</p><p>2006-2020 Ford Fusion: 2006 Ford Fusion, 2007 Ford Fusion, 2008 Ford Fusion, 2009 Ford Fusion, 2010 Ford Fusion, 2011 Ford Fusion, 2012 Ford Fusion, 2013 Ford Fusion, 2014 Ford Fusion, 2015 Ford Fusion, 2016 Ford Fusion, 2017 Ford Fusion, 2018 Ford Fusion, 2019 Ford Fusion, 2020 Ford Fusion</p><p>2021+ Ford Ranger: 2021 Ford Ranger, 2022 Ford Ranger, 2023 Ford Ranger, 2024 Ford Ranger, 2025 Ford Ranger</p><h5>Fitment for the following Lincoln models</h5><p>2020+ Lincoln Corsair: 2020 Lincoln Corsair, 2021 Lincoln Corsair, 2022 Lincoln Corsair, 2023 Lincoln Corsair, 2024 Lincoln Corsair, 2025 Lincoln Corsair</p></div>
+    <div class="ebc-inline"><img src="Revolution/EBC/New EBC/b4a11566-8905-43c2-a612-ee09aabcf8a9.__CR2,0,1076,1076_PT0_SX300_V1___.jpg" alt="Green lug nut specifications"><div><h4>A Precision-Engineered Lug Nut Set</h4><p>As a US-owned business, we deliver precision-engineered quality you can trust. Your order arrives with a complete set of 20 lug nuts. Designed for OEM wheels. Replaces factory parts CV6Z-1012-C and 611-303.</p></div></div>
+    <div class="ebc-panel"><img src="Revolution/EBC/New EBC/313cbc16-8044-4af7-8e2d-a1ad0b946595.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="New style EBC salt spray module"><div class="ebc-copy-card"><h4>One Piece &amp; 72 Hours Strict Salt Spray Test</h4><p>Engineered with a superior one-piece construction, our lug nuts outperform and outlast OEM designs. They undergo a rigorous 72-hour salt spray test, guaranteeing exceptional rust and corrosion resistance. This ensures a durable, all-weather finish for enhanced safety and peace of mind.</p></div></div>
+  </div>
+</div></div></div><div class="comparison-handle" data-comparison-handle role="separator" aria-label="Drag to compare old and new listing" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"><span></span></div></div></div></article></div></section>
+  </main>
+
+  <div class="chart-modal" id="chartModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="chartModalTitle">
+    <div class="chart-modal-panel">
+      <button class="chart-modal-close" type="button" aria-label="Close expanded chart">&times;</button>
+      <h3 id="chartModalTitle"></h3>
+      <canvas id="chartModalCanvas" role="img" aria-label="Expanded view of the selected automotive listing performance chart."></canvas>
+    </div>
+  </div>
+
+  <footer><div class="container"><p>&copy; 2026 Matias Gaglio. Portfolio personal.</p></div></footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ duration: 800, once: true, offset: 50 });
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      if (navToggle && navMenu) navToggle.addEventListener('click', () => {
+        document.querySelector('.navbar').classList.toggle('nav-open');
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
+      });
+      const selectGalleryImage = (thumb) => {
+        const gallery = thumb.closest('.amazon-gallery');
+        const mainImage = gallery?.querySelector('.amazon-main-image');
+        if (!gallery || !mainImage) return;
+        mainImage.src = thumb.currentSrc || thumb.src;
+        mainImage.alt = thumb.alt.replace('thumbnail', 'product image');
+        gallery.querySelectorAll('.amazon-thumbs img').forEach((img) => img.classList.remove('is-active'));
+        thumb.classList.add('is-active');
+      };
+      document.querySelectorAll('[data-comparison-frame]').forEach((frame) => {
+        const handle = frame.querySelector('[data-comparison-handle]');
+        const layers = frame.querySelectorAll('.comparison-layer');
+        const syncFrameWidth = () => {
+          frame.style.setProperty('--frame-width', `${frame.getBoundingClientRect().width}px`);
+        };
+        const applySplit = (percent) => {
+          frame.style.setProperty('--split', `${percent}%`);
+          frame.style.setProperty('--split-negative', `${-percent}%`);
+          handle?.setAttribute('aria-valuenow', Math.round(percent));
+        };
+        const setSplit = (clientX) => {
+          const rect = frame.getBoundingClientRect();
+          const percent = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+          applySplit(percent);
+        };
+        const syncHeight = () => {
+          const maxHeight = Math.max(...Array.from(layers, (layer) => layer.scrollHeight));
+          frame.style.minHeight = `${maxHeight}px`;
+        };
+        syncFrameWidth();
+        syncHeight();
+        frame.querySelectorAll('img').forEach((img) => img.addEventListener('load', syncHeight, { once: true }));
+        window.addEventListener('resize', () => {
+          syncFrameWidth();
+          syncHeight();
+        });
+        handle?.addEventListener('pointerdown', (event) => {
+          event.preventDefault();
+          handle.setPointerCapture?.(event.pointerId);
+          setSplit(event.clientX);
+        });
+        handle?.addEventListener('pointermove', (event) => {
+          if (!handle.hasPointerCapture?.(event.pointerId)) return;
+          setSplit(event.clientX);
+        });
+        handle?.addEventListener('keydown', (event) => {
+          if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+          event.preventDefault();
+          const current = parseFloat(handle.getAttribute('aria-valuenow') || '50');
+          const next = event.key === 'Home' ? 0 : event.key === 'End' ? 100 : current + (event.key === 'ArrowLeft' ? -5 : 5);
+          const percent = Math.max(0, Math.min(100, next));
+          applySplit(percent);
+        });
+      });
+      document.addEventListener('pointerdown', (event) => {
+        const thumb = event.target.closest?.('.amazon-thumbs img');
+        if (!thumb) return;
+        event.stopPropagation();
+        selectGalleryImage(thumb);
+      }, true);
+      document.addEventListener('click', (event) => {
+        const thumb = event.target.closest?.('.amazon-thumbs img');
+        if (!thumb) return;
+        event.preventDefault();
+        event.stopPropagation();
+        selectGalleryImage(thumb);
+      }, true);
+      document.addEventListener('keydown', (event) => {
+        const thumb = event.target.closest?.('.amazon-thumbs img');
+        if (!thumb || (event.key !== 'Enter' && event.key !== ' ')) return;
+        event.preventDefault();
+        event.stopPropagation();
+        selectGalleryImage(thumb);
+      }, true);
+      const traffic = {"Organic Traffic":[49900,57280],"Paid Search Traffic":[15434,33861],"Other Traffic":[1042747,1231898],"Total Traffic":[1108081,1323039]};
+      const chartColor = '#4FD1C5';
+      Chart.defaults.color = 'rgba(255,255,255,.62)';
+      Chart.defaults.borderColor = 'rgba(255,255,255,.08)';
+      const weeklyLabels = ["Jul 05","Jul 12","Jul 19","Jul 26","Aug 02","Aug 09","Aug 16","Aug 23","Aug 30","Sep 06","Sep 13","Sep 20","Sep 27","Oct 04","Oct 11","Oct 18","Oct 25","Nov 01","Nov 08","Nov 15","Nov 22","Nov 29","Dec 06","Dec 13","Dec 20","Dec 27","Jan 03","Jan 10","Jan 17","Jan 24","Jan 31","Feb 07","Feb 14","Feb 21","Feb 28","Mar 07","Mar 14","Mar 21","Mar 28","Apr 04","Apr 11","Apr 18","Apr 25","May 02","May 09","May 16","May 23","May 30","Jun 06","Jun 13","Jun 20","Jun 27"];
+      const chartConfigs = {
+        trafficTotalChart: { type:'bar', data: { labels:['Earlier period','Refreshed period'], datasets:[{ label:'Total Traffic', data: traffic['Total Traffic'], backgroundColor:['rgba(255,255,255,.22)','rgba(79,209,197,.72)'] }] }, options: { responsive:true, plugins:{legend:{display:false}}, animation:{duration:1100, easing:'easeOutQuart'} } },
+        trafficMixChart: { type:'bar', data: { labels:['Organic','Paid Search','Other','Total'], datasets:[{ label:'Earlier', data:[traffic['Organic Traffic'][0],traffic['Paid Search Traffic'][0],traffic['Other Traffic'][0],traffic['Total Traffic'][0]], backgroundColor:'rgba(255,255,255,.22)' },{ label:'Refreshed', data:[traffic['Organic Traffic'][1],traffic['Paid Search Traffic'][1],traffic['Other Traffic'][1],traffic['Total Traffic'][1]], backgroundColor:'rgba(79,209,197,.72)' }] }, options: { responsive:true, scales:{x:{ticks:{maxRotation:0}}}, animation:{duration:1100, easing:'easeOutQuart'} } },
+        conversionChart: { type:'line', data: { labels:weeklyLabels, datasets:[{ label:'Conversion rate %', data:[7.58,7.09,7.86,8.29,8.02,6.48,6.67,6.33,8.64,8.46,9.66,10.13,8.02,8.66,5.88,8.17,6.0,8.03,6.74,6.73,6.99,7.46,7.26,6.07,6.78,5.49,5.86,7.04,7.0,6.89,6.21,8.74,9.03,8.23,9.05,8.7,9.8,10.08,8.58,7.24,8.14,10.01,8.03,8.7,9.41,6.57,7.69,8.32,8.56,5.77,2.95,7.59], borderColor:chartColor, backgroundColor:'rgba(79,209,197,.15)', pointRadius:1.5, tension:.28, fill:true }] }, options: { responsive:true, animation:{duration:1200, easing:'easeOutQuart'} } },
+        retailChart: { type:'line', data: { labels:weeklyLabels, datasets:[{ label:'Retail sales USD', data:[100914,106387,102720,106942,112350,103632,105049,109282,114478,107307,105089,111525,115032,123833,116577,120050,111322,109777,117515,126590,137333,119883,108127,114817,120694,93292,99754,112539,116849,109034,102464,124255,134441,142834,144430,136407,158700,145219,154521,160868,158685,152436,160172,158399,162999,162416,155734,150106,157088,141702,140612,146513], borderColor:chartColor, backgroundColor:'rgba(79,209,197,.12)', pointRadius:1.5, tension:.25, fill:true }] }, options: { responsive:true, animation:{duration:1200, easing:'easeOutQuart'} } }
+      };
+      const chartInstances = {};
+      const cloneChartConfig = (config) => JSON.parse(JSON.stringify(config));
+      const createChart = (canvas) => {
+        if (!canvas || chartInstances[canvas.id]) return;
+        chartInstances[canvas.id] = new Chart(canvas, cloneChartConfig(chartConfigs[canvas.id]));
+      };
+      const chartCards = document.querySelectorAll('.chart-card');
+      chartCards.forEach((card) => {
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `Open ${card.querySelector('h3')?.textContent || 'chart'} full screen`);
+      });
+      if ('IntersectionObserver' in window) {
+        const chartObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            createChart(entry.target.querySelector('canvas'));
+            observer.unobserve(entry.target);
+          });
+        }, { threshold:.35 });
+        chartCards.forEach((card) => chartObserver.observe(card));
+      } else {
+        document.querySelectorAll('.chart-card canvas').forEach(createChart);
+      }
+      const chartModal = document.getElementById('chartModal');
+      const chartModalTitle = document.getElementById('chartModalTitle');
+      const chartModalCanvas = document.getElementById('chartModalCanvas');
+      const chartModalClose = chartModal?.querySelector('.chart-modal-close');
+      let expandedChart = null;
+      const closeChartModal = () => {
+        chartModal?.classList.remove('is-open');
+        chartModal?.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('chart-modal-open');
+        expandedChart?.destroy();
+        expandedChart = null;
+      };
+      const openChartModal = (card) => {
+        const canvas = card.querySelector('canvas');
+        const config = chartConfigs[canvas?.id];
+        if (!canvas || !config || !chartModal || !chartModalCanvas) return;
+        createChart(canvas);
+        expandedChart?.destroy();
+        chartModalTitle.textContent = card.querySelector('h3')?.textContent || '';
+        const modalConfig = cloneChartConfig(config);
+        modalConfig.options = { ...modalConfig.options, maintainAspectRatio:false, animation:{duration:900, easing:'easeOutQuart'} };
+        chartModal.classList.add('is-open');
+        chartModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('chart-modal-open');
+        expandedChart = new Chart(chartModalCanvas, modalConfig);
+        chartModalClose?.focus();
+      };
+      chartCards.forEach((card) => {
+        card.addEventListener('click', () => openChartModal(card));
+        card.addEventListener('keydown', (event) => {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+          openChartModal(card);
+        });
+      });
+      chartModalClose?.addEventListener('click', closeChartModal);
+      chartModal?.addEventListener('click', (event) => {
+        if (event.target === chartModal) closeChartModal();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && chartModal?.classList.contains('is-open')) closeChartModal();
+      });
+    });
+  </script>
+  <script src="software-stack.js" defer></script>
+  <script src="accessibility.js" defer></script>
+</body>
+</html>
+

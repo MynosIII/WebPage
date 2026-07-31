@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document – ​​Matías Gaglio</title>
+  <meta name="description" content="Matías Gaglio Academic Report Reader." />
+  <link rel="stylesheet" href="style.css" />
+<style>
+.language-switch{position:fixed;top:14px;left:14px;z-index:10000;display:grid;place-items:center;
+min-width:42px;height:42px;padding:0 10px;border:1px solid rgba(127,127,127,.35);border-radius:999px;
+background:rgba(15,15,18,.88);color:#fff!important;font:700 12px/1 system-ui,sans-serif;
+letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(10px)}
+.language-switch:focus-visible{outline:3px solid #66a3ff;outline-offset:3px}
+</style>
+</head>
+<body class="document-page"><a class="language-switch" href="documento-es.html" hreflang="es" aria-label="Ver en español">ES</a>
+  <header class="document-header">
+    <div class="container document-header-inner">
+      <a class="document-back" href="consultora-en.html"><span aria-hidden="true">←</span> Return to repository</a>
+      <a class="document-brand" href="index-en.html">Matías Gaglio.</a>
+    </div>
+  </header>
+
+  <main class="document-reader">
+    <div class="container">
+      <div class="document-titlebar">
+        <div>
+          <span class="repository-kicker">Academic report</span>
+          <h1 id="document-title">Loading document…</h1>
+        </div>
+        <a id="document-download" class="document-download" href="#" download>Download PDF</a>
+      </div>
+      <div class="pdf-frame-wrap">
+        <object id="pdf-object" class="pdf-frame" type="application/pdf">
+          <p>Your browser cannot display this PDF. <a id="pdf-fallback" href="#">Open the document</a>.</p>
+        </object>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const allowedDocuments = new Map([
+      ['informe_academico_cfk_justicia_junio_2025.pdf', 'Cristina Fernández de Kirchner, justicia y polarización'],
+      ['informe_academico_ddd_abril_2025.pdf', 'Argentina ante un escenario internacional turbulento'],
+      ['informe_academico_ddd_abril_2026.pdf', 'Reelección, desgaste y renovación política'],
+      ['informe_academico_ddd_diciembre.pdf', 'Dos años de gestión libertaria y percepciones sobre vacunación'],
+      ['informe_academico_ddd_febrero_2025.pdf', 'Multimillonarios, poder económico y política'],
+      ['informe_academico_ddd_julio_2025.pdf', 'Economía doméstica, ingresos y malestar social'],
+      ['informe_academico_ddd_junio_2025.pdf', 'Ahorro, dólares y participación electoral'],
+      ['informe_academico_ddd_junio_2026.pdf', 'Violencia de género, justicia y respuesta estatal'],
+      ['informe_academico_ddd_mayo_2025.pdf', 'Gobierno, periodismo y libertad de prensa'],
+      ['informe_academico_ddd_mayo_2026.pdf', 'Aprobación de gobierno y demanda de cambio'],
+      ['informe_academico_ddd_octubre_2025.pdf', 'Informe académico de resultados de encuesta: “Sin dólares no hay paraíso”'],
+      ['informe_academico_encuesta_ni_una_menos.pdf', 'Percepciones sociales sobre la violencia contra las mujeres en Argentina'],
+      ['informe_academico_encuesta_ni_una_menos (1).pdf', 'Percepciones sociales sobre la violencia contra las mujeres en Argentina'],
+      ['informe_academico_juventudes_unvm_2025.pdf', 'Juventudes, política y representación'],
+      ['informe_academico_lo_peor_ya_paso_septiembre_2025.pdf', 'Informe académico de datos de encuesta: “Lo peor ya pasó”'],
+      ['informe_academico_medios_noticias_argentina.pdf', 'Medios de comunicación y noticias en Argentina'],
+      ['informe_academico_medios_noticias_argentina (1).pdf', 'Medios de comunicación y noticias en Argentina'],
+      ['informe_academico_un_ano_de_polarizacion_2024.pdf', 'Un año de polarización total'],
+      ['informe_academico_vdd_agosto_2025.pdf', 'Ciencia, inteligencia artificial y política']
+    ]);
+
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get('file');
+    const title = allowedDocuments.get(file);
+    const heading = document.querySelector('#document-title');
+    const pdfObject = document.querySelector('#pdf-object');
+    const download = document.querySelector('#document-download');
+    const fallback = document.querySelector('#pdf-fallback');
+
+    if (file && title) {
+      const pdfUrl = `New format/${encodeURIComponent(file)}`;
+      document.title = title;
+      heading.textContent = title;
+      pdfObject.data = pdfUrl;
+      download.href = pdfUrl;
+      fallback.href = pdfUrl;
+    } else {
+      document.title = 'Documento no encontrado';
+      heading.textContent = 'Documento no encontrado';
+      download.hidden = true;
+      pdfObject.replaceWith(Object.assign(document.createElement('p'), {
+        className: 'document-error',
+        textContent: 'El enlace no corresponde a un documento del repositorio.'
+      }));
+    }
+  </script>
+</body>
+</html>
