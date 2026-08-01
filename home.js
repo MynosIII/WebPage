@@ -5,6 +5,7 @@
   const backdrop = document.querySelector('[data-menu-backdrop]');
   const main = document.querySelector('main');
   const footer = document.querySelector('footer');
+  const portfolioRail = document.querySelector('[data-portfolio-rail]');
   const mobileQuery = window.matchMedia('(max-width: 1050px)');
 
   if (!header || !menuButton || !navigation || !backdrop) return;
@@ -17,7 +18,7 @@
   ].filter((element) => !element.hidden && element.getClientRects().length > 0);
 
   const setPageInert = (inert) => {
-    [main, footer].forEach((element) => {
+    [portfolioRail, main, footer].forEach((element) => {
       if (!element) return;
       element.inert = inert;
       if (inert) element.setAttribute('aria-hidden', 'true');
@@ -81,6 +82,38 @@
   }, { passive: true });
 
   setMenu(false);
+})();
+
+(() => {
+  document.querySelectorAll('[data-neural-system]').forEach((system) => {
+    const nodes = [...system.querySelectorAll('[data-neural-node]')];
+    const output = system.querySelector('[data-neural-output]');
+    if (!nodes.length || !output) return;
+
+    const defaultOutput = output.textContent;
+    let pinnedNode = null;
+
+    const activate = (node, { pinned = false } = {}) => {
+      if (node) system.dataset.active = node.dataset.neuralNode;
+      else delete system.dataset.active;
+      output.textContent = node?.dataset.output || defaultOutput;
+      nodes.forEach((item) => item.setAttribute('aria-pressed', String(pinned && item === node)));
+    };
+
+    nodes.forEach((node) => {
+      node.addEventListener('pointerenter', () => activate(node, { pinned: node === pinnedNode }));
+      node.addEventListener('focus', () => activate(node, { pinned: node === pinnedNode }));
+      node.addEventListener('click', () => {
+        pinnedNode = pinnedNode === node ? null : node;
+        activate(pinnedNode, { pinned: Boolean(pinnedNode) });
+      });
+      node.addEventListener('blur', () => {
+        if (!pinnedNode) activate(null);
+      });
+    });
+
+    system.addEventListener('pointerleave', () => activate(pinnedNode, { pinned: Boolean(pinnedNode) }));
+  });
 })();
 
 (() => {

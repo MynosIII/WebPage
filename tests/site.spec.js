@@ -32,6 +32,7 @@ for (const viewport of viewports) {
       await menuButton.click();
       await expect(menuButton).toHaveAttribute('aria-expanded', 'true');
       await expect(page.locator('main')).toHaveJSProperty('inert', true);
+      await expect(page.locator('[data-portfolio-rail]')).toHaveJSProperty('inert', true);
       await page.keyboard.press('Escape');
       await expect(menuButton).toHaveAttribute('aria-expanded', 'false');
       await expect(menuButton).toBeFocused();
@@ -59,10 +60,27 @@ test('homepage presents exactly three flagship cases and working recruiter links
   await page.goto('/index.html', { waitUntil: 'networkidle' });
   await expect(page.locator('.work-card')).toHaveCount(3);
   await expect(page.locator('.library-card')).toHaveCount(6);
+  await expect(page.locator('.portfolio-rail__link')).toHaveCount(6);
+  await expect(page.locator('.portfolio-search')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Datos, pauta y contenido al servicio de la rentabilidad.' })).toBeVisible();
   const resumeResponse = await request.get('/output/pdf/Matias-Gaglio-CV-ES.pdf');
   expect(resumeResponse.ok()).toBeTruthy();
   expect(resumeResponse.headers()['content-type']).toContain('application/pdf');
+});
+
+test('analytical translator and portfolio search are interactive', async ({ page }) => {
+  await page.goto('/index.html', { waitUntil: 'networkidle' });
+  const dataNode = page.locator('[data-neural-node="data"]');
+  await expect(page.locator('[data-neural-node]')).toHaveCount(3);
+  await dataNode.click();
+  await expect(dataNode).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('[data-neural-output]')).toHaveText('SEÑAL');
+
+  const railSearch = page.locator('[data-search-trigger]');
+  await railSearch.click();
+  await expect(railSearch).toHaveAttribute('aria-expanded', 'true');
+  await expect(page.locator('.site-search-panel')).toBeVisible();
+  await expect(page.locator('.site-search-field input')).toBeFocused();
 });
 
 for (const path of ['/caso-1-es.html', '/caso-2-es.html', '/caso-3-es.html', '/caso-daizzy-gear-es.html', '/sobre-mi-es.html']) {
