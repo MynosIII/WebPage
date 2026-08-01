@@ -70,6 +70,11 @@ for (const path of ['/caso-1-es.html', '/caso-2-es.html', '/caso-3-es.html', '/c
     await page.goto(path, { waitUntil: 'networkidle' });
     const overflow = await page.evaluate(() => ({ scrollWidth: document.documentElement.scrollWidth, clientWidth: document.documentElement.clientWidth }));
     expect(overflow.scrollWidth).toBeLessThanOrEqual(overflow.clientWidth + 1);
+    const images = await page.locator('img').all();
+    for (const image of images) {
+      await image.scrollIntoViewIfNeeded();
+      await expect(image).toHaveJSProperty('complete', true);
+    }
     const brokenImages = await page.locator('img').evaluateAll(images => images.filter(image => !image.complete || image.naturalWidth === 0).length);
     expect(brokenImages).toBe(0);
   });
