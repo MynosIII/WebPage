@@ -82,3 +82,11 @@
 
   setMenu(false);
 })();
+
+(() => {
+  if (document.querySelector('script[data-site-search]')) return;
+  const searchScript = document.createElement('script');
+  searchScript.src = new URL('site-search.js', document.baseURI).href;
+  searchScript.dataset.siteSearch = '';
+  document.head.appendChild(searchScript);
+})();

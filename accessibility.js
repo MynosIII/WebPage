@@ -160,3 +160,13 @@
     });
   }
 })();
+
+(() => {
+  if (document.querySelector('script[data-site-search]')) return;
+  const current = document.currentScript;
+  if (!current?.src) return;
+  const searchScript = document.createElement('script');
+  searchScript.src = new URL('site-search.js', current.src).href;
+  searchScript.dataset.siteSearch = '';
+  document.head.appendChild(searchScript);
+})();
