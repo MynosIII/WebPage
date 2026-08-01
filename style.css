@@ -123,6 +123,12 @@ img {
     display: block;
 }
 
+/* Keep content available when the optional AOS CDN cannot initialize. */
+[data-aos]:not(.aos-init) {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
 .accent {
     color: var(--color-acento);
     font-weight: 700;
