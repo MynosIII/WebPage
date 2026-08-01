@@ -69,7 +69,7 @@ COPY = {
     "es": {
         "file": "Matias-Gaglio-CV-ES.pdf",
         "role": "Ecommerce & Amazon Growth Strategist",
-        "summary": "Combino Business Intelligence, PPC y contenido visual para ayudar a marcas de ecommerce a mejorar conversión y rentabilidad. Analizo performance, detecto oportunidades y convierto datos comerciales en decisiones ejecutables.",
+        "summary": "Combino Business Intelligence, PPC y contenido visual para ayudar a marcas de ecommerce a mejorar su conversión y rentabilidad. Analizo el rendimiento, detecto oportunidades y convierto datos comerciales en decisiones ejecutables.",
         "current": "ROL ACTUAL",
         "current_value": "Amazon Account Listing Manager",
         "expertise": "FOCO PROFESIONAL",
@@ -77,11 +77,11 @@ COPY = {
         "evidence": "EVIDENCIA SELECCIONADA",
         "cases": [
             ("Amazon Growth & PPC", "US$1.560 a US$2.830 en ventas retail (+81,53%) y 6,28% a 13,69% de conversión (+118,16%) entre ventanas consecutivas de 2025. ROAS observado en la vista agregada: 6,26.", "Audité campañas y listings, reorganicé segmentación y coordiné contenido y pauta. Comparación observacional; no experimento controlado."),
-            ("Business Intelligence para rentabilidad", "US$96.842,56 a US$312.480 en ventas y US$15.624,09 a US$62.314,45 de beneficio neto estimado entre julio y el corte del 27 de octubre de 2025.", "Construí la lectura mensual del portfolio y prioricé acciones cruzando ventas, publicidad, costos y margen. Marca anonimizada."),
-            ("Daizzy Gear - operación Amazon", "US$874 a US$2.415 de ordered revenue entre el 14-20 y el 21-27 de junio de 2026 (+176,4% semana contra semana).", "Audité PPC, definí criterios presupuestarios y coordiné inventario, promociones, A+ Content, Storefront y catálogo. Resultado puntual, no crecimiento sostenido.")
+            ("Business Intelligence para rentabilidad", "US$96.842,56 a US$312.480 en ventas y US$15.624,09 a US$62.314,45 de beneficio neto estimado entre julio y el corte del 27 de octubre de 2025.", "Construí la lectura mensual del portafolio y prioricé acciones cruzando ventas, publicidad, costos y margen. Marca anonimizada."),
+            ("Daizzy Gear - operación de Amazon", "US$874 a US$2.415 de ingresos por pedidos entre el 14-20 y el 21-27 de junio de 2026 (+176,4% semana contra semana).", "Audité PPC, definí criterios presupuestarios y coordiné inventario, promociones, A+ Content, Brand Store y catálogo. Resultado puntual, no crecimiento sostenido.")
         ],
         "approach": "ENFOQUE DE TRABAJO",
-        "approach_value": "Diagnosticar la restricción - priorizar por impacto y evidencia - implementar con ownership claro - medir baseline, período, resultado y límites.",
+        "approach_value": "Diagnosticar la restricción - priorizar por impacto y evidencia - implementar con responsabilidades claras - medir línea base, período, resultado y límites.",
         "skills": "HERRAMIENTAS",
         "skills_value": "Seller Central, Amazon Ads, SEO y CRO | SQL, Python, R y Power BI | GA4 y Google Ads | Reporting comercial | Arquitectura de listings | Diseño visual, 3D y automatización",
         "education": "FORMACIÓN",
@@ -108,7 +108,7 @@ COPY = {
         "skills": "TOOLS",
         "skills_value": "Seller Central, Amazon Ads, SEO and CRO | SQL, Python, R and Power BI | GA4 and Google Ads | Commercial reporting | Listing architecture | Visual design, 3D and automation",
         "education": "EDUCATION",
-        "education_value": "Communication Sciences, University of Buenos Aires (UBA)\nMedical Sales Representative, Favaloro University",
+        "education_value": "Communication Sciences, University of Buenos Aires (UBA)\nPharmaceutical Sales Representative, Favaloro University",
         "availability": "AVAILABILITY",
         "availability_value": "Freelance projects, consulting and remote collaborations.",
     },

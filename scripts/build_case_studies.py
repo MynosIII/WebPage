@@ -24,7 +24,7 @@ def render_nav(lang: str) -> str:
     items = (
         [("Inicio", "index.html"), ("Casos", "index.html#casos"), ("Sobre mí", "sobre-mi-es.html"), ("CV", "output/pdf/Matias-Gaglio-CV-ES.pdf"), ("Contacto", "mailto:matiasignaciogaglio@gmail.com")]
         if lang == "es"
-        else [("Home", "index-en.html"), ("Cases", "index-en.html#cases"), ("About", "sobre-mi-en.html"), ("Resume", "output/pdf/Matias-Gaglio-Resume-EN.pdf"), ("Contact", "mailto:matiasignaciogaglio@gmail.com")]
+        else [("Home", "index-en.html"), ("Case Studies", "index-en.html#cases"), ("About", "sobre-mi-en.html"), ("Resume", "output/pdf/Matias-Gaglio-Resume-EN.pdf"), ("Contact", "mailto:matiasignaciogaglio@gmail.com")]
     )
     return "".join(f'<li><a href="{esc(href)}">{esc(label)}</a></li>' for label, href in items)
 
@@ -45,16 +45,17 @@ def render_results(claim: dict[str, object], lang: str) -> str:
 
 def render_visuals(case: dict[str, object], lang: str) -> str:
     figures = []
-    for src, width, height, alt, caption_es, caption_en in case.get("visuals", []):
+    for src, width, height, _shared_alt, caption_es, caption_en in case.get("visuals", []):
         caption = caption_es if lang == "es" else caption_en
         figures.append(
-            f'<figure><img src="{esc(src)}" width="{width}" height="{height}" alt="{esc(alt)}" loading="lazy" decoding="async" />'
+            f'<figure><img src="{esc(src)}" width="{width}" height="{height}" alt="{esc(caption)}" loading="lazy" decoding="async" />'
             f'<figcaption>{esc(caption)}</figcaption></figure>'
         )
     if not figures:
         return ""
     heading = "Evidencia visual" if lang == "es" else "Visual evidence"
-    return f'<section class="case-section"><div class="home-shell"><div class="case-heading"><p class="eyebrow">EVIDENCE</p><h2>{heading}</h2></div><div class="visual-grid">{"".join(figures)}</div></div></section>'
+    eyebrow = "EVIDENCIA" if lang == "es" else "EVIDENCE"
+    return f'<section class="case-section"><div class="home-shell"><div class="case-heading"><p class="eyebrow">{eyebrow}</p><h2>{heading}</h2></div><div class="visual-grid">{"".join(figures)}</div></div></section>'
 
 
 def render_technical(data: dict[str, object], lang: str) -> str:
@@ -70,7 +71,8 @@ def render_technical(data: dict[str, object], lang: str) -> str:
         f'<article class="technical-card"><h3>{esc(title)}</h3><p>{esc(copy)}</p></article>'
         for title, copy in data["technical"]
     )
-    return f'<section class="case-section"><div class="home-shell"><div class="case-heading"><p class="eyebrow">TECHNICAL NOTE</p><h2>{heading}</h2><p class="case-deck">{intro}</p></div><div class="technical-grid">{cards}</div></div></section>'
+    eyebrow = "NOTA TÉCNICA" if lang == "es" else "TECHNICAL NOTE"
+    return f'<section class="case-section"><div class="home-shell"><div class="case-heading"><p class="eyebrow">{eyebrow}</p><h2>{heading}</h2><p class="case-deck">{intro}</p></div><div class="technical-grid">{cards}</div></div></section>'
 
 
 def render_case(case_id: str, case: dict[str, object], claims: dict[str, object], lang: str, default: bool = False) -> str:
@@ -102,7 +104,7 @@ def render_case(case_id: str, case: dict[str, object], claims: dict[str, object]
         "back_label": "Ver más casos" if spanish else "View more cases",
     }
     facts_labels = (
-        [("Período", claim["period_analyzed"][lang]), ("Baseline", claim["baseline"][lang]), ("Resultado final", claim["final_result"][lang])]
+        [("Período", claim["period_analyzed"][lang]), ("Línea base", claim["baseline"][lang]), ("Resultado final", claim["final_result"][lang])]
         if spanish
         else [("Period", claim["period_analyzed"][lang]), ("Baseline", claim["baseline"][lang]), ("Final outcome", claim["final_result"][lang])]
     )

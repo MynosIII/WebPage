@@ -21,7 +21,7 @@
     "header_contact": "Contactarme",
     "hero_kicker": "Ecommerce & Amazon Growth Strategist",
     "hero_title": "Datos, pauta y contenido al servicio de la rentabilidad.",
-    "hero_summary": "Combino Business Intelligence, PPC y contenido visual para ayudar a marcas de ecommerce a aumentar conversión y rentabilidad. Analizo performance, detecto oportunidades y convierto los datos en decisiones comerciales ejecutables.",
+    "hero_summary": "Combino Business Intelligence, PPC y contenido visual para ayudar a marcas de ecommerce a aumentar conversión y rentabilidad. Analizo el rendimiento, detecto oportunidades y convierto los datos en decisiones comerciales ejecutables.",
     "primary_cta": "Ver casos de estudio",
     "secondary_cta": "Contactarme",
     "cv_cta": "Descargar CV",
@@ -31,7 +31,7 @@
       ["+81,53%", "ventas retail · Caso 1"],
       ["+118,16%", "conversión · Caso 1"],
       ["US$312.480", "ventas al 27 oct · Caso 2"],
-      ["+176,4%", "recovery semanal · Daizzy"]
+      ["+176,4%", "recuperación semanal · Daizzy"]
     ],
     "capabilities_eyebrow": "Qué resuelvo",
     "capabilities_title": "Tres disciplinas, una sola decisión comercial.",
@@ -39,7 +39,7 @@
     "capabilities": [
       ["01", "Amazon Growth & PPC", "Diagnóstico de catálogo y campañas, asignación presupuestaria y optimización orientada a margen."],
       ["02", "Business Intelligence", "Lecturas de ventas, pauta y rentabilidad que muestran qué escalar, defender o corregir."],
-      ["03", "Data-to-Creative", "VOC y performance convertidos en galerías, listings y sistemas visuales que reducen incertidumbre de compra."]
+      ["03", "Data-to-Creative", "VOC y rendimiento convertidos en galerías, listings y sistemas visuales que reducen la incertidumbre de compra."]
     ],
     "work_eyebrow": "Tres casos insignia",
     "work_title": "Evidencia, intervención y límites claros.",
@@ -63,13 +63,13 @@
         "index": "02",
         "claim_id": "case_2",
         "category": "Business Intelligence",
-        "title": "Convertir ventas, pauta y margen en prioridades de portfolio",
+        "title": "Convertir ventas, pauta y margen en prioridades de portafolio",
         "problem": "El crecimiento mensual no explicaba qué productos aportaban rentabilidad ni dónde la inversión ocultaba el problema.",
-        "intervention": "Construí una lectura mensual del portfolio y prioricé acciones según el cuello de botella de cada producto.",
+        "intervention": "Construí una lectura mensual del portafolio y prioricé acciones según el cuello de botella de cada producto.",
         "href": "caso-2-es.html",
         "cta": "Ver caso completo",
         "image_src": "Caso2.jpeg",
-        "image_alt": "Panel mensual de ventas y beneficio neto utilizado para analizar el portfolio",
+        "image_alt": "Panel mensual de ventas y beneficio neto utilizado para analizar el portafolio",
         "image_width": 1024,
         "image_height": 268
       },
@@ -94,7 +94,7 @@
       ["01", "Diagnosticar", "Cruzo mercado, funnel, catálogo, contenido, pauta y economics para encontrar la restricción real."],
       ["02", "Priorizar", "Ordeno oportunidades por impacto, evidencia, esfuerzo y riesgo comercial."],
       ["03", "Implementar", "Convierto la hipótesis en una intervención concreta con responsables y alcance definidos."],
-      ["04", "Medir", "Documento baseline, resultado, período y límites; separo correlación de causalidad."]
+      ["04", "Medir", "Documento línea base, resultado, período y límites; separo correlación de causalidad."]
     ],
     "library_eyebrow": "Más trabajo · Labs & Explorations",
     "library_title": "Proyectos complementarios, sin competir con los casos principales.",
@@ -110,7 +110,7 @@
     "about_copy": "Mi formación en Comunicación me enseñó cómo las personas interpretan mensajes y toman decisiones. El ecommerce agregó una segunda capa: medir ese comportamiento mediante tráfico, conversión, rentabilidad y búsqueda. Hoy conecto comportamiento del cliente, datos comerciales y ejecución.",
     "about_cta": "Conocer mi historia profesional",
     "contact_eyebrow": "Próximo paso",
-    "contact_title": "¿Buscás mejorar la rentabilidad de un portfolio ecommerce?",
+    "contact_title": "¿Buscás mejorar la rentabilidad de un portafolio ecommerce?",
     "contact_copy": "Puedo ayudarte a detectar dónde se pierde conversión, presupuesto o margen. Hablemos sobre tu proyecto.",
     "email_cta": "Contactarme",
     "linkedin_cta": "LinkedIn",

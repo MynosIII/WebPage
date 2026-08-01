@@ -145,7 +145,7 @@ def structured_data(locale: dict[str, object]) -> str:
                 "Voice of Customer research",
             ],
             "description": (
-                "Estratega de ecommerce y Business Intelligence que conecta datos, performance y sistemas creativos."
+                "Estratega de ecommerce y Business Intelligence que conecta datos, rendimiento y sistemas creativos."
                 if spanish
                 else "Ecommerce and Business Intelligence strategist connecting data, performance and creative systems."
             ),
@@ -168,6 +168,13 @@ def render(locale: dict[str, object], claims: dict[str, object]) -> str:
             "primary_href": "#casos" if spanish else "#cases",
             "secondary_href": "#contacto" if spanish else "#contact",
             "cv_href": "output/pdf/Matias-Gaglio-CV-ES.pdf" if spanish else "output/pdf/Matias-Gaglio-Resume-EN.pdf",
+            "signal_data": "DATOS" if spanish else "DATA",
+            "signal_data_copy": "Encontrar la señal" if spanish else "Find the signal",
+            "signal_strategy": "ESTRATEGIA" if spanish else "STRATEGY",
+            "signal_strategy_copy": "Elegir la acción" if spanish else "Choose the move",
+            "signal_creative": "CONTENIDO" if spanish else "CREATIVE",
+            "signal_creative_copy": "Comunicar con claridad" if spanish else "Make it clear",
+            "signal_measure": "MEDIR" if spanish else "MEASURE",
             "capabilities_id": "capacidades" if spanish else "capabilities",
             "work_id": "casos" if spanish else "cases",
             "method_id": "metodo" if spanish else "method",
