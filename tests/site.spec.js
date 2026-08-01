@@ -58,6 +58,7 @@ test('homepage has no serious or critical automated accessibility violations', a
 test('homepage presents exactly three flagship cases and working recruiter links', async ({ page, request }) => {
   await page.goto('/index.html', { waitUntil: 'networkidle' });
   await expect(page.locator('.work-card')).toHaveCount(3);
+  await expect(page.locator('.library-card')).toHaveCount(6);
   await expect(page.getByRole('heading', { name: 'Datos, pauta y contenido al servicio de la rentabilidad.' })).toBeVisible();
   const resumeResponse = await request.get('/output/pdf/Matias-Gaglio-CV-ES.pdf');
   expect(resumeResponse.ok()).toBeTruthy();

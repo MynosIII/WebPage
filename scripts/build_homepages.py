@@ -109,8 +109,9 @@ def method_items(items: list[list[str]]) -> str:
 
 def library_items(items: list[list[str]]) -> str:
     return "".join(
-        f'<a class="library-card" href="{esc(href)}"><h3>{esc(title)}</h3><p>{esc(copy)}</p><span aria-hidden="true">↗</span></a>'
-        for title, copy, href in items
+        f'<a class="library-card" href="{esc(href)}"><span class="library-card__index">{index:02d}</span>'
+        f'<h3>{esc(title)}</h3><p>{esc(copy)}</p><span class="library-card__arrow" aria-hidden="true">↗</span></a>'
+        for index, (title, copy, href) in enumerate(items, start=1)
     )
 
 
@@ -165,7 +166,7 @@ def render(locale: dict[str, object], claims: dict[str, object]) -> str:
             "home_href": "index.html" if spanish else "index-en.html",
             "home_id": "inicio" if spanish else "home",
             "switch_hreflang": "en" if spanish else "es",
-            "primary_href": "#casos" if spanish else "#cases",
+            "primary_href": "#trabajo" if spanish else "#work",
             "secondary_href": "#contacto" if spanish else "#contact",
             "cv_href": "output/pdf/Matias-Gaglio-CV-ES.pdf" if spanish else "output/pdf/Matias-Gaglio-Resume-EN.pdf",
             "signal_data": "DATOS" if spanish else "DATA",
@@ -176,6 +177,7 @@ def render(locale: dict[str, object], claims: dict[str, object]) -> str:
             "signal_creative_copy": "Comunicar con claridad" if spanish else "Make it clear",
             "signal_measure": "MEDIR" if spanish else "MEASURE",
             "capabilities_id": "capacidades" if spanish else "capabilities",
+            "library_id": "trabajo" if spanish else "work",
             "work_id": "casos" if spanish else "cases",
             "method_id": "metodo" if spanish else "method",
             "contact_id": "contacto" if spanish else "contact",
