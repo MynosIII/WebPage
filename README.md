@@ -5,7 +5,7 @@ This repository is the source of truth for the bilingual static portfolio deploy
 ## Site architecture
 
 - `/` serves the Spanish homepage directly. `/index-en.html` is its English counterpart and `/index-es.html` remains a backwards-compatible Spanish URL.
-- `content/homepage.json` is the bilingual content source for all three homepage files; the homepage intentionally presents three flagship cases.
+- `content/homepage.json` is the bilingual content source for all three homepage files; the homepage combines three evidence-led flagship cases with a prominent directory of the complete portfolio.
 - `content/project-claims.json` is the credibility source of truth for every public metric, period, baseline, contribution, source, approved claim, and evidence note in the flagship and Daizzy cases.
 - `content/case-studies.json` and `templates/case-study.html` generate the standardized Case 1, Case 2, Case 3, and Daizzy pages.
 - `content/about.json` and `templates/about.html` generate the recruiter-focused professional story.

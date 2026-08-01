@@ -13,7 +13,7 @@
     "menu_close": "Cerrar menú",
     "nav": [
       ["Inicio", "#inicio"],
-      ["Casos", "#casos"],
+      ["Trabajo", "#trabajo"],
       ["Sobre mí", "sobre-mi-es.html"],
       ["CV", "output/pdf/Matias-Gaglio-CV-ES.pdf"],
       ["Contacto", "#contacto"]
@@ -22,7 +22,7 @@
     "hero_kicker": "Ecommerce & Amazon Growth Strategist",
     "hero_title": "Datos, pauta y contenido al servicio de la rentabilidad.",
     "hero_summary": "Combino Business Intelligence, PPC y contenido visual para ayudar a marcas de ecommerce a aumentar conversión y rentabilidad. Analizo el rendimiento, detecto oportunidades y convierto los datos en decisiones comerciales ejecutables.",
-    "primary_cta": "Ver casos de estudio",
+    "primary_cta": "Explorar mi trabajo",
     "secondary_cta": "Contactarme",
     "cv_cta": "Descargar CV",
     "availability": "Disponible para proyectos freelance, consultoría y colaboraciones remotas.",
@@ -41,7 +41,7 @@
       ["02", "Business Intelligence", "Lecturas de ventas, pauta y rentabilidad que muestran qué escalar, defender o corregir."],
       ["03", "Data-to-Creative", "VOC y rendimiento convertidos en galerías, listings y sistemas visuales que reducen la incertidumbre de compra."]
     ],
-    "work_eyebrow": "Tres casos insignia",
+    "work_eyebrow": "Casos con resultados",
     "work_title": "Evidencia, intervención y límites claros.",
     "work_intro": "Cada caso distingue lo observado, mi contribución y aquello que los datos disponibles todavía no permiten afirmar.",
     "work": [
@@ -88,22 +88,25 @@
         "image_height": 1312
       }
     ],
-    "method_eyebrow": "Cómo trabajo",
-    "method_title": "De una señal ambigua a una decisión defendible.",
+    "method_eyebrow": "Idea rectora · Traductor Analítico",
+    "method_title": "Traducir señales complejas en decisiones que se pueden ejecutar.",
+    "method_intro": "Traductor Analítico describe cómo trabajo, no reemplaza mi rol: conecto lenguaje del cliente, datos comerciales y ejecución para que un hallazgo termine en una decisión concreta.",
     "method": [
       ["01", "Diagnosticar", "Cruzo mercado, funnel, catálogo, contenido, pauta y economics para encontrar la restricción real."],
       ["02", "Priorizar", "Ordeno oportunidades por impacto, evidencia, esfuerzo y riesgo comercial."],
       ["03", "Implementar", "Convierto la hipótesis en una intervención concreta con responsables y alcance definidos."],
       ["04", "Medir", "Documento línea base, resultado, período y límites; separo correlación de causalidad."]
     ],
-    "library_eyebrow": "Más trabajo · Labs & Explorations",
-    "library_title": "Proyectos complementarios, sin competir con los casos principales.",
+    "library_eyebrow": "Portafolio completo",
+    "library_title": "Una práctica híbrida: estrategia, análisis, creatividad e investigación.",
+    "library_intro": "Los casos con métricas muestran profundidad; estas áreas muestran amplitud. Cada entrada abre una colección de proyectos, sistemas o investigaciones.",
     "library": [
-      ["Ecommerce", "Casos adicionales de PPC, SEO, catálogo y operación.", "ecommerce-es.html"],
+      ["Ecommerce", "Casos de Amazon, PPC, SEO, catálogo y sistemas operativos.", "ecommerce-es.html"],
+      ["Creatives", "Imagen de producto, video, motion, 3D e iconografía.", "creatives-es.html"],
       ["Artículos", "Playbooks y análisis aplicados a marketplaces.", "Articles-es.html"],
-      ["Creatives", "Imagen, motion, 3D e iconografía.", "creatives-es.html"],
-      ["Investigación de opinión", "Medios, modelos explicativos e informes.", "consultora-es.html"],
-      ["Otros proyectos", "Música, visualización y exploraciones personales.", "otros-es.html"]
+      ["Investigación de opinión", "Encuestas, modelos explicativos, dashboards e informes.", "consultora-es.html"],
+      ["Otros proyectos", "Música, documentos, visualización y exploraciones personales.", "otros-es.html"],
+      ["Chat Matías", "Asistente interactivo del portafolio · En desarrollo.", "SEO-es.html"]
     ],
     "about_eyebrow": "Sobre mí",
     "about_title": "Comunicación para entender; datos para decidir.",
@@ -131,7 +134,7 @@
     "menu_close": "Close menu",
     "nav": [
       ["Home", "#home"],
-      ["Cases", "#cases"],
+      ["Work", "#work"],
       ["About", "sobre-mi-en.html"],
       ["Resume", "output/pdf/Matias-Gaglio-Resume-EN.pdf"],
       ["Contact", "#contact"]
@@ -140,7 +143,7 @@
     "hero_kicker": "Ecommerce & Amazon Growth Strategist",
     "hero_title": "Data, media and content focused on profitability.",
     "hero_summary": "I combine Business Intelligence, PPC and visual content to help ecommerce brands improve conversion and profitability. I analyze performance, identify opportunities and turn data into executable commercial decisions.",
-    "primary_cta": "View case studies",
+    "primary_cta": "Explore my work",
     "secondary_cta": "Contact me",
     "cv_cta": "Download resume",
     "availability": "Available for freelance projects, consulting and remote collaborations.",
@@ -159,7 +162,7 @@
       ["02", "Business Intelligence", "Sales, media and profitability views that show what to scale, defend or correct."],
       ["03", "Data-to-Creative", "VOC and performance translated into galleries, listings and visual systems that reduce purchase uncertainty."]
     ],
-    "work_eyebrow": "Three flagship cases",
+    "work_eyebrow": "Outcome-led cases",
     "work_title": "Evidence, intervention and clear limits.",
     "work_intro": "Each case separates what was observed, what I contributed and what the available evidence cannot yet support.",
     "work": [
@@ -206,22 +209,25 @@
         "image_height": 1312
       }
     ],
-    "method_eyebrow": "How I work",
-    "method_title": "From an ambiguous signal to a defensible decision.",
+    "method_eyebrow": "Working principle · Analytical Translator",
+    "method_title": "Translating complex signals into decisions people can execute.",
+    "method_intro": "Analytical Translator describes how I work; it does not replace my role. I connect customer language, commercial data and execution so an insight ends in a concrete decision.",
     "method": [
       ["01", "Diagnose", "I connect market, funnel, catalog, content, media and economics to find the actual constraint."],
       ["02", "Prioritize", "I rank opportunities by impact, evidence, effort and commercial risk."],
       ["03", "Implement", "I turn the hypothesis into a concrete intervention with defined ownership and scope."],
       ["04", "Measure", "I document baseline, outcome, period and limits; I separate correlation from causality."]
     ],
-    "library_eyebrow": "More work · Labs & Explorations",
-    "library_title": "Supporting projects that do not compete with the flagship cases.",
+    "library_eyebrow": "Complete portfolio",
+    "library_title": "A hybrid practice across strategy, analysis, creative work and research.",
+    "library_intro": "The metric-led cases show depth; these areas show breadth. Each entry opens a collection of projects, systems or research.",
     "library": [
-      ["Ecommerce", "Additional PPC, SEO, catalog and operations cases.", "ecommerce-en.html"],
+      ["Ecommerce", "Amazon, PPC, SEO, catalog and operating-system cases.", "ecommerce-en.html"],
+      ["Creatives", "Product imagery, video, motion, 3D and iconography.", "creatives-en.html"],
       ["Articles", "Marketplace playbooks and applied analysis.", "Articles-en.html"],
-      ["Creatives", "Image, motion, 3D and iconography.", "creatives-en.html"],
-      ["Opinion research", "Media, explanatory models and reports.", "consultora-en.html"],
-      ["Other projects", "Music, visualization and personal explorations.", "otros-en.html"]
+      ["Opinion research", "Surveys, explanatory models, dashboards and reports.", "consultora-en.html"],
+      ["Other projects", "Music, documents, visualization and personal explorations.", "otros-en.html"],
+      ["Chat Matías", "Interactive portfolio assistant · Work in progress.", "SEO-en.html"]
     ],
     "about_eyebrow": "About",
     "about_title": "Communication to understand; data to decide.",
