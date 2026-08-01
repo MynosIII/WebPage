@@ -4,17 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatMatias - Portfolio SEO</title>
-    
-    <link rel="stylesheet" href="style.css" />
-    
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Shared discovery metadata: maintained by scripts/normalize_site.py -->
+  <link rel="canonical" href="https://matiasgaglio.onrender.com/SEO-es.html" />
+  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/SEO-en.html" />
+  <link rel="alternate" hreflang="es" href="https://matiasgaglio.onrender.com/SEO-es.html" />
+  <link rel="alternate" hreflang="x-default" href="https://matiasgaglio.onrender.com/SEO-en.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Matías Gaglio" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="ChatMatias - Portfolio SEO" />
+  <meta property="og:description" content="Conversá con Matías Gaglio sobre su trabajo en ecommerce, analítica y creatividad." />
+  <meta property="og:url" content="https://matiasgaglio.onrender.com/SEO-es.html" />
+  <meta property="og:image" content="https://matiasgaglio.onrender.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Matías Gaglio — ecommerce, analytics and creative strategy portfolio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ChatMatias - Portfolio SEO" />
+  <meta name="twitter:description" content="Conversá con Matías Gaglio sobre su trabajo en ecommerce, analítica y creatividad." />
+  <meta name="twitter:image" content="https://matiasgaglio.onrender.com/og-card.png" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#121212" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest" />
+  <!-- /Shared discovery metadata -->
+<link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
 <body>
 
     <header class="navbar">
       <div class="container">
-        <a href="index.html" class="nav-logo">Matías Gaglio.</a> 
-        
+        <a href="index.html" class="nav-logo">Matías Gaglio.</a>
+
         <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -39,7 +63,7 @@
     <main id="chat-page-wrapper">
 
         <div id="chat-container">
-            
+
             <div id="chat-historial">
                 <div id="empty-state">
                     <h1>ChatMatias</h1>
@@ -51,7 +75,7 @@
                     </div>
                     </div>
             </div>
-            
+
             <form id="chat-form">
                 <input type="text" id="chat-input" placeholder="Escribe tu consulta aquí..." autocomplete="off">
                 <button type="submit" aria-label="Enviar">
@@ -61,23 +85,23 @@
                     </svg>
                 </button>
             </form>
-            
+
             <div id="chat-footer-hint">
                  <p>
                    Escribe "<span class="accent">ayuda</span>" para ver todos los comandos.
                  </p>
             </div>
-            
+
         </div>
 
     </main>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        
+
         // 1. Inicializa las animaciones AOS
-        AOS.init({
+        window.AOS?.init({
             duration: 800,
             once: true,
             offset: 50,
@@ -179,7 +203,7 @@
             });
           });
         }
-        
+
         // ===================================
         // 6. LÓGICA DEL CHAT (de esta página)
         // ===================================
@@ -190,7 +214,7 @@
         const suggestionChips = document.querySelectorAll('.suggestion-chip');
 
         if (chatForm && chatInput && chatHistorial) {
-          
+
             // --- DATOS DEL "ÍNDICE" ---
             const miIndiceSEO = {
                 proyectos: [
@@ -218,7 +242,7 @@
                     resumen: "Especialista en Marketing Digital y Ecommerce con foco en performance, análisis de datos y optimización algorítmica."
                 }
             };
-            
+
             // --- Función para enviar consulta (usada por form y chips) ---
             function enviarConsulta(comando) {
                 if (!comando) return;
@@ -294,13 +318,13 @@
                 const stopWords = ['y', 'e', 'de', 'para', 'con', 'el', 'la', 'los', 'las'];
                 const terminosBusqueda = terminoLimpio.split(' ').filter(t => t.length > 0 && !stopWords.includes(t));
                 let resultados = [];
-                
+
                 miIndiceSEO.proyectos.forEach(p => {
                     let contenido = [p.titulo, p.descripcion, ...p.tags].join(' ').toLowerCase();
                     const allTermsMatch = terminosBusqueda.every(t => contenido.includes(t));
                     if (allTermsMatch) resultados.push({ tipo: 'Proyecto', id: p.id });
                 });
-                
+
                 Object.entries(miIndiceSEO.habilidades).forEach(([key, h]) => {
                     let contenido = [h.nombre, h.descripcion, ...h.tags].join(' ').toLowerCase();
                     const allTermsMatch = terminosBusqueda.every(t => contenido.includes(t));
@@ -315,7 +339,7 @@
                     const primerResultado = resultados[0];
                     const totalResultados = resultados.length;
                     html = `¡Perfecto! Encontré <span class="accent">${totalResultados}</span> ${totalResultados === 1 ? 'resultado' : 'resultados'} que coinciden con "<span class="accent">${termino}</span>". El más relevante es:<br><br>`;
-                    
+
                     if (primerResultado.tipo === 'Proyecto') {
                         const proyecto = miIndiceSEO.proyectos.find(p => p.id === primerResultado.id);
                         html += formatProyecto(proyecto);

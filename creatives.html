@@ -5,17 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Creatives – Matías Gaglio</title>
   <meta name="description" content="Portfolio visual: íconos, logos, videos y flyers de Matías Gaglio." />
-  
-  <link rel="stylesheet" href="style.css" />
-  
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Shared discovery metadata: maintained by scripts/normalize_site.py -->
+  <link rel="canonical" href="https://matiasgaglio.onrender.com/creatives-es.html" />
+  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/creatives-en.html" />
+  <link rel="alternate" hreflang="es" href="https://matiasgaglio.onrender.com/creatives-es.html" />
+  <link rel="alternate" hreflang="x-default" href="https://matiasgaglio.onrender.com/creatives-en.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Matías Gaglio" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Creatives – Matías Gaglio" />
+  <meta property="og:description" content="Portfolio visual: íconos, logos, videos y flyers de Matías Gaglio." />
+  <meta property="og:url" content="https://matiasgaglio.onrender.com/creatives-es.html" />
+  <meta property="og:image" content="https://matiasgaglio.onrender.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Matías Gaglio — ecommerce, analytics and creative strategy portfolio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Creatives – Matías Gaglio" />
+  <meta name="twitter:description" content="Portfolio visual: íconos, logos, videos y flyers de Matías Gaglio." />
+  <meta name="twitter:image" content="https://matiasgaglio.onrender.com/og-card.png" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#121212" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest" />
+  <!-- /Shared discovery metadata -->
+<link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
 <body>
 
   <header class="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">Matías Gaglio.</a> 
-      
+      <a href="index.html" class="nav-logo">Matías Gaglio.</a>
+
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -47,7 +71,7 @@
       </div>
     </section>
 
-    <section class="gallery-filter-bar">
+    <div class="gallery-filter-bar">
       <div class="container" data-aos="fade-up" data-aos-delay="200">
         <div class="gallery-controls">
           <button class="filter-chip is-active" data-filter="all" aria-label="Mostrar todos">Todos</button>
@@ -58,7 +82,7 @@
           <button class="filter-chip" data-filter="flyers" aria-label="Filtrar por Flyers">Flyers</button>
         </div>
       </div>
-    </section>
+    </div>
 
     <section class="portfolio-gallery-section">
       <div class="container">
@@ -195,7 +219,7 @@
           </div>
         </a>
 
-        <a class="revolution-showcase" href="Revolution_creative_case.html" aria-label="Open the automotive Amazon listing transformation case study" data-gallery-category="flyers">
+        <a class="revolution-showcase" id="revolution-marketplace" href="Revolution_creative_case.html" aria-label="Open the automotive Amazon listing transformation case study" data-gallery-category="flyers">
           <div class="revolution-showcase-copy" data-aos="fade-up">
             <span>Automotive ecommerce · Before / after</span>
             <h2>From product listing to conversion story.</h2>
@@ -206,11 +230,11 @@
           <div class="revolution-showcase-visual" data-aos="fade-up" data-aos-delay="100">
             <div class="revolution-visual-card revolution-visual-before">
               <small>Before</small>
-              <img src="Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Original automotive Amazon listing image" loading="lazy" />
+              <img src="Revolution/Old%20Style%20Images/61dHW0lmqEL._AC_SL1500_.jpg" alt="Original automotive Amazon listing image" loading="lazy" />
             </div>
             <div class="revolution-visual-card revolution-visual-after">
               <small>After</small>
-              <img src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="Redesigned automotive Amazon listing image" loading="lazy" />
+              <img src="Revolution/New%20Style%20Images/61HEg-LnYyL._AC_SL1400_.jpg" alt="Redesigned automotive Amazon listing image" loading="lazy" />
             </div>
             <span class="revolution-visual-line">Listing transformation · 01</span>
           </div>
@@ -324,7 +348,7 @@
           <div class="modeling-lab-panel">
             <div class="modeling-model-count"><span id="modeling-current-index">01</span> / 05</div>
             <div class="modeling-model-copy"><span id="modeling-category">Product visualization</span><h3 id="modeling-title">Variety of Pills</h3><p id="modeling-description">A compact product study rebuilt for real-time presentation.</p></div>
-            <div class="modeling-carousel-controls" aria-label="3D model carousel controls"><button id="modeling-prev" type="button" aria-label="Previous model">←</button><div class="modeling-progress"><i id="modeling-progress-bar"></i></div><button id="modeling-next" type="button" aria-label="Next model">→</button></div>
+            <div class="modeling-carousel-controls" role="group" aria-label="3D model carousel controls"><button id="modeling-prev" type="button" aria-label="Previous model">←</button><div class="modeling-progress"><i id="modeling-progress-bar"></i></div><button id="modeling-next" type="button" aria-label="Next model">→</button></div>
             <div class="modeling-model-list" id="modeling-model-list" role="tablist" aria-label="Choose a 3D model"></div>
           </div>
         </div>
@@ -349,7 +373,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Matías Gaglio. Portfolio personal.</p>
+      <p>&copy; 2026 Matías Gaglio. Portfolio personal.</p>
     </div>
   </footer>
 
@@ -360,13 +384,13 @@
   </div>
 
   <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.166.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.166.1/examples/jsm/"}}</script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script type="module" src="creatives-3d.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      
+
       // 1. Inicializa las animaciones AOS
-      AOS.init({
+      window.AOS?.init({
           duration: 800,
           once: true,
           offset: 50,
@@ -375,7 +399,7 @@
       // 2. CÓDIGO DEL MENÚ HAMBURGUESA
       const navToggle = document.querySelector('.nav-toggle');
       const navMenu = document.querySelector('.nav-menu');
-      
+
       if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
           document.querySelector('.navbar').classList.toggle('nav-open');
@@ -410,7 +434,7 @@
       const items = document.querySelectorAll('.grid-item');
       const categoryShowcases = document.querySelectorAll('[data-gallery-category]');
       const portfolioGallery = document.querySelector('.portfolio-gallery-section');
-      
+
       if (chips.length > 0) {
         chips.forEach(chip => {
           chip.addEventListener('click', () => {
@@ -493,7 +517,7 @@
       let lastFocusedItem = null; // Para accesibilidad
 
       if (lb && lbContent && closeBtn) {
-        
+
         function openLightbox(html, triggerElement) {
           const oldContent = lbContent.querySelector('img, .video-embed');
           if (oldContent) {
@@ -543,11 +567,11 @@
             if (videoId) {
               const videoHtml = `
                 <div class="video-embed">
-                  <iframe 
+                  <iframe
                     src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
-                    title="Video: ${altText}" 
-                    frameborder="0" 
-                    allow="autoplay; encrypted-media; picture-in-picture" 
+                    title="Video: ${altText}"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media; picture-in-picture"
                     allowfullscreen>
                   </iframe>
                 </div>`;
@@ -559,7 +583,7 @@
           });
         });
       }
-      
+
     });
   </script>
 

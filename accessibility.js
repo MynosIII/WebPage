@@ -25,13 +25,17 @@
   const primaryNav = document.querySelector('.nav-menu');
   const navToggle = document.querySelector('.nav-toggle');
   if (primaryNav && navToggle) {
+    const navbar = navToggle.closest('.navbar');
+    const openLabel = spanish ? 'Abrir menú' : 'Open menu';
     if (!primaryNav.id) primaryNav.id = 'primary-navigation';
     navToggle.setAttribute('aria-controls', primaryNav.id);
     document.addEventListener('keydown', event => {
       if (event.key !== 'Escape' || navToggle.getAttribute('aria-expanded') !== 'true') return;
+      navbar?.classList.remove('nav-open');
       primaryNav.classList.remove('active');
       navToggle.classList.remove('active');
       navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', openLabel);
       navToggle.focus();
     });
   }

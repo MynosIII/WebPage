@@ -5,8 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Articles | Matias Gaglio</title>
   <meta name="description" content="Articles and technical case studies by Matias Gaglio on Amazon PPC, marketplace analytics, business intelligence, and ecommerce growth." />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Shared discovery metadata: maintained by scripts/normalize_site.py -->
+  <link rel="canonical" href="https://matiasgaglio.onrender.com/Articles-en.html" />
+  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/Articles-en.html" />
+  <link rel="alternate" hreflang="es" href="https://matiasgaglio.onrender.com/Articles-es.html" />
+  <link rel="alternate" hreflang="x-default" href="https://matiasgaglio.onrender.com/Articles-en.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Matías Gaglio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="es_AR" />
+  <meta property="og:title" content="Articles | Matias Gaglio" />
+  <meta property="og:description" content="Articles and technical case studies by Matias Gaglio on Amazon PPC, marketplace analytics, business intelligence, and ecommerce growth." />
+  <meta property="og:url" content="https://matiasgaglio.onrender.com/Articles-en.html" />
+  <meta property="og:image" content="https://matiasgaglio.onrender.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Matías Gaglio — ecommerce, analytics and creative strategy portfolio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Articles | Matias Gaglio" />
+  <meta name="twitter:description" content="Articles and technical case studies by Matias Gaglio on Amazon PPC, marketplace analytics, business intelligence, and ecommerce growth." />
+  <meta name="twitter:image" content="https://matiasgaglio.onrender.com/og-card.png" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#121212" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest" />
+  <!-- /Shared discovery metadata -->
+<link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <style>
     .articles-intro { background-color:var(--color-superficie); }
     .articles-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-top:3rem; }
@@ -18,13 +43,6 @@
     .article-card p { color:var(--color-texto-sec); margin:0; }
     .article-meta { color:var(--color-acento); font-family:var(--font-titulos); font-size:.82rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
   </style>
-<style>
-.language-switch{position:fixed;right:18px;bottom:18px;z-index:10000;display:grid;place-items:center;
-min-width:42px;height:42px;padding:0 10px;border:1px solid rgba(127,127,127,.35);border-radius:999px;
-background:rgba(15,15,18,.88);color:#fff!important;font:700 12px/1 system-ui,sans-serif;
-letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(10px)}
-.language-switch:focus-visible{outline:3px solid #66a3ff;outline-offset:3px}
-</style>
 </head>
 <body><a class="language-switch" href="Articles-es.html" hreflang="es" aria-label="Ver en español">ES</a>
   <header class="navbar">
@@ -120,9 +138,9 @@ letter-spacing:.08em;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);
   </main>
 
   <footer><div class="container"><p>&copy; 2026 Matias Gaglio. Portfolio personal.</p></div></footer>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration:800, once:true, offset:50 });
+    window.AOS?.init({ duration:800, once:true, offset:50 });
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     if (navToggle && navMenu) navToggle.addEventListener('click', () => {
