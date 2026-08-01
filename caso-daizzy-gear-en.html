@@ -1,382 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Amazon Account Management Case Study – Daizzy Gear | Matías Gaglio</title>
-  <meta name="description" content="Amazon account management case study showing how PPC optimization, inventory-aware advertising, promotions, A+ Content, Storefront updates, and marketplace operations improved Daizzy Gear performance." />
-  <!-- Shared discovery metadata: maintained by scripts/normalize_site.py -->
+  <title>Daizzy Gear: operating PPC, inventory and content as one system | Matías Gaglio</title>
+  <meta name="description" content="Technical Amazon account-management case for Daizzy Gear: PPC audit, budget, inventory, promotions, A+ Content, Storefront and catalog." />
   <link rel="canonical" href="https://matiasgaglio.onrender.com/caso-daizzy-gear-en.html" />
-  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/caso-daizzy-gear-en.html" />
   <link rel="alternate" hreflang="es" href="https://matiasgaglio.onrender.com/caso-daizzy-gear-es.html" />
-  <link rel="alternate" hreflang="x-default" href="https://matiasgaglio.onrender.com/caso-daizzy-gear-en.html" />
-  <meta property="og:type" content="website" />
+  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/caso-daizzy-gear-en.html" />
+  <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Matías Gaglio" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:locale:alternate" content="es_AR" />
-  <meta property="og:title" content="Amazon Account Management Case Study – Daizzy Gear | Matías Gaglio" />
-  <meta property="og:description" content="Amazon account management case study showing how PPC optimization, inventory-aware advertising, promotions, A+ Content, Storefront updates, and marketplace operations improved Daizzy Gear performance." />
+  <meta property="og:title" content="Daizzy Gear: operating PPC, inventory and content as one system | Matías Gaglio" />
+  <meta property="og:description" content="Technical Amazon account-management case for Daizzy Gear: PPC audit, budget, inventory, promotions, A+ Content, Storefront and catalog." />
   <meta property="og:url" content="https://matiasgaglio.onrender.com/caso-daizzy-gear-en.html" />
   <meta property="og:image" content="https://matiasgaglio.onrender.com/og-card.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Matías Gaglio — ecommerce, analytics and creative strategy portfolio" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Amazon Account Management Case Study – Daizzy Gear | Matías Gaglio" />
-  <meta name="twitter:description" content="Amazon account management case study showing how PPC optimization, inventory-aware advertising, promotions, A+ Content, Storefront updates, and marketplace operations improved Daizzy Gear performance." />
-  <meta name="twitter:image" content="https://matiasgaglio.onrender.com/og-card.png" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="theme-color" content="#121212" />
+  <meta name="theme-color" content="#090d10" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="site.webmanifest" />
-  <!-- /Shared discovery metadata -->
-<link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="case-study.css" />
 </head>
-<body><a class="language-switch" href="caso-daizzy-gear-es.html" hreflang="es" aria-label="Ver en español">ES</a>
-
-  <header class="navbar">
-    <div class="container">
-      <a href="index-en.html" class="nav-logo">Matías Gaglio.</a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-      </button>
-      <nav class="nav-menu" aria-label="Main navigation"><ul>
-          <li><a href="index-en.html">Home</a></li>
-          <li><a href="ecommerce-en.html">Ecommerce</a></li>
-          <li><a href="Articles-en.html">Articles</a></li>
-          <li><a href="creatives-en.html">Creatives</a></li>
-          <li><a href="consultora-en.html">Opinion Research</a></li>
-          <li><a href="otros-en.html">Other projects</a></li>
-          <li><a href="SEO-en.html">ChatMatias</a></li>
-          <li><a href="sobre-mi-en.html">About me</a></li>
-      </ul></nav>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner">
+      <a class="site-logo" href="index-en.html" aria-label="Matías Gaglio — Home"><span>MG</span><strong>Matías Gaglio</strong></a>
+      <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation" data-site-nav><ul><li><a href="index-en.html">Home</a></li><li><a href="index-en.html#cases">Cases</a></li><li><a href="sobre-mi-en.html">About</a></li><li><a href="output/pdf/Matias-Gaglio-Resume-EN.pdf">Resume</a></li><li><a href="mailto:matiasignaciogaglio@gmail.com">Contact</a></li></ul></nav>
+      <div class="site-header__actions">
+        <a class="header-contact" href="mailto:matiasignaciogaglio@gmail.com">Contact me</a>
+        <a class="locale-link" href="caso-daizzy-gear-es.html" hreflang="es" aria-label="Ver en español">ES</a>
+        <button class="menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu" data-menu-button data-open-label="Open menu" data-close-label="Close menu"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </header>
+  <button class="menu-backdrop" type="button" aria-label="Close menu" tabindex="-1" data-menu-backdrop></button>
 
-  <main>
-
-    <article>
-
-      <header class="page-hero">
-        <div class="container">
-          <p data-aos="fade-up">Amazon Account Management Case Study</p>
-
-          <h1 data-aos="fade-up" data-aos-delay="100">How I Helped Improve Amazon Growth, Advertising Efficiency, and Marketplace Operations for Daizzy Gear</h1>
-
-          <p data-aos="fade-up" data-aos-delay="200">
-            This case study shows how I contributed to the growth and operational improvement of an Amazon brand by combining Amazon PPC management, listing optimization, inventory-aware advertising, promotional planning, storefront updates, and data-driven marketplace strategy.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="300">
-            My work focused on turning fragmented account activity into a more structured Amazon growth system. Campaigns were optimized around product availability and return potential, promotions were built to move aged inventory, content was updated to support conversion, and advertising decisions were tied directly to business priorities.
-          </p>
-
-          <figure data-aos="fade-up" data-aos-delay="400">
-            <img src="image_076.png" alt="Daizzy Gear Amazon ordered revenue showing 2415 dollars and 176.4 percent growth versus the prior week" loading="lazy" width="494" height="554" decoding="async">
-            <figcaption>Weekly ordered revenue reached $2,415, showing a strong recovery and growth period after the account changes and Prime Day preparation.</figcaption>
-          </figure>
+  <main id="main-content">
+    <header class="case-hero">
+      <div class="home-shell case-hero__grid">
+        <div>
+          <p class="eyebrow">Amazon Account Management · Technical Case</p>
+          <h1>Daizzy Gear: operating PPC, inventory and content as one system</h1>
+          <p class="case-deck">A technical explanation of how I connected advertising, availability, promotions and content to move from isolated adjustments to a weekly operating cadence.</p>
         </div>
-      </header>
+        <dl class="case-facts"><div><dt>Period</dt><dd>Work archive from March–June 2026; revenue comparison for June 14–20 vs. June 21–27, 2026.</dd></div><div><dt>Baseline</dt><dd>Weekly revenue: $874 (June 14–20, 2026).</dd></div><div><dt>Final outcome</dt><dd>Weekly revenue: $2,415 (June 21–27, 2026).</dd></div></dl>
+      </div>
+    </header>
 
-      <section>
-        <div class="container">
-          <h2 data-aos="fade-up">The Challenge</h2>
+    <section class="case-section case-context" aria-labelledby="context-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">01</p><h2 id="context-title">Client and context</h2></div>
+        <div class="case-prose"><p>A Daizzy Gear Amazon account worked on from March through June 2026. The archive includes Amazon Ads, inventory, promotions, A+ Content, Storefront and weekly-revenue screenshots.</p><div class="disclosure"><strong>Evidence note</strong><p>The +176.4% figure describes one weekly comparison and should not be read as sustained growth or an isolated causal result.</p></div></div>
+      </div>
+    </section>
 
-          <p data-aos="fade-up" data-aos-delay="100">
-            Daizzy Gear needed more than isolated Amazon Ads adjustments. The account required a full-marketplace approach that connected PPC, catalog structure, inventory status, discounts, A+ Content, Storefront merchandising, and product-level prioritization.
-          </p>
+    <section class="case-section" aria-labelledby="problem-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">02</p><h2 id="problem-title">Problem and diagnosis</h2></div>
+        <div class="case-prose"><p>The account did not only need better bids. Performance depended on budget, stock, promotional eligibility, catalog quality and content being coordinated. Advertising a product without healthy inventory or conversion support could consume budget without creating a sustainable improvement.</p><h3>Diagnosis</h3><p>I audited media performance by campaign and product, low-efficiency signals, inventory availability and promotional readiness. The technical reading began with a March week showing 0.61 ROAS, $773.34 cost and $474.58 attributed sales, without treating that snapshot as a causal June baseline.</p></div>
+      </div>
+    </section>
 
-          <p data-aos="fade-up" data-aos-delay="150">
-            Several issues had to be managed at the same time: low or uneven inventory across key SKUs, aged inventory that needed sell-through support, Prime Day preparation, product variations that required different advertising treatment, and the need to concentrate budget on the items most likely to convert.
-          </p>
+    <section class="case-section case-role" aria-labelledby="role-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">03</p><h2 id="role-title">My role</h2></div>
+        <div class="case-prose"><p>I audited and restructured PPC, defined budget-allocation criteria, coordinated promotions and content, and connected advertising decisions with inventory and catalog status. Payments, physical availability and Amazon approvals remained with the brand and platform.</p></div>
+      </div>
+    </section>
 
-          <p data-aos="fade-up" data-aos-delay="200">
-            Instead of treating Amazon PPC as a standalone channel, I approached it as part of a broader Amazon account management system. The goal was to improve visibility, protect profitability, support inventory planning, and help the brand make better decisions from its own performance data.
-          </p>
-        </div>
-      </section>
+    <section class="case-section" aria-labelledby="actions-title">
+      <div class="home-shell">
+        <div class="case-heading"><p class="eyebrow">04</p><h2 id="actions-title">Decisions and interventions</h2></div>
+        <div class="action-grid"><article class="action-card"><span>01</span><h3>PPC control</h3><p>I reviewed campaigns by objective, query and product, separating exploration, defense and capture to avoid mixed readings.</p></article><article class="action-card"><span>02</span><h3>Conditional budgets</h3><p>I defined where to sustain, reduce or scale investment based on margin, stock, history and conversion capacity.</p></article><article class="action-card"><span>03</span><h3>Commercial operations</h3><p>I coordinated promotions, coupons and Prime support with availability and the need to clear aging inventory.</p></article><article class="action-card"><span>04</span><h3>Conversion support</h3><p>I implemented A+ Content, Storefront and catalog improvements so advertising landed on a coherent experience.</p></article><article class="action-card"><span>05</span><h3>Weekly cadence</h3><p>I organized a repeatable review of performance, inventory, issues and next moves.</p></article></div>
+      </div>
+    </section>
 
-      <section>
-        <div class="container">
-          <h2 data-aos="fade-up">What I Worked On</h2>
+<section class="case-section"><div class="home-shell"><div class="case-heading"><p class="eyebrow">TECHNICAL NOTE</p><h2>Technical depth</h2><p class="case-deck">Decisions were connected across four operating layers; these are the criteria applied.</p></div><div class="technical-grid"><article class="technical-card"><h3>PPC architecture</h3><p>Optimization happened at campaign, term and product level. The goal was not uniformly lowering ACOS, but assigning each campaign a function: discovery, capture, defense or promotional support.</p></article><article class="technical-card"><h3>Bids and terms</h3><p>I analyzed spend without sales, queries showing conversion signal and overlap across campaigns. Negatives and bid changes directed traffic instead of acting as automatic cleanup.</p></article><article class="technical-card"><h3>Inventory guardrail</h3><p>Before scaling, I checked availability and stockout risk. Budget had to favor products able to capture demand without accelerating constrained references.</p></article><article class="technical-card"><h3>Promotions</h3><p>Coupons and discounts were planned by objective: event capture, conversion support or aging-inventory clearance. A promotion without stock, margin or suitable traffic was incomplete.</p></article><article class="technical-card"><h3>A+ Content and Storefront</h3><p>I updated modules, comparisons and visual support to clarify product differences and reinforce campaigns. Content acted as conversion infrastructure rather than decoration.</p></article><article class="technical-card"><h3>Catalog and issues</h3><p>I included eligibility, variations, product information and account issues because these blockers can invalidate a sound advertising strategy.</p></article></div></div></section>
+<section class="case-section"><div class="home-shell"><div class="case-heading"><p class="eyebrow">EVIDENCE</p><h2>Visual evidence</h2></div><div class="visual-grid"><figure><img src="image_076.png" width="494" height="554" alt="Weekly ordered revenue" loading="lazy" decoding="async" /><figcaption>Weekly ordered-revenue comparison</figcaption></figure><figure><img src="image_048.png" width="1598" height="474" alt="Amazon Ads performance" loading="lazy" decoding="async" /><figcaption>Low-efficiency week used in the diagnosis</figcaption></figure></div></div></section>
 
-          <p data-aos="fade-up" data-aos-delay="100">
-            My contribution covered both Amazon advertising and general marketplace execution. I helped manage Sponsored Products campaigns, keyword targeting, bid optimization, search term analysis, promotional setup, Storefront content, A+ Content, Virtual Bundles, inventory movement, parent-child variation structure, and weekly performance reporting.
-          </p>
+    <section class="case-section case-results" aria-labelledby="results-title">
+      <div class="home-shell">
+        <div class="case-heading"><p class="eyebrow">05</p><h2 id="results-title">Results</h2></div>
+        <div class="result-grid"><div class="result-card"><strong>$874</strong><span>→ $2,415 in weekly revenue</span></div><div class="result-card"><strong>+176.4%</strong><span>week over week</span></div><div class="result-card"><strong>Window:</strong><span>June 14–27, 2026</span></div></div>
+        <p class="result-implication">Weekly ordered revenue moved from $874 to $2,415 between June 14–20 and June 21–27, 2026. The +176.4% figure documents one week-over-week recovery; it is not presented as sustained growth or the isolated causal effect of one tactic.</p>
+        <p class="source-note"><strong>Source:</strong> Amazon Seller Central — image_076.png; Amazon Ads — image_048.png</p>
+      </div>
+    </section>
 
-          <p data-aos="fade-up" data-aos-delay="150">
-            The work was especially focused on identifying which products deserved additional investment and which areas needed to be reduced, paused, or restructured. This meant looking beyond surface metrics and analyzing how spend, ROAS, ACOS, TACOS, CPC, conversion behavior, stock status, and catalog positioning interacted with each other.
-          </p>
+    <section class="case-section" aria-labelledby="learning-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">06</p><h2 id="learning-title">What I learned</h2></div>
+        <div class="case-prose"><p>Technical Amazon management means optimizing constraints, not only campaigns. The best advertising decision may be to wait until stock, catalog, margin or content is fixed; and the best content improvement may fail if traffic does not match intent.</p></div>
+      </div>
+    </section>
 
-          <figure data-aos="fade-up" data-aos-delay="200">
-            <img src="image_048.png" alt="Amazon Ads performance chart showing ROAS and ad sales for Daizzy Gear" loading="lazy" width="1598" height="474" decoding="async">
-            <figcaption>Amazon Ads performance was reviewed through ROAS, sales, spend, and campaign trends to guide PPC optimization decisions.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <h2 data-aos="fade-up">Amazon PPC Strategy and Advertising Optimization</h2>
-
-          <p data-aos="fade-up" data-aos-delay="100">
-            A major part of the work was improving the structure and efficiency of Amazon Ads campaigns. I reviewed campaign performance by product, adjusted bids, refined targeting, and shifted spend toward campaigns with stronger conversion potential.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="150">
-            Before Prime Day, the account was prepared by strengthening campaign coverage across priority products. I used recent performance trends to decide where to increase visibility, where to protect budget, and where spend should be limited. This included multiple rounds of bid optimization, keyword refinement, and campaign budget adjustments.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="200">
-            The strategy was not simply to spend more. The objective was to spend more intelligently. Campaigns and search terms that showed weaker returns were reduced or paused, while products with better ROAS potential and available inventory received more support.
-          </p>
-
-          <figure data-aos="fade-up" data-aos-delay="250">
-            <img src="image_060.png" alt="Amazon Sponsored Products campaign manager showing active campaigns for Daizzy Gear products" loading="lazy" width="1178" height="811" decoding="async">
-            <figcaption>Sponsored Products campaigns were reviewed at product level to decide where to adjust bids, pause inefficient spend, and prioritize stronger SKUs.</figcaption>
-          </figure>
-
-          <h3 data-aos="fade-up">Techniques Used</h3>
-
-          <ul data-aos="fade-up" data-aos-delay="100">
-            <li>Amazon Sponsored Products campaign optimization</li>
-            <li>Exact, phrase, and auto campaign review</li>
-            <li>Bid optimization based on recent conversion trends</li>
-            <li>Search term performance analysis</li>
-            <li>Budget reallocation from weak campaigns to stronger opportunities</li>
-            <li>ACOS, TACOS, ROAS, CPC, impressions, clicks, and sales monitoring</li>
-            <li>Inventory-aware PPC scaling</li>
-            <li>Prime Day advertising preparation and post-event optimization</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <h2 data-aos="fade-up">Results and Business Impact</h2>
-
-          <p data-aos="fade-up" data-aos-delay="100">
-            The account showed clear positive movement after applying a more controlled, data-driven Amazon strategy. During one key reporting period, weekly ordered revenue reached approximately $2,415, representing a 176.4% increase versus the prior week.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="150">
-            During the Prime Day period, the brand generated approximately $2,504 in sales. Even though a payment issue temporarily paused advertising and limited the ability to fully capture Prime Day demand, sales momentum recovered once ads resumed. This showed that the account structure and campaign preparation were strong enough to regain traction when the issue was resolved.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="200">
-            The advertising work also revealed which products were actually resonating with customers. Among the discounted ASINs, the retractable leashes were the clear sales driver, which helped guide future budget allocation, promotional planning, and product prioritization.
-          </p>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <h2 data-aos="fade-up">Inventory-Aware Amazon Advertising</h2>
-
-          <p data-aos="fade-up" data-aos-delay="100">
-            One of the most important improvements was connecting advertising decisions with inventory reality. Campaigns were not managed in isolation from stock levels. When Pink and Blue Retractable Leash inventory was limited, ads were paused or controlled to avoid driving demand into poor fulfillment conditions. Once inventory was replenished and distributed through FBA, the advertising strategy shifted back toward growth.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="150">
-            This helped reduce wasted spend and protected the customer experience. It also made the PPC strategy more commercially useful, because every advertising decision was tied to whether the product could actually be sold, shipped quickly, and scaled profitably.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="200">
-            I also supported FBA replenishment planning, including the movement of Pink and Blue Retractable Leashes from AWD to FBA warehouses. This was important because Amazon advertising performance is closely connected to availability, delivery speed, Buy Box strength, and conversion rate.
-          </p>
-
-          <figure data-aos="fade-up" data-aos-delay="250">
-            <img src="image_008.png" alt="Amazon product and inventory view showing Daizzy Gear products with availability status" loading="lazy" width="1310" height="819" decoding="async">
-            <figcaption>Advertising decisions were connected to inventory availability, so spend was concentrated on products that could actually be fulfilled and scaled.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <h2 data-aos="fade-up">Promotions, Coupons, and Aged Inventory Sell-Through</h2>
-
-          <p data-aos="fade-up" data-aos-delay="100">
-            Another key area of impact was promotional strategy. I helped implement a combination of 10% coupons and 15% price discounts to accelerate the sell-through of aged inventory without relying on a single deep discount across every order.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="150">
-            This approach made the offer more visible on Amazon by combining the coupon badge with the price discount display. It allowed the brand to create a stronger perceived deal while still protecting margin compared with a blanket 25% discount.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="200">
-            The Green Retractable Leash was included in the promotion because it was planned for discontinuation. That decision connected advertising, pricing, and inventory liquidation into one coordinated marketplace action.
-          </p>
-
-          <figure data-aos="fade-up" data-aos-delay="250">
-            <img src="image_058.png" alt="Exclusive Discounts banner for Daizzy Gear Amazon promotions" loading="lazy" width="600" height="450" decoding="async">
-            <figcaption>The Exclusive Discounts creative helped support coupons and price discounts with stronger visual merchandising inside the Amazon listing experience.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <h2 data-aos="fade-up">Content, Storefront, and Conversion Support</h2>
-
-          <p data-aos="fade-up" data-aos-delay="100">
-            I also contributed to the account beyond PPC by supporting content improvements designed to improve conversion and merchandising. This included Storefront updates, promotional pages, A+ Content banners, comparison charts, product video uploads, and Prime Day-specific creative placements.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="150">
-            For Prime Day, a dedicated Storefront page was created for deals, and Prime Day banners were added to A+ Content. For ongoing promotions, a Limited Time page and Exclusive Discounts banner helped direct shoppers toward active offers.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="200">
-            These updates mattered because Amazon Ads can only perform well when the listing experience supports the traffic. By improving content and merchandising, the account had a stronger foundation for conversion, not just more impressions.
-          </p>
-
-          <figure data-aos="fade-up" data-aos-delay="250">
-            <img src="image_079.png" alt="Prime Savings banner used in Daizzy Gear Amazon A Plus Content for Prime Day" loading="lazy" width="1277" height="612" decoding="async">
-            <figcaption>Prime Day content support included a dedicated Prime Savings banner to connect promotional traffic with a clearer shopping message.</figcaption>
-          </figure>
-
-          <figure data-aos="fade-up" data-aos-delay="300">
-            <img src="image_078.png" alt="Daizzy Gear Amazon A Plus Content product comparison chart" loading="lazy" width="1353" height="621" decoding="async">
-            <figcaption>Comparison content was used to improve product understanding and support conversion after shoppers landed on the listing.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <h2 data-aos="fade-up">Catalog and Account Management Improvements</h2>
-
-          <p data-aos="fade-up" data-aos-delay="100">
-            The work also included practical Amazon account management actions that directly affected performance. These included creating Virtual Bundles, merging retractable leashes back under the correct parent ASIN, adjusting product titles, creating removal orders for discontinued or aged inventory, and preparing market research for new product categories.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="150">
-            For example, the Retractable Leashes were merged back under a parent ASIN to help the variations regain momentum and support cross-variation sales. New Virtual Bundles were also created by pairing Pink and Blue retractable leashes with harness sets, giving the brand more ways to increase average order value and present related products together.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="200">
-            These changes show my broader Amazon marketplace experience: I do not only manage ads, I understand how catalog structure, content, fulfillment, promotions, and product strategy affect performance.
-          </p>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <h2 data-aos="fade-up">How I Think About Amazon Growth</h2>
-
-          <p data-aos="fade-up" data-aos-delay="100">
-            My approach to Amazon growth is based on connecting the numbers with the operational reality of the account. A high ROAS campaign is not useful if the product is running out of stock. A promotion is not enough if the Storefront does not support it. A listing update has limited value if traffic quality is poor. A campaign budget increase can hurt the account if it is not tied to search term data and conversion behavior.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="150">
-            That is why I focus on the full system: Amazon PPC, SEO, catalog structure, inventory, promotions, Storefront, reporting, and business priorities. This allows me to make decisions that are practical for the brand, not just technically correct inside Ads Manager.
-          </p>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <h2 data-aos="fade-up">Core Skills Demonstrated</h2>
-
-          <ul data-aos="fade-up" data-aos-delay="100">
-            <li>Amazon PPC management and campaign optimization</li>
-            <li>Sponsored Products strategy</li>
-            <li>Amazon SEO and listing performance thinking</li>
-            <li>ACOS, TACOS, ROAS, CPC, CTR, CVR, impressions, clicks, and sales analysis</li>
-            <li>Search term analysis and keyword refinement</li>
-            <li>Budget control and bid optimization</li>
-            <li>Prime Day and event-based advertising preparation</li>
-            <li>Amazon Storefront and A+ Content coordination</li>
-            <li>Coupon and price discount strategy</li>
-            <li>Aged inventory sell-through planning</li>
-            <li>FBA and AWD inventory-aware decision making</li>
-            <li>Parent-child ASIN and variation management</li>
-            <li>Virtual Bundle creation and product merchandising</li>
-            <li>Weekly reporting and account performance communication</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <h2 data-aos="fade-up">Why This Matters for Amazon Brands</h2>
-
-          <p data-aos="fade-up" data-aos-delay="100">
-            Many Amazon accounts lose money because their PPC strategy is separated from the rest of the business. Ads are scaled while inventory is low, poor-converting products keep receiving spend, promotions are not supported by content, and performance reports describe what happened without clearly explaining what should change.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="150">
-            In this account, I helped create a more connected operating model. Advertising decisions were linked to product-level performance, inventory availability, promotional timing, and content readiness. That made the account easier to manage and gave the brand a clearer path toward profitable growth.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="200">
-            For recruiters, agencies, or Amazon brands looking for support, this case demonstrates my ability to manage both the analytical and operational sides of Amazon marketplace growth. I can optimize campaigns, but I can also understand the business context behind those campaigns.
-          </p>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <h2 data-aos="fade-up">Summary</h2>
-
-          <p data-aos="fade-up" data-aos-delay="100">
-            My work with Daizzy Gear helped improve Amazon account execution through better PPC management, sharper budget allocation, stronger promotional planning, improved Storefront and A+ Content support, inventory-aware advertising, and more structured weekly decision-making.
-          </p>
-
-          <p data-aos="fade-up" data-aos-delay="150">
-            The positive impact came from using Amazon Ads data as a business tool, not just a reporting dashboard. By connecting campaign performance with catalog structure, inventory, promotions, and customer-facing content, I helped the brand make smarter decisions and build a stronger foundation for marketplace growth.
-          </p>
-        </div>
-      </section>
-
-      <section class="contacto">
-        <div class="container">
-          <h2 data-aos="fade-up">Amazon Marketplace Expertise</h2>
-
-          <p data-aos="fade-up" data-aos-delay="100">
-            I help Amazon brands improve performance through PPC optimization, SEO-focused listing strategy, inventory-aware advertising, Storefront and A+ Content planning, promotional execution, and data-driven account management.
-          </p>
-
-          <a href="mailto:matiasignaciogaglio@gmail.com" class="cta-button" data-aos="fade-up" data-aos-delay="200">Contact me</a>
-        </div>
-      </section>
-
-    </article>
-
+    <section class="home-section contact-band" aria-labelledby="case-contact-title">
+      <div class="home-shell contact-band__grid">
+        <div><p class="eyebrow">Next step</p><h2 id="case-contact-title">Need an Amazon operation that connects the pieces?</h2></div>
+        <div><p>I can audit PPC, inventory, promotions and content as a weekly operating system with explicit decisions and limits.</p><div class="home-actions"><a class="button button--primary" href="mailto:matiasignaciogaglio@gmail.com">Discuss your project</a><a class="button button--ghost" href="ecommerce-en.html#cases">View more cases</a></div></div>
+      </div>
+    </section>
   </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Matias Gaglio. Built with HTML/CSS and hosted on Render.</p>
-    </div>
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      window.AOS?.init({
-        duration: 800,
-        once: true,
-        offset: 50,
-      });
-
-      const navToggle = document.querySelector('.nav-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-
-      if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-          document.querySelector('.navbar').classList.toggle('nav-open');
-          const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-          navToggle.setAttribute('aria-expanded', !isExpanded);
-          navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
-        });
-      }
-    });
-  </script>
-
-  <script src="software-stack.js" defer></script>
-  <script src="accessibility.js" defer></script>
+  <footer class="home-footer"><div class="home-shell"><p>© 2026 Matías Gaglio.</p><a href="index-en.html">Home</a></div></footer>
+  <script src="home.js" defer></script>
 </body>
 </html>

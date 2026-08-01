@@ -55,6 +55,26 @@ test('homepage has no serious or critical automated accessibility violations', a
   expect(blocking).toEqual([]);
 });
 
+test('homepage presents exactly three flagship cases and working recruiter links', async ({ page, request }) => {
+  await page.goto('/index.html', { waitUntil: 'networkidle' });
+  await expect(page.locator('.work-card')).toHaveCount(3);
+  await expect(page.getByRole('heading', { name: 'Datos, pauta y contenido al servicio de la rentabilidad.' })).toBeVisible();
+  const resumeResponse = await request.get('/output/pdf/Matias-Gaglio-CV-ES.pdf');
+  expect(resumeResponse.ok()).toBeTruthy();
+  expect(resumeResponse.headers()['content-type']).toContain('application/pdf');
+});
+
+for (const path of ['/caso-1-es.html', '/caso-2-es.html', '/caso-3-es.html', '/caso-daizzy-gear-es.html', '/sobre-mi-es.html']) {
+  test(`${path} has no mobile overflow or broken images`, async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(path, { waitUntil: 'networkidle' });
+    const overflow = await page.evaluate(() => ({ scrollWidth: document.documentElement.scrollWidth, clientWidth: document.documentElement.clientWidth }));
+    expect(overflow.scrollWidth).toBeLessThanOrEqual(overflow.clientWidth + 1);
+    const brokenImages = await page.locator('img').evaluateAll(images => images.filter(image => !image.complete || image.naturalWidth === 0).length);
+    expect(brokenImages).toBe(0);
+  });
+}
+
 test('legacy navigation uses the tablet drawer without clipping', async ({ page }) => {
   await page.setViewportSize({ width: 820, height: 1180 });
   await page.goto('/BI-case-2-es.html', { waitUntil: 'networkidle' });

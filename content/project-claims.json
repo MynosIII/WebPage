@@ -1,0 +1,142 @@
+{
+  "case_1": {
+    "project_name": {
+      "es": "Optimización de crecimiento y Amazon Ads",
+      "en": "Amazon growth and Ads optimization"
+    },
+    "period_analyzed": {
+      "es": "Ventas: 17 ago–13 sep vs. 14 sep–11 oct de 2025. Conversión: 10 ago–6 sep vs. 7 sep–4 oct de 2025. Vista agregada de Ads: 7 ago–31 oct de 2025.",
+      "en": "Sales: Aug 17–Sep 13 vs. Sep 14–Oct 11, 2025. Conversion: Aug 10–Sep 6 vs. Sep 7–Oct 4, 2025. Aggregate Ads view: Aug 7–Oct 31, 2025."
+    },
+    "baseline": {
+      "es": "Ventas retail: US$1.560. Conversión: 6,28%.",
+      "en": "Retail sales: $1,560. Conversion: 6.28%."
+    },
+    "final_result": {
+      "es": "Ventas retail: US$2.830. Conversión: 13,69%. ROAS observado en la vista agregada: 6,26.",
+      "en": "Retail sales: $2,830. Conversion: 13.69%. Observed ROAS in the aggregate view: 6.26."
+    },
+    "percentage_change": {
+      "es": "+81,53% en ventas retail y +118,16% en conversión entre las ventanas comparadas.",
+      "en": "+81.53% retail sales and +118.16% conversion between the compared windows."
+    },
+    "contribution": {
+      "es": "Audité la arquitectura de campañas y listings, reorganicé la segmentación y coordiné ajustes de contenido y pauta.",
+      "en": "I audited campaign and listing architecture, reorganized targeting, and coordinated content and media changes."
+    },
+    "measurement_source": "Seller Central y Amazon Ads — Caso1_Sales.png, Caso1_conversions.png y Caso1_plot.jpeg",
+    "approved_public_claims": {
+      "es": ["US$1.560 → US$2.830 en ventas retail", "6,28% → 13,69% de conversión", "ROAS observado: 6,26"],
+      "en": ["$1,560 → $2,830 in retail sales", "6.28% → 13.69% conversion", "Observed ROAS: 6.26"]
+    },
+    "disclosure": {
+      "es": "Comparación observacional antes/después; no fue un experimento controlado y no prueba causalidad aislada.",
+      "en": "Observational before/after comparison; this was not a controlled experiment and does not establish isolated causality."
+    }
+  },
+  "case_2": {
+    "project_name": {
+      "es": "Business Intelligence para rentabilidad de portfolio",
+      "en": "Business Intelligence for portfolio profitability"
+    },
+    "period_analyzed": {
+      "es": "1 de julio–27 de octubre de 2025.",
+      "en": "July 1–October 27, 2025."
+    },
+    "baseline": {
+      "es": "Julio: US$96.842,56 en ventas y US$15.624,09 de beneficio neto estimado.",
+      "en": "July: $96,842.56 in sales and $15,624.09 in estimated net profit."
+    },
+    "final_result": {
+      "es": "1–27 de octubre: US$312.480 en ventas y US$62.314,45 de beneficio neto estimado.",
+      "en": "October 1–27: $312,480 in sales and $62,314.45 in estimated net profit."
+    },
+    "percentage_change": {
+      "es": "+222,7% en ventas y +298,9% en beneficio neto estimado de julio al corte de octubre.",
+      "en": "+222.7% sales and +298.9% estimated net profit from July to the October cutoff."
+    },
+    "contribution": {
+      "es": "Construí una lectura mensual del portfolio, crucé ventas, publicidad y margen, y prioricé acciones según el cuello de botella de cada producto.",
+      "en": "I built a monthly portfolio view, connected sales, media and margin, and prioritized actions by each product's bottleneck."
+    },
+    "measurement_source": "Sellerboard — Caso2.jpeg",
+    "approved_public_claims": {
+      "es": ["US$96.842,56 → US$312.480 en ventas", "US$15.624,09 → US$62.314,45 de beneficio neto estimado", "Período: julio–27 de octubre de 2025"],
+      "en": ["$96,842.56 → $312,480 in sales", "$15,624.09 → $62,314.45 estimated net profit", "Period: July–October 27, 2025"]
+    },
+    "disclosure": {
+      "es": "Marca anonimizada por confidencialidad. Resultados observados en Sellerboard; el corte de octubre comprende 27 días y no es un mes calendario completo.",
+      "en": "Brand anonymized for confidentiality. Results observed in Sellerboard; the October cutoff covers 27 days and is not a complete calendar month."
+    }
+  },
+  "case_3": {
+    "project_name": {
+      "es": "Rediseño de galería Amazon basado en información de compra",
+      "en": "Purchase-information-led Amazon gallery redesign"
+    },
+    "period_analyzed": {
+      "es": "Comparación de archivos de galería anterior y rediseñada; sin período de performance disponible en el archivo.",
+      "en": "Comparison of previous and redesigned gallery files; no performance period is available in the archive."
+    },
+    "baseline": {
+      "es": "Galería anterior de 6 imágenes, centrada en recortes de producto y con poca jerarquía informativa.",
+      "en": "Previous six-image gallery centered on product cutouts with limited information hierarchy."
+    },
+    "final_result": {
+      "es": "Galería rediseñada de 6 imágenes con especificaciones, compatibilidad, beneficios y marca integrados.",
+      "en": "Redesigned six-image gallery integrating specifications, compatibility, benefits and branding."
+    },
+    "percentage_change": {
+      "es": "No disponible: no hay test de conversión controlado en el archivo.",
+      "en": "Not available: the archive contains no controlled conversion test."
+    },
+    "contribution": {
+      "es": "Audité la secuencia anterior, definí la jerarquía de mensajes y convertí información técnica en un sistema visual modular.",
+      "en": "I audited the previous sequence, defined the message hierarchy, and translated technical information into a modular visual system."
+    },
+    "measurement_source": "Revolution/Old Style Images y Revolution/New Style Images",
+    "approved_public_claims": {
+      "es": ["6 imágenes anteriores → 6 imágenes rediseñadas", "Especificaciones y compatibilidad visibles", "Sin claim causal de conversión"],
+      "en": ["6 previous images → 6 redesigned images", "Visible specifications and compatibility", "No causal conversion claim"]
+    },
+    "disclosure": {
+      "es": "El resultado documentado es la mejora del sistema de comunicación. No se publica un impacto en conversión porque el archivo no contiene un experimento controlado.",
+      "en": "The documented outcome is an improved communication system. No conversion impact is published because the archive contains no controlled experiment."
+    }
+  },
+  "daizzy": {
+    "project_name": {
+      "es": "Operación y crecimiento de cuenta Amazon — Daizzy Gear",
+      "en": "Amazon account operations and growth — Daizzy Gear"
+    },
+    "period_analyzed": {
+      "es": "Archivo de trabajo de marzo–junio de 2026; comparación de revenue del 14–20 vs. 21–27 de junio de 2026.",
+      "en": "Work archive from March–June 2026; revenue comparison for June 14–20 vs. June 21–27, 2026."
+    },
+    "baseline": {
+      "es": "Revenue semanal: US$874 (14–20 de junio de 2026).",
+      "en": "Weekly revenue: $874 (June 14–20, 2026)."
+    },
+    "final_result": {
+      "es": "Revenue semanal: US$2.415 (21–27 de junio de 2026).",
+      "en": "Weekly revenue: $2,415 (June 21–27, 2026)."
+    },
+    "percentage_change": {
+      "es": "+176,4% semana contra semana.",
+      "en": "+176.4% week over week."
+    },
+    "contribution": {
+      "es": "Audité PPC, definí asignación presupuestaria, coordiné promociones y contenido, y vinculé decisiones de pauta con inventario y catálogo.",
+      "en": "I audited PPC, defined budget allocation, coordinated promotions and content, and connected media decisions with inventory and catalog status."
+    },
+    "measurement_source": "Amazon Seller Central — image_076.png; Amazon Ads — image_048.png",
+    "approved_public_claims": {
+      "es": ["US$874 → US$2.415 de revenue semanal", "+176,4% semana contra semana", "Ventana: 14–27 de junio de 2026"],
+      "en": ["$874 → $2,415 in weekly revenue", "+176.4% week over week", "Window: June 14–27, 2026"]
+    },
+    "disclosure": {
+      "es": "El +176,4% describe una sola comparación semanal y no debe interpretarse como crecimiento sostenido ni como resultado causal aislado.",
+      "en": "The +176.4% figure describes one weekly comparison and should not be read as sustained growth or an isolated causal result."
+    }
+  }
+}

@@ -5,10 +5,14 @@ This repository is the source of truth for the bilingual static portfolio deploy
 ## Site architecture
 
 - `/` serves the Spanish homepage directly. `/index-en.html` is its English counterpart and `/index-es.html` remains a backwards-compatible Spanish URL.
-- `content/homepage.json` is the single bilingual content source for all three homepage files.
+- `content/homepage.json` is the bilingual content source for all three homepage files; the homepage intentionally presents three flagship cases.
+- `content/project-claims.json` is the credibility source of truth for every public metric, period, baseline, contribution, source, approved claim, and evidence note in the flagship and Daizzy cases.
+- `content/case-studies.json` and `templates/case-study.html` generate the standardized Case 1, Case 2, Case 3, and Daizzy pages.
+- `content/about.json` and `templates/about.html` generate the recruiter-focused professional story.
 - `templates/homepage.html`, `home.css`, and `home.js` contain the shared homepage structure, visual system, and interaction behavior.
 - `scripts/build_homepages.py` generates the committed homepage HTML. Generated files should never be edited directly.
-- Older case-study pages remain static HTML and use `style.css` plus `accessibility.js` while they are progressively migrated to shared templates.
+- Downloadable Spanish and English resumes are generated into `output/pdf/` by `scripts/build_resumes.py` and are linked from the main navigation, hero, and About page.
+- Additional case-study pages remain static HTML and use `style.css` plus `accessibility.js` while they are progressively migrated to shared templates.
 - `robots.txt` and `sitemap.xml` are generated from canonical page metadata.
 
 ## Local preview
@@ -35,6 +39,9 @@ After changing homepage content or its template:
 ```bash
 python scripts/generate_home_assets.py
 python scripts/build_homepages.py
+python scripts/build_case_studies.py
+python scripts/build_about_pages.py
+python scripts/sync_ecommerce_claims.py
 python scripts/generate_sitemap.py
 python scripts/validate_site.py
 ```
@@ -43,6 +50,10 @@ Before publishing, also run:
 
 ```bash
 python scripts/build_homepages.py --check
+python scripts/build_case_studies.py --check
+python scripts/build_about_pages.py --check
+python scripts/sync_ecommerce_claims.py --check
+python scripts/validate_project_claims.py
 python scripts/generate_sitemap.py --check
 python scripts/add_image_dimensions.py --check
 npm run validate:html
@@ -50,7 +61,7 @@ npm test
 npm run lighthouse
 ```
 
-`scripts/normalize_site.py` maintains canonical, hreflang, social, favicon, AOS, and footer conventions on legacy pages. It intentionally excludes the generated homepages. `scripts/add_image_dimensions.py` adds intrinsic dimensions to local raster images without reformatting the surrounding HTML.
+To regenerate the resumes, install ReportLab and run `python scripts/build_resumes.py`. Render both PDFs to PNG before committing and inspect them for clipping or overflow. `scripts/normalize_site.py` maintains canonical, hreflang, social, favicon, AOS, and footer conventions on legacy pages. It intentionally excludes generated pages. `scripts/add_image_dimensions.py` adds intrinsic dimensions to local raster images without reformatting the surrounding HTML.
 
 GitHub Actions repeats link/casing/metadata validation, responsive checks at 390, 820, 1024, and 1440 px, automated accessibility checks, screenshots, and Lighthouse budgets on every pull request.
 
@@ -61,7 +72,7 @@ The reproducible service definition is in `render.yaml`:
 - service type: Static Site
 - repository: `MynosIII/WebPage`
 - branch: `main`
-- build command: `python3 scripts/build_homepages.py --check && python3 scripts/generate_sitemap.py --check && python3 scripts/validate_site.py`
+- build command: generated homepage, case-study, About, Ecommerce claim, discovery, credibility, and site-validation checks from `render.yaml`
 - publish directory: `.`
 - auto-deploy: enabled for `main`
 - pull-request previews: disabled

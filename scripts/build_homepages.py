@@ -12,6 +12,7 @@ from string import Template
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "homepage.json"
+CLAIMS = ROOT / "content" / "project-claims.json"
 TEMPLATE = ROOT / "templates" / "homepage.html"
 
 
@@ -39,6 +40,12 @@ def capability_items(items: list[list[str]]) -> str:
 
 
 def picture(item: dict[str, object]) -> str:
+    if item.get("image_src"):
+        return (
+            f'<img src="{esc(item["image_src"])}" width="{int(item["image_width"])}" '
+            f'height="{int(item["image_height"])}" alt="{esc(item["image_alt"])}" '
+            'loading="lazy" decoding="async" />'
+        )
     slug = str(item["image"])
     width = int(item["image_width"])
     height = int(item["image_height"])
@@ -64,17 +71,28 @@ def research_visual(label: str) -> str:
     )
 
 
-def work_items(items: list[dict[str, object]]) -> str:
+def work_items(items: list[dict[str, object]], claims: dict[str, object], lang: str) -> str:
     output: list[str] = []
+    problem_label = "Problema" if lang == "es" else "Problem"
+    intervention_label = "Intervención" if lang == "es" else "Intervention"
     for item in items:
-        visual = picture(item) if item.get("image") else research_visual(str(item["visual_label"]))
-        metrics = "".join(f"<li>{esc(metric)}</li>" for metric in item["metrics"])
+        visual = (
+            picture(item)
+            if item.get("image") or item.get("image_src")
+            else research_visual(str(item["visual_label"]))
+        )
+        claim = claims[str(item["claim_id"])]
+        metrics = "".join(
+            f"<li>{esc(metric)}</li>" for metric in claim["approved_public_claims"][lang]
+        )
         output.append(
             '<article class="work-card">'
             f'<a class="work-card__media" href="{esc(item["href"])}" tabindex="-1" aria-hidden="true">{visual}</a>'
             '<div class="work-card__body">'
             f'<div class="work-card__meta"><span>{esc(item["index"])}</span><p>{esc(item["category"])}</p></div>'
-            f'<h3>{esc(item["title"])}</h3><p class="work-card__summary">{esc(item["summary"])}</p>'
+            f'<h3>{esc(item["title"])}</h3>'
+            f'<p class="work-card__summary"><strong>{problem_label}:</strong> {esc(item["problem"])}</p>'
+            f'<p class="work-card__summary"><strong>{intervention_label}:</strong> {esc(item["intervention"])}</p>'
             f'<ul class="work-card__metrics">{metrics}</ul>'
             f'<a class="text-link" href="{esc(item["href"])}">{esc(item["cta"])} <span aria-hidden="true">↗</span></a>'
             "</div></article>"
@@ -112,8 +130,11 @@ def structured_data(locale: dict[str, object]) -> str:
             "name": "Matías Gaglio",
             "url": "https://matiasgaglio.onrender.com/",
             "email": "mailto:matiasignaciogaglio@gmail.com",
-            "sameAs": ["https://linkedin.com/in/matiasignaciogaglio"],
-            "jobTitle": "Ecommerce and Business Intelligence Strategist",
+            "sameAs": [
+                "https://linkedin.com/in/matiasignaciogaglio",
+                "https://github.com/MynosIII",
+            ],
+            "jobTitle": "Ecommerce & Amazon Growth Strategist",
             "knowsAbout": [
                 "Ecommerce strategy",
                 "Business Intelligence",
@@ -133,7 +154,7 @@ def structured_data(locale: dict[str, object]) -> str:
     return json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
 
-def render(locale: dict[str, object]) -> str:
+def render(locale: dict[str, object], claims: dict[str, object]) -> str:
     spanish = locale["lang"] == "es"
     values = {key: esc(value) for key, value in locale.items() if not isinstance(value, (list, dict))}
     values.update(
@@ -142,18 +163,20 @@ def render(locale: dict[str, object]) -> str:
             "skip_label": "Saltar al contenido principal" if spanish else "Skip to main content",
             "back_to_top": "Volver arriba" if spanish else "Back to top",
             "home_href": "index.html" if spanish else "index-en.html",
+            "home_id": "inicio" if spanish else "home",
             "switch_hreflang": "en" if spanish else "es",
-            "primary_href": "#trabajo" if spanish else "#work",
-            "secondary_href": "#metodo" if spanish else "#method",
+            "primary_href": "#casos" if spanish else "#cases",
+            "secondary_href": "#contacto" if spanish else "#contact",
+            "cv_href": "output/pdf/Matias-Gaglio-CV-ES.pdf" if spanish else "output/pdf/Matias-Gaglio-Resume-EN.pdf",
             "capabilities_id": "capacidades" if spanish else "capabilities",
-            "work_id": "trabajo" if spanish else "work",
+            "work_id": "casos" if spanish else "cases",
             "method_id": "metodo" if spanish else "method",
             "contact_id": "contacto" if spanish else "contact",
             "about_href": "sobre-mi-es.html" if spanish else "sobre-mi-en.html",
             "nav_items": nav_items(locale["nav"]),
             "proof_items": proof_items(locale["proof"]),
             "capability_items": capability_items(locale["capabilities"]),
-            "work_items": work_items(locale["work"]),
+            "work_items": work_items(locale["work"], claims, str(locale["lang"])),
             "method_items": method_items(locale["method"]),
             "library_items": library_items(locale["library"]),
         }
@@ -166,10 +189,11 @@ def main() -> int:
     parser.add_argument("--check", action="store_true", help="Fail if committed output is stale")
     args = parser.parse_args()
     data = json.loads(CONTENT.read_text(encoding="utf-8"))
+    claims = json.loads(CLAIMS.read_text(encoding="utf-8"))
     expected = {
-        ROOT / "index.html": render(data["es"]),
-        ROOT / "index-es.html": render(data["es"]),
-        ROOT / "index-en.html": render(data["en"]),
+        ROOT / "index.html": render(data["es"], claims),
+        ROOT / "index-es.html": render(data["es"], claims),
+        ROOT / "index-en.html": render(data["en"], claims),
     }
     stale: list[str] = []
     for path, content in expected.items():

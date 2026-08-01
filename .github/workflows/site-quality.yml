@@ -20,6 +20,10 @@ jobs:
       - name: Verify generated pages and discovery files
         run: |
           python scripts/build_homepages.py --check
+          python scripts/build_case_studies.py --check
+          python scripts/build_about_pages.py --check
+          python scripts/sync_ecommerce_claims.py --check
+          python scripts/validate_project_claims.py
           python scripts/generate_sitemap.py --check
           python scripts/add_image_dimensions.py --check
       - name: Validate links, anchors, metadata and asset casing

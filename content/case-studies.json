@@ -1,0 +1,208 @@
+{
+  "case_1": {
+    "slug": "caso-1",
+    "visuals": [
+      ["Caso1_Sales.png", 830, 443, "Retail sales comparison", "Comparación de ventas retail entre las dos ventanas", "Retail sales comparison between the two windows"],
+      ["Caso1_conversions.png", 850, 388, "Conversion comparison", "Comparación de tasa de conversión entre las dos ventanas", "Conversion-rate comparison between the two windows"],
+      ["Caso1_plot.jpeg", 794, 352, "Amazon Ads dashboard", "Vista agregada de Amazon Ads del período", "Aggregate Amazon Ads view for the period"]
+    ],
+    "es": {
+      "category": "Amazon Growth & PPC",
+      "title": "Amazon Growth: pauta, listing y conversión como un solo sistema",
+      "description": "Caso documentado de Amazon Growth: reestructuración de campañas y listings con resultados observados en ventas retail, conversión y ROAS.",
+      "deck": "Una intervención coordinada sobre campañas, segmentación y contenido para mejorar la calidad del tráfico y la capacidad del listing para convertirlo.",
+      "context": "Cuenta Amazon con campañas y contenido que se optimizaban por separado. El análisis compara ventanas consecutivas de 28 días para ventas y conversión, más una vista agregada de Amazon Ads entre agosto y octubre de 2025.",
+      "problem": "Había señales de oportunidad, pero no una lectura común entre estructura publicitaria, intención de búsqueda, calidad del listing y resultado comercial. Cambiar pujas sin revisar el contenido —o rediseñar contenido sin entender el tráfico— podía desplazar el problema sin resolverlo.",
+      "diagnosis": "Crucé ventas retail, conversión y performance publicitaria. La prioridad fue distinguir si el límite estaba en atraer tráfico relevante, en convertirlo o en la coordinación entre ambos.",
+      "role": "Audité la arquitectura de campañas y listings, reorganicé la segmentación y coordiné los cambios de contenido y pauta. La operación diaria y las condiciones comerciales dependían del equipo de la cuenta.",
+      "actions": [
+        ["Auditoría integrada", "Revisé campañas, términos, productos y contenido como partes del mismo funnel, no como tareas independientes."],
+        ["Segmentación y presupuesto", "Reorganicé la cobertura para separar descubrimiento, performance y defensa, y reducir solapamientos."],
+        ["Contenido para intención", "Alineé mensajes y jerarquía del listing con las preguntas que traía el tráfico relevante."],
+        ["Lectura por ventanas", "Definí comparaciones con fechas explícitas para evitar mezclar períodos y porcentajes incompatibles."]
+      ],
+      "implication": "El cambio simultáneo en ventas y conversión es consistente con una mejora del sistema completo. Aun así, al no existir un experimento controlado, el caso se presenta como evidencia observacional y no como prueba de causalidad aislada.",
+      "learning": "En Amazon, la pauta no termina en el clic: su eficiencia depende de que la promesa del término de búsqueda continúe en la galería, el copy, la evidencia y la oferta. La unidad de optimización real es el recorrido completo.",
+      "cta_title": "¿Necesitás ordenar una cuenta Amazon que crece sin claridad?",
+      "cta_copy": "Puedo conectar campañas, contenido y economics para localizar la restricción y priorizar el siguiente movimiento."
+    },
+    "en": {
+      "category": "Amazon Growth & PPC",
+      "title": "Amazon Growth: media, listings and conversion as one system",
+      "description": "Documented Amazon Growth case: campaign and listing restructuring with observed retail-sales, conversion and ROAS outcomes.",
+      "deck": "A coordinated intervention across campaigns, targeting and content to improve traffic quality and the listing's ability to convert it.",
+      "context": "An Amazon account where campaigns and content were being optimized separately. The analysis compares consecutive 28-day windows for sales and conversion, plus an aggregate Amazon Ads view from August through October 2025.",
+      "problem": "There were signs of opportunity but no shared view across media structure, search intent, listing quality and commercial outcomes. Changing bids without reviewing content—or redesigning content without understanding traffic—could move the problem instead of solving it.",
+      "diagnosis": "I connected retail sales, conversion and media performance. The priority was to determine whether the constraint was relevant traffic, conversion, or the coordination between both.",
+      "role": "I audited campaign and listing architecture, reorganized targeting, and coordinated content and media changes. Daily operations and commercial conditions remained with the account team.",
+      "actions": [
+        ["Integrated audit", "I reviewed campaigns, terms, products and content as parts of one funnel rather than independent tasks."],
+        ["Targeting and budget", "I reorganized coverage to separate discovery, performance and defense while reducing overlap."],
+        ["Intent-led content", "I aligned listing messages and hierarchy with the questions carried by relevant traffic."],
+        ["Window-based reading", "I defined comparisons with explicit dates to avoid mixing incompatible periods and percentages."]
+      ],
+      "implication": "The simultaneous movement in sales and conversion is consistent with an improved system. Because there was no controlled experiment, the case is presented as observational evidence—not proof of isolated causality.",
+      "learning": "On Amazon, media does not end at the click: its efficiency depends on the search-term promise continuing through gallery, copy, evidence and offer. The real unit of optimization is the complete journey.",
+      "cta_title": "Need to bring clarity to a growing Amazon account?",
+      "cta_copy": "I can connect campaigns, content and economics to locate the constraint and prioritize the next move."
+    }
+  },
+  "case_2": {
+    "slug": "caso-2",
+    "visuals": [
+      ["Caso2.jpeg", 1024, 268, "Sellerboard monthly dashboard", "Evolución mensual de ventas y beneficio neto estimado", "Monthly sales and estimated net-profit evolution"]
+    ],
+    "es": {
+      "category": "Business Intelligence · Rentabilidad",
+      "title": "De reportar ventas a decidir con margen",
+      "description": "Caso de Business Intelligence para ecommerce: lectura mensual de ventas, publicidad y rentabilidad para priorizar un portfolio.",
+      "deck": "Una vista operativa mensual que convirtió datos dispersos en decisiones sobre qué escalar, defender o corregir.",
+      "context": "Portfolio ecommerce anonimizado por confidencialidad, observado entre julio y el 27 de octubre de 2025 mediante Sellerboard. El objetivo no era producir otro dashboard, sino entender qué explicaba el resultado económico.",
+      "problem": "El crecimiento de ventas podía parecer saludable aunque algunos productos dependieran demasiado de publicidad, descuentos o un margen insuficiente. Sin una lectura conjunta, el volumen corría el riesgo de confundirse con rentabilidad.",
+      "diagnosis": "Organicé la lectura por mes y crucé ventas, inversión publicitaria, costos, reembolsos y beneficio neto estimado. Luego separé problemas de tráfico, conversión, eficiencia publicitaria y economics.",
+      "role": "Construí la vista mensual, definí los criterios de diagnóstico y prioricé acciones por producto. Las decisiones de inventario y operación final fueron coordinadas con el equipo responsable de la cuenta.",
+      "actions": [
+        ["Una métrica económica", "Usé el beneficio neto estimado como contrapeso de ventas para evitar premiar crecimiento sin margen."],
+        ["Diagnóstico por causa", "Separé problemas de demanda, conversión, pauta y costo en lugar de aplicar la misma solución a todo el portfolio."],
+        ["Priorización", "Clasifiqué productos según oportunidad, riesgo y capacidad real de captura, no solo según revenue."],
+        ["Cadencia mensual", "Documenté cortes consistentes y señalé que octubre contenía 27 días para no presentar una comparación engañosa."]
+      ],
+      "implication": "El portfolio pasó de US$96.842,56 en ventas y US$15.624,09 de beneficio neto estimado en julio a US$312.480 y US$62.314,45 al corte del 27 de octubre. El valor del sistema fue hacer visible que el crecimiento comercial y el económico debían leerse juntos.",
+      "learning": "Un dashboard sirve cuando cambia el orden de las decisiones. La pregunta útil no es solo cuánto vendió un producto, sino qué parte del resultado es defendible después de publicidad, costos y restricciones operativas.",
+      "cta_title": "¿Necesitás saber qué parte de tu crecimiento es rentable?",
+      "cta_copy": "Puedo construir una lectura que conecte ventas, inversión y margen para priorizar el portfolio con criterios explícitos."
+    },
+    "en": {
+      "category": "Business Intelligence · Profitability",
+      "title": "From reporting sales to deciding with margin",
+      "description": "Ecommerce Business Intelligence case: monthly sales, media and profitability analysis used to prioritize a portfolio.",
+      "deck": "A monthly operating view that turned scattered data into decisions about what to scale, defend or correct.",
+      "context": "An ecommerce portfolio anonymized for confidentiality, observed from July through October 27, 2025 in Sellerboard. The objective was not another dashboard—it was understanding what explained the economic outcome.",
+      "problem": "Sales growth could look healthy even when products depended too heavily on advertising, discounts or insufficient margin. Without a combined view, volume risked being confused with profitability.",
+      "diagnosis": "I organized the reading by month and connected sales, media spend, costs, refunds and estimated net profit. I then separated traffic, conversion, media-efficiency and economic constraints.",
+      "role": "I built the monthly view, defined diagnostic criteria and prioritized actions by product. Final inventory and operational decisions were coordinated with the account team.",
+      "actions": [
+        ["One economic counterweight", "I used estimated net profit alongside sales to avoid rewarding growth without margin."],
+        ["Cause-led diagnosis", "I separated demand, conversion, media and cost problems instead of applying the same fix to the full portfolio."],
+        ["Prioritization", "I classified products by opportunity, risk and real capture capacity—not revenue alone."],
+        ["Monthly cadence", "I documented consistent cutoffs and flagged that October contained 27 days to avoid a misleading comparison."]
+      ],
+      "implication": "The portfolio moved from $96,842.56 in sales and $15,624.09 in estimated net profit in July to $312,480 and $62,314.45 at the October 27 cutoff. The system's value was making commercial and economic growth visible together.",
+      "learning": "A dashboard is useful when it changes decision order. The relevant question is not only what a product sold, but how much of that outcome remains defensible after media, costs and operational constraints.",
+      "cta_title": "Need to understand which part of your growth is profitable?",
+      "cta_copy": "I can build a view that connects sales, investment and margin to prioritize the portfolio with explicit criteria."
+    }
+  },
+  "case_3": {
+    "slug": "caso-3",
+    "visuals": [
+      ["Revolution/Old Style Images/61dHW0lmqEL._AC_SL1500_.jpg", 1500, 892, "Previous gallery image", "Antes: producto visible, poca jerarquía informativa", "Before: visible product, limited information hierarchy"],
+      ["Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg", 1368, 1312, "Redesigned gallery image", "Después: producto, marca y especificaciones integradas", "After: product, brand and specifications integrated"]
+    ],
+    "es": {
+      "category": "Data-to-Creative · Amazon Gallery",
+      "title": "Una galería que convierte información técnica en decisión",
+      "description": "Caso de rediseño de galería Amazon: seis imágenes reorganizadas para comunicar compatibilidad, especificaciones y beneficios sin claims no verificados.",
+      "deck": "La mejora documentada no es un porcentaje inventado: es un sistema de seis imágenes con más jerarquía, evidencia y continuidad de marca.",
+      "context": "Producto técnico para Amazon con una galería anterior de seis imágenes y un nuevo sistema de seis piezas. El archivo conserva los assets antes/después, pero no un test controlado de conversión.",
+      "problem": "La secuencia anterior mostraba el producto, pero dejaba al comprador con trabajo interpretativo: especificaciones, compatibilidad y razones de elección no tenían una jerarquía clara.",
+      "diagnosis": "Revisé la galería como un recorrido de preguntas: qué es, con qué funciona, qué problema resuelve, cómo se usa y qué evidencia reduce el riesgo de compra.",
+      "role": "Audité la secuencia anterior, definí la arquitectura de mensajes y convertí información técnica en un sistema visual modular. No atribuyo un cambio de conversión porque el archivo no contiene esa medición.",
+      "actions": [
+        ["Jerarquía de compra", "Ordené cada pieza alrededor de una pregunta concreta en lugar de repetir el producto con variaciones estéticas."],
+        ["Especificaciones visibles", "Integré datos técnicos y compatibilidad dentro de composiciones legibles sin depender del texto secundario."],
+        ["Sistema de marca", "Unifiqué tipografía, color, empaque y encuadre para que las seis imágenes funcionaran como una narrativa."],
+        ["Guardrail de claims", "Separé lo demostrable en los assets de cualquier hipótesis de performance que requeriría un test posterior."]
+      ],
+      "implication": "El entregable pasó de seis recortes con baja densidad informativa a seis piezas diseñadas para explicar y diferenciar. El resultado verificable es comunicacional; la conversión queda como una hipótesis que debe medirse.",
+      "learning": "Data-to-Creative no significa llenar una imagen de números. Significa decidir qué información reduce incertidumbre, en qué orden y con qué evidencia visual.",
+      "cta_title": "¿Tu galería muestra el producto pero no ayuda a elegirlo?",
+      "cta_copy": "Puedo traducir VOC, especificaciones y performance en una arquitectura visual lista para producir y medir."
+    },
+    "en": {
+      "category": "Data-to-Creative · Amazon Gallery",
+      "title": "A gallery that turns technical information into a decision",
+      "description": "Amazon gallery redesign case: six images reorganized to communicate compatibility, specifications and benefits without unsupported claims.",
+      "deck": "The documented improvement is not an invented percentage: it is a six-image system with stronger hierarchy, evidence and brand continuity.",
+      "context": "A technical Amazon product with a previous six-image gallery and a redesigned six-asset system. The archive contains before/after assets but no controlled conversion test.",
+      "problem": "The previous sequence showed the product but left interpretation work to the shopper: specifications, compatibility and reasons to choose lacked a clear hierarchy.",
+      "diagnosis": "I reviewed the gallery as a sequence of questions: what it is, what it works with, which problem it solves, how it is used and which evidence reduces purchase risk.",
+      "role": "I audited the previous sequence, defined the message architecture and translated technical information into a modular visual system. I do not attribute a conversion change because that measurement is absent from the archive.",
+      "actions": [
+        ["Purchase hierarchy", "I organized each asset around a concrete question rather than repeating the product with aesthetic variations."],
+        ["Visible specifications", "I integrated technical data and compatibility into readable compositions without relying on secondary text."],
+        ["Brand system", "I unified typography, color, packaging and framing so the six images worked as one narrative."],
+        ["Claim guardrail", "I separated what the assets demonstrate from performance hypotheses that require later testing."]
+      ],
+      "implication": "The deliverable moved from six low-information cutouts to six assets designed to explain and differentiate. The verifiable outcome is communicational; conversion remains a hypothesis to measure.",
+      "learning": "Data-to-Creative does not mean filling an image with numbers. It means deciding which information reduces uncertainty, in what order and with what visual evidence.",
+      "cta_title": "Does your gallery show the product without helping people choose it?",
+      "cta_copy": "I can translate VOC, specifications and performance into a visual architecture ready to produce and measure."
+    }
+  },
+  "daizzy": {
+    "slug": "caso-daizzy-gear",
+    "visuals": [
+      ["image_076.png", 494, 554, "Weekly ordered revenue", "Comparación semanal de ordered revenue", "Weekly ordered-revenue comparison"],
+      ["image_048.png", 1598, 474, "Amazon Ads performance", "Semana de baja eficiencia utilizada en el diagnóstico", "Low-efficiency week used in the diagnosis"]
+    ],
+    "es": {
+      "category": "Amazon Account Management · Technical Case",
+      "title": "Daizzy Gear: operar PPC, inventario y contenido como un sistema",
+      "description": "Caso técnico de gestión de cuenta Amazon para Daizzy Gear: auditoría PPC, presupuesto, inventario, promociones, A+ Content, Storefront y catálogo.",
+      "deck": "Una explicación técnica de cómo conecté publicidad, disponibilidad, promociones y contenido para pasar de ajustes aislados a una cadencia operativa semanal.",
+      "context": "Cuenta Amazon de Daizzy Gear trabajada entre marzo y junio de 2026. El archivo incluye capturas de Amazon Ads, inventario, promociones, A+ Content, Storefront y revenue semanal.",
+      "problem": "La cuenta no necesitaba solamente mejores pujas. El rendimiento dependía de que presupuesto, stock, elegibilidad promocional, calidad del catálogo y contenido estuvieran coordinados. Publicitar un producto sin inventario sano o sin soporte de conversión podía consumir presupuesto sin construir una mejora sostenible.",
+      "diagnosis": "Audité performance publicitaria por campaña y producto, señales de baja eficiencia, disponibilidad de inventario y preparación promocional. La lectura técnica partió de una semana de marzo con ROAS 0,61, US$773,34 de costo y US$474,58 en ventas atribuidas, sin usar ese snapshot como baseline causal de junio.",
+      "role": "Audité y reestructuré PPC, definí criterios de asignación presupuestaria, coordiné promociones y contenido, y conecté decisiones publicitarias con inventario y catálogo. Los pagos, la disponibilidad física y aprobaciones de Amazon dependían de la marca y la plataforma.",
+      "actions": [
+        ["Control PPC", "Revisé campañas por objetivo, consulta y producto; separé exploración, defensa y captura para reducir lecturas mezcladas."],
+        ["Presupuesto por condición", "Definí dónde sostener, recortar o escalar inversión según margen, stock, historial y capacidad de conversión."],
+        ["Operación comercial", "Coordiné promociones, cupones y soporte de Prime con disponibilidad e intención de liquidación de inventario antiguo."],
+        ["Soporte de conversión", "Implementé mejoras de A+ Content, Storefront y catálogo para que la publicidad llegara a una experiencia coherente."],
+        ["Cadencia semanal", "Organicé una revisión repetible de performance, inventario, incidencias y próximos movimientos."]
+      ],
+      "technical": [
+        ["Arquitectura PPC", "La optimización se hizo a nivel de campaña, término y producto. La decisión no fue bajar ACOS de forma uniforme, sino asignar una función a cada campaña: descubrimiento, captura, defensa o soporte promocional."],
+        ["Pujas y términos", "Analicé términos con gasto sin ventas, consultas con señal de conversión y solapamiento entre campañas. Las negativas y ajustes de puja se usaron para dirigir tráfico, no como limpieza automática."],
+        ["Inventario como guardrail", "Antes de escalar, verifiqué disponibilidad y riesgo de quiebre. El presupuesto debía favorecer productos capaces de capturar demanda y evitar acelerar referencias con restricción de stock."],
+        ["Promociones", "Cupones y descuentos se planificaron según objetivo: capturar eventos, apoyar conversión o liberar inventario antiguo. Una promoción sin stock, margen o tráfico adecuado no era una intervención completa."],
+        ["A+ Content y Storefront", "Actualicé módulos, comparativas y soportes visuales para clarificar diferencias de producto y sostener campañas. El contenido funcionó como infraestructura de conversión, no como decoración."],
+        ["Catálogo e incidencias", "Incluí seguimiento de elegibilidad, variaciones, información de producto y problemas de cuenta porque estos bloqueos pueden invalidar una estrategia publicitaria correcta."]
+      ],
+      "implication": "El ordered revenue semanal pasó de US$874 a US$2.415 entre el 14–20 y el 21–27 de junio de 2026. El +176,4% documenta una recuperación puntual semana contra semana; no se presenta como crecimiento sostenido ni como efecto causal aislado de una sola táctica.",
+      "learning": "La gestión técnica de Amazon exige optimizar restricciones, no solo campañas. La mejor decisión publicitaria puede ser no escalar hasta resolver stock, catálogo, margen o contenido; y la mejor mejora de contenido puede fracasar si el tráfico no corresponde a la intención.",
+      "cta_title": "¿Necesitás una operación Amazon que conecte las piezas?",
+      "cta_copy": "Puedo auditar PPC, inventario, promociones y contenido como un sistema operativo semanal, con decisiones y límites explícitos."
+    },
+    "en": {
+      "category": "Amazon Account Management · Technical Case",
+      "title": "Daizzy Gear: operating PPC, inventory and content as one system",
+      "description": "Technical Amazon account-management case for Daizzy Gear: PPC audit, budget, inventory, promotions, A+ Content, Storefront and catalog.",
+      "deck": "A technical explanation of how I connected advertising, availability, promotions and content to move from isolated adjustments to a weekly operating cadence.",
+      "context": "A Daizzy Gear Amazon account worked on from March through June 2026. The archive includes Amazon Ads, inventory, promotions, A+ Content, Storefront and weekly-revenue screenshots.",
+      "problem": "The account did not only need better bids. Performance depended on budget, stock, promotional eligibility, catalog quality and content being coordinated. Advertising a product without healthy inventory or conversion support could consume budget without creating a sustainable improvement.",
+      "diagnosis": "I audited media performance by campaign and product, low-efficiency signals, inventory availability and promotional readiness. The technical reading began with a March week showing 0.61 ROAS, $773.34 cost and $474.58 attributed sales, without treating that snapshot as a causal June baseline.",
+      "role": "I audited and restructured PPC, defined budget-allocation criteria, coordinated promotions and content, and connected advertising decisions with inventory and catalog status. Payments, physical availability and Amazon approvals remained with the brand and platform.",
+      "actions": [
+        ["PPC control", "I reviewed campaigns by objective, query and product, separating exploration, defense and capture to avoid mixed readings."],
+        ["Conditional budgets", "I defined where to sustain, reduce or scale investment based on margin, stock, history and conversion capacity."],
+        ["Commercial operations", "I coordinated promotions, coupons and Prime support with availability and the need to clear aging inventory."],
+        ["Conversion support", "I implemented A+ Content, Storefront and catalog improvements so advertising landed on a coherent experience."],
+        ["Weekly cadence", "I organized a repeatable review of performance, inventory, issues and next moves."]
+      ],
+      "technical": [
+        ["PPC architecture", "Optimization happened at campaign, term and product level. The goal was not uniformly lowering ACOS, but assigning each campaign a function: discovery, capture, defense or promotional support."],
+        ["Bids and terms", "I analyzed spend without sales, queries showing conversion signal and overlap across campaigns. Negatives and bid changes directed traffic instead of acting as automatic cleanup."],
+        ["Inventory guardrail", "Before scaling, I checked availability and stockout risk. Budget had to favor products able to capture demand without accelerating constrained references."],
+        ["Promotions", "Coupons and discounts were planned by objective: event capture, conversion support or aging-inventory clearance. A promotion without stock, margin or suitable traffic was incomplete."],
+        ["A+ Content and Storefront", "I updated modules, comparisons and visual support to clarify product differences and reinforce campaigns. Content acted as conversion infrastructure rather than decoration."],
+        ["Catalog and issues", "I included eligibility, variations, product information and account issues because these blockers can invalidate a sound advertising strategy."]
+      ],
+      "implication": "Weekly ordered revenue moved from $874 to $2,415 between June 14–20 and June 21–27, 2026. The +176.4% figure documents one week-over-week recovery; it is not presented as sustained growth or the isolated causal effect of one tactic.",
+      "learning": "Technical Amazon management means optimizing constraints, not only campaigns. The best advertising decision may be to wait until stock, catalog, margin or content is fixed; and the best content improvement may fail if traffic does not match intent.",
+      "cta_title": "Need an Amazon operation that connects the pieces?",
+      "cta_copy": "I can audit PPC, inventory, promotions and content as a weekly operating system with explicit decisions and limits."
+    }
+  }
+}

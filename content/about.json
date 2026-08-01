@@ -1,0 +1,60 @@
+{
+  "es": {
+    "lang": "es",
+    "title": "Sobre mí — Matías Gaglio",
+    "description": "Historia profesional de Matías Gaglio: Comunicación, ecommerce, Amazon Growth, Business Intelligence y performance.",
+    "kicker": "Sobre mí",
+    "heading": "Comunicación para entender. Datos para decidir.",
+    "deck": "Soy Matías Gaglio, Ecommerce & Amazon Growth Strategist. Conecto comportamiento del cliente, datos comerciales y ejecución para resolver problemas de conversión y rentabilidad.",
+    "chapters": [
+      ["01", "Origen", "Mi formación en Ciencias de la Comunicación en la UBA me enseñó a entender cómo las personas interpretan mensajes, construyen confianza y toman decisiones. Esa base todavía guía mi manera de investigar una audiencia y ordenar información compleja."],
+      ["02", "Evolución", "El trabajo en ecommerce agregó una segunda capa: medir ese comportamiento mediante tráfico, búsquedas, CTR, conversión, inversión y margen. Pasé de estudiar mensajes a operar sistemas donde cada decisión puede contrastarse con datos comerciales."],
+      ["03", "Ventaja actual", "Hoy combino ambas perspectivas. Puedo detectar un problema en los números, traducirlo en una decisión de campañas, catálogo o contenido, y explicarlo de forma que un equipo pueda ejecutarlo y medirlo."]
+    ],
+    "principle_title": "El problema rara vez pertenece a una sola disciplina.",
+    "principle_copy": "Una caída de conversión puede empezar en el tráfico, la oferta, la compatibilidad, el inventario o la jerarquía visual. Mi trabajo consiste en localizar la restricción real antes de recomendar una solución.",
+    "role_label": "Rol actual",
+    "role": "Amazon Account Listing Manager",
+    "focus_label": "Foco",
+    "focus": "Ecommerce, Amazon PPC, BI y contenido",
+    "education_label": "Formación",
+    "education": "Ciencias de la Comunicación, UBA · Agente de Propaganda Médica, Universidad Favaloro",
+    "tools_title": "Herramientas y formación técnica",
+    "tools_intro": "Las herramientas acompañan el criterio; no reemplazan el diagnóstico.",
+    "tools": ["Seller Central y Amazon Ads", "SQL, Python y R", "Power BI y reporting comercial", "Google Ads y GA4", "SEO, CRO y arquitectura de listings", "Diseño visual, 3D y automatización"],
+    "availability": "Disponible para proyectos freelance, consultoría y colaboraciones remotas.",
+    "cv_label": "Descargar CV",
+    "cv_href": "output/pdf/Matias-Gaglio-CV-ES.pdf",
+    "cta_title": "¿Necesitás conectar datos, publicidad y contenido?",
+    "cta_copy": "Contame qué está pasando en tu portfolio y podemos ordenar el diagnóstico antes de elegir una táctica."
+  },
+  "en": {
+    "lang": "en",
+    "title": "About — Matías Gaglio",
+    "description": "Matías Gaglio's professional story: Communication, ecommerce, Amazon Growth, Business Intelligence and performance.",
+    "kicker": "About",
+    "heading": "Communication to understand. Data to decide.",
+    "deck": "I am Matías Gaglio, an Ecommerce & Amazon Growth Strategist. I connect customer behavior, commercial data and execution to solve conversion and profitability problems.",
+    "chapters": [
+      ["01", "Origin", "My Communication Sciences background at the University of Buenos Aires taught me how people interpret messages, build trust and make decisions. That foundation still guides how I research an audience and structure complex information."],
+      ["02", "Evolution", "Ecommerce added a second layer: measuring that behavior through traffic, search, CTR, conversion, investment and margin. I moved from studying messages to operating systems where each decision can be tested against commercial data."],
+      ["03", "Current advantage", "Today I combine both perspectives. I can detect a problem in the numbers, translate it into a campaign, catalog or content decision, and explain it so a team can execute and measure it."]
+    ],
+    "principle_title": "The problem rarely belongs to one discipline.",
+    "principle_copy": "A conversion drop may begin in traffic, offer, compatibility, inventory or visual hierarchy. My job is to locate the real constraint before recommending a solution.",
+    "role_label": "Current role",
+    "role": "Amazon Account Listing Manager",
+    "focus_label": "Focus",
+    "focus": "Ecommerce, Amazon PPC, BI and content",
+    "education_label": "Education",
+    "education": "Communication Sciences, University of Buenos Aires · Medical Sales Representative, Favaloro University",
+    "tools_title": "Tools and technical training",
+    "tools_intro": "Tools support judgment; they do not replace diagnosis.",
+    "tools": ["Seller Central and Amazon Ads", "SQL, Python and R", "Power BI and commercial reporting", "Google Ads and GA4", "SEO, CRO and listing architecture", "Visual design, 3D and automation"],
+    "availability": "Available for freelance projects, consulting and remote collaborations.",
+    "cv_label": "Download resume",
+    "cv_href": "output/pdf/Matias-Gaglio-Resume-EN.pdf",
+    "cta_title": "Need to connect data, advertising and content?",
+    "cta_copy": "Tell me what is happening in your portfolio and we can structure the diagnosis before choosing a tactic."
+  }
+}
