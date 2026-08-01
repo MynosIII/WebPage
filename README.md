@@ -13,6 +13,7 @@ This repository is the source of truth for the bilingual static portfolio deploy
 - `scripts/build_homepages.py` generates the committed homepage HTML. Generated files should never be edited directly.
 - Downloadable Spanish and English resumes are generated into `output/pdf/` by `scripts/build_resumes.py` and are linked from the main navigation, hero, and About page.
 - Additional case-study pages remain static HTML and use `style.css` plus `accessibility.js` while they are progressively migrated to shared templates.
+- `language-catalog.json` defines the 39 Spanish/English page pairs. `scripts/apply_legacy_translation_fixes.py` preserves the reviewed legacy glossary, while `scripts/validate_localization.py` checks language declarations, reciprocal `hreflang`, encoding, and banned literal translations.
 - `robots.txt` and `sitemap.xml` are generated from canonical page metadata.
 
 ## Local preview
@@ -42,6 +43,7 @@ python scripts/build_homepages.py
 python scripts/build_case_studies.py
 python scripts/build_about_pages.py
 python scripts/sync_ecommerce_claims.py
+python scripts/apply_legacy_translation_fixes.py
 python scripts/generate_sitemap.py
 python scripts/validate_site.py
 ```
@@ -53,6 +55,8 @@ python scripts/build_homepages.py --check
 python scripts/build_case_studies.py --check
 python scripts/build_about_pages.py --check
 python scripts/sync_ecommerce_claims.py --check
+python scripts/apply_legacy_translation_fixes.py --check
+python scripts/validate_localization.py
 python scripts/validate_project_claims.py
 python scripts/generate_sitemap.py --check
 python scripts/add_image_dimensions.py --check

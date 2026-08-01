@@ -24,7 +24,7 @@ def render(data: dict[str, object], default: bool = False) -> str:
     nav = (
         [("Inicio", "index.html"), ("Casos", "index.html#casos"), ("Sobre mí", "sobre-mi-es.html"), ("CV", "output/pdf/Matias-Gaglio-CV-ES.pdf"), ("Contacto", "#contacto")]
         if es
-        else [("Home", "index-en.html"), ("Cases", "index-en.html#cases"), ("About", "sobre-mi-en.html"), ("Resume", "output/pdf/Matias-Gaglio-Resume-EN.pdf"), ("Contact", "#contact")]
+        else [("Home", "index-en.html"), ("Case Studies", "index-en.html#cases"), ("About", "sobre-mi-en.html"), ("Resume", "output/pdf/Matias-Gaglio-Resume-EN.pdf"), ("Contact", "#contact")]
     )
     nav_items = "".join(f'<li><a href="{esc(href)}">{esc(label)}</a></li>' for label, href in nav)
     chapters = "".join(

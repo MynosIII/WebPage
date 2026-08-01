@@ -36,7 +36,7 @@
   },
   "case_2": {
     "project_name": {
-      "es": "Business Intelligence para rentabilidad de portfolio",
+      "es": "Business Intelligence para rentabilidad de portafolio",
       "en": "Business Intelligence for portfolio profitability"
     },
     "period_analyzed": {
@@ -56,7 +56,7 @@
       "en": "+222.7% sales and +298.9% estimated net profit from July to the October cutoff."
     },
     "contribution": {
-      "es": "Construí una lectura mensual del portfolio, crucé ventas, publicidad y margen, y prioricé acciones según el cuello de botella de cada producto.",
+      "es": "Construí una lectura mensual del portafolio, crucé ventas, publicidad y margen, y prioricé acciones según el cuello de botella de cada producto.",
       "en": "I built a monthly portfolio view, connected sales, media and margin, and prioritized actions by each product's bottleneck."
     },
     "measurement_source": "Sellerboard — Caso2.jpeg",
@@ -75,7 +75,7 @@
       "en": "Purchase-information-led Amazon gallery redesign"
     },
     "period_analyzed": {
-      "es": "Comparación de archivos de galería anterior y rediseñada; sin período de performance disponible en el archivo.",
+      "es": "Comparación de archivos de galería anterior y rediseñada; sin período de rendimiento disponible en el archivo.",
       "en": "Comparison of previous and redesigned gallery files; no performance period is available in the archive."
     },
     "baseline": {
@@ -87,7 +87,7 @@
       "en": "Redesigned six-image gallery integrating specifications, compatibility, benefits and branding."
     },
     "percentage_change": {
-      "es": "No disponible: no hay test de conversión controlado en el archivo.",
+      "es": "No disponible: no hay una prueba de conversión controlada en el archivo.",
       "en": "Not available: the archive contains no controlled conversion test."
     },
     "contribution": {
@@ -110,7 +110,7 @@
       "en": "Amazon account operations and growth — Daizzy Gear"
     },
     "period_analyzed": {
-      "es": "Archivo de trabajo de marzo–junio de 2026; comparación de revenue del 14–20 vs. 21–27 de junio de 2026.",
+      "es": "Archivo de trabajo de marzo–junio de 2026; comparación de ingresos por pedidos del 14–20 vs. 21–27 de junio de 2026.",
       "en": "Work archive from March–June 2026; revenue comparison for June 14–20 vs. June 21–27, 2026."
     },
     "baseline": {
@@ -131,7 +131,7 @@
     },
     "measurement_source": "Amazon Seller Central — image_076.png; Amazon Ads — image_048.png",
     "approved_public_claims": {
-      "es": ["US$874 → US$2.415 de revenue semanal", "+176,4% semana contra semana", "Ventana: 14–27 de junio de 2026"],
+      "es": ["US$874 → US$2.415 de ingresos semanales por pedidos", "+176,4% semana contra semana", "Ventana: 14–27 de junio de 2026"],
       "en": ["$874 → $2,415 in weekly revenue", "+176.4% week over week", "Window: June 14–27, 2026"]
     },
     "disclosure": {

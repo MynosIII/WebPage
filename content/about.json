@@ -2,7 +2,7 @@
   "es": {
     "lang": "es",
     "title": "Sobre mí — Matías Gaglio",
-    "description": "Historia profesional de Matías Gaglio: Comunicación, ecommerce, Amazon Growth, Business Intelligence y performance.",
+    "description": "Historia profesional de Matías Gaglio: Comunicación, ecommerce, Amazon Growth, Business Intelligence y rendimiento.",
     "kicker": "Sobre mí",
     "heading": "Comunicación para entender. Datos para decidir.",
     "deck": "Soy Matías Gaglio, Ecommerce & Amazon Growth Strategist. Conecto comportamiento del cliente, datos comerciales y ejecución para resolver problemas de conversión y rentabilidad.",
@@ -26,7 +26,7 @@
     "cv_label": "Descargar CV",
     "cv_href": "output/pdf/Matias-Gaglio-CV-ES.pdf",
     "cta_title": "¿Necesitás conectar datos, publicidad y contenido?",
-    "cta_copy": "Contame qué está pasando en tu portfolio y podemos ordenar el diagnóstico antes de elegir una táctica."
+    "cta_copy": "Contame qué está pasando en tu portafolio y podemos ordenar el diagnóstico antes de elegir una táctica."
   },
   "en": {
     "lang": "en",
@@ -47,7 +47,7 @@
     "focus_label": "Focus",
     "focus": "Ecommerce, Amazon PPC, BI and content",
     "education_label": "Education",
-    "education": "Communication Sciences, University of Buenos Aires · Medical Sales Representative, Favaloro University",
+    "education": "Communication Sciences, University of Buenos Aires · Pharmaceutical Sales Representative, Favaloro University",
     "tools_title": "Tools and technical training",
     "tools_intro": "Tools support judgment; they do not replace diagnosis.",
     "tools": ["Seller Central and Amazon Ads", "SQL, Python and R", "Power BI and commercial reporting", "Google Ads and GA4", "SEO, CRO and listing architecture", "Visual design, 3D and automation"],

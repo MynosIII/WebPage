@@ -14,11 +14,11 @@
       "deck": "Una intervención coordinada sobre campañas, segmentación y contenido para mejorar la calidad del tráfico y la capacidad del listing para convertirlo.",
       "context": "Cuenta Amazon con campañas y contenido que se optimizaban por separado. El análisis compara ventanas consecutivas de 28 días para ventas y conversión, más una vista agregada de Amazon Ads entre agosto y octubre de 2025.",
       "problem": "Había señales de oportunidad, pero no una lectura común entre estructura publicitaria, intención de búsqueda, calidad del listing y resultado comercial. Cambiar pujas sin revisar el contenido —o rediseñar contenido sin entender el tráfico— podía desplazar el problema sin resolverlo.",
-      "diagnosis": "Crucé ventas retail, conversión y performance publicitaria. La prioridad fue distinguir si el límite estaba en atraer tráfico relevante, en convertirlo o en la coordinación entre ambos.",
+      "diagnosis": "Crucé ventas retail, conversión y rendimiento publicitario. La prioridad fue distinguir si el límite estaba en atraer tráfico relevante, en convertirlo o en la coordinación entre ambos.",
       "role": "Audité la arquitectura de campañas y listings, reorganicé la segmentación y coordiné los cambios de contenido y pauta. La operación diaria y las condiciones comerciales dependían del equipo de la cuenta.",
       "actions": [
         ["Auditoría integrada", "Revisé campañas, términos, productos y contenido como partes del mismo funnel, no como tareas independientes."],
-        ["Segmentación y presupuesto", "Reorganicé la cobertura para separar descubrimiento, performance y defensa, y reducir solapamientos."],
+        ["Segmentación y presupuesto", "Reorganicé la cobertura para separar descubrimiento, rendimiento y defensa, y reducir solapamientos."],
         ["Contenido para intención", "Alineé mensajes y jerarquía del listing con las preguntas que traía el tráfico relevante."],
         ["Lectura por ventanas", "Definí comparaciones con fechas explícitas para evitar mezclar períodos y porcentajes incompatibles."]
       ],
@@ -58,27 +58,27 @@
       "category": "Business Intelligence · Rentabilidad",
       "seo_title": "Business Intelligence y rentabilidad | Matías Gaglio",
       "title": "De reportar ventas a decidir con margen",
-      "description": "Caso de Business Intelligence para ecommerce: lectura mensual de ventas, publicidad y rentabilidad para priorizar un portfolio.",
+      "description": "Caso de Business Intelligence para ecommerce: lectura mensual de ventas, publicidad y rentabilidad para priorizar un portafolio.",
       "deck": "Una vista operativa mensual que convirtió datos dispersos en decisiones sobre qué escalar, defender o corregir.",
-      "context": "Portfolio ecommerce anonimizado por confidencialidad, observado entre julio y el 27 de octubre de 2025 mediante Sellerboard. El objetivo no era producir otro dashboard, sino entender qué explicaba el resultado económico.",
+      "context": "Portafolio de ecommerce anonimizado por confidencialidad, observado entre julio y el 27 de octubre de 2025 mediante Sellerboard. El objetivo no era producir otro dashboard, sino entender qué explicaba el resultado económico.",
       "problem": "El crecimiento de ventas podía parecer saludable aunque algunos productos dependieran demasiado de publicidad, descuentos o un margen insuficiente. Sin una lectura conjunta, el volumen corría el riesgo de confundirse con rentabilidad.",
       "diagnosis": "Organicé la lectura por mes y crucé ventas, inversión publicitaria, costos, reembolsos y beneficio neto estimado. Luego separé problemas de tráfico, conversión, eficiencia publicitaria y economics.",
       "role": "Construí la vista mensual, definí los criterios de diagnóstico y prioricé acciones por producto. Las decisiones de inventario y operación final fueron coordinadas con el equipo responsable de la cuenta.",
       "actions": [
         ["Una métrica económica", "Usé el beneficio neto estimado como contrapeso de ventas para evitar premiar crecimiento sin margen."],
-        ["Diagnóstico por causa", "Separé problemas de demanda, conversión, pauta y costo en lugar de aplicar la misma solución a todo el portfolio."],
-        ["Priorización", "Clasifiqué productos según oportunidad, riesgo y capacidad real de captura, no solo según revenue."],
+        ["Diagnóstico por causa", "Separé problemas de demanda, conversión, pauta y costo en lugar de aplicar la misma solución a todo el portafolio."],
+        ["Priorización", "Clasifiqué productos según oportunidad, riesgo y capacidad real de captura, no solo según ingresos."],
         ["Cadencia mensual", "Documenté cortes consistentes y señalé que octubre contenía 27 días para no presentar una comparación engañosa."]
       ],
-      "implication": "El portfolio pasó de US$96.842,56 en ventas y US$15.624,09 de beneficio neto estimado en julio a US$312.480 y US$62.314,45 al corte del 27 de octubre. El valor del sistema fue hacer visible que el crecimiento comercial y el económico debían leerse juntos.",
+      "implication": "El portafolio pasó de US$96.842,56 en ventas y US$15.624,09 de beneficio neto estimado en julio a US$312.480 y US$62.314,45 al corte del 27 de octubre. El valor del sistema fue hacer visible que el crecimiento comercial y el económico debían leerse juntos.",
       "learning": "Un dashboard sirve cuando cambia el orden de las decisiones. La pregunta útil no es solo cuánto vendió un producto, sino qué parte del resultado es defendible después de publicidad, costos y restricciones operativas.",
       "cta_title": "¿Necesitás saber qué parte de tu crecimiento es rentable?",
-      "cta_copy": "Puedo construir una lectura que conecte ventas, inversión y margen para priorizar el portfolio con criterios explícitos."
+      "cta_copy": "Puedo construir una lectura que conecte ventas, inversión y margen para priorizar el portafolio con criterios explícitos."
     },
     "en": {
       "category": "Business Intelligence · Profitability",
       "seo_title": "Business Intelligence and profit | Matías Gaglio",
-      "title": "From reporting sales to deciding with margin",
+      "title": "From sales reporting to margin-led decisions",
       "description": "Ecommerce Business Intelligence case: monthly sales, media and profitability analysis used to prioritize a portfolio.",
       "deck": "A monthly operating view that turned scattered data into decisions about what to scale, defend or correct.",
       "context": "An ecommerce portfolio anonymized for confidentiality, observed from July through October 27, 2025 in Sellerboard. The objective was not another dashboard—it was understanding what explained the economic outcome.",
@@ -107,9 +107,9 @@
       "category": "Data-to-Creative · Amazon Gallery",
       "seo_title": "Rediseño de galería Amazon | Matías Gaglio",
       "title": "Una galería que convierte información técnica en decisión",
-      "description": "Caso de rediseño de galería Amazon: seis imágenes reorganizadas para comunicar compatibilidad, especificaciones y beneficios sin claims no verificados.",
+      "description": "Caso de rediseño de galería Amazon: seis imágenes reorganizadas para comunicar compatibilidad, especificaciones y beneficios sin afirmaciones no verificadas.",
       "deck": "La mejora documentada no es un porcentaje inventado: es un sistema de seis imágenes con más jerarquía, evidencia y continuidad de marca.",
-      "context": "Producto técnico para Amazon con una galería anterior de seis imágenes y un nuevo sistema de seis piezas. El archivo conserva los assets antes/después, pero no un test controlado de conversión.",
+      "context": "Producto técnico para Amazon con una galería anterior de seis imágenes y un nuevo sistema de seis piezas. El archivo conserva las piezas anteriores y rediseñadas, pero no una prueba controlada de conversión.",
       "problem": "La secuencia anterior mostraba el producto, pero dejaba al comprador con trabajo interpretativo: especificaciones, compatibilidad y razones de elección no tenían una jerarquía clara.",
       "diagnosis": "Revisé la galería como un recorrido de preguntas: qué es, con qué funciona, qué problema resuelve, cómo se usa y qué evidencia reduce el riesgo de compra.",
       "role": "Audité la secuencia anterior, definí la arquitectura de mensajes y convertí información técnica en un sistema visual modular. No atribuyo un cambio de conversión porque el archivo no contiene esa medición.",
@@ -117,12 +117,12 @@
         ["Jerarquía de compra", "Ordené cada pieza alrededor de una pregunta concreta en lugar de repetir el producto con variaciones estéticas."],
         ["Especificaciones visibles", "Integré datos técnicos y compatibilidad dentro de composiciones legibles sin depender del texto secundario."],
         ["Sistema de marca", "Unifiqué tipografía, color, empaque y encuadre para que las seis imágenes funcionaran como una narrativa."],
-        ["Guardrail de claims", "Separé lo demostrable en los assets de cualquier hipótesis de performance que requeriría un test posterior."]
+        ["Criterio de control para afirmaciones", "Separé lo demostrable en las piezas de cualquier hipótesis de rendimiento que requeriría una prueba posterior."]
       ],
       "implication": "El entregable pasó de seis recortes con baja densidad informativa a seis piezas diseñadas para explicar y diferenciar. El resultado verificable es comunicacional; la conversión queda como una hipótesis que debe medirse.",
       "learning": "Data-to-Creative no significa llenar una imagen de números. Significa decidir qué información reduce incertidumbre, en qué orden y con qué evidencia visual.",
       "cta_title": "¿Tu galería muestra el producto pero no ayuda a elegirlo?",
-      "cta_copy": "Puedo traducir VOC, especificaciones y performance en una arquitectura visual lista para producir y medir."
+      "cta_copy": "Puedo traducir VOC, especificaciones y rendimiento en una arquitectura visual lista para producir y medir."
     },
     "en": {
       "category": "Data-to-Creative · Amazon Gallery",
@@ -149,35 +149,35 @@
   "daizzy": {
     "slug": "caso-daizzy-gear",
     "visuals": [
-      ["image_076.png", 494, 554, "Weekly ordered revenue", "Comparación semanal de ordered revenue", "Weekly ordered-revenue comparison"],
+      ["image_076.png", 494, 554, "Weekly ordered revenue", "Comparación semanal de ingresos por pedidos", "Weekly ordered-revenue comparison"],
       ["image_048.png", 1598, 474, "Amazon Ads performance", "Semana de baja eficiencia utilizada en el diagnóstico", "Low-efficiency week used in the diagnosis"]
     ],
     "es": {
       "category": "Amazon Account Management · Technical Case",
       "seo_title": "Daizzy Gear: gestión técnica Amazon | Matías Gaglio",
       "title": "Daizzy Gear: operar PPC, inventario y contenido como un sistema",
-      "description": "Caso técnico de gestión de cuenta Amazon para Daizzy Gear: auditoría PPC, presupuesto, inventario, promociones, A+ Content, Storefront y catálogo.",
+      "description": "Caso técnico de gestión de una cuenta de Amazon para Daizzy Gear: auditoría PPC, presupuesto, inventario, promociones, A+ Content, Brand Store y catálogo.",
       "deck": "Una explicación técnica de cómo conecté publicidad, disponibilidad, promociones y contenido para pasar de ajustes aislados a una cadencia operativa semanal.",
-      "context": "Cuenta Amazon de Daizzy Gear trabajada entre marzo y junio de 2026. El archivo incluye capturas de Amazon Ads, inventario, promociones, A+ Content, Storefront y revenue semanal.",
+      "context": "Cuenta de Amazon de Daizzy Gear trabajada entre marzo y junio de 2026. El archivo incluye capturas de Amazon Ads, inventario, promociones, A+ Content, Brand Store e ingresos semanales por pedidos.",
       "problem": "La cuenta no necesitaba solamente mejores pujas. El rendimiento dependía de que presupuesto, stock, elegibilidad promocional, calidad del catálogo y contenido estuvieran coordinados. Publicitar un producto sin inventario sano o sin soporte de conversión podía consumir presupuesto sin construir una mejora sostenible.",
-      "diagnosis": "Audité performance publicitaria por campaña y producto, señales de baja eficiencia, disponibilidad de inventario y preparación promocional. La lectura técnica partió de una semana de marzo con ROAS 0,61, US$773,34 de costo y US$474,58 en ventas atribuidas, sin usar ese snapshot como baseline causal de junio.",
+      "diagnosis": "Audité el rendimiento publicitario por campaña y producto, las señales de baja eficiencia, la disponibilidad de inventario y la preparación promocional. La lectura técnica partió de una semana de marzo con ROAS 0,61, US$773,34 de costo y US$474,58 en ventas atribuidas, sin usar esa captura como línea base causal de junio.",
       "role": "Audité y reestructuré PPC, definí criterios de asignación presupuestaria, coordiné promociones y contenido, y conecté decisiones publicitarias con inventario y catálogo. Los pagos, la disponibilidad física y aprobaciones de Amazon dependían de la marca y la plataforma.",
       "actions": [
         ["Control PPC", "Revisé campañas por objetivo, consulta y producto; separé exploración, defensa y captura para reducir lecturas mezcladas."],
         ["Presupuesto por condición", "Definí dónde sostener, recortar o escalar inversión según margen, stock, historial y capacidad de conversión."],
         ["Operación comercial", "Coordiné promociones, cupones y soporte de Prime con disponibilidad e intención de liquidación de inventario antiguo."],
-        ["Soporte de conversión", "Implementé mejoras de A+ Content, Storefront y catálogo para que la publicidad llegara a una experiencia coherente."],
-        ["Cadencia semanal", "Organicé una revisión repetible de performance, inventario, incidencias y próximos movimientos."]
+        ["Soporte de conversión", "Implementé mejoras de A+ Content, Brand Store y catálogo para que la publicidad llegara a una experiencia coherente."],
+        ["Cadencia semanal", "Organicé una revisión repetible del rendimiento, el inventario, las incidencias y los próximos movimientos."]
       ],
       "technical": [
         ["Arquitectura PPC", "La optimización se hizo a nivel de campaña, término y producto. La decisión no fue bajar ACOS de forma uniforme, sino asignar una función a cada campaña: descubrimiento, captura, defensa o soporte promocional."],
         ["Pujas y términos", "Analicé términos con gasto sin ventas, consultas con señal de conversión y solapamiento entre campañas. Las negativas y ajustes de puja se usaron para dirigir tráfico, no como limpieza automática."],
-        ["Inventario como guardrail", "Antes de escalar, verifiqué disponibilidad y riesgo de quiebre. El presupuesto debía favorecer productos capaces de capturar demanda y evitar acelerar referencias con restricción de stock."],
+        ["Inventario como criterio de control", "Antes de escalar, verifiqué disponibilidad y riesgo de quiebre. El presupuesto debía favorecer productos capaces de capturar demanda y evitar acelerar referencias con restricción de stock."],
         ["Promociones", "Cupones y descuentos se planificaron según objetivo: capturar eventos, apoyar conversión o liberar inventario antiguo. Una promoción sin stock, margen o tráfico adecuado no era una intervención completa."],
-        ["A+ Content y Storefront", "Actualicé módulos, comparativas y soportes visuales para clarificar diferencias de producto y sostener campañas. El contenido funcionó como infraestructura de conversión, no como decoración."],
+        ["A+ Content y Brand Store", "Actualicé módulos, comparativas y recursos visuales para aclarar las diferencias entre productos y sostener las campañas. El contenido funcionó como infraestructura de conversión, no como decoración."],
         ["Catálogo e incidencias", "Incluí seguimiento de elegibilidad, variaciones, información de producto y problemas de cuenta porque estos bloqueos pueden invalidar una estrategia publicitaria correcta."]
       ],
-      "implication": "El ordered revenue semanal pasó de US$874 a US$2.415 entre el 14–20 y el 21–27 de junio de 2026. El +176,4% documenta una recuperación puntual semana contra semana; no se presenta como crecimiento sostenido ni como efecto causal aislado de una sola táctica.",
+      "implication": "Los ingresos semanales por pedidos pasaron de US$874 a US$2.415 entre el 14–20 y el 21–27 de junio de 2026. El +176,4% documenta una recuperación puntual semana contra semana; no se presenta como crecimiento sostenido ni como efecto causal aislado de una sola táctica.",
       "learning": "La gestión técnica de Amazon exige optimizar restricciones, no solo campañas. La mejor decisión publicitaria puede ser no escalar hasta resolver stock, catálogo, margen o contenido; y la mejor mejora de contenido puede fracasar si el tráfico no corresponde a la intención.",
       "cta_title": "¿Necesitás una operación Amazon que conecte las piezas?",
       "cta_copy": "Puedo auditar PPC, inventario, promociones y contenido como un sistema operativo semanal, con decisiones y límites explícitos."
