@@ -13,7 +13,7 @@
     "menu_close": "Cerrar menú",
     "nav": [
       ["Inicio", "#inicio"],
-      ["Trabajo", "#trabajo"],
+      ["Casos", "#casos"],
       ["Sobre mí", "sobre-mi-es.html"],
       ["CV", "output/pdf/Matias-Gaglio-CV-ES.pdf"],
       ["Contacto", "#contacto"]
@@ -99,18 +99,28 @@
     ],
     "library_eyebrow": "Portafolio completo",
     "library_title": "Una práctica híbrida: estrategia, análisis, creatividad e investigación.",
-    "library_intro": "Los casos con métricas muestran profundidad; estas áreas muestran amplitud. Cada entrada abre una colección de proyectos, sistemas o investigaciones.",
+    "library_intro": "Un mapa rápido de todo lo que podés encontrar en el sitio. Ecommerce y Creatives abren el recorrido; el resto amplía la práctica con investigación, escritura y experimentación.",
+    "library_search_placeholder": "Buscar casos, artículos, herramientas o temas…",
+    "library_search_button": "Buscar en el portafolio",
+    "library_search_label": "Buscar dentro del portafolio",
     "library": [
-      ["Ecommerce", "Casos de Amazon, PPC, SEO, catálogo y sistemas operativos.", "ecommerce-es.html"],
-      ["Creatives", "Imagen de producto, video, motion, 3D e iconografía.", "creatives-es.html"],
-      ["Artículos", "Playbooks y análisis aplicados a marketplaces.", "Articles-es.html"],
-      ["Investigación de opinión", "Encuestas, modelos explicativos, dashboards e informes.", "consultora-es.html"],
-      ["Otros proyectos", "Música, documentos, visualización y exploraciones personales.", "otros-es.html"],
-      ["Chat Matías", "Asistente interactivo del portafolio · En desarrollo.", "SEO-es.html"]
+      {"title": "Ecommerce", "copy": "Casos de Amazon, PPC, SEO, catálogo, conversión y sistemas operativos.", "href": "ecommerce-es.html", "image_src": "Caso1_plot.jpeg", "image_width": 794, "image_height": 352, "image_alt": "Panel de rendimiento de Amazon utilizado en un caso de crecimiento ecommerce", "featured": true},
+      {"title": "Creatives", "copy": "Imagen de producto, video, motion, 3D, A+ Content e iconografía.", "href": "creatives-es.html", "image_src": "Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg", "image_width": 1368, "image_height": 1312, "image_alt": "Ejemplo de una galería de producto rediseñada para Amazon", "featured": true},
+      {"title": "Artículos", "copy": "Playbooks y análisis aplicados a marketplaces.", "href": "Articles-es.html"},
+      {"title": "Investigación de opinión", "copy": "Encuestas, modelos explicativos, dashboards e informes.", "href": "consultora-es.html"},
+      {"title": "Otros proyectos", "copy": "Música, documentos, visualización y exploraciones personales.", "href": "otros-es.html"},
+      {"title": "Chat Matías", "copy": "Asistente interactivo del portafolio · En desarrollo.", "href": "SEO-es.html"}
     ],
     "about_eyebrow": "Sobre mí",
     "about_title": "Comunicación para entender; datos para decidir.",
     "about_copy": "Mi formación en Comunicación me enseñó cómo las personas interpretan mensajes y toman decisiones. El ecommerce agregó una segunda capa: medir ese comportamiento mediante tráfico, conversión, rentabilidad y búsqueda. Hoy conecto comportamiento del cliente, datos comerciales y ejecución.",
+    "about_personal_eyebrow": "Una nota más personal",
+    "about_personal_copy": "La curiosidad que llevo al trabajo también aparece fuera de él: investigo cultura digital, escribo, experimento con música y visualización, y construyo herramientas para entender sistemas complejos.",
+    "about_facts": [
+      ["Formación", "Ciencias de la Comunicación · UBA"],
+      ["Cruce profesional", "Ecommerce + datos + contenido"],
+      ["Intereses", "Cultura digital, escritura, música y visualización"]
+    ],
     "about_cta": "Conocer mi historia profesional",
     "contact_eyebrow": "Próximo paso",
     "contact_title": "¿Buscás mejorar la rentabilidad de un portafolio ecommerce?",
@@ -134,7 +144,7 @@
     "menu_close": "Close menu",
     "nav": [
       ["Home", "#home"],
-      ["Work", "#work"],
+      ["Cases", "#cases"],
       ["About", "sobre-mi-en.html"],
       ["Resume", "output/pdf/Matias-Gaglio-Resume-EN.pdf"],
       ["Contact", "#contact"]
@@ -220,18 +230,28 @@
     ],
     "library_eyebrow": "Complete portfolio",
     "library_title": "A hybrid practice across strategy, analysis, creative work and research.",
-    "library_intro": "The metric-led cases show depth; these areas show breadth. Each entry opens a collection of projects, systems or research.",
+    "library_intro": "A quick map of everything you can find across the site. Ecommerce and Creatives lead the journey; research, writing and experimentation reveal the wider practice.",
+    "library_search_placeholder": "Search cases, articles, tools or topics…",
+    "library_search_button": "Search the portfolio",
+    "library_search_label": "Search within the portfolio",
     "library": [
-      ["Ecommerce", "Amazon, PPC, SEO, catalog and operating-system cases.", "ecommerce-en.html"],
-      ["Creatives", "Product imagery, video, motion, 3D and iconography.", "creatives-en.html"],
-      ["Articles", "Marketplace playbooks and applied analysis.", "Articles-en.html"],
-      ["Opinion research", "Surveys, explanatory models, dashboards and reports.", "consultora-en.html"],
-      ["Other projects", "Music, documents, visualization and personal explorations.", "otros-en.html"],
-      ["Chat Matías", "Interactive portfolio assistant · Work in progress.", "SEO-en.html"]
+      {"title": "Ecommerce", "copy": "Amazon, PPC, SEO, catalog, conversion and operating-system cases.", "href": "ecommerce-en.html", "image_src": "Caso1_plot.jpeg", "image_width": 794, "image_height": 352, "image_alt": "Amazon performance dashboard used in an ecommerce growth case", "featured": true},
+      {"title": "Creatives", "copy": "Product imagery, video, motion, 3D, A+ Content and iconography.", "href": "creatives-en.html", "image_src": "Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg", "image_width": 1368, "image_height": 1312, "image_alt": "Example of a redesigned Amazon product gallery", "featured": true},
+      {"title": "Articles", "copy": "Marketplace playbooks and applied analysis.", "href": "Articles-en.html"},
+      {"title": "Opinion research", "copy": "Surveys, explanatory models, dashboards and reports.", "href": "consultora-en.html"},
+      {"title": "Other projects", "copy": "Music, documents, visualization and personal explorations.", "href": "otros-en.html"},
+      {"title": "Chat Matías", "copy": "Interactive portfolio assistant · Work in progress.", "href": "SEO-en.html"}
     ],
     "about_eyebrow": "About",
     "about_title": "Communication to understand; data to decide.",
     "about_copy": "My Communication background taught me how people interpret messages and make decisions. Ecommerce added a second layer: measuring that behavior through traffic, conversion, profitability and search. Today I connect customer behavior, commercial data and execution.",
+    "about_personal_eyebrow": "A more personal note",
+    "about_personal_copy": "The curiosity I bring to work also appears outside it: I research digital culture, write, experiment with music and visualization, and build tools to understand complex systems.",
+    "about_facts": [
+      ["Education", "Communication Sciences · University of Buenos Aires"],
+      ["Professional intersection", "Ecommerce + data + content"],
+      ["Interests", "Digital culture, writing, music and visualization"]
+    ],
     "about_cta": "Read my professional story",
     "contact_eyebrow": "Next step",
     "contact_title": "Looking to improve an ecommerce portfolio's profitability?",

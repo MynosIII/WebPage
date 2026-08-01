@@ -39,7 +39,7 @@
         <span>MG</span><strong>Matías Gaglio</strong>
       </a>
       <nav class="site-nav" id="primary-navigation" aria-label="Navegación principal" data-site-nav>
-        <ul><li><a href="#inicio">Inicio</a></li><li><a href="#trabajo">Trabajo</a></li><li><a href="sobre-mi-es.html">Sobre mí</a></li><li><a href="output/pdf/Matias-Gaglio-CV-ES.pdf">CV</a></li><li><a href="#contacto">Contacto</a></li></ul>
+        <ul><li><a href="#inicio">Inicio</a></li><li><a href="#casos">Casos</a></li><li><a href="sobre-mi-es.html">Sobre mí</a></li><li><a href="output/pdf/Matias-Gaglio-CV-ES.pdf">CV</a></li><li><a href="#contacto">Contacto</a></li></ul>
       </nav>
       <div class="site-header__actions">
         <a class="header-contact" href="#contacto">Contactarme</a>
@@ -52,6 +52,14 @@
   </header>
   <button class="menu-backdrop" type="button" aria-label="Cerrar menú" tabindex="-1" data-menu-backdrop></button>
 
+  <nav class="portfolio-rail" aria-label="Accesos al portafolio" data-portfolio-rail>
+    <div class="portfolio-rail__inner">
+      <a class="portfolio-rail__home" href="#trabajo"><span aria-hidden="true">00</span>Mapa</a>
+      <div class="portfolio-rail__links"><a class="portfolio-rail__link" href="ecommerce-es.html"><span>01</span>Ecommerce</a><a class="portfolio-rail__link" href="creatives-es.html"><span>02</span>Creatives</a><a class="portfolio-rail__link" href="Articles-es.html"><span>03</span>Artículos</a><a class="portfolio-rail__link" href="consultora-es.html"><span>04</span>Investigación de opinión</a><a class="portfolio-rail__link" href="otros-es.html"><span>05</span>Otros proyectos</a><a class="portfolio-rail__link" href="SEO-es.html"><span>06</span>Chat Matías</a></div>
+      <button class="portfolio-rail__search" type="button" data-search-trigger aria-label="Buscar dentro del portafolio" aria-controls="site-search-panel" aria-expanded="false"><span aria-hidden="true">⌕</span>Buscar</button>
+    </div>
+  </nav>
+
   <main id="main-content">
     <section class="home-hero" id="inicio" aria-labelledby="home-title">
       <div class="home-shell home-hero__grid">
@@ -60,22 +68,39 @@
           <h1 id="home-title">Datos, pauta y contenido al servicio de la rentabilidad.</h1>
           <p class="home-hero__summary">Combino Business Intelligence, PPC y contenido visual para ayudar a marcas de ecommerce a aumentar conversión y rentabilidad. Analizo el rendimiento, detecto oportunidades y convierto los datos en decisiones comerciales ejecutables.</p>
           <div class="home-actions">
-            <a class="button button--primary" href="#trabajo">Explorar mi trabajo <span aria-hidden="true">↘</span></a>
+            <a class="button button--primary" href="#casos">Explorar mi trabajo <span aria-hidden="true">↘</span></a>
             <a class="button button--ghost" href="#contacto">Contactarme</a>
           </div>
           <a class="hero-cv-link" href="output/pdf/Matias-Gaglio-CV-ES.pdf" download>Descargar CV <span aria-hidden="true">↓</span></a>
           <p class="availability"><span aria-hidden="true"></span>Disponible para proyectos freelance, consultoría y colaboraciones remotas.</p>
         </div>
-        <div class="home-hero__system" aria-hidden="true">
-          <div class="signal signal--data"><span>01</span><strong>DATOS</strong><small>Encontrar la señal</small></div>
-          <div class="system-line system-line--one"></div>
-          <div class="signal signal--strategy"><span>02</span><strong>ESTRATEGIA</strong><small>Elegir la acción</small></div>
-          <div class="system-line system-line--two"></div>
-          <div class="signal signal--creative"><span>03</span><strong>CONTENIDO</strong><small>Comunicar con claridad</small></div>
-          <div class="system-core"><span>MEDIR</span><i></i></div>
+        <div class="home-hero__system" data-neural-system role="group" aria-label="Traductor Analítico interactivo">
+          <p class="system-caption"><span>Pilar secundario</span><strong>Traductor Analítico</strong><small>Explorá cómo conecto señales, criterio y ejecución.</small></p>
+          <button class="signal signal--data" type="button" data-neural-node="data" data-output="SEÑAL" aria-pressed="false"><span>01</span><strong>DATOS</strong><small>Encontrar la señal</small></button>
+          <i class="system-line system-line--one" aria-hidden="true"></i>
+          <button class="signal signal--strategy" type="button" data-neural-node="strategy" data-output="CRITERIO" aria-pressed="false"><span>02</span><strong>ESTRATEGIA</strong><small>Elegir la acción</small></button>
+          <i class="system-line system-line--two" aria-hidden="true"></i>
+          <button class="signal signal--creative" type="button" data-neural-node="creative" data-output="CLARIDAD" aria-pressed="false"><span>03</span><strong>CONTENIDO</strong><small>Comunicar con claridad</small></button>
+          <i class="system-line system-line--three" aria-hidden="true"></i>
+          <div class="system-core" aria-live="polite"><small>TRADUCIR</small><span data-neural-output>DECISIÓN</span><i aria-hidden="true"></i></div>
+          <span class="neural-spark neural-spark--one" aria-hidden="true"></span><span class="neural-spark neural-spark--two" aria-hidden="true"></span><span class="neural-spark neural-spark--three" aria-hidden="true"></span>
         </div>
       </div>
       <div class="home-shell proof-strip" role="group" aria-label="Resultados documentados"><div><strong>+81,53%</strong><span>ventas retail · Caso 1</span></div><div><strong>+118,16%</strong><span>conversión · Caso 1</span></div><div><strong>US$312.480</strong><span>ventas al 27 oct · Caso 2</span></div><div><strong>+176,4%</strong><span>recuperación semanal · Daizzy</span></div></div>
+    </section>
+
+    <section class="home-section portfolio-library" id="trabajo" aria-labelledby="library-title">
+      <div class="home-shell">
+        <div class="section-heading section-heading--split">
+          <div><p class="eyebrow">Portafolio completo</p><h2 id="library-title">Una práctica híbrida: estrategia, análisis, creatividad e investigación.</h2></div>
+          <p>Un mapa rápido de todo lo que podés encontrar en el sitio. Ecommerce y Creatives abren el recorrido; el resto amplía la práctica con investigación, escritura y experimentación.</p>
+        </div>
+        <form class="portfolio-search" action="search-es.html" method="get" role="search">
+          <label for="portfolio-search-input">Buscar dentro del portafolio</label>
+          <div><span aria-hidden="true">⌕</span><input id="portfolio-search-input" name="q" type="search" autocomplete="off" placeholder="Buscar casos, artículos, herramientas o temas…" /><button type="submit">Buscar en el portafolio <span aria-hidden="true">→</span></button></div>
+        </form>
+        <div class="library-grid"><a class="library-card library-card--featured" href="ecommerce-es.html"><span class="library-card__media" aria-hidden="true"><img src="Caso1_plot.jpeg" width="794" height="352" alt="" loading="lazy" decoding="async" /></span><span class="library-card__copy"><span class="library-card__index">01</span><h3>Ecommerce</h3><p>Casos de Amazon, PPC, SEO, catálogo, conversión y sistemas operativos.</p><span class="library-card__arrow" aria-hidden="true">↗</span></span></a><a class="library-card library-card--featured" href="creatives-es.html"><span class="library-card__media" aria-hidden="true"><img src="Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg" width="1368" height="1312" alt="" loading="lazy" decoding="async" /></span><span class="library-card__copy"><span class="library-card__index">02</span><h3>Creatives</h3><p>Imagen de producto, video, motion, 3D, A+ Content e iconografía.</p><span class="library-card__arrow" aria-hidden="true">↗</span></span></a><a class="library-card" href="Articles-es.html"><span class="library-card__copy"><span class="library-card__index">03</span><h3>Artículos</h3><p>Playbooks y análisis aplicados a marketplaces.</p><span class="library-card__arrow" aria-hidden="true">↗</span></span></a><a class="library-card" href="consultora-es.html"><span class="library-card__copy"><span class="library-card__index">04</span><h3>Investigación de opinión</h3><p>Encuestas, modelos explicativos, dashboards e informes.</p><span class="library-card__arrow" aria-hidden="true">↗</span></span></a><a class="library-card" href="otros-es.html"><span class="library-card__copy"><span class="library-card__index">05</span><h3>Otros proyectos</h3><p>Música, documentos, visualización y exploraciones personales.</p><span class="library-card__arrow" aria-hidden="true">↗</span></span></a><a class="library-card" href="SEO-es.html"><span class="library-card__copy"><span class="library-card__index">06</span><h3>Chat Matías</h3><p>Asistente interactivo del portafolio · En desarrollo.</p><span class="library-card__arrow" aria-hidden="true">↗</span></span></a></div>
+      </div>
     </section>
 
     <section class="home-section capabilities" id="capacidades" aria-labelledby="capabilities-title">
@@ -85,16 +110,6 @@
           <p>Trabajo en el punto donde la rentabilidad, la adquisición y la comunicación del producto se afectan mutuamente.</p>
         </div>
         <div class="capability-grid"><article class="capability-card"><span>01</span><h3>Amazon Growth &amp; PPC</h3><p>Diagnóstico de catálogo y campañas, asignación presupuestaria y optimización orientada a margen.</p></article><article class="capability-card"><span>02</span><h3>Business Intelligence</h3><p>Lecturas de ventas, pauta y rentabilidad que muestran qué escalar, defender o corregir.</p></article><article class="capability-card"><span>03</span><h3>Data-to-Creative</h3><p>VOC y rendimiento convertidos en galerías, listings y sistemas visuales que reducen la incertidumbre de compra.</p></article></div>
-      </div>
-    </section>
-
-    <section class="home-section portfolio-library" id="trabajo" aria-labelledby="library-title">
-      <div class="home-shell">
-        <div class="section-heading section-heading--split">
-          <div><p class="eyebrow">Portafolio completo</p><h2 id="library-title">Una práctica híbrida: estrategia, análisis, creatividad e investigación.</h2></div>
-          <p>Los casos con métricas muestran profundidad; estas áreas muestran amplitud. Cada entrada abre una colección de proyectos, sistemas o investigaciones.</p>
-        </div>
-        <div class="library-grid"><a class="library-card" href="ecommerce-es.html"><span class="library-card__index">01</span><h3>Ecommerce</h3><p>Casos de Amazon, PPC, SEO, catálogo y sistemas operativos.</p><span class="library-card__arrow" aria-hidden="true">↗</span></a><a class="library-card" href="creatives-es.html"><span class="library-card__index">02</span><h3>Creatives</h3><p>Imagen de producto, video, motion, 3D e iconografía.</p><span class="library-card__arrow" aria-hidden="true">↗</span></a><a class="library-card" href="Articles-es.html"><span class="library-card__index">03</span><h3>Artículos</h3><p>Playbooks y análisis aplicados a marketplaces.</p><span class="library-card__arrow" aria-hidden="true">↗</span></a><a class="library-card" href="consultora-es.html"><span class="library-card__index">04</span><h3>Investigación de opinión</h3><p>Encuestas, modelos explicativos, dashboards e informes.</p><span class="library-card__arrow" aria-hidden="true">↗</span></a><a class="library-card" href="otros-es.html"><span class="library-card__index">05</span><h3>Otros proyectos</h3><p>Música, documentos, visualización y exploraciones personales.</p><span class="library-card__arrow" aria-hidden="true">↗</span></a><a class="library-card" href="SEO-es.html"><span class="library-card__index">06</span><h3>Chat Matías</h3><p>Asistente interactivo del portafolio · En desarrollo.</p><span class="library-card__arrow" aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
@@ -121,7 +136,7 @@
     <section class="home-section profile-band" aria-labelledby="profile-title">
       <div class="home-shell profile-band__grid">
         <div><p class="eyebrow">Sobre mí</p><h2 id="profile-title">Comunicación para entender; datos para decidir.</h2></div>
-        <div><p>Mi formación en Comunicación me enseñó cómo las personas interpretan mensajes y toman decisiones. El ecommerce agregó una segunda capa: medir ese comportamiento mediante tráfico, conversión, rentabilidad y búsqueda. Hoy conecto comportamiento del cliente, datos comerciales y ejecución.</p><a class="text-link" href="sobre-mi-es.html">Conocer mi historia profesional <span aria-hidden="true">↗</span></a></div>
+        <div class="profile-band__story"><p>Mi formación en Comunicación me enseñó cómo las personas interpretan mensajes y toman decisiones. El ecommerce agregó una segunda capa: medir ese comportamiento mediante tráfico, conversión, rentabilidad y búsqueda. Hoy conecto comportamiento del cliente, datos comerciales y ejecución.</p><div class="profile-band__personal"><p class="eyebrow">Una nota más personal</p><p>La curiosidad que llevo al trabajo también aparece fuera de él: investigo cultura digital, escribo, experimento con música y visualización, y construyo herramientas para entender sistemas complejos.</p></div><dl class="profile-facts"><div><dt>Formación</dt><dd>Ciencias de la Comunicación · UBA</dd></div><div><dt>Cruce profesional</dt><dd>Ecommerce + datos + contenido</dd></div><div><dt>Intereses</dt><dd>Cultura digital, escritura, música y visualización</dd></div></dl><a class="text-link" href="sobre-mi-es.html">Conocer mi historia profesional <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 

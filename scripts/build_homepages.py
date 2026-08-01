@@ -107,11 +107,37 @@ def method_items(items: list[list[str]]) -> str:
     )
 
 
-def library_items(items: list[list[str]]) -> str:
+def library_items(items: list[dict[str, object]]) -> str:
+    output: list[str] = []
+    for index, item in enumerate(items, start=1):
+        featured = bool(item.get("featured"))
+        visual = ""
+        if featured:
+            visual = (
+                '<span class="library-card__media" aria-hidden="true">'
+                f'<img src="{esc(item["image_src"])}" width="{int(item["image_width"])}" '
+                f'height="{int(item["image_height"])}" alt="" loading="lazy" decoding="async" />'
+                "</span>"
+            )
+        output.append(
+            f'<a class="library-card{" library-card--featured" if featured else ""}" href="{esc(item["href"])}">'
+            f'{visual}<span class="library-card__copy"><span class="library-card__index">{index:02d}</span>'
+            f'<h3>{esc(item["title"])}</h3><p>{esc(item["copy"])}</p>'
+            '<span class="library-card__arrow" aria-hidden="true">↗</span></span></a>'
+        )
+    return "".join(output)
+
+
+def portfolio_rail_items(items: list[dict[str, object]]) -> str:
     return "".join(
-        f'<a class="library-card" href="{esc(href)}"><span class="library-card__index">{index:02d}</span>'
-        f'<h3>{esc(title)}</h3><p>{esc(copy)}</p><span class="library-card__arrow" aria-hidden="true">↗</span></a>'
-        for index, (title, copy, href) in enumerate(items, start=1)
+        f'<a class="portfolio-rail__link" href="{esc(item["href"])}"><span>{index:02d}</span>{esc(item["title"])}</a>'
+        for index, item in enumerate(items, start=1)
+    )
+
+
+def about_fact_items(items: list[list[str]]) -> str:
+    return "".join(
+        f'<div><dt>{esc(label)}</dt><dd>{esc(value)}</dd></div>' for label, value in items
     )
 
 
@@ -166,7 +192,7 @@ def render(locale: dict[str, object], claims: dict[str, object]) -> str:
             "home_href": "index.html" if spanish else "index-en.html",
             "home_id": "inicio" if spanish else "home",
             "switch_hreflang": "en" if spanish else "es",
-            "primary_href": "#trabajo" if spanish else "#work",
+            "primary_href": "#casos" if spanish else "#cases",
             "secondary_href": "#contacto" if spanish else "#contact",
             "cv_href": "output/pdf/Matias-Gaglio-CV-ES.pdf" if spanish else "output/pdf/Matias-Gaglio-Resume-EN.pdf",
             "signal_data": "DATOS" if spanish else "DATA",
@@ -175,7 +201,19 @@ def render(locale: dict[str, object], claims: dict[str, object]) -> str:
             "signal_strategy_copy": "Elegir la acción" if spanish else "Choose the move",
             "signal_creative": "CONTENIDO" if spanish else "CREATIVE",
             "signal_creative_copy": "Comunicar con claridad" if spanish else "Make it clear",
-            "signal_measure": "MEDIR" if spanish else "MEASURE",
+            "signal_translate": "TRADUCIR" if spanish else "TRANSLATE",
+            "signal_default_output": "DECISIÓN" if spanish else "DECISION",
+            "signal_data_output": "SEÑAL" if spanish else "SIGNAL",
+            "signal_strategy_output": "CRITERIO" if spanish else "JUDGMENT",
+            "signal_creative_output": "CLARIDAD" if spanish else "CLARITY",
+            "neural_label": "Traductor Analítico interactivo" if spanish else "Interactive Analytical Translator",
+            "neural_kicker": "Pilar secundario" if spanish else "Secondary pillar",
+            "neural_title": "Traductor Analítico" if spanish else "Analytical Translator",
+            "neural_copy": "Explorá cómo conecto señales, criterio y ejecución." if spanish else "Explore how I connect signals, judgment and execution.",
+            "portfolio_rail_label": "Accesos al portafolio" if spanish else "Portfolio shortcuts",
+            "portfolio_rail_home": "Mapa" if spanish else "Map",
+            "search_label": "Buscar" if spanish else "Search",
+            "search_href": "search-es.html" if spanish else "search-en.html",
             "capabilities_id": "capacidades" if spanish else "capabilities",
             "library_id": "trabajo" if spanish else "work",
             "work_id": "casos" if spanish else "cases",
@@ -188,6 +226,8 @@ def render(locale: dict[str, object], claims: dict[str, object]) -> str:
             "work_items": work_items(locale["work"], claims, str(locale["lang"])),
             "method_items": method_items(locale["method"]),
             "library_items": library_items(locale["library"]),
+            "portfolio_rail_items": portfolio_rail_items(locale["library"]),
+            "about_fact_items": about_fact_items(locale["about_facts"]),
         }
     )
     return Template(TEMPLATE.read_text(encoding="utf-8")).substitute(values).rstrip() + "\n"
