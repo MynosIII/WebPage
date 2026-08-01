@@ -26,18 +26,77 @@
   const navToggle = document.querySelector('.nav-toggle');
   if (primaryNav && navToggle) {
     const navbar = navToggle.closest('.navbar');
+    const navContainer = navbar?.querySelector('.container');
+    const languageSwitch = document.querySelector('.language-switch');
     const openLabel = spanish ? 'Abrir menú' : 'Open menu';
+    const closeLabel = spanish ? 'Cerrar menú' : 'Close menu';
+    const mobileNavigation = matchMedia('(max-width: 1050px)');
+    const backdrop = document.createElement('button');
+    let menuOpen = false;
+
     if (!primaryNav.id) primaryNav.id = 'primary-navigation';
     navToggle.setAttribute('aria-controls', primaryNav.id);
-    document.addEventListener('keydown', event => {
-      if (event.key !== 'Escape' || navToggle.getAttribute('aria-expanded') !== 'true') return;
-      navbar?.classList.remove('nav-open');
-      primaryNav.classList.remove('active');
-      navToggle.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.setAttribute('aria-label', openLabel);
-      navToggle.focus();
+    navToggle.type = 'button';
+
+    if (languageSwitch && navContainer) {
+      languageSwitch.classList.add('language-switch--nav');
+      navContainer.insertBefore(languageSwitch, navToggle);
+    }
+
+    backdrop.type = 'button';
+    backdrop.className = 'legacy-nav-backdrop';
+    backdrop.setAttribute('aria-label', closeLabel);
+    backdrop.tabIndex = -1;
+    navbar?.after(backdrop);
+
+    const background = [main, document.querySelector('footer')].filter(Boolean);
+    const setMenuState = (open, restoreFocus = false) => {
+      menuOpen = Boolean(open && mobileNavigation.matches);
+      navbar?.classList.toggle('nav-open', menuOpen);
+      primaryNav.classList.toggle('active', menuOpen);
+      navToggle.classList.toggle('active', menuOpen);
+      document.body.classList.toggle('menu-open', menuOpen);
+      navToggle.setAttribute('aria-expanded', String(menuOpen));
+      navToggle.setAttribute('aria-label', menuOpen ? closeLabel : openLabel);
+      primaryNav.inert = mobileNavigation.matches && !menuOpen;
+      backdrop.tabIndex = menuOpen ? 0 : -1;
+      background.forEach(element => { element.inert = menuOpen; });
+
+      if (menuOpen) primaryNav.querySelector('a[href]')?.focus();
+      else if (restoreFocus) navToggle.focus();
+    };
+
+    navToggle.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      setMenuState(!menuOpen);
+    }, true);
+    backdrop.addEventListener('click', () => setMenuState(false, true));
+    primaryNav.addEventListener('click', event => {
+      if (event.target.closest('a[href]') && mobileNavigation.matches) setMenuState(false);
     });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && menuOpen) {
+        event.preventDefault();
+        setMenuState(false, true);
+        return;
+      }
+      if (event.key !== 'Tab' || !menuOpen) return;
+
+      const focusable = [navToggle, ...primaryNav.querySelectorAll('a[href]:not([tabindex="-1"])')]
+        .filter(element => element.getClientRects().length > 0);
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    });
+    mobileNavigation.addEventListener('change', () => setMenuState(false));
+    setMenuState(false);
   }
 
   const currentFile = decodeURIComponent(location.pathname.split('/').pop() || 'index.html').toLowerCase();

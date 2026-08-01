@@ -71,6 +71,25 @@ html {
     backdrop-filter: blur(10px);
 }
 .language-switch:focus-visible { outline: 3px solid #66a3ff; outline-offset: 3px; }
+.language-switch.language-switch--nav {
+    position: static;
+    z-index: auto;
+    flex: 0 0 auto;
+    min-width: 44px;
+    height: 44px;
+    margin-left: 1rem;
+    box-shadow: none;
+}
+.legacy-nav-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    display: none;
+    border: 0;
+    background: rgba(0, 0, 0, .66);
+    backdrop-filter: blur(3px);
+}
+body.menu-open { overflow: hidden; }
 .nav-toggle,
 .video-carousel-button,
 .flyer-carousel-button,
@@ -198,6 +217,8 @@ img {
     color: #FFFFFF;
     text-decoration: none;
     font-weight: 600;
+    white-space: nowrap;
+    flex: 0 0 auto;
 }
 
 .navbar nav ul {
@@ -1747,6 +1768,54 @@ footer p { color: var(--color-texto-sec); font-size: 0.9rem; }
 
 
 /* --- Breakpoint Principal: Tablet y Móvil (Vertical) --- */
+@media (max-width: 1050px) {
+    .navbar .container { justify-content: flex-start; gap: .75rem; }
+    .navbar .language-switch--nav { margin-left: auto; }
+    .nav-toggle { display: block; }
+    .nav-menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: min(82vw, 380px);
+        height: 100dvh;
+        overflow-y: auto;
+        background-color: var(--color-superficie);
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        padding: 6rem 1.5rem 2rem;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+    }
+    .nav-menu ul,
+    .navbar nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: .5rem;
+        width: 100%;
+    }
+    .nav-menu ul li,
+    .navbar nav li { margin-left: 0; }
+    .nav-menu ul li a,
+    .navbar nav li a {
+        display: block;
+        padding: .7rem .85rem;
+        font-size: 1.1rem;
+        line-height: 1.25;
+    }
+    .navbar.nav-open .nav-menu { transform: translateX(0); }
+    .navbar.nav-open + .legacy-nav-backdrop { display: block; }
+    .navbar.nav-open .nav-toggle .hamburger-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: var(--color-acento);
+    }
+    .navbar.nav-open .nav-toggle .hamburger-line:nth-child(2) { opacity: 0; }
+    .navbar.nav-open .nav-toggle .hamburger-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--color-acento);
+    }
+}
+
 @media (max-width: 768px) {
     h1 { font-size: 3rem; }
     h2 { font-size: 2rem; }
@@ -2555,5 +2624,3 @@ footer p { color: var(--color-texto-sec); font-size: 0.9rem; }
     .academic-article-card { gap: 1rem; }
     .academic-pdf-frame { min-height: 68vh; height: 68vh; }
 }
-
-

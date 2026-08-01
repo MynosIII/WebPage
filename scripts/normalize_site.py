@@ -15,7 +15,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parents[1]
 SITE_URL = "https://matiasgaglio.onrender.com"
 OG_IMAGE = f"{SITE_URL}/og-card.png"
-EXCLUDED = {"anchor-test.html", "revolution-test.html", "index.html"}
+EXCLUDED = {"anchor-test.html", "revolution-test.html", "index.html", "index-es.html", "index-en.html"}
 
 
 def public_url(path: Path) -> str:

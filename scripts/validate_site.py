@@ -25,6 +25,7 @@ class PageParser(HTMLParser):
         self.meta_names: set[str] = set()
         self.meta_properties: set[str] = set()
         self.link_rels: list[tuple[set[str], dict[str, str]]] = []
+        self.has_structured_data = False
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = {key.lower(): value or "" for key, value in attrs}
@@ -43,6 +44,8 @@ class PageParser(HTMLParser):
                 self.meta_properties.add(values["property"].lower())
         if tag == "link":
             self.link_rels.append((set(values.get("rel", "").lower().split()), values))
+        if tag == "script" and values.get("type", "").lower() == "application/ld+json":
+            self.has_structured_data = True
 
 
 def exact_case_path(path: Path) -> bool:
@@ -81,7 +84,7 @@ def validate_page(path: Path, cache: dict[Path, PageParser]) -> list[str]:
     if parser.images_without_alt:
         issues.append(f"{relative}: {parser.images_without_alt} image(s) missing alt attributes")
 
-    special = path.name in {"index.html", "404.html"}
+    special = path.name == "404.html"
     if not special:
         required_meta = {"twitter:card", "referrer"}
         if not path.stem.lower().startswith("seo"):
@@ -94,6 +97,20 @@ def validate_page(path: Path, cache: dict[Path, PageParser]) -> list[str]:
         for item in {"canonical", "icon", "manifest"}:
             if not any(item in rels for rels in rel_sets):
                 issues.append(f"{relative}: missing link rel={item}")
+
+    if path.name in {"index.html", "index-es.html", "index-en.html"} and not parser.has_structured_data:
+        issues.append(f"{relative}: missing JSON-LD structured data")
+
+    if path.stem.lower().endswith("-es"):
+        source = path.read_text(encoding="utf-8")
+        main_match = re.search(r"<main\b.*?</main>", source, re.I | re.S)
+        if main_match:
+            plain = re.sub(r"<[^>]+>", " ", main_match.group()).lower()
+            words = re.findall(r"[a-záéíóúñü]+", plain)
+            english = sum(word in {"the", "and", "with", "from", "this", "that", "before", "after", "should", "when", "into", "which", "while", "each", "source", "customer", "listing", "search"} for word in words)
+            spanish = sum(word in {"el", "la", "los", "las", "una", "un", "con", "desde", "este", "esta", "que", "antes", "después", "cuando", "para", "cada", "fuente", "cliente", "búsqueda"} for word in words)
+            if english >= 40 and english > spanish:
+                issues.append(f"{relative}: Spanish page appears predominantly English ({english} English signals vs {spanish} Spanish signals)")
 
     local_ids = set(parser.ids)
     if path.stem.lower().startswith("unimac-case"):
@@ -140,7 +157,7 @@ def main() -> int:
     pages = [
         path
         for path in ROOT.rglob("*.html")
-        if ".git" not in path.parts and path.name not in TEST_STUBS
+        if ".git" not in path.parts and "templates" not in path.parts and path.name not in TEST_STUBS
     ]
     for path in sorted(pages):
         issues.extend(validate_page(path, cache))
@@ -155,6 +172,10 @@ def main() -> int:
 
     if re.search(r"(?<!window\.)AOS\.init\(", "\n".join(path.read_text(encoding="utf-8") for path in pages)):
         issues.append("Unprotected AOS.init() call found; use window.AOS?.init().")
+
+    for generated in (ROOT / "robots.txt", ROOT / "sitemap.xml"):
+        if not generated.exists():
+            issues.append(f"Missing generated discovery file: {generated.name}")
 
     if issues:
         print(f"Validation failed with {len(issues)} issue(s):")
