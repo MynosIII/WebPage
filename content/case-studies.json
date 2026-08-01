@@ -8,6 +8,7 @@
     ],
     "es": {
       "category": "Amazon Growth & PPC",
+      "seo_title": "Amazon Growth y PPC | Matías Gaglio",
       "title": "Amazon Growth: pauta, listing y conversión como un solo sistema",
       "description": "Caso documentado de Amazon Growth: reestructuración de campañas y listings con resultados observados en ventas retail, conversión y ROAS.",
       "deck": "Una intervención coordinada sobre campañas, segmentación y contenido para mejorar la calidad del tráfico y la capacidad del listing para convertirlo.",
@@ -28,6 +29,7 @@
     },
     "en": {
       "category": "Amazon Growth & PPC",
+      "seo_title": "Amazon Growth and PPC | Matías Gaglio",
       "title": "Amazon Growth: media, listings and conversion as one system",
       "description": "Documented Amazon Growth case: campaign and listing restructuring with observed retail-sales, conversion and ROAS outcomes.",
       "deck": "A coordinated intervention across campaigns, targeting and content to improve traffic quality and the listing's ability to convert it.",
@@ -54,6 +56,7 @@
     ],
     "es": {
       "category": "Business Intelligence · Rentabilidad",
+      "seo_title": "Business Intelligence y rentabilidad | Matías Gaglio",
       "title": "De reportar ventas a decidir con margen",
       "description": "Caso de Business Intelligence para ecommerce: lectura mensual de ventas, publicidad y rentabilidad para priorizar un portfolio.",
       "deck": "Una vista operativa mensual que convirtió datos dispersos en decisiones sobre qué escalar, defender o corregir.",
@@ -74,6 +77,7 @@
     },
     "en": {
       "category": "Business Intelligence · Profitability",
+      "seo_title": "Business Intelligence and profit | Matías Gaglio",
       "title": "From reporting sales to deciding with margin",
       "description": "Ecommerce Business Intelligence case: monthly sales, media and profitability analysis used to prioritize a portfolio.",
       "deck": "A monthly operating view that turned scattered data into decisions about what to scale, defend or correct.",
@@ -101,6 +105,7 @@
     ],
     "es": {
       "category": "Data-to-Creative · Amazon Gallery",
+      "seo_title": "Rediseño de galería Amazon | Matías Gaglio",
       "title": "Una galería que convierte información técnica en decisión",
       "description": "Caso de rediseño de galería Amazon: seis imágenes reorganizadas para comunicar compatibilidad, especificaciones y beneficios sin claims no verificados.",
       "deck": "La mejora documentada no es un porcentaje inventado: es un sistema de seis imágenes con más jerarquía, evidencia y continuidad de marca.",
@@ -121,6 +126,7 @@
     },
     "en": {
       "category": "Data-to-Creative · Amazon Gallery",
+      "seo_title": "Amazon gallery redesign | Matías Gaglio",
       "title": "A gallery that turns technical information into a decision",
       "description": "Amazon gallery redesign case: six images reorganized to communicate compatibility, specifications and benefits without unsupported claims.",
       "deck": "The documented improvement is not an invented percentage: it is a six-image system with stronger hierarchy, evidence and brand continuity.",
@@ -148,6 +154,7 @@
     ],
     "es": {
       "category": "Amazon Account Management · Technical Case",
+      "seo_title": "Daizzy Gear: gestión técnica Amazon | Matías Gaglio",
       "title": "Daizzy Gear: operar PPC, inventario y contenido como un sistema",
       "description": "Caso técnico de gestión de cuenta Amazon para Daizzy Gear: auditoría PPC, presupuesto, inventario, promociones, A+ Content, Storefront y catálogo.",
       "deck": "Una explicación técnica de cómo conecté publicidad, disponibilidad, promociones y contenido para pasar de ajustes aislados a una cadencia operativa semanal.",
@@ -177,6 +184,7 @@
     },
     "en": {
       "category": "Amazon Account Management · Technical Case",
+      "seo_title": "Daizzy Gear: technical Amazon case | Matías Gaglio",
       "title": "Daizzy Gear: operating PPC, inventory and content as one system",
       "description": "Technical Amazon account-management case for Daizzy Gear: PPC audit, budget, inventory, promotions, A+ Content, Storefront and catalog.",
       "deck": "A technical explanation of how I connected advertising, availability, promotions and content to move from isolated adjustments to a weekly operating cadence.",

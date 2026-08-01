@@ -111,7 +111,7 @@ def render_case(case_id: str, case: dict[str, object], claims: dict[str, object]
         **labels,
         "lang": lang,
         "locale": "es_AR" if spanish else "en_US",
-        "title": esc(f'{data["title"]} | Matías Gaglio'),
+        "title": esc(data.get("seo_title", f'{data["title"]} | Matías Gaglio')),
         "description": esc(data["description"]),
         "canonical": canonical,
         "alternate_es": f"https://matiasgaglio.onrender.com/{slug}-es.html",
