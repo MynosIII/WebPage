@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="$lang">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>$title</title>
+  <meta name="description" content="$description" />
+  <link rel="canonical" href="$canonical" />
+  <link rel="alternate" hreflang="es" href="$alternate_es" />
+  <link rel="alternate" hreflang="en" href="$alternate_en" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Matías Gaglio" />
+  <meta property="og:locale" content="$locale" />
+  <meta property="og:title" content="$title" />
+  <meta property="og:description" content="$description" />
+  <meta property="og:url" content="$canonical" />
+  <meta property="og:image" content="https://matiasgaglio.onrender.com/og-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#090d10" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="case-study.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">$skip_label</a>
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner">
+      <a class="site-logo" href="$home_href" aria-label="Matías Gaglio — $home_label"><span>MG</span><strong>Matías Gaglio</strong></a>
+      <nav class="site-nav" id="primary-navigation" aria-label="$nav_label" data-site-nav><ul>$nav_items</ul></nav>
+      <div class="site-header__actions">
+        <a class="header-contact" href="mailto:matiasignaciogaglio@gmail.com">$contact_short</a>
+        <a class="locale-link" href="$switch_href" hreflang="$switch_lang" aria-label="$switch_aria">$switch_label</a>
+        <button class="menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="$menu_open" data-menu-button data-open-label="$menu_open" data-close-label="$menu_close"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <button class="menu-backdrop" type="button" aria-label="$menu_close" tabindex="-1" data-menu-backdrop></button>
+
+  <main id="main-content">
+    <header class="case-hero">
+      <div class="home-shell case-hero__grid">
+        <div>
+          <p class="eyebrow">$category</p>
+          <h1>$heading</h1>
+          <p class="case-deck">$deck</p>
+        </div>
+        <dl class="case-facts">$facts</dl>
+      </div>
+    </header>
+
+    <section class="case-section case-context" aria-labelledby="context-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">01</p><h2 id="context-title">$context_title</h2></div>
+        <div class="case-prose"><p>$context</p><div class="disclosure"><strong>$disclosure_label</strong><p>$disclosure</p></div></div>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="problem-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">02</p><h2 id="problem-title">$problem_title</h2></div>
+        <div class="case-prose"><p>$problem</p><h3>$diagnosis_title</h3><p>$diagnosis</p></div>
+      </div>
+    </section>
+
+    <section class="case-section case-role" aria-labelledby="role-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">03</p><h2 id="role-title">$role_title</h2></div>
+        <div class="case-prose"><p>$role</p></div>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="actions-title">
+      <div class="home-shell">
+        <div class="case-heading"><p class="eyebrow">04</p><h2 id="actions-title">$actions_title</h2></div>
+        <div class="action-grid">$actions</div>
+      </div>
+    </section>
+
+$technical_block
+$visual_block
+
+    <section class="case-section case-results" aria-labelledby="results-title">
+      <div class="home-shell">
+        <div class="case-heading"><p class="eyebrow">05</p><h2 id="results-title">$results_title</h2></div>
+        <div class="result-grid">$results</div>
+        <p class="result-implication">$implication</p>
+        <p class="source-note"><strong>$source_label</strong> $source</p>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="learning-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">06</p><h2 id="learning-title">$learning_title</h2></div>
+        <div class="case-prose"><p>$learning</p></div>
+      </div>
+    </section>
+
+    <section class="home-section contact-band" aria-labelledby="case-contact-title">
+      <div class="home-shell contact-band__grid">
+        <div><p class="eyebrow">$cta_eyebrow</p><h2 id="case-contact-title">$cta_title</h2></div>
+        <div><p>$cta_copy</p><div class="home-actions"><a class="button button--primary" href="mailto:matiasignaciogaglio@gmail.com">$cta_button</a><a class="button button--ghost" href="$back_href">$back_label</a></div></div>
+      </div>
+    </section>
+  </main>
+  <footer class="home-footer"><div class="home-shell"><p>© 2026 Matías Gaglio.</p><a href="$home_href">$home_label</a></div></footer>
+  <script src="home.js" defer></script>
+</body>
+</html>

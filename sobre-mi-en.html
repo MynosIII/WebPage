@@ -1,206 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Me – Matías Gaglio</title>
-  <meta name="description" content="Professional profile, approach and lines of work of Matías Gaglio. Data, BI, SEO, PPC, ecommerce and communication." />
-  <!-- Shared discovery metadata: maintained by scripts/normalize_site.py -->
+  <title>About — Matías Gaglio</title>
+  <meta name="description" content="Matías Gaglio&#x27;s professional story: Communication, ecommerce, Amazon Growth, Business Intelligence and performance." />
   <link rel="canonical" href="https://matiasgaglio.onrender.com/sobre-mi-en.html" />
-  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/sobre-mi-en.html" />
   <link rel="alternate" hreflang="es" href="https://matiasgaglio.onrender.com/sobre-mi-es.html" />
-  <link rel="alternate" hreflang="x-default" href="https://matiasgaglio.onrender.com/sobre-mi-en.html" />
-  <meta property="og:type" content="website" />
+  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/sobre-mi-en.html" />
+  <meta property="og:type" content="profile" />
   <meta property="og:site_name" content="Matías Gaglio" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:locale:alternate" content="es_AR" />
-  <meta property="og:title" content="About Me – Matías Gaglio" />
-  <meta property="og:description" content="Professional profile, approach and lines of work of Matías Gaglio. Data, BI, SEO, PPC, ecommerce and communication." />
+  <meta property="og:title" content="About — Matías Gaglio" />
+  <meta property="og:description" content="Matías Gaglio&#x27;s professional story: Communication, ecommerce, Amazon Growth, Business Intelligence and performance." />
   <meta property="og:url" content="https://matiasgaglio.onrender.com/sobre-mi-en.html" />
   <meta property="og:image" content="https://matiasgaglio.onrender.com/og-card.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Matías Gaglio — ecommerce, analytics and creative strategy portfolio" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About Me – Matías Gaglio" />
-  <meta name="twitter:description" content="Professional profile, approach and lines of work of Matías Gaglio. Data, BI, SEO, PPC, ecommerce and communication." />
-  <meta name="twitter:image" content="https://matiasgaglio.onrender.com/og-card.png" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="theme-color" content="#121212" />
+  <meta name="theme-color" content="#090d10" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="site.webmanifest" />
-  <!-- /Shared discovery metadata -->
-<link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="about.css" />
 </head>
-<body><a class="language-switch" href="sobre-mi-es.html" hreflang="es" aria-label="Ver en español">ES</a>
-  <header class="navbar">
-    <div class="container">
-      <a href="index-en.html" class="nav-logo">Matías Gaglio.</a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-      </button>
-      <nav class="nav-menu" aria-label="Main navigation"><ul>
-          <li><a href="index-en.html">Home</a></li>
-          <li><a href="ecommerce-en.html">Ecommerce</a></li>
-          <li><a href="Articles-en.html">Articles</a></li>
-          <li><a href="creatives-en.html">Creatives</a></li>
-          <li><a href="consultora-en.html">Opinion Research</a></li>
-          <li><a href="otros-en.html">Other projects</a></li>
-          <li><a href="SEO-en.html">ChatMatias</a></li>
-          <li><a href="sobre-mi-en.html">About me</a></li>
-      </ul></nav>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner">
+      <a class="site-logo" href="index-en.html" aria-label="Matías Gaglio — Home"><span>MG</span><strong>Matías Gaglio</strong></a>
+      <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation" data-site-nav><ul><li><a href="index-en.html">Home</a></li><li><a href="index-en.html#cases">Cases</a></li><li><a href="sobre-mi-en.html">About</a></li><li><a href="output/pdf/Matias-Gaglio-Resume-EN.pdf">Resume</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+      <div class="site-header__actions">
+        <a class="header-contact" href="mailto:matiasignaciogaglio@gmail.com">Contact me</a>
+        <a class="locale-link" href="sobre-mi-es.html" hreflang="es" aria-label="Ver en español">ES</a>
+        <button class="menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu" data-menu-button data-open-label="Open menu" data-close-label="Close menu"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </header>
-
-  <main>
-    <section class="about-hero">
-      <div class="container">
-        <div class="about-hero-text">
-          <h1 data-aos="fade-up">about me</h1>
-          <p data-aos="fade-up" data-aos-delay="150">Professional profile, focus and lines of work.</p>
-        </div>
+  <button class="menu-backdrop" type="button" aria-label="Close menu" tabindex="-1" data-menu-backdrop></button>
+  <main id="main-content">
+    <header class="about-story-hero">
+      <div class="home-shell">
+        <p class="eyebrow">About</p>
+        <h1>Communication to understand. Data to decide.</h1>
+        <p class="about-story-deck">I am Matías Gaglio, an Ecommerce &amp; Amazon Growth Strategist. I connect customer behavior, commercial data and execution to solve conversion and profitability problems.</p>
+        <div class="home-actions"><a class="button button--primary" href="output/pdf/Matias-Gaglio-Resume-EN.pdf" download>Download resume</a><a class="button button--ghost" href="mailto:matiasignaciogaglio@gmail.com">Contact me</a></div>
+        <p class="availability"><span aria-hidden="true"></span>Available for freelance projects, consulting and remote collaborations.</p>
+      </div>
+    </header>
+    <section class="about-story-section" aria-labelledby="story-title">
+      <div class="home-shell">
+        <h2 class="sr-only" id="story-title">Professional story</h2>
+        <div class="story-grid"><article class="story-chapter"><span>01</span><h3>Origin</h3><p>My Communication Sciences background at the University of Buenos Aires taught me how people interpret messages, build trust and make decisions. That foundation still guides how I research an audience and structure complex information.</p></article><article class="story-chapter"><span>02</span><h3>Evolution</h3><p>Ecommerce added a second layer: measuring that behavior through traffic, search, CTR, conversion, investment and margin. I moved from studying messages to operating systems where each decision can be tested against commercial data.</p></article><article class="story-chapter"><span>03</span><h3>Current advantage</h3><p>Today I combine both perspectives. I can detect a problem in the numbers, translate it into a campaign, catalog or content decision, and explain it so a team can execute and measure it.</p></article></div>
       </div>
     </section>
-
-    <div class="container">
-      <div class="about-layout">
-        <article class="about-main-content" data-aos="fade-up" data-aos-delay="100">
-          <h2>Who am I?</h2>
-          <p>I am Matías Gaglio, a data and communication professional specialized in ecommerce, listing management, SEO, PPC, Business Intelligence and performance analysis. I work at the intersection between commercial strategy, data reading and visual communication.</p>
-          <p>My experience focuses on detecting specific growth problems: loss of traffic, low conversion, poorly structured campaigns, unclear listings, profitability problems or decisions made without sufficient evidence. My value is in translating scattered data into simple, actionable decisions.</p>
-          <p>I am especially interested in the point where human behavior, communication, and algorithmic systems intersect. That's why my portfolio combines ecommerce, visuals, opinion research, automation and cultural analysis.</p>
-        </article>
-
-        <aside class="sidebar" data-aos="fade-up" data-aos-delay="200">
-          <div class="sidebar-item">
-            <strong>Current role:</strong>
-            <span>Amazon Account Listing Manager</span>
-          </div>
-          <div class="sidebar-item">
-            <strong>Specialty:</strong>
-            <span>Ecommerce, SEO/PPC, BI and performance</span>
-          </div>
-          <div class="sidebar-item">
-            <strong>Approach:</strong>
-            <span>Diagnosis, strategy and execution based on data</span>
-          </div>
-          <a href="mailto:matiasignaciogaglio@gmail.com" class="cta-button">Contact by email</a>
-          <a href="https://www.linkedin.com/in/matiasignaciogaglio" class="cta-button secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </aside>
-      </div>
-    </div>
-
-    <section class="expertise-section">
-      <div class="container">
-        <h2 data-aos="fade-up">What do I do today</h2>
-        <div class="expertise-grid">
-          <article class="expertise-card" data-aos="fade-up" data-aos-delay="100">
-            <h3>Ecommerce &amp; Listings</h3>
-            <ul>
-              <li>Optimization of titles, bullets, backend keywords and A+ Content</li>
-              <li>Competition, conversion and positioning analysis</li>
-              <li>Reading market share, sessions, CTR, CVR and profitability</li>
-            </ul>
-          </article>
-          <article class="expertise-card" data-aos="fade-up" data-aos-delay="200">
-            <h3>Data &amp; Business Intelligence</h3>
-            <ul>
-              <li>Performance reports and problem diagnosis</li>
-              <li>Profitability, pricing and prioritization models</li>
-              <li>Dashboards, automations and trend analysis</li>
-            </ul>
-          </article>
-          <article class="expertise-card" data-aos="fade-up" data-aos-delay="300">
-            <h3>Marketing &amp; Ads</h3>
-            <ul>
-              <li>SEO, PPC and funnel-oriented campaign structures</li>
-              <li>Optimization of ACOS, ROAS, CTR and conversion rate</li>
-              <li>Evidence-based escalation, defense or pause decisions</li>
-            </ul>
-          </article>
-        </div>
+    <section class="about-story-section about-principle" aria-labelledby="principle-title">
+      <div class="home-shell about-principle__grid">
+        <h2 id="principle-title">The problem rarely belongs to one discipline.</h2>
+        <p>A conversion drop may begin in traffic, offer, compatibility, inventory or visual hierarchy. My job is to locate the real constraint before recommending a solution.</p>
       </div>
     </section>
-
-    <section class="research-section">
-      <div class="container">
-        <h2 data-aos="fade-up">Lines I'm exploring</h2>
-        <div class="research-grid">
-          <article class="research-block" data-aos="fade-up" data-aos-delay="100">
-            <h3>Visual impact and algorithmic patterns</h3>
-            <p>How images, formats and visual structures influence attention, conversion and algorithmic reading of platforms.</p>
-          </article>
-          <article class="research-block" data-aos="fade-up" data-aos-delay="200">
-            <h3>Communication, data and perception</h3>
-            <p>How to convert behavioral, opinion and market data into more accurate communication decisions.</p>
-          </article>
-        </div>
+    <section class="about-story-section" aria-labelledby="profile-facts-title">
+      <div class="home-shell">
+        <div class="profile-facts" id="profile-facts-title"><div class="profile-fact"><strong>Current role</strong><span>Amazon Account Listing Manager</span></div><div class="profile-fact"><strong>Focus</strong><span>Ecommerce, Amazon PPC, BI and content</span></div><div class="profile-fact"><strong>Education</strong><span>Communication Sciences, University of Buenos Aires · Medical Sales Representative, Favaloro University</span></div></div>
+        <details class="tools-disclosure"><summary>Tools and technical training</summary><p>Tools support judgment; they do not replace diagnosis.</p><ul><li>Seller Central and Amazon Ads</li><li>SQL, Python and R</li><li>Power BI and commercial reporting</li><li>Google Ads and GA4</li><li>SEO, CRO and listing architecture</li><li>Visual design, 3D and automation</li></ul></details>
       </div>
     </section>
-
-    <section class="formacion-section">
-      <div class="container">
-        <h2 data-aos="fade-up">Training</h2>
-        <div class="expertise-grid">
-          <article class="formacion-card" data-aos="fade-up" data-aos-delay="100">
-            <h3>Academic</h3>
-            <ul>
-              <li>Bachelor's Degree in Communication Sciences, UBA</li>
-              <li>Medical Propaganda Agent, Favaloro University</li>
-            </ul>
-          </article>
-          <article class="formacion-card" data-aos="fade-up" data-aos-delay="200">
-            <h3>Data &amp; analysis</h3>
-            <ul>
-              <li>SQL, Python, R and Power BI</li>
-              <li>Performance models and commercial reporting</li>
-            </ul>
-          </article>
-          <article class="formacion-card" data-aos="fade-up" data-aos-delay="300">
-            <h3>Marketing</h3>
-            <ul>
-              <li>Amazon SEO/PPC and listing optimization</li>
-              <li>Google Ads, GA4 and traffic analysis</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacto" class="contacto">
-      <div class="container">
-        <h2 data-aos="fade-up">Do we work together?</h2>
-        <p data-aos="fade-up" data-aos-delay="100">I am available for projects, consultancies or collaborations.</p>
-        <a href="mailto:matiasignaciogaglio@gmail.com" class="cta-button" data-aos="fade-up" data-aos-delay="200">Send an Email</a>
-        <a href="https://www.linkedin.com/in/matiasignaciogaglio" class="link-social" data-aos="fade-up" data-aos-delay="300" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <section class="home-section contact-band" id="contact" aria-labelledby="about-contact-title">
+      <div class="home-shell contact-band__grid">
+        <div><p class="eyebrow">Next step</p><h2 id="about-contact-title">Need to connect data, advertising and content?</h2></div>
+        <div><p>Tell me what is happening in your portfolio and we can structure the diagnosis before choosing a tactic.</p><div class="home-actions"><a class="button button--primary" href="mailto:matiasignaciogaglio@gmail.com">Contact me</a><a class="button button--ghost" href="https://linkedin.com/in/matiasignaciogaglio" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="button button--ghost" href="https://github.com/MynosIII" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
       </div>
     </section>
   </main>
-
-  <footer>
-    <div class="container">
-      <p>© 2026 Matías Gaglio · Personal portfolio · Developed with HTML/CSS</p>
-    </div>
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      window.AOS?.init({ duration: 800, once: true, offset: 50 });
-      const navToggle = document.querySelector('.nav-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-          document.querySelector('.navbar').classList.toggle('nav-open');
-          const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-          navToggle.setAttribute('aria-expanded', !isExpanded);
-          navToggle.setAttribute('aria-label', isExpanded ? 'Abrir menú' : 'Cerrar menú');
-        });
-      }
-    });
-  </script>
-  <script src="software-stack.js" defer></script>
-  <script src="accessibility.js" defer></script>
+  <footer class="home-footer"><div class="home-shell"><p>© 2026 Matías Gaglio.</p><a href="index-en.html">Home</a></div></footer>
+  <script src="home.js" defer></script>
 </body>
 </html>

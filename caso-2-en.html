@@ -1,126 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Case 2 – Profitability &amp; BI | Matías Gaglio</title>
-  <meta name="description" content="Case study on profitability monitoring, BI and commercial performance improvement." />
-  <!-- Shared discovery metadata: maintained by scripts/normalize_site.py -->
+  <title>Business Intelligence and profit | Matías Gaglio</title>
+  <meta name="description" content="Ecommerce Business Intelligence case: monthly sales, media and profitability analysis used to prioritize a portfolio." />
   <link rel="canonical" href="https://matiasgaglio.onrender.com/caso-2-en.html" />
-  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/caso-2-en.html" />
   <link rel="alternate" hreflang="es" href="https://matiasgaglio.onrender.com/caso-2-es.html" />
-  <link rel="alternate" hreflang="x-default" href="https://matiasgaglio.onrender.com/caso-2-en.html" />
-  <meta property="og:type" content="website" />
+  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/caso-2-en.html" />
+  <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Matías Gaglio" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:locale:alternate" content="es_AR" />
-  <meta property="og:title" content="Case 2 – Profitability &amp; BI | Matías Gaglio" />
-  <meta property="og:description" content="Case study on profitability monitoring, BI and commercial performance improvement." />
+  <meta property="og:title" content="Business Intelligence and profit | Matías Gaglio" />
+  <meta property="og:description" content="Ecommerce Business Intelligence case: monthly sales, media and profitability analysis used to prioritize a portfolio." />
   <meta property="og:url" content="https://matiasgaglio.onrender.com/caso-2-en.html" />
   <meta property="og:image" content="https://matiasgaglio.onrender.com/og-card.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Matías Gaglio — ecommerce, analytics and creative strategy portfolio" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Case 2 – Profitability &amp; BI | Matías Gaglio" />
-  <meta name="twitter:description" content="Case study on profitability monitoring, BI and commercial performance improvement." />
-  <meta name="twitter:image" content="https://matiasgaglio.onrender.com/og-card.png" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="theme-color" content="#121212" />
+  <meta name="theme-color" content="#090d10" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="site.webmanifest" />
-  <!-- /Shared discovery metadata -->
-<link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="case-study.css" />
 </head>
-<body><a class="language-switch" href="caso-2-es.html" hreflang="es" aria-label="Ver en español">ES</a>
-  <header class="navbar">
-    <div class="container">
-      <a href="index-en.html" class="nav-logo">Matías Gaglio.</a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-      </button>
-      <nav class="nav-menu" aria-label="Main navigation"><ul>
-          <li><a href="index-en.html">Home</a></li>
-          <li><a href="ecommerce-en.html">Ecommerce</a></li>
-          <li><a href="Articles-en.html">Articles</a></li>
-          <li><a href="creatives-en.html">Creatives</a></li>
-          <li><a href="consultora-en.html">Opinion Research</a></li>
-          <li><a href="otros-en.html">Other projects</a></li>
-          <li><a href="SEO-en.html">ChatMatias</a></li>
-          <li><a href="sobre-mi-en.html">About me</a></li>
-      </ul></nav>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner">
+      <a class="site-logo" href="index-en.html" aria-label="Matías Gaglio — Home"><span>MG</span><strong>Matías Gaglio</strong></a>
+      <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation" data-site-nav><ul><li><a href="index-en.html">Home</a></li><li><a href="index-en.html#cases">Cases</a></li><li><a href="sobre-mi-en.html">About</a></li><li><a href="output/pdf/Matias-Gaglio-Resume-EN.pdf">Resume</a></li><li><a href="mailto:matiasignaciogaglio@gmail.com">Contact</a></li></ul></nav>
+      <div class="site-header__actions">
+        <a class="header-contact" href="mailto:matiasignaciogaglio@gmail.com">Contact me</a>
+        <a class="locale-link" href="caso-2-es.html" hreflang="es" aria-label="Ver en español">ES</a>
+        <button class="menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu" data-menu-button data-open-label="Open menu" data-close-label="Close menu"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </header>
+  <button class="menu-backdrop" type="button" aria-label="Close menu" tabindex="-1" data-menu-backdrop></button>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <h1 data-aos="fade-up">Evolution of Income and Profitability</h1>
-        <p data-aos="fade-up" data-aos-delay="100">Portfolio monitoring, cost control and performance reading to decide what to scale, what to defend and what to leave alone.</p>
+  <main id="main-content">
+    <header class="case-hero">
+      <div class="home-shell case-hero__grid">
+        <div>
+          <p class="eyebrow">Business Intelligence · Profitability</p>
+          <h1>From reporting sales to deciding with margin</h1>
+          <p class="case-deck">A monthly operating view that turned scattered data into decisions about what to scale, defend or correct.</p>
+        </div>
+        <dl class="case-facts"><div><dt>Period</dt><dd>July 1–October 27, 2025.</dd></div><div><dt>Baseline</dt><dd>July: $96,842.56 in sales and $15,624.09 in estimated net profit.</dd></div><div><dt>Final outcome</dt><dd>October 1–27: $312,480 in sales and $62,314.45 in estimated net profit.</dd></div></dl>
+      </div>
+    </header>
+
+    <section class="case-section case-context" aria-labelledby="context-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">01</p><h2 id="context-title">Client and context</h2></div>
+        <div class="case-prose"><p>An ecommerce portfolio anonymized for confidentiality, observed from July through October 27, 2025 in Sellerboard. The objective was not another dashboard—it was understanding what explained the economic outcome.</p><div class="disclosure"><strong>Evidence note</strong><p>Brand anonymized for confidentiality. Results observed in Sellerboard; the October cutoff covers 27 days and is not a complete calendar month.</p></div></div>
       </div>
     </section>
 
-    <section class="casos-estudio">
-      <div class="container">
-        <h2 class="sr-only">Case study details</h2>
-        <article class="caso-card" data-aos="fade-up">
-          <span class="caso-categoria">Business Intelligence &amp; Profitability</span>
-          <h3>The problem</h3>
-          <div class="caso-card-grid">
-            <div class="caso-contenido">
-              <p>The challenge was not only to sell more, but to understand whether growth was generating a healthy margin. In ecommerce, higher sales can conceal increases in ad spend, fees, returns, discounts or logistics costs.</p>
-              <p>The work moved from an isolated sales view to portfolio-level analysis: product by product, margin by margin, with a clear distinction between healthy and artificial growth.</p>
-            </div>
-            <div class="caso-contenido">
-              <ul class="caso-metricas">
-                <li><span class="accent">BI</span> Cross-analysis of sales, ads and margin</li>
-                <li><span class="accent">Profit</span> Product-level profitability control</li>
-                <li><span class="accent">Action</span> Prioritization of products with real upside</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+    <section class="case-section" aria-labelledby="problem-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">02</p><h2 id="problem-title">Problem and diagnosis</h2></div>
+        <div class="case-prose"><p>Sales growth could look healthy even when products depended too heavily on advertising, discounts or insufficient margin. Without a combined view, volume risked being confused with profitability.</p><h3>Diagnosis</h3><p>I organized the reading by month and connected sales, media spend, costs, refunds and estimated net profit. I then separated traffic, conversion, media-efficiency and economic constraints.</p></div>
+      </div>
+    </section>
 
-        <article class="caso-card reverse" data-aos="fade-up" data-aos-delay="100">
-          <span class="caso-categoria">Decisions</span>
-          <h3>What I did</h3>
-          <div class="caso-card-grid">
-            <div class="caso-contenido">
-              <p>I built a monthly performance reading to detect products where paid traffic was driving profitable sales and products where spending only disguised the result. This allowed offensive actions to be separated from defensive actions.</p>
-              <p>The principle was to avoid reactive changes. Stable products were left alone; when the data showed a decline in sessions, CTR or margin, the action targeted that specific bottleneck.</p>
-            </div>
-            <div class="caso-contenido">
-              <ul class="caso-metricas">
-                <li><span class="accent">+220%</span> Observed growth in sales during the period</li>
-                <li><span class="accent">Less noise</span> Decisions by cause, not by intuition</li>
-                <li><span class="accent">Portfolio</span> Prioritization according to margin and opportunity</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+    <section class="case-section case-role" aria-labelledby="role-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">03</p><h2 id="role-title">My role</h2></div>
+        <div class="case-prose"><p>I built the monthly view, defined diagnostic criteria and prioritized actions by product. Final inventory and operational decisions were coordinated with the account team.</p></div>
+      </div>
+    </section>
 
-        <div style="text-align:center; margin-top:3rem;"><a href="ecommerce-en.html#cases" class="cta-button secondary">Return to Ecommerce</a></div>
+    <section class="case-section" aria-labelledby="actions-title">
+      <div class="home-shell">
+        <div class="case-heading"><p class="eyebrow">04</p><h2 id="actions-title">Decisions and interventions</h2></div>
+        <div class="action-grid"><article class="action-card"><span>01</span><h3>One economic counterweight</h3><p>I used estimated net profit alongside sales to avoid rewarding growth without margin.</p></article><article class="action-card"><span>02</span><h3>Cause-led diagnosis</h3><p>I separated demand, conversion, media and cost problems instead of applying the same fix to the full portfolio.</p></article><article class="action-card"><span>03</span><h3>Prioritization</h3><p>I classified products by opportunity, risk and real capture capacity—not revenue alone.</p></article><article class="action-card"><span>04</span><h3>Monthly cadence</h3><p>I documented consistent cutoffs and flagged that October contained 27 days to avoid a misleading comparison.</p></article></div>
+      </div>
+    </section>
+
+
+<section class="case-section"><div class="home-shell"><div class="case-heading"><p class="eyebrow">EVIDENCE</p><h2>Visual evidence</h2></div><div class="visual-grid"><figure><img src="Caso2.jpeg" width="1024" height="268" alt="Sellerboard monthly dashboard" loading="lazy" decoding="async" /><figcaption>Monthly sales and estimated net-profit evolution</figcaption></figure></div></div></section>
+
+    <section class="case-section case-results" aria-labelledby="results-title">
+      <div class="home-shell">
+        <div class="case-heading"><p class="eyebrow">05</p><h2 id="results-title">Results</h2></div>
+        <div class="result-grid"><div class="result-card"><strong>$96,842.56</strong><span>→ $312,480 in sales</span></div><div class="result-card"><strong>$15,624.09</strong><span>→ $62,314.45 estimated net profit</span></div><div class="result-card"><strong>Period:</strong><span>July–October 27, 2025</span></div></div>
+        <p class="result-implication">The portfolio moved from $96,842.56 in sales and $15,624.09 in estimated net profit in July to $312,480 and $62,314.45 at the October 27 cutoff. The system&#x27;s value was making commercial and economic growth visible together.</p>
+        <p class="source-note"><strong>Source:</strong> Sellerboard — Caso2.jpeg</p>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="learning-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">06</p><h2 id="learning-title">What I learned</h2></div>
+        <div class="case-prose"><p>A dashboard is useful when it changes decision order. The relevant question is not only what a product sold, but how much of that outcome remains defensible after media, costs and operational constraints.</p></div>
+      </div>
+    </section>
+
+    <section class="home-section contact-band" aria-labelledby="case-contact-title">
+      <div class="home-shell contact-band__grid">
+        <div><p class="eyebrow">Next step</p><h2 id="case-contact-title">Need to understand which part of your growth is profitable?</h2></div>
+        <div><p>I can build a view that connects sales, investment and margin to prioritize the portfolio with explicit criteria.</p><div class="home-actions"><a class="button button--primary" href="mailto:matiasignaciogaglio@gmail.com">Discuss your project</a><a class="button button--ghost" href="ecommerce-en.html#cases">View more cases</a></div></div>
       </div>
     </section>
   </main>
-
-  <footer><div class="container"><p>© 2026 Matías Gaglio. Personal portfolio.</p></div></footer>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      window.AOS?.init({ duration: 800, once: true, offset: 50 });
-      const navToggle = document.querySelector('.nav-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      if (navToggle && navMenu) navToggle.addEventListener('click', () => {
-        document.querySelector('.navbar').classList.toggle('nav-open');
-        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', !isExpanded);
-        navToggle.setAttribute('aria-label', isExpanded ? 'Abrir menú' : 'Cerrar menú');
-      });
-    });
-  </script>
-  <script src="software-stack.js" defer></script>
-  <script src="accessibility.js" defer></script>
+  <footer class="home-footer"><div class="home-shell"><p>© 2026 Matías Gaglio.</p><a href="index-en.html">Home</a></div></footer>
+  <script src="home.js" defer></script>
 </body>
 </html>

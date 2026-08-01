@@ -6,7 +6,7 @@
   "scripts": {
     "test": "playwright test",
     "test:responsive": "playwright test tests/site.spec.js",
-    "validate:html": "html-validate index.html index-es.html index-en.html",
+    "validate:html": "html-validate index.html index-es.html index-en.html caso-1-es.html caso-1-en.html caso-2-es.html caso-2-en.html caso-3-es.html caso-3-en.html caso-daizzy-gear-es.html caso-daizzy-gear-en.html sobre-mi-es.html sobre-mi-en.html",
     "lighthouse": "lhci autorun"
   },
   "devDependencies": {

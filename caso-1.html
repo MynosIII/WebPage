@@ -1,126 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Caso 1 – Optimización Amazon Ads | Matías Gaglio</title>
-  <meta name="description" content="Caso de estudio sobre optimización de listings, PPC y conversión en Amazon." />
-  <!-- Shared discovery metadata: maintained by scripts/normalize_site.py -->
-  <link rel="canonical" href="https://matiasgaglio.onrender.com/caso-1-es.html" />
-  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/caso-1-en.html" />
+  <title>Amazon Growth y PPC | Matías Gaglio</title>
+  <meta name="description" content="Caso documentado de Amazon Growth: reestructuración de campañas y listings con resultados observados en ventas retail, conversión y ROAS." />
+  <link rel="canonical" href="https://matiasgaglio.onrender.com/caso-1.html" />
   <link rel="alternate" hreflang="es" href="https://matiasgaglio.onrender.com/caso-1-es.html" />
-  <link rel="alternate" hreflang="x-default" href="https://matiasgaglio.onrender.com/caso-1-en.html" />
-  <meta property="og:type" content="website" />
+  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/caso-1-en.html" />
+  <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Matías Gaglio" />
   <meta property="og:locale" content="es_AR" />
-  <meta property="og:locale:alternate" content="en_US" />
-  <meta property="og:title" content="Caso 1 – Optimización Amazon Ads | Matías Gaglio" />
-  <meta property="og:description" content="Caso de estudio sobre optimización de listings, PPC y conversión en Amazon." />
-  <meta property="og:url" content="https://matiasgaglio.onrender.com/caso-1-es.html" />
+  <meta property="og:title" content="Amazon Growth y PPC | Matías Gaglio" />
+  <meta property="og:description" content="Caso documentado de Amazon Growth: reestructuración de campañas y listings con resultados observados en ventas retail, conversión y ROAS." />
+  <meta property="og:url" content="https://matiasgaglio.onrender.com/caso-1.html" />
   <meta property="og:image" content="https://matiasgaglio.onrender.com/og-card.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Matías Gaglio — ecommerce, analytics and creative strategy portfolio" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Caso 1 – Optimización Amazon Ads | Matías Gaglio" />
-  <meta name="twitter:description" content="Caso de estudio sobre optimización de listings, PPC y conversión en Amazon." />
-  <meta name="twitter:image" content="https://matiasgaglio.onrender.com/og-card.png" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="theme-color" content="#121212" />
+  <meta name="theme-color" content="#090d10" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="site.webmanifest" />
-  <!-- /Shared discovery metadata -->
-<link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="case-study.css" />
 </head>
 <body>
-  <header class="navbar">
-    <div class="container">
-      <a href="index.html" class="nav-logo">Matías Gaglio.</a>
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-      </button>
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ecommerce.html" class="accent">Ecommerce</a></li>
-          <li><a href="Articles.html">Articles</a></li>
-          <li><a href="creatives.html">Creatives</a></li>
-          <li><a href="consultora.html">Consultora de Opinión</a></li>
-          <li><a href="otros.html">Otros proyectos</a></li>
-          <li><a href="SEO.html">ChatMatias</a></li>
-          <li><a href="sobre-mi.html">Sobre Mi</a></li>
-        </ul>
-      </nav>
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner">
+      <a class="site-logo" href="index.html" aria-label="Matías Gaglio — Inicio"><span>MG</span><strong>Matías Gaglio</strong></a>
+      <nav class="site-nav" id="primary-navigation" aria-label="Navegación principal" data-site-nav><ul><li><a href="index.html">Inicio</a></li><li><a href="index.html#casos">Casos</a></li><li><a href="sobre-mi-es.html">Sobre mí</a></li><li><a href="output/pdf/Matias-Gaglio-CV-ES.pdf">CV</a></li><li><a href="mailto:matiasignaciogaglio@gmail.com">Contacto</a></li></ul></nav>
+      <div class="site-header__actions">
+        <a class="header-contact" href="mailto:matiasignaciogaglio@gmail.com">Contactarme</a>
+        <a class="locale-link" href="caso-1-en.html" hreflang="en" aria-label="View in English">EN</a>
+        <button class="menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menú" data-menu-button data-open-label="Abrir menú" data-close-label="Cerrar menú"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </header>
+  <button class="menu-backdrop" type="button" aria-label="Cerrar menú" tabindex="-1" data-menu-backdrop></button>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <h1 data-aos="fade-up">Optimización de Tasa de Conversión en Amazon Ads</h1>
-        <p data-aos="fade-up" data-aos-delay="100">Reestructuración de campañas, mejora de listings y traducción de datos en decisiones de crecimiento rentable.</p>
+  <main id="main-content">
+    <header class="case-hero">
+      <div class="home-shell case-hero__grid">
+        <div>
+          <p class="eyebrow">Amazon Growth &amp; PPC</p>
+          <h1>Amazon Growth: pauta, listing y conversión como un solo sistema</h1>
+          <p class="case-deck">Una intervención coordinada sobre campañas, segmentación y contenido para mejorar la calidad del tráfico y la capacidad del listing para convertirlo.</p>
+        </div>
+        <dl class="case-facts"><div><dt>Período</dt><dd>Ventas: 17 ago–13 sep vs. 14 sep–11 oct de 2025. Conversión: 10 ago–6 sep vs. 7 sep–4 oct de 2025. Vista agregada de Ads: 7 ago–31 oct de 2025.</dd></div><div><dt>Baseline</dt><dd>Ventas retail: US$1.560. Conversión: 6,28%.</dd></div><div><dt>Resultado final</dt><dd>Ventas retail: US$2.830. Conversión: 13,69%. ROAS observado en la vista agregada: 6,26.</dd></div></dl>
+      </div>
+    </header>
+
+    <section class="case-section case-context" aria-labelledby="context-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">01</p><h2 id="context-title">Cliente y contexto</h2></div>
+        <div class="case-prose"><p>Cuenta Amazon con campañas y contenido que se optimizaban por separado. El análisis compara ventanas consecutivas de 28 días para ventas y conversión, más una vista agregada de Amazon Ads entre agosto y octubre de 2025.</p><div class="disclosure"><strong>Nota de evidencia</strong><p>Comparación observacional antes/después; no fue un experimento controlado y no prueba causalidad aislada.</p></div></div>
       </div>
     </section>
 
-    <section class="casos-estudio">
-      <div class="container">
-        <article class="caso-card" data-aos="fade-up">
-          <span class="caso-categoria">Listing Management & Data</span>
-          <h3>El problema</h3>
-          <div class="caso-card-grid">
-            <div class="caso-contenido">
-              <p>El portfolio tenía tráfico y ventas, pero estaba limitado por una estructura publicitaria demasiado defensiva y por listings que no comunicaban con suficiente claridad el valor técnico del producto. El problema no era solo de pujas: era una desconexión entre búsqueda, contenido, imagen y conversión.</p>
-              <p>La auditoría mostró una oportunidad clara: separar el funnel de PPC, mejorar la lectura de keywords y convertir la galería en un sistema visual más informativo.</p>
-            </div>
-            <div class="caso-visual">
-              <img src="Caso1_plot.jpeg" alt="Evolución de performance del caso 1" loading="lazy" width="794" height="352" decoding="async">
-            </div>
-          </div>
-        </article>
+    <section class="case-section" aria-labelledby="problem-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">02</p><h2 id="problem-title">Problema y diagnóstico</h2></div>
+        <div class="case-prose"><p>Había señales de oportunidad, pero no una lectura común entre estructura publicitaria, intención de búsqueda, calidad del listing y resultado comercial. Cambiar pujas sin revisar el contenido —o rediseñar contenido sin entender el tráfico— podía desplazar el problema sin resolverlo.</p><h3>Diagnóstico</h3><p>Crucé ventas retail, conversión y performance publicitaria. La prioridad fue distinguir si el límite estaba en atraer tráfico relevante, en convertirlo o en la coordinación entre ambos.</p></div>
+      </div>
+    </section>
 
-        <article class="caso-card" data-aos="fade-up" data-aos-delay="100">
-          <span class="caso-categoria">Intervención</span>
-          <h3>Qué hice</h3>
-          <div class="caso-card-grid">
-            <div class="caso-contenido">
-              <p>Reorganicé campañas separando exact, phrase, broad y auto para harvesting. La intención fue dejar de tratar todos los términos como si valieran lo mismo y empezar a distinguir entre exploración, defensa, conversión y escalado.</p>
-              <p>En paralelo, trabajé sobre títulos, bullets e imágenes para reducir fricción cognitiva: menos keyword stuffing, más frases comprensibles, más compatibilidad técnica visible y una estructura pensada para shoppers que comparan rápido.</p>
-              <ul class="caso-metricas">
-                <li><span class="accent">+35%</span> Ventas</li>
-                <li><span class="accent">+15%</span> Conversión</li>
-                <li><span class="accent">+50%</span> ROAS</li>
-              </ul>
-            </div>
-            <div class="caso-contenido">
-              <p>La lógica fue simple: si el listing ya puede convertir, el PPC debe traer tráfico calificado. Si el PPC encuentra términos rentables, el listing debe absorberlos sin perder claridad. El resultado es un sistema de aprendizaje, no una optimización aislada.</p>
-            </div>
-          </div>
-        </article>
+    <section class="case-section case-role" aria-labelledby="role-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">03</p><h2 id="role-title">Mi rol</h2></div>
+        <div class="case-prose"><p>Audité la arquitectura de campañas y listings, reorganicé la segmentación y coordiné los cambios de contenido y pauta. La operación diaria y las condiciones comerciales dependían del equipo de la cuenta.</p></div>
+      </div>
+    </section>
 
-        <div style="text-align:center; margin-top:3rem;">
-          <a href="ecommerce.html#cases" class="cta-button secondary">Volver a Ecommerce</a>
-        </div>
+    <section class="case-section" aria-labelledby="actions-title">
+      <div class="home-shell">
+        <div class="case-heading"><p class="eyebrow">04</p><h2 id="actions-title">Decisiones e intervenciones</h2></div>
+        <div class="action-grid"><article class="action-card"><span>01</span><h3>Auditoría integrada</h3><p>Revisé campañas, términos, productos y contenido como partes del mismo funnel, no como tareas independientes.</p></article><article class="action-card"><span>02</span><h3>Segmentación y presupuesto</h3><p>Reorganicé la cobertura para separar descubrimiento, performance y defensa, y reducir solapamientos.</p></article><article class="action-card"><span>03</span><h3>Contenido para intención</h3><p>Alineé mensajes y jerarquía del listing con las preguntas que traía el tráfico relevante.</p></article><article class="action-card"><span>04</span><h3>Lectura por ventanas</h3><p>Definí comparaciones con fechas explícitas para evitar mezclar períodos y porcentajes incompatibles.</p></article></div>
+      </div>
+    </section>
+
+
+<section class="case-section"><div class="home-shell"><div class="case-heading"><p class="eyebrow">EVIDENCE</p><h2>Evidencia visual</h2></div><div class="visual-grid"><figure><img src="Caso1_Sales.png" width="830" height="443" alt="Retail sales comparison" loading="lazy" decoding="async" /><figcaption>Comparación de ventas retail entre las dos ventanas</figcaption></figure><figure><img src="Caso1_conversions.png" width="850" height="388" alt="Conversion comparison" loading="lazy" decoding="async" /><figcaption>Comparación de tasa de conversión entre las dos ventanas</figcaption></figure><figure><img src="Caso1_plot.jpeg" width="794" height="352" alt="Amazon Ads dashboard" loading="lazy" decoding="async" /><figcaption>Vista agregada de Amazon Ads del período</figcaption></figure></div></div></section>
+
+    <section class="case-section case-results" aria-labelledby="results-title">
+      <div class="home-shell">
+        <div class="case-heading"><p class="eyebrow">05</p><h2 id="results-title">Resultados</h2></div>
+        <div class="result-grid"><div class="result-card"><strong>US$1.560</strong><span>→ US$2.830 en ventas retail</span></div><div class="result-card"><strong>6,28%</strong><span>→ 13,69% de conversión</span></div><div class="result-card"><strong>ROAS</strong><span>observado: 6,26</span></div></div>
+        <p class="result-implication">El cambio simultáneo en ventas y conversión es consistente con una mejora del sistema completo. Aun así, al no existir un experimento controlado, el caso se presenta como evidencia observacional y no como prueba de causalidad aislada.</p>
+        <p class="source-note"><strong>Fuente:</strong> Seller Central y Amazon Ads — Caso1_Sales.png, Caso1_conversions.png y Caso1_plot.jpeg</p>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="learning-title">
+      <div class="home-shell case-two-col">
+        <div><p class="eyebrow">06</p><h2 id="learning-title">Qué aprendí</h2></div>
+        <div class="case-prose"><p>En Amazon, la pauta no termina en el clic: su eficiencia depende de que la promesa del término de búsqueda continúe en la galería, el copy, la evidencia y la oferta. La unidad de optimización real es el recorrido completo.</p></div>
+      </div>
+    </section>
+
+    <section class="home-section contact-band" aria-labelledby="case-contact-title">
+      <div class="home-shell contact-band__grid">
+        <div><p class="eyebrow">Próximo paso</p><h2 id="case-contact-title">¿Necesitás ordenar una cuenta Amazon que crece sin claridad?</h2></div>
+        <div><p>Puedo conectar campañas, contenido y economics para localizar la restricción y priorizar el siguiente movimiento.</p><div class="home-actions"><a class="button button--primary" href="mailto:matiasignaciogaglio@gmail.com">Hablemos sobre tu proyecto</a><a class="button button--ghost" href="ecommerce-es.html#cases">Ver más casos</a></div></div>
       </div>
     </section>
   </main>
-
-  <footer><div class="container"><p>&copy; 2026 Matías Gaglio. Portfolio personal.</p></div></footer>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      window.AOS?.init({ duration: 800, once: true, offset: 50 });
-      const navToggle = document.querySelector('.nav-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      if (navToggle && navMenu) navToggle.addEventListener('click', () => {
-        document.querySelector('.navbar').classList.toggle('nav-open');
-        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', !isExpanded);
-        navToggle.setAttribute('aria-label', isExpanded ? 'Abrir menú' : 'Cerrar menú');
-      });
-    });
-  </script>
-  <script src="software-stack.js" defer></script>
-  <script src="accessibility.js" defer></script>
+  <footer class="home-footer"><div class="home-shell"><p>© 2026 Matías Gaglio.</p><a href="index.html">Inicio</a></div></footer>
+  <script src="home.js" defer></script>
 </body>
 </html>

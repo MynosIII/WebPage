@@ -42,6 +42,7 @@
         <ul>$nav_items</ul>
       </nav>
       <div class="site-header__actions">
+        <a class="header-contact" href="$secondary_href">$header_contact</a>
         <a class="locale-link" href="$switch_href" hreflang="$switch_hreflang" aria-label="$switch_aria">$switch_label</a>
         <button class="menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="$menu_open" data-menu-button data-open-label="$menu_open" data-close-label="$menu_close">
           <span></span><span></span><span></span>
@@ -52,7 +53,7 @@
   <button class="menu-backdrop" type="button" aria-label="$menu_close" tabindex="-1" data-menu-backdrop></button>
 
   <main id="main-content">
-    <section class="home-hero" aria-labelledby="home-title">
+    <section class="home-hero" id="$home_id" aria-labelledby="home-title">
       <div class="home-shell home-hero__grid">
         <div class="home-hero__copy">
           <p class="eyebrow">$hero_kicker</p>
@@ -62,6 +63,7 @@
             <a class="button button--primary" href="$primary_href">$primary_cta <span aria-hidden="true">↘</span></a>
             <a class="button button--ghost" href="$secondary_href">$secondary_cta</a>
           </div>
+          <a class="hero-cv-link" href="$cv_href" download>$cv_cta <span aria-hidden="true">↓</span></a>
           <p class="availability"><span aria-hidden="true"></span>$availability</p>
         </div>
         <div class="home-hero__system" aria-hidden="true">
@@ -126,7 +128,7 @@
     <section class="home-section contact-band" id="$contact_id" aria-labelledby="contact-title">
       <div class="home-shell contact-band__grid">
         <div><p class="eyebrow">$contact_eyebrow</p><h2 id="contact-title">$contact_title</h2></div>
-        <div><p>$contact_copy</p><div class="home-actions"><a class="button button--primary" href="mailto:matiasignaciogaglio@gmail.com">$email_cta</a><a class="button button--ghost" href="https://linkedin.com/in/matiasignaciogaglio" target="_blank" rel="noopener noreferrer">$linkedin_cta <span aria-hidden="true">↗</span></a></div></div>
+        <div><p>$contact_copy</p><div class="home-actions"><a class="button button--primary" href="mailto:matiasignaciogaglio@gmail.com">$email_cta</a><a class="button button--ghost" href="https://linkedin.com/in/matiasignaciogaglio" target="_blank" rel="noopener noreferrer">$linkedin_cta <span aria-hidden="true">↗</span></a><a class="button button--ghost" href="https://github.com/MynosIII" target="_blank" rel="noopener noreferrer">$github_cta <span aria-hidden="true">↗</span></a></div></div>
       </div>
     </section>
   </main>

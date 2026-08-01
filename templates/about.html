@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="$lang">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>$title</title>
+  <meta name="description" content="$description" />
+  <link rel="canonical" href="$canonical" />
+  <link rel="alternate" hreflang="es" href="https://matiasgaglio.onrender.com/sobre-mi-es.html" />
+  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/sobre-mi-en.html" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Matías Gaglio" />
+  <meta property="og:title" content="$title" />
+  <meta property="og:description" content="$description" />
+  <meta property="og:url" content="$canonical" />
+  <meta property="og:image" content="https://matiasgaglio.onrender.com/og-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#090d10" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">$skip_label</a>
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner">
+      <a class="site-logo" href="$home_href" aria-label="Matías Gaglio — $home_label"><span>MG</span><strong>Matías Gaglio</strong></a>
+      <nav class="site-nav" id="primary-navigation" aria-label="$nav_label" data-site-nav><ul>$nav_items</ul></nav>
+      <div class="site-header__actions">
+        <a class="header-contact" href="mailto:matiasignaciogaglio@gmail.com">$contact_label</a>
+        <a class="locale-link" href="$switch_href" hreflang="$switch_lang" aria-label="$switch_aria">$switch_label</a>
+        <button class="menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="$menu_open" data-menu-button data-open-label="$menu_open" data-close-label="$menu_close"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <button class="menu-backdrop" type="button" aria-label="$menu_close" tabindex="-1" data-menu-backdrop></button>
+  <main id="main-content">
+    <header class="about-story-hero">
+      <div class="home-shell">
+        <p class="eyebrow">$kicker</p>
+        <h1>$heading</h1>
+        <p class="about-story-deck">$deck</p>
+        <div class="home-actions"><a class="button button--primary" href="$cv_href" download>$cv_label</a><a class="button button--ghost" href="mailto:matiasignaciogaglio@gmail.com">$contact_label</a></div>
+        <p class="availability"><span aria-hidden="true"></span>$availability</p>
+      </div>
+    </header>
+    <section class="about-story-section" aria-labelledby="story-title">
+      <div class="home-shell">
+        <h2 class="sr-only" id="story-title">$story_label</h2>
+        <div class="story-grid">$chapters</div>
+      </div>
+    </section>
+    <section class="about-story-section about-principle" aria-labelledby="principle-title">
+      <div class="home-shell about-principle__grid">
+        <h2 id="principle-title">$principle_title</h2>
+        <p>$principle_copy</p>
+      </div>
+    </section>
+    <section class="about-story-section" aria-labelledby="profile-facts-title">
+      <div class="home-shell">
+        <div class="profile-facts" id="profile-facts-title">$facts</div>
+        <details class="tools-disclosure"><summary>$tools_title</summary><p>$tools_intro</p><ul>$tools</ul></details>
+      </div>
+    </section>
+    <section class="home-section contact-band" id="$contact_id" aria-labelledby="about-contact-title">
+      <div class="home-shell contact-band__grid">
+        <div><p class="eyebrow">$next_label</p><h2 id="about-contact-title">$cta_title</h2></div>
+        <div><p>$cta_copy</p><div class="home-actions"><a class="button button--primary" href="mailto:matiasignaciogaglio@gmail.com">$contact_label</a><a class="button button--ghost" href="https://linkedin.com/in/matiasignaciogaglio" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="button button--ghost" href="https://github.com/MynosIII" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+      </div>
+    </section>
+  </main>
+  <footer class="home-footer"><div class="home-shell"><p>© 2026 Matías Gaglio.</p><a href="$home_href">$home_label</a></div></footer>
+  <script src="home.js" defer></script>
+</body>
+</html>
