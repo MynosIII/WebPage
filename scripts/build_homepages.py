@@ -121,9 +121,9 @@ def library_items(items: list[dict[str, object]]) -> str:
             )
         output.append(
             f'<a class="library-card{" library-card--featured" if featured else ""}" href="{esc(item["href"])}">'
-            f'{visual}<span class="library-card__copy"><span class="library-card__index">{index:02d}</span>'
+            f'{visual}<div class="library-card__copy"><span class="library-card__index">{index:02d}</span>'
             f'<h3>{esc(item["title"])}</h3><p>{esc(item["copy"])}</p>'
-            '<span class="library-card__arrow" aria-hidden="true">↗</span></span></a>'
+            '<span class="library-card__arrow" aria-hidden="true">↗</span></div></a>'
         )
     return "".join(output)
 
