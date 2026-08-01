@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Search Suppression &amp; Catalog Recovery | Matias Gaglio</title>
-  <meta name="description" content="A detailed Amazon catalog recovery framework for diagnosing search suppression, resolving listing issues, validating discoverability, and protecting sales exposure.">
+  <title>Supresión en búsquedas y recuperación de catálogo | Matías Gaglio</title>
+  <meta name="description" content="Un marco detallado de recuperación de catálogo en Amazon para diagnosticar supresiones en búsquedas, resolver problemas de publicaciones, validar la visibilidad y proteger la exposición comercial.">
   <!-- Shared discovery metadata: maintained by scripts/normalize_site.py -->
   <link rel="canonical" href="https://matiasgaglio.onrender.com/Cases/search-suppression-catalog-recovery-es.html" />
   <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/Cases/search-suppression-catalog-recovery-en.html" />
@@ -14,16 +14,16 @@
   <meta property="og:site_name" content="Matías Gaglio" />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:locale:alternate" content="en_US" />
-  <meta property="og:title" content="Search Suppression &amp; Catalog Recovery | Matias Gaglio" />
-  <meta property="og:description" content="A detailed Amazon catalog recovery framework for diagnosing search suppression, resolving listing issues, validating discoverability, and protecting sales exposure." />
+  <meta property="og:title" content="Supresión en búsquedas y recuperación de catálogo | Matías Gaglio" />
+  <meta property="og:description" content="Un marco detallado de recuperación de catálogo en Amazon para diagnosticar supresiones en búsquedas, resolver problemas de publicaciones, validar la visibilidad y proteger la exposición comercial." />
   <meta property="og:url" content="https://matiasgaglio.onrender.com/Cases/search-suppression-catalog-recovery-es.html" />
   <meta property="og:image" content="https://matiasgaglio.onrender.com/og-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Matías Gaglio — ecommerce, analytics and creative strategy portfolio" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Search Suppression &amp; Catalog Recovery | Matias Gaglio" />
-  <meta name="twitter:description" content="A detailed Amazon catalog recovery framework for diagnosing search suppression, resolving listing issues, validating discoverability, and protecting sales exposure." />
+  <meta name="twitter:title" content="Supresión en búsquedas y recuperación de catálogo | Matías Gaglio" />
+  <meta name="twitter:description" content="Un marco detallado de recuperación de catálogo en Amazon para diagnosticar supresiones en búsquedas, resolver problemas de publicaciones, validar la visibilidad y proteger la exposición comercial." />
   <meta name="twitter:image" content="https://matiasgaglio.onrender.com/og-card.png" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="theme-color" content="#121212" />
@@ -68,14 +68,14 @@
   <main class="recovery-page">
     <section class="page-hero">
       <div class="container">
-        <p class="recovery-eyebrow" data-aos="fade-up">Amazon Operations / Catalog Health / Search Visibility</p>
-        <h1 data-aos="fade-up" data-aos-delay="80">Search Suppression &amp; Catalog Recovery</h1>
-        <p class="recovery-lead" data-aos="fade-up" data-aos-delay="140">A listing can remain in inventory while disappearing from the customer journey. This field guide shows how I separate a discoverability failure from an offer, inventory, policy, attribute, or indexing problem; preserve the evidence; choose the right correction path; and verify recovery before declaring the incident closed.</p>
+        <p class="recovery-eyebrow" data-aos="fade-up">Operaciones de Amazon/Estado del catálogo/Visibilidad de búsqueda</p>
+        <h1 data-aos="fade-up" data-aos-delay="80">Supresión en búsquedas y recuperación de catálogo</h1>
+        <p class="recovery-lead" data-aos="fade-up" data-aos-delay="140">Un listado puede permanecer en el inventario y desaparecer del recorrido del cliente. Esta guía de campo muestra cómo separo una falla de visibilidad de un problema de oferta, inventario, políticas, atributos o indexación; cómo preservo la evidencia, elijo la corrección adecuada y verifico la recuperación antes de cerrar el incidente.</p>
         <div class="recovery-metrics" data-aos="fade-up" data-aos-delay="210">
-          <article class="recovery-metric"><small>Observed impressions</small><b>168,545</b><span>One archived monthly ASIN report</span></article>
-          <article class="recovery-metric"><small>Observed clicks</small><b>6,090</b><span>3.61% reported click rate</span></article>
-          <article class="recovery-metric"><small>Observed purchases</small><b>1,290</b><span>21.18% click-to-purchase rate</span></article>
-          <article class="recovery-metric"><small>Search-attributed sales</small><b>$24,333</b><span>Exact export value: $24,333.45</span></article>
+          <article class="recovery-metric"><small>Impresiones observadas</small><b>168,545</b><span>Un informe ASIN mensual archivado</span></article>
+          <article class="recovery-metric"><small>Clics observados</small><b>6,090</b><span>Tasa de clics reportada del 3,61%</span></article>
+          <article class="recovery-metric"><small>Compras observadas</small><b>1,290</b><span>Tasa de clic para comprar del 21,18%</span></article>
+          <article class="recovery-metric"><small>Ventas atribuidas a búsquedas</small><b>$24,333</b><span>Valor exacto de exportación: $24.333,45</span></article>
         </div>
       </div>
     </section>
@@ -84,23 +84,23 @@
       <div class="container recovery-layout">
         <div>
           <article class="recovery-card" data-aos="fade-up">
-            <span class="recovery-eyebrow">The operational problem</span>
-            <h2>“Not showing in search” is a symptom, not a root cause.</h2>
-            <p>The same shopper-facing symptom can originate in different systems. A detail page may exist but be hidden from search. An offer may be non-buyable because inventory, price, or fulfillment is unavailable. A submitted attribute may have failed validation. A child SKU can be attached to the wrong variation family, inherit the wrong product type, or lose a required value after Amazon changes a schema. A restricted product can require approval even when the content itself is complete.</p>
-            <p>Those conditions do not share one universal fix. Editing the title repeatedly will not solve an unavailable offer, and raising bids cannot recover traffic for an item that is not discoverable. The first task is therefore classification: determine where the listing stopped progressing from seller submission to catalog acceptance, offer availability, discoverability, and customer purchase.</p>
-            <div class="recovery-callout"><strong>Core principle:</strong> stop optimizing demand generation until retail availability and catalog eligibility are proven. Advertising is downstream of a healthy, discoverable offer.</div>
+            <span class="recovery-eyebrow">El problema operativo</span>
+            <h2>"No aparecer en la búsqueda" es un síntoma, no una causa raíz.</h2>
+            <p>El mismo síntoma que ve el comprador puede originarse en diferentes sistemas. Es posible que exista una página de detalles, pero que esté oculta para la búsqueda. Es posible que una oferta no se pueda comprar porque el inventario, el precio o el cumplimiento no están disponibles. Es posible que un atributo enviado no haya superado la validación. Un SKU secundario puede adjuntarse a una familia de variación incorrecta, heredar el tipo de producto incorrecto o perder un valor requerido después de que Amazon cambia un esquema. Un producto restringido puede requerir aprobación incluso cuando el contenido en sí esté completo.</p>
+            <p>Esas condiciones no comparten una solución universal. Editar el título repetidamente no resolverá una oferta no disponible y aumentar las ofertas no puede recuperar el tráfico de un artículo que no es detectable. Por lo tanto, la primera tarea es la clasificación: determinar dónde dejó de progresar el listado desde el envío del vendedor hasta la aceptación del catálogo, la disponibilidad de la oferta, la visibilidad y la compra del cliente.</p>
+            <div class="recovery-callout"><strong>Principio fundamental:</strong> dejar de optimizar la generación de demanda hasta que se demuestre la disponibilidad minorista y la elegibilidad del catálogo. La publicidad va detrás de una oferta saludable y visible en búsquedas.</div>
           </article>
 
           <article class="recovery-card" data-aos="fade-up">
-            <span class="recovery-eyebrow">Evidence boundary</span>
-            <h2>Real commercial exposure, without an invented recovery claim.</h2>
-            <p>The quantitative example on this page comes from a genuine August 2024 Amazon Search Catalog Performance export in the work archive. It contains one ASIN and one month of funnel activity. The product name, ASIN, brand, account, and client context are withheld. The figures are used to show how much measurable search activity can sit behind one catalog item—not to claim that this specific item was suppressed or that a specific fix produced a measured lift.</p>
-            <p>The archive also contains finished listing imagery and product research. One unbranded internal product photograph is used here as real visual context. No Seller Central screenshot, case ID, account name, SKU, or customer record is exposed.</p>
+            <span class="recovery-eyebrow">Límite de evidencia</span>
+            <h2>Exposición comercial real, sin reclamo de recuperación inventado.</h2>
+            <p>El ejemplo cuantitativo de esta página proviene de una exportación genuina de rendimiento del catálogo de búsqueda de Amazon de agosto de 2024 en el archivo de trabajo. Contiene un ASIN y un mes de actividad del embudo. Se omiten el nombre del producto, ASIN, marca, cuenta y contexto del cliente. Las cifras se utilizan para mostrar cuánta actividad de búsqueda medible puede haber detrás de un producto del catálogo, sin pretender afirmar que este elemento específico fue suprimido o que una solución específica produjo un aumento medido.</p>
+            <p>El archivo también contiene imágenes de listados terminados e investigaciones de productos. Aquí se utiliza una fotografía interna del producto sin marca como contexto visual real. No se exponen capturas de pantalla de Seller Central, ID de caso, nombre de cuenta, SKU o registro de cliente.</p>
           </article>
         </div>
         <figure class="recovery-photo" data-aos="fade-up" data-aos-delay="120">
-          <img src="../assets/catalog-recovery-product-photo.jpg" alt="Unbranded mobility product photographed in a real room" loading="eager" decoding="async">
-          <figcaption>Archived internal product photography, presented without brand or account identifiers. It illustrates the kind of real catalog asset whose eligibility, attributes, and discoverability must be validated across Amazon systems.</figcaption>
+          <img src="../assets/catalog-recovery-product-photo.jpg" alt="Producto de movilidad sin marca fotografiado en una habitación real" loading="eager" decoding="async" width="5472" height="3648">
+          <figcaption>Fotografía interna del producto archivada, presentada sin identificadores de marca o cuenta. Ilustra el tipo de activo de catálogo real cuya elegibilidad, atributos y visibilidad deben validarse en todos los sistemas de Amazon.</figcaption>
         </figure>
       </div>
     </section>
@@ -108,27 +108,27 @@
     <section>
       <div class="container">
         <article class="recovery-card" data-aos="fade-up">
-          <span class="recovery-eyebrow">Diagnostic model</span>
-          <h2>Test four different states before touching content.</h2>
+          <span class="recovery-eyebrow">Modelo de diagnóstico</span>
+          <h2>Pruebe cuatro estados diferentes antes de tocar el contenido.</h2>
           <div class="recovery-grid">
-            <article class="recovery-node"><span class="step-label">01 / Submitted</span><h3>Did Amazon accept the listing input?</h3><p>Check the latest edit, feed submission, processing report, issue code, affected attribute, and severity. A submission can be accepted synchronously while a later catalog process still raises an issue.</p></article>
-            <article class="recovery-node"><span class="step-label">02 / Buyable</span><h3>Can a shopper purchase the offer?</h3><p>Confirm active inventory, price, condition, fulfillment channel, Buy Box eligibility, delivery promise, and any account or product restriction. Discoverability is not the same as buyability.</p></article>
-            <article class="recovery-node"><span class="step-label">03 / Discoverable</span><h3>Is the catalog item visible to shoppers?</h3><p>Check the suppressed/inactive inventory view, direct detail-page access, category browse placement, exact brand-and-title search, and a small set of known indexed phrases.</p></article>
-            <article class="recovery-node"><span class="step-label">04 / Stable</span><h3>Did the fix persist after propagation?</h3><p>Re-read the issue state after processing, retest on an unpersonalized browser, and watch impressions, sessions, and sales over the next comparable reporting windows.</p></article>
+            <article class="recovery-node"><span class="step-label">01 / Enviado</span><h3>¿Amazon aceptó la entrada del listado?</h3><p>Verifique la última edición, el envío del feed, el informe de procesamiento, el código de problema, el atributo afectado y la gravedad. Un envío se puede aceptar de forma sincrónica mientras un proceso de catálogo posterior aún plantea un problema.</p></article>
+            <article class="recovery-node"><span class="step-label">02 / Comprable</span><h3>¿Puede un comprador comprar la oferta?</h3><p>Confirme el inventario activo, el precio, la condición, el canal de cumplimiento, la elegibilidad de Buy Box, la promesa de entrega y cualquier restricción de cuenta o producto. La visibilidad no es lo mismo que la capacidad de compra.</p></article>
+            <article class="recovery-node"><span class="step-label">03 / Descubrible</span><h3>¿El artículo del catálogo es visible para los compradores?</h3><p>Verifique la vista de inventario suprimido/inactivo, el acceso directo a la página de detalles, la ubicación de exploración de categorías, la búsqueda exacta de marcas y títulos y un pequeño conjunto de frases indexadas conocidas.</p></article>
+            <article class="recovery-node"><span class="step-label">04 / Estable</span><h3>¿La solución persistió después de la propagación?</h3><p>Vuelva a leer el estado del problema después del procesamiento, vuelva a realizar la prueba en un navegador no personalizado y observe las impresiones, sesiones y ventas en las siguientes ventanas de informes comparables.</p></article>
           </div>
         </article>
 
         <article class="recovery-card" data-aos="fade-up">
-          <span class="recovery-eyebrow">Observed funnel</span>
-          <h2>The cost of invisibility starts before conversion.</h2>
-          <p>The archived report recorded 168,545 search impressions, 6,090 clicks, 2,223 cart additions, and 1,290 purchases. The export itself reports a 3.61% click rate and a 21.18% click-to-purchase conversion rate. Two additional rates below are derived directly from the exported counts: 36.50% of clicks became cart additions, and 58.03% of cart additions became purchases.</p>
-          <div class="recovery-funnel" role="img" aria-label="Observed stage-to-stage funnel rates: 3.61 percent of impressions became clicks, 36.50 percent of clicks became cart additions, and 58.03 percent of cart additions became purchases.">
-            <div class="funnel-row"><span>Impression → click</span><div class="funnel-track"><div class="funnel-fill" style="--rate:3.61%"></div></div><strong>3.61%</strong></div>
-            <div class="funnel-row"><span>Click → cart add</span><div class="funnel-track"><div class="funnel-fill" style="--rate:36.5%"></div></div><strong>36.50%</strong></div>
-            <div class="funnel-row"><span>Cart add → purchase</span><div class="funnel-track"><div class="funnel-fill" style="--rate:58.03%"></div></div><strong>58.03%</strong></div>
+          <span class="recovery-eyebrow">embudo observado</span>
+          <h2>El costo de la invisibilidad comienza antes de la conversión.</h2>
+          <p>El informe archivado registró 168.545 impresiones de búsqueda, 6.090 clics, 2.223 adiciones al carrito y 1.290 compras. La exportación en sí informa una tasa de clics del 3,61% y una tasa de conversión de clic para comprar del 21,18%. Dos tasas adicionales a continuación se derivan directamente de los recuentos exportados: el 36,50 % de los clics se convirtieron en adiciones al carrito y el 58,03 % de las adiciones al carrito se convirtieron en compras.</p>
+          <div class="recovery-funnel" role="img" aria-label="Tasas de embudo observadas etapa a etapa: el 3,61 por ciento de las impresiones se convirtieron en clics, el 36,50 por ciento de los clics se convirtieron en adiciones al carrito y el 58,03 por ciento de las adiciones al carrito se convirtieron en compras.">
+            <div class="funnel-row"><span>Impresión → clic</span><div class="funnel-track"><div class="funnel-fill" style="--rate:3.61%"></div></div><strong>3.61%</strong></div>
+            <div class="funnel-row"><span>Clic → agregado al carrito</span><div class="funnel-track"><div class="funnel-fill" style="--rate:36.5%"></div></div><strong>36.50%</strong></div>
+            <div class="funnel-row"><span>Añadir al carrito → comprar</span><div class="funnel-track"><div class="funnel-fill" style="--rate:58.03%"></div></div><strong>58.03%</strong></div>
           </div>
-          <p class="chart-note">Each bar has its own immediately preceding stage as denominator and shares a 0–100% scale. The chart is not a before/after comparison. Source: anonymized August 2024 Search Catalog Performance export from the supplied work archive.</p>
-          <p>At an average $18.86 of search-attributed sales per recorded purchase, even a short visibility interruption can matter. However, a suppressed listing does not automatically imply that every historical impression or dollar would have continued unchanged. Seasonality, query demand, competition, price, inventory, and reporting lag all affect the counterfactual. The defensible use of the data is to prioritize incident response and establish a baseline—not manufacture an incremental-revenue estimate.</p>
+          <p class="chart-note">Cada barra tiene su propia etapa inmediatamente anterior como denominador y comparte una escala de 0 a 100%. El gráfico no es una comparación antes/después. Fuente: exportación anónima del rendimiento del catálogo de búsqueda de agosto de 2024 desde el archivo de trabajo proporcionado.</p>
+          <p>Con un promedio de $18,86 de ventas atribuidas a búsquedas por compra registrada, incluso una breve interrupción de la visibilidad puede ser importante. Sin embargo, una cotización suprimida no implica automáticamente que cada impresión o dólar histórico hubiera continuado sin cambios. La estacionalidad, la demanda de consultas, la competencia, el precio, el inventario y el retraso en los informes afectan el contrafactual. El uso defendible de los datos es priorizar la respuesta a incidentes y establecer una línea de base, no fabricar una estimación de ingresos incrementales.</p>
         </article>
       </div>
     </section>
@@ -136,15 +136,15 @@
     <section>
       <div class="container">
         <article class="recovery-card recovery-steps" data-aos="fade-up">
-          <span class="recovery-eyebrow">Recovery workflow</span>
-          <h2>A controlled sequence from alert to verified discoverability.</h2>
-          <div class="recovery-step"><h3>Capture the state before changing it.</h3><p>Record the UTC timestamp, marketplace, SKU, ASIN, parent and child relationship, fulfillment channel, offer status, available quantity, visible suppression reason, last content change, and any related feed or support-case identifier. Export the current listing and save the issue message verbatim. This prevents the evidence from disappearing after a correction and gives support a reproducible starting point.</p></div>
-          <div class="recovery-step"><h3>Classify the earliest broken layer.</h3><p>Start with account and product restrictions, then offer buyability, then listing and attribute issues, then search discoverability. A direct detail page that loads is useful evidence but is not proof of search eligibility. Likewise, inventory shown as available is not proof that the offer is buyable in the customer’s ZIP code.</p></div>
-          <div class="recovery-step"><h3>Map the issue to one source of truth.</h3><p>Identify whether the missing or invalid value should be controlled in the listing editor, a category inventory file, an integration, or the brand/catalog contribution. Compare the live detail page, the seller contribution, and the product-type definition. Conflicting contributions often explain why a value appears present in one interface yet remains invalid downstream.</p></div>
-          <div class="recovery-step"><h3>Make the smallest complete correction.</h3><p>Correct the named attribute and any truly dependent required fields. Avoid simultaneous title, bullets, images, price, variation, and keyword rewrites unless the issue packet proves they are related. Small changes preserve causal clarity, reduce collateral risk, and make a failed submission easier to troubleshoot.</p></div>
-          <div class="recovery-step"><h3>Read the processing result, not just the upload confirmation.</h3><p>“Submitted” only confirms receipt. Inspect the processing report or returned issue objects for error codes, severity, attribute names, and enforcement actions. Amazon’s developer documentation distinguishes submission-time issues from asynchronous issues that can appear after acceptance; the workflow must cover both.</p></div>
-          <div class="recovery-step"><h3>Escalate with a complete evidence packet.</h3><p>If the issue persists after the documented propagation window, open one focused case. Include the identifiers, marketplace, exact error, attempted correction, timestamp, feed batch or submission ID, processing result, current attribute value, product-type context, and screenshots that show the contradiction. Ask for a specific investigation, not a generic “please fix my listing.”</p></div>
-          <div class="recovery-step"><h3>Verify recovery in layers.</h3><p>Confirm the issue disappeared, the offer is buyable, the ASIN is discoverable for a controlled exact query, the expected detail-page content renders, and the listing remains stable after the next catalog refresh. Then annotate the incident timeline and monitor impressions and sessions against comparable days. Search recovery can precede reporting recovery, so one immediate dashboard reading is not sufficient.</p></div>
+          <span class="recovery-eyebrow">Flujo de trabajo de recuperación</span>
+          <h2>Una secuencia controlada desde la alerta hasta la visibilidad verificada.</h2>
+          <div class="recovery-step"><h3>Capture el estado antes de cambiarlo.</h3><p>Registre la marca de tiempo UTC, el mercado, el SKU, el ASIN, la relación principal y secundaria, el canal de cumplimiento, el estado de la oferta, la cantidad disponible, el motivo de supresión visible, el último cambio de contenido y cualquier fuente relacionada o identificador de caso de soporte. Exporte el listado actual y guarde el mensaje del problema palabra por palabra. Esto evita que la evidencia desaparezca después de una corrección y brinda al soporte un punto de partida reproducible.</p></div>
+          <div class="recovery-step"><h3>Clasifique la capa rota más temprana.</h3><p>Comience con las restricciones de cuentas y productos, luego ofrezca capacidad de compra, luego problemas con listados y atributos, y luego capacidad de búsqueda en la búsqueda. Una página de detalles directa que se carga es una prueba útil, pero no una prueba de elegibilidad para la búsqueda. Del mismo modo, el inventario que se muestra como disponible no es prueba de que la oferta se pueda comprar en el código postal del cliente.</p></div>
+          <div class="recovery-step"><h3>Asigne el problema a una fuente de verdad.</h3><p>Identifique si el valor faltante o no válido debe controlarse en el editor de listado, un archivo de inventario de categorías, una integración o la contribución de marca/catálogo. Compare la página de detalles en vivo, la contribución del vendedor y la definición del tipo de producto. Las contribuciones contradictorias a menudo explican por qué un valor aparece presente en una interfaz pero sigue siendo inválido en el futuro.</p></div>
+          <div class="recovery-step"><h3>Haga la corrección completa más pequeña.</h3><p>Corrija el atributo nombrado y cualquier campo obligatorio verdaderamente dependiente. Evite la reescritura simultánea de títulos, viñetas, imágenes, precios, variaciones y palabras clave, a menos que el paquete de edición demuestre que están relacionados. Los pequeños cambios preservan la claridad causal, reducen el riesgo colateral y hacen que un envío fallido sea más fácil de solucionar.</p></div>
+          <div class="recovery-step"><h3>Lea el resultado del procesamiento, no solo la confirmación de la carga.</h3><p>"Enviado" solo confirma la recepción. Inspeccione el informe de procesamiento o los objetos de problemas devueltos en busca de códigos de error, gravedad, nombres de atributos y acciones de cumplimiento. La documentación para desarrolladores de Amazon distingue los problemas relacionados con el momento del envío de los problemas asincrónicos que pueden aparecer después de la aceptación; el flujo de trabajo debe cubrir ambos.</p></div>
+          <div class="recovery-step"><h3>Escale con un paquete de pruebas completo.</h3><p>Si el problema persiste después de la ventana de propagación documentada, abra un caso específico. Incluya los identificadores, el mercado, el error exacto, el intento de corrección, la marca de tiempo, el lote de feed o el ID de envío, el resultado del procesamiento, el valor del atributo actual, el contexto del tipo de producto y las capturas de pantalla que muestren la contradicción. Solicite una investigación específica, no un “por favor arregle mi listado” genérico.</p></div>
+          <div class="recovery-step"><h3>Verificar recuperación en capas.</h3><p>Confirme que el problema desapareció, que la oferta se puede comprar, que el ASIN se puede descubrir mediante una consulta exacta controlada, que se muestra el contenido esperado de la página de detalles y que el listado permanece estable después de la siguiente actualización del catálogo. Luego, anote el cronograma del incidente y supervise las impresiones y sesiones en comparación con días comparables. La recuperación de búsqueda puede preceder a la recuperación de informes, por lo que una lectura inmediata del panel no es suficiente.</p></div>
         </article>
       </div>
     </section>
@@ -152,48 +152,48 @@
     <section>
       <div class="container">
         <article class="recovery-card" data-aos="fade-up">
-          <span class="recovery-eyebrow">Triage matrix</span>
-          <h2>Match the symptom to the evidence that can disprove it.</h2>
+          <span class="recovery-eyebrow">Matriz de triaje</span>
+          <h2>Relaciona el síntoma con la evidencia que puede refutarlo.</h2>
           <table class="recovery-table">
-            <thead><tr><th>Symptom</th><th>First evidence to collect</th><th>Likely branch</th><th>Closure test</th></tr></thead>
+            <thead><tr><th>Síntoma</th><th>Primera evidencia a recolectar</th><th>Rama probable</th><th>Prueba de cierre</th></tr></thead>
             <tbody>
-              <tr><td>Detail page exists, exact search fails</td><td>Suppressed inventory status, issue/enforcement action, discoverability test, browse node</td><td>Search suppression, browse classification, or indexation</td><td>Issue cleared and controlled search returns the item</td></tr>
-              <tr><td>Detail page loads, offer cannot be bought</td><td>Offer status, quantity, price, fulfillment, delivery promise, restriction</td><td>Buyability or operational availability</td><td>Customer-facing offer is purchasable in the target marketplace</td></tr>
-              <tr><td>Required value appears present but alert remains</td><td>Seller contribution, product-type definition, feed result, conflicting catalog value</td><td>Schema mismatch or contribution conflict</td><td>Accepted value persists and issue no longer regenerates</td></tr>
-              <tr><td>One child disappears from a healthy family</td><td>Relationship fields, variation theme, child attributes, parent/child issue states</td><td>Variation architecture or child-level requirement</td><td>Child is both discoverable and correctly attached</td></tr>
-              <tr><td>Issue returns after apparently successful edit</td><td>Change history, connected apps, scheduled feeds, source-of-truth ownership</td><td>Automation overwriting the manual correction</td><td>Value remains stable after the next integration cycle</td></tr>
+              <tr><td>La página de detalles existe, la búsqueda exacta falla</td><td>Estado de inventario suprimido, acción de cumplimiento/problema, prueba de visibilidad, nodo de exploración</td><td>Supresión de búsqueda, clasificación de navegación o indexación</td><td>Problema solucionado y búsqueda controlada devuelve el artículo</td></tr>
+              <tr><td>La página de detalles se carga, la oferta no se puede comprar</td><td>Estado de la oferta, cantidad, precio, cumplimiento, promesa de entrega, restricción</td><td>Comprabilidad o disponibilidad operativa</td><td>La oferta orientada al cliente se puede comprar en el marketplace de destino.</td></tr>
+              <tr><td>El valor requerido aparece presente pero la alerta permanece</td><td>Contribución del vendedor, definición del tipo de producto, resultado del feed, valor de catálogo conflictivo</td><td>Discrepancia de esquema o conflicto de contribución</td><td>El valor aceptado persiste y el problema ya no se regenera</td></tr>
+              <tr><td>Un niño desaparece de una familia sana</td><td>Campos de relación, tema de variación, atributos secundarios, estados de problemas padre/hijo</td><td>Arquitectura de variación o requisito de nivel infantil</td><td>El niño es visible en búsquedas y está correctamente conectado.</td></tr>
+              <tr><td>El problema vuelve después de una edición aparentemente exitosa</td><td>Historial de cambios, aplicaciones conectadas, feeds programados, propiedad de la fuente de la verdad</td><td>Automatización sobrescribiendo la corrección manual.</td><td>El valor se mantiene estable después del próximo ciclo de integración</td></tr>
             </tbody>
           </table>
         </article>
 
         <article class="recovery-card" data-aos="fade-up">
-          <span class="recovery-eyebrow">What not to infer</span>
-          <h2>Keep the diagnosis narrower than the evidence.</h2>
+          <span class="recovery-eyebrow">Que no inferir</span>
+          <h2>Mantenga el diagnóstico más limitado que la evidencia.</h2>
           <div class="recovery-grid">
-            <article class="recovery-node"><h3>Zero impressions is not automatically suppression.</h3><p>Low demand, reporting lag, an out-of-stock offer, lost ranking, or a changed query mix can also remove traffic. Confirm the enforcement state and customer-facing behavior.</p></article>
-            <article class="recovery-node"><h3>A visible page is not automatically healthy.</h3><p>A product can be reachable by direct URL while hidden from search, missing a buyable offer, or carrying suppressed attributes. Test each layer independently.</p></article>
-            <article class="recovery-node"><h3>An accepted submission is not final acceptance.</h3><p>Asynchronous catalog processing can create issues later. Always inspect processing results and the post-propagation item state.</p></article>
-            <article class="recovery-node"><h3>Recovery is not the same as uplift.</h3><p>Returning to discoverability restores eligibility to compete. It does not guarantee historical rank, click rate, conversion, or demand will return unchanged.</p></article>
+            <article class="recovery-node"><h3>Cero impresiones no se suprime automáticamente.</h3><p>La baja demanda, el retraso en los informes, una oferta agotada, una clasificación perdida o una combinación de consultas modificada también pueden eliminar el tráfico. Confirme el estado de cumplimiento y el comportamiento de cara al cliente.</p></article>
+            <article class="recovery-node"><h3>Una página visible no está automáticamente en buen estado.</h3><p>Se puede acceder a un producto mediante URL directa mientras está oculto de la búsqueda, falta una oferta de compra o tiene atributos suprimidos. Pruebe cada capa de forma independiente.</p></article>
+            <article class="recovery-node"><h3>Una presentación aceptada no es una aceptación final.</h3><p>El procesamiento asincrónico del catálogo puede crear problemas más adelante. Inspeccione siempre los resultados del procesamiento y el estado del elemento posterior a la propagación.</p></article>
+            <article class="recovery-node"><h3>Recuperación no es lo mismo que mejora.</h3><p>Volver a la visibilidad restablece la elegibilidad para competir. No garantiza que la clasificación histórica, la tasa de clics, la conversión o la demanda se mantengan sin cambios.</p></article>
           </div>
         </article>
 
         <article class="recovery-card" data-aos="fade-up">
-          <span class="recovery-eyebrow">Prevention</span>
-          <h2>Turn catalog recovery into a monitored operating system.</h2>
-          <p>A mature process treats suppression as an incident class, not a surprise discovered during a sales review. The minimum monitor combines issue state, buyability, discoverability, inventory, and funnel movement. Alert on newly suppressed items, missing discoverability, buyability loss, parent-child changes, abrupt impression collapse, and repeated attribute rejection.</p>
-          <p>The incident log should capture detection time, affected marketplace and SKU, commercial priority, root-cause category, correction surface, case or submission identifiers, validation time, recovery time, and a prevention action. Over time, the log reveals whether failures concentrate in a product type, integration, required attribute, image workflow, or variation architecture.</p>
-          <div class="recovery-callout"><strong>Operational definition of done:</strong> the catalog issue is cleared, the offer is buyable, the item is discoverable in a controlled test, the intended contribution persists after refresh, and the next reporting windows show traffic returning without a new enforcement state.</div>
+          <span class="recovery-eyebrow">Prevención</span>
+          <h2>Convierta la recuperación de catálogos en un sistema operativo monitoreado.</h2>
+          <p>Un proceso maduro trata la supresión como una clase de incidente, no como una sorpresa descubierta durante una revisión de ventas. El monitor mínimo combina el estado de la emisión, la capacidad de compra, la visibilidad, el inventario y el movimiento del embudo. Alerta sobre elementos recientemente suprimidos, falta de visibilidad, pérdida de capacidad de compra, cambios entre padres e hijos, colapso abrupto de impresiones y rechazo repetido de atributos.</p>
+          <p>El registro de incidentes debe capturar el tiempo de detección, el mercado y SKU afectados, la prioridad comercial, la categoría de causa raíz, la superficie de corrección, los identificadores de caso o envío, el tiempo de validación, el tiempo de recuperación y una acción de prevención. Con el tiempo, el registro revela si las fallas se concentran en un tipo de producto, integración, atributo requerido, flujo de trabajo de imágenes o arquitectura de variación.</p>
+          <div class="recovery-callout"><strong>Definición operativa de hecho:</strong> el problema del catálogo se soluciona, la oferta se puede comprar, el artículo se puede descubrir en una prueba controlada, la contribución prevista persiste después de la actualización y las siguientes ventanas de informes muestran el tráfico que regresa sin un nuevo estado de cumplimiento.</div>
         </article>
 
         <article class="recovery-card source-list" data-aos="fade-up">
-          <span class="recovery-eyebrow">Method and sources</span>
-          <h2>What is observed, derived, and externally documented.</h2>
+          <span class="recovery-eyebrow">Método y fuentes</span>
+          <h2>Lo que se observa, se deriva y se documenta externamente.</h2>
           <ul>
-            <li><strong>Observed archive evidence:</strong> August 2024 US Search Catalog Performance export with one ASIN; exact counts and search-attributed sales are reproduced above with identity removed.</li>
-            <li><strong>Derived calculations:</strong> click-to-cart rate, cart-to-purchase rate, and revenue per purchase were calculated from the exported counts. No simulated recovery percentage or revenue lift is presented.</li>
-            <li><strong>Official technical reference:</strong> Amazon’s <a href="https://developer-docs.amazon.com/sp-api/lang-en_EN/reference/searchlistingsitems" target="_blank" rel="noopener noreferrer">Listings Items API reference</a> distinguishes buyable and discoverable statuses and exposes listing issues.</li>
-            <li><strong>Issue workflow reference:</strong> Amazon’s <a href="https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/building-listings-management-workflows-guide" target="_blank" rel="noopener noreferrer">listings management workflow guide</a> explains submission-time, feed-processing, and post-acceptance issues.</li>
-            <li><strong>Enforcement reference:</strong> Amazon’s <a href="https://developer-docs.amazon.com/sp-api/docs/notification-type-values" target="_blank" rel="noopener noreferrer">notification type documentation</a> defines search suppression, listing suppression, attribute suppression, and catalog-item removal as distinct enforcement actions.</li>
+            <li><strong>Evidencia de archivo observada:</strong> Agosto de 2024 Exportación de rendimiento del catálogo de búsqueda de EE. UU. con un ASIN; Los recuentos exactos y las ventas atribuidas a búsquedas se reproducen arriba sin la identidad.</li>
+            <li><strong>Cálculos derivados:</strong> La tasa de clic al carrito, la tasa de carrito de compra y los ingresos por compra se calcularon a partir de los recuentos exportados. No se presenta ningún porcentaje de recuperación simulado ni aumento de ingresos.</li>
+            <li><strong>Referencia técnica oficial:</strong> Amazon <a href="https://developer-docs.amazon.com/sp-api/lang-en_EN/reference/searchlistingsitems" target="_blank" rel="noopener noreferrer">Referencia de API de artículos de listados</a> distingue los estados de compra y descubrimiento y expone problemas de publicación.</li>
+            <li><strong>Referencia del flujo de trabajo del problema:</strong> Amazon <a href="https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/building-listings-management-workflows-guide" target="_blank" rel="noopener noreferrer">guía de flujo de trabajo de gestión de listados</a> explica los problemas detectados al enviar, el procesamiento de feeds y después de la aceptación.</li>
+            <li><strong>Referencia de aplicación:</strong> Amazon <a href="https://developer-docs.amazon.com/sp-api/docs/notification-type-values" target="_blank" rel="noopener noreferrer">documentación de tipo de notificación</a> define la supresión de búsquedas, la supresión de listados, la supresión de atributos y la eliminación de elementos del catálogo como acciones de cumplimiento distintas.</li>
           </ul>
         </article>
       </div>

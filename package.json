@@ -1,0 +1,18 @@
+{
+  "name": "matias-gaglio-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static bilingual portfolio with generated homepages and automated quality checks.",
+  "scripts": {
+    "test": "playwright test",
+    "test:responsive": "playwright test tests/site.spec.js",
+    "validate:html": "html-validate index.html index-es.html index-en.html",
+    "lighthouse": "lhci autorun"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.54.1",
+    "html-validate": "^9.7.1"
+  }
+}

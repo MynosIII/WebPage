@@ -1,0 +1,56 @@
+name: Site quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install Pillow==11.3.0
+      - name: Verify generated pages and discovery files
+        run: |
+          python scripts/build_homepages.py --check
+          python scripts/generate_sitemap.py --check
+          python scripts/add_image_dimensions.py --check
+      - name: Validate links, anchors, metadata and asset casing
+        run: python scripts/validate_site.py
+
+  browser-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Validate generated homepage HTML
+        run: npm run validate:html
+      - name: Responsive and accessibility regression tests
+        run: npm test
+      - name: Lighthouse budgets
+        run: npm run lighthouse
+      - name: Upload responsive screenshots and reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-quality-artifacts
+          path: |
+            test-results/
+            playwright-report/
+            .lighthouseci/
+          if-no-files-found: ignore

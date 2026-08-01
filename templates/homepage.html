@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="$lang">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>$title</title>
+  <meta name="description" content="$description" />
+  <link rel="canonical" href="$canonical" />
+  <link rel="alternate" hreflang="es" href="https://matiasgaglio.onrender.com/" />
+  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/index-en.html" />
+  <link rel="alternate" hreflang="x-default" href="https://matiasgaglio.onrender.com/" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Matías Gaglio" />
+  <meta property="og:locale" content="$locale" />
+  <meta property="og:title" content="$title" />
+  <meta property="og:description" content="$description" />
+  <meta property="og:url" content="$canonical" />
+  <meta property="og:image" content="https://matiasgaglio.onrender.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Matías Gaglio — ecommerce, analytics and creative strategy portfolio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="$title" />
+  <meta name="twitter:description" content="$description" />
+  <meta name="twitter:image" content="https://matiasgaglio.onrender.com/og-card.png" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#090d10" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="preload" href="home.css" as="style" />
+  <link rel="stylesheet" href="home.css" />
+  <script type="application/ld+json">$structured_data</script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">$skip_label</a>
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner">
+      <a class="site-logo" href="$home_href" aria-label="Matías Gaglio — Home">
+        <span>MG</span><strong>Matías Gaglio</strong>
+      </a>
+      <nav class="site-nav" id="primary-navigation" aria-label="$nav_label" data-site-nav>
+        <ul>$nav_items</ul>
+      </nav>
+      <div class="site-header__actions">
+        <a class="locale-link" href="$switch_href" hreflang="$switch_hreflang" aria-label="$switch_aria">$switch_label</a>
+        <button class="menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="$menu_open" data-menu-button data-open-label="$menu_open" data-close-label="$menu_close">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <button class="menu-backdrop" type="button" aria-label="$menu_close" tabindex="-1" data-menu-backdrop></button>
+
+  <main id="main-content">
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="home-shell home-hero__grid">
+        <div class="home-hero__copy">
+          <p class="eyebrow">$hero_kicker</p>
+          <h1 id="home-title">$hero_title</h1>
+          <p class="home-hero__summary">$hero_summary</p>
+          <div class="home-actions">
+            <a class="button button--primary" href="$primary_href">$primary_cta <span aria-hidden="true">↘</span></a>
+            <a class="button button--ghost" href="$secondary_href">$secondary_cta</a>
+          </div>
+          <p class="availability"><span aria-hidden="true"></span>$availability</p>
+        </div>
+        <div class="home-hero__system" aria-hidden="true">
+          <div class="signal signal--data"><span>01</span><strong>DATA</strong><small>Find the signal</small></div>
+          <div class="system-line system-line--one"></div>
+          <div class="signal signal--strategy"><span>02</span><strong>STRATEGY</strong><small>Choose the move</small></div>
+          <div class="system-line system-line--two"></div>
+          <div class="signal signal--creative"><span>03</span><strong>CREATIVE</strong><small>Make it clear</small></div>
+          <div class="system-core"><span>MEASURE</span><i></i></div>
+        </div>
+      </div>
+      <div class="home-shell proof-strip" aria-label="$proof_label">$proof_items</div>
+    </section>
+
+    <section class="home-section capabilities" id="$capabilities_id" aria-labelledby="capabilities-title">
+      <div class="home-shell">
+        <div class="section-heading section-heading--split">
+          <div><p class="eyebrow">$capabilities_eyebrow</p><h2 id="capabilities-title">$capabilities_title</h2></div>
+          <p>$capabilities_intro</p>
+        </div>
+        <div class="capability-grid">$capability_items</div>
+      </div>
+    </section>
+
+    <section class="home-section selected-work" id="$work_id" aria-labelledby="work-title">
+      <div class="home-shell">
+        <div class="section-heading section-heading--split">
+          <div><p class="eyebrow">$work_eyebrow</p><h2 id="work-title">$work_title</h2></div>
+          <p>$work_intro</p>
+        </div>
+        <div class="work-list">$work_items</div>
+      </div>
+    </section>
+
+    <section class="home-section method" id="$method_id" aria-labelledby="method-title">
+      <div class="home-shell">
+        <div class="section-heading">
+          <p class="eyebrow">$method_eyebrow</p>
+          <h2 id="method-title">$method_title</h2>
+        </div>
+        <ol class="method-grid">$method_items</ol>
+      </div>
+    </section>
+
+    <section class="home-section portfolio-library" aria-labelledby="library-title">
+      <div class="home-shell">
+        <div class="section-heading">
+          <p class="eyebrow">$library_eyebrow</p>
+          <h2 id="library-title">$library_title</h2>
+        </div>
+        <div class="library-grid">$library_items</div>
+      </div>
+    </section>
+
+    <section class="home-section profile-band" aria-labelledby="profile-title">
+      <div class="home-shell profile-band__grid">
+        <div><p class="eyebrow">$about_eyebrow</p><h2 id="profile-title">$about_title</h2></div>
+        <div><p>$about_copy</p><a class="text-link" href="$about_href">$about_cta <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="home-section contact-band" id="$contact_id" aria-labelledby="contact-title">
+      <div class="home-shell contact-band__grid">
+        <div><p class="eyebrow">$contact_eyebrow</p><h2 id="contact-title">$contact_title</h2></div>
+        <div><p>$contact_copy</p><div class="home-actions"><a class="button button--primary" href="mailto:matiasignaciogaglio@gmail.com">$email_cta</a><a class="button button--ghost" href="https://linkedin.com/in/matiasignaciogaglio" target="_blank" rel="noopener noreferrer">$linkedin_cta <span aria-hidden="true">↗</span></a></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="home-footer">
+    <div class="home-shell"><p>$footer</p><a href="#main-content">$back_to_top <span aria-hidden="true">↑</span></a></div>
+  </footer>
+  <script src="home.js" defer></script>
+</body>
+</html>
