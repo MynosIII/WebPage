@@ -74,8 +74,14 @@
           <a class="hero-cv-link" href="$cv_href" download>$cv_cta <span aria-hidden="true">↓</span></a>
           <p class="availability"><span aria-hidden="true"></span>$availability</p>
         </div>
+      </div>
+      <div class="home-shell proof-strip" role="group" aria-label="$proof_label">$proof_items</div>
+    </section>
+
+    <section class="neural-band" aria-labelledby="neural-band-title">
+      <div class="home-shell">
         <div class="home-hero__system" data-neural-system role="group" aria-label="$neural_label">
-          <p class="system-caption"><span>$neural_kicker</span><strong>$neural_title</strong><small>$neural_copy</small></p>
+          <p class="system-caption"><span>$neural_kicker</span><strong id="neural-band-title">$neural_title</strong><small>$neural_copy</small></p>
           <button class="signal signal--data" type="button" data-neural-node="data" data-output="$signal_data_output" aria-pressed="false"><span>01</span><strong>$signal_data</strong><small>$signal_data_copy</small></button>
           <i class="system-line system-line--one" aria-hidden="true"></i>
           <button class="signal signal--strategy" type="button" data-neural-node="strategy" data-output="$signal_strategy_output" aria-pressed="false"><span>02</span><strong>$signal_strategy</strong><small>$signal_strategy_copy</small></button>
@@ -86,7 +92,6 @@
           <span class="neural-spark neural-spark--one" aria-hidden="true"></span><span class="neural-spark neural-spark--two" aria-hidden="true"></span><span class="neural-spark neural-spark--three" aria-hidden="true"></span>
         </div>
       </div>
-      <div class="home-shell proof-strip" role="group" aria-label="$proof_label">$proof_items</div>
     </section>
 
     <section class="home-section portfolio-library" id="$library_id" aria-labelledby="library-title">

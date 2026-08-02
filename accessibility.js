@@ -49,7 +49,7 @@
     backdrop.tabIndex = -1;
     navbar?.after(backdrop);
 
-    const background = [main, document.querySelector('footer')].filter(Boolean);
+    const background = () => [document.querySelector('[data-portfolio-rail]'), main, document.querySelector('footer')].filter(Boolean);
     const setMenuState = (open, restoreFocus = false) => {
       menuOpen = Boolean(open && mobileNavigation.matches);
       navbar?.classList.toggle('nav-open', menuOpen);
@@ -60,7 +60,7 @@
       navToggle.setAttribute('aria-label', menuOpen ? closeLabel : openLabel);
       primaryNav.inert = mobileNavigation.matches && !menuOpen;
       backdrop.tabIndex = menuOpen ? 0 : -1;
-      background.forEach(element => { element.inert = menuOpen; });
+      background().forEach(element => { element.inert = menuOpen; });
 
       if (menuOpen) primaryNav.querySelector('a[href]')?.focus();
       else if (restoreFocus) navToggle.focus();
