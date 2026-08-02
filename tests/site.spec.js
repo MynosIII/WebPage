@@ -96,18 +96,41 @@ for (const path of ['/caso-1-es.html', '/caso-2-es.html', '/caso-3-es.html', '/c
     }
     const brokenImages = await page.locator('img').evaluateAll(images => images.filter(image => !image.complete || image.naturalWidth === 0).length);
     expect(brokenImages).toBe(0);
+    await expect(page.locator('[data-portfolio-rail]')).toBeVisible();
   });
 }
 
 test('legacy navigation uses the tablet drawer without clipping', async ({ page }) => {
   await page.setViewportSize({ width: 820, height: 1180 });
   await page.goto('/BI-case-2-es.html', { waitUntil: 'networkidle' });
+  const portfolioRail = page.locator('[data-portfolio-rail]');
+  await expect(portfolioRail).toBeVisible();
+  await expect(portfolioRail.locator('.portfolio-rail__link')).toHaveCount(6);
+  await expect(portfolioRail.getByRole('link', { name: 'Investigación de opinión' })).toHaveAttribute('href', /consultora-es\.html$/);
   const menuButton = page.locator('.nav-toggle');
   await expect(menuButton).toBeVisible();
   await menuButton.click();
   await expect(menuButton).toHaveAttribute('aria-expanded', 'true');
+  await expect(portfolioRail).toHaveJSProperty('inert', true);
   await expect(page.locator('.nav-menu a[href="sobre-mi-es.html"]')).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(menuButton).toHaveAttribute('aria-expanded', 'false');
   await expect(menuButton).toBeFocused();
+});
+
+test('site-wide portfolio rail is correctly localized in English', async ({ page }) => {
+  await page.goto('/BI-case-2-en.html', { waitUntil: 'networkidle' });
+  const portfolioRail = page.locator('[data-portfolio-rail]');
+  await expect(portfolioRail).toHaveAttribute('aria-label', 'Portfolio shortcuts');
+  await expect(portfolioRail.getByRole('link', { name: 'Opinion research' })).toHaveAttribute('href', /consultora-en\.html$/);
+  await expect(portfolioRail.getByRole('button', { name: 'Search' })).toBeVisible();
+});
+
+test('site-wide portfolio rail also covers the custom academic article layout', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/articulo-milei-chad.html', { waitUntil: 'networkidle' });
+  await expect(page.locator('[data-portfolio-rail]')).toBeVisible();
+  await expect(page.locator('.site-search-panel')).toBeAttached();
+  const overflow = await page.evaluate(() => ({ scrollWidth: document.documentElement.scrollWidth, clientWidth: document.documentElement.clientWidth }));
+  expect(overflow.scrollWidth).toBeLessThanOrEqual(overflow.clientWidth + 1);
 });

@@ -5,7 +5,6 @@
   const backdrop = document.querySelector('[data-menu-backdrop]');
   const main = document.querySelector('main');
   const footer = document.querySelector('footer');
-  const portfolioRail = document.querySelector('[data-portfolio-rail]');
   const mobileQuery = window.matchMedia('(max-width: 1050px)');
 
   if (!header || !menuButton || !navigation || !backdrop) return;
@@ -18,7 +17,7 @@
   ].filter((element) => !element.hidden && element.getClientRects().length > 0);
 
   const setPageInert = (inert) => {
-    [portfolioRail, main, footer].forEach((element) => {
+    [document.querySelector('[data-portfolio-rail]'), main, footer].forEach((element) => {
       if (!element) return;
       element.inert = inert;
       if (inert) element.setAttribute('aria-hidden', 'true');

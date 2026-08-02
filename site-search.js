@@ -5,7 +5,43 @@
   const labels = lang === 'es'
     ? { button: 'Buscar', placeholder: 'Buscar casos, artículos y páginas…', close: 'Cerrar búsqueda', empty: 'No encontramos resultados.', count: n => `${n} resultado${n === 1 ? '' : 's'}`, all: 'Resultados de búsqueda' }
     : { button: 'Search', placeholder: 'Search cases, articles and pages…', close: 'Close search', empty: 'No results found.', count: n => `${n} result${n === 1 ? '' : 's'}`, all: 'Search results' };
-  const navbar = document.querySelector('.navbar .container, .site-header__actions');
+
+  const ensurePortfolioRail = () => {
+    if (document.querySelector('[data-portfolio-rail]')) return;
+    const header = document.querySelector('.site-header, .navbar, .document-header');
+    if (!header) return;
+    const items = lang === 'es'
+      ? [
+          ['Mapa', 'index.html#trabajo'],
+          ['Ecommerce', 'ecommerce-es.html'],
+          ['Creatives', 'creatives-es.html'],
+          ['Artículos', 'Articles-es.html'],
+          ['Investigación de opinión', 'consultora-es.html'],
+          ['Otros proyectos', 'otros-es.html'],
+          ['Chat Matías', 'SEO-es.html']
+        ]
+      : [
+          ['Map', 'index-en.html#work'],
+          ['Ecommerce', 'ecommerce-en.html'],
+          ['Creatives', 'creatives-en.html'],
+          ['Articles', 'Articles-en.html'],
+          ['Opinion research', 'consultora-en.html'],
+          ['Other projects', 'otros-en.html'],
+          ['Chat Matías', 'SEO-en.html']
+        ];
+    const rail = document.createElement('nav');
+    rail.className = 'portfolio-rail portfolio-rail--global';
+    rail.dataset.portfolioRail = '';
+    rail.setAttribute('aria-label', lang === 'es' ? 'Accesos al portafolio' : 'Portfolio shortcuts');
+    rail.innerHTML = `<div class="portfolio-rail__inner"><div class="portfolio-rail__links">${items.map(([label, path], index) => `<a class="${index === 0 ? 'portfolio-rail__home' : 'portfolio-rail__link'}" href="${new URL(path, baseUrl).href}"><span aria-hidden="true">${String(index).padStart(2, '0')}</span>${label}</a>`).join('')}</div><button class="portfolio-rail__search" type="button" data-search-trigger aria-controls="site-search-panel" aria-expanded="false"><span aria-hidden="true">⌕</span>${labels.button}</button></div>`;
+    const backdrop = header.nextElementSibling?.matches('.menu-backdrop, .legacy-nav-backdrop') ? header.nextElementSibling : null;
+    (backdrop || header).after(rail);
+    document.body.classList.add('has-portfolio-rail');
+    if (header.classList.contains('document-header')) document.body.classList.add('has-document-rail');
+  };
+  ensurePortfolioRail();
+
+  const navbar = document.querySelector('.navbar .container, .site-header__actions, .document-header-inner');
   if (!navbar || document.querySelector('.site-search')) return;
   const externalTriggers = [...document.querySelectorAll('[data-search-trigger]')];
 
