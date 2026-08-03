@@ -108,18 +108,18 @@
       {"title": "Creatives", "copy": "Imagen de producto, video, motion, 3D, A+ Content e iconografía.", "href": "creatives-es.html", "image_src": "Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg", "image_width": 1368, "image_height": 1312, "image_alt": "Ejemplo de una galería de producto rediseñada para Amazon", "featured": true},
       {"title": "Artículos", "copy": "Playbooks y análisis aplicados a marketplaces.", "href": "Articles-es.html"},
       {"title": "Investigación de opinión", "copy": "Encuestas, modelos explicativos, dashboards e informes.", "href": "consultora-es.html"},
-      {"title": "Otros proyectos", "copy": "Música, documentos, visualización y exploraciones personales.", "href": "otros-es.html"},
+      {"title": "Otros proyectos", "copy": "Programación, documentos, visualización e investigación académica.", "href": "otros-es.html"},
       {"title": "Chat Matías", "copy": "Asistente interactivo del portafolio · En desarrollo.", "href": "SEO-es.html"}
     ],
     "about_eyebrow": "Sobre mí",
     "about_title": "Comunicación para entender; datos para decidir.",
     "about_copy": "Mi formación en Comunicación me enseñó cómo las personas interpretan mensajes y toman decisiones. El ecommerce agregó una segunda capa: medir ese comportamiento mediante tráfico, conversión, rentabilidad y búsqueda. Hoy conecto comportamiento del cliente, datos comerciales y ejecución.",
     "about_personal_eyebrow": "Una nota más personal",
-    "about_personal_copy": "La curiosidad que llevo al trabajo también aparece fuera de él: investigo cultura digital, escribo, experimento con música y visualización, y construyo herramientas para entender sistemas complejos.",
+    "about_personal_copy": "La curiosidad que llevo al trabajo también aparece fuera de él: investigo cultura digital, escribo, desarrollo herramientas y trabajo con programación, visualización y análisis académico para entender sistemas complejos.",
     "about_facts": [
       ["Formación", "Ciencias de la Comunicación · UBA"],
       ["Cruce profesional", "Ecommerce + datos + contenido"],
-      ["Intereses", "Cultura digital, escritura, música y visualización"]
+      ["Intereses", "Programación, cultura digital, escritura e investigación académica"]
     ],
     "about_cta": "Conocer mi historia profesional",
     "contact_eyebrow": "Próximo paso",
@@ -239,18 +239,18 @@
       {"title": "Creatives", "copy": "Product imagery, video, motion, 3D, A+ Content and iconography.", "href": "creatives-en.html", "image_src": "Revolution/New Style Images/61HEg-LnYyL._AC_SL1400_.jpg", "image_width": 1368, "image_height": 1312, "image_alt": "Example of a redesigned Amazon product gallery", "featured": true},
       {"title": "Articles", "copy": "Marketplace playbooks and applied analysis.", "href": "Articles-en.html"},
       {"title": "Opinion research", "copy": "Surveys, explanatory models, dashboards and reports.", "href": "consultora-en.html"},
-      {"title": "Other projects", "copy": "Music, documents, visualization and personal explorations.", "href": "otros-en.html"},
+      {"title": "Other projects", "copy": "Programming, documents, visualization and academic research.", "href": "otros-en.html"},
       {"title": "Chat Matías", "copy": "Interactive portfolio assistant · Work in progress.", "href": "SEO-en.html"}
     ],
     "about_eyebrow": "About",
     "about_title": "Communication to understand; data to decide.",
     "about_copy": "My Communication background taught me how people interpret messages and make decisions. Ecommerce added a second layer: measuring that behavior through traffic, conversion, profitability and search. Today I connect customer behavior, commercial data and execution.",
     "about_personal_eyebrow": "A more personal note",
-    "about_personal_copy": "The curiosity I bring to work also appears outside it: I research digital culture, write, experiment with music and visualization, and build tools to understand complex systems.",
+    "about_personal_copy": "The curiosity I bring to work also appears outside it: I research digital culture, write, build tools, and use programming, visualization, and academic analysis to understand complex systems.",
     "about_facts": [
       ["Education", "Communication Sciences · University of Buenos Aires"],
       ["Professional intersection", "Ecommerce + data + content"],
-      ["Interests", "Digital culture, writing, music and visualization"]
+      ["Interests", "Programming, digital culture, writing and academic research"]
     ],
     "about_cta": "Read my professional story",
     "contact_eyebrow": "Next step",

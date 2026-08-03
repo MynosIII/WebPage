@@ -15,9 +15,6 @@
     blender: ['Blender', 'blender.svg'],
     cinema4d: ['Cinema 4D', 'cinema4d.svg'],
     nuke: ['Nuke', 'nuke.svg'],
-    reaper: ['REAPER', 'reaper.svg'],
-    'fl-studio': ['FL Studio', 'fl-studio.svg'],
-    audacity: ['Audacity', 'audacity.svg'],
     helium10: ['Helium 10', 'helium10.svg'],
     'jungle-scout': ['Jungle Scout', 'jungle-scout.svg'],
     keepa: ['Keepa', 'keepa.svg'],
@@ -57,9 +54,9 @@
       label: 'Creative',
       slug: 'creative',
       direction: 'forward',
-      copy: 'Photoshop, Illustrator, Premiere Pro, After Effects, DaVinci Resolve, Blender, Cinema 4D, Nuke, REAPER, FL Studio y Audacity.',
-      copyEn: 'Photoshop, Illustrator, Premiere Pro, After Effects, DaVinci Resolve, Blender, Cinema 4D, Nuke, REAPER, FL Studio and Audacity.',
-      tools: ['photoshop', 'illustrator', 'premiere', 'after-effects', 'davinci-resolve', 'blender', 'cinema4d', 'nuke', 'reaper', 'fl-studio', 'audacity']
+      copy: 'Photoshop, Illustrator, Premiere Pro, After Effects, DaVinci Resolve, Blender, Cinema 4D y Nuke.',
+      copyEn: 'Photoshop, Illustrator, Premiere Pro, After Effects, DaVinci Resolve, Blender, Cinema 4D and Nuke.',
+      tools: ['photoshop', 'illustrator', 'premiere', 'after-effects', 'davinci-resolve', 'blender', 'cinema4d', 'nuke']
     }
   ];
   const caseStacks = {
