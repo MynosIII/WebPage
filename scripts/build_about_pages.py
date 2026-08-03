@@ -9,6 +9,8 @@ import sys
 from pathlib import Path
 from string import Template
 
+from shared_nav import render_global_nav
+
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "about.json"
 TEMPLATE = ROOT / "templates" / "about.html"
@@ -36,6 +38,7 @@ def render(data: dict[str, object], default: bool = False) -> str:
     tools = "".join(f"<li>{esc(item)}</li>" for item in data["tools"])
     slug = "sobre-mi" if default else f"sobre-mi-{lang}"
     values = {
+        "global_nav": render_global_nav(lang, "sobre-mi-en.html" if es else "sobre-mi-es.html"),
         **{key: esc(value) for key, value in data.items() if not isinstance(value, list)},
         "canonical": f"https://matiasgaglio.onrender.com/{slug}.html",
         "skip_label": "Saltar al contenido principal" if es else "Skip to main content",

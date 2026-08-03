@@ -21,21 +21,11 @@
   <link rel="manifest" href="site.webmanifest" />
   <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="global-nav.css" />
 </head>
 <body>
+$global_nav
   <a class="skip-link" href="#main-content">$skip_label</a>
-  <header class="site-header" data-site-header>
-    <div class="site-header__inner">
-      <a class="site-logo" href="$home_href" aria-label="Matías Gaglio — $home_label"><span>MG</span><strong>Matías Gaglio</strong></a>
-      <nav class="site-nav" id="primary-navigation" aria-label="$nav_label" data-site-nav><ul>$nav_items</ul></nav>
-      <div class="site-header__actions">
-        <a class="header-contact" href="mailto:matiasignaciogaglio@gmail.com">$contact_label</a>
-        <a class="locale-link" href="$switch_href" hreflang="$switch_lang" aria-label="$switch_aria">$switch_label</a>
-        <button class="menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="$menu_open" data-menu-button data-open-label="$menu_open" data-close-label="$menu_close"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
-  <button class="menu-backdrop" type="button" aria-label="$menu_close" tabindex="-1" data-menu-backdrop></button>
   <main id="main-content">
     <header class="about-story-hero">
       <div class="home-shell">
@@ -73,5 +63,6 @@
   </main>
   <footer class="home-footer"><div class="home-shell"><p>© 2026 Matías Gaglio.</p><a href="$home_href">$home_label</a></div></footer>
   <script src="home.js" defer></script>
+  <script src="global-nav.js" defer></script>
 </body>
 </html>

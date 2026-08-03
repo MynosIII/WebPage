@@ -31,7 +31,7 @@
   <link rel="manifest" href="site.webmanifest" />
   <!-- /Shared discovery metadata -->
 <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="vendor/aos/aos.css" />
   <style>
     .articles-intro { background-color:var(--color-superficie); }
     .articles-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-top:3rem; }
@@ -50,7 +50,7 @@
   <div class="global-nav__badge">
     <a class="global-nav__logo" href="index-en.html">Matías Gaglio.</a>
     <button class="global-nav__toggle" type="button" aria-controls="global-menu" aria-expanded="false" aria-label="Open menu" data-global-nav-toggle><span></span><span></span><span></span></button>
-    <nav class="global-nav__menu" id="global-menu" aria-label="Main navigation" data-global-nav-menu><ul><li><a href="index-en.html">Home</a></li><li><a href="ecommerce-en.html">Ecommerce</a></li><li><a href="Articles-en.html">Articles</a></li><li><a href="creatives-en.html">Creatives</a></li><li><a href="consultora-en.html">Opinion Research</a></li><li><a href="otros-en.html">Other projects</a></li><li><a href="SEO-en.html">ChatMatias</a></li><li><a href="sobre-mi-en.html">About me</a></li><li class="global-nav__locale"><a href="Articles-es.html" hreflang="es" aria-label="Ver en español">ES</a></li></ul></nav>
+    <nav class="global-nav__menu" id="global-menu" aria-label="Main navigation" data-global-nav-menu><ul><li><a href="index-en.html">Home</a></li><li><a href="ecommerce-en.html">Ecommerce</a></li><li><a href="Articles-en.html">Articles</a></li><li><a href="creatives-en.html">Creatives</a></li><li><a href="consultora-en.html">Opinion Consultancy</a></li><li><a href="otros-en.html">Other projects</a></li><li><a href="sobre-mi-en.html">About</a></li><li class="global-nav__locale"><a href="Articles-es.html" hreflang="es" aria-label="Ver en español">ES</a></li></ul></nav>
   </div>
 </header>
 
@@ -93,7 +93,7 @@
             </div>
           </a>
           <a class="article-card" href="Cases/search-query-keyword-harvesting-en.html" data-aos="fade-up" data-aos-delay="180">
-            <img src="Cases/search-query-keyword-harvesting.svg" alt="Search Query Performance and keyword harvesting framework preview" loading="lazy">
+            <img src="Cases/search-query-keyword-harvesting.svg" width="1200" height="675" alt="Search Query Performance and keyword harvesting framework preview" loading="lazy">
             <div class="article-card-body">
               <span class="article-meta">Amazon PPC / Query Intelligence</span>
               <h3>Search Query Performance &amp; Keyword Harvesting</h3>
@@ -101,7 +101,7 @@
             </div>
           </a>
           <a class="article-card" href="Cases/amazon-listing-audit-checklist-en.html" data-aos="fade-up" data-aos-delay="260">
-            <img src="Cases/amazon-listing-audit-checklist.svg" alt="Amazon Listing Audit Checklist preview" loading="lazy">
+            <img src="Cases/amazon-listing-audit-checklist.svg" width="1200" height="675" alt="Amazon Listing Audit Checklist preview" loading="lazy">
             <div class="article-card-body">
               <span class="article-meta">Amazon SEO / Conversion / Operations</span>
               <h3>Amazon Listing Audit Checklist</h3>
@@ -109,7 +109,7 @@
             </div>
           </a>
           <a class="article-card" href="Cases/market-share-loss-diagnosis-en.html" data-aos="fade-up" data-aos-delay="340">
-            <img src="Cases/market-share-loss-diagnosis.svg" alt="Market Share Loss Diagnosis Framework preview" loading="lazy">
+            <img src="Cases/market-share-loss-diagnosis.svg" width="1200" height="675" alt="Market Share Loss Diagnosis Framework preview" loading="lazy">
             <div class="article-card-body">
               <span class="article-meta">Amazon BI / Commercial Diagnosis</span>
               <h3>Market Share Loss Diagnosis Framework</h3>
@@ -117,7 +117,7 @@
             </div>
           </a>
           <a class="article-card" href="Cases/voice-of-customer-conversion-brief-en.html" data-aos="fade-up" data-aos-delay="340">
-            <img src="Cases/voice-of-customer-conversion-brief.svg" alt="Voice of Customer research themes translated into an ecommerce conversion brief" loading="lazy">
+            <img src="Cases/voice-of-customer-conversion-brief.svg" width="1200" height="675" alt="Voice of Customer research themes translated into an ecommerce conversion brief" loading="lazy">
             <div class="article-card-body">
               <span class="article-meta">Voice of Customer / CRO / Creative Strategy</span>
               <h3>From Review Noise to a Conversion Brief</h3>
@@ -130,7 +130,7 @@
   </main>
 
   <footer><div class="container"><p>&copy; 2026 Matias Gaglio. Portfolio personal.</p></div></footer>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="vendor/aos/aos.js"></script>
   <script>
     window.AOS?.init({ duration:800, once:true, offset:50 });
     const navToggle = document.querySelector('.nav-toggle');

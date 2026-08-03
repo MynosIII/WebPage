@@ -8,6 +8,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -52,7 +53,7 @@ def card(case_id: str, lang: str, delay: int, default: bool = False) -> str:
     reverse = " reverse" if case_id in {"case_2", "daizzy"} else ""
     metrics = "".join(f'<li><span class="accent">{esc(metric)}</span></li>' for metric in claim["approved_public_claims"][lang])
     image_html = "".join(
-        f'<img src="{esc(src)}" alt="{esc(title)}" loading="lazy" width="{SIZES[src][0]}" height="{SIZES[src][1]}" decoding="async">'
+        f'<img src="{esc(quote(src, safe="/"))}" alt="{esc(title)}" loading="lazy" width="{SIZES[src][0]}" height="{SIZES[src][1]}" decoding="async">'
         for src in images
     )
     href = f"{slug}.html" if default else f"{slug}-{lang}.html"

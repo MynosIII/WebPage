@@ -1,4 +1,12 @@
 (() => {
+  if (!window.AOS) {
+    document.querySelectorAll('[data-aos]').forEach((element) => {
+      element.removeAttribute('data-aos');
+      element.removeAttribute('data-aos-delay');
+      element.removeAttribute('data-aos-duration');
+    });
+  }
+
   const root = document.documentElement;
   const spanish = (root.lang || 'es').toLowerCase().startsWith('es');
   const text = {

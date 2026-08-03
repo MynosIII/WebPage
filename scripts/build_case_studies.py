@@ -8,6 +8,9 @@ import json
 import sys
 from pathlib import Path
 from string import Template
+from urllib.parse import quote
+
+from shared_nav import render_global_nav
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -48,7 +51,7 @@ def render_visuals(case: dict[str, object], lang: str) -> str:
     for src, width, height, _shared_alt, caption_es, caption_en in case.get("visuals", []):
         caption = caption_es if lang == "es" else caption_en
         figures.append(
-            f'<figure><img src="{esc(src)}" width="{width}" height="{height}" alt="{esc(caption)}" loading="lazy" decoding="async" />'
+            f'<figure><img src="{esc(quote(src, safe="/"))}" width="{width}" height="{height}" alt="{esc(caption)}" loading="lazy" decoding="async" />'
             f'<figcaption>{esc(caption)}</figcaption></figure>'
         )
     if not figures:
@@ -110,6 +113,7 @@ def render_case(case_id: str, case: dict[str, object], claims: dict[str, object]
     )
     facts = "".join(f'<div><dt>{esc(label)}</dt><dd>{esc(value)}</dd></div>' for label, value in facts_labels)
     values = {
+        "global_nav": render_global_nav(lang, f"{slug}-en.html" if spanish else f"{slug}-es.html"),
         **labels,
         "lang": lang,
         "locale": "es_AR" if spanish else "en_US",

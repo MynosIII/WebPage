@@ -41,14 +41,15 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
-      - run: npm install --no-audit --no-fund
-      - run: npx playwright install --with-deps chromium
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
       - name: Validate generated homepage HTML
-        run: npm run validate:html
+        run: pnpm run validate:html
       - name: Responsive and accessibility regression tests
-        run: npm test
+        run: pnpm test
       - name: Lighthouse budgets
-        run: npm run lighthouse
+        run: pnpm run lighthouse
       - name: Upload responsive screenshots and reports
         if: always()
         uses: actions/upload-artifact@v7

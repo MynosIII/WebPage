@@ -9,6 +9,8 @@ import sys
 from pathlib import Path
 from string import Template
 
+from shared_nav import render_global_nav
+
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "homepage.json"
@@ -181,11 +183,33 @@ def structured_data(locale: dict[str, object]) -> str:
     return json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
 
+def neural_panels(lang: str) -> str:
+    if lang == "es":
+        panels = [
+            ("data", "01 · DATOS", "Casos donde la señal cambia la decisión.", "Dashboards, rentabilidad y diagnóstico comercial convertidos en prioridades concretas.", "Casos de datos", [("caso-2-es.html", "Business Intelligence de portafolio"), ("BI-case-2-es.html", "Análisis de rendimiento"), ("consultora-es.html", "Investigación y dashboards")]),
+            ("strategy", "02 · ESTRATEGIA", "Casos donde el criterio ordena la acción.", "Arquitecturas de campañas, catálogo y sistemas operativos para decidir qué escalar o corregir.", "Casos de estrategia", [("caso-1-es.html", "Reestructuración de Amazon PPC"), ("caso-hogar-cocina-ppc-es.html", "Estrategia PPC para Hogar y Cocina"), ("amazon-lifecycle-operating-system-es.html", "Amazon Lifecycle Operating System")]),
+            ("creative", "03 · CONTENIDO", "Casos donde la complejidad se vuelve claridad.", "Datos técnicos y Voice of Customer transformados en sistemas visuales que ayudan a elegir.", "Casos de contenido", [("caso-3-es.html", "Galería de producto basada en datos"), ("Revolution_creative_case-es.html", "Sistema creativo Revolution"), ("shulex-voc-creative-case-es.html", "Voice of Customer a creative brief")]),
+        ]
+    else:
+        panels = [
+            ("data", "01 · DATA", "Cases where the signal changes the decision.", "Dashboards, profitability and commercial diagnosis converted into concrete priorities.", "Data cases", [("caso-2-en.html", "Portfolio Business Intelligence"), ("BI-case-2-en.html", "Performance analysis"), ("consultora-en.html", "Research and dashboards")]),
+            ("strategy", "02 · STRATEGY", "Cases where judgment organizes action.", "Campaign, catalog and operating architectures for deciding what to scale or correct.", "Strategy cases", [("caso-1-en.html", "Amazon PPC restructuring"), ("caso-hogar-cocina-ppc-en.html", "Home & Kitchen PPC strategy"), ("amazon-lifecycle-operating-system-en.html", "Amazon Lifecycle Operating System")]),
+            ("creative", "03 · CREATIVE", "Cases where complexity becomes clarity.", "Technical data and Voice of Customer transformed into visual systems that help people choose.", "Creative cases", [("caso-3-en.html", "Data-led product gallery"), ("Revolution_creative_case-en.html", "Revolution creative system"), ("shulex-voc-creative-case-en.html", "Voice of Customer to creative brief")]),
+        ]
+    sections = []
+    for key, kicker, title, copy, label, links in panels:
+        anchors = "".join(f'<a href="{href}">{esc(text)} ↗</a>' for href, text in links)
+        sections.append(f'<section class="neural-panel" data-neural-panel="{key}" hidden><div><span>{esc(kicker)}</span><h3>{esc(title)}</h3><p>{esc(copy)}</p></div><nav aria-label="{esc(label)}">{anchors}</nav></section>')
+    return '<div class="neural-panels" aria-live="polite">' + "".join(sections) + "</div>"
+
+
 def render(locale: dict[str, object], claims: dict[str, object]) -> str:
     spanish = locale["lang"] == "es"
     values = {key: esc(value) for key, value in locale.items() if not isinstance(value, (list, dict))}
     values.update(
         {
+            "global_nav": render_global_nav(str(locale["lang"]), str(locale["switch_href"])),
+            "neural_panels": neural_panels(str(locale["lang"])),
             "structured_data": structured_data(locale),
             "skip_label": "Saltar al contenido principal" if spanish else "Skip to main content",
             "back_to_top": "Volver arriba" if spanish else "Back to top",

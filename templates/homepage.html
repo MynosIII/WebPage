@@ -29,36 +29,13 @@
   <link rel="manifest" href="site.webmanifest" />
   <link rel="preload" href="home.css" as="style" />
   <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="global-nav.css" />
   <script type="application/ld+json">$structured_data</script>
 </head>
 <body>
+$global_nav
   <a class="skip-link" href="#main-content">$skip_label</a>
-  <header class="site-header" data-site-header>
-    <div class="site-header__inner">
-      <a class="site-logo" href="$home_href" aria-label="Matías Gaglio — Home">
-        <span>MG</span><strong>Matías Gaglio</strong>
-      </a>
-      <nav class="site-nav" id="primary-navigation" aria-label="$nav_label" data-site-nav>
-        <ul>$nav_items</ul>
-      </nav>
-      <div class="site-header__actions">
-        <a class="header-contact" href="$secondary_href">$header_contact</a>
-        <a class="locale-link" href="$switch_href" hreflang="$switch_hreflang" aria-label="$switch_aria">$switch_label</a>
-        <button class="menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="$menu_open" data-menu-button data-open-label="$menu_open" data-close-label="$menu_close">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-  <button class="menu-backdrop" type="button" aria-label="$menu_close" tabindex="-1" data-menu-backdrop></button>
 
-  <nav class="portfolio-rail" aria-label="$portfolio_rail_label" data-portfolio-rail>
-    <div class="portfolio-rail__inner">
-      <a class="portfolio-rail__home" href="#$library_id"><span aria-hidden="true">00</span>$portfolio_rail_home</a>
-      <div class="portfolio-rail__links">$portfolio_rail_items</div>
-      <button class="portfolio-rail__search" type="button" data-search-trigger aria-label="$library_search_label" aria-controls="site-search-panel" aria-expanded="false"><span aria-hidden="true">⌕</span>$search_label</button>
-    </div>
-  </nav>
 
   <main id="main-content">
     <section class="home-hero" id="$home_id" aria-labelledby="home-title">
@@ -82,6 +59,7 @@
       <div class="home-shell">
         <div class="home-hero__system" data-neural-system role="group" aria-label="$neural_label">
           <p class="system-caption"><span>$neural_kicker</span><strong id="neural-band-title">$neural_title</strong><small>$neural_copy</small></p>
+          <svg class="brain-map" viewBox="0 0 820 455" aria-hidden="true"><path class="brain-outline" d="M410 60c-50-42-124-24-142 32-57-8-99 38-87 89-45 29-48 94-7 128 2 59 63 92 112 66 32 34 89 24 124-14 35 38 92 48 124 14 49 26 110-7 112-66 41-34 38-99-7-128 12-51-30-97-87-89-18-56-92-74-142-32Z"/><path class="brain-stem" d="M390 350c5 34 3 55-5 76-5 16 5 25 22 25h22c16 0 24-12 17-27-10-23-14-46-11-74Z"/><g class="brain-links"><path d="M267 93 181 181 174 309 286 375 410 360 534 375 646 309 639 181 553 93 410 61 267 93 332 219 174 309M332 219 410 61 488 219 553 93M332 219 410 360 488 219 646 309M181 181 332 219M488 219 639 181M332 219 410 220 488 219M410 61 410 220 410 360"/></g><g class="brain-nodes"><circle cx="267" cy="93" r="9"/><circle cx="181" cy="181" r="9"/><circle cx="174" cy="309" r="9"/><circle cx="286" cy="375" r="9"/><circle cx="332" cy="219" r="10"/><circle cx="410" cy="61" r="10"/><circle cx="410" cy="220" r="12"/><circle cx="410" cy="360" r="10"/><circle cx="553" cy="93" r="9"/><circle cx="639" cy="181" r="9"/><circle cx="646" cy="309" r="9"/><circle cx="534" cy="375" r="9"/><circle cx="488" cy="219" r="10"/></g></svg>
           <button class="signal signal--data" type="button" data-neural-node="data" data-output="$signal_data_output" aria-pressed="false"><span>01</span><strong>$signal_data</strong><small>$signal_data_copy</small></button>
           <i class="system-line system-line--one" aria-hidden="true"></i>
           <button class="signal signal--strategy" type="button" data-neural-node="strategy" data-output="$signal_strategy_output" aria-pressed="false"><span>02</span><strong>$signal_strategy</strong><small>$signal_strategy_copy</small></button>
@@ -90,6 +68,7 @@
           <i class="system-line system-line--three" aria-hidden="true"></i>
           <div class="system-core" aria-live="polite"><small>$signal_translate</small><span data-neural-output>$signal_default_output</span><i aria-hidden="true"></i></div>
           <span class="neural-spark neural-spark--one" aria-hidden="true"></span><span class="neural-spark neural-spark--two" aria-hidden="true"></span><span class="neural-spark neural-spark--three" aria-hidden="true"></span>
+          $neural_panels
         </div>
       </div>
     </section>
@@ -157,5 +136,6 @@
     <div class="home-shell"><p>$footer</p><a href="#main-content">$back_to_top <span aria-hidden="true">↑</span></a></div>
   </footer>
   <script src="home.js" defer></script>
+  <script src="global-nav.js" defer></script>
 </body>
 </html>

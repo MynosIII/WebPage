@@ -93,6 +93,11 @@ def metadata_block(path: Path, source: str) -> str:
     depth_prefix = "../" * len(path.relative_to(ROOT).parents[:-1])
     locale = "es_AR" if language.startswith("es") else "en_US"
     alternate_locale = "en_US" if locale == "es_AR" else "es_AR"
+    image_alt = (
+        "Matías Gaglio — portafolio de ecommerce, analítica y estrategia creativa"
+        if language.startswith("es")
+        else "Matías Gaglio — ecommerce, analytics and creative strategy portfolio"
+    )
 
     lines = [
         "  <!-- Shared discovery metadata: maintained by scripts/normalize_site.py -->",
@@ -118,7 +123,7 @@ def metadata_block(path: Path, source: str) -> str:
             f'  <meta property="og:image" content="{OG_IMAGE}" />',
             f'  <meta property="og:image:width" content="1200" />',
             f'  <meta property="og:image:height" content="630" />',
-            f'  <meta property="og:image:alt" content="Matías Gaglio — ecommerce, analytics and creative strategy portfolio" />',
+            f'  <meta property="og:image:alt" content="{image_alt}" />',
             '  <meta name="twitter:card" content="summary_large_image" />',
             f'  <meta name="twitter:title" content="{html.escape(title, quote=True)}" />',
             f'  <meta name="twitter:description" content="{html.escape(description, quote=True)}" />',
@@ -139,35 +144,57 @@ def normalize(path: Path) -> bool:
     if "<head" not in source.lower() or "<body" not in source.lower():
         return False
 
-    updated = re.sub(
-        r"\s*<!-- Shared discovery metadata:.*?<!-- /Shared discovery metadata -->\s*",
-        "\n",
-        source,
-        flags=re.S,
-    )
-    updated = re.sub(r"\s*<link\s+[^>]*rel=[\"']canonical[\"'][^>]*>\s*", "\n", updated, flags=re.I)
-    updated = re.sub(r"\s*<link\s+[^>]*rel=[\"']alternate[\"'][^>]*>\s*", "\n", updated, flags=re.I)
+    managed_metadata = "<!-- Shared discovery metadata:" in source or not re.search(r'<meta\s+[^>]*property=["\']og:', source, re.I)
+    updated = source
+    if managed_metadata:
+        updated = re.sub(
+            r"\s*<!-- Shared discovery metadata:.*?<!-- /Shared discovery metadata -->\s*",
+            "\n",
+            updated,
+            flags=re.S,
+        )
+        updated = re.sub(r"\s*<link\s+[^>]*rel=[\"']canonical[\"'][^>]*>\s*", "\n", updated, flags=re.I)
+        updated = re.sub(r"\s*<link\s+[^>]*rel=[\"']alternate[\"'][^>]*>\s*", "\n", updated, flags=re.I)
     updated = re.sub(
         r"\s*<style>\s*\.language-switch\{.*?\.language-switch:focus-visible\{[^}]*}\s*</style>",
         "",
         updated,
         flags=re.S,
     )
-    updated = updated.replace("unpkg.com/aos@next/", "unpkg.com/aos@2.3.4/")
+    depth_prefix = "../" * len(path.relative_to(ROOT).parents[:-1])
+    updated = re.sub(
+        r"https://unpkg\.com/aos@(?:next|2\.3\.4)/dist/aos\.css|(?:\.\./)*vendor/aos/aos\.css",
+        f"{depth_prefix}vendor/aos/aos.css",
+        updated,
+    )
+    updated = re.sub(
+        r"https://unpkg\.com/aos@(?:next|2\.3\.4)/dist/aos\.js|(?:\.\./)*vendor/aos/aos\.js",
+        f"{depth_prefix}vendor/aos/aos.js",
+        updated,
+    )
     updated = re.sub(r"(?<![\w?.])AOS\.init\(", "window.AOS?.init(", updated)
     updated = encode_attribute_url_spaces(updated)
+    updated = re.sub(
+        r'<li><a href="(?:\.\./)*SEO(?:-en|-es)?\.html">Chat\s*Mat(?:í|i)as</a></li>',
+        "",
+        updated,
+        flags=re.I,
+    )
+    updated = re.sub(r'(href="(?:\.\./)*consultora-en\.html">)[^<]+', r'\1Opinion Consultancy', updated)
+    updated = re.sub(r'(href="(?:\.\./)*sobre-mi-en\.html">)(?:About me|About)', r'\1About', updated)
     updated = updated.replace("&copy; 2025", "&copy; 2026").replace("© 2025", "© 2026")
 
-    block = metadata_block(path, updated)
-    description = re.search(r"<meta\s+[^>]*name=[\"']description[\"'][^>]*>", updated, re.I)
-    if description:
-        insert_at = description.end()
-    else:
-        title = re.search(r"</title>", updated, re.I)
-        if not title:
-            raise ValueError(f"No title insertion point in {path}")
-        insert_at = title.end()
-    updated = updated[:insert_at] + "\n" + block + updated[insert_at:]
+    if managed_metadata:
+        block = metadata_block(path, updated)
+        description = re.search(r"<meta\s+[^>]*name=[\"']description[\"'][^>]*>", updated, re.I)
+        if description:
+            insert_at = description.end()
+        else:
+            title = re.search(r"</title>", updated, re.I)
+            if not title:
+                raise ValueError(f"No title insertion point in {path}")
+            insert_at = title.end()
+        updated = updated[:insert_at] + "\n" + block + updated[insert_at:]
 
     if updated != source:
         with path.open("w", encoding="utf-8", newline="") as handle:
@@ -179,7 +206,7 @@ def normalize(path: Path) -> bool:
 def main() -> None:
     changed = []
     for path in sorted(ROOT.rglob("*.html")):
-        if ".git" in path.parts or path.name in EXCLUDED:
+        if ".git" in path.parts or "node_modules" in path.parts or "templates" in path.parts or path.name in EXCLUDED:
             continue
         if normalize(path):
             changed.append(path.relative_to(ROOT).as_posix())
