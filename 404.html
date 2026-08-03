@@ -39,8 +39,16 @@
     .not-found p { max-width:560px; margin:0 auto 2rem; color:var(--color-texto-sec); }
     .not-found__actions { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; }
   </style>
+  <link rel="stylesheet" href="global-nav.css">
 </head>
 <body>
+<header class="global-nav" data-global-nav>
+  <div class="global-nav__badge">
+    <a class="global-nav__logo" href="index-es.html">Matías Gaglio.</a>
+    <button class="global-nav__toggle" type="button" aria-controls="global-menu" aria-expanded="false" aria-label="Abrir menú" data-global-nav-toggle><span></span><span></span><span></span></button>
+    <nav class="global-nav__menu" id="global-menu" aria-label="Navegación principal" data-global-nav-menu><ul><li><a href="index-es.html">Inicio</a></li><li><a href="ecommerce-es.html">Ecommerce</a></li><li><a href="Articles-es.html">Artículos</a></li><li><a href="creatives-es.html">Creatives</a></li><li><a href="consultora-es.html">Consultora de Opinión</a></li><li><a href="otros-es.html">Otros proyectos</a></li><li><a href="SEO-es.html">ChatMatias</a></li><li><a href="sobre-mi-es.html">Sobre mí</a></li><li class="global-nav__locale"><a href="index-en.html" hreflang="en" aria-label="View in English">EN</a></li></ul></nav>
+  </div>
+</header>
   <main class="not-found" id="main-content">
     <section class="not-found__card" aria-labelledby="not-found-title">
       <div class="not-found__code" aria-hidden="true">404</div>
@@ -52,5 +60,6 @@
       </div>
     </section>
   </main>
+  <script src="global-nav.js" defer></script>
 </body>
 </html>

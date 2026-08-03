@@ -31,26 +31,18 @@
   <link rel="manifest" href="site.webmanifest" />
   <!-- /Shared discovery metadata -->
 <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="global-nav.css">
 </head>
-<body class="commerce-video-case-page"><a class="language-switch" href="ecommerce-video-case-en.html" hreflang="en" aria-label="View in English">EN</a>
-  <header class="navbar">
-    <div class="container">
-      <a href="index-es.html" class="nav-logo">Matías Gaglio.</a>
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-      </button>
-      <nav class="nav-menu" aria-label="Navegación principal"><ul>
-          <li><a href="index-es.html">Inicio</a></li>
-          <li><a href="ecommerce-es.html">Ecommerce</a></li>
-          <li><a href="Articles-es.html">Artículos</a></li>
-          <li><a href="creatives-es.html">Creatives</a></li>
-          <li><a href="consultora-es.html">Consultora de Opinión</a></li>
-          <li><a href="otros-es.html">Otros proyectos</a></li>
-          <li><a href="SEO-es.html">ChatMatias</a></li>
-          <li><a href="sobre-mi-es.html">Sobre mí</a></li>
-      </ul></nav>
-    </div>
-  </header>
+<body class="commerce-video-case-page">
+<header class="global-nav" data-global-nav>
+  <div class="global-nav__badge">
+    <a class="global-nav__logo" href="index-es.html">Matías Gaglio.</a>
+    <button class="global-nav__toggle" type="button" aria-controls="global-menu" aria-expanded="false" aria-label="Abrir menú" data-global-nav-toggle><span></span><span></span><span></span></button>
+    <nav class="global-nav__menu" id="global-menu" aria-label="Navegación principal" data-global-nav-menu><ul><li><a href="index-es.html">Inicio</a></li><li><a href="ecommerce-es.html">Ecommerce</a></li><li><a href="Articles-es.html">Artículos</a></li><li><a href="creatives-es.html">Creatives</a></li><li><a href="consultora-es.html">Consultora de Opinión</a></li><li><a href="otros-es.html">Otros proyectos</a></li><li><a href="SEO-es.html">ChatMatias</a></li><li><a href="sobre-mi-es.html">Sobre mí</a></li><li class="global-nav__locale"><a href="ecommerce-video-case-en.html" hreflang="en" aria-label="View in English">EN</a></li></ul></nav>
+  </div>
+</header>
+
+
   <main>
     <section class="commerce-video-hero"><div class="container"><span>Comercio electrónico · After Effects · Conversión</span><h1>Características que los compradores pueden <em>ver.</em></h1><p>Cinco videos de productos terminados en After Effects como activos de conversión en lugar de contenido pasivo. A lo largo de la serie utilicé capas de formas, tipografía rastreada, reasignación de tiempo, enmascaramiento, corrección de color y composición de luces y sombras para convertir demostraciones en bruto en evidencia de compra clara.</p><div class="commerce-video-proof"><b>05</b><span>vídeos centrados en la conversión</span><b>16:9</b><span>formato listo para el mercado</span><b>01</b><span>lenguaje de movimiento compartido</span></div></div></section>
     <section class="commerce-video-strategy"><div class="container"><span class="animation-section-number">La lógica de la conversión</span><h2>Reducir la incertidumbre antes de solicitar la venta.</h2><div class="commerce-strategy-grid"><article><b>01</b><h3>Liderar con el beneficio</h3><p>Cada edición establece un motivo de compra principal desde el principio, por lo que el comprador no necesita decodificar una lista de especificaciones.</p></article><article><b>02</b><h3>Convierte las afirmaciones en evidencia</h3><p>El peso, la portabilidad, la capacidad de ajuste y las múltiples configuraciones quedan demostrados por la interacción entre las personas y el producto.</p></article><article><b>03</b><h3>Diseño para visualización silenciosa</h3><p>La tipografía de beneficios, la secuenciación visual y los primeros planos mantienen la historia comprensible cuando los videos del mercado comienzan a silenciarse.</p></article><article><b>04</b><h3>Apoya la decisión</h3><p>La edición prioriza información que despeja dudas: escala, configuración, manejo, almacenamiento y uso en la vida real.</p></article></div></div></section>
@@ -63,5 +55,6 @@
     </div></div></section>
   </main>
   <script src="accessibility.js" defer></script><script src="software-stack.js" defer></script>
+  <script src="global-nav.js" defer></script>
 </body>
 </html>

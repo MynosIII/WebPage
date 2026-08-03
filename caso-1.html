@@ -22,21 +22,19 @@
   <link rel="manifest" href="site.webmanifest" />
   <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="case-study.css" />
+  <link rel="stylesheet" href="global-nav.css">
 </head>
 <body>
+<header class="global-nav" data-global-nav>
+  <div class="global-nav__badge">
+    <a class="global-nav__logo" href="index-es.html">Matías Gaglio.</a>
+    <button class="global-nav__toggle" type="button" aria-controls="global-menu" aria-expanded="false" aria-label="Abrir menú" data-global-nav-toggle><span></span><span></span><span></span></button>
+    <nav class="global-nav__menu" id="global-menu" aria-label="Navegación principal" data-global-nav-menu><ul><li><a href="index-es.html">Inicio</a></li><li><a href="ecommerce-es.html">Ecommerce</a></li><li><a href="Articles-es.html">Artículos</a></li><li><a href="creatives-es.html">Creatives</a></li><li><a href="consultora-es.html">Consultora de Opinión</a></li><li><a href="otros-es.html">Otros proyectos</a></li><li><a href="SEO-es.html">ChatMatias</a></li><li><a href="sobre-mi-es.html">Sobre mí</a></li><li class="global-nav__locale"><a href="caso-1-en.html" hreflang="en" aria-label="View in English">EN</a></li></ul></nav>
+  </div>
+</header>
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-  <header class="site-header" data-site-header>
-    <div class="site-header__inner">
-      <a class="site-logo" href="index.html" aria-label="Matías Gaglio — Inicio"><span>MG</span><strong>Matías Gaglio</strong></a>
-      <nav class="site-nav" id="primary-navigation" aria-label="Navegación principal" data-site-nav><ul><li><a href="index.html">Inicio</a></li><li><a href="index.html#casos">Casos</a></li><li><a href="sobre-mi-es.html">Sobre mí</a></li><li><a href="output/pdf/Matias-Gaglio-CV-ES.pdf">CV</a></li><li><a href="mailto:matiasignaciogaglio@gmail.com">Contacto</a></li></ul></nav>
-      <div class="site-header__actions">
-        <a class="header-contact" href="mailto:matiasignaciogaglio@gmail.com">Contactarme</a>
-        <a class="locale-link" href="caso-1-en.html" hreflang="en" aria-label="View in English">EN</a>
-        <button class="menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menú" data-menu-button data-open-label="Abrir menú" data-close-label="Cerrar menú"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
-  <button class="menu-backdrop" type="button" aria-label="Cerrar menú" tabindex="-1" data-menu-backdrop></button>
+
+
 
   <main id="main-content">
     <header class="case-hero">
@@ -106,5 +104,6 @@
   </main>
   <footer class="home-footer"><div class="home-shell"><p>© 2026 Matías Gaglio.</p><a href="index.html">Inicio</a></div></footer>
   <script src="home.js" defer></script>
+  <script src="global-nav.js" defer></script>
 </body>
 </html>

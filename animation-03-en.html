@@ -30,28 +30,22 @@
   <link rel="manifest" href="site.webmanifest" />
   <!-- /Shared discovery metadata -->
 <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="global-nav.css">
 </head>
-<body class="animation-case-page"><a class="language-switch" href="animation-03-es.html" hreflang="es" aria-label="Ver en español">ES</a>
-  <header class="navbar">
-    <div class="container">
-      <a href="index-en.html" class="nav-logo">Matías Gaglio.</a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-      </button>
-      <nav class="nav-menu" aria-label="Main navigation"><ul>
-          <li><a href="index-en.html">Home</a></li>
-          <li><a href="ecommerce-en.html">Ecommerce</a></li>
-          <li><a href="Articles-en.html">Articles</a></li>
-          <li><a href="creatives-en.html">Creatives</a></li>
-          <li><a href="consultora-en.html">Opinion Research</a></li>
-          <li><a href="otros-en.html">Other projects</a></li>
-          <li><a href="SEO-en.html">ChatMatias</a></li>
-          <li><a href="sobre-mi-en.html">About me</a></li>
-      </ul></nav>
-    </div>
-  </header>
+<body class="animation-case-page">
+<header class="global-nav" data-global-nav>
+  <div class="global-nav__badge">
+    <a class="global-nav__logo" href="index-en.html">Matías Gaglio.</a>
+    <button class="global-nav__toggle" type="button" aria-controls="global-menu" aria-expanded="false" aria-label="Open menu" data-global-nav-toggle><span></span><span></span><span></span></button>
+    <nav class="global-nav__menu" id="global-menu" aria-label="Main navigation" data-global-nav-menu><ul><li><a href="index-en.html">Home</a></li><li><a href="ecommerce-en.html">Ecommerce</a></li><li><a href="Articles-en.html">Articles</a></li><li><a href="creatives-en.html">Creatives</a></li><li><a href="consultora-en.html">Opinion Research</a></li><li><a href="otros-en.html">Other projects</a></li><li><a href="SEO-en.html">ChatMatias</a></li><li><a href="sobre-mi-en.html">About me</a></li><li class="global-nav__locale"><a href="animation-03-es.html" hreflang="es" aria-label="Ver en español">ES</a></li></ul></nav>
+  </div>
+</header>
+
+
   <main class="animation-case"><section class="animation-case-hero"><div class="container animation-case-grid">
     <div class="animation-case-copy"><span class="animation-case-label">Animation 03 · Kinetic typography · 4s</span><h1>Be You · Kinetic type</h1><p class="animation-case-lead">I approached this as a typography and timing exercise in After Effects. The words are separated into text layers so weight, position and opacity can change independently. Instead of adding decorative effects, I used the rhythm of the edit, a precise baseline and a controlled hold on the final message to create the emotional shift.</p><div class="animation-skill-list"><span>After Effects</span><span>Text animators</span><span>Range selectors</span><span>Graph Editor</span><span>Type hierarchy</span></div></div>
     <div class="animation-case-player"><video controls controlslist="nodownload noremoteplayback" disablepictureinpicture oncontextmenu="return false" autoplay muted playsinline loop aria-label="Be You kinetic typography animation" aria-description="Four-second kinetic typography study transforming the phrase Don't be perfect into Be You through live text layers, range selectors, weight contrast, precise pacing and negative space." data-media-type="kinetic-typography" data-media-creator="Matías Gaglio"><source src="creatives/videos/editing-reel/social-edit-03.mp4" type="video/mp4" /></video><small>Sound available · Loop enabled</small></div>
   </div></section><section class="animation-breakdown"><div class="container"><span class="animation-section-number">03 — After Effects build</span><h2>A complete emotional turn in four seconds.</h2><div class="animation-notes"><article><b>01</b><h3>Type construction</h3><p>I kept the typography live in After Effects and split the sentence into independently controlled text layers. A shared guide layer locked the baseline and optical center, while separate weights let “perfect” carry the initial tension before the visual hierarchy changes.</p></article><article><b>02</b><h3>Text animators</h3><p>Opacity and position animators are driven by range selectors rather than manual letter-by-letter keyframes. That produces a cleaner progressive reveal and makes it easy to adjust the speed of the phrase without rebuilding the animation.</p></article><article><b>03</b><h3>The transition</h3><p>The first statement exits with a short directional move and a rapid opacity taper. “Be You” enters on a contrasting beat with a small scale overshoot; the motion curve accelerates through the change and settles gently so the transformation feels decisive.</p></article><article><b>04</b><h3>Negative space and hold</h3><p>The final words stay isolated in the center with no competing graphic elements. I reserved the longest hold for this frame and kept the background pure black, giving the viewer enough time to read the message before the loop resets.</p></article></div></div></section></main>
-<script src="accessibility.js" defer></script><script src="software-stack.js" defer></script></body></html>
+<script src="accessibility.js" defer></script><script src="software-stack.js" defer></script>
+  <script src="global-nav.js" defer></script>
+</body></html>

@@ -31,32 +31,24 @@
   <link rel="manifest" href="site.webmanifest" />
   <!-- /Shared discovery metadata -->
 <link rel="stylesheet" href="style.css" />
-  
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-</head>
-<body><a class="language-switch" href="ecommerce-es.html" hreflang="es" aria-label="Ver en español">ES</a>
 
-  <header class="navbar">
-    <div class="container">
-      <a href="index-en.html" class="nav-logo">Matías Gaglio.</a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-      </button>
-      <nav class="nav-menu" aria-label="Main navigation"><ul>
-          <li><a href="index-en.html">Home</a></li>
-          <li><a href="ecommerce-en.html">Ecommerce</a></li>
-          <li><a href="Articles-en.html">Articles</a></li>
-          <li><a href="creatives-en.html">Creatives</a></li>
-          <li><a href="consultora-en.html">Opinion Research</a></li>
-          <li><a href="otros-en.html">Other projects</a></li>
-          <li><a href="SEO-en.html">ChatMatias</a></li>
-          <li><a href="sobre-mi-en.html">About me</a></li>
-      </ul></nav>
-    </div>
-  </header>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="global-nav.css">
+</head>
+<body>
+<header class="global-nav" data-global-nav>
+  <div class="global-nav__badge">
+    <a class="global-nav__logo" href="index-en.html">Matías Gaglio.</a>
+    <button class="global-nav__toggle" type="button" aria-controls="global-menu" aria-expanded="false" aria-label="Open menu" data-global-nav-toggle><span></span><span></span><span></span></button>
+    <nav class="global-nav__menu" id="global-menu" aria-label="Main navigation" data-global-nav-menu><ul><li><a href="index-en.html">Home</a></li><li><a href="ecommerce-en.html">Ecommerce</a></li><li><a href="Articles-en.html">Articles</a></li><li><a href="creatives-en.html">Creatives</a></li><li><a href="consultora-en.html">Opinion Research</a></li><li><a href="otros-en.html">Other projects</a></li><li><a href="SEO-en.html">ChatMatias</a></li><li><a href="sobre-mi-en.html">About me</a></li><li class="global-nav__locale"><a href="ecommerce-es.html" hreflang="es" aria-label="Ver en español">ES</a></li></ul></nav>
+  </div>
+</header>
+
+
+
 
   <main>
-    
+
     <section class="page-hero">
       <div class="container">
         <h1 data-aos="fade-up">Ecommerce &amp; Performance</h1>
@@ -69,14 +61,14 @@
     <section id="metodo">
       <div class="container">
         <h2 data-aos="fade-up" style="text-align: left; margin-bottom: 3rem;">My Method: Analysis, Strategy, Impact</h2>
-        
+
         <div class="method-grid">
-          
+
           <article class="method-card" data-aos="fade-up" data-aos-delay="100">
             <h3>1. Analysis &amp; Diagnosis</h3>
             <p>Complete listing audit, competition analysis (BI) and campaign performance (SEO, PPC, GEO). I identify conversion leaks and data-driven positioning opportunities.</p>
           </article>
-          
+
           <article class="method-card" data-aos="fade-up" data-aos-delay="200">
             <h3>2. Strategy &amp; Optimization</h3>
             <p>Development of a Conversion Rate (CRO) strategy. I optimize the content (A+, Infographics), structure Ads campaigns and define profitability models for each product.</p>
@@ -90,7 +82,7 @@
         </div>
       </div>
     </section>
-    
+
     <section id="cases" class="casos-estudio" style="background-color: var(--color-superficie); padding-top: 6rem;">
       <div class="container">
         <h2 data-aos="fade-up">Case Studies</h2>
@@ -147,7 +139,7 @@
             <div class="caso-card-grid"><div class="caso-contenido"><p>A system to define what each surface of the listing should do. The title builds relevance, the bullets organize benefits, the gallery provides evidence, the video explains sequences and A+ deepens the decision.</p><p>The case replaces repetition with a modular narrative: each block answers a different buyer question and provides context to the next.</p><ul class="caso-metricas"><li><span class="accent">5 layers</span> A journey of decision</li><li><span class="accent">6 moments</span> A gallery with function</li><li><span class="accent">1 set</span> Messages without duplication</li></ul></div><div class="caso-visual content-architecture-visual" aria-hidden="true"><div><span>TITLE</span><b>Relevance</b></div><div><span>BULLETS</span><b>value</b></div><div><span>GALLERY</span><b>Evidence</b></div><div><span>VIDEO</span><b>Use</b></div><div><span>A+</span><b>Confidence</b></div></div></div>
           </article>
         </a>
-        
+
         <a href="BI-case-2-en.html" class="caso-card-link" data-aos="fade-up" data-aos-delay="150">
             <article class="caso-card reverse">
                 <span class="caso-categoria">Business Intelligence, Amazon PPC &amp; Growth Economics</span>
@@ -252,9 +244,9 @@
     <section id="testimonios">
       <div class="container">
         <h2 data-aos="fade-up" style="text-align: left; margin-bottom: 3rem;">What my clients say</h2>
-        
+
         <div class="testimonios-grid">
-          
+
           <figure class="testimonio-card" data-aos="fade-up" data-aos-delay="100">
             <blockquote>
               "We didn't understand why sales were falling. Matías analyzed the data, restructured the campaigns and our ROAS went from 4.1 to 6.26 in 30 days. His analytical approach is impeccable."
@@ -264,7 +256,7 @@
               (Performance Ads Client)
             </cite>
           </figure>
-          
+
           <figure class="testimonio-card" data-aos="fade-up" data-aos-delay="200">
             <blockquote>
               "The redesign of our infographics and A+ content had a direct impact on the conversion rate. Matías understands how to use design to communicate value and sell."
@@ -274,22 +266,22 @@
               (CRO and Design Client)
             </cite>
           </figure>
-          
+
         </div>
       </div>
     </section>
-    
+
     <section id="contacto" class="contacto" style="background-color: var(--color-superficie);">
       <div class="container">
         <h2 data-aos="fade-up">Do we work together?</h2>
         <p data-aos="fade-up" data-aos-delay="100">
             I am available for freelance projects and collaborations.
         </p>
-        
+
         <a href="mailto:matiasignaciogaglio@gmail.com" class="cta-button" data-aos="fade-up" data-aos-delay="200">
             Send an Email
         </a>
-        
+
         <a href="https://www.linkedin.com/in/matiasignaciogaglio" class="link-social" data-aos="fade-up" data-aos-delay="300" target="_blank" rel="noopener noreferrer">
             LinkedIn
         </a>
@@ -306,7 +298,7 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      
+
       // 1. Inicializa las animaciones AOS
       window.AOS?.init({
           duration: 800,
@@ -317,7 +309,7 @@
       // 2. CÓDIGO DEL MENÚ HAMBURGUESA
       const navToggle = document.querySelector('.nav-toggle');
       const navMenu = document.querySelector('.nav-menu');
-      
+
       if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
           document.querySelector('.navbar').classList.toggle('nav-open');
@@ -333,7 +325,7 @@
       const nextBtn = document.querySelector('.carousel-next');
 
       if (carousel && prevBtn && nextBtn) {
-        
+
         const scrollStep = () => {
           const firstItem = carousel.querySelector('.carousel-item');
           if (firstItem) {
@@ -353,10 +345,11 @@
           carousel.scrollBy({ left: -scrollStep(), behavior: 'smooth' });
         });
       }
-      
+
     });
   </script>
 
   <script src="accessibility.js" defer></script>
+  <script src="global-nav.js" defer></script>
 </body>
 </html>

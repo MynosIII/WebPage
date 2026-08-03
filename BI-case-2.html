@@ -73,26 +73,17 @@
       .bi-case .page-hero { padding-top:8rem; }
     }
   </style>
+  <link rel="stylesheet" href="global-nav.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="container">
-      <a href="index.html" class="nav-logo">Matias Gaglio.</a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ecommerce.html" class="accent">Ecommerce</a></li>
-          <li><a href="Articles.html">Articles</a></li>
-          <li><a href="creatives.html">Creatives</a></li>
-          <li><a href="consultora.html">Consultora de Opinion</a></li>
-          <li><a href="otros.html">Otros proyectos</a></li>
-          <li><a href="SEO.html">ChatMatias</a></li>
-          <li><a href="sobre-mi.html">Sobre Mi</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header class="global-nav" data-global-nav>
+  <div class="global-nav__badge">
+    <a class="global-nav__logo" href="index-en.html">Matías Gaglio.</a>
+    <button class="global-nav__toggle" type="button" aria-controls="global-menu" aria-expanded="false" aria-label="Open menu" data-global-nav-toggle><span></span><span></span><span></span></button>
+    <nav class="global-nav__menu" id="global-menu" aria-label="Main navigation" data-global-nav-menu><ul><li><a href="index-en.html">Home</a></li><li><a href="ecommerce-en.html">Ecommerce</a></li><li><a href="Articles-en.html">Articles</a></li><li><a href="creatives-en.html">Creatives</a></li><li><a href="consultora-en.html">Opinion Research</a></li><li><a href="otros-en.html">Other projects</a></li><li><a href="SEO-en.html">ChatMatias</a></li><li><a href="sobre-mi-en.html">About me</a></li><li class="global-nav__locale"><a href="BI-case-2-es.html" hreflang="es" aria-label="Ver en español">ES</a></li></ul></nav>
+  </div>
+</header>
+
 
   <main class="bi-case">
     <section class="page-hero">
@@ -383,5 +374,6 @@
   </script>
   <script src="software-stack.js" defer></script>
   <script src="accessibility.js" defer></script>
+  <script src="global-nav.js" defer></script>
 </body>
 </html>

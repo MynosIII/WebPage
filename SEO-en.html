@@ -30,34 +30,26 @@
   <link rel="manifest" href="site.webmanifest" />
   <!-- /Shared discovery metadata -->
 <link rel="stylesheet" href="style.css" />
-    
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-</head>
-<body><a class="language-switch" href="SEO-es.html" hreflang="es" aria-label="Ver en español">ES</a>
 
-    <header class="navbar">
-    <div class="container">
-      <a href="index-en.html" class="nav-logo">Matías Gaglio.</a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-      </button>
-      <nav class="nav-menu" aria-label="Main navigation"><ul>
-          <li><a href="index-en.html">Home</a></li>
-          <li><a href="ecommerce-en.html">Ecommerce</a></li>
-          <li><a href="Articles-en.html">Articles</a></li>
-          <li><a href="creatives-en.html">Creatives</a></li>
-          <li><a href="consultora-en.html">Opinion Research</a></li>
-          <li><a href="otros-en.html">Other projects</a></li>
-          <li><a href="SEO-en.html">ChatMatias</a></li>
-          <li><a href="sobre-mi-en.html">About me</a></li>
-      </ul></nav>
-    </div>
-  </header>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="global-nav.css">
+</head>
+<body>
+<header class="global-nav" data-global-nav>
+  <div class="global-nav__badge">
+    <a class="global-nav__logo" href="index-en.html">Matías Gaglio.</a>
+    <button class="global-nav__toggle" type="button" aria-controls="global-menu" aria-expanded="false" aria-label="Open menu" data-global-nav-toggle><span></span><span></span><span></span></button>
+    <nav class="global-nav__menu" id="global-menu" aria-label="Main navigation" data-global-nav-menu><ul><li><a href="index-en.html">Home</a></li><li><a href="ecommerce-en.html">Ecommerce</a></li><li><a href="Articles-en.html">Articles</a></li><li><a href="creatives-en.html">Creatives</a></li><li><a href="consultora-en.html">Opinion Research</a></li><li><a href="otros-en.html">Other projects</a></li><li><a href="SEO-en.html">ChatMatias</a></li><li><a href="sobre-mi-en.html">About me</a></li><li class="global-nav__locale"><a href="SEO-es.html" hreflang="es" aria-label="Ver en español">ES</a></li></ul></nav>
+  </div>
+</header>
+
+
+
 
     <main id="chat-page-wrapper">
 
         <div id="chat-container">
-            
+
             <div id="chat-historial">
                 <div id="empty-state">
                     <h1>ChatMatias</h1>
@@ -69,7 +61,7 @@
                     </div>
                     </div>
             </div>
-            
+
             <form id="chat-form">
                 <input type="text" id="chat-input" placeholder="Write your query here..." autocomplete="off">
                 <button type="submit" aria-label="Send">
@@ -79,13 +71,13 @@
                     </svg>
                 </button>
             </form>
-            
+
             <div id="chat-footer-hint">
                  <p>
                    Writes "<span class="accent">aid</span>" to see all commands.
                  </p>
             </div>
-            
+
         </div>
 
     </main>
@@ -93,7 +85,7 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        
+
         // 1. Inicializa las animaciones AOS
         window.AOS?.init({
             duration: 800,
@@ -197,7 +189,7 @@
             });
           });
         }
-        
+
         // ===================================
         // 6. LÓGICA DEL CHAT (de esta página)
         // ===================================
@@ -208,7 +200,7 @@
         const suggestionChips = document.querySelectorAll('.suggestion-chip');
 
         if (chatForm && chatInput && chatHistorial) {
-          
+
             // --- DATOS DEL "ÍNDICE" ---
             const miIndiceSEO = {
                 proyectos: [
@@ -236,7 +228,7 @@
                     resumen: "Especialista en Marketing Digital y Ecommerce con foco en performance, análisis de datos y optimización algorítmica."
                 }
             };
-            
+
             // --- Función para enviar consulta (usada por form y chips) ---
             function enviarConsulta(comando) {
                 if (!comando) return;
@@ -312,13 +304,13 @@
                 const stopWords = ['y', 'e', 'de', 'para', 'con', 'el', 'la', 'los', 'las'];
                 const terminosBusqueda = terminoLimpio.split(' ').filter(t => t.length > 0 && !stopWords.includes(t));
                 let resultados = [];
-                
+
                 miIndiceSEO.proyectos.forEach(p => {
                     let contenido = [p.titulo, p.descripcion, ...p.tags].join(' ').toLowerCase();
                     const allTermsMatch = terminosBusqueda.every(t => contenido.includes(t));
                     if (allTermsMatch) resultados.push({ tipo: 'Proyecto', id: p.id });
                 });
-                
+
                 Object.entries(miIndiceSEO.habilidades).forEach(([key, h]) => {
                     let contenido = [h.nombre, h.descripcion, ...h.tags].join(' ').toLowerCase();
                     const allTermsMatch = terminosBusqueda.every(t => contenido.includes(t));
@@ -333,7 +325,7 @@
                     const primerResultado = resultados[0];
                     const totalResultados = resultados.length;
                     html = `¡Perfecto! Encontré <span class="accent">${totalResultados}</span> ${totalResultados === 1 ? 'resultado' : 'resultados'} que coinciden con "<span class="accent">${termino}</span>". El más relevante es:<br><br>`;
-                    
+
                     if (primerResultado.tipo === 'Proyecto') {
                         const proyecto = miIndiceSEO.proyectos.find(p => p.id === primerResultado.id);
                         html += formatProyecto(proyecto);
@@ -421,5 +413,6 @@
     </script>
 
   <script src="accessibility.js" defer></script>
+  <script src="global-nav.js" defer></script>
 </body>
 </html>

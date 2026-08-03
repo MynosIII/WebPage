@@ -26,25 +26,17 @@
   <link rel="manifest" href="site.webmanifest" />
   <!-- /Shared discovery metadata -->
 <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="global-nav.css">
 </head>
-<body class="lifecycle-case-page"><a class="language-switch" href="amazon-lifecycle-operating-system-en.html" hreflang="en" aria-label="View in English">EN</a><header class="navbar">
-    <div class="container">
-      <a href="index-es.html" class="nav-logo">Matías Gaglio.</a>
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-      </button>
-      <nav class="nav-menu" aria-label="Navegación principal"><ul>
-          <li><a href="index-es.html">Inicio</a></li>
-          <li><a href="ecommerce-es.html">Ecommerce</a></li>
-          <li><a href="Articles-es.html">Artículos</a></li>
-          <li><a href="creatives-es.html">Creatives</a></li>
-          <li><a href="consultora-es.html">Consultora de Opinión</a></li>
-          <li><a href="otros-es.html">Otros proyectos</a></li>
-          <li><a href="SEO-es.html">ChatMatias</a></li>
-          <li><a href="sobre-mi-es.html">Sobre mí</a></li>
-      </ul></nav>
-    </div>
-  </header><main>
+<body class="lifecycle-case-page">
+<header class="global-nav" data-global-nav>
+  <div class="global-nav__badge">
+    <a class="global-nav__logo" href="index-es.html">Matías Gaglio.</a>
+    <button class="global-nav__toggle" type="button" aria-controls="global-menu" aria-expanded="false" aria-label="Abrir menú" data-global-nav-toggle><span></span><span></span><span></span></button>
+    <nav class="global-nav__menu" id="global-menu" aria-label="Navegación principal" data-global-nav-menu><ul><li><a href="index-es.html">Inicio</a></li><li><a href="ecommerce-es.html">Ecommerce</a></li><li><a href="Articles-es.html">Artículos</a></li><li><a href="creatives-es.html">Creatives</a></li><li><a href="consultora-es.html">Consultora de Opinión</a></li><li><a href="otros-es.html">Otros proyectos</a></li><li><a href="SEO-es.html">ChatMatias</a></li><li><a href="sobre-mi-es.html">Sobre mí</a></li><li class="global-nav__locale"><a href="amazon-lifecycle-operating-system-en.html" hreflang="en" aria-label="View in English">EN</a></li></ul></nav>
+  </div>
+</header>
+<main>
   <section class="lifecycle-hero"><div class="container"><span>Amazon Operations · Product Lifecycle · Growth System</span><h1>Un listing no se lanza.<br><em>Se opera.</em></h1><p>Un sistema de trabajo que conecta preparación comercial, contenido, SEO, pricing, PPC, conversión, margen e inventario. El objetivo es que cada producto avance con criterios distintos según su etapa, y que cada cambio deje evidencia para la siguiente decisión.</p><div class="lifecycle-stage-line" aria-label="Etapas del ciclo de vida"><b>01 <small>Pre-launch</small></b><i></i><b>02 <small>Launch</small></b><i></i><b>03 <small>Growth</small></b><i></i><b>04 <small>Maturity</small></b></div></div></section>
   <section class="lifecycle-thesis"><div class="container"><span class="lifecycle-kicker">Principio central</span><h2>La misma métrica no gobierna todas las etapas.</h2><p>Un producto nuevo necesita adquirir señales: tráfico relevante, primeras ventas, cobertura de keywords y aprendizaje. Un producto maduro necesita defender margen, conversión, visibilidad e inventario. Gestionarlos con el mismo objetivo produce decisiones equivocadas.</p></div></section>
   <section class="lifecycle-map"><div class="container"><span class="lifecycle-kicker">Operating model</span><h2>Cuatro etapas, cuatro preguntas.</h2><div class="lifecycle-stage-grid"><article><b>01</b><span>Pre-launch</span><h3>¿Está listo para competir?</h3><p>Definición de producto y SKU, arquitectura de variaciones, identidad correcta, validación de identificadores, keyword research, estructura del listing, contenido y decisión logística.</p><ul><li>Retail readiness</li><li>SEO e intención</li><li>Contenido completo</li><li>Economía unitaria</li></ul></article><article><b>02</b><span>Launch</span><h3>¿Estamos comprando aprendizaje útil?</h3><p>El foco inicial es generar tráfico y ventas suficientes para aprender. Pricing y PPC funcionan como inversión controlada en visibilidad, rank y señales de conversión.</p><ul><li>Alta intención primero</li><li>Control de términos</li><li>Pricing competitivo</li><li>Lectura de primeras señales</li></ul></article><article><b>03</b><span>Growth</span><h3>¿Qué merece escalar?</h3><p>Con más datos y prueba social, se amplía cobertura sin perder control. Se separan términos defendibles de gasto exploratorio y se alinean stock, contenido y pauta.</p><ul><li>Harvesting</li><li>Expansión de cobertura</li><li>Mejora de conversión</li><li>Forecast de inventario</li></ul></article><article><b>04</b><span>Maturity</span><h3>¿Qué está deteriorando el sistema?</h3><p>El objetivo cambia a sostener contribución. Cada caída se diagnostica entre visibilidad, conversión, precio, disponibilidad y eficiencia publicitaria.</p><ul><li>Margen y contribución</li><li>Impression share</li><li>Conversion rate</li><li>Días de inventario</li></ul></article></div></div></section>
@@ -52,4 +44,6 @@
   <section class="lifecycle-diagnostic"><div class="container"><span class="lifecycle-kicker">Diagnóstico mensual</span><h2>Cuando caen los ingresos, dividir el problema.</h2><div class="lifecycle-equation" aria-label="Los ingresos dependen de la visibilidad, la conversión y el precio"><span>Ingresos</span><b>=</b><span>Visibilidad</span><b>×</b><span>Conversión</span><b>×</b><span>Precio</span></div><div class="lifecycle-diagnostic-grid"><article><h3>Si cae visibilidad</h3><p>Revisar ranking, impresión compartida, cobertura de keywords, pérdida de posiciones, presupuesto y presión competitiva.</p><strong>Respuesta → SEO, PPC y disponibilidad</strong></article><article><h3>Si cae conversión</h3><p>Revisar contenido, precio, reviews, competencia, promesa del producto, variaciones y fricción en la página.</p><strong>Respuesta → CRO, oferta y producto</strong></article><article><h3>Si cae contribución</h3><p>Separar caída comercial de deterioro económico: fees, pauta, descuentos, devoluciones y costo del inventario.</p><strong>Respuesta → unit economics y mix</strong></article></div></div></section>
   <section class="lifecycle-learning"><div class="container"><span class="lifecycle-kicker">Closed-loop learning</span><h2>Cada cambio debe producir conocimiento.</h2><div class="lifecycle-loop"><div><b>01</b><span>Detectar</span><p>Una brecha en visibilidad, conversión, margen o stock.</p></div><div><b>02</b><span>Hipótesis</span><p>Definir qué variable debería cambiar y por qué.</p></div><div><b>03</b><span>Intervenir</span><p>Modificar una palanca con alcance y fecha claros.</p></div><div><b>04</b><span>Medir</span><p>Comparar el resultado contra línea base y contexto.</p></div><div><b>05</b><span>Estandarizar</span><p>Escalar lo que funcionó o documentar el aprendizaje.</p></div></div></div></section>
   <section class="lifecycle-outcome"><div class="container"><span class="lifecycle-kicker">Resultado</span><h2>De tareas aisladas a decisiones coordinadas.</h2><p>El valor del sistema no está en tener más checklists. Está en ordenar dependencias, cambiar objetivos según madurez y conectar marketing con operaciones. PPC no escala un listing que no convierte; SEO no resuelve falta de stock; un buen revenue no compensa una contribución deteriorada. El producto se gestiona como un sistema.</p></div></section>
-</main><script src="accessibility.js" defer></script><script src="software-stack.js" defer></script></body></html>
+</main><script src="accessibility.js" defer></script><script src="software-stack.js" defer></script>
+  <script src="global-nav.js" defer></script>
+</body></html>

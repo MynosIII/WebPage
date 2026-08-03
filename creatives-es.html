@@ -31,29 +31,21 @@
   <link rel="manifest" href="site.webmanifest" />
   <!-- /Shared discovery metadata -->
 <link rel="stylesheet" href="style.css" />
-  
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-</head>
-<body><a class="language-switch" href="creatives-en.html" hreflang="en" aria-label="View in English">EN</a>
 
-  <header class="navbar">
-    <div class="container">
-      <a href="index-es.html" class="nav-logo">Matías Gaglio.</a>
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-      </button>
-      <nav class="nav-menu" aria-label="Navegación principal"><ul>
-          <li><a href="index-es.html">Inicio</a></li>
-          <li><a href="ecommerce-es.html">Ecommerce</a></li>
-          <li><a href="Articles-es.html">Artículos</a></li>
-          <li><a href="creatives-es.html">Creatives</a></li>
-          <li><a href="consultora-es.html">Consultora de Opinión</a></li>
-          <li><a href="otros-es.html">Otros proyectos</a></li>
-          <li><a href="SEO-es.html">ChatMatias</a></li>
-          <li><a href="sobre-mi-es.html">Sobre mí</a></li>
-      </ul></nav>
-    </div>
-  </header>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="global-nav.css">
+</head>
+<body>
+<header class="global-nav" data-global-nav>
+  <div class="global-nav__badge">
+    <a class="global-nav__logo" href="index-es.html">Matías Gaglio.</a>
+    <button class="global-nav__toggle" type="button" aria-controls="global-menu" aria-expanded="false" aria-label="Abrir menú" data-global-nav-toggle><span></span><span></span><span></span></button>
+    <nav class="global-nav__menu" id="global-menu" aria-label="Navegación principal" data-global-nav-menu><ul><li><a href="index-es.html">Inicio</a></li><li><a href="ecommerce-es.html">Ecommerce</a></li><li><a href="Articles-es.html">Artículos</a></li><li><a href="creatives-es.html">Creatives</a></li><li><a href="consultora-es.html">Consultora de Opinión</a></li><li><a href="otros-es.html">Otros proyectos</a></li><li><a href="SEO-es.html">ChatMatias</a></li><li><a href="sobre-mi-es.html">Sobre mí</a></li><li class="global-nav__locale"><a href="creatives-en.html" hreflang="en" aria-label="View in English">EN</a></li></ul></nav>
+  </div>
+</header>
+
+
+
 
   <main>
     <section class="hero creatives-hero" id="hero">
@@ -382,7 +374,7 @@
   <script type="module" src="creatives-3d.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      
+
       // 1. Inicializa las animaciones AOS
       window.AOS?.init({
           duration: 800,
@@ -393,7 +385,7 @@
       // 2. CÓDIGO DEL MENÚ HAMBURGUESA
       const navToggle = document.querySelector('.nav-toggle');
       const navMenu = document.querySelector('.nav-menu');
-      
+
       if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
           document.querySelector('.navbar').classList.toggle('nav-open');
@@ -428,7 +420,7 @@
       const items = document.querySelectorAll('.grid-item');
       const categoryShowcases = document.querySelectorAll('[data-gallery-category]');
       const portfolioGallery = document.querySelector('.portfolio-gallery-section');
-      
+
       if (chips.length > 0) {
         chips.forEach(chip => {
           chip.addEventListener('click', () => {
@@ -511,7 +503,7 @@
       let lastFocusedItem = null; // Para accesibilidad
 
       if (lb && lbContent && closeBtn) {
-        
+
         function openLightbox(html, triggerElement) {
           const oldContent = lbContent.querySelector('img, .video-embed');
           if (oldContent) {
@@ -561,11 +553,11 @@
             if (videoId) {
               const videoHtml = `
                 <div class="video-embed">
-                  <iframe 
+                  <iframe
                     src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
-                    title="Video: ${altText}" 
-                    frameborder="0" 
-                    allow="autoplay; encrypted-media; picture-in-picture" 
+                    title="Video: ${altText}"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media; picture-in-picture"
                     allowfullscreen>
                   </iframe>
                 </div>`;
@@ -577,10 +569,11 @@
           });
         });
       }
-      
+
     });
   </script>
 
   <script src="accessibility.js" defer></script>
+  <script src="global-nav.js" defer></script>
 </body>
 </html>

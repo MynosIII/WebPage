@@ -130,26 +130,18 @@
     body.chart-modal-open { overflow:hidden; }
     @media (max-width: 992px) { .kpi-summary, .process-explanation, .kpi-visual-plan, .principle-grid, .workflow-steps, .chart-grid, .amazon-top, .text-compare, .ebc-inline { grid-template-columns:1fr; } .image-row { grid-template-columns:1fr; } .amazon-top { min-height:0; } .amazon-gallery { grid-template-columns:1fr; } .amazon-thumbs { flex-direction:row; overflow:auto; } .amazon-thumbs img { width:54px; flex:0 0 54px; } .ebc-copy-card { position:static; width:auto; height:auto; } .workflow-steps h3 { white-space:normal; } }
   </style>
+  <link rel="stylesheet" href="global-nav.css">
 </head>
-<body><a class="language-switch" href="Revolution_creative_case-es.html" hreflang="es" aria-label="Ver en español">ES</a>
-  <header class="navbar">
-    <div class="container">
-      <a href="index-en.html" class="nav-logo">Matías Gaglio.</a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-      </button>
-      <nav class="nav-menu" aria-label="Main navigation"><ul>
-          <li><a href="index-en.html">Home</a></li>
-          <li><a href="ecommerce-en.html">Ecommerce</a></li>
-          <li><a href="Articles-en.html">Articles</a></li>
-          <li><a href="creatives-en.html">Creatives</a></li>
-          <li><a href="consultora-en.html">Opinion Research</a></li>
-          <li><a href="otros-en.html">Other projects</a></li>
-          <li><a href="SEO-en.html">ChatMatias</a></li>
-          <li><a href="sobre-mi-en.html">About me</a></li>
-      </ul></nav>
-    </div>
-  </header>
+<body>
+<header class="global-nav" data-global-nav>
+  <div class="global-nav__badge">
+    <a class="global-nav__logo" href="index-en.html">Matías Gaglio.</a>
+    <button class="global-nav__toggle" type="button" aria-controls="global-menu" aria-expanded="false" aria-label="Open menu" data-global-nav-toggle><span></span><span></span><span></span></button>
+    <nav class="global-nav__menu" id="global-menu" aria-label="Main navigation" data-global-nav-menu><ul><li><a href="index-en.html">Home</a></li><li><a href="ecommerce-en.html">Ecommerce</a></li><li><a href="Articles-en.html">Articles</a></li><li><a href="creatives-en.html">Creatives</a></li><li><a href="consultora-en.html">Opinion Research</a></li><li><a href="otros-en.html">Other projects</a></li><li><a href="SEO-en.html">ChatMatias</a></li><li><a href="sobre-mi-en.html">About me</a></li><li class="global-nav__locale"><a href="Revolution_creative_case-es.html" hreflang="es" aria-label="Ver en español">ES</a></li></ul></nav>
+  </div>
+</header>
+
+
 
   <main id="amazon-listing-refresh-case-study" class="listing-case">
     <section id="hero" class="page-hero">
@@ -499,6 +491,7 @@
   </script>
   <script src="software-stack.js" defer></script>
   <script src="accessibility.js" defer></script>
+  <script src="global-nav.js" defer></script>
 </body>
 </html>
 
