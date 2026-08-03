@@ -363,7 +363,9 @@ h3 { letter-spacing: -.025em; }
 }
 
 /* Homepage visual refinement: layered surfaces, clearer hierarchy and softer rhythm. */
-:root { --radius-sm: 12px; --radius: 22px; --radius-lg: 34px; --shadow: 0 30px 80px rgba(0,0,0,.28); }
+:root { --radius-sm: 12px; --radius: 22px; --radius-lg: 34px; --shadow: 0 30px 80px rgba(0,0,0,.28); --rail-height: 0px; --display: Arial, "Helvetica Neue", sans-serif; }
+h1 { letter-spacing: -.038em; }
+h2 { letter-spacing: -.035em; }
 .home-hero { padding-top: clamp(5.5rem,7vw,7.5rem); background: radial-gradient(circle at 82% 26%,rgba(33,215,239,.2),transparent 29%),radial-gradient(circle at 14% 0%,rgba(107,234,175,.07),transparent 28%),linear-gradient(135deg,#090d10 0%,#0c1216 55%,#0b1013 100%); }
 .home-hero__grid { display: flex; align-items: center; min-height: clamp(590px,calc(100svh - var(--header-stack-height) - 80px),750px); }
 .home-hero__grid::before { content: ""; position: absolute; z-index: -1; top: 3%; right: 0; width: min(39vw,520px); aspect-ratio: 1; border: 1px solid rgba(33,215,239,.2); border-radius: 50%; background: radial-gradient(circle,rgba(33,215,239,.18) 0 2px,transparent 3px),radial-gradient(circle,rgba(33,215,239,.06),transparent 62%); background-size: 34px 34px,auto; box-shadow: inset 0 0 0 55px rgba(9,13,16,.2),inset 0 0 0 56px rgba(33,215,239,.08),0 0 100px rgba(33,215,239,.08); opacity: .78; }
@@ -375,9 +377,36 @@ html[lang="es"] .home-hero__grid::after { content: "DATOS  /  CRITERIO  /  EJECU
 .button { min-height: 52px; padding-inline: 1.25rem; border-radius: 999px; }
 .button--primary { box-shadow: 0 10px 30px rgba(33,215,239,.18); }
 .button--primary:hover { box-shadow: 0 14px 38px rgba(33,215,239,.28); }
-.proof-strip { margin-top: clamp(2rem,4vw,3.5rem); padding: .55rem; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(17,23,27,.72); box-shadow: var(--shadow); backdrop-filter: blur(16px); transform: translateY(50%); }
+.proof-strip { margin-top: clamp(2rem,4vw,3.5rem); margin-bottom: clamp(2rem,4vw,3.5rem); padding: .55rem; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(17,23,27,.72); box-shadow: var(--shadow); backdrop-filter: blur(16px); transform: none; }
 .proof-strip div { padding: 1.3rem 1.4rem; border-radius: var(--radius-sm); background: transparent; }
-.neural-band { padding-top: clamp(8rem,10vw,10rem); }
+.neural-band { padding-block: clamp(7rem,9vw,9rem); }
+.home-hero__system { min-height: 720px; transition: min-height .35s ease; }
+.home-hero__system:has(.neural-panel:not([hidden])) { min-height: 1040px; }
+.system-caption { max-width: 760px; }
+.system-caption strong { letter-spacing: -.025em; }
+.brain-map { position: absolute; z-index: 1; top: 105px; left: 50%; width: min(720px,58vw); height: auto; transform: translateX(-50%); overflow: visible; fill: none; stroke: rgba(33,215,239,.3); stroke-width: 1.5; filter: drop-shadow(0 0 18px rgba(33,215,239,.1)); }
+.brain-map .brain-outline { stroke: rgba(33,215,239,.72); stroke-width: 2; }
+.brain-map .brain-nodes { fill: var(--accent); stroke: #081014; stroke-width: 5; }
+.brain-map .brain-nodes circle { filter: drop-shadow(0 0 8px var(--accent)); }
+.signal { width: min(300px,23%); }
+.signal--data { top: 280px; left: 0; }
+.signal--strategy { top: 280px; right: 0; }
+.signal--creative { bottom: auto; top: 535px; }
+.system-core { top: 320px; }
+.system-line--one { top: 350px; left: 18%; width: 32%; transform: rotate(-4deg); }
+.system-line--two { top: 350px; left: 50%; width: 32%; transform: rotate(4deg); }
+.system-line--three { top: 395px; left: 50%; width: 145px; transform: rotate(90deg); }
+.neural-panels { position: absolute; z-index: 8; right: 0; bottom: 0; left: 0; }
+.neural-panel { grid-template-columns: minmax(0,1.1fr) minmax(300px,.9fr); gap: clamp(2rem,6vw,6rem); align-items: end; padding: clamp(1.6rem,3vw,2.5rem); border: 1px solid rgba(33,215,239,.28); border-radius: var(--radius); background: linear-gradient(135deg,rgba(17,27,31,.97),rgba(9,13,16,.96)); box-shadow: var(--shadow); }
+.neural-panel:not([hidden]) { display: grid; animation: panel-in .28s ease both; }
+.neural-panel > div > span { color: var(--accent); font: 750 .63rem ui-monospace,monospace; letter-spacing: .14em; }
+.neural-panel h3 { max-width: 700px; margin: .8rem 0 .7rem; font-size: clamp(2rem,3.4vw,3.6rem); line-height: 1; letter-spacing: -.025em; }
+.neural-panel p { max-width: 660px; margin: 0; color: var(--muted); }
+.neural-panel nav { display: grid; }
+.neural-panel a { padding: .85rem 0; border-bottom: 1px solid var(--line); color: var(--text); font-size: .84rem; font-weight: 750; text-decoration: none; }
+.neural-panel a:first-child { border-top: 1px solid var(--line); }
+.neural-panel a:hover, .neural-panel a:focus-visible { color: var(--accent); padding-left: .5rem; }
+@keyframes panel-in { from { opacity: 0; transform: translateY(12px); } }
 .signal { border-radius: var(--radius-sm); }
 .portfolio-search > div { overflow: hidden; border-radius: var(--radius); box-shadow: 0 18px 50px rgba(0,0,0,.18); }
 .library-grid { gap: 1rem; border: 0; }
@@ -395,18 +424,30 @@ html[lang="es"] .home-hero__grid::after { content: "DATOS  /  CRITERIO  /  EJECU
 @media (max-width: 1050px) {
   .home-hero__grid::before { right: -14%; width: min(56vw,480px); opacity: .5; }
   .home-hero__grid::after { display: none; }
+  .brain-map { width: min(680px,70vw); }
+  .signal { width: min(260px,27%); }
 }
 @media (max-width: 760px) {
   .home-hero { padding-top: 4.5rem; }
   .home-hero__grid { min-height: 0; }
   .home-hero__grid::before { top: 18%; right: -45%; width: 100vw; opacity: .28; }
   .home-hero__copy { padding: 1.5rem; border-radius: var(--radius); }
-  .proof-strip { transform: translateY(35%); }
-  .neural-band { padding-top: 7rem; }
+  .proof-strip { transform: none; }
+  .neural-band { padding-block: 6rem; }
+  .home-hero__system, .home-hero__system:has(.neural-panel:not([hidden])) { min-height: auto; padding-top: 190px; }
+  .system-caption { position: absolute; }
+  .brain-map { position: relative; top: auto; left: 50%; width: min(620px,118vw); margin-bottom: 1rem; }
+  .system-core { top: 405px; }
+  .signal, .signal--data, .signal--strategy, .signal--creative { position: relative; inset: auto; width: 100%; margin-top: .7rem; transform: none; }
+  .signal--creative:hover, .signal--creative:focus-visible, .signal--creative[aria-pressed="true"] { transform: translateY(-3px); }
+  .system-line { display: none; }
+  .neural-panels { position: relative; margin-top: 1rem; }
+  .neural-panel { grid-template-columns: 1fr; gap: 1.5rem; }
   .work-card { border-radius: var(--radius); }
   .work-card__media { border-radius: var(--radius-sm); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .library-card, .work-card, .button { transition: none; }
+  .library-card, .work-card, .button, .home-hero__system { transition: none; }
+  .neural-panel:not([hidden]) { animation: none; }
 }

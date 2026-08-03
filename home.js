@@ -86,6 +86,7 @@
 (() => {
   document.querySelectorAll('[data-neural-system]').forEach((system) => {
     const nodes = [...system.querySelectorAll('[data-neural-node]')];
+    const panels = [...system.querySelectorAll('[data-neural-panel]')];
     const output = system.querySelector('[data-neural-output]');
     if (!nodes.length || !output) return;
 
@@ -99,12 +100,29 @@
       nodes.forEach((item) => item.setAttribute('aria-pressed', String(pinned && item === node)));
     };
 
+    const revealPanel = (node) => {
+      panels.forEach((panel) => {
+        const open = Boolean(node && panel.dataset.neuralPanel === node.dataset.neuralNode);
+        panel.hidden = !open;
+      });
+      nodes.forEach((item) => item.setAttribute('aria-expanded', String(item === node)));
+    };
+
+    nodes.forEach((node, index) => {
+      const panel = panels.find((item) => item.dataset.neuralPanel === node.dataset.neuralNode);
+      if (!panel) return;
+      panel.id ||= `neural-panel-${index + 1}`;
+      node.setAttribute('aria-controls', panel.id);
+      node.setAttribute('aria-expanded', 'false');
+    });
+
     nodes.forEach((node) => {
       node.addEventListener('pointerenter', () => activate(node, { pinned: node === pinnedNode }));
       node.addEventListener('focus', () => activate(node, { pinned: node === pinnedNode }));
       node.addEventListener('click', () => {
         pinnedNode = pinnedNode === node ? null : node;
         activate(pinnedNode, { pinned: Boolean(pinnedNode) });
+        revealPanel(pinnedNode);
       });
       node.addEventListener('blur', () => {
         if (!pinnedNode) activate(null);

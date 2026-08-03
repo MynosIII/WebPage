@@ -5,6 +5,10 @@
   const menu = nav.querySelector('[data-global-nav-menu]');
   if (!button || !menu) return;
 
+  menu.querySelectorAll('a[href*="SEO"]').forEach((link) => {
+    if (/^chat\s*mat/i.test(link.textContent.trim())) link.closest('li')?.remove();
+  });
+
   const close = () => {
     nav.classList.remove('is-open');
     button.setAttribute('aria-expanded', 'false');
