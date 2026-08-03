@@ -41,7 +41,7 @@
   };
   ensurePortfolioRail();
 
-  const navbar = document.querySelector('.navbar .container, .site-header__actions, .document-header-inner');
+  const navbar = document.querySelector('.global-nav__badge, .navbar .container, .site-header__actions, .document-header-inner');
   if (!navbar || document.querySelector('.site-search')) return;
   const externalTriggers = [...document.querySelectorAll('[data-search-trigger]')];
 
@@ -95,7 +95,8 @@
   const shell = document.createElement('div');
   shell.className = 'site-search';
   shell.innerHTML = `<button class="site-search-toggle" type="button" aria-label="${labels.button}" aria-controls="site-search-panel" aria-expanded="false"><span aria-hidden="true">⌕</span><span class="site-search-label">${labels.button}</span></button><div class="site-search-panel" id="site-search-panel" hidden><div class="site-search-field"><span aria-hidden="true">⌕</span><input type="search" autocomplete="off" spellcheck="false" placeholder="${labels.placeholder}" aria-label="${labels.placeholder}" aria-controls="site-search-results"><button type="button" class="site-search-close" aria-label="${labels.close}">×</button></div><div class="site-search-status" aria-live="polite"></div><div class="site-search-results" id="site-search-results" role="listbox"></div></div>`;
-  navbar.insertBefore(shell, navbar.querySelector('.nav-toggle, .menu-button'));
+  const navigationToggle = navbar.querySelector('.global-nav__toggle, .nav-toggle, .menu-button');
+  navbar.insertBefore(shell, navigationToggle);
   const toggle = shell.querySelector('.site-search-toggle'), panel = shell.querySelector('.site-search-panel'), input = shell.querySelector('input'), close = shell.querySelector('.site-search-close'), status = shell.querySelector('.site-search-status'), results = shell.querySelector('.site-search-results');
   const fullResults = document.querySelector('[data-search-page-results]'), fullStatus = document.querySelector('[data-search-page-status]');
   let pages = [];
@@ -113,11 +114,42 @@
   };
   fetch(new URL('search-index.json', baseUrl)).then(response => response.ok ? response.json() : Promise.reject()).then(data => { pages = data.filter(page => page.lang === lang); renderFullPage(); }).catch(() => { status.textContent = labels.empty; if (fullStatus) fullStatus.textContent = labels.empty; });
   let restoreTarget = toggle;
-  const setOpen = (open, trigger = restoreTarget) => { panel.hidden = !open; toggle.setAttribute('aria-expanded', String(open)); externalTriggers.forEach(item => item.setAttribute('aria-expanded', String(open))); document.body.classList.toggle('site-search-open', open); if (open) { restoreTarget = trigger; input.focus(); } };
+  const setOpen = (open, trigger = restoreTarget) => {
+    const nextOpen = Boolean(open);
+    panel.hidden = !nextOpen;
+    toggle.setAttribute('aria-expanded', String(nextOpen));
+    externalTriggers.forEach(item => item.setAttribute('aria-expanded', String(nextOpen)));
+    document.body.classList.toggle('site-search-open', nextOpen);
+    if (nextOpen) {
+      restoreTarget = trigger;
+      requestAnimationFrame(() => input.focus());
+    }
+  };
+  const closeSearch = (restoreFocus = true) => {
+    if (panel.hidden) return;
+    setOpen(false);
+    if (restoreFocus) restoreTarget?.focus();
+  };
   toggle.addEventListener('click', () => setOpen(panel.hidden, toggle));
-  externalTriggers.forEach(trigger => { trigger.setAttribute('aria-expanded', 'false'); trigger.addEventListener('click', () => setOpen(true, trigger)); });
-  close.addEventListener('click', () => { setOpen(false); restoreTarget?.focus(); });
-  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !panel.hidden) { setOpen(false); restoreTarget?.focus(); } });
+  externalTriggers.forEach(trigger => {
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.addEventListener('click', () => panel.hidden ? setOpen(true, trigger) : closeSearch());
+  });
+  close.addEventListener('click', event => {
+    event.preventDefault();
+    event.stopPropagation();
+    closeSearch();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !panel.hidden) {
+      event.preventDefault();
+      closeSearch();
+    }
+  });
+  document.addEventListener('pointerdown', event => {
+    if (panel.hidden || shell.contains(event.target) || externalTriggers.some(trigger => trigger.contains(event.target))) return;
+    closeSearch(false);
+  });
   input.addEventListener('input', () => { currentQuery = input.value.trim(); if (!currentQuery) { status.textContent = ''; results.innerHTML = ''; return; } const matches = find(currentQuery, 10); status.textContent = matches.length ? labels.count(matches.length) : labels.empty; results.innerHTML = matches.map(({ page }) => resultMarkup(page)).join(''); });
   input.addEventListener('keydown', event => { if (event.key === 'Enter' && input.value.trim()) { event.preventDefault(); location.href = new URL(`search-${lang}.html?q=${encodeURIComponent(input.value.trim())}`, baseUrl).href; } });
 })();
