@@ -384,10 +384,11 @@ html[lang="es"] .home-hero__grid::after { content: "DATOS  /  CRITERIO  /  EJECU
 .home-hero__system:has(.neural-panel:not([hidden])) { min-height: 1040px; }
 .system-caption { max-width: 760px; }
 .system-caption strong { letter-spacing: -.025em; }
-.brain-map { position: absolute; z-index: 1; top: 105px; left: 50%; width: min(720px,58vw); height: auto; transform: translateX(-50%); overflow: visible; fill: none; stroke: rgba(33,215,239,.3); stroke-width: 1.5; filter: drop-shadow(0 0 18px rgba(33,215,239,.1)); }
-.brain-map .brain-outline { stroke: rgba(33,215,239,.72); stroke-width: 2; }
-.brain-map .brain-nodes { fill: var(--accent); stroke: #081014; stroke-width: 5; }
-.brain-map .brain-nodes circle { filter: drop-shadow(0 0 8px var(--accent)); }
+.brain-map { position: absolute; z-index: 1; top: 92px; left: 50%; width: min(700px,56vw); height: auto; transform: translateX(-50%); overflow: visible; fill: none; filter: drop-shadow(0 24px 45px rgba(0,0,0,.32)) drop-shadow(0 0 28px rgba(33,215,239,.08)); }
+.brain-map .brain-outline, .brain-map .brain-stem { fill: #070b0d; stroke: rgba(33,215,239,.72); stroke-width: 3; stroke-linejoin: round; }
+.brain-map .brain-links { fill: none; stroke: rgba(244,247,248,.82); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.brain-map .brain-nodes { fill: #f4f7f8; stroke: var(--accent); stroke-width: 4; }
+.brain-map .brain-nodes circle { filter: drop-shadow(0 0 9px rgba(33,215,239,.78)); }
 .signal { width: min(300px,23%); }
 .signal--data { top: 280px; left: 0; }
 .signal--strategy { top: 280px; right: 0; }
