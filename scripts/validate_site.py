@@ -14,11 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TEST_STUBS = {"anchor-test.html", "revolution-test.html"}
 FORBIDDEN_SUFFIXES = {".doc", ".docx", ".xls", ".xlsx", ".download"}
 SKIP_SCHEMES = {"http", "https", "mailto", "tel", "data", "javascript"}
-LOCAL_ONLY_DIRS = {".git", "node_modules", "tmp"}
-
-
-def is_deploy_source(path: Path) -> bool:
-    return not any(part in LOCAL_ONLY_DIRS for part in path.relative_to(ROOT).parts)
+IGNORED_DIRECTORIES = {".git", "node_modules", "templates", "test-results", "playwright-report", "tmp"}
 
 
 class PageParser(HTMLParser):
@@ -162,7 +158,7 @@ def main() -> int:
     pages = [
         path
         for path in ROOT.rglob("*.html")
-        if is_deploy_source(path) and "templates" not in path.parts and path.name not in TEST_STUBS
+        if not IGNORED_DIRECTORIES.intersection(path.parts) and path.name not in TEST_STUBS
     ]
     for path in sorted(pages):
         issues.extend(validate_page(path, cache))
@@ -170,7 +166,9 @@ def main() -> int:
     forbidden = [
         path.relative_to(ROOT).as_posix()
         for path in ROOT.rglob("*")
-        if path.is_file() and is_deploy_source(path) and path.suffix.lower() in FORBIDDEN_SUFFIXES
+        if path.is_file()
+        and not IGNORED_DIRECTORIES.intersection(path.parts)
+        and path.suffix.lower() in FORBIDDEN_SUFFIXES
     ]
     if forbidden:
         issues.append("Forbidden deploy-source files:\n  " + "\n  ".join(sorted(forbidden)))

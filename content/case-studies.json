@@ -25,7 +25,7 @@
       "implication": "El cambio simultáneo en ventas y conversión es consistente con una mejora del sistema completo. Aun así, al no existir un experimento controlado, el caso se presenta como evidencia observacional y no como prueba de causalidad aislada.",
       "learning": "En Amazon, la pauta no termina en el clic: su eficiencia depende de que la promesa del término de búsqueda continúe en la galería, el copy, la evidencia y la oferta. La unidad de optimización real es el recorrido completo.",
       "cta_title": "¿Necesitás ordenar una cuenta Amazon que crece sin claridad?",
-      "cta_copy": "Puedo conectar campañas, contenido y economics para localizar la restricción y priorizar el siguiente movimiento."
+      "cta_copy": "Puedo conectar campañas, contenido y rentabilidad para localizar la restricción y priorizar el siguiente movimiento."
     },
     "en": {
       "category": "Amazon Growth & PPC",
@@ -62,7 +62,7 @@
       "deck": "Una vista operativa mensual que convirtió datos dispersos en decisiones sobre qué escalar, defender o corregir.",
       "context": "Portafolio de ecommerce anonimizado por confidencialidad, observado entre julio y el 27 de octubre de 2025 mediante Sellerboard. El objetivo no era producir otro dashboard, sino entender qué explicaba el resultado económico.",
       "problem": "El crecimiento de ventas podía parecer saludable aunque algunos productos dependieran demasiado de publicidad, descuentos o un margen insuficiente. Sin una lectura conjunta, el volumen corría el riesgo de confundirse con rentabilidad.",
-      "diagnosis": "Organicé la lectura por mes y crucé ventas, inversión publicitaria, costos, reembolsos y beneficio neto estimado. Luego separé problemas de tráfico, conversión, eficiencia publicitaria y economics.",
+      "diagnosis": "Organicé la lectura por mes y crucé ventas, inversión publicitaria, costos, reembolsos y beneficio neto estimado. Luego separé los problemas de tráfico, conversión, eficiencia publicitaria y rentabilidad.",
       "role": "Construí la vista mensual, definí los criterios de diagnóstico y prioricé acciones por producto. Las decisiones de inventario y operación final fueron coordinadas con el equipo responsable de la cuenta.",
       "actions": [
         ["Una métrica económica", "Usé el beneficio neto estimado como contrapeso de ventas para evitar premiar crecimiento sin margen."],

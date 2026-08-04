@@ -34,6 +34,18 @@ BANNED_ES = {
     "portfolio ecommerce": "Use ‘portafolio de ecommerce’.",
     "ordered revenue": "Use ‘ingresos por pedidos’.",
     "Medical Sales Representative": "Use the accurate English credential title.",
+    "decisiones comerciales ejecutables": "Use natural Spanish such as ‘decisiones comerciales concretas’.",
+    "Sin claim causal": "Explain the attribution limit in Spanish.",
+    "portfolio visual": "Use ‘portafolio visual’.",
+    "Insights separados": "Use ‘hallazgos separados’.",
+    "workflow trazable": "Use ‘flujo de trabajo trazable’.",
+    "la portafolio": "Use masculine agreement: ‘el portafolio’.",
+    "El tráfico Increasing": "Remove the untranslated fragment.",
+    "El situación": "Use correct agreement: ‘la situación’ or rewrite the phrase.",
+    "Matemáticamente analizado": "Use the natural heading ‘Análisis matemático’.",
+    "Aclaración del portfolio": "Use ‘Aclaración del portafolio’.",
+    "posvención": "Use the established automotive term ‘posventa’.",
+    "análisis del listings": "Use ‘análisis de listings’.",
 }
 
 BANNED_EN = {

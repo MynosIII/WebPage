@@ -89,7 +89,7 @@ def render_case(case_id: str, case: dict[str, object], claims: dict[str, object]
         "skip_label": "Saltar al contenido principal" if spanish else "Skip to main content",
         "home_label": "Inicio" if spanish else "Home",
         "nav_label": "Navegación principal" if spanish else "Primary navigation",
-        "contact_short": "Contactarme" if spanish else "Contact me",
+        "contact_short": "Hablemos" if spanish else "Contact me",
         "switch_aria": "View in English" if spanish else "Ver en español",
         "menu_open": "Abrir menú" if spanish else "Open menu",
         "menu_close": "Cerrar menú" if spanish else "Close menu",
