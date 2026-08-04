@@ -182,6 +182,8 @@ def normalize(path: Path) -> bool:
     )
     updated = re.sub(r'(href="(?:\.\./)*consultora-en\.html">)[^<]+', r'\1Opinion Consultancy', updated)
     updated = re.sub(r'(href="(?:\.\./)*sobre-mi-en\.html">)(?:About me|About)', r'\1About', updated)
+    updated = re.sub(r'(href="(?:\.\./)*consultora(?:-es)?\.html">)[^<]+', r'\1Investigación de opinión', updated)
+    updated = re.sub(r'(href="(?:\.\./)*creatives(?:-es)?\.html">)(?:Creatives|Contenido creativo)', r'\1Contenido creativo', updated)
     updated = updated.replace("&copy; 2025", "&copy; 2026").replace("© 2025", "© 2026")
 
     if managed_metadata:

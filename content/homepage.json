@@ -28,10 +28,10 @@
     "availability": "Disponible para proyectos freelance, consultoría y colaboraciones remotas.",
     "proof_label": "Resultados documentados",
     "proof": [
-      ["+81,53%", "ventas retail · Caso 1"],
-      ["+118,16%", "conversión · Caso 1"],
-      ["US$312.480", "ventas al 27 oct · Caso 2"],
-      ["+176,4%", "recuperación semanal · Daizzy"]
+      ["US$1.560 → US$2.830", "ventas retail · Amazon · 17 ago–11 oct", "caso-1-es.html"],
+      ["6,28% → 13,69%", "conversión · Amazon · 10 ago–4 oct", "caso-1-es.html"],
+      ["US$96.842 → US$312.480", "ventas · portafolio · jul–27 oct", "caso-2-es.html"],
+      ["US$874 → US$2.415", "ingresos semanales · Amazon · 14–27 jun", "caso-daizzy-gear-es.html"]
     ],
     "capabilities_eyebrow": "Qué resuelvo",
     "capabilities_title": "Tres disciplinas, una sola decisión comercial.",
@@ -88,9 +88,9 @@
         "image_height": 1312
       }
     ],
-    "method_eyebrow": "Idea rectora · Traductor Analítico",
+    "method_eyebrow": "Método de trabajo",
     "method_title": "Traducir señales complejas en decisiones que se pueden ejecutar.",
-    "method_intro": "Traductor Analítico describe cómo trabajo, no reemplaza mi rol: conecto lenguaje del cliente, datos comerciales y ejecución para que un hallazgo termine en una decisión concreta.",
+    "method_intro": "Diagnostico, priorizo, implemento y mido para que cada hallazgo termine en una decisión concreta y documentada.",
     "method": [
       ["01", "Diagnosticar", "Cruzo mercado, funnel, catálogo, contenido, pauta y economics para encontrar la restricción real."],
       ["02", "Priorizar", "Ordeno oportunidades por impacto, evidencia, esfuerzo y riesgo comercial."],
@@ -159,10 +159,10 @@
     "availability": "Available for freelance projects, consulting and remote collaborations.",
     "proof_label": "Documented outcomes",
     "proof": [
-      ["+81.53%", "retail sales · Case 1"],
-      ["+118.16%", "conversion · Case 1"],
-      ["$312,480", "sales through Oct 27 · Case 2"],
-      ["+176.4%", "weekly recovery · Daizzy"]
+      ["$1,560 → $2,830", "retail sales · Amazon · Aug 17–Oct 11", "caso-1-en.html"],
+      ["6.28% → 13.69%", "conversion · Amazon · Aug 10–Oct 4", "caso-1-en.html"],
+      ["$96,842 → $312,480", "sales · portfolio · Jul–Oct 27", "caso-2-en.html"],
+      ["$874 → $2,415", "weekly revenue · Amazon · Jun 14–27", "caso-daizzy-gear-en.html"]
     ],
     "capabilities_eyebrow": "What I solve",
     "capabilities_title": "Three disciplines, one commercial decision.",
@@ -219,9 +219,9 @@
         "image_height": 1312
       }
     ],
-    "method_eyebrow": "Working principle · Analytical Translator",
+    "method_eyebrow": "Working method",
     "method_title": "Translating complex signals into decisions people can execute.",
-    "method_intro": "Analytical Translator describes how I work; it does not replace my role. I connect customer language, commercial data and execution so an insight ends in a concrete decision.",
+    "method_intro": "I diagnose, prioritize, implement and measure so each insight ends in a concrete, documented decision.",
     "method": [
       ["01", "Diagnose", "I connect market, funnel, catalog, content, media and economics to find the actual constraint."],
       ["02", "Prioritize", "I rank opportunities by impact, evidence, effort and commercial risk."],

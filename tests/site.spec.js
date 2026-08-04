@@ -31,6 +31,7 @@ for (const viewport of viewports) {
       await expect(menuButton).toBeVisible();
       await menuButton.click();
       await expect(menuButton).toHaveAttribute('aria-expanded', 'true');
+      await expect(menuButton).toHaveAttribute('aria-label', 'Cerrar men\u00fa');
       await expect(page.locator('main')).toHaveJSProperty('inert', true);
       await page.keyboard.press('Escape');
       await expect(menuButton).toHaveAttribute('aria-expanded', 'false');
@@ -59,23 +60,27 @@ test('homepage has no serious or critical automated accessibility violations', a
 test('homepage presents exactly three flagship cases and working recruiter links', async ({ page, request }) => {
   await page.goto('/index.html', { waitUntil: 'networkidle' });
   await expect(page.locator('.work-card')).toHaveCount(3);
-  await expect(page.locator('.library-card')).toHaveCount(6);
+  await expect(page.locator('.library-card')).toHaveCount(0);
   await expect(page.locator('[data-portfolio-rail]')).toHaveCount(0);
-  await expect(page.locator('.portfolio-search')).toBeVisible();
+  await expect(page.locator('.portfolio-search')).toHaveCount(0);
+  await expect(page.locator('.proof-item')).toHaveCount(4);
+  await expect(page.locator('.contact-email a')).toHaveText('matiasignaciogaglio@gmail.com');
   await expect(page.getByRole('heading', { name: 'Datos, pauta y contenido al servicio de la rentabilidad.' })).toBeVisible();
   const resumeResponse = await request.get('/output/pdf/Matias-Gaglio-CV-ES.pdf');
   expect(resumeResponse.ok()).toBeTruthy();
   expect(resumeResponse.headers()['content-type']).toContain('application/pdf');
 });
 
-test('analytical translator and portfolio search are interactive', async ({ page }) => {
+test('featured cases precede the compact analytical translator and the single search remains interactive', async ({ page }) => {
   await page.goto('/index.html', { waitUntil: 'networkidle' });
-  const dataNode = page.locator('[data-neural-node="data"]');
-  await expect(page.locator('[data-neural-node]')).toHaveCount(3);
-  await dataNode.click();
-  await expect(dataNode).toHaveAttribute('aria-pressed', 'true');
-  await expect(dataNode).toHaveAttribute('aria-expanded', 'true');
-  await expect(page.locator('[data-neural-panel=\"data\"]')).toBeVisible();
+  await expect(page.locator('.translator-steps li')).toHaveCount(3);
+  const positions = await page.evaluate(() => ({
+    cases: document.querySelector('.selected-work').getBoundingClientRect().top + scrollY,
+    translator: document.querySelector('.translator-band').getBoundingClientRect().top + scrollY,
+    capabilities: document.querySelector('.capabilities').getBoundingClientRect().top + scrollY
+  }));
+  expect(positions.cases).toBeLessThan(positions.translator);
+  expect(positions.translator).toBeLessThan(positions.capabilities);
 
   const searchToggle = page.locator('.site-search-toggle');
   await searchToggle.click();

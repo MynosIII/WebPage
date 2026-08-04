@@ -9,7 +9,7 @@ def render_global_nav(lang: str, switch_href: str) -> str:
     es = lang == "es"
     items = (
         [("Inicio", "index-es.html"), ("Ecommerce", "ecommerce-es.html"), ("Artículos", "Articles-es.html"),
-         ("Creatives", "creatives-es.html"), ("Consultora de Opinión", "consultora-es.html"),
+         ("Contenido creativo", "creatives-es.html"), ("Investigación de opinión", "consultora-es.html"),
          ("Otros proyectos", "otros-es.html"), ("Sobre mí", "sobre-mi-es.html")]
         if es else
         [("Home", "index-en.html"), ("Ecommerce", "ecommerce-en.html"), ("Articles", "Articles-en.html"),

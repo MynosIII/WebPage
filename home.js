@@ -140,3 +140,31 @@
   searchScript.dataset.siteSearch = '';
   document.head.appendChild(searchScript);
 })();
+
+(() => {
+  document.querySelectorAll('[data-copy-email]').forEach((button) => {
+    const status = button.parentElement?.querySelector('[role="status"]');
+    button.addEventListener('click', async () => {
+      const email = button.dataset.copyEmail || '';
+      try {
+        await navigator.clipboard.writeText(email);
+      } catch {
+        const selection = document.createElement('textarea');
+        selection.value = email;
+        selection.setAttribute('readonly', '');
+        selection.style.position = 'fixed';
+        selection.style.opacity = '0';
+        document.body.append(selection);
+        selection.select();
+        document.execCommand('copy');
+        selection.remove();
+      }
+      button.textContent = button.dataset.copySuccess || button.textContent;
+      if (status) status.textContent = button.dataset.copySuccess || '';
+      window.setTimeout(() => {
+        button.textContent = button.dataset.copyLabel || button.textContent;
+        if (status) status.textContent = '';
+      }, 2400);
+    });
+  });
+})();

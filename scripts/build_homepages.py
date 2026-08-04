@@ -28,7 +28,8 @@ def nav_items(items: list[list[str]]) -> str:
 
 def proof_items(items: list[list[str]]) -> str:
     return "".join(
-        f'<div><strong>{esc(value)}</strong><span>{esc(label)}</span></div>' for value, label in items
+        f'<a class="proof-item" href="{esc(href)}"><strong>{esc(value)}</strong><span>{esc(label)}</span><small>{"Ver caso" if href.endswith("-es.html") else "View case"} →</small></a>'
+        for value, label, href in items
     )
 
 
@@ -209,7 +210,6 @@ def render(locale: dict[str, object], claims: dict[str, object]) -> str:
     values.update(
         {
             "global_nav": render_global_nav(str(locale["lang"]), str(locale["switch_href"])),
-            "neural_panels": neural_panels(str(locale["lang"])),
             "structured_data": structured_data(locale),
             "skip_label": "Saltar al contenido principal" if spanish else "Skip to main content",
             "back_to_top": "Volver arriba" if spanish else "Back to top",
@@ -231,9 +231,9 @@ def render(locale: dict[str, object], claims: dict[str, object]) -> str:
             "signal_strategy_output": "CRITERIO" if spanish else "JUDGMENT",
             "signal_creative_output": "CLARIDAD" if spanish else "CLARITY",
             "neural_label": "Traductor Analítico interactivo" if spanish else "Interactive Analytical Translator",
-            "neural_kicker": "Pilar secundario" if spanish else "Secondary pillar",
+            "translator_eyebrow": "Cómo trabajo" if spanish else "How I work",
             "neural_title": "Traductor Analítico" if spanish else "Analytical Translator",
-            "neural_copy": "Explorá cómo conecto señales, criterio y ejecución." if spanish else "Explore how I connect signals, judgment and execution.",
+            "neural_copy": "Conecto señales, criterio y contenido para convertir evidencia en una decisión ejecutable." if spanish else "I connect signals, judgment and content to turn evidence into an executable decision.",
             "portfolio_rail_label": "Accesos al portafolio" if spanish else "Portfolio shortcuts",
             "portfolio_rail_home": "Mapa" if spanish else "Map",
             "search_label": "Buscar" if spanish else "Search",
@@ -244,6 +244,9 @@ def render(locale: dict[str, object], claims: dict[str, object]) -> str:
             "method_id": "metodo" if spanish else "method",
             "contact_id": "contacto" if spanish else "contact",
             "about_href": "sobre-mi-es.html" if spanish else "sobre-mi-en.html",
+            "copy_email_label": "Copiar email" if spanish else "Copy email",
+            "copy_email_success": "Email copiado" if spanish else "Email copied",
+            "write_email_label": "Escribir por email" if spanish else "Write an email",
             "nav_items": nav_items(locale["nav"]),
             "proof_items": proof_items(locale["proof"]),
             "capability_items": capability_items(locale["capabilities"]),

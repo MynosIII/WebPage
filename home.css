@@ -452,3 +452,57 @@ html[lang="es"] .home-hero__grid::after { content: "DATOS  /  CRITERIO  /  EJECU
   .library-card, .work-card, .button, .home-hero__system { transition: none; }
   .neural-panel:not([hidden]) { animation: none; }
 }
+
+/* Homepage journey: proof and cases first, with compact supporting sections. */
+.home-hero { padding-top: clamp(5rem, 6vw, 6.5rem); }
+.home-hero__grid { min-height: clamp(520px, calc(82svh - var(--header-stack-height)), 650px); }
+.home-hero__copy { padding: clamp(1.75rem, 3vw, 2.75rem); }
+.home-hero__copy h1 { max-width: 850px; font-size: clamp(4rem, 6.7vw, 6.6rem); line-height: .9; }
+.proof-strip { overflow: hidden; }
+.proof-strip .proof-item { display: flex; flex-direction: column; min-width: 0; min-height: 152px; padding: 1.3rem 1.4rem; border-right: 1px solid var(--line); border-radius: var(--radius-sm); color: inherit; text-decoration: none; transition: background .18s ease, transform .18s ease; }
+.proof-strip .proof-item:last-child { border-right: 0; }
+.proof-strip .proof-item:hover, .proof-strip .proof-item:focus-visible { background: var(--accent-soft); transform: translateY(-2px); }
+.proof-strip .proof-item strong { font-size: clamp(1.45rem, 2.3vw, 2.15rem); }
+.proof-strip .proof-item span { color: #bac5ca; font-size: .875rem; line-height: 1.4; }
+.proof-strip .proof-item small { margin-top: auto; padding-top: .7rem; color: var(--accent); font-size: .75rem; font-weight: 800; }
+.home-section { padding-block: clamp(4.75rem, 6vw, 6.5rem); }
+.selected-work { scroll-margin-top: 90px; }
+.translator-band { padding-block: clamp(3.25rem, 5vw, 4.75rem); border-block: 1px solid var(--line); background: radial-gradient(circle at 80% 30%, rgba(33,215,239,.08), transparent 28%), #0c1215; }
+.translator-band__grid { display: grid; grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.translator-band h2 { font-size: clamp(2.6rem, 4.2vw, 4.5rem); }
+.translator-intro { max-width: 620px; margin: 1.25rem 0 0; color: var(--muted); }
+.translator-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 0; padding: 0; border: 1px solid var(--line); background: var(--line); list-style: none; }
+.translator-steps li { min-width: 0; min-height: 150px; padding: 1.3rem; background: #10171a; }
+.translator-steps span, .translator-steps strong, .translator-steps small { display: block; }
+.translator-steps span { color: var(--accent); font: 700 .68rem ui-monospace, monospace; }
+.translator-steps strong { margin-top: 1.5rem; font-size: 1rem; letter-spacing: .1em; }
+.translator-steps small { margin-top: .35rem; color: var(--muted); font-size: .8rem; }
+.hero-cv-link, .text-link { align-items: center; min-height: 44px; padding-block: .65rem; }
+.contact-email { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem; margin: 0 0 1.25rem; }
+.contact-email > a { min-height: 44px; padding: .65rem .85rem; border: 1px solid var(--line); border-radius: 999px; color: var(--text); font-size: .86rem; text-decoration: none; }
+.contact-email > button { min-height: 44px; padding: .65rem .9rem; border: 1px solid var(--accent); border-radius: 999px; background: transparent; color: var(--accent); font-size: .78rem; font-weight: 800; cursor: pointer; }
+.contact-email > button:hover, .contact-email > button:focus-visible { background: var(--accent); color: #061012; }
+.contact-email > span { min-height: 1.2em; color: var(--green); font-size: .78rem; }
+.site-search-toggle { min-width: 44px; min-height: 44px; }
+
+@media (max-width: 760px) {
+  .home-shell { width: min(calc(100% - 28px), var(--shell)); }
+  .home-hero { padding-top: 4.25rem; }
+  .home-hero__copy { padding: 1.25rem; }
+  .home-hero__copy h1 { margin-bottom: 1.2rem; font-size: clamp(2.875rem, 12.5vw, 3.125rem); line-height: .94; }
+  .home-hero__summary { margin-bottom: 1.35rem; font-size: 1rem; line-height: 1.55; }
+  .availability { margin-top: 1rem; }
+  .proof-strip { margin-top: 1.5rem; margin-bottom: 2rem; padding: .35rem; }
+  .proof-strip .proof-item { min-height: 150px; padding: 1rem; }
+  .proof-strip .proof-item strong { font-size: 1.35rem; }
+  .proof-strip .proof-item span { font-size: .875rem; }
+  .home-section { padding-block: 4rem; }
+  .section-heading { margin-bottom: 2.5rem; }
+  .translator-band__grid { grid-template-columns: 1fr; gap: 1.75rem; }
+  .translator-steps { grid-template-columns: 1fr; }
+  .translator-steps li { min-height: 0; padding: 1rem; }
+  .translator-steps strong { margin-top: .65rem; }
+  .site-search-toggle { width: 44px; height: 44px; padding: .5rem; }
+  .contact-email { align-items: stretch; }
+  .contact-email > a, .contact-email > button { width: 100%; justify-content: center; text-align: center; }
+}

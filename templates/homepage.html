@@ -55,35 +55,24 @@ $global_nav
       <div class="home-shell proof-strip" role="group" aria-label="$proof_label">$proof_items</div>
     </section>
 
-    <section class="neural-band" aria-labelledby="neural-band-title">
+    <section class="home-section selected-work" id="$work_id" aria-labelledby="work-title">
       <div class="home-shell">
-        <div class="home-hero__system" data-neural-system role="group" aria-label="$neural_label">
-          <p class="system-caption"><span>$neural_kicker</span><strong id="neural-band-title">$neural_title</strong><small>$neural_copy</small></p>
-          <svg class="brain-map" viewBox="0 0 820 455" aria-hidden="true"><path class="brain-outline" d="M410 60c-50-42-124-24-142 32-57-8-99 38-87 89-45 29-48 94-7 128 2 59 63 92 112 66 32 34 89 24 124-14 35 38 92 48 124 14 49 26 110-7 112-66 41-34 38-99-7-128 12-51-30-97-87-89-18-56-92-74-142-32Z"/><path class="brain-stem" d="M390 350c5 34 3 55-5 76-5 16 5 25 22 25h22c16 0 24-12 17-27-10-23-14-46-11-74Z"/><g class="brain-links"><path d="M267 93 181 181 174 309 286 375 410 360 534 375 646 309 639 181 553 93 410 61 267 93 332 219 174 309M332 219 410 61 488 219 553 93M332 219 410 360 488 219 646 309M181 181 332 219M488 219 639 181M332 219 410 220 488 219M410 61 410 220 410 360"/></g><g class="brain-nodes"><circle cx="267" cy="93" r="9"/><circle cx="181" cy="181" r="9"/><circle cx="174" cy="309" r="9"/><circle cx="286" cy="375" r="9"/><circle cx="332" cy="219" r="10"/><circle cx="410" cy="61" r="10"/><circle cx="410" cy="220" r="12"/><circle cx="410" cy="360" r="10"/><circle cx="553" cy="93" r="9"/><circle cx="639" cy="181" r="9"/><circle cx="646" cy="309" r="9"/><circle cx="534" cy="375" r="9"/><circle cx="488" cy="219" r="10"/></g></svg>
-          <button class="signal signal--data" type="button" data-neural-node="data" data-output="$signal_data_output" aria-pressed="false"><span>01</span><strong>$signal_data</strong><small>$signal_data_copy</small></button>
-          <i class="system-line system-line--one" aria-hidden="true"></i>
-          <button class="signal signal--strategy" type="button" data-neural-node="strategy" data-output="$signal_strategy_output" aria-pressed="false"><span>02</span><strong>$signal_strategy</strong><small>$signal_strategy_copy</small></button>
-          <i class="system-line system-line--two" aria-hidden="true"></i>
-          <button class="signal signal--creative" type="button" data-neural-node="creative" data-output="$signal_creative_output" aria-pressed="false"><span>03</span><strong>$signal_creative</strong><small>$signal_creative_copy</small></button>
-          <i class="system-line system-line--three" aria-hidden="true"></i>
-          <div class="system-core" aria-live="polite"><small>$signal_translate</small><span data-neural-output>$signal_default_output</span><i aria-hidden="true"></i></div>
-          <span class="neural-spark neural-spark--one" aria-hidden="true"></span><span class="neural-spark neural-spark--two" aria-hidden="true"></span><span class="neural-spark neural-spark--three" aria-hidden="true"></span>
-          $neural_panels
+        <div class="section-heading section-heading--split">
+          <div><p class="eyebrow">$work_eyebrow</p><h2 id="work-title">$work_title</h2></div>
+          <p>$work_intro</p>
         </div>
+        <div class="work-list">$work_items</div>
       </div>
     </section>
 
-    <section class="home-section portfolio-library" id="$library_id" aria-labelledby="library-title">
-      <div class="home-shell">
-        <div class="section-heading section-heading--split">
-          <div><p class="eyebrow">$library_eyebrow</p><h2 id="library-title">$library_title</h2></div>
-          <p>$library_intro</p>
-        </div>
-        <form class="portfolio-search" action="$search_href" method="get" role="search">
-          <label for="portfolio-search-input">$library_search_label</label>
-          <div><span aria-hidden="true">⌕</span><input id="portfolio-search-input" name="q" type="search" autocomplete="off" placeholder="$library_search_placeholder" /><button type="submit">$library_search_button <span aria-hidden="true">→</span></button></div>
-        </form>
-        <div class="library-grid">$library_items</div>
+    <section class="translator-band" aria-labelledby="translator-title">
+      <div class="home-shell translator-band__grid">
+        <div><p class="eyebrow">$translator_eyebrow</p><h2 id="translator-title">$neural_title</h2><p class="translator-intro">$neural_copy</p></div>
+        <ol class="translator-steps">
+          <li><span>01</span><strong>$signal_data</strong><small>$signal_data_copy</small></li>
+          <li><span>02</span><strong>$signal_strategy</strong><small>$signal_strategy_copy</small></li>
+          <li><span>03</span><strong>$signal_creative</strong><small>$signal_creative_copy</small></li>
+        </ol>
       </div>
     </section>
 
@@ -94,16 +83,6 @@ $global_nav
           <p>$capabilities_intro</p>
         </div>
         <div class="capability-grid">$capability_items</div>
-      </div>
-    </section>
-
-    <section class="home-section selected-work" id="$work_id" aria-labelledby="work-title">
-      <div class="home-shell">
-        <div class="section-heading section-heading--split">
-          <div><p class="eyebrow">$work_eyebrow</p><h2 id="work-title">$work_title</h2></div>
-          <p>$work_intro</p>
-        </div>
-        <div class="work-list">$work_items</div>
       </div>
     </section>
 
@@ -127,7 +106,7 @@ $global_nav
     <section class="home-section contact-band" id="$contact_id" aria-labelledby="contact-title">
       <div class="home-shell contact-band__grid">
         <div><p class="eyebrow">$contact_eyebrow</p><h2 id="contact-title">$contact_title</h2></div>
-        <div><p>$contact_copy</p><div class="home-actions"><a class="button button--primary" href="mailto:matiasignaciogaglio@gmail.com">$email_cta</a><a class="button button--ghost" href="https://linkedin.com/in/matiasignaciogaglio" target="_blank" rel="noopener noreferrer">$linkedin_cta <span aria-hidden="true">↗</span></a><a class="button button--ghost" href="https://github.com/MynosIII" target="_blank" rel="noopener noreferrer">$github_cta <span aria-hidden="true">↗</span></a></div></div>
+        <div><p>$contact_copy</p><div class="contact-email"><a href="mailto:matiasignaciogaglio@gmail.com">matiasignaciogaglio@gmail.com</a><button type="button" data-copy-email="matiasignaciogaglio@gmail.com" data-copy-label="$copy_email_label" data-copy-success="$copy_email_success">$copy_email_label</button><span role="status" aria-live="polite"></span></div><div class="home-actions"><a class="button button--primary" href="mailto:matiasignaciogaglio@gmail.com">$write_email_label</a><a class="button button--ghost" href="https://linkedin.com/in/matiasignaciogaglio" target="_blank" rel="noopener noreferrer">$linkedin_cta <span aria-hidden="true">↗</span></a><a class="button button--ghost" href="https://github.com/MynosIII" target="_blank" rel="noopener noreferrer">$github_cta <span aria-hidden="true">↗</span></a></div></div>
       </div>
     </section>
   </main>
