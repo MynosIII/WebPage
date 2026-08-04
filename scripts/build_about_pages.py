@@ -43,7 +43,7 @@ def render(data: dict[str, object], default: bool = False) -> str:
         "home_label": "Inicio" if es else "Home",
         "nav_label": "Navegación principal" if es else "Primary navigation",
         "nav_items": nav_items,
-        "contact_label": "Contactarme" if es else "Contact me",
+        "contact_label": "Hablemos" if es else "Contact me",
         "switch_href": "sobre-mi-en.html" if es else "sobre-mi-es.html",
         "switch_lang": "en" if es else "es",
         "switch_aria": "View in English" if es else "Ver en español",
