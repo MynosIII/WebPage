@@ -352,7 +352,32 @@ h3 { letter-spacing: -.025em; }
   .proof-strip div:nth-child(even) { border-right: 0; }
   .proof-strip div:nth-last-child(-n+2) { border-bottom: 0; }
   .work-card h3 { font-size: 2.3rem; }
-  .work-card__metrics { align-items: stretch; flex-direction: column; }
+  .work-card__metrics {
+    display: grid;
+    gap: 0;
+    margin-block: 1.35rem 1.5rem;
+    border-block: 1px solid var(--line);
+  }
+  .work-card__metrics li {
+    position: relative;
+    padding: .5rem .25rem .5rem 1rem;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+    line-height: 1.35;
+  }
+  .work-card__metrics li:last-child { border-bottom: 0; }
+  .work-card__metrics li::before {
+    content: "";
+    position: absolute;
+    top: .85rem;
+    left: .1rem;
+    width: .35rem;
+    height: .35rem;
+    border-radius: 50%;
+    background: var(--accent);
+  }
   .research-visual { min-height: 270px; padding: 1.3rem; }
   .research-visual__plot { height: 170px; }
 }
@@ -446,6 +471,11 @@ html[lang="es"] .home-hero__grid::after { content: "DATOS  /  CRITERIO  /  EJECU
   .neural-panel { grid-template-columns: 1fr; gap: 1.5rem; }
   .work-card { border-radius: var(--radius); }
   .work-card__media { border-radius: var(--radius-sm); }
+}
+
+@media (max-width: 520px) {
+  /* On small screens, results read as one compact evidence block—not three oversized pills. */
+  .work-card__metrics li { border-radius: 0; background: transparent; }
 }
 
 @media (prefers-reduced-motion: reduce) {

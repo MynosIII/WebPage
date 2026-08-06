@@ -71,6 +71,25 @@ test('homepage presents exactly three flagship cases and working recruiter links
   expect(resumeResponse.headers()['content-type']).toContain('application/pdf');
 });
 
+test('homepage case metrics stay compact on mobile', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/index-es.html', { waitUntil: 'networkidle' });
+
+  const metrics = page.locator('.work-card__metrics').first();
+  await expect(metrics.locator('li')).toHaveCount(3);
+  const layout = await metrics.evaluate(element => ({
+    height: Math.round(element.getBoundingClientRect().height),
+    items: [...element.children].map(item => ({
+      borderRadius: getComputedStyle(item).borderRadius,
+      backgroundColor: getComputedStyle(item).backgroundColor
+    }))
+  }));
+
+  expect(layout.height).toBeLessThan(105);
+  expect(layout.items.every(item => item.borderRadius === '0px')).toBe(true);
+  expect(layout.items.every(item => item.backgroundColor === 'rgba(0, 0, 0, 0)')).toBe(true);
+});
+
 test('featured cases precede the compact analytical translator and the single search remains interactive', async ({ page }) => {
   await page.goto('/index.html', { waitUntil: 'networkidle' });
   await expect(page.locator('.translator-steps li')).toHaveCount(3);
