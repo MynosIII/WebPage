@@ -64,7 +64,7 @@ test('homepage presents exactly three flagship cases and working recruiter links
   await expect(page.locator('[data-portfolio-rail]')).toHaveCount(0);
   await expect(page.locator('.portfolio-search')).toHaveCount(0);
   await expect(page.locator('.proof-item')).toHaveCount(4);
-  await expect(page.locator('.contact-email a')).toHaveText('matiasignaciogaglio@gmail.com');
+  await expect(page.locator('.contact-action__email')).toHaveText('matiasignaciogaglio@gmail.com');
   await expect(page.getByRole('heading', { name: 'Datos, pauta y contenido al servicio de la rentabilidad.' })).toBeVisible();
   const resumeResponse = await request.get('/output/pdf/Matias-Gaglio-CV-ES.pdf');
   expect(resumeResponse.ok()).toBeTruthy();
@@ -88,6 +88,40 @@ test('homepage case metrics stay compact on mobile', async ({ page }) => {
   expect(layout.height).toBeLessThan(105);
   expect(layout.items.every(item => item.borderRadius === '0px')).toBe(true);
   expect(layout.items.every(item => item.backgroundColor === 'rgba(0, 0, 0, 0)')).toBe(true);
+});
+
+test('contact CTAs expand into email and copy actions', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto('/index-es.html', { waitUntil: 'networkidle' });
+
+  const action = page.locator('.contact-action').first();
+  const mail = action.locator('.contact-action__mail');
+  const copy = action.locator('.contact-action__copy');
+  await expect(action).toHaveCount(1);
+  await expect(mail).toHaveAttribute('aria-label', 'Enviar email a matiasignaciogaglio@gmail.com');
+  const collapsedWidth = await action.evaluate(element => Math.round(element.getBoundingClientRect().width));
+
+  await action.hover();
+  await expect(mail).toHaveAttribute('aria-expanded', 'true');
+  await expect(action.locator('.contact-action__email')).toHaveText('matiasignaciogaglio@gmail.com');
+  await expect(copy).toBeVisible();
+  await expect.poll(() => action.evaluate(element => Math.round(element.getBoundingClientRect().width))).toBeGreaterThan(collapsedWidth);
+
+  await copy.click();
+  await expect(copy).toContainText('Copiado');
+});
+
+test('contact CTA opens safely on touch before launching email', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/sobre-mi-es.html', { waitUntil: 'networkidle' });
+  const action = page.locator('.contact-action').first();
+  const mail = action.locator('.contact-action__mail');
+  const startingUrl = page.url();
+
+  await mail.click();
+  await expect(mail).toHaveAttribute('aria-expanded', 'true');
+  await expect(action.locator('.contact-action__copy')).toBeVisible();
+  expect(page.url()).toBe(startingUrl);
 });
 
 test('featured cases precede the compact analytical translator and the single search remains interactive', async ({ page }) => {
@@ -150,6 +184,7 @@ test('case tools appear on listing cards and at the end of each case', async ({ 
   await page.goto('/caso-1-es.html', { waitUntil: 'networkidle' });
   await expect(page.locator('.case-software-stack')).toBeVisible();
   await expect(page.locator('.case-software-stack').getByText('Amazon Seller Central', { exact: true })).toBeVisible();
+  await expect(page.locator('.case-software-stack .contact-action')).toBeVisible();
 });
 
 test('case software is indexed as backend search keywords', async ({ request }) => {

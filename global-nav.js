@@ -1,4 +1,11 @@
 (() => {
+  if (!document.querySelector('script[data-contact-actions]')) {
+    const contactActions = document.createElement('script');
+    contactActions.src = new URL('contact-actions.js?v=20260806b', document.currentScript?.src || document.baseURI).href;
+    contactActions.dataset.contactActions = '';
+    document.head.append(contactActions);
+  }
+
   const nav = document.querySelector('[data-global-nav]');
   if (!nav) return;
   const button = nav.querySelector('[data-global-nav-toggle]');

@@ -1,0 +1,163 @@
+.contact-action {
+  --contact-action-background: #00e0ff;
+  --contact-action-border: 1px solid transparent;
+  --contact-action-color: #071012;
+  --contact-action-height: 48px;
+  --contact-action-collapsed-width: 190px;
+  --contact-action-open-width: 440px;
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: stretch;
+  width: var(--contact-action-collapsed-width);
+  max-width: 100%;
+  min-height: var(--contact-action-height);
+  overflow: hidden;
+  border: var(--contact-action-border);
+  border-radius: 999px;
+  background: var(--contact-action-background);
+  color: var(--contact-action-color);
+  vertical-align: middle;
+  isolation: isolate;
+  transition: width .32s cubic-bezier(.2,.75,.2,1), box-shadow .2s ease, transform .2s ease;
+}
+
+.contact-action:is(:hover, :focus-within),
+.contact-action.is-open {
+  width: min(var(--contact-action-open-width), calc(100vw - 28px));
+  box-shadow: 0 16px 42px rgba(0,0,0,.28);
+  transform: translateY(-2px);
+}
+
+.contact-action > .contact-action__mail {
+  position: relative !important;
+  display: flex !important;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: var(--contact-action-height);
+  margin: 0 !important;
+  padding: 0 18px !important;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  font: inherit;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transform: none !important;
+  filter: none !important;
+}
+
+.contact-action__label,
+.contact-action__mail-detail {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  transition: opacity .18s ease, transform .24s ease;
+}
+.contact-action__label { justify-content: center; }
+.contact-action__mail-detail {
+  position: absolute;
+  inset: 0 14px;
+  gap: 9px;
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.contact-action:is(:hover, :focus-within, .is-open) .contact-action__label {
+  opacity: 0;
+  transform: translateX(-8px);
+  pointer-events: none;
+}
+.contact-action:is(:hover, :focus-within, .is-open) .contact-action__mail-detail {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact-action__email {
+  min-width: 0;
+  overflow: hidden;
+  font-size: .78em;
+  text-overflow: ellipsis;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.contact-action__icon {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+}
+.contact-action__icon path,
+.contact-action__icon rect { vector-effect: non-scaling-stroke; }
+
+.contact-action__copy {
+  display: flex;
+  flex: 0 0 0;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 0;
+  min-width: 0;
+  min-height: var(--contact-action-height);
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-left: 1px solid transparent;
+  background: rgba(0,0,0,.12);
+  color: inherit;
+  font: inherit;
+  font-size: .72em;
+  font-weight: 800;
+  opacity: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: flex-basis .32s cubic-bezier(.2,.75,.2,1), width .32s cubic-bezier(.2,.75,.2,1), opacity .16s ease, background .18s ease;
+}
+.contact-action:is(:hover, :focus-within, .is-open) .contact-action__copy {
+  flex-basis: 96px;
+  width: 96px;
+  padding-inline: 12px;
+  border-left-color: currentColor;
+  opacity: .82;
+}
+.contact-action__copy:hover,
+.contact-action__copy:focus-visible,
+.contact-action__copy.is-copied { background: rgba(0,0,0,.22); opacity: 1 !important; }
+.contact-action__mail:focus-visible,
+.contact-action__copy:focus-visible { outline: 2px solid currentColor; outline-offset: -4px; }
+.contact-action__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .contact-action { max-width: 100%; }
+  .contact-action:is(:hover, :focus-within),
+  .contact-action.is-open { width: 100%; transform: none; }
+  .contact-action__email { font-size: .69em; }
+  .contact-action:is(:hover, :focus-within, .is-open) .contact-action__copy {
+    flex-basis: 72px;
+    width: 72px;
+    padding-inline: 8px;
+  }
+  .contact-action__copy span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-action,
+  .contact-action * { transition: none !important; }
+}
