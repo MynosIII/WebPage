@@ -1,5 +1,10 @@
 $ErrorActionPreference = 'Stop'
 $root = $PSScriptRoot
+$caseToolCatalog = Get-Content -LiteralPath (Join-Path $root 'content\case-tools.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+$toolNames = @{}
+$caseTools = @{}
+$caseToolCatalog.tools.PSObject.Properties | ForEach-Object { $toolNames[$_.Name] = $_.Value.name }
+$caseToolCatalog.cases.PSObject.Properties | ForEach-Object { $caseTools[$_.Name.ToLowerInvariant()] = @($_.Value) }
 
 function ConvertFrom-HtmlText([string]$value) {
     $withoutTags = [regex]::Replace($value, '<[^>]+>', ' ')
@@ -29,11 +34,19 @@ $pages = Get-ChildItem -LiteralPath $root -Recurse -File -Filter '*.html' |
         if ($content.Length -gt 30000) { $content = $content.Substring(0, 30000) }
         $relative = $_.FullName.Substring($root.Length).TrimStart('\').Replace('\', '/')
         $metaKeywords = if ($keywordMatch.Success) { ConvertFrom-HtmlText $keywordMatch.Groups[1].Value } else { '' }
+        $caseName = ($_.Name -replace '-(en|es)(?=\.html$)', '').ToLowerInvariant()
+        $indexedTools = if ($caseTools.ContainsKey($caseName)) {
+            @($caseTools[$caseName] | ForEach-Object { $toolNames[$_] })
+        } else {
+            @()
+        }
+        $toolKeywords = $indexedTools -join ' '
 
         [ordered]@{
             title = if ($title) { $title } elseif ($headings.Count) { $headings[0] } else { $_.BaseName }
             description = if ($descriptionMatch.Success) { ConvertFrom-HtmlText $descriptionMatch.Groups[1].Value } else { '' }
-            keywords = ($metaKeywords + ' ' + ($headings -join ' ')).Trim()
+            keywords = ($metaKeywords + ' ' + ($headings -join ' ') + ' ' + $toolKeywords).Trim()
+            tools = $indexedTools
             content = $content
             lang = $language
             url = $relative

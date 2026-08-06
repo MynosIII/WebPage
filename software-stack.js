@@ -1,37 +1,27 @@
-(() => {
+(async () => {
   const base = document.currentScript?.src ? new URL('.', document.currentScript.src) : new URL('.', location.href);
   const logoPath = file => new URL(`assets/software-logos/${file}`, base).href;
+  if (!document.querySelector('link[data-software-stack-styles]')) {
+    const stylesheet = document.createElement('link');
+    stylesheet.rel = 'stylesheet';
+    stylesheet.href = new URL('software-stack.css?v=20260806', base).href;
+    stylesheet.dataset.softwareStackStyles = '';
+    document.head.append(stylesheet);
+  }
 
-  const tools = {
-    photoshop: ['Photoshop', 'photoshop.svg'],
-    'after-effects': ['After Effects', 'after-effects.svg'],
-    illustrator: ['Illustrator', 'illustrator.svg'],
-    premiere: ['Premiere Pro', 'premiere.svg'],
-    excel: ['Excel', 'excel.svg'],
-    'google-sheets': ['Google Sheets', 'google-sheets.svg'],
-    python: ['Python', 'python.svg'],
-    'power-bi': ['Power BI', 'power-bi.svg'],
-    'davinci-resolve': ['DaVinci Resolve', 'davinci-resolve.svg'],
-    blender: ['Blender', 'blender.svg'],
-    cinema4d: ['Cinema 4D', 'cinema4d.svg'],
-    nuke: ['Nuke', 'nuke.svg'],
-    helium10: ['Helium 10', 'helium10.svg'],
-    'jungle-scout': ['Jungle Scout', 'jungle-scout.svg'],
-    keepa: ['Keepa', 'keepa.svg'],
-    sellerboard: ['Sellerboard', 'sellerboard.svg'],
-    'amazon-seller-central': ['Amazon Seller Central', 'amazon-seller-central.svg'],
-    'google-ads': ['Google Ads', 'google-ads.svg'],
-    'meta-ads': ['Meta Ads', 'meta-ads.svg'],
-    ga4: ['Google Analytics 4', 'ga4.svg'],
-    'search-console': ['Search Console', 'search-console.svg'],
-    semrush: ['Semrush', 'semrush.svg'],
-    sql: ['SQL', 'sql.svg'],
-    hotjar: ['Hotjar', 'hotjar.svg'],
-    tableau: ['Tableau', 'tableau.svg'],
-    r: ['R', 'r.svg'],
-    stackline: ['Stackline', 'stackline.svg'],
-    shulex: ['Shulex VOC AI', 'shulex.svg']
-  };
+  let catalog;
+  try {
+    const response = await fetch(new URL('content/case-tools.json?v=20260806', base));
+    if (!response.ok) throw new Error(`Unable to load case tools (${response.status})`);
+    catalog = await response.json();
+  } catch (error) {
+    console.warn('Case tool metadata is unavailable.', error);
+    return;
+  }
+  const tools = catalog.tools;
+  const caseStacks = Object.fromEntries(
+    Object.entries(catalog.cases).map(([page, stack]) => [page.toLowerCase(), stack])
+  );
 
   const aboutRows = [
     {
@@ -59,38 +49,6 @@
       tools: ['photoshop', 'illustrator', 'premiere', 'after-effects', 'davinci-resolve', 'blender', 'cinema4d', 'nuke']
     }
   ];
-  const caseStacks = {
-    'animation-01.html': ['after-effects'],
-    'animation-02.html': ['after-effects'],
-    'animation-03.html': ['after-effects'],
-    'animation-04.html': ['after-effects'],
-    'icon-system-case.html': ['illustrator'],
-    'ecommerce-video-case.html': ['premiere', 'after-effects', 'amazon-seller-central'],
-    'ecommerce-video-01.html': ['premiere', 'after-effects'],
-    'ecommerce-video-02.html': ['premiere', 'after-effects'],
-    'ecommerce-video-03.html': ['premiere', 'after-effects'],
-    'ecommerce-video-04.html': ['premiere', 'after-effects'],
-    'ecommerce-video-05.html': ['premiere', 'after-effects'],
-    'voice-of-customer-conversion-brief.html': ['excel', 'amazon-seller-central', 'helium10'],
-    'shulex-voc-creative-case.html': ['shulex', 'excel', 'photoshop', 'illustrator', 'amazon-seller-central'],
-    'market-share-loss-diagnosis.html': ['amazon-seller-central', 'excel', 'stackline'],
-    'amazon-listing-audit-checklist.html': ['amazon-seller-central', 'helium10', 'excel'],
-    'search-query-keyword-harvesting.html': ['amazon-seller-central', 'excel', 'helium10'],
-    'search-suppression-catalog-recovery.html': ['amazon-seller-central', 'excel'],
-    'automotive-fitment-seo.html': ['amazon-seller-central', 'excel', 'helium10'],
-    'amazon-lifecycle-operating-system.html': ['amazon-seller-central', 'excel', 'helium10', 'semrush'],
-    'amazon-content-architecture.html': ['amazon-seller-central', 'helium10', 'photoshop', 'after-effects'],
-    'unimac-case.html': ['photoshop', 'illustrator'],
-    'Revolution_creative_case.html': ['photoshop', 'amazon-seller-central'],
-    'BI-case-2.html': ['amazon-seller-central', 'excel', 'stackline'],
-    'DayParting-Case.html': ['amazon-seller-central', 'excel'],
-    'caso-daizzy-gear.html': ['amazon-seller-central'],
-    'caso-daizzy-gear-en.html': ['amazon-seller-central'],
-    'caso-hogar-cocina-ppc.html': ['amazon-seller-central'],
-    'caso-1.html': ['amazon-seller-central'],
-    'caso-2.html': ['excel'],
-    'caso-3.html': ['photoshop']
-  };
   const caseBackLinks = {
     'animation-01.html': ['creatives.html#video-editing', 'Volver a videos', 'Back to videos'],
     'animation-02.html': ['creatives.html#video-editing', 'Volver a videos', 'Back to videos'],
@@ -125,8 +83,14 @@
   };
 
   const card = key => {
-    const [name, file] = tools[key];
-    return `<span class="software-logo-card"><img src="${logoPath(file)}" alt="" aria-hidden="true" data-media-type="software-logo" data-media-description="Logo de ${name}" decoding="async"><b>${name}</b></span>`;
+    const tool = tools[key];
+    if (!tool) return '';
+    return `<span class="software-logo-card"><img src="${logoPath(tool.asset)}" alt="" aria-hidden="true" data-media-type="software-logo" data-media-description="Logo de ${tool.name}" decoding="async"><b>${tool.name}</b></span>`;
+  };
+  const compactCard = key => {
+    const tool = tools[key];
+    if (!tool) return '';
+    return `<span class="case-card-tool-badge"><img src="${logoPath(tool.asset)}" alt="" aria-hidden="true" decoding="async"><span>${tool.name}</span></span>`;
   };
 
   const pageName = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
@@ -141,19 +105,48 @@
     return `${localizedPath}${hash ? `#${hash}` : ''}`;
   };
   const isAbout = basePageName.toLowerCase() === 'sobre-mi.html';
+  const shellClass = document.querySelector('.home-shell') ? 'home-shell' : 'container';
+
+  const cardLinkSelector = [
+    '.work-card .text-link[href]',
+    '.caso-card-link[href]',
+    '.article-card[href]',
+    '.video-project[href]',
+    '.voc-ai-showcase[href]',
+    '.revolution-showcase[href]',
+    '.icon-system-showcase[href]',
+    '.ecommerce-video-case-link[href]',
+    '.flyer-case-link[href]'
+  ].join(',');
+  document.querySelectorAll(cardLinkSelector).forEach(link => {
+    const targetPage = decodeURIComponent(new URL(link.href, location.href).pathname.split('/').pop() || '');
+    const targetBase = targetPage.replace(/-(en|es)(?=\.html$)/i, '').toLowerCase();
+    const stack = caseStacks[targetBase];
+    if (!stack?.length) return;
+    const workCard = link.closest('.work-card');
+    const target = workCard?.querySelector('.work-card__body')
+      || link.querySelector('.caso-contenido, .article-card-body, .voc-ai-showcase-copy, .revolution-showcase-copy, .icon-system-showcase-copy')
+      || (link.matches('.ecommerce-video-case-link, .flyer-case-link') ? link.parentElement : link);
+    if (!target || target.querySelector(':scope > .case-card-tool-badges')) return;
+    const badges = document.createElement('span');
+    badges.className = 'case-card-tool-badges';
+    badges.setAttribute('aria-label', `${spanishPage ? 'Herramientas usadas' : 'Tools used'}: ${stack.map(key => tools[key]?.name).filter(Boolean).join(', ')}`);
+    badges.innerHTML = stack.map(compactCard).join('');
+    target.append(badges);
+  });
 
   if (isAbout) {
     const section = document.createElement('section');
     section.className = 'software-marquee-section';
     section.innerHTML = `
-      <div class="container software-marquee-heading">
+      <div class="${shellClass} software-marquee-heading">
         <span>${spanishPage ? 'Herramientas que uso' : 'Tools I use'}</span>
         <h2>${spanishPage ? 'Mi stack de software' : 'My software stack'}</h2>
         <p>${spanishPage ? 'Creatividad, análisis, ecommerce y automatización conectados en un mismo flujo de trabajo.' : 'Creative work, analytics, ecommerce and automation connected in one workflow.'}</p>
       </div>
       ${aboutRows.map(row => `
         <div class="software-marquee-row" data-software-row="${row.slug}">
-          <div class="container software-marquee-row-label">
+          <div class="${shellClass} software-marquee-row-label">
             <h3>${row.label}</h3>
             <p>${spanishPage ? row.copy : row.copyEn}</p>
           </div>
@@ -161,12 +154,12 @@
             <div class="software-marquee-track ${row.direction === 'forward' ? 'software-marquee-forward' : 'software-marquee-reverse'}">${Array.from({length: 4}, () => row.tools).flat().map(card).join('')}</div>
           </div>
         </div>`).join('')}`;
-    const contact = document.getElementById('contacto');
+    const contact = document.getElementById(spanishPage ? 'contacto' : 'contact') || document.querySelector('.contact-band');
     contact?.before(section);
     return;
   }
 
-  const selected = caseStacks[pageName] || caseStacks[basePageName];
+  const selected = caseStacks[basePageName.toLowerCase()];
   if (!selected?.length) return;
   const spanishCase = spanishPage;
   const baseBackLink = caseBackLinks[pageName] || caseBackLinks[basePageName];
@@ -174,6 +167,6 @@
   const contactSubject = encodeURIComponent(spanishCase ? `Consulta sobre ${document.title}` : `Project inquiry — ${document.title}`);
   const section = document.createElement('section');
   section.className = 'case-software-stack';
-  section.innerHTML = `<div class="container"><div class="case-software-heading"><span>Software stack</span><h2>${spanishCase ? 'Herramientas detrás de este caso' : 'Tools behind this case'}</h2></div><div class="case-software-grid">${selected.map(card).join('')}</div><div class="case-end-actions"><p>${spanishCase ? '¿Querés trabajar conmigo en un proyecto similar?' : 'Want to work together on a similar project?'}</p><a class="case-contact-cta" href="mailto:matiasignaciogaglio@gmail.com?subject=${contactSubject}">${spanishCase ? 'Contactame' : 'Let’s work together'} <span aria-hidden="true">↗</span></a>${backLink ? `<a class="case-back-link" href="${backLink[0]}">← ${spanishCase ? backLink[1] : backLink[2]}</a>` : ''}</div></div>`;
+  section.innerHTML = `<div class="${shellClass}"><div class="case-software-heading"><span>Software stack</span><h2>${spanishCase ? 'Herramientas detrás de este caso' : 'Tools behind this case'}</h2></div><div class="case-software-grid">${selected.map(card).join('')}</div><div class="case-end-actions"><p>${spanishCase ? '¿Querés trabajar conmigo en un proyecto similar?' : 'Want to work together on a similar project?'}</p><a class="case-contact-cta" href="mailto:matiasignaciogaglio@gmail.com?subject=${contactSubject}">${spanishCase ? 'Contactame' : 'Let’s work together'} <span aria-hidden="true">↗</span></a>${backLink ? `<a class="case-back-link" href="${backLink[0]}">← ${spanishCase ? backLink[1] : backLink[2]}</a>` : ''}</div></div>`;
   document.querySelector('main')?.append(section);
 })();

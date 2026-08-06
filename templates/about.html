@@ -20,7 +20,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="site.webmanifest" />
   <link rel="stylesheet" href="home.css" />
-  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="about.css?v=20260806" />
   <link rel="stylesheet" href="global-nav.css" />
 </head>
 <body>
@@ -50,8 +50,9 @@ $global_nav
     </section>
     <section class="about-story-section about-profile-section" aria-labelledby="profile-facts-title">
       <div class="home-shell">
-        <div class="profile-facts" id="profile-facts-title">$facts</div>
-        <details class="tools-disclosure"><summary>$tools_title</summary><p>$tools_intro</p><ul>$tools</ul></details>
+        <h2 class="sr-only" id="profile-facts-title">$profile_label</h2>
+        <dl class="about-profile-facts">$facts</dl>
+        <details class="tools-disclosure" open><summary>$tools_title</summary><p>$tools_intro</p><ul>$tools</ul></details>
       </div>
     </section>
     <section class="home-section contact-band" id="$contact_id" aria-labelledby="about-contact-title">
@@ -63,6 +64,7 @@ $global_nav
   </main>
   <footer class="home-footer"><div class="home-shell"><p>© 2026 Matías Gaglio.</p><a href="$home_href">$home_label</a></div></footer>
   <script src="home.js" defer></script>
+  <script src="software-stack.js?v=20260806b" defer></script>
   <script src="global-nav.js" defer></script>
 </body>
 </html>

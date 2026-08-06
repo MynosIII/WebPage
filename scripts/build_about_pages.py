@@ -34,7 +34,10 @@ def render(data: dict[str, object], default: bool = False) -> str:
         for index, title, copy in data["chapters"]
     )
     facts_data = [(data["role_label"], data["role"]), (data["focus_label"], data["focus"]), (data["education_label"], data["education"])]
-    facts = "".join(f'<div class="profile-fact"><strong>{esc(label)}</strong><span>{esc(value)}</span></div>' for label, value in facts_data)
+    facts = "".join(
+        f'<div class="about-profile-fact"><dt>{esc(label)}</dt><dd>{esc(value)}</dd></div>'
+        for label, value in facts_data
+    )
     tools = "".join(f"<li>{esc(item)}</li>" for item in data["tools"])
     slug = "sobre-mi" if default else f"sobre-mi-{lang}"
     values = {
@@ -54,6 +57,7 @@ def render(data: dict[str, object], default: bool = False) -> str:
         "menu_open": "Abrir menú" if es else "Open menu",
         "menu_close": "Cerrar menú" if es else "Close menu",
         "story_label": "Historia profesional" if es else "Professional story",
+        "profile_label": "Perfil profesional" if es else "Professional profile",
         "chapters": chapters,
         "facts": facts,
         "tools": tools,

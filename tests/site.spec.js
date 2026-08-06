@@ -95,17 +95,52 @@ for (const path of ['/caso-1-es.html', '/caso-2-es.html', '/caso-3-es.html', '/c
     await page.goto(path, { waitUntil: 'networkidle' });
     const overflow = await page.evaluate(() => ({ scrollWidth: document.documentElement.scrollWidth, clientWidth: document.documentElement.clientWidth }));
     expect(overflow.scrollWidth).toBeLessThanOrEqual(overflow.clientWidth + 1);
-    const images = await page.locator('img').all();
+    const images = await page.locator('img:not([data-media-type="software-logo"])').all();
     for (const image of images) {
       await image.scrollIntoViewIfNeeded();
       await expect(image).toHaveJSProperty('complete', true);
     }
+    const softwareLogos = page.locator('img[data-media-type="software-logo"]');
+    await expect.poll(() => softwareLogos.evaluateAll(images => images.filter(image => !image.complete || image.naturalWidth === 0).length)).toBe(0);
     const brokenImages = await page.locator('img').evaluateAll(images => images.filter(image => !image.complete || image.naturalWidth === 0).length);
     expect(brokenImages).toBe(0);
     await expect(page.locator('[data-global-nav]')).toBeVisible();
     await expect(page.locator('[data-portfolio-rail]')).toHaveCount(0);
   });
 }
+
+test('about profile details are visible by default and remain collapsible', async ({ page }) => {
+  await page.goto('/sobre-mi-es.html', { waitUntil: 'networkidle' });
+  const disclosure = page.locator('.tools-disclosure');
+  await expect(disclosure).toHaveAttribute('open', '');
+  await expect(disclosure.getByText('Seller Central y Amazon Ads')).toBeVisible();
+  await expect(page.locator('.software-marquee-section')).toBeVisible();
+  await expect(page.locator('.software-marquee-row')).toHaveCount(3);
+  await expect(page.locator('[data-software-row="ecommerce"] .software-logo-card').filter({ hasText: 'Amazon Seller Central' })).not.toHaveCount(0);
+  await disclosure.locator('summary').click();
+  await expect(disclosure).not.toHaveAttribute('open', '');
+});
+
+test('case tools appear on listing cards and at the end of each case', async ({ page }) => {
+  await page.goto('/ecommerce-es.html', { waitUntil: 'networkidle' });
+  const card = page.locator('a.caso-card-link[href="amazon-content-architecture-es.html"]');
+  await expect(card.locator('.case-card-tool-badges')).toBeVisible();
+  await expect(card.locator('.case-card-tool-badge')).toHaveCount(4);
+  await expect(card.getByText('Photoshop', { exact: true })).toBeVisible();
+
+  await page.goto('/caso-1-es.html', { waitUntil: 'networkidle' });
+  await expect(page.locator('.case-software-stack')).toBeVisible();
+  await expect(page.locator('.case-software-stack').getByText('Amazon Seller Central', { exact: true })).toBeVisible();
+});
+
+test('case software is indexed as backend search keywords', async ({ request }) => {
+  const response = await request.get('/search-index.json');
+  expect(response.ok()).toBeTruthy();
+  const index = await response.json();
+  const casePage = index.find(item => item.url === 'amazon-content-architecture-es.html');
+  expect(casePage.tools).toEqual(expect.arrayContaining(['Amazon Seller Central', 'Helium 10', 'Photoshop', 'After Effects']));
+  expect(casePage.keywords).toContain('Photoshop');
+});
 
 test('shared navigation uses the tablet drawer without clipping', async ({ page }) => {
   await page.setViewportSize({ width: 820, height: 1180 });

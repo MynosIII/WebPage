@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from collections import Counter
@@ -152,6 +153,48 @@ def validate_page(path: Path, cache: dict[Path, PageParser]) -> list[str]:
     return issues
 
 
+def validate_case_tool_catalog(pages: list[Path]) -> list[str]:
+    issues: list[str] = []
+    catalog_path = ROOT / "content" / "case-tools.json"
+    if not catalog_path.exists():
+        return ["Missing content/case-tools.json."]
+    catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+    tools = catalog.get("tools", {})
+    cases = catalog.get("cases", {})
+    normalized_pages = {
+        re.sub(r"-(?:en|es)(?=\.html$)", "", path.name, flags=re.I).lower()
+        for path in pages
+    }
+    listing_pages = {"index.html", "ecommerce.html", "articles.html", "creatives.html", "sobre-mi.html"}
+
+    for tool_id, tool in tools.items():
+        asset = ROOT / "assets" / "software-logos" / str(tool.get("asset", ""))
+        if not tool.get("name"):
+            issues.append(f"content/case-tools.json: {tool_id} is missing a display name")
+        if not asset.is_file():
+            issues.append(f"content/case-tools.json: {tool_id} references missing logo {asset.name}")
+
+    for page_name, stack in cases.items():
+        if page_name.lower() not in normalized_pages:
+            issues.append(f"content/case-tools.json: no case page found for {page_name}")
+        if not stack:
+            issues.append(f"content/case-tools.json: {page_name} has an empty tool stack")
+        for tool_id in stack:
+            if tool_id not in tools:
+                issues.append(f"content/case-tools.json: {page_name} references unknown tool {tool_id}")
+
+    for path in pages:
+        source = path.read_text(encoding="utf-8")
+        if "software-stack.js" not in source:
+            continue
+        page_name = re.sub(r"-(?:en|es)(?=\.html$)", "", path.name, flags=re.I).lower()
+        if page_name in listing_pages:
+            continue
+        if page_name not in {name.lower() for name in cases}:
+            issues.append(f"{path.relative_to(ROOT).as_posix()}: software stack page is missing catalog metadata")
+    return issues
+
+
 def main() -> int:
     issues: list[str] = []
     cache: dict[Path, PageParser] = {}
@@ -162,6 +205,7 @@ def main() -> int:
     ]
     for path in sorted(pages):
         issues.extend(validate_page(path, cache))
+    issues.extend(validate_case_tool_catalog(pages))
 
     forbidden = [
         path.relative_to(ROOT).as_posix()
