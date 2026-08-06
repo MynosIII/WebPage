@@ -151,6 +151,12 @@
       "spanish": "creatives-es.html"
     },
     {
+      "page": "cv.html",
+      "sourceLanguage": "es",
+      "english": "cv-en.html",
+      "spanish": "cv-es.html"
+    },
+    {
       "page": "documento.html",
       "sourceLanguage": "es",
       "english": "documento-en.html",

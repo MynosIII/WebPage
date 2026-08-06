@@ -218,7 +218,7 @@ def render(locale: dict[str, object], claims: dict[str, object]) -> str:
             "switch_hreflang": "en" if spanish else "es",
             "primary_href": "#casos" if spanish else "#cases",
             "secondary_href": "#contacto" if spanish else "#contact",
-            "cv_href": "output/pdf/Matias-Gaglio-CV-ES.pdf" if spanish else "output/pdf/Matias-Gaglio-Resume-EN.pdf",
+            "cv_href": "cv-es.html" if spanish else "cv-en.html",
             "signal_data": "DATOS" if spanish else "DATA",
             "signal_data_copy": "Encontrar la señal" if spanish else "Find the signal",
             "signal_strategy": "ESTRATEGIA" if spanish else "STRATEGY",

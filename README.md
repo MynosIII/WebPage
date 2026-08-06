@@ -11,9 +11,9 @@ This repository is the source of truth for the bilingual static portfolio deploy
 - `content/about.json` and `templates/about.html` generate the recruiter-focused professional story.
 - `templates/homepage.html`, `home.css`, and `home.js` contain the shared homepage structure, visual system, and interaction behavior.
 - `scripts/build_homepages.py` generates the committed homepage HTML. Generated files should never be edited directly.
-- Downloadable Spanish and English resumes are generated into `output/pdf/` by `scripts/build_resumes.py` and are linked from the main navigation, hero, and About page.
+- `scripts/resume_content.py` is the shared source for the interactive HTML resume and printable PDFs. `scripts/build_cv_pages.py` generates `cv.html`, `cv-es.html`, and `cv-en.html`; `scripts/build_resumes.py` generates the downloadable PDFs in `output/pdf/`.
 - Additional case-study pages remain static HTML and use `style.css` plus `accessibility.js` while they are progressively migrated to shared templates.
-- `language-catalog.json` defines the 39 Spanish/English page pairs. `scripts/apply_legacy_translation_fixes.py` preserves the reviewed legacy glossary, while `scripts/validate_localization.py` checks language declarations, reciprocal `hreflang`, encoding, and banned literal translations.
+- `language-catalog.json` defines the 40 Spanish/English page pairs. `scripts/apply_legacy_translation_fixes.py` preserves the reviewed legacy glossary, while `scripts/validate_localization.py` checks language declarations, reciprocal `hreflang`, encoding, and banned literal translations.
 - `robots.txt` and `sitemap.xml` are generated from canonical page metadata.
 
 ## Local preview
@@ -42,6 +42,7 @@ python scripts/generate_home_assets.py
 python scripts/build_homepages.py
 python scripts/build_case_studies.py
 python scripts/build_about_pages.py
+python scripts/build_cv_pages.py
 python scripts/sync_ecommerce_claims.py
 python scripts/apply_legacy_translation_fixes.py
 python scripts/generate_sitemap.py
@@ -54,6 +55,7 @@ Before publishing, also run:
 python scripts/build_homepages.py --check
 python scripts/build_case_studies.py --check
 python scripts/build_about_pages.py --check
+python scripts/build_cv_pages.py --check
 python scripts/sync_ecommerce_claims.py --check
 python scripts/apply_legacy_translation_fixes.py --check
 python scripts/validate_localization.py
@@ -76,7 +78,7 @@ The reproducible service definition is in `render.yaml`:
 - service type: Static Site
 - repository: `MynosIII/WebPage`
 - branch: `main`
-- build command: generated homepage, case-study, About, Ecommerce claim, discovery, credibility, and site-validation checks from `render.yaml`
+- build command: generated homepage, case-study, About, interactive CV, Ecommerce claim, discovery, credibility, and site-validation checks from `render.yaml`
 - publish directory: `.`
 - auto-deploy: enabled for `main`
 - pull-request previews: disabled

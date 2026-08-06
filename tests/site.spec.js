@@ -124,6 +124,52 @@ test('contact CTA opens safely on touch before launching email', async ({ page }
   expect(page.url()).toBe(startingUrl);
 });
 
+test('homepage and About route resume viewers to the interactive CV', async ({ page }) => {
+  await page.goto('/index-es.html', { waitUntil: 'networkidle' });
+  const homeResume = page.locator('.hero-cv-link');
+  await expect(homeResume).toHaveText(/Ver CV/);
+  await expect(homeResume).toHaveAttribute('href', 'cv-es.html');
+  await expect(homeResume).not.toHaveAttribute('download', '');
+
+  await page.goto('/sobre-mi-es.html', { waitUntil: 'networkidle' });
+  const aboutResume = page.locator('.about-story-hero .button--primary');
+  await expect(aboutResume).toHaveText('Ver CV');
+  await expect(aboutResume).toHaveAttribute('href', 'cv-es.html');
+});
+
+test('interactive CV exposes evidence, navigation and PDF download', async ({ page, request }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto('/cv-es.html', { waitUntil: 'networkidle' });
+  await expect(page.getByRole('heading', { name: 'Matías Gaglio.' })).toBeVisible();
+  await expect(page.locator('[data-cv-section]')).toHaveCount(5);
+  await expect(page.locator('.cv-case')).toHaveCount(3);
+  await expect(page.locator('.cv-case[open]')).toHaveCount(1);
+  await expect(page.locator('.cv-skill-group')).toHaveCount(3);
+
+  const expand = page.locator('[data-cv-expand]');
+  await expand.click();
+  await expect(page.locator('.cv-case[open]')).toHaveCount(3);
+  await expect(expand).toHaveText('Cerrar todos');
+  await expand.click();
+  await expect(page.locator('.cv-case[open]')).toHaveCount(0);
+
+  const download = page.getByRole('link', { name: /Descargar PDF/ });
+  await expect(download).toHaveAttribute('href', 'output/pdf/Matias-Gaglio-CV-ES.pdf');
+  await expect(download).toHaveAttribute('download', '');
+  const response = await request.get('/output/pdf/Matias-Gaglio-CV-ES.pdf');
+  expect(response.ok()).toBeTruthy();
+  expect(response.headers()['content-type']).toContain('application/pdf');
+});
+
+test('interactive CV is localized and accessible', async ({ page }) => {
+  await page.goto('/cv-en.html', { waitUntil: 'networkidle' });
+  await expect(page.getByText('Interactive resume · Professional profile')).toBeVisible();
+  await expect(page.getByRole('link', { name: /Download PDF/ })).toHaveAttribute('href', 'output/pdf/Matias-Gaglio-Resume-EN.pdf');
+  const results = await new AxeBuilder({ page }).analyze();
+  const blocking = results.violations.filter(violation => ['serious', 'critical'].includes(violation.impact));
+  expect(blocking).toEqual([]);
+});
+
 test('featured cases precede the compact analytical translator and the single search remains interactive', async ({ page }) => {
   await page.goto('/index.html', { waitUntil: 'networkidle' });
   await expect(page.locator('.translator-steps li')).toHaveCount(3);
@@ -142,7 +188,7 @@ test('featured cases precede the compact analytical translator and the single se
   await expect(page.locator('.site-search-field input')).toBeFocused();
 });
 
-for (const path of ['/caso-1-es.html', '/caso-2-es.html', '/caso-3-es.html', '/caso-daizzy-gear-es.html', '/sobre-mi-es.html']) {
+for (const path of ['/caso-1-es.html', '/caso-2-es.html', '/caso-3-es.html', '/caso-daizzy-gear-es.html', '/sobre-mi-es.html', '/cv-es.html']) {
   test(`${path} has no mobile overflow or broken images`, async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(path, { waitUntil: 'networkidle' });

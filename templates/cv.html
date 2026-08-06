@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="$lang">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>$title</title>
+  <meta name="description" content="$description" />
+  <link rel="canonical" href="$canonical" />
+  <link rel="alternate" hreflang="es" href="https://matiasgaglio.onrender.com/cv-es.html" />
+  <link rel="alternate" hreflang="en" href="https://matiasgaglio.onrender.com/cv-en.html" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Matías Gaglio" />
+  <meta property="og:title" content="$title" />
+  <meta property="og:description" content="$description" />
+  <meta property="og:url" content="$canonical" />
+  <meta property="og:image" content="https://matiasgaglio.onrender.com/og-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#090d10" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="stylesheet" href="home.css?v=20260806c" />
+  <link rel="stylesheet" href="cv.css?v=20260806a" />
+  <link rel="stylesheet" href="global-nav.css" />
+  <script type="application/ld+json">$structured_data</script>
+</head>
+<body class="cv-page">
+$global_nav
+  <a class="skip-link" href="#main-content">$skip_label</a>
+  <div class="cv-progress" aria-hidden="true"><span data-cv-progress></span></div>
+  <main id="main-content">
+    <header class="cv-hero">
+      <div class="home-shell cv-hero__grid">
+        <div>
+          <p class="eyebrow">$hero_eyebrow</p>
+          <h1>Matías<br />Gaglio.</h1>
+          <p class="cv-role">$role</p>
+          <p class="cv-deck">$summary</p>
+          <div class="cv-actions">
+            <a class="button button--primary" href="$pdf_href" download>$download_label <span aria-hidden="true">↓</span></a>
+            <a class="button button--ghost" href="mailto:matiasignaciogaglio@gmail.com">$contact_label</a>
+            <button class="button button--ghost cv-print" type="button" data-cv-print>$print_label</button>
+          </div>
+        </div>
+        <dl class="cv-snapshot">
+          <div><dt>$current_label</dt><dd>$current_value</dd></div>
+          <div><dt>$focus_label</dt><dd>$focus_value</dd></div>
+          <div><dt>$location_label</dt><dd>Buenos Aires, Argentina · $remote_label</dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:matiasignaciogaglio@gmail.com">matiasignaciogaglio@gmail.com</a></dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <div class="home-shell cv-layout">
+      <aside class="cv-sidebar" aria-label="$sidebar_label">
+        <nav aria-label="$cv_nav_label">
+          <a href="#perfil" data-cv-nav>$profile_label</a>
+          <a href="#evidencia" data-cv-nav>$evidence_label</a>
+          <a href="#metodo" data-cv-nav>$approach_label</a>
+          <a href="#herramientas" data-cv-nav>$skills_label</a>
+          <a href="#formacion" data-cv-nav>$education_label</a>
+        </nav>
+        <p>$sidebar_note</p>
+      </aside>
+
+      <div class="cv-content">
+        <section class="cv-section" id="perfil" data-cv-section aria-labelledby="profile-title">
+          <div class="cv-section__heading"><span>01</span><div><p class="eyebrow">$profile_kicker</p><h2 id="profile-title">$profile_title</h2></div></div>
+          <p class="cv-lead">$profile_copy</p>
+          <div class="cv-focus-grid">$focus_cards</div>
+        </section>
+
+        <section class="cv-section" id="evidencia" data-cv-section aria-labelledby="evidence-title">
+          <div class="cv-section__heading"><span>02</span><div><p class="eyebrow">$evidence_kicker</p><h2 id="evidence-title">$evidence_title</h2></div></div>
+          <div class="cv-section__tools">
+            <p>$evidence_intro</p>
+            <button type="button" data-cv-expand data-expand-label="$expand_label" data-collapse-label="$collapse_label">$expand_label</button>
+          </div>
+          <div class="cv-evidence">$case_cards</div>
+        </section>
+
+        <section class="cv-section" id="metodo" data-cv-section aria-labelledby="approach-title">
+          <div class="cv-section__heading"><span>03</span><div><p class="eyebrow">$approach_kicker</p><h2 id="approach-title">$approach_title</h2></div></div>
+          <ol class="cv-method">$approach_steps</ol>
+        </section>
+
+        <section class="cv-section" id="herramientas" data-cv-section aria-labelledby="skills-title">
+          <div class="cv-section__heading"><span>04</span><div><p class="eyebrow">$skills_kicker</p><h2 id="skills-title">$skills_title</h2></div></div>
+          <div class="cv-skills">$skill_groups</div>
+        </section>
+
+        <section class="cv-section" id="formacion" data-cv-section aria-labelledby="education-title">
+          <div class="cv-section__heading"><span>05</span><div><p class="eyebrow">$education_kicker</p><h2 id="education-title">$education_title</h2></div></div>
+          <div class="cv-education">$education_items</div>
+          <div class="cv-availability"><div><p class="eyebrow">$availability_label</p><h3>$availability_value</h3></div><a class="button button--primary" href="mailto:matiasignaciogaglio@gmail.com">$contact_label</a></div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="home-footer"><div class="home-shell"><p>© 2026 Matías Gaglio.</p><a href="$home_href">$home_label</a></div></footer>
+  <script src="cv.js?v=20260806a" defer></script>
+  <script src="global-nav.js?v=20260806b" defer></script>
+</body>
+</html>

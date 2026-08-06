@@ -23,8 +23,8 @@
     "tools_intro": "Las herramientas acompañan el criterio; no reemplazan el diagnóstico.",
     "tools": ["Seller Central y Amazon Ads", "SQL, Python y R", "Power BI y reporting comercial", "Google Ads y GA4", "SEO, CRO y arquitectura de listings", "Diseño visual, 3D y automatización"],
     "availability": "Disponible para proyectos freelance, consultoría y colaboraciones remotas.",
-    "cv_label": "Descargar CV",
-    "cv_href": "output/pdf/Matias-Gaglio-CV-ES.pdf",
+    "cv_label": "Ver CV",
+    "cv_href": "cv-es.html",
     "cta_title": "¿Necesitás conectar datos, publicidad y contenido?",
     "cta_copy": "Contame qué está pasando en tu portafolio y podemos ordenar juntos el diagnóstico antes de elegir una táctica."
   },
@@ -52,8 +52,8 @@
     "tools_intro": "Tools support judgment; they do not replace diagnosis.",
     "tools": ["Seller Central and Amazon Ads", "SQL, Python and R", "Power BI and commercial reporting", "Google Ads and GA4", "SEO, CRO and listing architecture", "Visual design, 3D and automation"],
     "availability": "Available for freelance projects, consulting and remote collaborations.",
-    "cv_label": "Download resume",
-    "cv_href": "output/pdf/Matias-Gaglio-Resume-EN.pdf",
+    "cv_label": "View resume",
+    "cv_href": "cv-en.html",
     "cta_title": "Need to connect data, advertising and content?",
     "cta_copy": "Tell me what is happening in your portfolio and we can structure the diagnosis before choosing a tactic."
   }

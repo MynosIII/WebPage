@@ -13,7 +13,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "language-catalog.json"
-EXPECTED_PAIRS = 39
+EXPECTED_PAIRS = 40
 
 # Literal translations and editorial defects found during the bilingual review.
 # Keep these strings here so a later bulk edit cannot reintroduce them silently.

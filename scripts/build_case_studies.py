@@ -25,9 +25,9 @@ def esc(value: object) -> str:
 
 def render_nav(lang: str) -> str:
     items = (
-        [("Inicio", "index.html"), ("Casos", "index.html#casos"), ("Sobre mí", "sobre-mi-es.html"), ("CV", "output/pdf/Matias-Gaglio-CV-ES.pdf"), ("Contacto", "mailto:matiasignaciogaglio@gmail.com")]
+        [("Inicio", "index.html"), ("Casos", "index.html#casos"), ("Sobre mí", "sobre-mi-es.html"), ("CV", "cv-es.html"), ("Contacto", "mailto:matiasignaciogaglio@gmail.com")]
         if lang == "es"
-        else [("Home", "index-en.html"), ("Case Studies", "index-en.html#cases"), ("About", "sobre-mi-en.html"), ("Resume", "output/pdf/Matias-Gaglio-Resume-EN.pdf"), ("Contact", "mailto:matiasignaciogaglio@gmail.com")]
+        else [("Home", "index-en.html"), ("Case Studies", "index-en.html#cases"), ("About", "sobre-mi-en.html"), ("Resume", "cv-en.html"), ("Contact", "mailto:matiasignaciogaglio@gmail.com")]
     )
     return "".join(f'<li><a href="{esc(href)}">{esc(label)}</a></li>' for label, href in items)
 
