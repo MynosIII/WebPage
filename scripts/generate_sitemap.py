@@ -24,8 +24,9 @@ def canonical_url(source: str) -> str | None:
 
 def build_outputs() -> dict[Path, str]:
     urls: set[str] = {f"{SITE_URL}/"}
-    for path in ROOT.rglob("*.html"):
-        if ".git" in path.parts or path.name in EXCLUDED:
+    public_pages = [*ROOT.glob("*.html"), *(ROOT / "Cases").glob("*.html")]
+    for path in public_pages:
+        if path.name in EXCLUDED:
             continue
         source = path.read_text(encoding="utf-8")
         if re.search(r'<meta\b[^>]*\bname=["\']robots["\'][^>]*\bcontent=["\'][^"\']*noindex', source, re.I):
