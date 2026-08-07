@@ -3,7 +3,7 @@ services:
     runtime: static
     name: matiasgaglio
     branch: main
-    buildCommand: python3 scripts/build_homepages.py --check && python3 scripts/build_case_studies.py --check && python3 scripts/build_about_pages.py --check && python3 scripts/build_cv_pages.py --check && python3 scripts/sync_ecommerce_claims.py --check && python3 scripts/apply_legacy_translation_fixes.py --check && python3 scripts/validate_localization.py && python3 scripts/validate_project_claims.py && python3 scripts/generate_sitemap.py --check && python3 scripts/validate_site.py
+    buildCommand: python3 scripts/build_homepages.py --check && python3 scripts/build_case_studies.py --check && python3 scripts/build_about_pages.py --check && python3 scripts/build_cv_pages.py --check && python3 scripts/sync_case_tools.py --check && python3 scripts/sync_ecommerce_claims.py --check && python3 scripts/apply_legacy_translation_fixes.py --check && python3 scripts/validate_localization.py && python3 scripts/validate_project_claims.py && python3 scripts/generate_sitemap.py --check && python3 scripts/validate_site.py
     staticPublishPath: .
     pullRequestPreviewsEnabled: false
     headers:

@@ -161,6 +161,7 @@ def validate_case_tool_catalog(pages: list[Path]) -> list[str]:
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
     tools = catalog.get("tools", {})
     cases = catalog.get("cases", {})
+    case_lookup = {name.lower(): stack for name, stack in cases.items()}
     normalized_pages = {
         re.sub(r"-(?:en|es)(?=\.html$)", "", path.name, flags=re.I).lower()
         for path in pages
@@ -171,6 +172,8 @@ def validate_case_tool_catalog(pages: list[Path]) -> list[str]:
         asset = ROOT / "assets" / "software-logos" / str(tool.get("asset", ""))
         if not tool.get("name"):
             issues.append(f"content/case-tools.json: {tool_id} is missing a display name")
+        if not isinstance(tool.get("aliases"), list):
+            issues.append(f"content/case-tools.json: {tool_id} is missing its alias lookup list")
         if not asset.is_file():
             issues.append(f"content/case-tools.json: {tool_id} references missing logo {asset.name}")
 
@@ -192,6 +195,30 @@ def validate_case_tool_catalog(pages: list[Path]) -> list[str]:
             continue
         if page_name not in {name.lower() for name in cases}:
             issues.append(f"{path.relative_to(ROOT).as_posix()}: software stack page is missing catalog metadata")
+
+    search_index_path = ROOT / "search-index.json"
+    if not search_index_path.exists():
+        issues.append("Missing search-index.json.")
+        return issues
+    search_items = json.loads(search_index_path.read_text(encoding="utf-8"))
+    indexed_by_url = {item.get("url"): item for item in search_items}
+    for path in pages:
+        if not re.search(r"-(?:en|es)\.html$", path.name, flags=re.I):
+            continue
+        page_name = re.sub(r"-(?:en|es)(?=\.html$)", "", path.name, flags=re.I).lower()
+        stack = case_lookup.get(page_name)
+        if stack is None:
+            continue
+        relative = path.relative_to(ROOT).as_posix()
+        indexed = indexed_by_url.get(relative)
+        if indexed is None:
+            issues.append(f"search-index.json: missing localized case {relative}")
+            continue
+        expected_names = [tools[tool_id]["name"] for tool_id in stack if tool_id in tools]
+        indexed_names = indexed.get("tools", [])
+        missing_names = [name for name in expected_names if name not in indexed_names]
+        if missing_names:
+            issues.append(f"search-index.json: {relative} is missing tool keywords: {', '.join(missing_names)}")
     return issues
 
 

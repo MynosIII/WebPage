@@ -23,6 +23,7 @@ jobs:
           python scripts/build_case_studies.py --check
           python scripts/build_about_pages.py --check
           python scripts/build_cv_pages.py --check
+          python scripts/sync_case_tools.py --check
           python scripts/sync_ecommerce_claims.py --check
           python scripts/apply_legacy_translation_fixes.py --check
           python scripts/validate_localization.py

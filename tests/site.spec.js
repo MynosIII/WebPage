@@ -226,11 +226,17 @@ test('case tools appear on listing cards and at the end of each case', async ({ 
   await expect(card.locator('.case-card-tool-badges')).toBeVisible();
   await expect(card.locator('.case-card-tool-badge')).toHaveCount(4);
   await expect(card.getByText('Photoshop', { exact: true })).toBeVisible();
+  const sellerboardCard = page.locator('a.caso-card-link[href="caso-2-es.html"]');
+  await expect(sellerboardCard.getByText('Sellerboard', { exact: true })).toBeVisible();
 
   await page.goto('/caso-1-es.html', { waitUntil: 'networkidle' });
   await expect(page.locator('.case-software-stack')).toBeVisible();
   await expect(page.locator('.case-software-stack').getByText('Amazon Seller Central', { exact: true })).toBeVisible();
+  await expect(page.locator('.case-software-stack').getByText('Amazon Ads', { exact: true })).toBeVisible();
   await expect(page.locator('.case-software-stack .contact-action')).toBeVisible();
+
+  await page.goto('/caso-2-es.html', { waitUntil: 'networkidle' });
+  await expect(page.locator('.case-software-stack').getByText('Sellerboard', { exact: true })).toBeVisible();
 });
 
 test('case software is indexed as backend search keywords', async ({ request }) => {
@@ -240,6 +246,12 @@ test('case software is indexed as backend search keywords', async ({ request }) 
   const casePage = index.find(item => item.url === 'amazon-content-architecture-es.html');
   expect(casePage.tools).toEqual(expect.arrayContaining(['Amazon Seller Central', 'Helium 10', 'Photoshop', 'After Effects']));
   expect(casePage.keywords).toContain('Photoshop');
+  const ppcCase = index.find(item => item.url === 'caso-1-es.html');
+  expect(ppcCase.tools).toEqual(expect.arrayContaining(['Amazon Seller Central', 'Amazon Ads']));
+  expect(ppcCase.keywords).toContain('Amazon Ads');
+  const sellerboardCase = index.find(item => item.url === 'caso-2-es.html');
+  expect(sellerboardCase.tools).toContain('Sellerboard');
+  expect(sellerboardCase.keywords).toContain('Sellerboard');
 });
 
 test('shared navigation uses the tablet drawer without clipping', async ({ page }) => {

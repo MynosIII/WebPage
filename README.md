@@ -7,6 +7,7 @@ This repository is the source of truth for the bilingual static portfolio deploy
 - `/` serves the Spanish homepage directly. `/index-en.html` is its English counterpart and `/index-es.html` remains a backwards-compatible Spanish URL.
 - `content/homepage.json` is the bilingual content source for all three homepage files; the homepage combines three evidence-led flagship cases with a portfolio shortcut rail, an early searchable portfolio map, and a secondary Analytical Translator interaction.
 - `content/project-claims.json` is the credibility source of truth for every public metric, period, baseline, contribution, source, approved claim, and evidence note in the flagship and Daizzy cases.
+- `content/case-tools.json` maps software aliases to case badges and search keywords. `scripts/sync_case_tools.py` automatically adds every tool mentioned in a case's Spanish or English HTML while preserving explicit assignments for tools that are not named in public copy.
 - `content/case-studies.json` and `templates/case-study.html` generate the standardized Case 1, Case 2, Case 3, and Daizzy pages.
 - `content/about.json` and `templates/about.html` generate the recruiter-focused professional story.
 - `templates/homepage.html`, `home.css`, and `home.js` contain the shared homepage structure, visual system, and interaction behavior.
@@ -43,6 +44,7 @@ python scripts/build_homepages.py
 python scripts/build_case_studies.py
 python scripts/build_about_pages.py
 python scripts/build_cv_pages.py
+python scripts/sync_case_tools.py
 python scripts/sync_ecommerce_claims.py
 python scripts/apply_legacy_translation_fixes.py
 python scripts/generate_sitemap.py
@@ -56,6 +58,7 @@ python scripts/build_homepages.py --check
 python scripts/build_case_studies.py --check
 python scripts/build_about_pages.py --check
 python scripts/build_cv_pages.py --check
+python scripts/sync_case_tools.py --check
 python scripts/sync_ecommerce_claims.py --check
 python scripts/apply_legacy_translation_fixes.py --check
 python scripts/validate_localization.py

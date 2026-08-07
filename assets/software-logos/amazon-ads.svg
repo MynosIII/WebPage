@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Amazon Ads">
+  <rect width="64" height="64" rx="12" fill="#131921"/>
+  <path fill="#fff" d="M20 17h24a4 4 0 0 1 4 4v17a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V21a4 4 0 0 1 4-4Zm2 7v11l9-5.5L22 24Z"/>
+  <path fill="#ff9900" d="M13 46c12 7 27 7 38-1l2 3c-12 10-30 10-42 1Z"/>
+</svg>

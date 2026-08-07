@@ -1,63 +1,358 @@
 {
   "tools": {
-    "photoshop": { "name": "Photoshop", "asset": "photoshop.svg" },
-    "after-effects": { "name": "After Effects", "asset": "after-effects.svg" },
-    "illustrator": { "name": "Illustrator", "asset": "illustrator.svg" },
-    "premiere": { "name": "Premiere Pro", "asset": "premiere.svg" },
-    "excel": { "name": "Excel", "asset": "excel.svg" },
-    "google-sheets": { "name": "Google Sheets", "asset": "google-sheets.svg" },
-    "python": { "name": "Python", "asset": "python.svg" },
-    "power-bi": { "name": "Power BI", "asset": "power-bi.svg" },
-    "davinci-resolve": { "name": "DaVinci Resolve", "asset": "davinci-resolve.svg" },
-    "blender": { "name": "Blender", "asset": "blender.svg" },
-    "cinema4d": { "name": "Cinema 4D", "asset": "cinema4d.svg" },
-    "nuke": { "name": "Nuke", "asset": "nuke.svg" },
-    "helium10": { "name": "Helium 10", "asset": "helium10.svg" },
-    "jungle-scout": { "name": "Jungle Scout", "asset": "jungle-scout.svg" },
-    "keepa": { "name": "Keepa", "asset": "keepa.svg" },
-    "sellerboard": { "name": "Sellerboard", "asset": "sellerboard.svg" },
-    "amazon-seller-central": { "name": "Amazon Seller Central", "asset": "amazon-seller-central.svg" },
-    "google-ads": { "name": "Google Ads", "asset": "google-ads.svg" },
-    "meta-ads": { "name": "Meta Ads", "asset": "meta-ads.svg" },
-    "ga4": { "name": "Google Analytics 4", "asset": "ga4.svg" },
-    "search-console": { "name": "Search Console", "asset": "search-console.svg" },
-    "semrush": { "name": "Semrush", "asset": "semrush.svg" },
-    "sql": { "name": "SQL", "asset": "sql.svg" },
-    "hotjar": { "name": "Hotjar", "asset": "hotjar.svg" },
-    "tableau": { "name": "Tableau", "asset": "tableau.svg" },
-    "r": { "name": "R", "asset": "r.svg" },
-    "stackline": { "name": "Stackline", "asset": "stackline.svg" },
-    "shulex": { "name": "Shulex VOC AI", "asset": "shulex.svg" }
+    "photoshop": {
+      "name": "Photoshop",
+      "asset": "photoshop.svg",
+      "aliases": [
+        "Photoshop",
+        "Adobe Photoshop"
+      ]
+    },
+    "after-effects": {
+      "name": "After Effects",
+      "asset": "after-effects.svg",
+      "aliases": [
+        "After Effects",
+        "Adobe After Effects"
+      ]
+    },
+    "illustrator": {
+      "name": "Illustrator",
+      "asset": "illustrator.svg",
+      "aliases": [
+        "Illustrator",
+        "Adobe Illustrator"
+      ]
+    },
+    "premiere": {
+      "name": "Premiere Pro",
+      "asset": "premiere.svg",
+      "aliases": [
+        "Premiere Pro",
+        "Adobe Premiere",
+        "Premiere"
+      ]
+    },
+    "excel": {
+      "name": "Excel",
+      "asset": "excel.svg",
+      "aliases": [
+        "Excel",
+        "Microsoft Excel"
+      ]
+    },
+    "google-sheets": {
+      "name": "Google Sheets",
+      "asset": "google-sheets.svg",
+      "aliases": [
+        "Google Sheets",
+        "Sheets"
+      ]
+    },
+    "python": {
+      "name": "Python",
+      "asset": "python.svg",
+      "aliases": [
+        "Python"
+      ]
+    },
+    "power-bi": {
+      "name": "Power BI",
+      "asset": "power-bi.svg",
+      "aliases": [
+        "Power BI",
+        "PowerBI"
+      ]
+    },
+    "davinci-resolve": {
+      "name": "DaVinci Resolve",
+      "asset": "davinci-resolve.svg",
+      "aliases": [
+        "DaVinci Resolve",
+        "Davinci Resolve"
+      ]
+    },
+    "blender": {
+      "name": "Blender",
+      "asset": "blender.svg",
+      "aliases": [
+        "Blender"
+      ]
+    },
+    "cinema4d": {
+      "name": "Cinema 4D",
+      "asset": "cinema4d.svg",
+      "aliases": [
+        "Cinema 4D",
+        "Cinema4D",
+        "C4D"
+      ]
+    },
+    "nuke": {
+      "name": "Nuke",
+      "asset": "nuke.svg",
+      "aliases": [
+        "Nuke",
+        "Foundry Nuke"
+      ]
+    },
+    "helium10": {
+      "name": "Helium 10",
+      "asset": "helium10.svg",
+      "aliases": [
+        "Helium 10",
+        "Helium10"
+      ]
+    },
+    "jungle-scout": {
+      "name": "Jungle Scout",
+      "asset": "jungle-scout.svg",
+      "aliases": [
+        "Jungle Scout"
+      ]
+    },
+    "keepa": {
+      "name": "Keepa",
+      "asset": "keepa.svg",
+      "aliases": [
+        "Keepa"
+      ]
+    },
+    "sellerboard": {
+      "name": "Sellerboard",
+      "asset": "sellerboard.svg",
+      "aliases": [
+        "Sellerboard",
+        "Seller Board"
+      ]
+    },
+    "amazon-seller-central": {
+      "name": "Amazon Seller Central",
+      "asset": "amazon-seller-central.svg",
+      "aliases": [
+        "Amazon Seller Central",
+        "Seller Central"
+      ]
+    },
+    "amazon-ads": {
+      "name": "Amazon Ads",
+      "asset": "amazon-ads.svg",
+      "aliases": [
+        "Amazon Ads",
+        "Amazon Advertising",
+        "Amazon PPC"
+      ]
+    },
+    "google-ads": {
+      "name": "Google Ads",
+      "asset": "google-ads.svg",
+      "aliases": [
+        "Google Ads",
+        "Google AdWords",
+        "AdWords"
+      ]
+    },
+    "meta-ads": {
+      "name": "Meta Ads",
+      "asset": "meta-ads.svg",
+      "aliases": [
+        "Meta Ads",
+        "Facebook Ads"
+      ]
+    },
+    "ga4": {
+      "name": "Google Analytics 4",
+      "asset": "ga4.svg",
+      "aliases": [
+        "Google Analytics 4",
+        "GA4"
+      ]
+    },
+    "search-console": {
+      "name": "Search Console",
+      "asset": "search-console.svg",
+      "aliases": [
+        "Google Search Console",
+        "Search Console"
+      ]
+    },
+    "semrush": {
+      "name": "Semrush",
+      "asset": "semrush.svg",
+      "aliases": [
+        "Semrush",
+        "SEMrush"
+      ]
+    },
+    "sql": {
+      "name": "SQL",
+      "asset": "sql.svg",
+      "aliases": [
+        "SQL"
+      ]
+    },
+    "hotjar": {
+      "name": "Hotjar",
+      "asset": "hotjar.svg",
+      "aliases": [
+        "Hotjar"
+      ]
+    },
+    "tableau": {
+      "name": "Tableau",
+      "asset": "tableau.svg",
+      "aliases": [
+        "Tableau"
+      ]
+    },
+    "r": {
+      "name": "R",
+      "asset": "r.svg",
+      "aliases": []
+    },
+    "stackline": {
+      "name": "Stackline",
+      "asset": "stackline.svg",
+      "aliases": [
+        "Stackline"
+      ]
+    },
+    "shulex": {
+      "name": "Shulex VOC AI",
+      "asset": "shulex.svg",
+      "aliases": [
+        "Shulex VOC AI",
+        "Shulex"
+      ]
+    }
   },
   "cases": {
-    "animation-01.html": ["after-effects"],
-    "animation-02.html": ["after-effects"],
-    "animation-03.html": ["after-effects"],
-    "animation-04.html": ["after-effects"],
-    "icon-system-case.html": ["illustrator"],
-    "ecommerce-video-case.html": ["premiere", "after-effects", "amazon-seller-central"],
-    "ecommerce-video-01.html": ["premiere", "after-effects"],
-    "ecommerce-video-02.html": ["premiere", "after-effects"],
-    "ecommerce-video-03.html": ["premiere", "after-effects"],
-    "ecommerce-video-04.html": ["premiere", "after-effects"],
-    "ecommerce-video-05.html": ["premiere", "after-effects"],
-    "voice-of-customer-conversion-brief.html": ["excel", "amazon-seller-central", "helium10"],
-    "shulex-voc-creative-case.html": ["shulex", "excel", "photoshop", "illustrator", "amazon-seller-central"],
-    "market-share-loss-diagnosis.html": ["amazon-seller-central", "excel", "stackline"],
-    "amazon-listing-audit-checklist.html": ["amazon-seller-central", "helium10", "excel"],
-    "search-query-keyword-harvesting.html": ["amazon-seller-central", "excel", "helium10"],
-    "search-suppression-catalog-recovery.html": ["amazon-seller-central", "excel"],
-    "automotive-fitment-seo.html": ["amazon-seller-central", "excel", "helium10"],
-    "amazon-lifecycle-operating-system.html": ["amazon-seller-central", "excel", "helium10", "semrush"],
-    "amazon-content-architecture.html": ["amazon-seller-central", "helium10", "photoshop", "after-effects"],
-    "unimac-case.html": ["photoshop", "illustrator"],
-    "Revolution_creative_case.html": ["photoshop", "amazon-seller-central"],
-    "BI-case-2.html": ["amazon-seller-central", "excel", "stackline"],
-    "DayParting-Case.html": ["amazon-seller-central", "excel"],
-    "caso-daizzy-gear.html": ["amazon-seller-central"],
-    "caso-hogar-cocina-ppc.html": ["amazon-seller-central"],
-    "caso-1.html": ["amazon-seller-central"],
-    "caso-2.html": ["excel"],
-    "caso-3.html": ["photoshop"]
+    "animation-01.html": [
+      "after-effects"
+    ],
+    "animation-02.html": [
+      "after-effects"
+    ],
+    "animation-03.html": [
+      "after-effects"
+    ],
+    "animation-04.html": [
+      "after-effects"
+    ],
+    "icon-system-case.html": [
+      "illustrator"
+    ],
+    "ecommerce-video-case.html": [
+      "premiere",
+      "after-effects",
+      "amazon-seller-central"
+    ],
+    "ecommerce-video-01.html": [
+      "premiere",
+      "after-effects"
+    ],
+    "ecommerce-video-02.html": [
+      "premiere",
+      "after-effects"
+    ],
+    "ecommerce-video-03.html": [
+      "premiere",
+      "after-effects"
+    ],
+    "ecommerce-video-04.html": [
+      "premiere",
+      "after-effects"
+    ],
+    "ecommerce-video-05.html": [
+      "premiere",
+      "after-effects"
+    ],
+    "voice-of-customer-conversion-brief.html": [
+      "excel",
+      "amazon-seller-central",
+      "helium10"
+    ],
+    "shulex-voc-creative-case.html": [
+      "shulex",
+      "excel",
+      "photoshop",
+      "illustrator",
+      "amazon-seller-central"
+    ],
+    "market-share-loss-diagnosis.html": [
+      "amazon-seller-central",
+      "excel",
+      "stackline"
+    ],
+    "amazon-listing-audit-checklist.html": [
+      "amazon-seller-central",
+      "helium10",
+      "excel"
+    ],
+    "search-query-keyword-harvesting.html": [
+      "amazon-seller-central",
+      "excel",
+      "helium10",
+      "amazon-ads"
+    ],
+    "search-suppression-catalog-recovery.html": [
+      "amazon-seller-central",
+      "excel"
+    ],
+    "automotive-fitment-seo.html": [
+      "amazon-seller-central",
+      "excel",
+      "helium10"
+    ],
+    "amazon-lifecycle-operating-system.html": [
+      "amazon-seller-central",
+      "excel",
+      "helium10",
+      "semrush"
+    ],
+    "amazon-content-architecture.html": [
+      "amazon-seller-central",
+      "helium10",
+      "photoshop",
+      "after-effects"
+    ],
+    "unimac-case.html": [
+      "photoshop",
+      "illustrator"
+    ],
+    "Revolution_creative_case.html": [
+      "photoshop",
+      "amazon-seller-central"
+    ],
+    "BI-case-2.html": [
+      "amazon-seller-central",
+      "excel",
+      "stackline",
+      "amazon-ads"
+    ],
+    "DayParting-Case.html": [
+      "amazon-seller-central",
+      "excel",
+      "amazon-ads"
+    ],
+    "caso-daizzy-gear.html": [
+      "amazon-seller-central",
+      "amazon-ads"
+    ],
+    "caso-hogar-cocina-ppc.html": [
+      "amazon-seller-central",
+      "amazon-ads"
+    ],
+    "caso-1.html": [
+      "amazon-seller-central",
+      "amazon-ads"
+    ],
+    "caso-2.html": [
+      "excel",
+      "sellerboard"
+    ],
+    "caso-3.html": [
+      "photoshop"
+    ]
   }
 }

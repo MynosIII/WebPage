@@ -11,7 +11,7 @@
 
   let catalog;
   try {
-    const response = await fetch(new URL('content/case-tools.json?v=20260806', base));
+    const response = await fetch(new URL('content/case-tools.json?v=20260807', base));
     if (!response.ok) throw new Error(`Unable to load case tools (${response.status})`);
     catalog = await response.json();
   } catch (error) {
@@ -38,7 +38,7 @@
       direction: 'reverse',
       copy: 'Amazon Seller Central, Helium 10, Shulex VOC AI, Jungle Scout, Keepa, Sellerboard, Google Ads, Meta Ads, GA4, Search Console, Semrush, Hotjar y Stackline.',
       copyEn: 'Amazon Seller Central, Helium 10, Shulex VOC AI, Jungle Scout, Keepa, Sellerboard, Google Ads, Meta Ads, GA4, Search Console, Semrush, Hotjar and Stackline.',
-      tools: ['amazon-seller-central', 'helium10', 'shulex', 'jungle-scout', 'keepa', 'sellerboard', 'google-ads', 'meta-ads', 'ga4', 'search-console', 'semrush', 'hotjar', 'stackline']
+      tools: ['amazon-seller-central', 'amazon-ads', 'helium10', 'shulex', 'jungle-scout', 'keepa', 'sellerboard', 'google-ads', 'meta-ads', 'ga4', 'search-console', 'semrush', 'hotjar', 'stackline']
     },
     {
       label: 'Creative',
