@@ -1,5 +1,5 @@
 # This Render site is retired. The portfolio now lives at
-# https://matiasgaglio.vercel.app (repository MynosIII/WebPage-Amazon).
+# https://matiasgaglio.com (repository MynosIII/WebPage-Amazon).
 # Every request is answered with a 301 to the same path on the new site, so old
 # links, bookmarks and search results keep working while search engines move
 # their index over. Only redirect-only/ is published so no old page can be
@@ -9,13 +9,13 @@ services:
     runtime: static
     name: matiasgaglio
     branch: main
-    buildCommand: echo "Legacy site retired; serving redirects to matiasgaglio.vercel.app"
+    buildCommand: echo "Legacy site retired; serving redirects to matiasgaglio.com"
     staticPublishPath: redirect-only
     pullRequestPreviewsEnabled: false
     routes:
       - type: redirect
         source: /*
-        destination: https://matiasgaglio.vercel.app/*
+        destination: https://matiasgaglio.com/*
     headers:
       - path: /*
         name: Strict-Transport-Security
